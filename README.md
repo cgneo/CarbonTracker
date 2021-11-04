@@ -12,7 +12,7 @@ Another feature of the app is creating a network that connects the app users to 
 ##Members
 
 - Alejandro Christlieb Picazo, GitHb name, alejandrochristliebpicazo, project leader
-- Zhihui Li, cgneo, zhihuili5, git leader
+- Zhihui Li, cgneo, ZVapp, git leader
 - Jade Rakotondradano, GitHub name, jaderakotondradano, trello leader
 - Amine Lamouchi, GitHub name, aminelamouchi1
 - Alexandra-Catalina Negoita, Catalina-13, alexandracatalinanegoita
