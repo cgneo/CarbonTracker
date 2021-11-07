@@ -5,7 +5,7 @@ of food, transport, and shopping on our everyday lifestyle.
 
 Examples of databases used: OpenFood Facts, Good on You, ... .
 
-An interactive and friendly user interface gathers the data, displays it in graphics, and implements rewards and ranking to boost usability of the app. 
+An interactive and friendly user interface gathers the data, displays it in graphics, and implements rewards and ranking to boost usability of the app.
 After analyzing the user's input data, CarbonTracker provides a personalized feedback proposing specific improvements on their lifestyle.
 Another feature of the app is creating a network that connects the app users to generate a healthy competition among individuals.
 
@@ -16,14 +16,14 @@ Another feature of the app is creating a network that connects the app users to 
 - Jade Rakotondradano, GitHub name, jaderakotondradano, trello leader
 - Amine Lamouchi, GitHub name, aminelamouchi1
 - Alexandra-Catalina Negoita, Catalina-13, alexandracatalinanegoita
-- Andrés Orduña, GitHub name, andresorduna2
+- Andrés Orduña, andres_ordunya, andresorduna2
 - Cyrine Ben Tanfous, GitHub name, cyrinebentanfous1
 - Dain Jung, GitHub name, dainjung3
 - Jane Peltier, GitHub name, janepeltier
 - Lucas Serog, GitHub name, lucasserog1
 - Marc Saouda, GitHub name, marcsaouda
 - Nina Bili Rossi, nina-bilirossi, ninabilirossi
-- Steven van Heiningen, GitHub name, stevenvanheiningen
+- Steven van Heiningen, Steven-van-Heiningen, stevenvanheiningen
 
 ## Teams
 
@@ -34,8 +34,9 @@ Another feature of the app is creating a network that connects the app users to 
     - Nina Bili Rossi
     - Cyrine Ben Tanfous
     - Andrés Orduña
+    - Steven van Heiningen
     - (Zhihui Li)
-    
+
 
     ### Data Team
 
@@ -43,12 +44,10 @@ Another feature of the app is creating a network that connects the app users to 
     - Marc Saouda
     - Lucas Serog
     - Jade Rakotondradano
-    - Steven Van Heiningen
-    
+
     ### Server Team
-    
+
     - Alexandra-Catalina Negoita - team leader
     - Alejandro Christlieb Picazo
     - Zhihui Li
     - (Amine Lamouchi)
-
