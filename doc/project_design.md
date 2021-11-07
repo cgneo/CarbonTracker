@@ -52,14 +52,14 @@ The following intermediate deadlines should allow all of our sub-teams to achiev
 ## Software Architecture
 
 - How are you sub-dividing your project?Which modules are you implementing?
-- 
+
 The main modules we will have in our project are the following:  
 
 	•	Data analysis and extraction: this team will be in charge of linking our project with the DB's and calculating the footprints. For this, we will be using OCR libraries (possibly Tesseract), as well as the API's of the OpenFoodFacts project. Thus, this module will be sub-divided into the following: 
 	
-	⁃	OCR and data scanning
+		⁃	OCR and data scanning
 	
-	⁃	Data extraction from databases
+		⁃	Data extraction from databases
 	
 	•	Server: this module will consist in the creation of a server through the Qt Networks Module. A central database to store the information of our users will be made in SQL or Mongo.
 	
@@ -67,7 +67,7 @@ The main modules we will have in our project are the following:
 
 
 - What external dependencies do you have? Why?
-- 
+
 Some of the external dependencies that we have are the availability and functioning of the libraries that we will be using. Namely, these are some of the external libraries/sources whose implementation on different architectures or the project itself could be problematic:
 
 	•	Tesseract - OCR C++ library
