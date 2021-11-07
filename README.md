@@ -44,6 +44,7 @@ Another feature of the app is creating a network that connects the app users to 
     - Marc Saouda
     - Lucas Serog
     - Jade Rakotondradano
+    - (Alejandro Christlieb)
 
     ### Server Team
 
