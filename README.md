@@ -16,7 +16,7 @@ Another feature of the app is creating a network that connects the app users to 
 - Jade Rakotondradano, GitHub name, jaderakotondradano, trello leader
 - Amine Lamouchi, GitHub name, aminelamouchi1
 - Alexandra-Catalina Negoita, Catalina-13, alexandracatalinanegoita
-- Andrés Orduña, GitHub name, andresorduna2
+- Andrés Orduña, andres_ordunya, andresorduna2
 - Cyrine Ben Tanfous, GitHub name, cyrinebentanfous1
 - Dain Jung, GitHub name, dainjung3
 - Jane Peltier, GitHub name, janepeltier
