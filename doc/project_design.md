@@ -35,18 +35,19 @@ The following intermediate deadlines should allow all of our sub-teams to achiev
 
 	•	End of week 3 
 	
-	⁃	Data team: achieve a connection between database used (OpenFoodFacts) and our project. Specifically, being able to obtain the ecological footprint for any product 
+		⁃	Data team: achieve a connection between database used (OpenFoodFacts) and our project. Specifically, being able to obtain the ecological
+		footprint for any product 
 	
 	•	End of week 4 
 	
-	⁃	UI team: have a general structure of the whole project's user interface (precise details will be sorted out later)
+		⁃	UI team: have a general structure of the whole project's user interface (precise details will be sorted out later)
 	
-	⁃	UI team: create the layout for the input forms to add data manually. Particularly, being ready to connect the user interface with the data 
+		⁃	UI team: create the layout for the input forms to add data manually. Particularly, being ready to connect the user interface with the data 
 	gathering. 
 	
-	⁃	Data team: have the OCR analysis done, that is, retrieving and parsing information from the analyzed PDF files appropriately.
+		⁃	Data team: have the OCR analysis done, that is, retrieving and parsing information from the analyzed PDF files appropriately.
 	
-	⁃	Server team: have the main functioning of the server, which implies being able to store and retrieve data from the central server.  	
+		⁃	Server team: have the main functioning of the server, which implies being able to store and retrieve data from the central server.  	
 
 
 ## Software Architecture
