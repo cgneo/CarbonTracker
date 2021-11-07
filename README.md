@@ -22,7 +22,7 @@ Another feature of the app is creating a network that connects the app users to 
 - Jane Peltier, GitHub name, janepeltier
 - Lucas Serog, GitHub name, lucasserog1
 - Marc Saouda, GitHub name, marcsaouda
-- Nina Bili Rossi, GitHub name, nina-bilirossi
+- Nina Bili Rossi, nina-bilirossi, ninabilirossi
 - Steven van Heiningen, GitHub name, stevenvanheiningen
 
 ## Teams
