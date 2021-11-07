@@ -33,16 +33,17 @@ Another feature of the app is creating a network that connects the app users to 
     - Jane Peltier
     - Nina Bili Rossi
     - Cyrine Ben Tanfous
+    - Andrés Orduña
     - (Zhihui Li)
     
 
     ### Data Team
 
     - Amine Lamouchi - team leader
-    - Andrés Orduña
     - Marc Saouda
     - Lucas Serog
     - Jade Rakotondradano
+    - Steven Van Heiningen
     
     ### Server Team
     
