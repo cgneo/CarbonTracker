@@ -18,12 +18,12 @@ Another feature of the app is creating a network that connects the app users to 
 - Alexandra-Catalina Negoita, Catalina-13, alexandracatalinanegoita
 - Andrés Orduña, GitHub name, andresorduna2
 - Cyrine Ben Tanfous, GitHub name, cyrinebentanfous1
-- Dain Jung, DainjungBX, dainjung3
+- Dain Jung, GitHub name, dainjung3
 - Jane Peltier, GitHub name, janepeltier
 - Lucas Serog, GitHub name, lucasserog1
 - Marc Saouda, GitHub name, marcsaouda
-- Nina Bili Rossi, GitHub name, nina-bilirossi
-- Steven van Heiningen, GitHub name, stevenvanheiningen
+- Nina Bili Rossi, GitHub name, ninabilirossi
+- Steven van Heiningen, Steven-van-Heiningen, stevenvanheiningen
 
 ## Teams
 
@@ -34,6 +34,7 @@ Another feature of the app is creating a network that connects the app users to 
     - Nina Bili Rossi
     - Cyrine Ben Tanfous
     - Andrés Orduña
+    - Steven van Heiningen
     - (Zhihui Li)
     
 
@@ -43,7 +44,6 @@ Another feature of the app is creating a network that connects the app users to 
     - Marc Saouda
     - Lucas Serog
     - Jade Rakotondradano
-    - Steven Van Heiningen
     
     ### Server Team
     
