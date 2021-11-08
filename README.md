@@ -19,7 +19,7 @@ Another feature of the app is creating a network that connects the app users to 
 - Andrés Orduña, andres_ordunya, andresorduna2
 - Cyrine Ben Tanfous, GitHub name, cyrinebentanfous1
 - Dain Jung, DainjungBX, dainjung3
-- Jane Peltier, GitHub name, janepeltier
+- Jane Peltier, janepeltier, janepeltier
 - Lucas Serog, GitHub name, lucasserog1
 - Marc Saouda, marc-saouda, marcsaouda
 - Nina Bili Rossi, nina-bilirossi, ninabilirossi
