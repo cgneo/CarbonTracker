@@ -11,17 +11,17 @@ Another feature of the app is creating a network that connects the app users to 
 
 ##Members
 
-- Alejandro Christlieb Picazo, GitHub name, alejandrochristliebpicazo, project leader
+- Alejandro Christlieb Picazo, alexchristlieb, alejandrochristliebpicazo, project leader
 - Zhihui Li, cgneo, ZVapp, git leader
-- Jade Rakotondradano, GitHub name, jaderakotondradano, trello leader
-- Amine Lamouchi, GitHub name, aminelamouchi1
+- Jade Rakotondradano, jaderakoton, jaderakoton, trello leader
+- Amine Lamouchi, amine-lamouchi, aminelamouchi11
 - Alexandra-Catalina Negoita, Catalina-13, alexandracatalinanegoita
 - Andrés Orduña, andres_ordunya, andresorduna2
 - Cyrine Ben Tanfous, GitHub name, cyrinebentanfous1
-- Dain Jung, GitHub name, dainjung3
-- Jane Peltier, GitHub name, janepeltier
-- Lucas Serog, GitHub name, lucasserog1
-- Marc Saouda, GitHub name, marcsaouda
+- Dain Jung, DainjungBX, dainjung3
+- Jane Peltier, janepeltier, janepeltier
+- Lucas Serog, lserog, lucasserog1
+- Marc Saouda, marc-saouda, marcsaouda
 - Nina Bili Rossi, nina-bilirossi, ninabilirossi
 - Steven van Heiningen, Steven-van-Heiningen, stevenvanheiningen
 
@@ -44,6 +44,7 @@ Another feature of the app is creating a network that connects the app users to 
     - Marc Saouda
     - Lucas Serog
     - Jade Rakotondradano
+    - (Alejandro Christlieb)
 
     ### Server Team
 
