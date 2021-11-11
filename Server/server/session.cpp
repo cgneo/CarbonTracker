@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 #include <random>
 #include <session.h>
 #include <iostream>
@@ -27,9 +28,9 @@ std::string random_string(std::size_t length)
 
 
 Session::Session() {
-    session_list[0] = random_string(64);
+    session_list.push_back( random_string(64) );
 }
 
 Session::~Session() {
-//    delete [] session_list;
+    session_list.clear();
 }

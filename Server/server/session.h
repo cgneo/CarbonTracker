@@ -3,6 +3,7 @@
 #endif // SESSION_H
 
 #include <string>
+#include <vector>
 using namespace std;
 
 
@@ -11,7 +12,7 @@ class Session {
 
 public:
     string username;
-    string session_list[1];
+    vector<string> session_list;
 
     Session();
     ~Session();
