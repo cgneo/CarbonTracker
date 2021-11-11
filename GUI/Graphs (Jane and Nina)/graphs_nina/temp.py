@@ -1,0 +1,1 @@
+#import webbrowser#webbrowser.open('https://world.openfoodfacts.org/product/3017620422003')  # Go to example.comimport openfoodfactssearch_result = openfoodfacts.products.get_product('3017620422003')return('2222222')
