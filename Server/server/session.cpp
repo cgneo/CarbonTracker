@@ -34,3 +34,53 @@ Session::Session() {
 Session::~Session() {
     session_list.clear();
 }
+
+
+string Session::addNewSession() {
+    string temp_token = random_string(64);
+    while (std::find(session_list.begin(), session_list.end(), temp_token) != session_list.end())
+    {
+        // if element in vector.
+        temp_token = random_string(64);
+    }
+    session_list.push_back( temp_token );
+
+    return temp_token;
+}
+
+
+// problematic function: why is it not working!?
+void Session::removeSession(string sessionID) {
+    vector<string> temp;
+    for(string currentID : session_list) {
+        if (currentID != sessionID) {
+            temp.push_back(currentID);
+        }
+    }
+    session_list.clear();
+    session_list = temp;
+}
+
+
+
+bool Session::checkSessionExist(string sessionID) {
+    for(string currentID : session_list) {
+        if (currentID==sessionID) {
+           return true;
+        }
+    }
+    return false;
+}
+
+
+void Session::removeAllSession() {
+    session_list.clear();
+}
+
+string Session::displayAllSessions() {
+    string temp;
+    for(string currentID : session_list) {
+        temp += currentID + '\n';
+    }
+    return temp;
+}

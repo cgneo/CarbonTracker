@@ -17,9 +17,10 @@ public:
     Session();
     ~Session();
     string addNewSession();
-    string removeSession(string id);
-    void removeAllSession(string user);
-
+    void removeSession(string sessionID);
+    bool checkSessionExist(string sessionID);
+    void removeAllSession();
+    string displayAllSessions();
 private:
 
 };

@@ -42,7 +42,11 @@ void MainWindow::on_pushButtonStart_clicked()
     {
         addMessage("Server Started...");
 
-        QString line = QString::fromUtf8(random_string(64)).trimmed();
+        Session* a = new Session();
+        string tempID = a->addNewSession();
+//        a->removeSession(tempID);
+        a->removeAllSession();
+        QString line = QString::fromUtf8( a->displayAllSessions() ).trimmed();
         addMessage(line);
     }
 
