@@ -29,11 +29,11 @@ Another feature of the app is creating a network that connects the app users to 
 
     ### UI Team
 
+    - Andrés Orduña - team leader
     - Dain Jung
     - Jane Peltier
     - Nina Bili Rossi
     - Cyrine Ben Tanfous
-    - Andrés Orduña
     - Steven van Heiningen
     - (Zhihui Li)
 
