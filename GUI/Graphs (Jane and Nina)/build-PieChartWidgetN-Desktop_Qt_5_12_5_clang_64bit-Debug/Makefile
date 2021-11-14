@@ -732,7 +732,10 @@ main.o: ../PieChartWidgetN/main.cpp ../PieChartWidgetN/dialog.h \
 dialog.o: ../PieChartWidgetN/dialog.cpp ../PieChartWidgetN/dialog.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		ui_dialog.h
+		ui_dialog.h \
+		../PieChartWidgetN/piechartwidget.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialog.o ../PieChartWidgetN/dialog.cpp
 
 piechartwidget.o: ../PieChartWidgetN/piechartwidget.cpp ../PieChartWidgetN/piechartwidget.h \
