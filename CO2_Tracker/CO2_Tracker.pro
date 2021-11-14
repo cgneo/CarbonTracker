@@ -16,7 +16,8 @@ SOURCES += \
 
 HEADERS += \
     food.hpp \
-    mainwindow.h
+    mainwindow.h \
+    receipt.hpp
 
 FORMS += \
     mainwindow.ui
