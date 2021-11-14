@@ -11,10 +11,12 @@ class Receipt{
     double get_duration();
     int get_number_of_people();
 
+   protected:
     double footprint;
+    double duration;
     double Date[2];
     int number_of_people;
-    int barcode[];
+    int content[];
 };
 
 #endif // RECEIPT_HPP
