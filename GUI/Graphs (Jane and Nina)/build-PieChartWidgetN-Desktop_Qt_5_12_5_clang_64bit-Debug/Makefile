@@ -704,7 +704,10 @@ compiler_uic_make_all: ui_dialog.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_dialog.h
 ui_dialog.h: ../PieChartWidgetN/dialog.ui \
-		/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/uic
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/uic \
+		../PieChartWidgetN/piechartwidget.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 	/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/uic ../PieChartWidgetN/dialog.ui -o ui_dialog.h
 
 compiler_rez_source_make_all:

@@ -1,5 +1,5 @@
 #include "piechartwidget.h"
-#include<QPainter>
+#include <QPainter>
 
 PieChartWidget::PieChartWidget(QWidget *parent): QWidget(parent)
 {

@@ -12,18 +12,29 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
+#include "piechartwidget.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Dialog
 {
 public:
+    QHBoxLayout *horizontalLayout;
+    PieChartWidget *widget;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QString::fromUtf8("Dialog"));
         Dialog->resize(800, 600);
+        horizontalLayout = new QHBoxLayout(Dialog);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        widget = new PieChartWidget(Dialog);
+        widget->setObjectName(QString::fromUtf8("widget"));
+
+        horizontalLayout->addWidget(widget);
+
 
         retranslateUi(Dialog);
 

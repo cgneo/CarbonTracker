@@ -2,6 +2,7 @@
 #define PIECHARTWIDGET_H
 #include <QWidget>
 
+
 class PieChartWidget: public QWidget
 {
     Q_OBJECT
