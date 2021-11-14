@@ -8,6 +8,7 @@ class Transport{
     double get_duration();
 protected:
     double duration;
+    double distance;
 };
 
 class Locomotive: public Transport{
