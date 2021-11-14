@@ -1,3 +1,13 @@
+# Amine Lamouchi 
+This week I contributed to the design of our main classes. We had a meeting on Monday where we brainstormed some classes that model the features we want to include. After agreeing on the set of classes, we tried to remove the redundancies in our design and formulate the inheritance relations that link the classes.
+
+After the design meeting, I planned the tasks of the data team for this week. For more context, we are currently developing a feature that allows the user to upload a receipt, and get the carbon footprint of the products they bought. I decomposed the development of this feature into intermediate steps and assigned them to the team members.
+
+Then, I tackled my main objective for the week which was to code a program that takes a receipt file as input, and returns a vector containing the reference number of each product. This vector of reference numbers will later be used to communicate with a database of carbon footprints.
+I read about the OCR libraries Tesseract and Leptonica since I needed both of them for my implementation. I then developed the functions [is_id, num_str, decompose_line, extract_id_quant, file_to_vector, ocr] which provided a functional implementation of the program.
+
+On Sunday, I led a meeting of the data team to check on everyone’s progress. We discussed what each member of the team managed to accomplish this week and formulated our objectives for the upcoming week.
+
 # Steven van Heiningen 
 This week started with the meeting on Monday during which we decided the teams for the UI team. I will be working with Andres on the profile set-up. For this I worked on tutorials with Andres in which we learned the basics of building widget applications in Qt Creator.
 Next week I will continue following the tutorials and I plan on creating a clear vision of the lay-out of the profile-setup. That way, we can focus on the parts of Qt that we specifically need.
