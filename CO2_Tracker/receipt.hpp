@@ -1,10 +1,13 @@
 #ifndef RECEIPT_HPP
 #define RECEIPT_HPP
+
 class Receipt{
+
    public:
     Receipt();
     void set_footprint(double footprint);
-    void set_duration(double date1, double date2);
+    void set_duration(int duration);
+    void set_dates(int date1, int date2);
     void set_number_of_people(double number_of_people);
 
     double get_footprint();
@@ -13,10 +16,10 @@ class Receipt{
 
    protected:
     double footprint;
-    double duration;
-    double Date[2];
+    int duration; // length in days
+    int Date[2]; // [01012021, 31122021] represents 1/01/2021 to 31/12/2021
     int number_of_people;
-    int content[];
+    int content[]; //list of barcodes from receipt
 };
 
 #endif // RECEIPT_HPP
