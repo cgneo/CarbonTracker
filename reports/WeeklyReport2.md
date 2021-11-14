@@ -1,3 +1,12 @@
+# Steven van Heiningen 
+This week started with the meeting on Monday during which we decided the teams for the UI team. I will be working with Andres on the profile set-up. For this I worked on tutorials with Andres in which we learned the basics of building widget applications in Qt Creator.
+Next week I will continue following the tutorials and I plan on creating a clear vision of the lay-out of the profile-setup. That way, we can focus on the parts of Qt that we specifically need.
+
+
+# Cyrine Ben Tanfous 
+This week, we first started with Monday’s meeting, during which we, the UI team, discussed the general output that we wanted to have for our user’s interface. Hence, we ended up divided in 3 subgroups of 2 people each. Dain and I, are mainly focusing on the general design of the interface, dividing each section, and giving it the different features, to which will be added the work of the other groups.
+To this purpose, we looked up on the internet on different method to get the design that we wanted, one of the possibilities that we discussed was Figma, which is an app that allows us to go from our own drawings and convert them to the website we want. On the other hand, I also went deeper in the use of Qt creator trying to generate a general draft of what we wanted to implement. I tried to understand more the different functionalities of Qtwidget, creating a finder of words from a resource file. Hence, I plan on using what I understood from this tutorial to create a more concrete draft of the general user interface with Dain next week.
+
 # Lucas Serog
 This week Jade and I found some pieces to the project. Together, we found how to use .json files representing grocery products in order to track the carbon footprint of each item. Now we need to figure out how to extract the carbon footprint of any item using its barcode, in c++. I am now currently working on creating classes for the different types of objects we have in our code such as food, receipts, etc. I hope that we can finish creating the classes by the end of this week as well as implementing the c++ aspect of getting carbon footprints.
 
