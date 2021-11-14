@@ -1,3 +1,9 @@
+# Lucas Serog
+This week Jade and I found some pieces to the project. Together, we found how to use .json files representing grocery products in order to track the carbon footprint of each item. Now we need to figure out how to extract the carbon footprint of any item using its barcode, in c++. I am now currently working on creating classes for the different types of objects we have in our code such as food, receipts, etc. I hope that we can finish creating the classes by the end of this week as well as implementing the c++ aspect of getting carbon footprints.
+
+# Marc Saouda
+This week, after attending the data meetings, I tried on multiple attempts to try and embed Python in our cpp code but failed. I tried to do it using QDesktopServices and Python.h. I also started working on the transport.cpp and transport.hpp files and have done a big part of it. Next week, I'll finalize the transport classes and work even more on Python.h because I think it's the best solution to access the database we want to access because they have a Python library.
+
 # Nina Bili Rossi
 This week started off with a GUI meeting. We decided on a structure for the team. I am now in the graphs subbranch with Jane. We talked about potential graph structures (pie charts, histograms, ...). I took some time this week to figure out how QtWidget works and how to use different useful libraries, as well as watching and reading tutorials on graphs. I used QtPaint to create my first pie chart (created a pieChart class). I want to get comfortable with more chart/graph types next week and ultimately manage to link file with our data (in the next few weeks).
 
