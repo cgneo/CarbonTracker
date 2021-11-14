@@ -12,7 +12,8 @@ CONFIG += c++11
 SOURCES += \
     food.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    receipt.cpp
 
 HEADERS += \
     food.hpp \
