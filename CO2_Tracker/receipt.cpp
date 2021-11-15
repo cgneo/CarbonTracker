@@ -1,4 +1,5 @@
 #include "receipt.hpp"
+#include "date.hpp"
 
 Receipt::Receipt() {
     footprint = 0;
@@ -14,7 +15,7 @@ void Receipt::set_duration(int duration) {
     this->duration = duration;
 }
 
-void Receipt::set_dates(int date1, int date2) {
+void Receipt::set_dates(class Date date1, class Date date2) {
     Date[0] = date1;
     Date[1] = date2;
 }
