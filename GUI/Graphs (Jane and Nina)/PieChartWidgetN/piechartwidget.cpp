@@ -13,5 +13,7 @@ void PieChartWidget::paintEvent(QPaintEvent *)
     painter.setBrush(Qt::red);
     painter.drawPie(size, 0, 90*16);
     painter.setBrush(Qt::blue);
-    painter.drawPie(size, 90*16, 270*16);
+    painter.drawPie(size, 90*16, 120*16);
+    painter.setBrush(Qt::green);
+    painter.drawPie(size, 1200*16, 270*16);
 }
