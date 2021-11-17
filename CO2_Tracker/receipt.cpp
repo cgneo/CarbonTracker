@@ -3,7 +3,7 @@
 
 Receipt::Receipt() {
     footprint = 0;
-    duration = 0;
+    duration = 1;
     number_of_people = 1;
 }
 
