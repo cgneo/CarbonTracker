@@ -20,7 +20,7 @@ class Receipt{
     int duration; // length in days
     Date Date[2]; // [date1, date2] each have attributes .day, .month, .year
     int number_of_people;
-    int content[]; //list of barcodes from receipt
+    int receipt[]; //list of barcodes from receipt
 };
 
 #endif // RECEIPT_HPP
