@@ -36,7 +36,13 @@ void MainWindow::on_pushButtonStart_clicked()
     if(!success)
     {
         addMessage("Server failed...");
-
+        Session* a = new Session();
+        string tempID = a->addNewSession();
+//        a->removeSession(tempID);
+//        QString line = QString::fromUtf8( to_string(a->checkSessionExist(tempID)) ).trimmed();
+//        a->removeAllSession();
+        QString line = QString::fromUtf8( a->displayAllSessions() ).trimmed();
+        addMessage(line);
     }
     else
     {
@@ -44,10 +50,10 @@ void MainWindow::on_pushButtonStart_clicked()
 
         Session* a = new Session();
         string tempID = a->addNewSession();
-        a->removeSession(tempID);
-        QString line = QString::fromUtf8( to_string(a->checkSessionExist(tempID)) ).trimmed();
+//        a->removeSession(tempID);
+//        QString line = QString::fromUtf8( to_string(a->checkSessionExist(tempID)) ).trimmed();
 //        a->removeAllSession();
-//        QString line = QString::fromUtf8( a->displayAllSessions() ).trimmed();
+        QString line = QString::fromUtf8( a->displayAllSessions() ).trimmed();
         addMessage(line);
     }
 

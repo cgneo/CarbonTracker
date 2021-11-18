@@ -27,12 +27,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     servedev.cpp \
-    session.cpp
+    session.cpp \
+    socket.cpp
 
 HEADERS += \
         mainwindow.h \
     servedev.h \
-    session.h
+    session.h \
+    socket.h
 
 FORMS += \
         mainwindow.ui
