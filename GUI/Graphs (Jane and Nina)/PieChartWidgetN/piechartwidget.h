@@ -1,6 +1,7 @@
 #ifndef PIECHARTWIDGET_H
 #define PIECHARTWIDGET_H
 #include <QWidget>
+#include <QToolBox>
 
 
 class PieChartWidget: public QWidget

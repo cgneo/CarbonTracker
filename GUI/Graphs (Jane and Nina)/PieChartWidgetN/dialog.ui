@@ -25,8 +25,8 @@
      <widget class="PieChartWidget" name="widget" native="true">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>130</y>
+        <x>100</x>
+        <y>60</y>
         <width>191</width>
         <height>251</height>
        </rect>

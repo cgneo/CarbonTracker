@@ -692,6 +692,8 @@ moc_dialog.cpp: ../PieChartWidgetN/dialog.h \
 moc_piechartwidget.cpp: ../PieChartWidgetN/piechartwidget.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QToolBox \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qtoolbox.h \
 		moc_predefs.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/moc
 	/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/moc $(DEFINES) --include '/Users/ninabilirossi/Desktop/CarbonTracker/GUI/Graphs (Jane and Nina)/build-PieChartWidgetN-Desktop_Qt_5_12_5_clang_64bit-Debug/moc_predefs.h' -I/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/macx-clang -I'/Users/ninabilirossi/Desktop/CarbonTracker/GUI/Graphs (Jane and Nina)/PieChartWidgetN' -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/ninabilirossi/Qt/5.12.5/clang_64/lib ../PieChartWidgetN/piechartwidget.h -o moc_piechartwidget.cpp
@@ -707,7 +709,9 @@ ui_dialog.h: ../PieChartWidgetN/dialog.ui \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/uic \
 		../PieChartWidgetN/piechartwidget.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QToolBox \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qtoolbox.h
 	/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/uic ../PieChartWidgetN/dialog.ui -o ui_dialog.h
 
 compiler_rez_source_make_all:
@@ -735,12 +739,16 @@ dialog.o: ../PieChartWidgetN/dialog.cpp ../PieChartWidgetN/dialog.h \
 		ui_dialog.h \
 		../PieChartWidgetN/piechartwidget.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QToolBox \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qtoolbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialog.o ../PieChartWidgetN/dialog.cpp
 
 piechartwidget.o: ../PieChartWidgetN/piechartwidget.cpp ../PieChartWidgetN/piechartwidget.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QToolBox \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qtoolbox.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QPainter \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qpainter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o piechartwidget.o ../PieChartWidgetN/piechartwidget.cpp

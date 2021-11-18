@@ -38,7 +38,7 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         widget = new PieChartWidget(frame);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(190, 130, 191, 251));
+        widget->setGeometry(QRect(100, 60, 191, 251));
 
         horizontalLayout->addWidget(frame);
 
