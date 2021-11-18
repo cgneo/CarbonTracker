@@ -15,6 +15,7 @@ SOURCES += \
     food.cpp \
     main.cpp \
     mainwindow.cpp \
+    qjson.cpp \
     receipt.cpp
 
 HEADERS += \
@@ -33,3 +34,10 @@ TARGET = CarbonTracker_exe
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../curl_library/curl-7.80.0-win64-mingw/curl-7.80.0-win64-mingw/lib/ -lcurl
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../curl_library/curl-7.80.0-win64-mingw/curl-7.80.0-win64-mingw/lib/ -lcurld
+else:unix: LIBS += -L$$PWD/../../curl_library/curl-7.80.0-win64-mingw/curl-7.80.0-win64-mingw/lib/ -lcurl
+
+INCLUDEPATH += $$PWD/../../curl_library/curl-7.80.0-win64-mingw/curl-7.80.0-win64-mingw/include/curl
+DEPENDPATH += $$PWD/../../curl_library/curl-7.80.0-win64-mingw/curl-7.80.0-win64-mingw/include/curl
