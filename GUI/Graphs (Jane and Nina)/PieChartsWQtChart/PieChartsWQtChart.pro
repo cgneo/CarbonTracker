@@ -10,15 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    dialog.cpp \
-    piechartwidget.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    dialog.h \
-    piechartwidget.h
+    mainwindow.h
 
 FORMS += \
-    dialog.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
