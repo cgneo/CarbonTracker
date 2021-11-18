@@ -18,9 +18,9 @@ class Receipt{
    protected:
     double footprint;
     int duration; // length in days
-    Date Date[2]; // [date1, date2] each have attributes .day, .month, .year
+    Date date[2]; // [01012021, 31122021] represents 1/01/2021 to 31/12/2021
     int number_of_people;
-    int receipt[]; //list of barcodes from receipt
+    int content[]; //list of barcodes from receipt
 };
 
 #endif // RECEIPT_HPP

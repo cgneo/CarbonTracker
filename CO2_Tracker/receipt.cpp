@@ -3,7 +3,7 @@
 
 Receipt::Receipt() {
     footprint = 0;
-    duration = 1;
+    duration = 0;
     number_of_people = 1;
 }
 
@@ -15,9 +15,9 @@ void Receipt::set_duration(int duration) {
     this->duration = duration;
 }
 
-void Receipt::set_dates(class Date date1, class Date date2) {
-    Date[0] = date1;
-    Date[1] = date2;
+void Receipt::set_dates(Date date1, Date date2) {
+    date[0] = date1;
+    date[1] = date2;
 }
 
 void Receipt::set_number_of_people(double number_of_people) {

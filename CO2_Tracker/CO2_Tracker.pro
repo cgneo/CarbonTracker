@@ -10,11 +10,27 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+<<<<<<< Updated upstream
+=======
+    CO2_Calendar.cpp \
+    date.cpp \
+    date.cpp \
+    food.cpp \
+>>>>>>> Stashed changes
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+<<<<<<< Updated upstream
     mainwindow.h
+=======
+    CO2_Calendar.hpp \
+    date.h \
+    date.hpp \
+    food.hpp \
+    mainwindow.h \
+    receipt.hpp
+>>>>>>> Stashed changes
 
 FORMS += \
     mainwindow.ui
