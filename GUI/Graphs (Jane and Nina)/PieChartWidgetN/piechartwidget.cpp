@@ -16,7 +16,23 @@ void PieChartWidget::paintEvent(QPaintEvent *)
     painter.drawPie(size, 90*16, 120*16);
     painter.setBrush(Qt::green);
     painter.drawPie(size, 120*16, 270*16);
+    /*painter.setBrush(Qt::red);
+    painter.drawPie(size, 0, 90*16);
+    painter.setBrush(Qt::blue);
+    painter.drawPie(size, 90*16, 120*16);
+    painter.setBrush(Qt::green);
+    painter.drawPie(size, 120*16, 120*16);
+    painter.setBrush(Qt::yellow);
+    painter.drawPie(size, 120*16, 250*16);
+    painter.setBrush(Qt::magenta);
+    painter.drawPie(size, 250*16, 260*16);
+    painter.setBrush(Qt::gray);
+    painter.drawPie(size, 260*16, 265*16);
+    painter.setBrush(Qt::cyan);
+    painter.drawPie(size, 265*16, 270*16);
+    */
 }
+
 
 
 double pie_chart_data(double categories, double emissions){
@@ -48,5 +64,6 @@ double* get_graph_intervals(double* proportions, int size){
         int k = 360*proportions[i] - intervals[i];
         intervals[i+1] = k;
     }
+    return intervals;
 
 }
