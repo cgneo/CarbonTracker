@@ -38,7 +38,15 @@ double* percentage(double* emissions){
           proportions[i] = emissions[i]/tot;
        }
     return proportions;
+}
 
-
+double* get_graph_intervals(double* proportions, int size){
+    //size is the number of categories, i.e. the length of proportions
+    double intervals[size+1];
+    intervals[0] = 0;
+    for(int i = 0; i<size;i++){
+        int k = 360*proportions[i] - intervals[i];
+        intervals[i+1] = k;
+    }
 
 }
