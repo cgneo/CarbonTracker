@@ -10,10 +10,6 @@ void Food::set_quantity(double quantity) {
     this->quantity = quantity;
 }
 
-void Food::set_barcode(double barcode) {
-    this->barcode = barcode;
-}
-
 void Food::set_footprint(double footprint) {
     this->footprint = footprint;
 }
@@ -22,7 +18,7 @@ double Food::get_quantity() {
     return quantity;
 }
 
-double Food::get_barcode() {
+long Food::get_barcode() {
     return barcode;
 }
 
