@@ -3,6 +3,9 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QString>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
 
 void basics()
 {
@@ -70,5 +73,37 @@ int main(int argc, char *argv[])
     //basics();
     //writeFile("test.txt");
     //readFile("test.txt");
+
+    QString servername = "LOCALHOST\\SQLEXPRESS"; //server name????
+    QString dbname = "test";
+    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC"); // type of database driver to use for the connection
+    db.setConnectOptions();
+    QString dsn = QString("DRIVER=(SQL Native Client);SERVER=%1;DATABASE=%2;Trusted_Connection=Yes;").arg(servername).arg(dbname);
+
+    db.setDatabaseName(dsn);
+
+    if (db.open())
+    {   qDebug() << "Opened";
+        QSqlQuery qry;
+
+        if (qry.exec("SELECT * FROM [test].[dbo].[People]"))
+        {
+            while (qry.next())
+            {
+                qDebug() << qry.value(1).toString(); //1 is the ID of the column of First Names
+            }
+        }
+        else
+        {
+            qDebug() << "Error = " << db.lastError().text();
+        }
+        qDebug() << "Closing...";
+        db.close();
+    }
+    else
+    {
+        qDebug() << "Error = " << db.lastError().text();
+    }
+
     return a.exec();
 }
