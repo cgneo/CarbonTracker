@@ -1,5 +1,6 @@
 #include "survey.h"
 #include "ui_survey.h"
+#include "firstquestion.h"
 #include <QPixmap>
 
 Survey::Survey(QWidget *parent)
@@ -14,5 +15,13 @@ Survey::Survey(QWidget *parent)
 Survey::~Survey()
 {
     delete ui;
+}
+
+
+void Survey::on_pushButton_clicked()
+{
+    hide();
+    firstQuestion = new FirstQuestion(this);
+    firstQuestion->show();
 }
 

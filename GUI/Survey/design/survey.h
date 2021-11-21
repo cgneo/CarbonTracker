@@ -2,6 +2,7 @@
 #define SURVEY_H
 
 #include <QMainWindow>
+class FirstQuestion;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Survey; }
@@ -15,7 +16,11 @@ public:
     Survey(QWidget *parent = nullptr);
     ~Survey();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Survey *ui;
+    FirstQuestion *firstQuestion;
 };
 #endif // SURVEY_H
