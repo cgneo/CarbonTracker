@@ -1,10 +1,5 @@
-#include "date.hpp"
+#include "date.h"
 
-Date::Date() {
-    day = 01;
-    month = 01;
-    year = 2021;
-}
 
 Date::Date(int day, int month, int year) {
     this->day = day;

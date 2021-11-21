@@ -1,5 +1,5 @@
-#ifndef FOOD_HPP
-#define FOOD_HPP
+#ifndef FOOD_H
+#define FOOD_H
 
 class Food{
    public:
@@ -17,4 +17,4 @@ protected:
     double footprint;
 };
 
-#endif // FOOD_HPP
+#endif // FOOD_H

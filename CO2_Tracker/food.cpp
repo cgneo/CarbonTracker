@@ -1,4 +1,4 @@
-#include "food.hpp"
+#include "food.h"
 
 Food::Food() {
     quantity = 1;

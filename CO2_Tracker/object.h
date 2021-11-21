@@ -2,7 +2,8 @@
 #define OBJECT_H
 
 #include <string>
-#include "date.hpp"
+#include "date.h"
+
 using namespace std;
 class object{
 public:
@@ -17,6 +18,7 @@ public:
     void set_footprint(float co2_emission);
     void set_name(string object_name);
     void set_type(string object_type);
+
 protected:
     Date date;
     float footprint;

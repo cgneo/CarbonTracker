@@ -1,5 +1,5 @@
 TEMPLATE = app
-QT += core gui network
+QT += core gui network charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,27 +10,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-<<<<<<< Updated upstream
-=======
-    CO2_Calendar.cpp \
     date.cpp \
-    date.cpp \
+    object.cpp \
     food.cpp \
->>>>>>> Stashed changes
+    transport.cpp \
+    user.cpp\
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    receipt.cpp
 
 HEADERS += \
-<<<<<<< Updated upstream
-    mainwindow.h
-=======
-    CO2_Calendar.hpp \
     date.h \
-    date.hpp \
-    food.hpp \
+    object.h \
+    food.h \
+    transport.h \
+    user.h \
     mainwindow.h \
-    receipt.hpp
->>>>>>> Stashed changes
+    receipt.h
 
 FORMS += \
     mainwindow.ui

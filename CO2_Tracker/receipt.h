@@ -1,6 +1,7 @@
-#ifndef RECEIPT_HPP
-#define RECEIPT_HPP
-#include "date.hpp"
+#ifndef RECEIPT_H
+#define RECEIPT_H
+#include "date.h"
+
 
 class Receipt{
 
@@ -23,4 +24,4 @@ class Receipt{
     int content[]; //list of barcodes from receipt
 };
 
-#endif // RECEIPT_HPP
+#endif // RECEIPT_H

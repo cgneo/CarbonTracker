@@ -1,5 +1,5 @@
-#include "receipt.hpp"
-#include "date.hpp"
+#include "receipt.h"
+#include "date.h"
 
 Receipt::Receipt() {
     footprint = 0;

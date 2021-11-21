@@ -1,22 +1,27 @@
 #include "object.h"
+#include "date.h"
+
 object::object(){date = Date(0,0,0);
                 footprint = 0;
                 name = "Jesus";
                 type = "Food";}
+
 object::object(Date current_date, string object_name, string object_type){
     date = current_date;
-                    footprint = 0;
-                    name = object_name;
-                    type = object_type;
+    footprint = 0;
+    name = object_name;
+    type = object_type;
 }
 Date object::get_date(){
     return date;
 }
+
 float object::get_footprint(){
     return footprint;
 }
 string object::get_type(){
     return type;}
+
 string object::get_name(){
     return name;}
 void object::set_date(Date current_date){
