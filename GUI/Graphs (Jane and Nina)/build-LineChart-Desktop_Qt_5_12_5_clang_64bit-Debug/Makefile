@@ -203,6 +203,7 @@ DIST          = /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/spec_pr
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/qt_config.prf \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/spec_post.prf \
+		../LineChart/.qmake.stash \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/mac/sdk.prf \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/toolchain.prf \
@@ -400,6 +401,7 @@ Makefile: ../LineChart/LineChart.pro /Users/ninabilirossi/Qt/5.12.5/clang_64/mks
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/qt_config.prf \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/mac/sdk.prf \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/toolchain.prf \
@@ -579,6 +581,7 @@ Makefile: ../LineChart/LineChart.pro /Users/ninabilirossi/Qt/5.12.5/clang_64/mks
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/qt_config.prf:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/macx-clang/qmake.conf:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/exclusive_builds.prf:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/mac/sdk.prf:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/toolchain.prf:
@@ -653,6 +656,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r LineChart.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
