@@ -11,6 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
@@ -22,6 +24,8 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
+    QFrame *horizontalFrame;
+    QHBoxLayout *horizontalLayout;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -32,9 +36,15 @@ public:
         MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        horizontalFrame = new QFrame(centralwidget);
+        horizontalFrame->setObjectName(QString::fromUtf8("horizontalFrame"));
+        horizontalFrame->setGeometry(QRect(9, 10, 761, 531));
+        horizontalLayout = new QHBoxLayout(horizontalFrame);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

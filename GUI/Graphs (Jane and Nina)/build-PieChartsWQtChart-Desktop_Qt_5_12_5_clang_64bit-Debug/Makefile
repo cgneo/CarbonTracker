@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -mmacosx-version-min=10.12 -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -mmacosx-version-min=10.12 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I../PieChartsWQtChart -I. -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/macx-clang -F/Users/ninabilirossi/Qt/5.12.5/clang_64/lib
+INCPATH       = -I../PieChartsWQtChart -I. -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/macx-clang -F/Users/ninabilirossi/Qt/5.12.5/clang_64/lib
 QMAKE         = /Users/ninabilirossi/Qt/5.12.5/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = PieChartsWQtChart1.0.0
 DISTDIR = /Users/ninabilirossi/Desktop/CarbonTracker/GUI/Graphs\ (Jane\ and\ Nina)/build-PieChartsWQtChart-Desktop_Qt_5_12_5_clang_64bit-Debug/.tmp/PieChartsWQtChart1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -mmacosx-version-min=10.12 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/ninabilirossi/Qt/5.12.5/clang_64/lib
-LIBS          = $(SUBLIBS) -F/Users/ninabilirossi/Qt/5.12.5/clang_64/lib -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL   
+LIBS          = $(SUBLIBS) -F/Users/ninabilirossi/Qt/5.12.5/clang_64/lib -framework QtCharts -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL   
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed
@@ -97,6 +97,8 @@ DIST          = /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/spec_pr
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_charts.pri \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
@@ -293,6 +295,8 @@ Makefile: ../PieChartsWQtChart/PieChartsWQtChart.pro /Users/ninabilirossi/Qt/5.1
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_charts.pri \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
@@ -426,6 +430,7 @@ Makefile: ../PieChartsWQtChart/PieChartsWQtChart.pro /Users/ninabilirossi/Qt/5.1
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/yacc.prf \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/lex.prf \
 		../PieChartsWQtChart/PieChartsWQtChart.pro \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/QtCharts.prl \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtGui.framework/QtGui.prl \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCore.framework/QtCore.prl
@@ -470,6 +475,8 @@ Makefile: ../PieChartsWQtChart/PieChartsWQtChart.pro /Users/ninabilirossi/Qt/5.1
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_bluetooth.pri:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
+/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_charts.pri:
+/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_charts_private.pri:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_concurrent.pri:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri:
@@ -603,6 +610,7 @@ Makefile: ../PieChartsWQtChart/PieChartsWQtChart.pro /Users/ninabilirossi/Qt/5.1
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/yacc.prf:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/features/lex.prf:
 ../PieChartsWQtChart/PieChartsWQtChart.pro:
+/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/QtCharts.prl:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtGui.framework/QtGui.prl:
 /Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCore.framework/QtCore.prl:
@@ -679,9 +687,68 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: ../PieChartsWQtChart/mainwindow.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QtCharts \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qchartglobal.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/chartsnamespace.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qabstractaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qabstractbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qabstractseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qarealegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qareaseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarcategoryaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarlegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarset.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxplotlegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxplotmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxplotseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxset.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlesticklegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlestickmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlestickseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlestickset.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcategoryaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qchart.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qchartview.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qdatetimeaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhbarmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhboxplotmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhcandlestickmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhorizontalbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhorizontalpercentbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhorizontalstackedbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhpiemodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhxymodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlegend.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlineseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlogvalueaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpercentbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpielegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpiemodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpieseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpieslice.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpolarchart.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qscatterseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qsplineseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qstackedbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvalueaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvbarmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvboxplotmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvcandlestickmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvpiemodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvxymodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qxylegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qxymodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qxyseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qtchartsversion.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QChartView \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QPieSeries \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QPieSlice \
 		moc_predefs.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/moc
-	/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/moc $(DEFINES) --include '/Users/ninabilirossi/Desktop/CarbonTracker/GUI/Graphs (Jane and Nina)/build-PieChartsWQtChart-Desktop_Qt_5_12_5_clang_64bit-Debug/moc_predefs.h' -I/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/macx-clang -I'/Users/ninabilirossi/Desktop/CarbonTracker/GUI/Graphs (Jane and Nina)/PieChartsWQtChart' -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/ninabilirossi/Qt/5.12.5/clang_64/lib ../PieChartsWQtChart/mainwindow.h -o moc_mainwindow.cpp
+	/Users/ninabilirossi/Qt/5.12.5/clang_64/bin/moc $(DEFINES) --include '/Users/ninabilirossi/Desktop/CarbonTracker/GUI/Graphs (Jane and Nina)/build-PieChartsWQtChart-Desktop_Qt_5_12_5_clang_64bit-Debug/moc_predefs.h' -I/Users/ninabilirossi/Qt/5.12.5/clang_64/mkspecs/macx-clang -I'/Users/ninabilirossi/Desktop/CarbonTracker/GUI/Graphs (Jane and Nina)/PieChartsWQtChart' -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers -I/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/ninabilirossi/Qt/5.12.5/clang_64/lib ../PieChartsWQtChart/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -709,6 +776,65 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 main.o: ../PieChartsWQtChart/main.cpp ../PieChartsWQtChart/mainwindow.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QtCharts \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qchartglobal.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/chartsnamespace.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qabstractaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qabstractbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qabstractseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qarealegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qareaseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarcategoryaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarlegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarset.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxplotlegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxplotmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxplotseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxset.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlesticklegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlestickmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlestickseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlestickset.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcategoryaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qchart.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qchartview.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qdatetimeaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhbarmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhboxplotmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhcandlestickmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhorizontalbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhorizontalpercentbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhorizontalstackedbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhpiemodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhxymodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlegend.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlineseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlogvalueaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpercentbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpielegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpiemodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpieseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpieslice.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpolarchart.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qscatterseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qsplineseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qstackedbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvalueaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvbarmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvboxplotmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvcandlestickmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvpiemodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvxymodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qxylegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qxymodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qxyseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qtchartsversion.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QChartView \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QPieSeries \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QPieSlice \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../PieChartsWQtChart/main.cpp
@@ -716,6 +842,65 @@ main.o: ../PieChartsWQtChart/main.cpp ../PieChartsWQtChart/mainwindow.h \
 mainwindow.o: ../PieChartsWQtChart/mainwindow.cpp ../PieChartsWQtChart/mainwindow.h \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QtCharts \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qchartglobal.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/chartsnamespace.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qabstractaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qabstractbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qabstractseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qarealegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qareaseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarcategoryaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarlegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qbarset.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxplotlegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxplotmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxplotseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qboxset.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlesticklegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlestickmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlestickseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcandlestickset.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qcategoryaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qchart.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qchartview.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qdatetimeaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhbarmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhboxplotmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhcandlestickmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhorizontalbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhorizontalpercentbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhorizontalstackedbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhpiemodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qhxymodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlegend.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlineseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qlogvalueaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpercentbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpielegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpiemodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpieseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpieslice.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qpolarchart.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qscatterseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qsplineseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qstackedbarseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvalueaxis.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvbarmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvboxplotmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvcandlestickmodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvpiemodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qvxymodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qxylegendmarker.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qxymodelmapper.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qxyseries.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/qtchartsversion.h \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QChartView \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QPieSeries \
+		/Users/ninabilirossi/Qt/5.12.5/clang_64/lib/QtCharts.framework/Headers/QPieSlice \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../PieChartsWQtChart/mainwindow.cpp
 
