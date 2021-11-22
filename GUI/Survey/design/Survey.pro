@@ -10,17 +10,20 @@ CONFIG += c++11
 
 SOURCES += \
     firstquestion.cpp \
+    home.cpp \
     main.cpp \
     secondquestion.cpp \
     survey.cpp
 
 HEADERS += \
     firstquestion.h \
+    home.h \
     secondquestion.h \
     survey.h
 
 FORMS += \
     firstquestion.ui \
+    home.ui \
     secondquestion.ui \
     survey.ui
 

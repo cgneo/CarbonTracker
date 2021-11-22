@@ -2,7 +2,7 @@
 #define SURVEY_H
 
 #include <QMainWindow>
-class FirstQuestion;
+class home;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Survey; }
@@ -21,6 +21,6 @@ private slots:
 
 private:
     Ui::Survey *ui;
-    FirstQuestion *firstQuestion;
+    home *homeObject;
 };
 #endif // SURVEY_H

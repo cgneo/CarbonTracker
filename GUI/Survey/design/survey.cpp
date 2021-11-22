@@ -1,6 +1,6 @@
 #include "survey.h"
 #include "ui_survey.h"
-#include "firstquestion.h"
+#include "home.h"
 #include <QPixmap>
 
 Survey::Survey(QWidget *parent)
@@ -21,7 +21,7 @@ Survey::~Survey()
 void Survey::on_pushButton_clicked()
 {
     hide();
-    firstQuestion = new FirstQuestion(this);
-    firstQuestion->show();
+    homeObject = new home(this);
+    homeObject->show();
 }
 

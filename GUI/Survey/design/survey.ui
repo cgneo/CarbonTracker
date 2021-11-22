@@ -137,13 +137,13 @@
      <rect>
       <x>250</x>
       <y>20</y>
-      <width>269</width>
+      <width>281</width>
       <height>37</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Courier New</family>
+      <family>Gill Sans</family>
       <pointsize>32</pointsize>
      </font>
     </property>
@@ -162,7 +162,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Courier New</family>
+      <family>Gill Sans</family>
       <pointsize>27</pointsize>
      </font>
     </property>
