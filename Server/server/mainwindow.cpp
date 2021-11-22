@@ -2,9 +2,10 @@
 #include "ui_mainwindow.h"
 #include"servedev.h"
 
-
 #include <iostream>
 #include "session.cpp"
+
+#include <QString>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -41,7 +42,7 @@ void MainWindow::on_pushButtonStart_clicked()
 //        a->removeSession(tempID);
 //        QString line = QString::fromUtf8( to_string(a->checkSessionExist(tempID)) ).trimmed();
 //        a->removeAllSession();
-        QString line = QString::fromUtf8( a->displayAllSessions() ).trimmed();
+        QString line = QString::fromStdString( a->displayAllSessions() ).trimmed();
         addMessage(line);
     }
     else
@@ -53,7 +54,7 @@ void MainWindow::on_pushButtonStart_clicked()
 //        a->removeSession(tempID);
 //        QString line = QString::fromUtf8( to_string(a->checkSessionExist(tempID)) ).trimmed();
 //        a->removeAllSession();
-        QString line = QString::fromUtf8( a->displayAllSessions() ).trimmed();
+        QString line = QString::fromStdString( a->displayAllSessions() ).trimmed();
         addMessage(line);
     }
 

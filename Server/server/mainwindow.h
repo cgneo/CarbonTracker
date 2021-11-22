@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include"servedev.h"
+
+#include <QString>
+
 namespace Ui {
 class MainWindow;
 }
