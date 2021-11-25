@@ -1,10 +1,12 @@
 #include "object.h"
 #include "date.h"
 
-object::object(){date = Date(0,0,0);
-                footprint = 0;
-                name = "Jesus";
-                type = "Food";}
+object::object(){
+    date = Date(0,0,0);
+    footprint = 0;
+    name = "Jesus";
+    type = "Food";
+}
 
 object::object(Date current_date, string object_name, string object_type){
     date = current_date;
@@ -24,6 +26,7 @@ string object::get_type(){
 
 string object::get_name(){
     return name;}
+
 void object::set_date(Date current_date){
     date = current_date;
 }
