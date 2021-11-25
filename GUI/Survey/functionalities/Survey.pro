@@ -10,22 +10,25 @@ CONFIG += c++11
 
 SOURCES += \
     firstquestion.cpp \
-    home.cpp \
+    login.cpp \
     main.cpp \
     secondquestion.cpp \
-    survey.cpp
+    survey.cpp \
+    thirdquestion.cpp
 
 HEADERS += \
     firstquestion.h \
-    home.h \
+    login.h \
     secondquestion.h \
-    survey.h
+    survey.h \
+    thirdquestion.h
 
 FORMS += \
     firstquestion.ui \
-    home.ui \
+    login.ui \
     secondquestion.ui \
-    survey.ui
+    survey.ui \
+    thirdquestion.ui
 
 TRANSLATIONS += \
     Survey_en_150.ts

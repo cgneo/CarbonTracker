@@ -2,6 +2,7 @@
 #define SECONDQUESTION_H
 
 #include <QDialog>
+class ThirdQuestion;
 
 namespace Ui {
 class SecondQuestion;
@@ -15,8 +16,12 @@ public:
     explicit SecondQuestion(QWidget *parent = nullptr);
     ~SecondQuestion();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::SecondQuestion *ui;
+    ThirdQuestion *thirdQuestion;
 };
 
 #endif // SECONDQUESTION_H
