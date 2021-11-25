@@ -13,19 +13,22 @@ SOURCES += \
     home.cpp \
     main.cpp \
     secondquestion.cpp \
-    survey.cpp
+    survey.cpp \
+    transport.cpp
 
 HEADERS += \
     firstquestion.h \
     home.h \
     secondquestion.h \
-    survey.h
+    survey.h \
+    transport.h
 
 FORMS += \
     firstquestion.ui \
     home.ui \
     secondquestion.ui \
-    survey.ui
+    survey.ui \
+    transport.ui
 
 TRANSLATIONS += \
     Survey_en_150.ts
