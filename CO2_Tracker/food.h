@@ -3,7 +3,7 @@
 
 class Food{
    public:
-    Food();
+    Food(int quantity);
     void set_quantity(double quantity);
     void set_barcode();
     void set_footprint(double barcode, double quantity);

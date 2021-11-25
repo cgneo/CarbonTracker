@@ -1,8 +1,8 @@
 #include "food.h"
 
-Food::Food() {
-    quantity = 1;
-    barcode = 0000000000000;
+Food::Food(int quantity) {
+    set_quantity(quantity);
+    set_barcode();
     set_footprint(barcode, quantity);
 }
 
@@ -11,11 +11,11 @@ void Food::set_quantity(double quantity) {
 }
 
 void Food::set_footprint(double barcode, double quantity) {
-    footprint = get_carbon(barcode) * quantity;
+    footprint = get_carbon(barcode) * quantity/1000;
 }
 
 void Food::set_barcode() {
-    barcode = 0000000000000; //will replace with function that gets barcode of object
+    barcode = 00000000; //will replace with function that gets barcode of object
 }
 
 double Food::get_quantity() {
