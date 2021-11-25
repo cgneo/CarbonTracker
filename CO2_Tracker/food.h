@@ -20,7 +20,6 @@ class Food : public Object {
 protected:
     long barcode;
     double quantity;
-    double footprint;
     string category;
 };
 

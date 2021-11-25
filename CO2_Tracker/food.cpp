@@ -5,7 +5,7 @@ Food::Food(double quantity) {
     set_quantity(quantity);
     set_barcode();
     set_footprint(barcode, quantity);
-    //set_category(barcode);
+    set_category(barcode);
 }
 
 void Food::set_quantity(double quantity) {
