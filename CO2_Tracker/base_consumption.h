@@ -9,7 +9,7 @@ class Base_Consumption
 private:
     int consumptionId;
     int base_consumptionId; // all the three id's can be the same
-    vector<object> *base_consumption;
+    vector<Object> *base_consumption;
     double footprint;
 
 public:
@@ -22,7 +22,7 @@ public:
 
     //Other methods
 
-    vector<object> *calculate_base_consumption();//Receive as parameters the info from the survey
+    vector<Object> *calculate_base_consumption();//Receive as parameters the info from the survey
 
 
 

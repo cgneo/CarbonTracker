@@ -13,7 +13,7 @@ private:
     int consumptionId;
     int userId;
     int base_consumptionId;
-    vector<object> total_consumption; //Array of objects
+    vector<Object> total_consumption; //Array of objects
     double total_footprint;
     Base_Consumption base_consumption;
 
@@ -26,7 +26,7 @@ public:
     int get_base_consumptionId();
 
     //Other methods
-    void add_object(object obj);
+    void add_object(Object obj);
     void add_base_consumption(Base_Consumption base_consumption);
 };
 

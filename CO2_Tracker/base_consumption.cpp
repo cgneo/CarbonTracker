@@ -23,7 +23,7 @@ int const Base_Consumption::get_consumptionId(){
 int const Base_Consumption::get_base_consumptionId(){
     return base_consumptionId;
 }
-vector<object> Base_Consumption::*calculate_base_consumption(){
+vector<Object> Base_Consumption::*calculate_base_consumption(){
 
 }
 

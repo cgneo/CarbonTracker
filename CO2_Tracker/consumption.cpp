@@ -23,7 +23,7 @@ int Consumption::get_consumptionId(){
 int Consumption::get_base_consumptionId(){
     return base_consumption.userId;
 }
-void Consumption::add_object(object obj){
+void Consumption::add_object(Object obj){
 
 }
 void Consumption::add_base_consumption(Base_Consumption base_consumption){
