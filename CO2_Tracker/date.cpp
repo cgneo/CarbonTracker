@@ -4,9 +4,9 @@
 
 int Date::days_in_month[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
-Date::Date(){
+Date::Date(){};
 
-};
+Date::~Date(){};
 
 Date::Date(int day, int month, int year) {
     this->day = day;

@@ -1,14 +1,11 @@
 #include "base_consumption.h"
 
-<<<<<<< Updated upstream
-Base_Consumption::Base_Consumption(int userId)
-=======
+
 Base_Consumption::Base_Consumption(){
 
 }
 
 Base_Consumption::Base_Consumption( int userId)
->>>>>>> Stashed changes
 {
     this->userId = userId;
     base_consumptionId = userId;

@@ -27,11 +27,8 @@ public:
 
     //Other methods
     void add_object(Object obj);
-<<<<<<< Updated upstream
     void add_base_consumption(Base_Consumption base_consumption);
-=======
-    void add_base_consumption();
->>>>>>> Stashed changes
+
 };
 
 #endif // CONSUMPTION_H

@@ -5,19 +5,13 @@
 #include "date.h"
 
 using namespace std;
-<<<<<<< Updated upstream
-class Object {
-=======
+
 class Object{
->>>>>>> Stashed changes
 public:
     Object();
     Object(Date current_date, string object_name, string object_type);
     ~Object();
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     Date get_date();
     double get_footprint();
     string get_type();

@@ -22,19 +22,14 @@ int Consumption::get_userId(){
 int Consumption::get_consumptionId(){
     return consumptionId;
 }
-<<<<<<< Updated upstream
-int Consumption::get_base_consumptionId(){
-    return base_consumption.userId;
-}
-=======
+
 //int Consumption::get_base_consumptionId(){
 //    return base_consumption.userId;
 //}
->>>>>>> Stashed changes
 void Consumption::add_object(Object obj){
 
 }
 void Consumption::add_base_consumption(Base_Consumption base_consumption){
-    this -> base_consumption = base_consumption;
+//    this->base_consumption = base_consumption;
 }
 

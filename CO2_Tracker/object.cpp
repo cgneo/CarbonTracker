@@ -12,15 +12,11 @@ Object::Object(Date current_date, string object_name, string object_type){
     name = object_name;
     type = object_type;
 }
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 Date Object::get_date(){
     return date;
 }
 
-<<<<<<< Updated upstream
 double Object::get_footprint(){
     return footprint;
 }
@@ -49,29 +45,7 @@ void Object::set_type(string object_type){
     type = object_type;
 }
 
-=======
-float Object::get_footprint(){
-    return footprint;
-}
 
-string Object::get_type(){
-    return type;}
-
-string Object::get_name(){
-    return name;}
-void Object::set_date(Date current_date){
-    date = current_date;
-}
-void Object::set_footprint(float co2_emission){
-    footprint = co2_emission;
-}
-void Object::set_name(string object_name){
-    name = object_name;
-}
-void Object::set_type(string object_type){
-    type = object_type;
-}
->>>>>>> Stashed changes
 Object::~Object(){
     delete &date;
     type.clear();
