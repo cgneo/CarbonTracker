@@ -29,9 +29,4 @@ void Consumption::add_object(object obj){
 void Consumption::add_base_consumption(){
 
 }
-int consumptionId;
-int userId;
-int base_consumptionId;
-vector<object> total_consumption; //Array of objects
-double total_footprint;
-Base_Consumption base_consumption;
+
