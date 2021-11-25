@@ -18,18 +18,17 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr/*,double* data*/);
     ~MainWindow();
-    //QPieSlice::hovered(bool state);
 
-public slots:
-    void hoverexplode(QPieSlice slice){
+/*public slots:
+    void QPieSlice::hoverexplode(QPieSlice slice){
         slice.hovered(slice.state);
         slice.setExploded(state);
-        //emit ;
+        emit slice.hovered(slice.state);
             };
 signals:
-    void element_hovered(bool state);
-
-
+    //void element_hovered(bool state);
+    void QPieSlice::hovered(bool state);
+*/
 private:
     Ui::MainWindow *ui;
 };

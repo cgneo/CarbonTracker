@@ -10,12 +10,12 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
     ui->setupUi(this);
 
 
-
+/*
     QPieSlice a, b;
     QObject::connect(&a, &QPieSlice::hovered,
                     &b, &QPieSlice::hoverexplode);
 
-
+*/
 
 
 
