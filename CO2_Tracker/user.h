@@ -8,6 +8,7 @@ using namespace std;
 
 class User {
 private :
+  int userId;
   string username;
   string name;
   Date *birthday;
@@ -18,7 +19,12 @@ private :
   int seeds;
 
 public:
+  //Get and set methods
+  void set_userId();
+  int get_userId();
+
   void set_username(string username);
+  string get_username();
 
   void set_name(string name);
 
@@ -35,6 +41,16 @@ public:
   void set_seeds(int seeds);
 
   ~User();
+
+  //Additional functions to write
+
+  int lastId(); //Get the last user_id stored in the DB
+
+
+
+
+
+
 
 };
 #endif // USER_H

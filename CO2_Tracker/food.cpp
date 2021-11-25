@@ -22,7 +22,7 @@ double Food::get_quantity() {
     return quantity;
 }
 
-long Food::get_barcode() {
+double Food::get_barcode() {
     return barcode;
 }
 
