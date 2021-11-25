@@ -2,8 +2,17 @@
 #include <iostream>
 using namespace std;
 
+void User::set_userId(){
+    int last_Id = lastId();
+    this->userId = last_Id + 1;
+    //We want to create different unique ID's
+}
+
 void User::set_username(string username)
 {this->username = username;}
+
+string User::get_username( )
+{return username;}
 
 void User::set_name(string name)
     {this->name = name;}

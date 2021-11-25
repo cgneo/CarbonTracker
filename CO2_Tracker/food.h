@@ -11,6 +11,7 @@ class Food{
     double get_footprint();
     double get_quantity();
     long get_barcode();
+
 protected:
     long barcode;
     int quantity;
