@@ -3,7 +3,7 @@
 Food::Food() {
     quantity = 1;
     barcode = 0000000000000;
-    footprint = set_footprint(barcode, quantity);
+    set_footprint(barcode, quantity);
 }
 
 void Food::set_quantity(double quantity) {
@@ -22,7 +22,7 @@ double Food::get_quantity() {
     return quantity;
 }
 
-int Food::get_barcode() {
+double Food::get_barcode() {
     return barcode;
 }
 
