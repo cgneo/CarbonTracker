@@ -52,11 +52,9 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../CO2_Tracker/Transport.cpp \
-		../CO2_Tracker/main.cpp \
+SOURCES       = ../CO2_Tracker/main.cpp \
 		../CO2_Tracker/mainwindow.cpp moc_mainwindow.cpp
-OBJECTS       = Transport.o \
-		main.o \
+OBJECTS       = main.o \
 		mainwindow.o \
 		moc_mainwindow.o
 DIST          = ../../../../Qt/6.1.3/macos/mkspecs/features/spec_pre.prf \
@@ -187,8 +185,7 @@ DIST          = ../../../../Qt/6.1.3/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.1.3/macos/mkspecs/features/exceptions.prf \
 		../../../../Qt/6.1.3/macos/mkspecs/features/yacc.prf \
 		../../../../Qt/6.1.3/macos/mkspecs/features/lex.prf \
-		../CO2_Tracker/CO2_Tracker.pro ../CO2_Tracker/mainwindow.h ../CO2_Tracker/Transport.cpp \
-		../CO2_Tracker/main.cpp \
+		../CO2_Tracker/CO2_Tracker.pro ../CO2_Tracker/mainwindow.h ../CO2_Tracker/main.cpp \
 		../CO2_Tracker/mainwindow.cpp
 QMAKE_TARGET  = CarbonTracker_exe
 DESTDIR       = 
@@ -511,7 +508,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/6.1.3/macos/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../CO2_Tracker/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../CO2_Tracker/Transport.cpp ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../CO2_Tracker/mainwindow.ui $(DISTDIR)/
 
 
@@ -579,9 +576,6 @@ compiler_lex_clean:
 compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
-
-Transport.o: ../CO2_Tracker/Transport.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Transport.o ../CO2_Tracker/Transport.cpp
 
 main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \

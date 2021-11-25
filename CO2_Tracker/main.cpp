@@ -41,7 +41,8 @@ int main(int argc, char *argv[])
             //parse the reply JSON and display result in the UI
             QJsonObject jsonObject= QJsonDocument::fromJson(reply->readAll()).object();
             //get code
-            QString code = jsonObject["results"].toString();
+            QJsonValue productKey =jsonObject["results"];
+            QString code = productKey[0].toString();
             //pass info to the window
             lineEditCode.setText(code);
         }
