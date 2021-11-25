@@ -1,22 +1,27 @@
 #ifndef FOOD_H
 #define FOOD_H
 
-class Food{
+#include <string>
+#include "object.h"
+
+class Food : public Object {
    public:
-    Food(int quantity);
+    Food(double quantity);
     void set_quantity(double quantity);
     void set_barcode();
-    void set_footprint(double barcode, double quantity);
+    virtual void set_footprint(double barcode, double quantity);
 
-    double get_footprint();
     double get_quantity();
-    double get_barcode();
+    long get_barcode();
 
-    double get_carbon(double barcode);
+    double retrieve_carbon(double barcode);
+    string set_category(double barcode);
+
 protected:
-    double barcode;
-    doubles quantity;
+    long barcode;
+    double quantity;
     double footprint;
+    string category;
 };
 
 #endif // FOOD_H

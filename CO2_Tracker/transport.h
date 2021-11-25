@@ -1,8 +1,10 @@
 #ifndef TRANSPORT_H
 #define TRANSPORT_H
 
+#include "object.h"
 
-class Transport{
+
+class Transport : public Object{
    public:
     Transport();
     void set_duration(double time);
@@ -14,29 +16,26 @@ protected:
 class Locomotive: public Transport{
 public:
     Locomotive();
-    double get_carbon_emission();
-    private:
+private:
     double carbon_coefficient;
-    double carbon_emission;
+    double footprint;
 };
 
 
 class Airplane: public Transport{
 public:
     Airplane();
-    double get_carbon_emission();
 private:
     double carbon_coefficient;
-    double carbon_emission;
+    double footprint;
 };
 
 class Car: public Transport{
 public:
     Car();
-    double get_carbon_emission();
 private:
     double carbon_coefficient;
-    double carbon_emission;
+    double footprint;
 };
 
 
