@@ -26,7 +26,7 @@ int Consumption::get_base_consumptionId(){
 void Consumption::add_object(object obj){
 
 }
-void Consumption::add_base_consumption(){
-
+void Consumption::add_base_consumption(Base_Consumption base_consumption){
+    this -> base_consumption = base_consumption;
 }
 

@@ -1,6 +1,6 @@
 #include "base_consumption.h"
 
-Base_Consumption::Base_Consumption( int userId)
+Base_Consumption::Base_Consumption(int userId)
 {
     this->userId = userId;
     base_consumptionId = userId;
@@ -22,5 +22,8 @@ int const Base_Consumption::get_consumptionId(){
 }
 int const Base_Consumption::get_base_consumptionId(){
     return base_consumptionId;
+}
+vector<object> Base_Consumption::*calculate_base_consumption(){
+
 }
 
