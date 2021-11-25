@@ -7,13 +7,13 @@
 class Base_Consumption
 {
 private:
-    int userId;
     int consumptionId;
     int base_consumptionId; // all the three id's can be the same
     vector<object> *base_consumption;
     double footprint;
 
 public:
+    int userId;
     Base_Consumption(const int userId); //Args missing
     ~Base_Consumption();
     int const get_consumptionId();
