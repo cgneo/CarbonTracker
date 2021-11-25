@@ -1,5 +1,6 @@
 #ifndef DATE_H
 #define DATE_H
+#include <string>
 
 class Date {
 public:
@@ -10,6 +11,10 @@ public:
     int get_day();
     int get_month();
     int get_year();
+    Date* add_duration(int days);
+    static int days_in_month[13];
+    void print();
+    std::string print2();
 
 private:
     int day;

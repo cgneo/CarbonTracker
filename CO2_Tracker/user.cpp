@@ -3,7 +3,8 @@
 using namespace std;
 
 void User::set_userId(){
-    int last_Id = lastId();
+    int last_Id = 0;
+    //int last_Id = lastId();
     this->userId = last_Id + 1;
     //We want to create different unique ID's
 }

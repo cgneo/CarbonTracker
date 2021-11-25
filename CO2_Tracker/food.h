@@ -18,9 +18,15 @@ class Food : public Object {
     string set_category(double barcode);
 
 protected:
+<<<<<<< Updated upstream
     long barcode;
     double quantity;
     string category;
+=======
+    double barcode;
+    int quantity;
+    double footprint;
+>>>>>>> Stashed changes
 };
 
 #endif // FOOD_H

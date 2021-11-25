@@ -19,7 +19,8 @@ SOURCES += \
     user.cpp\
     main.cpp \
     mainwindow.cpp \
-    receipt.cpp
+    receipt.cpp \
+
 
 HEADERS += \
     base_consumption.h \

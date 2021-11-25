@@ -14,11 +14,12 @@ private:
 
 public:
     int userId;
+    Base_Consumption();
     Base_Consumption(const int userId); //Args missing
     ~Base_Consumption();
-    int const get_consumptionId();
-    int const get_userId();
-    int const get_base_consumptionId();
+    int get_consumptionId();
+    int get_userId();
+    int get_base_consumptionId();
 
     //Other methods
 

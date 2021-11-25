@@ -1,26 +1,34 @@
 #include "base_consumption.h"
 
+<<<<<<< Updated upstream
 Base_Consumption::Base_Consumption(int userId)
+=======
+Base_Consumption::Base_Consumption(){
+
+}
+
+Base_Consumption::Base_Consumption( int userId)
+>>>>>>> Stashed changes
 {
     this->userId = userId;
     base_consumptionId = userId;
     consumptionId = userId;
-    base_consumption = calculate_base_consumption();//Args missing
-
+//    base_consumption = calculate_base_consumption();//Args missing
 }
 
 Base_Consumption::~Base_Consumption(){
     delete &userId;
-    delete &base_consumption;
+//    delete &base_consumption;
 }
 
-int const Base_Consumption::get_userId(){
+int Base_Consumption::get_userId(){
     return userId;
 }
-int const Base_Consumption::get_consumptionId(){
+int Base_Consumption::get_consumptionId(){
     return consumptionId;
 }
-int const Base_Consumption::get_base_consumptionId(){
+
+int Base_Consumption::get_base_consumptionId(){
     return base_consumptionId;
 }
 vector<Object> Base_Consumption::*calculate_base_consumption(){

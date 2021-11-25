@@ -6,10 +6,12 @@ Consumption::Consumption(int userId)
     this->base_consumptionId = userId;
     consumptionId = (this->userId); // Creates unique id equal to that of the user
     total_footprint = 0;
+//    base_consumption = Base_Consumption(userId);//Args missing
 }
+
 Consumption::~Consumption(){
     delete &userId;
-    delete &base_consumption;
+//    delete &base_consumption;
     delete &total_footprint;
     delete &total_consumption;
 }
@@ -20,9 +22,15 @@ int Consumption::get_userId(){
 int Consumption::get_consumptionId(){
     return consumptionId;
 }
+<<<<<<< Updated upstream
 int Consumption::get_base_consumptionId(){
     return base_consumption.userId;
 }
+=======
+//int Consumption::get_base_consumptionId(){
+//    return base_consumption.userId;
+//}
+>>>>>>> Stashed changes
 void Consumption::add_object(Object obj){
 
 }
