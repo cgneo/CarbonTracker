@@ -10,11 +10,11 @@ class Food{
 
     double get_footprint();
     double get_quantity();
-    long get_barcode();
+    int get_barcode();
 
     double get_carbon(double barcode);
 protected:
-    long barcode;
+    int barcode;
     int quantity;
     double footprint;
 };
