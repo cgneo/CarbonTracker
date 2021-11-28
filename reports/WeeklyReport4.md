@@ -29,7 +29,8 @@ Next week I plan on finishing the two graphs, animating them, and most surely wo
 
 # Zhihui Li
 This week I implemented session terminal program (previous weeks were GUI programs) because I tested on Ubuntu server, and it only accepts console program.
-I fixed some bugs last week (for example QString::fromUtf8 causes problem on Linux, so I changed to QString::fromStdString), and I made terminal output colorful
+I fixed some bugs last week (for example QString::fromUtf8 causes problem on Linux, so I changed to QString::fromStdString), and I made terminal output colorful.
+Another thing I did this week was to fix the server. My server on AWS had been having serious internal errors and I have no choice but to shut it down, wipe clean, and delete the instance. I have to create a new instance on AWS EC2. Next week, hopefully the server could be functional.
 
 # Alejandro Christlieb
 At the beginning of this week I worked together with Catalina and the server team to define the relationships between our classes and create the draft of the database. I also created the outline and the header files of the "BaseConcumption" and "Consumption" classes, adding comments and defining functions that were to be done by other data members. Additionally, I reviewed and tested the "Date" and "Receipt" classes, adding more particular methods that weren't defined yet and succesfully managing to create receipt objects with their respective date and duration attributes. Lastly, we had a meeting Sunday morning to distribute tasks for the following week, where I explained to my coworkers the methodologies to be followed in order to test the classes on the main, despite lacking some of the functions from other teammates. My goal for next week will be to ensure that the server team establish a connection between our SQL DB and our C++ application, as well as to make sure that the merging and testing of the UI and the classes goes smoothly. 
