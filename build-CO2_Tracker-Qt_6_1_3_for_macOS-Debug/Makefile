@@ -771,20 +771,9 @@ moc_mainwindow.o: moc_mainwindow.cpp
 
 ####### Install
 
-install_target: first FORCE
-	@test -d $(INSTALL_ROOT)/opt/CarbonTracker_exe/bin || mkdir -p $(INSTALL_ROOT)/opt/CarbonTracker_exe/bin
-	$(DEL_FILE) -r $(INSTALL_ROOT)/opt/CarbonTracker_exe/bin/CarbonTracker_exe.app
-	
-	$(QINSTALL) CarbonTracker_exe.app $(INSTALL_ROOT)/opt/CarbonTracker_exe/bin/CarbonTracker_exe.app
+install:  FORCE
 
-uninstall_target: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/opt/CarbonTracker_exe/bin/CarbonTracker_exe.app
-	-$(DEL_DIR) $(INSTALL_ROOT)/opt/CarbonTracker_exe/bin/ 
-
-
-install: install_target  FORCE
-
-uninstall: uninstall_target  FORCE
+uninstall:  FORCE
 
 FORCE:
 
