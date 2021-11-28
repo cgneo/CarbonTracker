@@ -23,10 +23,7 @@ QApplication a(argc, argv);
 QWidget widget;
 QFormLayout layout(&widget);
 QLineEdit lineEditCode;
-QLineEdit lineEditBrand;
-QLineEdit lineEditEco;
-QLineEdit lineEditCategory;
-auto edits = {&lineEditCode, &lineEditBrand, &lineEditEco, &lineEditCategory};
+auto edits = {&lineEditCode};
 for(auto edit : edits) edit->setReadOnly(true);
 layout.addRow("Code:", &lineEditCode);
 QPushButton button("Click for magic");
@@ -47,6 +44,9 @@ QObject::connect(&networkManager, &QNetworkAccessManager::finished,
         //parse the reply JSON and display result in the UI
         QJsonObject jsonObject= QJsonDocument::fromJson(reply->readAll()).object();
         //get code
+        QJsonValue alpha = jsonObject.value("co2e");
+        double beta = alpha.toDouble();
+        std::cout<<beta;
          QString code = jsonObject["co2e_unit"].toString();
         //pass info to the window
         lineEditCode.setText(code);
@@ -59,7 +59,7 @@ QUrl url("https://beta2.api.climatiq.io/estimate");
 QNetworkRequest networkRequest(url);
 networkRequest.setRawHeader("Authorization","Bearer PMM4N5N6DEMY3VHQJXZ3S0FEE9GZ");
 networkRequest.setRawHeader("Content-Type","application/json");
-QByteArray data("{\"emission_factor\": \"passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na\",\"parameters\":{\"distance\": 10,\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
+QByteArray data("{\"emission_factor\": \"passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na\",\"parameters\":{\"distance\": 30,\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
 //send GET request when the button is clicked
 QObject::connect(&button, &QPushButton::clicked, [&](){
     networkManager.post(networkRequest,data);
@@ -71,59 +71,3 @@ widget.show();
 return a.exec();
 
 }
-
-/*
-int main(int argc, char *argv[])
-{   QApplication a(argc, argv);
-    //setup GUI (you could be doing this in the designer)
-    QWidget widget;
-    QFormLayout layout(&widget);
-    QLineEdit lineEditCode;
-    QLineEdit lineEditBrand;
-    QLineEdit lineEditEco;
-    QLineEdit lineEditCategory;
-    auto edits = {&lineEditCode, &lineEditBrand, &lineEditEco, &lineEditCategory};
-    for(auto edit : edits) edit->setReadOnly(true);
-    layout.addRow("Code:", &lineEditCode);
-    QPushButton button("Click for magic");
-    layout.addRow(&button);
-    QNetworkAccessManager *mgr = new QNetworkAccessManager();
-    const QUrl url(QStringLiteral("https://beta2.api.climatiq.io/emission-factors/sectors?source=BEIS"));
-    QNetworkRequest request(url);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    request.setRawHeader("Authorization","Bearer PMM4N5N6DEMY3VHQJXZ3S0FEE9GZ");
-    QByteArray data("{\"emission_factor\": \"passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na\",\"parameters\":{\"distance\": 10,\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
-    QNetworkReply *reply = mgr->post(request, data);
-    QObject::connect(reply, &QNetworkReply::finished, [=](){
-        if(reply->error() == QNetworkReply::NoError){
-            QJsonObject jsonObject= QJsonDocument::fromJson(reply->readAll()).object();
-            //get code
-            QJsonValue productKey =jsonObject["results"];
-            QString code = productKey[0].toString();
-            //pass info to the window
-            for(auto edit : edits) edit->setText(code);
-        }
-        else{
-            for(auto edit : edits) edit->setText("Error");
-            std::cout<< reply->error();
-        }
-        //button.setEnabled(true);
-        reply->deleteLater();
-    });
-
-    QObject::connect(&button, &QPushButton::clicked, [&](){
-        mgr->post(request, data);
-        button.setEnabled(false);
-        for(auto edit : edits) edit->setText("Loading. . .");
-    });
-
-    widget.show();
-    return a.exec();*/
-
-
-
-
-
-
-
-
