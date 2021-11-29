@@ -16,8 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix("/Users/dainjung/Downloads/Screenshot 2021-11-25 at 15.57.00");
         ui ->label -> setPixmap(pix.scaled(100,120, Qt::KeepAspectRatio));
 
-        //ui -> Seedsprogress->setValue(ui -> checkBox -> stateChanged(int));
-   // connect(ui -> checkBox, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(setValue(int)));
+       //ui -> Seedsprogress -> setValue(ui -> checkBox -> stateChanged(int));
+      //connect(ui -> checkBox, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(setValue(int)));
     //connect(ui -> checkBox_3, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(valueChanged(int)));
     //connect(ui -> checkBox_4, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(valueChanged(int)));
 }

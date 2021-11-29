@@ -16,18 +16,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
-        <green>197</green>
-        <blue>153</blue>
+        <red>232</red>
+        <green>233</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
-        <green>197</green>
-        <blue>153</blue>
+        <red>232</red>
+        <green>233</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
@@ -45,18 +45,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
-        <green>197</green>
-        <blue>153</blue>
+        <red>232</red>
+        <green>233</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
-        <green>197</green>
-        <blue>153</blue>
+        <red>232</red>
+        <green>233</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
@@ -74,18 +74,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
-        <green>197</green>
-        <blue>153</blue>
+        <red>232</red>
+        <green>233</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
-        <green>197</green>
-        <blue>153</blue>
+        <red>232</red>
+        <green>233</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
@@ -201,6 +201,31 @@
          </colorrole>
         </disabled>
        </palette>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #C2C7CB;
+	
+	background-color: rgb(236, 249, 227);
+}
+
+
+QTabBar::tab {
+    
+	background-color: rgb(103, 116, 81);
+    border: 1px solid #C4C4C3;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 20ex;
+    padding: 5px;
+	font: 13pt &quot;Gill Sans&quot;;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    
+	background-color: rgb(201, 199, 203);
+}</string>
       </property>
       <property name="tabShape">
        <enum>QTabWidget::Rounded</enum>
@@ -726,6 +751,30 @@ QProgressBar::chunk{
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="InputActivities">
+           <property name="font">
+            <font>
+             <family>Gill Sans</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	
+	;
+	background-color: rgb(243, 178, 105);
+	border-color: rgb(79, 128, 28);
+	border-width: 20px; 
+	border-radius: 10px;
+	padding: 8px;
+
+}</string>
+           </property>
+           <property name="text">
+            <string>What did you do today? </string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QLabel" name="label_2">
            <property name="text">
             <string/>
@@ -787,7 +836,21 @@ QProgressBar::chunk{
            <property name="font">
             <font>
              <family>Gill Sans</family>
+             <pointsize>13</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTextBrowser{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 20px;
+	border-color: rgb(171, 197, 153);
+	background-color: rgb(171, 197, 153);
+	font: 13pt &quot;Gill Sans&quot;;
+}</string>
            </property>
            <property name="html">
             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -807,7 +870,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="text">
-            <string>CheckBox</string>
+            <string>Challenge # 1</string>
            </property>
           </widget>
          </item>
@@ -819,7 +882,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="text">
-            <string>CheckBox</string>
+            <string>Challenge # 2</string>
            </property>
           </widget>
          </item>
@@ -831,7 +894,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="text">
-            <string>CheckBox</string>
+            <string>Challenge # 3</string>
            </property>
           </widget>
          </item>
@@ -843,7 +906,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="text">
-            <string>CheckBox</string>
+            <string>Challenge # 4</string>
            </property>
           </widget>
          </item>
@@ -882,12 +945,21 @@ p, li { white-space: pre-wrap; }
            <property name="palette">
             <palette>
              <active>
+              <colorrole role="Button">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>171</red>
+                 <green>197</green>
+                 <blue>153</blue>
+                </color>
+               </brush>
+              </colorrole>
               <colorrole role="Base">
                <brush brushstyle="SolidPattern">
                 <color alpha="255">
-                 <red>233</red>
-                 <green>208</green>
-                 <blue>160</blue>
+                 <red>171</red>
+                 <green>197</green>
+                 <blue>153</blue>
                 </color>
                </brush>
               </colorrole>
@@ -902,12 +974,21 @@ p, li { white-space: pre-wrap; }
               </colorrole>
              </active>
              <inactive>
+              <colorrole role="Button">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>171</red>
+                 <green>197</green>
+                 <blue>153</blue>
+                </color>
+               </brush>
+              </colorrole>
               <colorrole role="Base">
                <brush brushstyle="SolidPattern">
                 <color alpha="255">
-                 <red>233</red>
-                 <green>208</green>
-                 <blue>160</blue>
+                 <red>171</red>
+                 <green>197</green>
+                 <blue>153</blue>
                 </color>
                </brush>
               </colorrole>
@@ -922,6 +1003,15 @@ p, li { white-space: pre-wrap; }
               </colorrole>
              </inactive>
              <disabled>
+              <colorrole role="Button">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>171</red>
+                 <green>197</green>
+                 <blue>153</blue>
+                </color>
+               </brush>
+              </colorrole>
               <colorrole role="Base">
                <brush brushstyle="SolidPattern">
                 <color alpha="255">
@@ -951,10 +1041,12 @@ p, li { white-space: pre-wrap; }
            </property>
            <property name="styleSheet">
             <string notr="true">QTextBrowser{
-	color: rgb(171, 197, 153);
+
 	border: 2px solid rgb(37, 39, 48);
-	border-radius: 20px
-	background-color: rgb(37,  36, 44)
+	border-radius: 20px;
+	border-color: rgb(171, 197, 153);
+	background-color: rgb(171, 197, 153);
+
 }</string>
            </property>
            <property name="html">
@@ -987,7 +1079,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="text">
-            <string>CheckBox</string>
+            <string>Challenge #2</string>
            </property>
           </widget>
          </item>
@@ -999,7 +1091,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="text">
-            <string>CheckBox</string>
+            <string>Challenge #3</string>
            </property>
           </widget>
          </item>
@@ -1125,7 +1217,6 @@ p, li { white-space: pre-wrap; }
          <string>Challenge 1</string>
         </property>
        </widget>
-
        <widget class="QDial" name="dial">
         <property name="geometry">
          <rect>
@@ -1136,13 +1227,11 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
        </widget>
-
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
         <string>Graph page</string>
        </attribute>
-
        <widget class="QCheckBox" name="checkBox_2">
         <property name="geometry">
          <rect>
@@ -1156,7 +1245,6 @@ p, li { white-space: pre-wrap; }
          <string>CheckBox</string>
         </property>
        </widget>
-
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
