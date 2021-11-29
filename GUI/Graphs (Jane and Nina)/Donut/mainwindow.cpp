@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    /*QPieSlice::connect(ui->horizontalFrame,SIGNAL(slice2.hovered(slice2.state))),
+            ui->horizontalFrame,SLOT(slice2->setExploded());*/
 
 
 /*
@@ -43,6 +45,11 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
     slice6->setLabelVisible();
     slice7->setLabelVisible();
     slice8->setLabelVisible();
+
+    QPieSlice::connect(slice2, &QPieSlice::hovered,
+                       slice2, &QPieSlice::setExploded);
+
+
 
     QChart *chart = new QChart();
     chart->addSeries(series);
