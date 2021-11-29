@@ -38,7 +38,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalFrame = new QFrame(centralwidget);
         horizontalFrame->setObjectName(QString::fromUtf8("horizontalFrame"));
-        horizontalFrame->setGeometry(QRect(30, 10, 681, 521));
+        horizontalFrame->setGeometry(QRect(90, 20, 621, 511));
         horizontalLayout = new QHBoxLayout(horizontalFrame);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         MainWindow->setCentralWidget(centralwidget);

@@ -28,16 +28,16 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
     QPieSlice *slice1 = series->append("meat", 1);
 
 
-    slice->setExploded();
+    //slice->setExploded();
     slice->setLabelVisible();
-    QPieSlice *slice2 =series->append("seafood, 1%", 1);
-    QPieSlice *slice3 =series->append("poultry", 1);
+    QPieSlice *slice2 =series->append("seafood, 1%", 2);
+    QPieSlice *slice3 =series->append("poultry", 2);
     QPieSlice *slice4 =series->append("grains", 3);
     QPieSlice *slice5 =series->append("condiments", 1);
-    QPieSlice *slice6 =series->append("dairy", 1);
-    QPieSlice *slice7 =series->append("snacks", 1);
-    QPieSlice *slice8 =series->append("drinks", 1);
-
+    QPieSlice *slice6 =series->append("dairy", 0.5);
+    QPieSlice *slice7 =series->append("snacks", 0.4);
+    QPieSlice *slice8 =series->append("drinks", 0.1);
+    slice1->setLabelVisible();
     slice2->setLabelVisible();
     slice3->setLabelVisible();
     slice4->setLabelVisible();
@@ -46,9 +46,24 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
     slice7->setLabelVisible();
     slice8->setLabelVisible();
 
+    QPieSlice::connect(slice1, &QPieSlice::hovered,
+                       slice1, &QPieSlice::setExploded);
     QPieSlice::connect(slice2, &QPieSlice::hovered,
                        slice2, &QPieSlice::setExploded);
-
+    QPieSlice::connect(slice3, &QPieSlice::hovered,
+                       slice3, &QPieSlice::setExploded);
+    QPieSlice::connect(slice4, &QPieSlice::hovered,
+                       slice4, &QPieSlice::setExploded);
+    QPieSlice::connect(slice5, &QPieSlice::hovered,
+                       slice5, &QPieSlice::setExploded);
+    QPieSlice::connect(slice6, &QPieSlice::hovered,
+                       slice6, &QPieSlice::setExploded);
+    QPieSlice::connect(slice7, &QPieSlice::hovered,
+                       slice7, &QPieSlice::setExploded);
+    QPieSlice::connect(slice8, &QPieSlice::hovered,
+                       slice8, &QPieSlice::setExploded);
+    QPieSlice::connect(slice, &QPieSlice::hovered,
+                       slice, &QPieSlice::setExploded);
 
 
     QChart *chart = new QChart();
