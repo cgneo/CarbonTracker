@@ -11,7 +11,8 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    transport_API.cpp
 
 HEADERS += \
     mainwindow.h

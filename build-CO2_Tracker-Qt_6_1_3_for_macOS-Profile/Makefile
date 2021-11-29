@@ -520,7 +520,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/6.1.3/macos/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../CO2_Tracker/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/transport_API.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../CO2_Tracker/mainwindow.ui $(DISTDIR)/
 
 
@@ -560,6 +560,8 @@ compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
 moc_mainwindow.cpp: ../CO2_Tracker/mainwindow.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QByteArray \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		moc_predefs.h \
@@ -590,8 +592,11 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QByteArray \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../CO2_Tracker/transport_API.cpp \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/QNetworkAccessManager \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkaccessmanager.h \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/QNetworkReply \
@@ -773,6 +778,8 @@ main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../CO2_Tracker/main.cpp
 
 mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QByteArray \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		ui_mainwindow.h
