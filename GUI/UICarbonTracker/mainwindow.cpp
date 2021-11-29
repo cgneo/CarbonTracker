@@ -1,11 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QPixmap>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+
     //QPixmap pix("/Users/dainjung/Downloads/photo_2021-11-18 10.52.38.jpeg");
         //ui ->label -> setPixmap(pix.scaled(100,120, Qt::KeepAspectRatio));
 
@@ -27,8 +31,6 @@ MainWindow::~MainWindow()
 
 
 
-
-
 void MainWindow::on_checkBox_clicked()
 {
 
@@ -36,8 +38,10 @@ void MainWindow::on_checkBox_clicked()
 
 void MainWindow::on_Seedsprogress_valueChanged(int value)
 {
+
     //ui -> Seedsprogress -> setValue(ui -> on_checkBox_clicked());
     //connect(); --> QCheckBox
+
 
 }
 void MainWindow::on_checkBox_stateChanged(int arg1)

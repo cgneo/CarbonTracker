@@ -46,3 +46,5 @@ private:
 //    void drawPicture(const QPointF & point, const QPicture & picture);
 
 //};
+
+
