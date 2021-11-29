@@ -8,11 +8,18 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix("/Users/cyrine/Bureau/Capture d’écran 2021-11-25 à 11.42.59 AM");
-        ui ->label -> setPixmap(pix.scaled(350,250, Qt::KeepAspectRatio));
 
 
+    //QPixmap pix("/Users/dainjung/Downloads/photo_2021-11-18 10.52.38.jpeg");
+        //ui ->label -> setPixmap(pix.scaled(100,120, Qt::KeepAspectRatio));
 
+    QPixmap pix("/Users/dainjung/Downloads/Screenshot 2021-11-25 at 15.57.00");
+        ui ->label -> setPixmap(pix.scaled(100,120, Qt::KeepAspectRatio));
+
+        //ui -> Seedsprogress->setValue(ui -> checkBox -> stateChanged(int));
+   // connect(ui -> checkBox, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(setValue(int)));
+    //connect(ui -> checkBox_3, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(valueChanged(int)));
+    //connect(ui -> checkBox_4, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(valueChanged(int)));
 }
 
 MainWindow::~MainWindow()
@@ -31,9 +38,16 @@ void MainWindow::on_checkBox_clicked()
 
 void MainWindow::on_Seedsprogress_valueChanged(int value)
 {
+
+    //ui -> Seedsprogress -> setValue(ui -> on_checkBox_clicked());
+    //connect(); --> QCheckBox
+
+
 }
 void MainWindow::on_checkBox_stateChanged(int arg1)
 {
 
 }
+
+
 
