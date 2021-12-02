@@ -22,6 +22,22 @@ MainWindow::MainWindow(QWidget *parent)
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
+
+/*
+    QStringList categories;
+   categories << "Jan" << "Feb" << "Mar" << "Apr" << "May" << "Jun";
+   QBarCategoryAxis *axisX = new QBarCategoryAxis();
+   axisX->append(categories);
+   chart->addAxis(axisX, Qt::AlignBottom);
+   series->attachAxis(axisX);
+   axisX->setRange(QString("Jan"), QString("Jun"));
+
+   QValueAxis *axisY = new QValueAxis();
+   chart->addAxis(axisY, Qt::AlignLeft);
+   series->attachAxis(axisY);
+   //axisY->setRange(0, 20);*/
+
+
     chart->setTitle("Your carbon footprint through time");
 
 
@@ -64,10 +80,10 @@ MainWindow::MainWindow(QWidget *parent)
     chart->setPlotAreaBackgroundVisible(true);
 
 
-    QCategoryAxis *axisX = new QCategoryAxis();
-    QCategoryAxis *axisY = new QCategoryAxis();
+    //QCategoryAxis *axisX = new QCategoryAxis();
+    //QCategoryAxis *axisY = new QCategoryAxis();
 
-    // Customize axis label font
+    /* Customize axis label font
     QFont labelsFont;
     labelsFont.setPixelSize(12);
     axisX->setLabelsFont(labelsFont);
@@ -82,9 +98,9 @@ MainWindow::MainWindow(QWidget *parent)
     // Customize axis label colors
     QBrush axisBrush(Qt::white);
     axisX->setLabelsBrush(axisBrush);
-    axisY->setLabelsBrush(axisBrush);
+    axisY->setLabelsBrush(axisBrush);*/
 
-    // Customize grid lines and shades
+    /* Customize grid lines and shades
     axisX->setGridLineVisible(false);
     axisY->setGridLineVisible(false);
     axisY->setShadesPen(Qt::NoPen);
@@ -104,7 +120,7 @@ MainWindow::MainWindow(QWidget *parent)
     chart->addAxis(axisX, Qt::AlignBottom);
     chart->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisX);
-    series->attachAxis(axisY);
+    series->attachAxis(axisY);*/
 
 
     chart->setTheme(QChart::ChartThemeBrownSand);
