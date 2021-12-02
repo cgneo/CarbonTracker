@@ -5,7 +5,7 @@ Base_Consumption::Base_Consumption(){
 
 }
 
-Base_Consumption::Base_Consumption( int userId)
+Base_Consumption::Base_Consumption(int userId)
 {
     this->userId = userId;
     base_consumptionId = userId;
