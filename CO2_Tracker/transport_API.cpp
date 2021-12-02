@@ -10,6 +10,29 @@
 #include <QtWidgets>
 #include <QtNetwork>
 #include <iostream>
+#include <QFile>
+
+
+
+
+QByteArray get_API(){
+    QFile file("API_KEY.txt");
+    //QByteArray *bytes = new Q;
+    QByteArray bytes;
+    if( file.open( QIODevice::ReadOnly ) )
+    {
+        try{
+            bytes = file.readAll();
+            file.close();
+        } catch(...) {
+            std::cout << "Error";
+        }
+    }
+    return  bytes;
+}
+
+
+
 
 int calculator(int argc, char *argv[])
 {
@@ -52,7 +75,8 @@ QObject::connect(&networkManager, &QNetworkAccessManager::finished,
 //url parameters
 QUrl url("https://beta2.api.climatiq.io/estimate");
 QNetworkRequest networkRequest(url);
-networkRequest.setRawHeader("Authorization","Bearer PMM4N5N6DEMY3VHQJXZ3S0FEE9GZ");
+QByteArray key = get_API();
+networkRequest.setRawHeader("Authorization", key);
 networkRequest.setRawHeader("Content-Type","application/json");
 char* distance = "1000";
 QByteArray data("{\"emission_factor\": \"passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na\",\"parameters\":{\"distance\": ");

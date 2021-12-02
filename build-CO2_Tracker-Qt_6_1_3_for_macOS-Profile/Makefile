@@ -774,7 +774,9 @@ main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.h \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qudpsocket.h \
-		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtnetworkversion.h
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtnetworkversion.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QFile \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../CO2_Tracker/main.cpp
 
 mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
