@@ -13,8 +13,15 @@ MainWindow::MainWindow(QWidget *parent)
     //QPixmap pix("/Users/dainjung/Downloads/photo_2021-11-18 10.52.38.jpeg");
         //ui ->label -> setPixmap(pix.scaled(100,120, Qt::KeepAspectRatio));
 
-    QPixmap pix("/Users/dainjung/Downloads/Screenshot 2021-11-25 at 15.57.00");
-        ui ->label -> setPixmap(pix.scaled(100,120, Qt::KeepAspectRatio));
+    //QPixmap pix("/Users/dainjung/Downloads/Screenshot 2021-11-25 at 15.57.00");
+        //ui ->label -> setPixmap(pix.scaled(100,120, Qt::KeepAspectRatio));
+
+    QPixmap pix("/Users/cyrine/Desktop/Semester3/CSE201/TD3/CarbonTracker/CarbonTrack_goodversion/Inspiration/Capture\ d’écran\ 2021-11-25\ à\ 12.14.07\ PM.png");
+        ui ->label -> setPixmap(pix.scaled(300,400, Qt::KeepAspectRatio));
+
+
+
+
 
        //ui -> Seedsprogress -> setValue(ui -> checkBox -> stateChanged(int));
       //connect(ui -> checkBox, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(setValue(int)));
