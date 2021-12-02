@@ -80,7 +80,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>290</x>
      <y>260</y>
      <width>151</width>
      <height>51</height>
@@ -109,7 +109,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#8962b4;&quot;&gt;Transport&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">

@@ -8,7 +8,7 @@ Transport::Transport(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->setupUi(this);
-    QPixmap pix("/Users/andres/Desktop/PROJECT\ PIC/trasnport_icon.png /");
+    QPixmap pix("/Users/andres/Desktop/PROJECT\ PIC/trasnport_icon.png");
     ui ->label_pic -> setPixmap(pix.scaled(350,600, Qt::KeepAspectRatio));
 }
 

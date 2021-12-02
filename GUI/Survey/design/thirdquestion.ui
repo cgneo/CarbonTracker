@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SecondQuestion</class>
- <widget class="QDialog" name="SecondQuestion">
+ <class>ThirdQuestion</class>
+ <widget class="QDialog" name="ThirdQuestion">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
-    <height>471</height>
+    <width>725</width>
+    <height>463</height>
    </rect>
   </property>
   <property name="palette">
@@ -77,55 +77,63 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="layoutWidget_2">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>106</x>
-     <y>77</y>
-     <width>431</width>
-     <height>291</height>
+     <x>60</x>
+     <y>140</y>
+     <width>601</width>
+     <height>181</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;How much do you spend a year in furniture?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>How much electricity do you consume in average monthly (slider with discrete values in 100kWh)</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radio1">
-      <property name="text">
-       <string>I don't buy furniture often</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radio2">
-      <property name="text">
-       <string>Less than 200 €</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radio3">
-      <property name="text">
-       <string>200-1000 €</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radio4">
-      <property name="text">
-       <string>More than a 1000 €</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QSlider" name="horizontalSlider">
+        <property name="maximum">
+         <number>10</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+        <property name="tickInterval">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="minimumSize">
+         <size>
+          <width>16</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>Answer</string>
+       <string>Next</string>
       </property>
      </widget>
     </item>
@@ -133,5 +141,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_2</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>546</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>579</x>
+     <y>251</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

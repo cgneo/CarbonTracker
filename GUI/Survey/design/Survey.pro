@@ -14,6 +14,7 @@ SOURCES += \
     main.cpp \
     secondquestion.cpp \
     survey.cpp \
+    thirdquestion.cpp \
     transport.cpp
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     home.h \
     secondquestion.h \
     survey.h \
+    thirdquestion.h \
     transport.h
 
 FORMS += \
@@ -28,6 +30,7 @@ FORMS += \
     home.ui \
     secondquestion.ui \
     survey.ui \
+    thirdquestion.ui \
     transport.ui
 
 TRANSLATIONS += \
