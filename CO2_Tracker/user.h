@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 #include "date.h"
+#include "consumption.h"
+#include "base_consumption.h"
+
 using namespace std;
 
 class User {
@@ -17,6 +20,8 @@ private :
   double footprint;
   vector<string> friends;
   int seeds;
+  Consumption consumption;
+  Base_Consumption base_consumption;
 
 public:
   //Get and set methods

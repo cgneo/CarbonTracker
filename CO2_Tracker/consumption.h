@@ -27,7 +27,7 @@ public:
 
     //Other methods
     void add_object(Object obj);
-    void add_base_consumption(Base_Consumption base_consumption);
+    void add_base_consumption();
 
 };
 

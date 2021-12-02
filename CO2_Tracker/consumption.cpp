@@ -11,7 +11,7 @@ Consumption::Consumption(int userId)
 
 Consumption::~Consumption(){
     delete &userId;
-//    delete &base_consumption;
+    delete &base_consumptionId;
     delete &total_footprint;
     delete &total_consumption;
 }
@@ -28,8 +28,9 @@ int Consumption::get_consumptionId(){
 //}
 void Consumption::add_object(Object obj){
 
+
 }
-void Consumption::add_base_consumption(Base_Consumption base_consumption){
-//    this->base_consumption = base_consumption;
+void Consumption::add_base_consumption(){
+
 }
 
