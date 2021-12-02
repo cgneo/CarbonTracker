@@ -36,6 +36,9 @@ void User::set_friends(string friend_id)
 void User::set_seeds(int seeds)
     {this->seeds = seeds;}
 
+void User::set_living_partners(int living_partners)
+    {this->living_partners = living_partners;}
+
 User::~User() {
     username.clear();
     name.clear();
@@ -45,4 +48,5 @@ User::~User() {
     delete &footprint;
     friends.clear();
     delete &seeds;
+    delete &living_partners;
 };

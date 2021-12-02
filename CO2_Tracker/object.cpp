@@ -13,6 +13,7 @@ Object::Object(Date current_date, string object_name, string object_type){
     type = object_type;
 }
 
+//---------------------Get Methods--------------------------
 Date Object::get_date(){
     return date;
 }
@@ -29,6 +30,7 @@ string Object::get_name(){
     return name;
 }
 
+//---------------------Set Methods--------------------------
 void Object::set_date(Date current_date){
     date = current_date;
 }

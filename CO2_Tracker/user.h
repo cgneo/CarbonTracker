@@ -22,6 +22,7 @@ private :
   int seeds;
   Consumption consumption;
   Base_Consumption base_consumption;
+  int living_partners;
 
 public:
   //Get and set methods
@@ -44,6 +45,8 @@ public:
   void set_friends(string friend_id);
 
   void set_seeds(int seeds);
+
+  void set_living_partners(int living_partners);
 
   ~User();
 
