@@ -1,13 +1,23 @@
 #include "food.h"
 #include <string>
 
-Food::Food(double quantity) {
-    set_quantity(quantity);
-    set_barcode();
-    set_footprint(barcode, quantity);
-    set_category(barcode);
+Food::Food() {
+    set_quantity(1);
+    set_barcode(00000000);
+    set_category("food");
+}
+//---------------------Get Methods--------------------------
+double Food::get_quantity() {
+    return quantity;
 }
 
+double Food::get_barcode() {
+    return barcode;
+}
+string Food::get_category(){
+    return category;
+}
+//-------------------Set Methods----------------------------
 void Food::set_quantity(double quantity) {
     this->quantity = quantity;
 }
@@ -17,21 +27,14 @@ void Food::set_footprint(double barcode, double quantity) {
 }
 
 void Food::set_barcode(double barcode) {
-    this -> barcode = barcode; //will replace with function that gets barcode of object
+    this -> barcode = barcode;
 }
 
 void Food::set_category(string str) {
-    category = str; //will replace w/function that retrieves category
+    category = str;
 }
 
-double Food::get_quantity() {
-    return quantity;
-}
-
-double Food::get_barcode() {
-    return barcode;
-}
-
+//---------------Other Methods------------------------------
 
 
 string Food::retrieve_category(double barcode){
@@ -44,11 +47,11 @@ double Food::retrieve_carbon(double barcode) {
                //C02 footprint of food item
 }
 
-void Food::read_food_item(double barcode){
+void Food::create_food_item(double barcode){
     double co2_total = retrieve_carbon(barcode);
     string str = retrieve_category(barcode);
     set_category(str);
+    set_quantity(1);
     set_barcode(barcode);
     set_footprint(co2_total, 1);
-
 }
