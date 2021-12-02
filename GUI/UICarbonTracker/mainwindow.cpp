@@ -16,18 +16,28 @@ MainWindow::MainWindow(QWidget *parent)
     //QPixmap pix("/Users/dainjung/Downloads/Screenshot 2021-11-25 at 15.57.00");
         //ui ->label -> setPixmap(pix.scaled(100,120, Qt::KeepAspectRatio));
 
-    QPixmap pix("/Users/cyrine/Desktop/Semester3/CSE201/TD3/CarbonTracker/CarbonTrack_goodversion/Inspiration/Capture\ d’écran\ 2021-11-25\ à\ 12.14.07\ PM.png");
-        ui ->label -> setPixmap(pix.scaled(300,400, Qt::KeepAspectRatio));
+    //QPixmap pix("/Users/cyrine/Desktop/Semester3/CSE201/TD3/CarbonTracker/CarbonTrack_goodversion/Inspiration/Capture\ d’écran\ 2021-11-25\ à\ 12.14.07\ PM.png");
+        //ui ->label -> setPixmap(pix.scaled(300,400, Qt::KeepAspectRatio));
+      QPixmap pix("/Users/dainjung/Screenshot 2021-12-02 at 10.33.04");
+        ui ->label -> setPixmap(pix.scaled(30,30, Qt::KeepAspectRatio));
 
 
-
-
-
-       //ui -> Seedsprogress -> setValue(ui -> checkBox -> stateChanged(int));
+       //ui -> SeedsprogressBar -> setValue(ui -> checkBox -> stateChanged(int));
       //connect(ui -> checkBox, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(setValue(int)));
-    //connect(ui -> checkBox_3, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(valueChanged(int)));
-    //connect(ui -> checkBox_4, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(valueChanged(int)));
+      //connect(ui -> checkBox_3, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(valueChanged(int)));
+      //connect(ui -> checkBox_4, SIGNAL (isChecked(int)), ui -> Seedsprogress, SLOT(valueChanged(int)));
+        //ui->SeedsprogressBar->setOrientation(Qt::Horizontal);
+        //ui-> SeedsprogressBar->setRange(0, 100);
+        //for( int i = 0; i <100; ++i ) {
+            //if (ui->checkBox-> isChecked())
+            //{
+           //     ui->SeedsprogressBar->setValue(i);
+            //}
+          // }
+       // ui->setupUi(this);
+    connect(ui -> Dailychallenge, SIGNAL (valueChanged(int)), ui -> SeedsprogressBar, SLOT(setValue(int)));
 }
+
 
 MainWindow::~MainWindow()
 {
@@ -38,10 +48,6 @@ MainWindow::~MainWindow()
 
 
 
-void MainWindow::on_checkBox_clicked()
-{
-
-}
 
 void MainWindow::on_Seedsprogress_valueChanged(int value)
 {
@@ -51,10 +57,11 @@ void MainWindow::on_Seedsprogress_valueChanged(int value)
 
 
 }
-void MainWindow::on_checkBox_stateChanged(int arg1)
+
+
+
+void MainWindow::on_pushButton_clicked()
 {
 
 }
-
-
 

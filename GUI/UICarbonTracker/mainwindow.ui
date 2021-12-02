@@ -231,7 +231,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -685,16 +685,27 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <attribute name="title">
         <string>Profile page</string>
        </attribute>
-       <widget class="QWidget" name="verticalLayoutWidget">
+       <widget class="QFrame" name="verticalFrame">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>-2</y>
-          <width>231</width>
-          <height>671</height>
+          <x>10</x>
+          <y>30</y>
+          <width>211</width>
+          <height>541</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    border-radius: 4px;
+    padding: 2px;
+	
+	background-color: rgb(116, 135, 106);
+}</string>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="leftMargin">
           <number>5</number>
          </property>
@@ -707,12 +718,12 @@ QTabBar::tab:selected, QTabBar::tab:hover {
          <property name="bottomMargin">
           <number>5</number>
          </property>
-         <item alignment="Qt::AlignHCenter">
-          <widget class="QTextBrowser" name="Profilepicture">
+         <item>
+          <widget class="QTextEdit" name="textEdit_10">
            <property name="maximumSize">
             <size>
              <width>100</width>
-             <height>100</height>
+             <height>50</height>
             </size>
            </property>
           </widget>
@@ -729,6 +740,11 @@ QTabBar::tab:selected, QTabBar::tab:hover {
          </item>
          <item>
           <widget class="QProgressBar" name="SeedsprogressBar">
+           <property name="font">
+            <font>
+             <family>Gill Sans</family>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">QProgressBar{
 	
@@ -742,7 +758,8 @@ QTabBar::tab:selected, QTabBar::tab:hover {
 
 QProgressBar::chunk{
 	border-radius: 8px; 
-	background-color: rgb(134, 157, 122);
+	
+	background-color: rgb(255, 200, 87);
 }</string>
            </property>
            <property name="value">
@@ -751,33 +768,37 @@ QProgressBar::chunk{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="InputActivities">
+          <widget class="QPushButton" name="pushButton_2">
            <property name="font">
             <font>
              <family>Gill Sans</family>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton{
-	
-	;
-	background-color: rgb(243, 178, 105);
-	border-color: rgb(79, 128, 28);
-	border-width: 20px; 
-	border-radius: 10px;
-	padding: 8px;
+            <string notr="true">QPushButton {
+    border: 2px solid;
+	border-color: rgb(171, 197, 153);
+    border-radius: 6px;
+	background-color: rgb(255, 200, 87);
+    min-width: 100px;
+	padding: 10px;
+}
 
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; 
+}
+
+QPushButton:default {
+    border-color: navy; 
 }</string>
            </property>
            <property name="text">
-            <string>What did you do today? </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string/>
+            <string>Scan my activities</string>
            </property>
           </widget>
          </item>
@@ -789,11 +810,26 @@ QProgressBar::chunk{
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton{
-	
-	background-color: rgb(171, 197, 153);
-	border-color: rgba(255, 255, 255, 0);
-	border-radius: 10px
+            <string notr="true">QPushButton {
+    border: 2px solid;
+	border-color: rgb(171, 197, 153);
+    border-radius: 6px;
+	background-color: rgb(255, 200, 87);
+    min-width: 100px;
+	padding: 10px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; 
+}
+
+QPushButton:default {
+    border-color: navy; 
 }</string>
            </property>
            <property name="text">
@@ -803,14 +839,22 @@ QProgressBar::chunk{
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="verticalLayoutWidget_2">
+       <widget class="QFrame" name="verticalFrame_2">
         <property name="geometry">
          <rect>
           <x>510</x>
-          <y>310</y>
+          <y>380</y>
           <width>251</width>
           <height>191</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+background-color: rgb(238, 228, 170);
+border: 2px solid grey;
+    border-radius: 4px;
+    padding: 2px;
+}</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="leftMargin">
@@ -912,14 +956,22 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="verticalLayoutWidget_3">
+       <widget class="QFrame" name="verticalFrame_3">
         <property name="geometry">
          <rect>
           <x>240</x>
-          <y>309</y>
+          <y>380</y>
           <width>261</width>
           <height>191</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    border: 2px solid grey;
+    border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(238, 228, 170);
+}</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <property name="leftMargin">
@@ -1060,38 +1112,43 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_3">
+          <widget class="QTextBrowser" name="textBrowser_6">
            <property name="font">
             <font>
              <family>Gill Sans</family>
             </font>
            </property>
-           <property name="text">
-            <string>Challenge # 1</string>
+           <property name="html">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Gill Sans'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'.AppleSystemUIFont';&quot;&gt;Daily challenge: Reduce meat consumption&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'.AppleSystemUIFont';&quot;&gt;How well did you do it ? &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_2">
-           <property name="font">
-            <font>
-             <family>Gill Sans</family>
-            </font>
+          <widget class="QSlider" name="Dailychallenge">
+           <property name="styleSheet">
+            <string notr="true">QSlider::groove:horizontal {
+    border: 1px solid;
+    height: 8px; 
+	background-color: rgb(77, 76, 77);
+    margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+  border: 1px solid;
+	border-color: rgb(115, 114, 116);
+	background-color: rgb(233, 208, 160);
+    width: 18px;
+    margin: -2px 0; 
+    border-radius: 3px;
+}</string>
            </property>
-           <property name="text">
-            <string>Challenge #2</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="checkBox">
-           <property name="font">
-            <font>
-             <family>Gill Sans</family>
-            </font>
-           </property>
-           <property name="text">
-            <string>Challenge #3</string>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
@@ -2360,7 +2417,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
