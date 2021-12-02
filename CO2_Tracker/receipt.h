@@ -29,6 +29,7 @@ class Receipt{
 
     void print();
     int lastId();//Retrieve last receipt id in the DB
+    double total_carbon(int receiptId);
 
    protected:
     int userId;
