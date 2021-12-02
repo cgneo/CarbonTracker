@@ -31,9 +31,13 @@ MainWindow::MainWindow(QWidget *parent)
     //axisY = QValueAxis();
     //axisY.setTitleText("Loss (W)");
 
+<<<<<<< Updated upstream
     chart->setAnimationOptions(QChart::SeriesAnimations);
     chart->setTheme(QChart::ChartThemeBrownSand);
 
+=======
+    chart->setTheme(QChart::ChartThemeBrownSand);
+>>>>>>> Stashed changes
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
     chartView->setParent(ui->horizontalFrame);
