@@ -23,7 +23,7 @@ public:
 
     //Other methods
 
-    vector<Object> *calculate_base_consumption();//Receive as parameters the info from the survey
+    vector<Object> *calculate_base_consumption(double c_footprint, int roommates);//Receive as parameters the info from the survey
 
 
 
