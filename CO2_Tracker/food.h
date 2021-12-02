@@ -8,17 +8,19 @@ class Food : public Object {
    public:
     Food(double quantity);
     void set_quantity(double quantity);
-    void set_barcode();
+    void set_barcode(double barcode);
+    void set_category(string str);
     virtual void set_footprint(double barcode, double quantity);
 
     double get_quantity();
-    long get_barcode();
+    double get_barcode();
 
     double retrieve_carbon(double barcode);
-    string set_category(double barcode);
+    string retrieve_category(double barcode);
+    void read_food_item(double barcode);
 
 protected:
-    long barcode;
+    double barcode;
     double quantity;
     string category;
 
