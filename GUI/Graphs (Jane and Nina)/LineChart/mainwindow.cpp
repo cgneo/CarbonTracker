@@ -22,13 +22,17 @@ MainWindow::MainWindow(QWidget *parent)
     //chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
-    chart->setTitle("Line Chart Example");
+    chart->setTitle("Your carbon footprint through time");
 
 
     chart->legend()->setVisible(true);
     chart->legend()->setAlignment(Qt::AlignBottom);
 
+    //axisY = QValueAxis();
+    //axisY.setTitleText("Loss (W)");
 
+    chart->setAnimationOptions(QChart::SeriesAnimations);
+    chart->setTheme(QChart::ChartThemeBrownSand);
 
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
