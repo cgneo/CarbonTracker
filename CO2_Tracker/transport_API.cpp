@@ -16,7 +16,7 @@
 
 
 QByteArray get_API(){
-    QFile file("API_KEY.txt");
+    QFile file("/Users/apple/Desktop/CSE201/CarbonTracker/CO2_Tracker/API_KEY.txt");
     //QByteArray *bytes = new Q;
     QByteArray bytes;
     if( file.open( QIODevice::ReadOnly ) )
