@@ -12,7 +12,7 @@ enum type {food, transport};
 class Receipt{
 
    public:
-    Receipt(int userId, type receipt, Date *start_date,
+    Receipt(type receipt, Date *start_date,
             int num_people, int duration);
     ~Receipt();
     void set_footprint(double footprint);

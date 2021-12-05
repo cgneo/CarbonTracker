@@ -64,13 +64,28 @@ Date* Date::add_duration(int duration){//creates a date objects "duration" days 
     return new Date(new_day, new_month, new_year);
 }
 
+bool Date::is_valid(){
+    if (year >= 2021 && year < 2030){
+        if (month >= 0 && month <= 12){
+            if (day >= 0 && day <= days_in_month[month]){
+                return true;}
+            else{
+                throw std::invalid_argument("Invalid days");}
+        }
+        else{
+            throw std::invalid_argument("Invalid month");}
+    }
+    else{
+        throw std::invalid_argument("Invalid year");}
+}
+
 void Date::print(){//prints a date object
     std::cout << "Day: " << get_day() << ", Month: "
               << get_month() << ", Year: " << get_year() << std::endl;
 }
 
 using namespace std;
-string Date::print2(){
+string Date::print2(){//Returns a printable string
     return "Day: " +  to_string(get_day()) + ", Month: " + to_string(get_month())
             + ", Year: " + to_string(get_year());
 }

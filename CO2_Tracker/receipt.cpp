@@ -2,8 +2,7 @@
 #include "date.h"
 #include <string>
 
-Receipt::Receipt(int userId, type receipt, Date *start_date, int num_people, int duration) {
-    this->userId = userId;
+Receipt::Receipt(type receipt, Date *start_date, int num_people, int duration) {
     receipt_type = receipt;
     number_of_people = num_people;
     set_duration(duration); //Only valid for food receipts, for transport "duration = 0"

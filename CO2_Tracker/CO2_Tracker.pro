@@ -13,8 +13,10 @@ SOURCES += \
     base_consumption.cpp \
     consumption.cpp \
     date.cpp \
+    json.cpp \
     object.cpp \
     food.cpp \
+    tests.cpp \
     transport.cpp \
     user.cpp\
     main.cpp \
@@ -26,8 +28,10 @@ HEADERS += \
     base_consumption.h \
     consumption.h \
     date.h \
+    json.h \
     object.h \
     food.h \
+    tests.h \
     transport.h \
     user.h \
     mainwindow.h \

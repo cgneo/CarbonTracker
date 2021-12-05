@@ -17,6 +17,7 @@ public:
 
     void print();
     std::string print2();
+    bool is_valid();
 
 private:
     int day;
