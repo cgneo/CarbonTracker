@@ -65,7 +65,7 @@ void Receipt::set_dates(Date *date1) {
 }
 
 void Receipt::set_number_of_people(double number_of_people) {
-    this->number_of_people = number_of_people;
+    this->number_of_people = number_of_people; //Inputby user, number of people
 }
 
 
@@ -75,4 +75,22 @@ void Receipt::set_number_of_people(double number_of_people) {
 void Receipt::print(){
     Date *dates = get_dates();
     std::cout << "Dates: " << dates[0].print2() << "-" << dates[1].print2() << std::endl;
+}
+
+void Receipt::add_to_footprint(int new_footprint){
+    this->footprint += new_footprint;
+}
+int read_receipt_elements(string str){//Takes a string with file directory
+    return 0; //Replace with function that reads scan of receipt
+              //and outputs array of barcodes and quantities
+}//we will need to change int!
+
+
+void Receipt::add_receipt(string str){//Takes a string with file directory and createsa receipt element
+    set_number_of_people(number_of_people); //Input from the user
+    set_duration(duration); //Input from the user
+    int array = read_receipt_elements(str);
+    for(int i = 0; i<array; i++){//change to array.size() //addthe footprint of each item to the overall footprint
+
+    }
 }

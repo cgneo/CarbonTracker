@@ -28,7 +28,11 @@ class Receipt{
     Date* get_dates();
 
     void print();
+    void add_to_footprint(int new_footprint);
     int lastId();//Retrieve last receipt id in the DB
+    double total_carbon(int receiptId);
+
+    void add_receipt(string str);
 
    protected:
     int userId;
