@@ -19,8 +19,32 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_buttonMain_clicked()
 {
+    if (ui->tabMain->count() > 1) {
+        ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
+    }
+}
 
+void MainWindow::on_buttonNextHousing1_clicked()
+{
+    if (ui->tabHousing->count() > 1) {
+        ui->tabHousing->setCurrentIndex( (ui->tabHousing->currentIndex()+1) % ui->tabHousing->count() );
+    }
+}
+
+void MainWindow::on_buttonNextHousing2_clicked()
+{
+    if (ui->tabHousing->count() > 1) {
+        ui->tabHousing->setCurrentIndex( (ui->tabHousing->currentIndex()+1) % ui->tabHousing->count() );
+    }
+}
+
+
+void MainWindow::on_buttonNextHousing3_clicked()
+{
+    if (ui->tabHousing->count() > 1) {
+        ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
+    }
 }
 
