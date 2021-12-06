@@ -43,3 +43,6 @@ The next step is to store everyone's IP address. We decided to store it in memor
 
 # Alejandro Christlieb Picazo 
 This week I created the testing class for our project and designed the general structure of how the testing will be done. The idea being to create automated testing for all the modules in the project and then running them to debug easily the project. Additionally, I worked with Zhihui and Catalina to design a new communication way, where instead of using a central SQL DB we will now use peer to peer communication with Json files. I started researching and creating some functions about this.
+
+# Amine Lamouchi 
+This week I tried to merge the OCR and the openfoodfacts API into the same program. This program takes in a picture of a grocery receipt and returns the carbon footprint of the listed products. However, I have been struggling with integration issues as well as bugs due to missing products in the database . Since the database is not well standardised I am also implementing error handling procedures and I hope to achieve this by the end of this week. 
