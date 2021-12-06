@@ -46,3 +46,7 @@ This week I created the testing class for our project and designed the general s
 
 # Amine Lamouchi 
 This week I tried to merge the OCR and the openfoodfacts API into the same program. This program takes in a picture of a grocery receipt and returns the carbon footprint of the listed products. However, I have been struggling with integration issues as well as bugs due to missing products in the database . Since the database is not well standardised I am also implementing error handling procedures and I hope to achieve this by the end of this week. 
+
+# Steven van Heiningen 
+This week I discussed witht the people from the data team what exactly is needed for from us and from them. Also I looked into the compatibility issue between Mac and Windows of Qt creator. I should mention that my schedule this week did not allow me to spend much time on the project.
+Next week, we will finally merge the whole UI, the graph, survey and general part. Also, we will do major work on the UI survey itself. I plan on solving the compatibility issue or to decide on how to handle it otherwise; also to change all the dialogs to windows. Also I will do work on completion of the survey, for example doing aesthetic work.
