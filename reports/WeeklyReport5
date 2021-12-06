@@ -41,3 +41,5 @@ The difficulties lie in the dependency, where QtAbstractSocket's error handling 
 The next step is to store everyone's IP address. We decided to store it in memory using QMap (dictionary), where the key is userID, value is their IP address.
 
 
+# Alejandro Christlieb Picazo 
+This week I created the testing class for our project and designed the general structure of how the testing will be done. The idea being to create automated testing for all the modules in the project and then running them to debug easily the project. Additionally, I worked with Zhihui and Catalina to design a new communication way, where instead of using a central SQL DB we will now use peer to peer communication with Json files. I started researching and creating some functions about this.
