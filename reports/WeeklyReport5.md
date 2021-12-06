@@ -16,21 +16,21 @@ Hence, next week, in addition to merging all of the ui team's parts together, I 
 # Jade Rakotondradano
 This week I implemented some functions in the food class that would be compatible with the functions that read and decode a food item from a receipt scan (which extracts a barcode of the food item). From this, we will be merging with other work by different members of the data team so that we can begin testing what we have done.
 
-#Dain Jung
+# Dain Jung
 This week, I implemented the progress bar to show your progress of daily challenges and some push button to input the activities (open another tab and be able to answer the survey that other subgroup of UI has worked on).
 
 Next week, I am going to move on to merge with graphs and survey subgroups to make the profile page more complete. Also, I will start working on the leader board/ ranking page with the server team.
 
-#Nina Bili Rossi
+# Nina Bili Rossi
 this week I worked on exploding pie slices on my donut chart. I should be completely done with this part now. Once this was done I worked on manipulating line graphs. In particular, I worked on the legends and how to change the axes (for different time scales for instance, as we want to use them to represent carbon footprint over time)
 
-#Alexandra Catalina Negoita
+# Alexandra Catalina Negoita
 This week, I implemented functions that create, read and write a JSON file. I created a new folder server-user, where I implemented a JSON file of nested dictionaries with attributes that retrieve information from the user. I used QJsonDocument that provides methods for reading and writing JSON documents, and QJsonParseError in order to report errors in JSON parsing. It is not finished yet, but it shows the the information that needs to be given by the user to the server, such as username, age, country, etc. Next week, I will work on coding the tests for our project.
 
-#Jane Peltier
+# Jane Peltier
 This week, I managed to create tabs to display graphs on each tab. I personalized the graphs with the information and units that needed to be displayed. As I had errors appearing from nowhere on my code before the TD, Nina and I’s codes could not be merged Monday. We will try to merge them by the end of the week or next Monday. Next week I plan on writing code to create a summary page with three graphs for the user to see his overall carbon emission, and I will try to make the menu graph fancier and animated (already started this week).
 
-#Zhihui Li
+# Zhihui Li
 Zhihui:
 This week, we implemented QT TCP connection for user to connect to other users and send files to each other. This is based on open-source project github.com/manfredipist/QTcpSocket, where a user is simultaneously a client (which receives other users' messages) and a server (which responds to other users' requests).
 
