@@ -4,10 +4,7 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QTextStream>
-#include <QTextImageFormat> //to upload the trees/seeds?
-#include <QTextFrameFormat>
-#include <QSurfaceFormat> //colour, buffer size...
-#include <QPainter>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,24 +19,38 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_Seedsprogress_valueChanged(int value);
 
     void on_Surveybutton_clicked();
 
     void on_Scanbutton_clicked();
 
     void on_daily_challenge_1_stateChanged(int arg1);
+    void on_daily_challenge_2_stateChanged(int arg1);
+    void on_daily_challenge_3_stateChanged(int arg1);
+    void on_daily_challenge_4_stateChanged(int arg1);
 
-     void on_daily_challenge_2_stateChanged(int arg1);
-     void on_daily_challenge_3_stateChanged(int arg1);
-     void on_daily_challenge_4_stateChanged(int arg1);
+
+
+    //void on_daily_challenge_1_destroyed();
 
 private:
     Ui::MainWindow *ui;
+
 };
 #endif // MAINWINDOW_H
+/*
+class MyTimer : public QObject{
+    Q_OBJECT
 
+public:
+    MyTimer();
+    QTimer *timer;
 
+public slots:
+    void MyTimerslot();
+};
+
+*/
 
 
 
