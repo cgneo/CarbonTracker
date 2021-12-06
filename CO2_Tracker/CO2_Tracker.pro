@@ -10,11 +10,32 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    base_consumption.cpp \
+    consumption.cpp \
+    date.cpp \
+    json.cpp \
+    object.cpp \
+    food.cpp \
+    tests.cpp \
+    transport.cpp \
+    user.cpp\
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    receipt.cpp \
+
 
 HEADERS += \
-    mainwindow.h
+    base_consumption.h \
+    consumption.h \
+    date.h \
+    json.h \
+    object.h \
+    food.h \
+    tests.h \
+    transport.h \
+    user.h \
+    mainwindow.h \
+    receipt.h
 
 FORMS += \
     mainwindow.ui
