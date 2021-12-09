@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>897</width>
-    <height>610</height>
+    <width>865</width>
+    <height>679</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
+   <layout class="QGridLayout" name="gridLayout_10">
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabMain">
       <property name="palette">
@@ -81,27 +81,6 @@
         </disabled>
        </palette>
       </property>
-      <property name="styleSheet">
-       <string notr="true">
-QTabWidget::pane { /* The tab widget frame */
-    border-top: 2px solid #C2C7CB;
-	
-	background-color:rgba(182, 212, 166, 180);
-}
-QTabBar::tab {
-	background-color: rgb(103, 116, 81);
-    border: 1px solid #C4C4C3;
-    border-bottom-color: #C2C7CB; /* same as the pane color */
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    min-width: 20ex;
-    padding: 5px;
-	font: 13pt &quot;Gill Sans&quot;;
-}
-QTabBar::tab:selected, QTabBar::tab:hover {
-	background-color: rgb(201, 199, 203);
-}</string>
-      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -109,11 +88,11 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <attribute name="title">
         <string>Welcome</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_12">
+       <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0">
-         <layout class="QGridLayout" name="gridLayout_10">
-          <item row="3" column="0">
-           <spacer name="verticalSpacer_9">
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <spacer name="verticalSpacer_7">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -125,23 +104,10 @@ QTabBar::tab:selected, QTabBar::tab:hover {
             </property>
            </spacer>
           </item>
-          <item row="2" column="0">
-           <spacer name="verticalSpacer_8">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="0">
+          <item>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
-             <spacer name="horizontalSpacer_11">
+             <spacer name="horizontalSpacer_7">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -154,7 +120,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
              </spacer>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_10">
+             <layout class="QVBoxLayout" name="verticalLayout_9">
               <item>
                <widget class="QLabel" name="label_5">
                 <property name="font">
@@ -188,6 +154,77 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                </widget>
               </item>
               <item>
+               <widget class="QLabel" name="label_pic">
+                <property name="palette">
+                 <palette>
+                  <active>
+                   <colorrole role="Base">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>32</red>
+                      <green>32</green>
+                      <blue>32</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Window">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>167</red>
+                      <green>234</green>
+                      <blue>166</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                  </active>
+                  <inactive>
+                   <colorrole role="Base">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>32</red>
+                      <green>32</green>
+                      <blue>32</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Window">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>167</red>
+                      <green>234</green>
+                      <blue>166</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                  </inactive>
+                  <disabled>
+                   <colorrole role="Base">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>167</red>
+                      <green>234</green>
+                      <blue>166</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                   <colorrole role="Window">
+                    <brush brushstyle="SolidPattern">
+                     <color alpha="255">
+                      <red>167</red>
+                      <green>234</green>
+                      <blue>166</blue>
+                     </color>
+                    </brush>
+                   </colorrole>
+                  </disabled>
+                 </palette>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item>
                <layout class="QHBoxLayout" name="horizontalLayout_5">
                 <item>
                  <spacer name="horizontalSpacer_5">
@@ -196,93 +233,18 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                   </property>
                   <property name="sizeHint" stdset="0">
                    <size>
-                    <width>88</width>
-                    <height>27</height>
+                    <width>40</width>
+                    <height>20</height>
                    </size>
                   </property>
                  </spacer>
                 </item>
                 <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_9">
-                  <item>
-                   <widget class="QLabel" name="label_pic">
-                    <property name="palette">
-                     <palette>
-                      <active>
-                       <colorrole role="Base">
-                        <brush brushstyle="SolidPattern">
-                         <color alpha="255">
-                          <red>32</red>
-                          <green>32</green>
-                          <blue>32</blue>
-                         </color>
-                        </brush>
-                       </colorrole>
-                       <colorrole role="Window">
-                        <brush brushstyle="SolidPattern">
-                         <color alpha="255">
-                          <red>167</red>
-                          <green>234</green>
-                          <blue>166</blue>
-                         </color>
-                        </brush>
-                       </colorrole>
-                      </active>
-                      <inactive>
-                       <colorrole role="Base">
-                        <brush brushstyle="SolidPattern">
-                         <color alpha="255">
-                          <red>32</red>
-                          <green>32</green>
-                          <blue>32</blue>
-                         </color>
-                        </brush>
-                       </colorrole>
-                       <colorrole role="Window">
-                        <brush brushstyle="SolidPattern">
-                         <color alpha="255">
-                          <red>167</red>
-                          <green>234</green>
-                          <blue>166</blue>
-                         </color>
-                        </brush>
-                       </colorrole>
-                      </inactive>
-                      <disabled>
-                       <colorrole role="Base">
-                        <brush brushstyle="SolidPattern">
-                         <color alpha="255">
-                          <red>167</red>
-                          <green>234</green>
-                          <blue>166</blue>
-                         </color>
-                        </brush>
-                       </colorrole>
-                       <colorrole role="Window">
-                        <brush brushstyle="SolidPattern">
-                         <color alpha="255">
-                          <red>167</red>
-                          <green>234</green>
-                          <blue>166</blue>
-                         </color>
-                        </brush>
-                       </colorrole>
-                      </disabled>
-                     </palette>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="buttonMain">
-                    <property name="text">
-                     <string>Compute your carbon footprint</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <widget class="QPushButton" name="buttonMain">
+                  <property name="text">
+                   <string>Compute your carbon footprint</string>
+                  </property>
+                 </widget>
                 </item>
                 <item>
                  <spacer name="horizontalSpacer_6">
@@ -291,8 +253,8 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                   </property>
                   <property name="sizeHint" stdset="0">
                    <size>
-                    <width>118</width>
-                    <height>27</height>
+                    <width>40</width>
+                    <height>20</height>
                    </size>
                   </property>
                  </spacer>
@@ -308,16 +270,29 @@ QTabBar::tab:selected, QTabBar::tab:hover {
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>38</width>
-                <height>68</height>
+                <width>40</width>
+                <height>20</height>
                </size>
               </property>
              </spacer>
             </item>
            </layout>
           </item>
-          <item row="0" column="0">
-           <spacer name="verticalSpacer_7">
+          <item>
+           <spacer name="verticalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_9">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -403,7 +378,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
             <item>
              <widget class="QTabWidget" name="tabHousing">
               <property name="currentIndex">
-               <number>0</number>
+               <number>2</number>
               </property>
               <widget class="QWidget" name="tab_11">
                <attribute name="title">
@@ -440,28 +415,28 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                   <item>
                    <layout class="QVBoxLayout" name="verticalLayout_11">
                     <item>
-                     <widget class="QRadioButton" name="radioButton_9">
+                     <widget class="QRadioButton" name="radioH1_1">
                       <property name="text">
                        <string>Alone</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QRadioButton" name="radioButton_10">
+                     <widget class="QRadioButton" name="radioH1_2">
                       <property name="text">
                        <string>1-2</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QRadioButton" name="radioButton_11">
+                     <widget class="QRadioButton" name="radioH1_3">
                       <property name="text">
                        <string>3-4</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QRadioButton" name="radioButton_12">
+                     <widget class="QRadioButton" name="radioH1_4">
                       <property name="text">
                        <string>5+</string>
                       </property>
@@ -495,28 +470,28 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                    </widget>
                   </item>
                   <item>
-                   <widget class="QRadioButton" name="radio1_3">
+                   <widget class="QRadioButton" name="radioH2_1">
                     <property name="text">
                      <string>I don't buy furniture often</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QRadioButton" name="radio2_3">
+                   <widget class="QRadioButton" name="radioH2_2">
                     <property name="text">
                      <string>Less than 200 €</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QRadioButton" name="radio3_3">
+                   <widget class="QRadioButton" name="radioH2_3">
                     <property name="text">
                      <string>200-1000 €</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QRadioButton" name="radio4_3">
+                   <widget class="QRadioButton" name="radioH2_4">
                     <property name="text">
                      <string>More than a 1000 €</string>
                     </property>
@@ -749,17 +724,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                    <layout class="QVBoxLayout" name="verticalLayout_12">
                     <item>
                      <widget class="QRadioButton" name="radioButton_13">
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton {
-	
-    border: 2px solid;;
-    border-radius: 6px;
-	border-color: rgb(234, 147, 96);
-	background-color: rgb(234, 147, 96);
-    min-width: 100px;
-	padding: 10px;
-}</string>
-                      </property>
                       <property name="text">
                        <string>Alone</string>
                       </property>
@@ -967,6 +931,138 @@ QTabBar::tab:selected, QTabBar::tab:hover {
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Create your account</string>
+       </attribute>
+       <widget class="QLabel" name="label_27">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>60</y>
+          <width>200</width>
+          <height>49</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gill Sans</family>
+          <pointsize>30</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#8962b4;&quot;&gt;Account&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>182</x>
+          <y>152</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Username</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>180</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_4">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>250</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_5">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>280</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>180</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>210</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Age</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>250</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Country</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>270</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Email</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>237</x>
+          <y>152</y>
+          <width>91</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
         <string>Confirmation</string>
@@ -1075,5 +1171,22 @@ QTabBar::tab:selected, QTabBar::tab:hover {
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_18</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>610</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>686</x>
+     <y>371</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
