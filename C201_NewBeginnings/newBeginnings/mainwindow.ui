@@ -103,7 +103,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -733,7 +733,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                    </font>
                   </property>
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Transportation leaves a footprint. Let's see how sustainable &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;the means of transport you use are in your private life.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Transportation leaves a footprint. We would like to know your base consumption in transport.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="textFormat">
                    <enum>Qt::RichText</enum>
@@ -760,7 +760,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                 <item>
                  <widget class="QTabWidget" name="tabTransport">
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>0</number>
                   </property>
                   <widget class="QWidget" name="tab_14">
                    <attribute name="title">
@@ -790,7 +790,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                          </font>
                         </property>
                         <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Do you live alone or do you have flatmates?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Do you commute to work?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
                        </widget>
                       </item>
@@ -799,28 +799,14 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                         <item>
                          <widget class="QRadioButton" name="radioButton_13">
                           <property name="text">
-                           <string>Alone</string>
+                           <string>Yes</string>
                           </property>
                          </widget>
                         </item>
                         <item>
                          <widget class="QRadioButton" name="radioButton_14">
                           <property name="text">
-                           <string>1-2</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QRadioButton" name="radioButton_15">
-                          <property name="text">
-                           <string>3-4</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QRadioButton" name="radioButton_16">
-                          <property name="text">
-                           <string>5+</string>
+                           <string>No</string>
                           </property>
                          </widget>
                         </item>
@@ -847,7 +833,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                       <item>
                        <widget class="QLabel" name="label_24">
                         <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;How much do you spend a year in furniture?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Do you commute to work?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
                        </widget>
                       </item>
@@ -1113,13 +1099,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                     <item>
                      <layout class="QVBoxLayout" name="verticalLayout_22">
                       <item>
-                       <widget class="QLabel" name="label_2">
-                        <property name="text">
-                         <string>Username</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
                        <widget class="QLabel" name="label_3">
                         <property name="text">
                          <string>Name</string>
@@ -1144,6 +1123,20 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                        <widget class="QLabel" name="label_8">
                         <property name="text">
                          <string>Email</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="Line" name="line">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="label_2">
+                        <property name="text">
+                         <string>Username</string>
                         </property>
                        </widget>
                       </item>
@@ -1236,6 +1229,13 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                       </item>
                       <item>
                        <widget class="QLineEdit" name="lineEdit_4"/>
+                      </item>
+                      <item>
+                       <widget class="Line" name="line_2">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                       </widget>
                       </item>
                       <item>
                        <widget class="QLineEdit" name="lineEdit_5"/>
