@@ -17,7 +17,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSlider>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -29,52 +28,50 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QTabWidget *tabWidget;
+    QTabWidget *tabMain;
     QWidget *tab;
-    QPushButton *pushButton_3;
+    QPushButton *buttonMain;
     QLabel *label_5;
     QLabel *label_6;
     QLabel *label_pic;
     QWidget *tab_2;
     QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout_3;
-    QSpacerItem *verticalSpacer;
-    QHBoxLayout *horizontalLayout;
-    QSpacerItem *horizontalSpacer_2;
-    QTabWidget *tabWidget_2;
-    QWidget *tab_5;
     QVBoxLayout *verticalLayout_2;
-    QLabel *label;
-    QVBoxLayout *verticalLayout;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
-    QRadioButton *radioButton_3;
-    QRadioButton *radioButton_4;
-    QPushButton *Check;
-    QWidget *tab_6;
-    QWidget *layoutWidget_2;
-    QVBoxLayout *verticalLayout_4;
-    QLabel *label_2;
-    QRadioButton *radio1;
-    QRadioButton *radio2;
-    QRadioButton *radio3;
-    QRadioButton *radio4;
-    QPushButton *pushButton;
-    QWidget *tab_7;
+    QLabel *label_14;
+    QLabel *label_13;
+    QTabWidget *tabHousing;
+    QWidget *tab_11;
     QWidget *layoutWidget1;
-    QVBoxLayout *verticalLayout_5;
-    QLabel *label_3;
-    QHBoxLayout *horizontalLayout_2;
-    QSlider *horizontalSlider;
-    QLabel *label_4;
-    QPushButton *pushButton_2;
-    QSpacerItem *horizontalSpacer;
-    QSpacerItem *verticalSpacer_2;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_15;
+    QVBoxLayout *verticalLayout_11;
+    QRadioButton *radioButton_9;
+    QRadioButton *radioButton_10;
+    QRadioButton *radioButton_11;
+    QRadioButton *radioButton_12;
+    QPushButton *buttonNextHousing1;
+    QWidget *tab_12;
+    QWidget *layoutWidget_5;
+    QVBoxLayout *verticalLayout_12;
+    QLabel *label_16;
+    QRadioButton *radio1_3;
+    QRadioButton *radio2_3;
+    QRadioButton *radio3_3;
+    QRadioButton *radio4_3;
+    QPushButton *buttonNextHousing2;
+    QWidget *tab_13;
+    QWidget *layoutWidget_6;
+    QVBoxLayout *verticalLayout_13;
+    QLabel *label_17;
+    QHBoxLayout *horizontalLayout_4;
+    QSlider *horizontalSlider_3;
+    QLabel *label_18;
+    QPushButton *buttonNextHousing3;
     QWidget *tab_3;
     QLabel *label_7;
     QLabel *label_8;
     QLabel *label_pic_2;
-    QTabWidget *tabWidget_3;
+    QTabWidget *tabTransport;
     QWidget *tab_8;
     QVBoxLayout *verticalLayout_6;
     QLabel *label_9;
@@ -111,9 +108,9 @@ public:
         MainWindow->resize(865, 679);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        tabWidget = new QTabWidget(centralwidget);
-        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 871, 661));
+        tabMain = new QTabWidget(centralwidget);
+        tabMain->setObjectName(QString::fromUtf8("tabMain"));
+        tabMain->setGeometry(QRect(0, 0, 871, 661));
         QPalette palette;
         QBrush brush(QColor(207, 233, 170, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -123,12 +120,12 @@ public:
         palette.setBrush(QPalette::Inactive, QPalette::Window, brush);
         palette.setBrush(QPalette::Disabled, QPalette::Base, brush);
         palette.setBrush(QPalette::Disabled, QPalette::Window, brush);
-        tabWidget->setPalette(palette);
+        tabMain->setPalette(palette);
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
-        pushButton_3 = new QPushButton(tab);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(270, 410, 235, 32));
+        buttonMain = new QPushButton(tab);
+        buttonMain->setObjectName(QString::fromUtf8("buttonMain"));
+        buttonMain->setGeometry(QRect(270, 410, 235, 32));
         label_5 = new QLabel(tab);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(230, 40, 281, 37));
@@ -158,193 +155,195 @@ public:
         palette1.setBrush(QPalette::Disabled, QPalette::Base, brush2);
         palette1.setBrush(QPalette::Disabled, QPalette::Window, brush2);
         label_pic->setPalette(palette1);
-        tabWidget->addTab(tab, QString());
+        tabMain->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         layoutWidget = new QWidget(tab_2);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(4, 5, 791, 521));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_3->addItem(verticalSpacer);
-
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
-        tabWidget_2 = new QTabWidget(layoutWidget);
-        tabWidget_2->setObjectName(QString::fromUtf8("tabWidget_2"));
-        tab_5 = new QWidget();
-        tab_5->setObjectName(QString::fromUtf8("tab_5"));
-        verticalLayout_2 = new QVBoxLayout(tab_5);
+        layoutWidget->setGeometry(QRect(150, 100, 691, 391));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget);
+        verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        label = new QLabel(tab_5);
-        label->setObjectName(QString::fromUtf8("label"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_14 = new QLabel(layoutWidget);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Gill Sans"));
-        font2.setPointSize(16);
-        label->setFont(font2);
+        font2.setPointSize(30);
+        label_14->setFont(font2);
+        label_14->setTextFormat(Qt::AutoText);
 
-        verticalLayout_2->addWidget(label);
+        verticalLayout_2->addWidget(label_14);
 
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        radioButton = new QRadioButton(tab_5);
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        label_13 = new QLabel(layoutWidget);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("Gill Sans"));
+        font3.setPointSize(16);
+        label_13->setFont(font3);
+        label_13->setTextFormat(Qt::RichText);
 
-        verticalLayout->addWidget(radioButton);
+        verticalLayout_2->addWidget(label_13);
 
-        radioButton_2 = new QRadioButton(tab_5);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
-
-        verticalLayout->addWidget(radioButton_2);
-
-        radioButton_3 = new QRadioButton(tab_5);
-        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
-
-        verticalLayout->addWidget(radioButton_3);
-
-        radioButton_4 = new QRadioButton(tab_5);
-        radioButton_4->setObjectName(QString::fromUtf8("radioButton_4"));
-
-        verticalLayout->addWidget(radioButton_4);
-
-
-        verticalLayout_2->addLayout(verticalLayout);
-
-        Check = new QPushButton(tab_5);
-        Check->setObjectName(QString::fromUtf8("Check"));
-
-        verticalLayout_2->addWidget(Check);
-
-        tabWidget_2->addTab(tab_5, QString());
-        tab_6 = new QWidget();
-        tab_6->setObjectName(QString::fromUtf8("tab_6"));
-        layoutWidget_2 = new QWidget(tab_6);
-        layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(0, 0, 481, 181));
-        verticalLayout_4 = new QVBoxLayout(layoutWidget_2);
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(layoutWidget_2);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        verticalLayout_4->addWidget(label_2);
-
-        radio1 = new QRadioButton(layoutWidget_2);
-        radio1->setObjectName(QString::fromUtf8("radio1"));
-
-        verticalLayout_4->addWidget(radio1);
-
-        radio2 = new QRadioButton(layoutWidget_2);
-        radio2->setObjectName(QString::fromUtf8("radio2"));
-
-        verticalLayout_4->addWidget(radio2);
-
-        radio3 = new QRadioButton(layoutWidget_2);
-        radio3->setObjectName(QString::fromUtf8("radio3"));
-
-        verticalLayout_4->addWidget(radio3);
-
-        radio4 = new QRadioButton(layoutWidget_2);
-        radio4->setObjectName(QString::fromUtf8("radio4"));
-
-        verticalLayout_4->addWidget(radio4);
-
-        pushButton = new QPushButton(layoutWidget_2);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        verticalLayout_4->addWidget(pushButton);
-
-        tabWidget_2->addTab(tab_6, QString());
-        tab_7 = new QWidget();
-        tab_7->setObjectName(QString::fromUtf8("tab_7"));
-        layoutWidget1 = new QWidget(tab_7);
+        tabHousing = new QTabWidget(layoutWidget);
+        tabHousing->setObjectName(QString::fromUtf8("tabHousing"));
+        tab_11 = new QWidget();
+        tab_11->setObjectName(QString::fromUtf8("tab_11"));
+        layoutWidget1 = new QWidget(tab_11);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(0, 0, 601, 181));
-        verticalLayout_5 = new QVBoxLayout(layoutWidget1);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(layoutWidget1);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        layoutWidget1->setGeometry(QRect(9, 9, 469, 166));
+        verticalLayout = new QVBoxLayout(layoutWidget1);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label_15 = new QLabel(layoutWidget1);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setMinimumSize(QSize(0, 30));
+        label_15->setFont(font3);
 
-        verticalLayout_5->addWidget(label_3);
+        verticalLayout->addWidget(label_15);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        horizontalSlider = new QSlider(layoutWidget1);
-        horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
-        horizontalSlider->setMaximum(10);
-        horizontalSlider->setSingleStep(1);
-        horizontalSlider->setOrientation(Qt::Horizontal);
-        horizontalSlider->setTickPosition(QSlider::TicksBelow);
-        horizontalSlider->setTickInterval(1);
+        verticalLayout_11 = new QVBoxLayout();
+        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
+        radioButton_9 = new QRadioButton(layoutWidget1);
+        radioButton_9->setObjectName(QString::fromUtf8("radioButton_9"));
 
-        horizontalLayout_2->addWidget(horizontalSlider);
+        verticalLayout_11->addWidget(radioButton_9);
 
-        label_4 = new QLabel(layoutWidget1);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setMinimumSize(QSize(16, 0));
+        radioButton_10 = new QRadioButton(layoutWidget1);
+        radioButton_10->setObjectName(QString::fromUtf8("radioButton_10"));
 
-        horizontalLayout_2->addWidget(label_4);
+        verticalLayout_11->addWidget(radioButton_10);
 
+        radioButton_11 = new QRadioButton(layoutWidget1);
+        radioButton_11->setObjectName(QString::fromUtf8("radioButton_11"));
 
-        verticalLayout_5->addLayout(horizontalLayout_2);
+        verticalLayout_11->addWidget(radioButton_11);
 
-        pushButton_2 = new QPushButton(layoutWidget1);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        radioButton_12 = new QRadioButton(layoutWidget1);
+        radioButton_12->setObjectName(QString::fromUtf8("radioButton_12"));
 
-        verticalLayout_5->addWidget(pushButton_2);
-
-        tabWidget_2->addTab(tab_7, QString());
-
-        horizontalLayout->addWidget(tabWidget_2);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer);
+        verticalLayout_11->addWidget(radioButton_12);
 
 
-        verticalLayout_3->addLayout(horizontalLayout);
+        verticalLayout->addLayout(verticalLayout_11);
 
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        buttonNextHousing1 = new QPushButton(layoutWidget1);
+        buttonNextHousing1->setObjectName(QString::fromUtf8("buttonNextHousing1"));
 
-        verticalLayout_3->addItem(verticalSpacer_2);
+        verticalLayout->addWidget(buttonNextHousing1);
 
-        tabWidget->addTab(tab_2, QString());
+        tabHousing->addTab(tab_11, QString());
+        tab_12 = new QWidget();
+        tab_12->setObjectName(QString::fromUtf8("tab_12"));
+        layoutWidget_5 = new QWidget(tab_12);
+        layoutWidget_5->setObjectName(QString::fromUtf8("layoutWidget_5"));
+        layoutWidget_5->setGeometry(QRect(0, 0, 681, 191));
+        verticalLayout_12 = new QVBoxLayout(layoutWidget_5);
+        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
+        verticalLayout_12->setContentsMargins(0, 0, 0, 0);
+        label_16 = new QLabel(layoutWidget_5);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+
+        verticalLayout_12->addWidget(label_16);
+
+        radio1_3 = new QRadioButton(layoutWidget_5);
+        radio1_3->setObjectName(QString::fromUtf8("radio1_3"));
+
+        verticalLayout_12->addWidget(radio1_3);
+
+        radio2_3 = new QRadioButton(layoutWidget_5);
+        radio2_3->setObjectName(QString::fromUtf8("radio2_3"));
+
+        verticalLayout_12->addWidget(radio2_3);
+
+        radio3_3 = new QRadioButton(layoutWidget_5);
+        radio3_3->setObjectName(QString::fromUtf8("radio3_3"));
+
+        verticalLayout_12->addWidget(radio3_3);
+
+        radio4_3 = new QRadioButton(layoutWidget_5);
+        radio4_3->setObjectName(QString::fromUtf8("radio4_3"));
+
+        verticalLayout_12->addWidget(radio4_3);
+
+        buttonNextHousing2 = new QPushButton(layoutWidget_5);
+        buttonNextHousing2->setObjectName(QString::fromUtf8("buttonNextHousing2"));
+
+        verticalLayout_12->addWidget(buttonNextHousing2);
+
+        tabHousing->addTab(tab_12, QString());
+        tab_13 = new QWidget();
+        tab_13->setObjectName(QString::fromUtf8("tab_13"));
+        layoutWidget_6 = new QWidget(tab_13);
+        layoutWidget_6->setObjectName(QString::fromUtf8("layoutWidget_6"));
+        layoutWidget_6->setGeometry(QRect(0, 0, 601, 181));
+        verticalLayout_13 = new QVBoxLayout(layoutWidget_6);
+        verticalLayout_13->setObjectName(QString::fromUtf8("verticalLayout_13"));
+        verticalLayout_13->setContentsMargins(0, 0, 0, 0);
+        label_17 = new QLabel(layoutWidget_6);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+
+        verticalLayout_13->addWidget(label_17);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalSlider_3 = new QSlider(layoutWidget_6);
+        horizontalSlider_3->setObjectName(QString::fromUtf8("horizontalSlider_3"));
+        horizontalSlider_3->setMaximum(10);
+        horizontalSlider_3->setSingleStep(1);
+        horizontalSlider_3->setOrientation(Qt::Horizontal);
+        horizontalSlider_3->setTickPosition(QSlider::TicksBelow);
+        horizontalSlider_3->setTickInterval(1);
+
+        horizontalLayout_4->addWidget(horizontalSlider_3);
+
+        label_18 = new QLabel(layoutWidget_6);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+        label_18->setMinimumSize(QSize(16, 0));
+
+        horizontalLayout_4->addWidget(label_18);
+
+
+        verticalLayout_13->addLayout(horizontalLayout_4);
+
+        buttonNextHousing3 = new QPushButton(layoutWidget_6);
+        buttonNextHousing3->setObjectName(QString::fromUtf8("buttonNextHousing3"));
+
+        verticalLayout_13->addWidget(buttonNextHousing3);
+
+        tabHousing->addTab(tab_13, QString());
+
+        verticalLayout_2->addWidget(tabHousing);
+
+        verticalLayout_2->setStretch(0, 1);
+        verticalLayout_2->setStretch(1, 1);
+        verticalLayout_2->setStretch(2, 3);
+        tabMain->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
         label_7 = new QLabel(tab_3);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(330, 210, 151, 51));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("Gill Sans"));
-        font3.setPointSize(30);
-        label_7->setFont(font3);
+        label_7->setFont(font2);
         label_7->setTextFormat(Qt::AutoText);
         label_8 = new QLabel(tab_3);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(110, 250, 581, 91));
-        label_8->setFont(font2);
+        label_8->setFont(font3);
         label_8->setTextFormat(Qt::RichText);
         label_pic_2 = new QLabel(tab_3);
         label_pic_2->setObjectName(QString::fromUtf8("label_pic_2"));
         label_pic_2->setGeometry(QRect(210, 10, 371, 181));
-        tabWidget_3 = new QTabWidget(tab_3);
-        tabWidget_3->setObjectName(QString::fromUtf8("tabWidget_3"));
-        tabWidget_3->setGeometry(QRect(170, 352, 471, 221));
+        tabTransport = new QTabWidget(tab_3);
+        tabTransport->setObjectName(QString::fromUtf8("tabTransport"));
+        tabTransport->setGeometry(QRect(170, 352, 471, 221));
         tab_8 = new QWidget();
         tab_8->setObjectName(QString::fromUtf8("tab_8"));
         verticalLayout_6 = new QVBoxLayout(tab_8);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         label_9 = new QLabel(tab_8);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setFont(font2);
+        label_9->setFont(font3);
 
         verticalLayout_6->addWidget(label_9);
 
@@ -378,7 +377,7 @@ public:
 
         verticalLayout_6->addWidget(Check_2);
 
-        tabWidget_3->addTab(tab_8, QString());
+        tabTransport->addTab(tab_8, QString());
         tab_9 = new QWidget();
         tab_9->setObjectName(QString::fromUtf8("tab_9"));
         layoutWidget_3 = new QWidget(tab_9);
@@ -417,7 +416,7 @@ public:
 
         verticalLayout_8->addWidget(pushButton_4);
 
-        tabWidget_3->addTab(tab_9, QString());
+        tabTransport->addTab(tab_9, QString());
         tab_10 = new QWidget();
         tab_10->setObjectName(QString::fromUtf8("tab_10"));
         layoutWidget_4 = new QWidget(tab_10);
@@ -457,11 +456,11 @@ public:
 
         verticalLayout_9->addWidget(pushButton_5);
 
-        tabWidget_3->addTab(tab_10, QString());
-        tabWidget->addTab(tab_3, QString());
+        tabTransport->addTab(tab_10, QString());
+        tabMain->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
-        tabWidget->addTab(tab_4, QString());
+        tabMain->addTab(tab_4, QString());
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -469,9 +468,9 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(2);
-        tabWidget_2->setCurrentIndex(0);
-        tabWidget_3->setCurrentIndex(0);
+        tabMain->setCurrentIndex(0);
+        tabHousing->setCurrentIndex(1);
+        tabTransport->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -480,32 +479,34 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Compute your carbon footprint", nullptr));
+        buttonMain->setText(QApplication::translate("MainWindow", "Compute your carbon footprint", nullptr));
         label_5->setText(QApplication::translate("MainWindow", "CARBON TRACKER", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "ARE YOU READY FOR A CHANGE?", nullptr));
         label_pic->setText(QString());
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Welcome", nullptr));
-        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">Do you live alone or do you have flatmates?</span></p></body></html>", nullptr));
-        radioButton->setText(QApplication::translate("MainWindow", "Alone", nullptr));
-        radioButton_2->setText(QApplication::translate("MainWindow", "1-2", nullptr));
-        radioButton_3->setText(QApplication::translate("MainWindow", "3-4", nullptr));
-        radioButton_4->setText(QApplication::translate("MainWindow", "5+", nullptr));
-        Check->setText(QApplication::translate("MainWindow", "Next", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_5), QApplication::translate("MainWindow", "Question 1", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">How much do you spend a year in furniture?</span></p></body></html>", nullptr));
-        radio1->setText(QApplication::translate("MainWindow", "I don't buy furniture often", nullptr));
-        radio2->setText(QApplication::translate("MainWindow", "Less than 200 \342\202\254", nullptr));
-        radio3->setText(QApplication::translate("MainWindow", "200-1000 \342\202\254", nullptr));
-        radio4->setText(QApplication::translate("MainWindow", "More than a 1000 \342\202\254", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "Next", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_6), QApplication::translate("MainWindow", "Question 2", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "How much electricity do you consume in average monthly (slider with discrete values in 100kWh)", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "0", nullptr));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Next", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_7), QApplication::translate("MainWindow", "Question 3", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Housing", nullptr));
+        tabMain->setTabText(tabMain->indexOf(tab), QApplication::translate("MainWindow", "Welcome", nullptr));
+        label_14->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#8962b4;\">Housing</span></p></body></html>", nullptr));
+        label_13->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Housing leaves a footprint. Let's see how sustainable your way of living is.</p></body></html>", nullptr));
+        label_15->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">Do you live alone or do you have flatmates?</span></p></body></html>", nullptr));
+        radioButton_9->setText(QApplication::translate("MainWindow", "Alone", nullptr));
+        radioButton_10->setText(QApplication::translate("MainWindow", "1-2", nullptr));
+        radioButton_11->setText(QApplication::translate("MainWindow", "3-4", nullptr));
+        radioButton_12->setText(QApplication::translate("MainWindow", "5+", nullptr));
+        buttonNextHousing1->setText(QApplication::translate("MainWindow", "Next", nullptr));
+        tabHousing->setTabText(tabHousing->indexOf(tab_11), QApplication::translate("MainWindow", "Question 1", nullptr));
+        label_16->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">How much do you spend a year in furniture?</span></p></body></html>", nullptr));
+        radio1_3->setText(QApplication::translate("MainWindow", "I don't buy furniture often", nullptr));
+        radio2_3->setText(QApplication::translate("MainWindow", "Less than 200 \342\202\254", nullptr));
+        radio3_3->setText(QApplication::translate("MainWindow", "200-1000 \342\202\254", nullptr));
+        radio4_3->setText(QApplication::translate("MainWindow", "More than a 1000 \342\202\254", nullptr));
+        buttonNextHousing2->setText(QApplication::translate("MainWindow", "Next", nullptr));
+        tabHousing->setTabText(tabHousing->indexOf(tab_12), QApplication::translate("MainWindow", "Question 2", nullptr));
+        label_17->setText(QApplication::translate("MainWindow", "How much electricity do you consume in average monthly (slider with discrete values in 100kWh)", nullptr));
+        label_18->setText(QApplication::translate("MainWindow", "0", nullptr));
+        buttonNextHousing3->setText(QApplication::translate("MainWindow", "Next", nullptr));
+        tabHousing->setTabText(tabHousing->indexOf(tab_13), QApplication::translate("MainWindow", "Question 3", nullptr));
+        tabMain->setTabText(tabMain->indexOf(tab_2), QApplication::translate("MainWindow", "Housing", nullptr));
         label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#8962b4;\">Transport</span></p></body></html>", nullptr));
-        label_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Transportation leaves a footprint. Let's see how sustainable </p><p align=\"center\">are the means of transport you use in your private life.</p></body></html>", nullptr));
+        label_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Transportation leaves a footprint. Let's see how sustainable </p><p align=\"center\">the means of transport you use are in your private life.</p></body></html>", nullptr));
         label_pic_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">Do you live alone or do you have flatmates?</span></p></body></html>", nullptr));
         radioButton_5->setText(QApplication::translate("MainWindow", "Alone", nullptr));
@@ -513,20 +514,20 @@ public:
         radioButton_7->setText(QApplication::translate("MainWindow", "3-4", nullptr));
         radioButton_8->setText(QApplication::translate("MainWindow", "5+", nullptr));
         Check_2->setText(QApplication::translate("MainWindow", "Next", nullptr));
-        tabWidget_3->setTabText(tabWidget_3->indexOf(tab_8), QApplication::translate("MainWindow", "Question 1", nullptr));
+        tabTransport->setTabText(tabTransport->indexOf(tab_8), QApplication::translate("MainWindow", "Question 1", nullptr));
         label_10->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">How much do you spend a year in furniture?</span></p></body></html>", nullptr));
         radio1_2->setText(QApplication::translate("MainWindow", "I don't buy furniture often", nullptr));
         radio2_2->setText(QApplication::translate("MainWindow", "Less than 200 \342\202\254", nullptr));
         radio3_2->setText(QApplication::translate("MainWindow", "200-1000 \342\202\254", nullptr));
         radio4_2->setText(QApplication::translate("MainWindow", "More than a 1000 \342\202\254", nullptr));
         pushButton_4->setText(QApplication::translate("MainWindow", "Next", nullptr));
-        tabWidget_3->setTabText(tabWidget_3->indexOf(tab_9), QApplication::translate("MainWindow", "Question 2", nullptr));
+        tabTransport->setTabText(tabTransport->indexOf(tab_9), QApplication::translate("MainWindow", "Question 2", nullptr));
         label_11->setText(QApplication::translate("MainWindow", "How much electricity do you consume in average monthly (slider with discrete values in 100kWh)", nullptr));
         label_12->setText(QApplication::translate("MainWindow", "0", nullptr));
         pushButton_5->setText(QApplication::translate("MainWindow", "Next", nullptr));
-        tabWidget_3->setTabText(tabWidget_3->indexOf(tab_10), QApplication::translate("MainWindow", "Question 3", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Transport", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "Confirmation", nullptr));
+        tabTransport->setTabText(tabTransport->indexOf(tab_10), QApplication::translate("MainWindow", "Question 3", nullptr));
+        tabMain->setTabText(tabMain->indexOf(tab_3), QApplication::translate("MainWindow", "Transport", nullptr));
+        tabMain->setTabText(tabMain->indexOf(tab_4), QApplication::translate("MainWindow", "Confirmation", nullptr));
     } // retranslateUi
 
 };
