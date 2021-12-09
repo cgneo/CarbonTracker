@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPixmap>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -28,8 +29,19 @@ void MainWindow::on_buttonMain_clicked()
 
 void MainWindow::on_buttonNextHousing1_clicked()
 {
+    QString test;
+    QString output = test;
+    if (ui->radioH1_1->isChecked()){output += "answer 1";}
+    if (ui->radioH1_2->isChecked()){output += "answer 2";}
+    if (ui->radioH1_3->isChecked()){output += "answer 3";}
+    if (ui->radioH1_4->isChecked()){output += "answer 4";}
+
     if (ui->tabHousing->count() > 1) {
-        ui->tabHousing->setCurrentIndex( (ui->tabHousing->currentIndex()+1) % ui->tabHousing->count() );
+        if (output == test){
+            QMessageBox::warning(this, "Warning", "You did not select an answer.");
+        } else {
+            ui->tabHousing->setCurrentIndex( (ui->tabHousing->currentIndex()+1) % ui->tabHousing->count() );
+        }
     }
 }
 
