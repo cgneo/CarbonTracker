@@ -823,8 +823,8 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(horizontalSlider_3, SIGNAL(valueChanged(int)), label_18, SLOT(setNum(int)));
 
-        tabMain->setCurrentIndex(1);
-        tabHousing->setCurrentIndex(2);
+        tabMain->setCurrentIndex(0);
+        tabHousing->setCurrentIndex(0);
         tabTransport->setCurrentIndex(1);
 
 
