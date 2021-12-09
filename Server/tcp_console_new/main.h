@@ -15,6 +15,7 @@ class TCPserver : public QObject {
     Q_OBJECT
 
     public:
+        void startServer();
         explicit TCPserver();
         ~TCPserver();
 

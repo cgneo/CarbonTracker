@@ -15,7 +15,11 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     // Create a server
-    new TCPserver();
+    TCPserver* tcp = new TCPserver();
+    tcp->startServer();
+
+    // Invoke the flush and call it manually.
+    std::cout.flush();
 
     return a.exec();
 }
@@ -24,18 +28,6 @@ int main(int argc, char *argv[])
 TCPserver::TCPserver()
 {
     m_server = new QTcpServer();
-
-    if (m_server->listen(QHostAddress::Any, 8080))
-    {
-       connect(this, &TCPserver::newMessage, this, &TCPserver::displayMessage);
-       connect(m_server, &QTcpServer::newConnection, this, &TCPserver::newConnection);
-       std::cout << "QTCPServer: " << "Server is listening..." << '\n';
-    }
-    else
-    {
-        std::cout << "QTCPServer: " << "Unable to start the server..." << '\n';
-        exit(EXIT_FAILURE);
-    }
 }
 
 TCPserver::~TCPserver()
@@ -48,6 +40,25 @@ TCPserver::~TCPserver()
 
     m_server->close();
     m_server->deleteLater();
+}
+
+
+void TCPserver::startServer() {
+    try
+    {
+       m_server->listen(QHostAddress::Any, 8080);
+       connect(this, &TCPserver::newMessage, this, &TCPserver::displayMessage);
+       connect(m_server, &QTcpServer::newConnection, this, &TCPserver::newConnection);
+       std::cout << "QTCPServer: " << "Server is listening..." << '\n';
+
+       // Invoke the flush and call it manually.
+       std::cout.flush();
+    }
+    catch (...)
+    {
+        std::cout << "QTCPServer: " << "Unable to start the server..." << '\n';
+        exit(EXIT_FAILURE);
+    }
 }
 
 void TCPserver::newConnection()
@@ -98,15 +109,18 @@ void TCPserver::readSocket()
         QString ext = fileName.split(".")[1];
         QString size = header.split(",")[2].split(":")[1].split(";")[0];
 
-        std::cout << "ATTENTION: " << "You are receiving an attachment from :" << socket->socketDescriptor() << " of size: " << size.toStdString() << ", called " << fileName.toStdString() << " Do you want to accept it? (y/n)" << '\n';
+        std::cout << "ATTENTION: " << "You are receiving an attachment from :" << socket->socketDescriptor() << " of size: " << size.toStdString() << ", called " << fileName.toStdString() << "\n";
 
-        char choice = 'a';
-        while (choice!='a' and choice !='y' and choice!='n') {
-            std::cin >> choice;
+        // detect if user want to save
+        char choice = ' ';
+
+        if (choice==' ') {
+            while (choice==' ' or (choice !='y' and choice!='n')) {
+                (std::cout << "CHOICE:" << choice << "Do you want to accept it? (y/n)" << std::endl).flush();
+                std::cin >> choice;
+            }
         }
-
-        if (choice=='y')
-        {
+        if (choice=='y') {
             //QString filePath = QFileDialog::getSaveFileName(this, tr("Save File"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/"+fileName, QString("File (*.%1)").arg(ext));
             QString filePath = QDir::currentPath();
             QFile file(filePath);
@@ -131,7 +145,7 @@ void TCPserver::discardSocket()
     QTcpSocket* socket = reinterpret_cast<QTcpSocket*>(sender());
     QSet<QTcpSocket*>::iterator it = connection_set.find(socket);
     if (it != connection_set.end()){
-        displayMessage(QString("INFO :: A client has just left the room").arg(socket->socketDescriptor()));
+        displayMessage(QString("INFO: A client has just left the room: %1").arg(socket->socketDescriptor()));
         connection_set.remove(*it);
     }
     refreshComboBox();
@@ -297,7 +311,8 @@ void TCPserver::sendAttachment(QTcpSocket* socket, QString filePath)
 void TCPserver::displayMessage(const QString& str)
 {
     std::cout << str.toStdString() << '\n';
-
+    // Invoke the flush and call it manually.
+    std::cout.flush();
 }
 
 void TCPserver::refreshComboBox(){
