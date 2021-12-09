@@ -10,6 +10,62 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+
+    opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
+    ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);
+    opacity_effect_1 -> setOpacity(1);
+    animation_1 = new QPropertyAnimation(opacity_effect_1, "opacity", this);
+    animation_1 -> setStartValue(1);
+    animation_1 -> setEndValue(0);
+    animation_1 -> setDuration(500);
+    animation_1 -> setEasingCurve(QEasingCurve::Linear);
+
+    connect(animation_1, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
+            this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
+
+    opacity_effect_2 = new QGraphicsOpacityEffect(ui -> daily_challenge_2);
+    ui -> daily_challenge_2 -> setGraphicsEffect(opacity_effect_2);
+    opacity_effect_2 -> setOpacity(1);
+    animation_2 = new QPropertyAnimation(opacity_effect_2, "opacity", this);
+    animation_2 -> setStartValue(1);
+    animation_2 -> setEndValue(0);
+    animation_2 -> setDuration(500);
+    animation_2 -> setEasingCurve(QEasingCurve::Linear);
+
+    connect(animation_2, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
+            this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
+
+    opacity_effect_3 = new QGraphicsOpacityEffect(ui -> daily_challenge_3);
+    ui -> daily_challenge_3 -> setGraphicsEffect(opacity_effect_3);
+    opacity_effect_3 -> setOpacity(1);
+    animation_3 = new QPropertyAnimation(opacity_effect_3, "opacity", this);
+    animation_3 -> setStartValue(1);
+    animation_3 -> setEndValue(0);
+    animation_3 -> setDuration(500);
+    animation_3 -> setEasingCurve(QEasingCurve::Linear);
+
+    connect(animation_3, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
+            this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
+
+    opacity_effect_4 = new QGraphicsOpacityEffect(ui -> daily_challenge_4);
+    ui -> daily_challenge_4 -> setGraphicsEffect(opacity_effect_4);
+    opacity_effect_4 -> setOpacity(1);
+    animation_4 = new QPropertyAnimation(opacity_effect_4, "opacity", this);
+    animation_4 -> setStartValue(1);
+    animation_4 -> setEndValue(0);
+    animation_4 -> setDuration(500);
+    animation_4 -> setEasingCurve(QEasingCurve::Linear);
+
+    connect(animation_4, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
+            this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
+
+    animation_seed = new QPropertyAnimation(opacity_effect_seed,"opacity");
+    ui-> seed -> setGraphicsEffect(opacity_effect_seed);
+    animation_seed-> setDuration(500);
+    animation_seed -> setStartValue(0);
+    animation_seed -> setEndValue(1);
+    animation_seed -> setEasingCurve(QEasingCurve::InBack);
+    animation_seed-> start(QPropertyAnimation::DeleteWhenStopped);
 }
 
 
@@ -22,9 +78,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Surveybutton_clicked()
 {
-    if (ui->tabWidget->count() > 1) {
-          ui->tabWidget->setCurrentIndex( (ui->tabWidget->currentIndex()+1) % ui->tabWidget->count() );
-       }
+
+       ui->tabWidget->setCurrentIndex( (ui->tabWidget->currentIndex()+1) % ui->tabWidget->count() );
 }
 
 
@@ -39,6 +94,7 @@ void MainWindow::on_daily_challenge_1_stateChanged(int)
 {
     if (ui->daily_challenge_1->isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
+        animation_1 -> start();
     }else{
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() - 25);
     }
@@ -48,6 +104,7 @@ void MainWindow::on_daily_challenge_2_stateChanged(int)
 {
     if (ui->daily_challenge_2->isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
+        animation_2 -> start();
     }else{
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() - 25);
     }
@@ -57,37 +114,27 @@ void MainWindow::on_daily_challenge_3_stateChanged(int)
 {
     if (ui->daily_challenge_3->isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
+        animation_3 -> start();
     }else{
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() - 25);
     }
 }
 void MainWindow::on_daily_challenge_4_stateChanged(int)
 {
-    if (ui->daily_challenge_4->isChecked()){
+    if (ui-> daily_challenge_4-> isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
+        animation_4 -> start();
     }else{
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() - 25);
     }
 }
 
-/*
-MyTimer::MyTimer()
+void MainWindow::get_seed()
 {
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(MyTimerSlot()));
-    timer -> start (86400);
-}
-
-void MyTimer::MyTimerslot()
-{
-    qDebug();
-}
-*/
-/*
-void MainWindow::on_daily_challenge_1_destroyed()
-{
-    if (ui->daily_challenge_1->isChecked()){
-
+    if (ui -> SeedsprogressBar -> value() == 100){
+        animation_seed -> start();
     }
 }
-*/
+
+
+

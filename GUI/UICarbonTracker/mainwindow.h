@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QTextStream>
-#include <QTimer>
+#include <QPropertyAnimation>
+#include <QGraphicsOpacityEffect>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,29 +30,24 @@ private slots:
     void on_daily_challenge_3_stateChanged(int arg1);
     void on_daily_challenge_4_stateChanged(int arg1);
 
-
-
-    //void on_daily_challenge_1_destroyed();
+    void get_seed();
 
 private:
     Ui::MainWindow *ui;
+    QPropertyAnimation *animation_1;
+    QPropertyAnimation *animation_2;
+    QPropertyAnimation *animation_3;
+    QPropertyAnimation *animation_4;
+    QPropertyAnimation *animation_seed;
+
+    QGraphicsOpacityEffect *opacity_effect_1;
+    QGraphicsOpacityEffect *opacity_effect_2;
+    QGraphicsOpacityEffect *opacity_effect_3;
+    QGraphicsOpacityEffect *opacity_effect_4;
+    QGraphicsOpacityEffect *opacity_effect_seed;
 
 };
 #endif // MAINWINDOW_H
-/*
-class MyTimer : public QObject{
-    Q_OBJECT
-
-public:
-    MyTimer();
-    QTimer *timer;
-
-public slots:
-    void MyTimerslot();
-};
-
-*/
-
 
 
 
