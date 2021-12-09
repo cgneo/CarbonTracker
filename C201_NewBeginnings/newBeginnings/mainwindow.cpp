@@ -48,3 +48,25 @@ void MainWindow::on_buttonNextHousing3_clicked()
     }
 }
 
+void MainWindow::on_buttonNextTransport1_clicked()
+{
+    if (ui->tabTransport->count() > 1) {
+        ui->tabTransport->setCurrentIndex( (ui->tabTransport->currentIndex()+1) % ui->tabTransport->count() );
+    }
+}
+
+void MainWindow::on_buttonNextTransport2_clicked()
+{
+    if (ui->tabTransport->count() > 1) {
+        ui->tabTransport->setCurrentIndex( (ui->tabTransport->currentIndex()+1) % ui->tabTransport->count() );
+    }
+}
+
+
+void MainWindow::on_buttonNextTransport3_clicked()
+{
+    if (ui->tabTransport->count() > 1) {
+        ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
+    }
+}
+
