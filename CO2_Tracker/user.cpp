@@ -39,6 +39,9 @@ void User::set_seeds(int seeds)
 void User::set_living_partners(int living_partners)
     {this->living_partners = living_partners;}
 
+void User::set_picture(string image)
+    {this->image = image;}
+
 User::~User() {
     username.clear();
     name.clear();
