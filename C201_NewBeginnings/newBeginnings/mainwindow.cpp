@@ -85,3 +85,10 @@ void MainWindow::on_buttonNextTransport3_clicked()
     }
 }
 
+void MainWindow::on_buttonAccount_clicked()
+{
+    if (ui->tabMain->count() > 1) {
+        ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
+    }
+}
+
