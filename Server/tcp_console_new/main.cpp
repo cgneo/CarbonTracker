@@ -14,30 +14,8 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    // Adding colors
-    Color::Modifier terminal_red(Color::FG_RED);
-    Color::Modifier terminal_redBG(Color::BG_RED);
-    Color::Modifier terminal_cyan(Color::FG_CYAN);
-    Color::Modifier terminal_white(Color::FG_WHITE);
-    Color::Modifier terminal_default(Color::FG_DEFAULT);
-    Color::Modifier terminal_defaultBG(Color::BG_DEFAULT);
-
     // Create a server
-    QTcpServer *m_server = new QTcpServer();
-
-    if (m_server->listen(QHostAddress::Any, 8080))
-    {
-        std::cout << "QTCPServer: " << terminal_cyan << "Server is listening..." << terminal_default << '\n';
-    }
-    else
-    {
-        std::cout << "QTCPServer: " << terminal_red << "Unable to start the server..." << terminal_default << '\n';
-        exit(EXIT_FAILURE);
-    }
-
-    // Invoke the flush and call it manually.
-    std::cout.flush();
-
+    new TCPserver();
 
     return a.exec();
 }
@@ -47,7 +25,7 @@ TCPserver::TCPserver()
 {
     m_server = new QTcpServer();
 
-    if(m_server->listen(QHostAddress::Any, 8080))
+    if (m_server->listen(QHostAddress::Any, 8080))
     {
        connect(this, &TCPserver::newMessage, this, &TCPserver::displayMessage);
        connect(m_server, &QTcpServer::newConnection, this, &TCPserver::newConnection);
