@@ -12,9 +12,6 @@
 #include <iostream>
 #include <QFile>
 
-
-
-
 QByteArray get_API(){
     QFile file("/Users/apple/Desktop/CSE201/CarbonTracker/CO2_Tracker/API_KEY.txt");
     //QByteArray *bytes = new Q;
@@ -31,10 +28,50 @@ QByteArray get_API(){
     return  bytes;
 }
 
+char* get_transport_ID(char* input){
+    if (input =="international train"){
+        return "passenger_train-route_type_international_rail-fuel_source_na";
+    };
+    if (input == "metro"){
+        return "passenger_train-route_type_urban-fuel_source_diesel";
+    }
+    if (input == "national train"){
+        return "passenger_train-route_type_national_rail-fuel_source_na";
+    }
+    if (input == "bus"){
+        return "passenger_vehicle-vehicle_type_local_bus-fuel_source_na-distance_na-engine_size_na";
+    }
+    if (input == "ferry"){
+        return "passenger_ferry-route_type_na-fuel_source_na";
+    }
+    if (input == "electric car"){
+        return "passenger_vehicle-vehicle_type_car-fuel_source_bev-engine_size_na-vehicle_age_na-vehicle_weight_na";
+    }
+    if (input == "petrol car"){
+        return "passenger_vehicle-vehicle_type_car-fuel_source_petrol-engine_size_na-vehicle_age_na-vehicle_weight_na";
+    }
+    if (input == "diesel car"){
+        return "passenger_vehicle-vehicle_type_car-fuel_source_diesel-engine_size_na-vehicle_age_na-vehicle_weight_na";
+    }
+    if (input == "petrol motorbike"){
+        return "passenger_vehicle-vehicle_type_large_motorbike-fuel_source_petrol-engine_size_na-vehicle_age_na-vehicle_weight_na";
+    }
+    if (input =="first class international flight"){
+        return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_first-contrails_included";
+    };
+    if (input == "domestic flight"){
+        return "passenger_flight-route_type_domestic-aircraft_type_na-distance_na-class_na-contrails_included";
+    }
+    if (input == "business class international flight"){
+        return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_business-contrails_included";
+    }
+    if (input == "economy international flight"){
+        return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_economy-contrails_included";
+    }
+}
 
 
-
-int calculator(int argc, char *argv[])
+int calculator(int argc, char *argv[], char* input)
 {
 QApplication a(argc, argv);
 //setup GUI (you could be doing this in the designer)
@@ -67,19 +104,23 @@ QObject::connect(&networkManager, &QNetworkAccessManager::finished,
         QString code = jsonObject["co2e_unit"].toString();
         QString strValue = QString::number(beta, 'f', 3);
         //pass info to the window
-        lineEditCode.setText(strValue);
+        lineEditCode.setText(strValue+" "+code);
     }
     button.setEnabled(true);
     reply->deleteLater();
 });
 //url parameters
+char* transport_type;
+transport_type = get_transport_ID(input);
 QUrl url("https://beta2.api.climatiq.io/estimate");
 QNetworkRequest networkRequest(url);
 QByteArray key = get_API();
 networkRequest.setRawHeader("Authorization", key);
 networkRequest.setRawHeader("Content-Type","application/json");
-char* distance = "1000";
-QByteArray data("{\"emission_factor\": \"passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na\",\"parameters\":{\"distance\": ");
+char* distance = "100";
+QByteArray data("{\"emission_factor\": \"");
+data.append(transport_type);
+data.append("\",\"parameters\":{\"distance\": ");
 data.append(distance);
 data.append(",\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
 //send GET request when the button is clicked
@@ -92,6 +133,4 @@ QObject::connect(&button, &QPushButton::clicked, [&](){
 widget.show();
 return a.exec();
 }
-
-
 

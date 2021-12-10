@@ -3,11 +3,7 @@
 
 
 
-int main(){
-
-    int argc;
-    char *argv[0];
-    calculator(argc,argv);
+int main(int argc,char *argv[0]){
+    calculator(argc,argv,"car");
     return 0;
-
 }
