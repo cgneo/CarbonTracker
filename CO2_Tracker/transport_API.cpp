@@ -70,7 +70,6 @@ char* get_transport_ID(char* input){
     }
 }
 
-
 int calculator(int argc, char *argv[], char* input,char* distance)
 {
 QApplication a(argc, argv);
