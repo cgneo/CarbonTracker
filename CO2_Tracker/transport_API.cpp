@@ -71,7 +71,7 @@ char* get_transport_ID(char* input){
 }
 
 
-int calculator(int argc, char *argv[], char* input)
+int calculator(int argc, char *argv[], char* input,char* distance)
 {
 QApplication a(argc, argv);
 //setup GUI (you could be doing this in the designer)
@@ -117,7 +117,6 @@ QNetworkRequest networkRequest(url);
 QByteArray key = get_API();
 networkRequest.setRawHeader("Authorization", key);
 networkRequest.setRawHeader("Content-Type","application/json");
-char* distance = "100";
 QByteArray data("{\"emission_factor\": \"");
 data.append(transport_type);
 data.append("\",\"parameters\":{\"distance\": ");

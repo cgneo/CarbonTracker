@@ -4,6 +4,6 @@
 
 
 int main(int argc,char *argv[0]){
-    calculator(argc,argv,"car");
+    calculator(argc,argv,"metro","100");
     return 0;
 }
