@@ -11,16 +11,19 @@
 #include <QStringList>
 #include <QDebug>
 #include <QList>
+#include <string>
 
-class ParseClass : public QObject
-{
-    Q_OBJECT
+class ParseClass
+{/*
+    Q_OBJECT*/
 
 public:
-    explicit ParseClass(QObject *parent = nullptr);
-    void clearJsonObject(QJsonObject &object);
-    void createJsonFile(const QString &fileName);
+    ParseClass ();
 
+//    explicit ParseClass(QObject *parent = nullptr);
+    void clearJsonObject(QJsonObject &object); //Clears a JSON file
+    void createJsonFile(const QString &fileName);
+    void create_empty_file();
 
     void parseJsonObjectV(QJsonObject &object);
     void parseJsonObjectI(QJsonObject &object);
@@ -29,6 +32,8 @@ public:
     void initList();
 
 private:
+    static const QString file;
+    static const QString path;
 
 signals:
 

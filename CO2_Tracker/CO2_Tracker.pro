@@ -22,6 +22,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     receipt.cpp \
+    server-client.cpp \
+    transport_API.cpp
 
 
 HEADERS += \
@@ -35,7 +37,8 @@ HEADERS += \
     transport.h \
     user.h \
     mainwindow.h \
-    receipt.h
+    receipt.h \
+    server-client.hpp
 
 FORMS += \
     mainwindow.ui

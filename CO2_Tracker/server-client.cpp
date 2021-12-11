@@ -1,7 +1,41 @@
 #include "server-client.hpp"
+#include <iostream>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <string>
+#include <fstream>
+#include <filesystem>
+#include <QDir>
 
-ParseClass::ParseClass(QObject *parent) : QObject(parent)
-{}
+ParseClass::ParseClass(){};
+
+//ParseClass::ParseClass(QObject *parent) : QObject(parent)
+//{}
+
+using namespace std;
+
+const QString ParseClass::file = "CarbonTracker_data.json";
+
+const QString ParseClass::path = "/Users/alex_christlieb/Documents/Ecole Polytechnique/Courses/Year 2/CSE201/Project/CarbonTracker/CO2_Tracker";
+
+
+void ParseClass::create_empty_file(){
+    QDir dir;
+    QFile my_file(path + file);
+
+    if (!dir.exists(path)){
+        qDebug() << "Directory not found";
+    }
+
+    else{
+    if ( my_file.open(QIODevice::ReadWrite) )
+        {
+            qDebug()<<"file now exists";
+        }
+    }
+}
+
 
 void ParseClass::clearJsonObject(QJsonObject &object)
 {
@@ -76,6 +110,7 @@ void ParseClass::createJsonFile(const QString &fileName)
     QJsonDocument jsonDocument; // QJsonDocument class provides methods for reading and writing JSON documents
     jsonDocument.setObject(rootObject);
     QByteArray byteArray = jsonDocument.toJson(QJsonDocument::Indented);
+
     QFile file(fileName);
     if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
@@ -83,6 +118,7 @@ void ParseClass::createJsonFile(const QString &fileName)
         qDebug() << QString("fail to open the file: ").arg(__FILE__).arg(__LINE__).arg(__FUNCTION__);
         return;
     }
+    std::cout << "Success" << std::endl;
     QTextStream out(&file);
     out << byteArray;
     file.close();
