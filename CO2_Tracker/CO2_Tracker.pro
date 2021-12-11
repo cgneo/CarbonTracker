@@ -23,7 +23,8 @@ SOURCES += \
     main.cpp \
     receipt.cpp \
     server-client.cpp \
-    transport_API.cpp
+    transport_API.cpp \
+    mainwindow.cpp
 
 
 HEADERS += \
@@ -38,10 +39,12 @@ HEADERS += \
     transport.h \
     user.h \
     receipt.h \
-    server-client.hpp
+    server-client.hpp \
+    mainwindow.h
 
 FORMS += \
-    api_transport.ui
+    api_transport.ui \
+    mainwindow.ui
 
 TARGET = CarbonTracker_exe
 
