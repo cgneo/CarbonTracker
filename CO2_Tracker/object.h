@@ -9,20 +9,20 @@ using namespace std;
 class Object{
 public:
     Object();
-    Object(Date current_date, string object_name, string object_type);
+    Object(Date *current_date, string object_name, string object_type);
     ~Object();
 
-    Date get_date();
+    Date *get_date();
     double get_footprint();
     string get_type();
     string get_name();
-    void set_date(Date current_date);
+    void set_date(Date *current_date);
     virtual void set_footprint(double co2_emission);
     void set_name(string object_name);
     void set_type(string object_type);
 
 protected:
-    Date date;
+    Date *date;
     double footprint;
     string type;
     string name;

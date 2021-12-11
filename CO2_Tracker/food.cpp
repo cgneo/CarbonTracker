@@ -9,6 +9,7 @@ Food::Food(double barcode) {
     set_barcode(barcode);
     set_footprint(co2_total, 1);
 }
+
 //---------------------Get Methods--------------------------
 double Food::get_quantity() {
     return quantity;
@@ -20,6 +21,7 @@ double Food::get_barcode() {
 string Food::get_category(){
     return category;
 }
+
 //-------------------Set Methods----------------------------
 void Food::set_quantity(double quantity) {
     this->quantity = quantity;

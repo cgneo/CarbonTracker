@@ -1,4 +1,3 @@
-#include "mainwindow.h"
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
@@ -11,6 +10,7 @@
 #include <QtNetwork>
 #include <iostream>
 #include <QFile>
+#include "transport.h"
 
 QByteArray get_API(){
     QFile file("/Users/alex_christlieb/Desktop/API_KEY.txt");
@@ -70,7 +70,7 @@ char* get_transport_ID(char* input){
     }
 }
 
-int calculator(int argc, char *argv[], char* input,char* distance)
+int calculator(int argc, char *argv[], char* input,char* distance, Transport* t)
 {
 QApplication a(argc, argv);
 //setup GUI (you could be doing this in the designer)
@@ -100,6 +100,7 @@ QObject::connect(&networkManager, &QNetworkAccessManager::finished,
         //get code
         QJsonValue alpha = jsonObject.value("co2e");
         double beta = alpha.toDouble();
+        t->set_footprint(beta);
         //here we use set_footprint(beta) from transport classes to store the emission
         QString code = jsonObject["co2e_unit"].toString();
         QString strValue = QString::number(beta, 'f', 3);
@@ -131,5 +132,73 @@ QObject::connect(&button, &QPushButton::clicked, [&](){
 
 widget.show();
 return a.exec();
+}
+
+
+double calculator2(QPushButton *button, char* input,char* distance)
+{double beta ;
+    /*
+QApplication a(argc, argv);
+//setup GUI (you could be doing this in the designer)
+QWidget widget;
+QFormLayout layout(&widget);
+QLineEdit lineEditCode;
+auto edits = {&lineEditCode};
+for(auto edit : edits) edit->setReadOnly(true);
+layout.addRow("Carbon footprint [Kg]:", &lineEditCode);
+QPushButton button("Click for magic");
+layout.addRow(&button);*/
+
+//send request to uinames API
+QNetworkAccessManager networkManager;
+QObject::connect(&networkManager, &QNetworkAccessManager::finished,
+                 [&](QNetworkReply* reply){
+    //this lambda is called when the reply is received
+    //it can be a slot in your GUI window class
+    //check for errors
+
+    if(reply->error() != QNetworkReply::NoError){
+//        for(auto edit : edits) edit->setText("Error");
+        networkManager.clearAccessCache();
+        return -1.0;
+    } else {
+        //parse the reply JSON and display result in the UI
+        QJsonObject jsonObject= QJsonDocument::fromJson(reply->readAll()).object();
+        //get code
+        QJsonValue alpha = jsonObject.value("co2e");
+        beta = alpha.toDouble();
+        //here we use set_footprint(beta) from transport classes to store the emission
+        QString code = jsonObject["co2e_unit"].toString();
+        QString strValue = QString::number(beta, 'f', 3);
+        //pass info to the window
+//        lineEditCode.setText(strValue+" "+code);
+
+    }
+//    button.setEnabled(true);
+    reply->deleteLater();
+});
+//url parameters
+char* transport_type;
+transport_type = get_transport_ID(input);
+QUrl url("https://beta2.api.climatiq.io/estimate");
+QNetworkRequest networkRequest(url);
+QByteArray key = get_API();
+networkRequest.setRawHeader("Authorization", key);
+networkRequest.setRawHeader("Content-Type","application/json");
+QByteArray data("{\"emission_factor\": \"");
+data.append(transport_type);
+data.append("\",\"parameters\":{\"distance\": ");
+data.append(distance);
+data.append(",\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
+//send GET request when the button is clicked
+QObject::connect(button, &QPushButton::clicked, [&](){
+    networkManager.post(networkRequest,data);
+//    button.setEnabled(false);
+//    for(auto edit : edits) edit->setText("Loading. . .");
+});
+
+//widget.show();
+//return a.exec();
+return beta;
 }
 

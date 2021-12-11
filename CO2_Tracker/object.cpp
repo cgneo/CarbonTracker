@@ -1,12 +1,12 @@
 #include "object.h"
 #include "date.h"
 
-Object::Object(){date = Date(0,0,0);
+Object::Object(){
                 footprint = 0;
                 name = "Jesus";
                 type = "Food";}
 
-Object::Object(Date current_date, string object_name, string object_type){
+Object::Object(Date *current_date, string object_name, string object_type){
     date = current_date;
     footprint = 0;
     name = object_name;
@@ -14,7 +14,7 @@ Object::Object(Date current_date, string object_name, string object_type){
 }
 
 //---------------------Get Methods--------------------------
-Date Object::get_date(){
+Date *Object::get_date(){
     return date;
 }
 
@@ -31,7 +31,7 @@ string Object::get_name(){
 }
 
 //---------------------Set Methods--------------------------
-void Object::set_date(Date current_date){
+void Object::set_date(Date *current_date){
     date = current_date;
 }
 
@@ -49,10 +49,10 @@ void Object::set_type(string object_type){
 
 
 Object::~Object(){
-    delete &date;
+//    delete &date;
     type.clear();
     name.clear();
-    delete &footprint;
+//    delete &footprint;
 }
 
 

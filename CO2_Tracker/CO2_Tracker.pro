@@ -10,6 +10,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    api_transport.cpp \
     base_consumption.cpp \
     consumption.cpp \
     date.cpp \
@@ -20,13 +21,13 @@ SOURCES += \
     transport.cpp \
     user.cpp\
     main.cpp \
-    mainwindow.cpp \
     receipt.cpp \
     server-client.cpp \
     transport_API.cpp
 
 
 HEADERS += \
+    api_transport.h \
     base_consumption.h \
     consumption.h \
     date.h \
@@ -36,12 +37,11 @@ HEADERS += \
     tests.h \
     transport.h \
     user.h \
-    mainwindow.h \
     receipt.h \
     server-client.hpp
 
 FORMS += \
-    mainwindow.ui
+    api_transport.ui
 
 TARGET = CarbonTracker_exe
 

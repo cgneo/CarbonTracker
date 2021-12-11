@@ -8,8 +8,6 @@ public:
     Tests();
 
     bool start_test();
-
-
     //-----------------------Class testing--------------------
 
     //Date

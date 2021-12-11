@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>api_transport</class>
+ <widget class="QMainWindow" name="api_transport">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,30 +14,30 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="button_image">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>260</y>
-      <width>101</width>
-      <height>23</height>
+      <x>260</x>
+      <y>90</y>
+      <width>251</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="text">
-     <string>Choose an image</string>
+     <string>Magic</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_img">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>20</y>
-      <width>271</width>
-      <height>231</height>
+      <x>290</x>
+      <y>290</y>
+      <width>181</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>CO2 Emissions: </string>
     </property>
    </widget>
   </widget>
@@ -47,7 +47,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
