@@ -7,17 +7,17 @@
 class Transport : public Object{
    public:
     Transport();
-    void set_duration(double time);
-    double get_duration();
+    void set_distance(char* distance);
 protected:
-    double duration;
+    char* distance;
 };
 
 class Locomotive: public Transport{
 public:
     Locomotive();
+    void set_footprint(double estimate);
+    double  get_footprint();
 private:
-    double carbon_coefficient;
     double footprint;
 };
 
@@ -25,18 +25,18 @@ private:
 class Airplane: public Transport{
 public:
     Airplane();
+    void set_footprint(double estimate);
+    double  get_footprint();
 private:
-    double carbon_coefficient;
     double footprint;
 };
 
 class Car: public Transport{
 public:
     Car();
+    void set_footprint(double estimate);
+    double  get_footprint();
 private:
-    double carbon_coefficient;
     double footprint;
 };
-
-
 #endif // TRANSPORT_H

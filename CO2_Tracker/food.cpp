@@ -1,10 +1,13 @@
 #include "food.h"
 #include <string>
 
-Food::Food() {
+Food::Food(double barcode) {
+    double co2_total = retrieve_carbon(barcode);
+    string str = retrieve_category(barcode);
+    set_category(str);
     set_quantity(1);
-    set_barcode(00000000);
-    set_category("food");
+    set_barcode(barcode);
+    set_footprint(co2_total, 1);
 }
 //---------------------Get Methods--------------------------
 double Food::get_quantity() {
@@ -47,11 +50,3 @@ double Food::retrieve_carbon(double barcode) {
                //C02 footprint of food item
 }
 
-void Food::create_food_item(double barcode){
-    double co2_total = retrieve_carbon(barcode);
-    string str = retrieve_category(barcode);
-    set_category(str);
-    set_quantity(1);
-    set_barcode(barcode);
-    set_footprint(co2_total, 1);
-}
