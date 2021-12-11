@@ -10,14 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPixmap pix("/Users/cyrine/Downloads/CarbonTracker/Inspiration/photos/food-pic.png");
-    ui -> food-pic -> setPixmap(pix.scaled(300,200, Qt::KeepAspectRatio));
-
-    QPixmap pix2("/Users/cyrine/Downloads/CarbonTracker/Inspiration/photos/transport-pic.png");
-    ui -> transportation-pic -> setPixmap(pix2.scaled(300,200, Qt::KeepAspectRatio));
-
-    QPixmap pix3("/Users/cyrine/Downloads/CarbonTracker/Inspiration/photos/house-pic.png");
-    ui -> house-pic -> setPixmap(pix3.scaled(300,200, Qt::KeepAspectRatio));
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
     ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);

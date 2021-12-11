@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>921</width>
     <height>670</height>
    </rect>
   </property>
@@ -1330,9 +1330,9 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Button">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>139</red>
-                  <green>172</green>
-                  <blue>121</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -1402,18 +1402,18 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Base">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>255</red>
-                  <green>255</green>
-                  <blue>255</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Window">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>139</red>
-                  <green>172</green>
-                  <blue>121</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -1476,9 +1476,9 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Button">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>139</red>
-                  <green>172</green>
-                  <blue>121</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -1548,18 +1548,18 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Base">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>255</red>
-                  <green>255</green>
-                  <blue>255</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Window">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>139</red>
-                  <green>172</green>
-                  <blue>121</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -1622,9 +1622,9 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Button">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>139</red>
-                  <green>172</green>
-                  <blue>121</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -1694,18 +1694,18 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Base">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>139</red>
-                  <green>172</green>
-                  <blue>121</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Window">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>139</red>
-                  <green>172</green>
-                  <blue>121</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -1758,7 +1758,14 @@ p, li { white-space: pre-wrap; }
              </palette>
             </property>
             <property name="styleSheet">
-             <string notr="true">QtextEdit_2{rgb(139, 195, 136)qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.05 rgba(14, 8, 73, 255), stop:0.36 rgba(28, 17, 145, 255), stop:0.6 rgba(126, 14, 81, 255), stop:0.75 rgba(234, 11, 11, 255), stop:0.79 rgba(244, 70, 5, 255), stop:0.86 rgba(255, 136, 0, 255), stop:0.935 rgba(239, 236, 55, 255))QtextEdit_2{rgb(147, 173, 109)}}</string>
+             <string notr="true">QTextEdit{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+}</string>
             </property>
             <property name="html">
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1778,6 +1785,16 @@ p, li { white-space: pre-wrap; }
               <height>100</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QTextEdit{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124,77);
+
+}</string>
+            </property>
             <property name="html">
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1795,8 +1812,18 @@ p, li { white-space: pre-wrap; }
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
-                 <height>20</height>
+                 <height>25</height>
                 </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QTextEdit{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+}</string>
                </property>
                <property name="html">
                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1870,9 +1897,9 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Button">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>128</red>
-                  <green>182</green>
-                  <blue>139</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -1942,18 +1969,18 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Base">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>128</red>
-                  <green>182</green>
-                  <blue>139</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Window">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>128</red>
-                  <green>182</green>
-                  <blue>139</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -2016,9 +2043,9 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Button">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>128</red>
-                  <green>182</green>
-                  <blue>139</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -2088,18 +2115,18 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Base">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>128</red>
-                  <green>182</green>
-                  <blue>139</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Window">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>128</red>
-                  <green>182</green>
-                  <blue>139</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -2162,9 +2189,9 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Button">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>128</red>
-                  <green>182</green>
-                  <blue>139</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -2234,18 +2261,18 @@ p, li { white-space: pre-wrap; }
                <colorrole role="Base">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>128</red>
-                  <green>182</green>
-                  <blue>139</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Window">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>128</red>
-                  <green>182</green>
-                  <blue>139</blue>
+                  <red>136</red>
+                  <green>159</green>
+                  <blue>124</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -2299,7 +2326,12 @@ p, li { white-space: pre-wrap; }
             </property>
             <property name="styleSheet">
              <string notr="true">QTextEdit{
-	background-color: rgb(128, 182, 139);
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
 }</string>
             </property>
             <property name="html">
@@ -2320,7 +2352,14 @@ p, li { white-space: pre-wrap; }
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">QTextEdit{rgb(136, 192, 135)}</string>
+             <string notr="true">QTextEdit{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124,77);
+
+}</string>
             </property>
             <property name="html">
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2339,8 +2378,18 @@ p, li { white-space: pre-wrap; }
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
-                 <height>20</height>
+                 <height>25</height>
                 </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QTextEdit{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+}</string>
                </property>
                <property name="html">
                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2399,6 +2448,16 @@ p, li { white-space: pre-wrap; }
               <height>30</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QTextEdit{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+}</string>
+            </property>
             <property name="html">
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -2415,6 +2474,16 @@ p, li { white-space: pre-wrap; }
               <width>16777215</width>
               <height>100</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTextEdit{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124,77);
+
+}</string>
             </property>
             <property name="html">
              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2433,8 +2502,18 @@ p, li { white-space: pre-wrap; }
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
-                 <height>20</height>
+                 <height>25</height>
                 </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QTextEdit{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+}</string>
                </property>
                <property name="html">
                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2489,7 +2568,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>921</width>
      <height>24</height>
     </rect>
    </property>
