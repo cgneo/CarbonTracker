@@ -10,14 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPixmap pix("/Users/dainjung/Downloads/photos/IMAGE\ 2021-12-11\ 16\:14\:20.jpg");
-    ui -> food_pic -> setPixmap(pix.scaled(300,200, Qt::KeepAspectRatio));
+    QPixmap pix("/Users/cyrine/Downloads/CarbonTracker/Inspiration/photos/food-pic.png");
+    ui -> food-pic -> setPixmap(pix.scaled(300,200, Qt::KeepAspectRatio));
 
-    QPixmap pix2("/Users/dainjung/Downloads/photos/Capture\ d’écran\ 2021-11-25\ à\ 11.42.59\ AM.png");
-    ui -> transportation_pic -> setPixmap(pix2.scaled(300,200, Qt::KeepAspectRatio));
+    QPixmap pix2("/Users/cyrine/Downloads/CarbonTracker/Inspiration/photos/transport-pic.png");
+    ui -> transportation-pic -> setPixmap(pix2.scaled(300,200, Qt::KeepAspectRatio));
 
-    QPixmap pix3("/Users/dainjung/Downloads/photos/IMAGE\ 2021-12-11\ 16\:35\:20.jpg");
-    ui -> home_pic -> setPixmap(pix3.scaled(300,200, Qt::KeepAspectRatio));
+    QPixmap pix3("/Users/cyrine/Downloads/CarbonTracker/Inspiration/photos/house-pic.png");
+    ui -> house-pic -> setPixmap(pix3.scaled(300,200, Qt::KeepAspectRatio));
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
     ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);
