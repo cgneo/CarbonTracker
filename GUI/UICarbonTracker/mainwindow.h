@@ -6,6 +6,7 @@
 #include <QTextStream>
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
+#include <QImage>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
