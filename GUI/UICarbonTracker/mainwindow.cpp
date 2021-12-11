@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    QPixmap pix("/Users/dainjung/Downloads/photos/Capture\ d’écran\ 2021-11-25\ à\ 12.13.00\ PM.png");
+    ui ->food_pic -> setPixmap(pix.scaled(300,200, Qt::KeepAspectRatio));
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
     ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);
@@ -59,13 +61,19 @@ MainWindow::MainWindow(QWidget *parent)
     connect(animation_4, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
 
-    animation_seed = new QPropertyAnimation(opacity_effect_seed,"opacity");
+    opacity_effect_seed = new QGraphicsOpacityEffect( ui -> seed);
+    animation_seed = new QPropertyAnimation(opacity_effect_seed,"opacity", this);
     ui-> seed -> setGraphicsEffect(opacity_effect_seed);
+    opacity_effect_seed -> setOpacity(1);
     animation_seed-> setDuration(500);
     animation_seed -> setStartValue(0);
     animation_seed -> setEndValue(1);
     animation_seed -> setEasingCurve(QEasingCurve::InBack);
     animation_seed-> start(QPropertyAnimation::DeleteWhenStopped);
+
+    connect(animation_seed, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
+            this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
+
 }
 
 

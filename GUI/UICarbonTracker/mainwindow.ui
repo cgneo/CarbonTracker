@@ -231,7 +231,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1180,7 +1180,7 @@ p, li { white-space: pre-wrap; }
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
-        <string>Your friends</string>
+        <string>Challenges/info/tips</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
@@ -1661,12 +1661,18 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="food_pic">
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>200</height>
+             </size>
+            </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap>../../../../Inspiration/Capture d’écran 2021-11-25 à 12.14.07 PM.png</pixmap>
+             <pixmap>../../../Downloads/photos/Capture d’écran 2021-11-25 à 12.13.00 PM.png</pixmap>
             </property>
            </widget>
           </item>
@@ -2278,7 +2284,7 @@ p, li { white-space: pre-wrap; }
       </widget>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
-        <string>Challenges/info/tips</string>
+        <string>Your friends</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_2"/>
       </widget>
@@ -2292,7 +2298,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
