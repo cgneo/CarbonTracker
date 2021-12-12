@@ -21,12 +21,8 @@ int main(int argc, char *argv[])
 //    t.start_test();
 
 //    Locomotive *m = new Locomotive(fecha, "metro", "transport", "100");
-    QApplication a(argc, argv);
-    Survey w;
 
 //    calculator(argc, argv, "economy international flight", "10000", m);
 //    std::cout << std::to_string(m->get_footprint()) << std::endl
 
-    w.show();
-    return a.exec();
 }
