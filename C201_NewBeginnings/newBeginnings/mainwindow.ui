@@ -1215,7 +1215,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                            <number>1000</number>
                           </property>
                           <property name="maximum">
-                           <number>2021</number>
+                           <number>2022</number>
                           </property>
                           <property name="value">
                            <number>1990</number>
