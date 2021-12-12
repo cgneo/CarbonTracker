@@ -24,6 +24,7 @@ private :
   Base_Consumption base_consumption;
   int living_partners;
   string image;
+  static int days_in_month[13];
 
 public:
   //Get and set methods
@@ -52,6 +53,13 @@ public:
   void set_picture(string picture);
 
   ~User();
+
+  bool name_is_valid();
+  bool birthday_is_valid();
+  bool email_is_valid();
+  bool seeds_are_valid();
+  bool living_partners_are_valid();
+  bool footprint_is_valid();
 
   //Additional functions to write
 
