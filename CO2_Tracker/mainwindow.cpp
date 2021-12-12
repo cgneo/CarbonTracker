@@ -3,7 +3,7 @@
 #include "survey.h"
 #include <QPixmap>
 #include <QDebug>
-
+#include <QMap>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -142,12 +142,18 @@ void MainWindow::get_seed()
     }
 }
 
-
-
-
+//linking mainwindow and survey
 void MainWindow::on_pushButton_clicked()
 {
     survey = new Survey(this);
     survey->show();
 }
+
+//explicitly defining the array with the key(name) and value(explanation text) of a challenge
+
+const QString key[10] = {"Challenge 1","Challenge 2", "Challenge 3", "Challenge 4", "Challenge 5", "Challenge 6","Challenge 7", "Challenge 8", "Challenge 9", "Challenge 10"};
+const QString value[10] = {"Challenge 1","Challenge 2", "Challenge 3", "Challenge 4", "Challenge 5", "Challenge 6","Challenge 7", "Challenge 8", "Challenge 9", "Challenge 10"};
+
+//creating a challenge
+void MainWindow :: insert_challenge(QString key, QString value){}
 
