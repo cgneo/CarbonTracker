@@ -1,4 +1,4 @@
-#include "server-client.hpp"
+#include "json_DB.hpp"
 #include <iostream>
 #include <QJsonDocument>
 #include <QJsonArray>
@@ -7,37 +7,46 @@
 #include <fstream>
 #include <filesystem>
 #include <QDir>
+#include <QDesktopServices>
+#include <QSaveFile>
 
-ParseClass::ParseClass(){};
+//---------------------Basic methods ---------------------------
+Json_DB::Json_DB(){};
+Json_DB::~Json_DB(){};
 
-//ParseClass::ParseClass(QObject *parent) : QObject(parent)
+const QString Json_DB::file_name = "CarbonTracker_data.txt";
+const QString Json_DB::path = "/Users/alex_christlieb/Documents/Ecole Polytechnique/Courses/Year 2/CSE201/Project/CarbonTracker/CO2_Tracker/build/";
+
+QString Json_DB::get_path(){
+    return path;
+}
+
+QString Json_DB::get_FileName(){
+    return file_name;
+}
+
+//Json_DB::Json_DB(QObject *parent) : QObject(parent)
 //{}
 
 using namespace std;
 
-const QString ParseClass::file = "CarbonTracker_data.json";
-
-const QString ParseClass::path = "/Users/alex_christlieb/Documents/Ecole Polytechnique/Courses/Year 2/CSE201/Project/CarbonTracker/CO2_Tracker";
-
-
-void ParseClass::create_empty_file(){
+void Json_DB::create_empty_file(){//Creates new file in proper path if it doesnt exist
     QDir dir;
-    QFile my_file(path + file);
+    QFile my_file(path + file_name);
 
     if (!dir.exists(path)){
         qDebug() << "Directory not found";
     }
 
     else{
-    if ( my_file.open(QIODevice::ReadWrite) )
+    if ( my_file.open(QIODevice::ReadWrite) ) //Create file only if it doesn't exist
         {
-            qDebug()<<"file now exists";
+            qDebug()<<"file exists";
         }
     }
 }
 
-
-void ParseClass::clearJsonObject(QJsonObject &object)
+void Json_DB::clearJsonObject(QJsonObject &object)
 {
     QStringList strList = object.keys();
     for(int i = 0; i < strList.size(); ++i)
@@ -46,7 +55,7 @@ void ParseClass::clearJsonObject(QJsonObject &object)
     }
 }
 
-void ParseClass::createJsonFile(const QString &fileName)
+QJsonObject Json_DB::createJsonUserObject()
 {
     QJsonArray jsonArray;
     QJsonObject rootObject;
@@ -107,26 +116,27 @@ void ParseClass::createJsonFile(const QString &fileName)
     clearJsonObject(branchObject);
 
     rootObject.insert("User", jsonArray);
-    QJsonDocument jsonDocument; // QJsonDocument class provides methods for reading and writing JSON documents
-    jsonDocument.setObject(rootObject);
-    QByteArray byteArray = jsonDocument.toJson(QJsonDocument::Indented);
 
-    QFile file(fileName);
-    if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-        //if the file cannot pe opened, we show an error message
-        qDebug() << QString("fail to open the file: ").arg(__FILE__).arg(__LINE__).arg(__FUNCTION__);
-        return;
-    }
-    std::cout << "Success" << std::endl;
-    QTextStream out(&file);
-    out << byteArray;
-    file.close();
-    qDebug() << byteArray;
+    return rootObject;
+}
+
+void Json_DB::writeJsonUser(){
+    create_empty_file();
+
+    QJsonObject user = createJsonUserObject();
+
+    QFile file(file_name);
+
+    if (!file.open(QIODevice::WriteOnly)) {
+            qWarning("Couldn't open save file");
+        }
+
+    file.write(QJsonDocument(user).toJson());
+    qDebug() << "Is doc empty?" << QJsonDocument(user);
 }
 
 
-void ParseClass::parseJsonFile(const QString &fileName)
+void Json_DB::parseJsonFile(const QString &fileName)
 {
     QFile file(fileName);
     if(!file.open(QIODevice::ReadOnly | QIODevice::Text))

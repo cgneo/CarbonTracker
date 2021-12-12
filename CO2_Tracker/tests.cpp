@@ -2,15 +2,27 @@
 #include "date.h"
 #include "random"
 #include "json.h"
+#include "json_DB.hpp"
 #include <iostream>
+#include <filesystem>
+#include <QFileInfo>
 
 using namespace std;
 
-Tests::Tests()
-{
-    test_add_duration();
+
+Tests::Tests(){};
+
+bool Tests::start_test(){ //Main trigger function
+    bool flag;
+
+
+    flag = test_JsonUser();
+    return flag;
 }
 
+
+
+//-------------------Dates ---------------------------------
 void Tests::test_add_duration(){
     try{
         for (int i = 0; i++; i < 10){
@@ -27,13 +39,51 @@ void Tests::test_add_duration(){
     catch (...){
         throw invalid_argument("Something went wrong...");
     }
-    cout << "Test: Add duration passed" << endl;
+    qDebug() << "Test: Add duration - Succes";
 }
 
 
 
 //---------------------Json------------------------------
+bool Tests::test_JsonUser(){//Trigger function for module
+    qDebug() << "-----Testing Json DB Module-------";
+    Json_DB* p = new Json_DB();
 
-void Tests::test_does_file_exist(){
+    test_does_file_exist(p);
+    test_createJsonUserObject(p);
+    test_writeJsonUser(p);
+   }
 
+
+void Tests::test_does_file_exist(Json_DB* json){
+    QFileInfo check_file(json->get_path()+json->get_FileName());//Define file to search
+
+    if (check_file.exists() && check_file.isFile()) {
+            qDebug() << "test_does_file_exist() - Success";
+        }
+    else {
+            qDebug() << "test_does_file_exist() - Fail";
+        }
+}
+
+void Tests::test_createJsonUserObject(Json_DB* json){
+    try{
+        json->createJsonUserObject();
+    }
+    catch(...){
+        throw invalid_argument("Test: Create Json User Object - Fail");
+    }
+    qDebug() << "Test: Create Json User Object - Success";
+}
+
+void Tests::test_writeJsonUser(Json_DB *json){
+    try{
+        json->writeJsonUser();
+    }
+    catch(...){
+        throw invalid_argument("test_writeJsonUser - Error writing file");
+    }
+
+    //Can test if there is adequate content
+    qDebug() << "test_writeJsonUser - Success";
 }

@@ -15,6 +15,7 @@ SOURCES += \
     consumption.cpp \
     date.cpp \
     json.cpp \
+    json_DB.cpp \
     object.cpp \
     food.cpp \
     tests.cpp \
@@ -22,7 +23,6 @@ SOURCES += \
     user.cpp\
     main.cpp \
     receipt.cpp \
-    server-client.cpp \
     transport_API.cpp \
     mainwindow.cpp
 
@@ -33,13 +33,13 @@ HEADERS += \
     consumption.h \
     date.h \
     json.h \
+    json_DB.hpp \
     object.h \
     food.h \
     tests.h \
     transport.h \
     user.h \
     receipt.h \
-    server-client.hpp \
     mainwindow.h
 
 FORMS += \
