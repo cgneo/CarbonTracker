@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "survey.h"
+#include "ui_survey.h"
 #include <QPixmap>
 #include <QMessageBox>
 

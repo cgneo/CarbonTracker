@@ -10,13 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    survey.cpp
 
 HEADERS += \
-    mainwindow.h
+    survey.h
 
 FORMS += \
-    mainwindow.ui
+    survey.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
