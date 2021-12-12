@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -20,6 +21,7 @@
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -31,7 +33,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QGridLayout *gridLayout_10;
+    QGridLayout *gridLayout_13;
     QTabWidget *tabMain;
     QWidget *tab;
     QGridLayout *gridLayout;
@@ -114,8 +116,6 @@ public:
     QVBoxLayout *verticalLayout_12;
     QRadioButton *radioButton_13;
     QRadioButton *radioButton_14;
-    QRadioButton *radioButton_15;
-    QRadioButton *radioButton_16;
     QPushButton *buttonNextTransport1;
     QWidget *tab_15;
     QGridLayout *gridLayout_7;
@@ -140,28 +140,44 @@ public:
     QSpacerItem *verticalSpacer_6;
     QLabel *label_pic_2;
     QWidget *tab_5;
+    QGridLayout *gridLayout_10;
+    QVBoxLayout *verticalLayout_19;
+    QSpacerItem *verticalSpacer_13;
+    QHBoxLayout *horizontalLayout_11;
+    QSpacerItem *horizontalSpacer_14;
+    QVBoxLayout *verticalLayout_20;
     QLabel *label_27;
-    QLabel *label_2;
-    QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit_4;
-    QLineEdit *lineEdit_5;
+    QLabel *label_28;
+    QHBoxLayout *horizontalLayout_10;
+    QSpacerItem *horizontalSpacer_13;
+    QVBoxLayout *verticalLayout_21;
+    QHBoxLayout *horizontalLayout_9;
+    QVBoxLayout *verticalLayout_22;
     QLabel *label_3;
-    QLabel *label_4;
+    QLabel *label_10;
     QLabel *label_7;
     QLabel *label_8;
+    QFrame *line;
+    QLabel *label_2;
+    QLabel *label_9;
+    QVBoxLayout *verticalLayout_23;
     QLineEdit *lineEdit;
-    QWidget *tab_4;
-    QGridLayout *gridLayout_11;
-    QVBoxLayout *verticalLayout_14;
-    QSpacerItem *verticalSpacer_10;
-    QHBoxLayout *horizontalLayout_7;
-    QSpacerItem *horizontalSpacer_9;
-    QVBoxLayout *verticalLayout_13;
-    QLabel *label;
-    QPushButton *pushButton;
-    QSpacerItem *horizontalSpacer_10;
-    QSpacerItem *verticalSpacer_11;
-    QSpacerItem *verticalSpacer_12;
+    QHBoxLayout *horizontalLayout_12;
+    QSpinBox *spinBox_2;
+    QSpacerItem *horizontalSpacer_16;
+    QSpinBox *spinBox_3;
+    QSpacerItem *horizontalSpacer_15;
+    QSpinBox *spinBox;
+    QLineEdit *lineEdit_2;
+    QLineEdit *lineEdit_4;
+    QFrame *line_2;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_3;
+    QPushButton *buttonAccount;
+    QSpacerItem *horizontalSpacer_17;
+    QSpacerItem *horizontalSpacer_18;
+    QSpacerItem *verticalSpacer_14;
+    QSpacerItem *verticalSpacer_15;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -171,8 +187,8 @@ public:
         MainWindow->resize(865, 679);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        gridLayout_10 = new QGridLayout(centralwidget);
-        gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
+        gridLayout_13 = new QGridLayout(centralwidget);
+        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
         tabMain = new QTabWidget(centralwidget);
         tabMain->setObjectName(QString::fromUtf8("tabMain"));
         QPalette palette;
@@ -586,16 +602,6 @@ public:
 
         verticalLayout_12->addWidget(radioButton_14);
 
-        radioButton_15 = new QRadioButton(tab_14);
-        radioButton_15->setObjectName(QString::fromUtf8("radioButton_15"));
-
-        verticalLayout_12->addWidget(radioButton_15);
-
-        radioButton_16 = new QRadioButton(tab_14);
-        radioButton_16->setObjectName(QString::fromUtf8("radioButton_16"));
-
-        verticalLayout_12->addWidget(radioButton_16);
-
 
         verticalLayout_6->addLayout(verticalLayout_12);
 
@@ -728,92 +734,204 @@ public:
         tabMain->addTab(tab_3, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QString::fromUtf8("tab_5"));
+        gridLayout_10 = new QGridLayout(tab_5);
+        gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
+        verticalLayout_19 = new QVBoxLayout();
+        verticalLayout_19->setObjectName(QString::fromUtf8("verticalLayout_19"));
+        verticalSpacer_13 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_19->addItem(verticalSpacer_13);
+
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
+        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_11->addItem(horizontalSpacer_14);
+
+        verticalLayout_20 = new QVBoxLayout();
+        verticalLayout_20->setObjectName(QString::fromUtf8("verticalLayout_20"));
         label_27 = new QLabel(tab_5);
         label_27->setObjectName(QString::fromUtf8("label_27"));
-        label_27->setGeometry(QRect(150, 60, 200, 49));
         label_27->setFont(font2);
         label_27->setTextFormat(Qt::AutoText);
-        label_2 = new QLabel(tab_5);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(182, 152, 49, 16));
-        lineEdit_2 = new QLineEdit(tab_5);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(270, 180, 113, 21));
-        lineEdit_4 = new QLineEdit(tab_5);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
-        lineEdit_4->setGeometry(QRect(250, 250, 113, 21));
-        lineEdit_5 = new QLineEdit(tab_5);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-        lineEdit_5->setGeometry(QRect(240, 280, 113, 21));
+
+        verticalLayout_20->addWidget(label_27);
+
+        label_28 = new QLabel(tab_5);
+        label_28->setObjectName(QString::fromUtf8("label_28"));
+        label_28->setFont(font3);
+        label_28->setTextFormat(Qt::RichText);
+
+        verticalLayout_20->addWidget(label_28);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_10->addItem(horizontalSpacer_13);
+
+        verticalLayout_21 = new QVBoxLayout();
+        verticalLayout_21->setObjectName(QString::fromUtf8("verticalLayout_21"));
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
+        verticalLayout_22 = new QVBoxLayout();
+        verticalLayout_22->setObjectName(QString::fromUtf8("verticalLayout_22"));
         label_3 = new QLabel(tab_5);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(190, 180, 47, 14));
-        label_4 = new QLabel(tab_5);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(180, 210, 47, 14));
+
+        verticalLayout_22->addWidget(label_3);
+
+        label_10 = new QLabel(tab_5);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+
+        verticalLayout_22->addWidget(label_10);
+
         label_7 = new QLabel(tab_5);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(180, 250, 47, 14));
+
+        verticalLayout_22->addWidget(label_7);
+
         label_8 = new QLabel(tab_5);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(160, 270, 47, 14));
+
+        verticalLayout_22->addWidget(label_8);
+
+        line = new QFrame(tab_5);
+        line->setObjectName(QString::fromUtf8("line"));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout_22->addWidget(line);
+
+        label_2 = new QLabel(tab_5);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        verticalLayout_22->addWidget(label_2);
+
+        label_9 = new QLabel(tab_5);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+
+        verticalLayout_22->addWidget(label_9);
+
+
+        horizontalLayout_9->addLayout(verticalLayout_22);
+
+        verticalLayout_23 = new QVBoxLayout();
+        verticalLayout_23->setObjectName(QString::fromUtf8("verticalLayout_23"));
         lineEdit = new QLineEdit(tab_5);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(237, 152, 91, 22));
+        lineEdit->setMinimumSize(QSize(150, 0));
+
+        verticalLayout_23->addWidget(lineEdit);
+
+        horizontalLayout_12 = new QHBoxLayout();
+        horizontalLayout_12->setObjectName(QString::fromUtf8("horizontalLayout_12"));
+        spinBox_2 = new QSpinBox(tab_5);
+        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
+        spinBox_2->setMinimum(1);
+        spinBox_2->setMaximum(31);
+
+        horizontalLayout_12->addWidget(spinBox_2);
+
+        horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_12->addItem(horizontalSpacer_16);
+
+        spinBox_3 = new QSpinBox(tab_5);
+        spinBox_3->setObjectName(QString::fromUtf8("spinBox_3"));
+        spinBox_3->setMinimum(1);
+        spinBox_3->setMaximum(12);
+
+        horizontalLayout_12->addWidget(spinBox_3);
+
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_12->addItem(horizontalSpacer_15);
+
+        spinBox = new QSpinBox(tab_5);
+        spinBox->setObjectName(QString::fromUtf8("spinBox"));
+        spinBox->setMinimum(1000);
+        spinBox->setMaximum(2021);
+        spinBox->setValue(1990);
+
+        horizontalLayout_12->addWidget(spinBox);
+
+
+        verticalLayout_23->addLayout(horizontalLayout_12);
+
+        lineEdit_2 = new QLineEdit(tab_5);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+
+        verticalLayout_23->addWidget(lineEdit_2);
+
+        lineEdit_4 = new QLineEdit(tab_5);
+        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+
+        verticalLayout_23->addWidget(lineEdit_4);
+
+        line_2 = new QFrame(tab_5);
+        line_2->setObjectName(QString::fromUtf8("line_2"));
+        line_2->setFrameShape(QFrame::HLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout_23->addWidget(line_2);
+
+        lineEdit_5 = new QLineEdit(tab_5);
+        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+
+        verticalLayout_23->addWidget(lineEdit_5);
+
+        lineEdit_3 = new QLineEdit(tab_5);
+        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        lineEdit_3->setEchoMode(QLineEdit::Password);
+
+        verticalLayout_23->addWidget(lineEdit_3);
+
+
+        horizontalLayout_9->addLayout(verticalLayout_23);
+
+
+        verticalLayout_21->addLayout(horizontalLayout_9);
+
+        buttonAccount = new QPushButton(tab_5);
+        buttonAccount->setObjectName(QString::fromUtf8("buttonAccount"));
+
+        verticalLayout_21->addWidget(buttonAccount);
+
+
+        horizontalLayout_10->addLayout(verticalLayout_21);
+
+        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_10->addItem(horizontalSpacer_17);
+
+
+        verticalLayout_20->addLayout(horizontalLayout_10);
+
+
+        horizontalLayout_11->addLayout(verticalLayout_20);
+
+        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_11->addItem(horizontalSpacer_18);
+
+
+        verticalLayout_19->addLayout(horizontalLayout_11);
+
+        verticalSpacer_14 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_19->addItem(verticalSpacer_14);
+
+        verticalSpacer_15 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_19->addItem(verticalSpacer_15);
+
+
+        gridLayout_10->addLayout(verticalLayout_19, 0, 0, 1, 1);
+
         tabMain->addTab(tab_5, QString());
-        tab_4 = new QWidget();
-        tab_4->setObjectName(QString::fromUtf8("tab_4"));
-        gridLayout_11 = new QGridLayout(tab_4);
-        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
-        verticalLayout_14 = new QVBoxLayout();
-        verticalLayout_14->setObjectName(QString::fromUtf8("verticalLayout_14"));
-        verticalSpacer_10 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_14->addItem(verticalSpacer_10);
-
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
-        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_7->addItem(horizontalSpacer_9);
-
-        verticalLayout_13 = new QVBoxLayout();
-        verticalLayout_13->setObjectName(QString::fromUtf8("verticalLayout_13"));
-        label = new QLabel(tab_4);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_13->addWidget(label);
-
-        pushButton = new QPushButton(tab_4);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        verticalLayout_13->addWidget(pushButton);
-
-
-        horizontalLayout_7->addLayout(verticalLayout_13);
-
-        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_7->addItem(horizontalSpacer_10);
-
-
-        verticalLayout_14->addLayout(horizontalLayout_7);
-
-        verticalSpacer_11 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_14->addItem(verticalSpacer_11);
-
-        verticalSpacer_12 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_14->addItem(verticalSpacer_12);
-
-
-        gridLayout_11->addLayout(verticalLayout_14, 0, 0, 1, 1);
-
-        tabMain->addTab(tab_4, QString());
-
-        gridLayout_10->addWidget(tabMain, 0, 0, 1, 1);
+        gridLayout_13->addWidget(tabMain, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -823,9 +941,9 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(horizontalSlider_3, SIGNAL(valueChanged(int)), label_18, SLOT(setNum(int)));
 
-        tabMain->setCurrentIndex(0);
-        tabHousing->setCurrentIndex(0);
-        tabTransport->setCurrentIndex(1);
+        tabMain->setCurrentIndex(3);
+        tabHousing->setCurrentIndex(2);
+        tabTransport->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -863,15 +981,13 @@ public:
         tabMain->setTabText(tabMain->indexOf(tab_2), QApplication::translate("MainWindow", "Housing", nullptr));
         pic_label_3->setText(QString());
         label_21->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Transport</span></p></body></html>", nullptr));
-        label_22->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Transportation leaves a footprint. Let's see how sustainable </p><p align=\"center\">the means of transport you use are in your private life.</p></body></html>", nullptr));
-        label_23->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">Do you live alone or do you have flatmates?</span></p></body></html>", nullptr));
-        radioButton_13->setText(QApplication::translate("MainWindow", "Alone", nullptr));
-        radioButton_14->setText(QApplication::translate("MainWindow", "1-2", nullptr));
-        radioButton_15->setText(QApplication::translate("MainWindow", "3-4", nullptr));
-        radioButton_16->setText(QApplication::translate("MainWindow", "5+", nullptr));
+        label_22->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Transportation leaves a footprint. We would like to know your base consumption in transport.</p></body></html>", nullptr));
+        label_23->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">Do you commute to work?</span></p></body></html>", nullptr));
+        radioButton_13->setText(QApplication::translate("MainWindow", "Yes", nullptr));
+        radioButton_14->setText(QApplication::translate("MainWindow", "No", nullptr));
         buttonNextTransport1->setText(QApplication::translate("MainWindow", "Next", nullptr));
         tabTransport->setTabText(tabTransport->indexOf(tab_14), QApplication::translate("MainWindow", "Question 1", nullptr));
-        label_24->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt;\">How much do you spend a year in furniture?</span></p></body></html>", nullptr));
+        label_24->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt;\">Do you commute to work?</span></p></body></html>", nullptr));
         radio1_4->setText(QApplication::translate("MainWindow", "I don't buy furniture often", nullptr));
         radio2_4->setText(QApplication::translate("MainWindow", "Less than 200 \342\202\254", nullptr));
         radio3_4->setText(QApplication::translate("MainWindow", "200-1000 \342\202\254", nullptr));
@@ -884,16 +1000,16 @@ public:
         tabTransport->setTabText(tabTransport->indexOf(tab_16), QApplication::translate("MainWindow", "Question 3", nullptr));
         label_pic_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
         tabMain->setTabText(tabMain->indexOf(tab_3), QApplication::translate("MainWindow", "Transport", nullptr));
-        label_27->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Account</span></p></body></html>", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "Username", nullptr));
+        label_27->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Sign up</span></p></body></html>", nullptr));
+        label_28->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Please give you information:</p></body></html>", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "Name", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "Age", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "Date of birth (DD/MM/YYYY)", nullptr));
         label_7->setText(QApplication::translate("MainWindow", "Country", nullptr));
         label_8->setText(QApplication::translate("MainWindow", "Email", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Username", nullptr));
+        label_9->setText(QApplication::translate("MainWindow", "Password", nullptr));
+        buttonAccount->setText(QApplication::translate("MainWindow", "Submit", nullptr));
         tabMain->setTabText(tabMain->indexOf(tab_5), QApplication::translate("MainWindow", "Create your account", nullptr));
-        label->setText(QApplication::translate("MainWindow", "Get started!", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "Submit", nullptr));
-        tabMain->setTabText(tabMain->indexOf(tab_4), QApplication::translate("MainWindow", "Confirmation", nullptr));
     } // retranslateUi
 
 };
