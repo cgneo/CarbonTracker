@@ -3,9 +3,9 @@
 #include <QPixmap>
 #include <QMessageBox>
 
-MainWindow::MainWindow(QWidget *parent)
+Survey::Survey(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::Survey)
 {
     ui->setupUi(this);
     QPixmap pix("/Users/andres/Downloads/logo\ carbon\ tracker.jpeg");
@@ -17,20 +17,20 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
-MainWindow::~MainWindow()
+Survey::~Survey()
 {
     delete ui;
 }
 
 
-void MainWindow::on_buttonMain_clicked()
+void Survey::on_buttonMain_clicked()
 {
     if (ui->tabMain->count() > 1) {
         ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
     }
 }
 
-void MainWindow::on_buttonNextHousing1_clicked()
+void Survey::on_buttonNextHousing1_clicked()
 {
     QString test;
     QString output = test;
@@ -48,7 +48,7 @@ void MainWindow::on_buttonNextHousing1_clicked()
     }
 }
 
-void MainWindow::on_buttonNextHousing2_clicked()
+void Survey::on_buttonNextHousing2_clicked()
 {
     if (ui->tabHousing->count() > 1) {
         ui->tabHousing->setCurrentIndex( (ui->tabHousing->currentIndex()+1) % ui->tabHousing->count() );
@@ -56,21 +56,21 @@ void MainWindow::on_buttonNextHousing2_clicked()
 }
 
 
-void MainWindow::on_buttonNextHousing3_clicked()
+void Survey::on_buttonNextHousing3_clicked()
 {
     if (ui->tabHousing->count() > 1) {
         ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
     }
 }
 
-void MainWindow::on_buttonNextTransport1_clicked()
+void Survey::on_buttonNextTransport1_clicked()
 {
     if (ui->tabTransport->count() > 1) {
         ui->tabTransport->setCurrentIndex( (ui->tabTransport->currentIndex()+1) % ui->tabTransport->count() );
     }
 }
 
-void MainWindow::on_buttonNextTransport2_clicked()
+void Survey::on_buttonNextTransport2_clicked()
 {
     if (ui->tabTransport->count() > 1) {
         ui->tabTransport->setCurrentIndex( (ui->tabTransport->currentIndex()+1) % ui->tabTransport->count() );
@@ -78,14 +78,14 @@ void MainWindow::on_buttonNextTransport2_clicked()
 }
 
 
-void MainWindow::on_buttonNextTransport3_clicked()
+void Survey::on_buttonNextTransport3_clicked()
 {
     if (ui->tabTransport->count() > 1) {
         ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
     }
 }
 
-void MainWindow::on_buttonAccount_clicked()
+void Survey::on_buttonAccount_clicked()
 {
     if (ui->tabMain->count() > 1) {
         ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );

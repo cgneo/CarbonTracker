@@ -4,16 +4,16 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class Survey; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class Survey : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    Survey(QWidget *parent = nullptr);
+    ~Survey();
 
 private slots:
     void on_buttonMain_clicked();
@@ -26,6 +26,6 @@ private slots:
     void on_buttonAccount_clicked() ;
 
 private:
-    Ui::MainWindow *ui;
+    Ui::Survey *ui;
 };
 #endif // SURVEY_H

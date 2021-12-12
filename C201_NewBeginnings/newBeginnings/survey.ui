@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Survey</class>
+ <widget class="QMainWindow" name="Survey">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -103,7 +103,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
