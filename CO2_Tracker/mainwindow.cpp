@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "survey.h"
 #include <QPixmap>
 #include <QDebug>
 
@@ -142,4 +143,11 @@ void MainWindow::get_seed()
 }
 
 
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    survey = new Survey(this);
+    survey->show();
+}
 
