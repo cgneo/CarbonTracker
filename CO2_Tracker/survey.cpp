@@ -8,11 +8,11 @@ Survey::Survey(QWidget *parent)
     , ui(new Ui::Survey)
 {
     ui->setupUi(this);
-    QPixmap pix("/Users/andres/Downloads/logo\ carbon\ tracker.jpeg");
+    QPixmap pix("../build/pictures/logo_carbon_tracker.jpeg");
     ui ->label_pic -> setPixmap(pix.scaled(650,450, Qt::KeepAspectRatio));
-    QPixmap pix_2("/build/pictures/home_icon2.png");
+    QPixmap pix_2("../build/pictures/home_icon2.png");
     ui ->label_pic_3 -> setPixmap(pix_2.scaled(450,700, Qt::KeepAspectRatio));
-    QPixmap pix_3("../CO2_Tracker/build/pictures/trasnport_icon.png");
+    QPixmap pix_3("../build/pictures/trasnport_icon.png");
     ui ->pic_label_3 -> setPixmap(pix_3.scaled(450,700, Qt::KeepAspectRatio));
 
 }
