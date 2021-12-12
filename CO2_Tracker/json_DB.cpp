@@ -14,7 +14,7 @@
 Json_DB::Json_DB(){};
 Json_DB::~Json_DB(){};
 
-const QString Json_DB::file_name = "CarbonTracker_data.txt";
+const QString Json_DB::file_name = "CarbonTracker_data.json";
 const QString Json_DB::path = "/Users/alex_christlieb/Documents/Ecole Polytechnique/Courses/Year 2/CSE201/Project/CarbonTracker/CO2_Tracker/build/";
 
 QString Json_DB::get_path(){
