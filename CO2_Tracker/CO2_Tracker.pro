@@ -14,7 +14,7 @@ SOURCES += \
     base_consumption.cpp \
     consumption.cpp \
     date.cpp \
-    json.cpp \
+    json_DB.cpp \
     object.cpp \
     food.cpp \
     tests.cpp \
@@ -22,9 +22,9 @@ SOURCES += \
     user.cpp\
     main.cpp \
     receipt.cpp \
-    server-client.cpp \
     transport_API.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    survey.cpp
 
 
 HEADERS += \
@@ -32,19 +32,20 @@ HEADERS += \
     base_consumption.h \
     consumption.h \
     date.h \
-    json.h \
+    json_DB.hpp \
     object.h \
     food.h \
     tests.h \
     transport.h \
     user.h \
     receipt.h \
-    server-client.hpp \
-    mainwindow.h
+    mainwindow.h \
+    survey.h
 
 FORMS += \
     api_transport.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    survey.ui
 
 TARGET = CarbonTracker_exe
 
