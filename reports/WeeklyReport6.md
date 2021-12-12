@@ -15,9 +15,6 @@ This week, I worked on having all the different cases for transport input. And I
 This week i worked on finishing the design of the windows with comparative graphs, adding a calendar to keep track of the date. I also coded the graph that will be on the front ui page, that when it is clicked will lead to the comparative graphs page.
 Next week I plan on adding the front page graph to the front page and coding the part that leads to the comparative graphs page.
 
-# Amine Lamouchi 
-This week, I first attended a meeting to present the progress of the data team and did some demos of the code I wrote so far. After that I worked on merging the OCR with the queries program, but I was unsuccessful in solving their compatibility issues. This is mostly due to the difficulty of sending multiple queries at once, and parsing their response one by one. My goal is to solve this in the first half of the coming week as we are currently merging the different branches.
-
 # Lucas Serog 
 This week I continued helping with the merging of the data code and the UI code. I gave a bit of clarity to Steven on what types of questions we will need to ask to users in order to get the information necessary from them. Additionally, I began testing the classes and their functions to make sure they worked properly. Specifically the object class. I found an error where I needed to implement pointers in order for the program not to bug.
 
