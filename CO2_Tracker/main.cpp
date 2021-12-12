@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Json_DB obj;
-    obj.create_empty_file();
 
     Tests t;
     bool new_user = !t.test_does_file_exist();
