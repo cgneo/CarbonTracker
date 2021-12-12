@@ -8,6 +8,8 @@
 #include <QGraphicsOpacityEffect>
 #include <QImage>
 
+#include "survey.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -33,8 +35,12 @@ private slots:
 
     void get_seed();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    Survey *survey;
+
     QPropertyAnimation *animation_1;
     QPropertyAnimation *animation_2;
     QPropertyAnimation *animation_3;
