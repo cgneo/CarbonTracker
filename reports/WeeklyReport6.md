@@ -21,3 +21,5 @@ Next week, I am going to create a gif and illustration for the ranking and “yo
 
 # Zhihui Li
 This week, I fixed the console program bug and now the TCPserver server has been fully implemented. I worked with UI team to integrate the TCPclient with the existing UI.
+
+Next week, I will create the console version of client TCPserver and help merge  them with the UI.
