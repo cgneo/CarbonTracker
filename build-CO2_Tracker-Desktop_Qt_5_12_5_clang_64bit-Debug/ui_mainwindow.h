@@ -65,6 +65,7 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QVBoxLayout *verticalLayout1;
     QTextEdit *textEdit_2;
+    QLabel *food_label;
     QTextEdit *textEdit_3;
     QFrame *verticalFrame1;
     QVBoxLayout *verticalLayout_4;
@@ -74,6 +75,7 @@ public:
     QCheckBox *checkBox;
     QVBoxLayout *verticalLayout_21;
     QTextEdit *textEdit_4;
+    QLabel *transport_label;
     QTextEdit *textEdit_5;
     QFrame *verticalFrame2;
     QVBoxLayout *verticalLayout_5;
@@ -83,6 +85,7 @@ public:
     QCheckBox *checkBox_9;
     QVBoxLayout *verticalLayout_31;
     QTextEdit *textEdit_7;
+    QLabel *home_label;
     QTextEdit *textEdit_8;
     QFrame *verticalFrame3;
     QVBoxLayout *verticalLayout_6;
@@ -140,7 +143,8 @@ public:
         tabWidget->setStyleSheet(QString::fromUtf8("QTabWidget::pane { /* The tab widget frame */\n"
 "    border-top: 2px solid #C2C7CB;\n"
 "	\n"
-"	background-color:rgba(182, 212, 166, 180);\n"
+"	\n"
+"	background-color: rgb(215, 217, 217);\n"
 "}\n"
 "\n"
 "\n"
@@ -585,6 +589,12 @@ public:
 
         verticalLayout1->addWidget(textEdit_2);
 
+        food_label = new QLabel(tab_3);
+        food_label->setObjectName(QString::fromUtf8("food_label"));
+        food_label->setPixmap(QPixmap(QString::fromUtf8("build/tips photos/food-pic.png")));
+
+        verticalLayout1->addWidget(food_label);
+
         textEdit_3 = new QTextEdit(tab_3);
         textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
         textEdit_3->setMaximumSize(QSize(16777215, 100));
@@ -723,6 +733,12 @@ public:
 
         verticalLayout_21->addWidget(textEdit_4);
 
+        transport_label = new QLabel(tab_3);
+        transport_label->setObjectName(QString::fromUtf8("transport_label"));
+        transport_label->setPixmap(QPixmap(QString::fromUtf8("build/tips photos/new_plane_pic.png")));
+
+        verticalLayout_21->addWidget(transport_label);
+
         textEdit_5 = new QTextEdit(tab_3);
         textEdit_5->setObjectName(QString::fromUtf8("textEdit_5"));
         textEdit_5->setMaximumSize(QSize(16777215, 100));
@@ -792,6 +808,12 @@ public:
 "}"));
 
         verticalLayout_31->addWidget(textEdit_7);
+
+        home_label = new QLabel(tab_3);
+        home_label->setObjectName(QString::fromUtf8("home_label"));
+        home_label->setPixmap(QPixmap(QString::fromUtf8("build/tips photos/home-pic.png")));
+
+        verticalLayout_31->addWidget(home_label);
 
         textEdit_8 = new QTextEdit(tab_3);
         textEdit_8->setObjectName(QString::fromUtf8("textEdit_8"));
@@ -909,6 +931,7 @@ public:
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Food</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
+        food_label->setText(QString());
         textEdit_3->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -927,6 +950,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Transportation</p></body></html>", nullptr));
+        transport_label->setText(QString());
         textEdit_5->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -945,6 +969,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Home</p></body></html>", nullptr));
+        home_label->setText(QString());
         textEdit_8->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
