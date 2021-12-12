@@ -1,4 +1,4 @@
-#include "food.h"
+﻿#include "food.h"
 #include <string>
 
 Food::Food(){
@@ -17,6 +17,9 @@ Food::Food(double barcode) {
     set_footprint(co2_total, 1);
 }
 
+Food::~Food(){
+
+}
 //---------------------Get Methods--------------------------
 double Food::get_quantity() {
     return quantity;
