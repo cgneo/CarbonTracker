@@ -6,6 +6,7 @@
 #include "transport.h"
 #include "api_transport.h"
 #include "mainwindow.h"
+#include "survey.h"
 #include <QApplication>
 
 
@@ -16,16 +17,16 @@ int main(int argc, char *argv[])
 //    Transport *m = new Transport();
 //    ParseClass p;
 //    p.create_empty_file();
-    Tests t;
-    t.start_test();
+//    Tests t;
+//    t.start_test();
 
 //    Locomotive *m = new Locomotive(fecha, "metro", "transport", "100");
-//    QApplication a(argc, argv);
-//    MainWindow w;
+    QApplication a(argc, argv);
+    Survey w;
 
 //    calculator(argc, argv, "economy international flight", "10000", m);
 //    std::cout << std::to_string(m->get_footprint()) << std::endl
 
-//    w.show();
-//    return a.exec();
+    w.show();
+    return a.exec();
 }
