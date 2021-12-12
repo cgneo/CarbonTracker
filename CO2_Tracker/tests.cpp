@@ -48,20 +48,22 @@ bool Tests::test_JsonUser(){//Trigger function for module
     qDebug() << "-----Testing Json DB Module-------";
     Json_DB* p = new Json_DB();
 
-    test_does_file_exist(p);
     test_createJsonUserObject(p);
     test_writeJsonUser(p);
    }
 
 
-void Tests::test_does_file_exist(Json_DB* json){
+bool Tests::test_does_file_exist(){
+    Json_DB* json = new Json_DB();
     QFileInfo check_file(json->get_path()+json->get_FileName());//Define file to search
 
     if (check_file.exists() && check_file.isFile()) {
             qDebug() << "test_does_file_exist() - Success";
+            return true;
         }
     else {
             qDebug() << "test_does_file_exist() - Fail";
+            return false;
         }
 }
 
