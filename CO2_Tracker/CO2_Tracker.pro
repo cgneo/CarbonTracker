@@ -14,7 +14,6 @@ SOURCES += \
     base_consumption.cpp \
     consumption.cpp \
     date.cpp \
-    json.cpp \
     json_DB.cpp \
     object.cpp \
     food.cpp \
@@ -32,7 +31,6 @@ HEADERS += \
     base_consumption.h \
     consumption.h \
     date.h \
-    json.h \
     json_DB.hpp \
     object.h \
     food.h \
