@@ -23,6 +23,7 @@ private slots:
     void on_buttonNextTransport1_clicked();
     void on_buttonNextTransport2_clicked();
     void on_buttonNextTransport3_clicked();
+
     void on_buttonAccount_clicked();
 
 private:
