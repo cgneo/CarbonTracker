@@ -56,7 +56,7 @@ SOURCES       = ../CO2_Tracker/api_transport.cpp \
 		../CO2_Tracker/base_consumption.cpp \
 		../CO2_Tracker/consumption.cpp \
 		../CO2_Tracker/date.cpp \
-		../CO2_Tracker/json.cpp \
+		../CO2_Tracker/json_DB.cpp \
 		../CO2_Tracker/object.cpp \
 		../CO2_Tracker/food.cpp \
 		../CO2_Tracker/tests.cpp \
@@ -64,14 +64,15 @@ SOURCES       = ../CO2_Tracker/api_transport.cpp \
 		../CO2_Tracker/user.cpp \
 		../CO2_Tracker/main.cpp \
 		../CO2_Tracker/receipt.cpp \
-		../CO2_Tracker/server-client.cpp \
-		../CO2_Tracker/mainwindow.cpp moc_api_transport.cpp \
-		moc_mainwindow.cpp
+		../CO2_Tracker/mainwindow.cpp \
+		../CO2_Tracker/survey.cpp moc_api_transport.cpp \
+		moc_mainwindow.cpp \
+		moc_survey.cpp
 OBJECTS       = api_transport.o \
 		base_consumption.o \
 		consumption.o \
 		date.o \
-		json.o \
+		json_DB.o \
 		object.o \
 		food.o \
 		tests.o \
@@ -79,10 +80,11 @@ OBJECTS       = api_transport.o \
 		user.o \
 		main.o \
 		receipt.o \
-		server-client.o \
 		mainwindow.o \
+		survey.o \
 		moc_api_transport.o \
-		moc_mainwindow.o
+		moc_mainwindow.o \
+		moc_survey.o
 DIST          = ../../../Qt/5.12.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.12.5/clang_64/mkspecs/qdevice.pri \
 		../../../Qt/5.12.5/clang_64/mkspecs/features/device_config.prf \
@@ -280,19 +282,19 @@ DIST          = ../../../Qt/5.12.5/clang_64/mkspecs/features/spec_pre.prf \
 		../CO2_Tracker/base_consumption.h \
 		../CO2_Tracker/consumption.h \
 		../CO2_Tracker/date.h \
-		../CO2_Tracker/json.h \
+		../CO2_Tracker/json_DB.hpp \
 		../CO2_Tracker/object.h \
 		../CO2_Tracker/food.h \
 		../CO2_Tracker/tests.h \
 		../CO2_Tracker/transport.h \
 		../CO2_Tracker/user.h \
 		../CO2_Tracker/receipt.h \
-		../CO2_Tracker/server-client.hpp \
-		../CO2_Tracker/mainwindow.h ../CO2_Tracker/api_transport.cpp \
+		../CO2_Tracker/mainwindow.h \
+		../CO2_Tracker/survey.h ../CO2_Tracker/api_transport.cpp \
 		../CO2_Tracker/base_consumption.cpp \
 		../CO2_Tracker/consumption.cpp \
 		../CO2_Tracker/date.cpp \
-		../CO2_Tracker/json.cpp \
+		../CO2_Tracker/json_DB.cpp \
 		../CO2_Tracker/object.cpp \
 		../CO2_Tracker/food.cpp \
 		../CO2_Tracker/tests.cpp \
@@ -300,8 +302,8 @@ DIST          = ../../../Qt/5.12.5/clang_64/mkspecs/features/spec_pre.prf \
 		../CO2_Tracker/user.cpp \
 		../CO2_Tracker/main.cpp \
 		../CO2_Tracker/receipt.cpp \
-		../CO2_Tracker/server-client.cpp \
-		../CO2_Tracker/mainwindow.cpp
+		../CO2_Tracker/mainwindow.cpp \
+		../CO2_Tracker/survey.cpp
 QMAKE_TARGET  = CarbonTracker_exe
 DESTDIR       = 
 TARGET        = CarbonTracker_exe.app/Contents/MacOS/CarbonTracker_exe
@@ -320,7 +322,7 @@ include /Users/cyrine/Qt/5.12.5/clang_64/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-CarbonTracker_exe.app/Contents/MacOS/CarbonTracker_exe: ui_api_transport.h ui_mainwindow.h $(OBJECTS)  
+CarbonTracker_exe.app/Contents/MacOS/CarbonTracker_exe: ui_api_transport.h ui_mainwindow.h ui_survey.h $(OBJECTS)  
 	@test -d CarbonTracker_exe.app/Contents/MacOS/ || mkdir -p CarbonTracker_exe.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -751,9 +753,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.12.5/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../CO2_Tracker/api_transport.h ../CO2_Tracker/base_consumption.h ../CO2_Tracker/consumption.h ../CO2_Tracker/date.h ../CO2_Tracker/json.h ../CO2_Tracker/object.h ../CO2_Tracker/food.h ../CO2_Tracker/tests.h ../CO2_Tracker/transport.h ../CO2_Tracker/user.h ../CO2_Tracker/receipt.h ../CO2_Tracker/server-client.hpp ../CO2_Tracker/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../CO2_Tracker/api_transport.cpp ../CO2_Tracker/base_consumption.cpp ../CO2_Tracker/consumption.cpp ../CO2_Tracker/date.cpp ../CO2_Tracker/json.cpp ../CO2_Tracker/object.cpp ../CO2_Tracker/food.cpp ../CO2_Tracker/tests.cpp ../CO2_Tracker/transport.cpp ../CO2_Tracker/user.cpp ../CO2_Tracker/main.cpp ../CO2_Tracker/receipt.cpp ../CO2_Tracker/server-client.cpp ../CO2_Tracker/mainwindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../CO2_Tracker/api_transport.ui ../CO2_Tracker/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../CO2_Tracker/api_transport.h ../CO2_Tracker/base_consumption.h ../CO2_Tracker/consumption.h ../CO2_Tracker/date.h ../CO2_Tracker/json_DB.hpp ../CO2_Tracker/object.h ../CO2_Tracker/food.h ../CO2_Tracker/tests.h ../CO2_Tracker/transport.h ../CO2_Tracker/user.h ../CO2_Tracker/receipt.h ../CO2_Tracker/mainwindow.h ../CO2_Tracker/survey.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../CO2_Tracker/api_transport.cpp ../CO2_Tracker/base_consumption.cpp ../CO2_Tracker/consumption.cpp ../CO2_Tracker/date.cpp ../CO2_Tracker/json_DB.cpp ../CO2_Tracker/object.cpp ../CO2_Tracker/food.cpp ../CO2_Tracker/tests.cpp ../CO2_Tracker/transport.cpp ../CO2_Tracker/user.cpp ../CO2_Tracker/main.cpp ../CO2_Tracker/receipt.cpp ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/survey.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../CO2_Tracker/api_transport.ui ../CO2_Tracker/mainwindow.ui ../CO2_Tracker/survey.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -788,9 +790,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../Qt/5.12.5/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -mmacosx-version-min=10.12 -Wall -W -dM -E -o moc_predefs.h ../../../Qt/5.12.5/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_api_transport.cpp moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_api_transport.cpp moc_mainwindow.cpp moc_survey.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_api_transport.cpp moc_mainwindow.cpp
+	-$(DEL_FILE) moc_api_transport.cpp moc_mainwindow.cpp moc_survey.cpp
 moc_api_transport.cpp: ../CO2_Tracker/api_transport.h \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -1000,13 +1002,20 @@ moc_mainwindow.cpp: ../CO2_Tracker/mainwindow.h \
 		../../../Qt/5.12.5/clang_64/bin/moc
 	/Users/cyrine/Qt/5.12.5/clang_64/bin/moc $(DEFINES) --include /Users/cyrine/Downloads/CarbonTracker/build-CO2_Tracker-Desktop_Qt_5_12_5_clang_64bit-Debug/moc_predefs.h -I/Users/cyrine/Qt/5.12.5/clang_64/mkspecs/macx-clang -I/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/cyrine/Qt/5.12.5/clang_64/lib ../CO2_Tracker/mainwindow.h -o moc_mainwindow.cpp
 
+moc_survey.cpp: ../CO2_Tracker/survey.h \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		moc_predefs.h \
+		../../../Qt/5.12.5/clang_64/bin/moc
+	/Users/cyrine/Qt/5.12.5/clang_64/bin/moc $(DEFINES) --include /Users/cyrine/Downloads/CarbonTracker/build-CO2_Tracker-Desktop_Qt_5_12_5_clang_64bit-Debug/moc_predefs.h -I/Users/cyrine/Qt/5.12.5/clang_64/mkspecs/macx-clang -I/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/cyrine/Qt/5.12.5/clang_64/lib ../CO2_Tracker/survey.h -o moc_survey.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_api_transport.h ui_mainwindow.h
+compiler_uic_make_all: ui_api_transport.h ui_mainwindow.h ui_survey.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_api_transport.h ui_mainwindow.h
+	-$(DEL_FILE) ui_api_transport.h ui_mainwindow.h ui_survey.h
 ui_api_transport.h: ../CO2_Tracker/api_transport.ui \
 		../../../Qt/5.12.5/clang_64/bin/uic
 	/Users/cyrine/Qt/5.12.5/clang_64/bin/uic ../CO2_Tracker/api_transport.ui -o ui_api_transport.h
@@ -1014,6 +1023,10 @@ ui_api_transport.h: ../CO2_Tracker/api_transport.ui \
 ui_mainwindow.h: ../CO2_Tracker/mainwindow.ui \
 		../../../Qt/5.12.5/clang_64/bin/uic
 	/Users/cyrine/Qt/5.12.5/clang_64/bin/uic ../CO2_Tracker/mainwindow.ui -o ui_mainwindow.h
+
+ui_survey.h: ../CO2_Tracker/survey.ui \
+		../../../Qt/5.12.5/clang_64/bin/uic
+	/Users/cyrine/Qt/5.12.5/clang_64/bin/uic ../CO2_Tracker/survey.ui -o ui_survey.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -1232,14 +1245,33 @@ consumption.o: ../CO2_Tracker/consumption.cpp ../CO2_Tracker/consumption.h \
 date.o: ../CO2_Tracker/date.cpp ../CO2_Tracker/date.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o date.o ../CO2_Tracker/date.cpp
 
-json.o: ../CO2_Tracker/json.cpp ../CO2_Tracker/json.h \
+json_DB.o: ../CO2_Tracker/json_DB.cpp ../CO2_Tracker/json_DB.hpp \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonDocument \
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsondocument.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonParseError \
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonArray \
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsonarray.h \
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonObject \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsonobject.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o json.o ../CO2_Tracker/json.cpp
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsonobject.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QIODevice \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qiodevice.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QList \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QDir \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qdir.h \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QDesktopServices \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qdesktopservices.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QSaveFile \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qsavefile.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o json_DB.o ../CO2_Tracker/json_DB.cpp
 
 object.o: ../CO2_Tracker/object.cpp ../CO2_Tracker/object.h \
 		../CO2_Tracker/date.h
@@ -1251,8 +1283,29 @@ food.o: ../CO2_Tracker/food.cpp ../CO2_Tracker/food.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o food.o ../CO2_Tracker/food.cpp
 
 tests.o: ../CO2_Tracker/tests.cpp ../CO2_Tracker/tests.h \
+		../CO2_Tracker/json_DB.hpp \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonDocument \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsondocument.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonParseError \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonArray \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsonarray.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonObject \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsonobject.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QIODevice \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qiodevice.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QStringList \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QList \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
 		../CO2_Tracker/date.h \
-		../CO2_Tracker/json.h
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QFileInfo \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qfileinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tests.o ../CO2_Tracker/tests.cpp
 
 transport.o: ../CO2_Tracker/transport.cpp ../CO2_Tracker/transport.h \
@@ -1459,7 +1512,7 @@ main.o: ../CO2_Tracker/main.cpp ../../../Qt/5.12.5/clang_64/lib/QtWidgets.framew
 		../CO2_Tracker/object.h \
 		../CO2_Tracker/date.h \
 		../CO2_Tracker/tests.h \
-		../CO2_Tracker/server-client.hpp \
+		../CO2_Tracker/json_DB.hpp \
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonParseError \
@@ -1480,37 +1533,14 @@ main.o: ../CO2_Tracker/main.cpp ../../../Qt/5.12.5/clang_64/lib/QtWidgets.framew
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QGraphicsOpacityEffect \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QImage \
-		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qimage.h
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qimage.h \
+		../CO2_Tracker/survey.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../CO2_Tracker/main.cpp
 
 receipt.o: ../CO2_Tracker/receipt.cpp ../CO2_Tracker/receipt.h \
 		../CO2_Tracker/date.h \
 		../CO2_Tracker/object.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o receipt.o ../CO2_Tracker/receipt.cpp
-
-server-client.o: ../CO2_Tracker/server-client.cpp ../CO2_Tracker/server-client.hpp \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QObject \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonDocument \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsondocument.h \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonParseError \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonArray \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsonarray.h \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QJsonObject \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qjsonobject.h \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QFile \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qfile.h \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QIODevice \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qiodevice.h \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QStringList \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qdebug.h \
-		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QList \
-		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qevent.h \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QDir \
-		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qdir.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o server-client.o ../CO2_Tracker/server-client.cpp
 
 mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
@@ -1532,11 +1562,24 @@ mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../CO2_Tracker/mainwindow.cpp
 
+survey.o: ../CO2_Tracker/survey.cpp ../CO2_Tracker/survey.h \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		ui_survey.h \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QPixmap \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o survey.o ../CO2_Tracker/survey.cpp
+
 moc_api_transport.o: moc_api_transport.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_api_transport.o moc_api_transport.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_survey.o: moc_survey.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_survey.o moc_survey.cpp
 
 ####### Install
 

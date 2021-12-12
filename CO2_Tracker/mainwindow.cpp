@@ -12,8 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix1("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/food-pic.png");
     ui ->food_label -> setPixmap(pix1.scaled(350,150, Qt::KeepAspectRatio));
 
-    QPixmap pix2("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/Capture d’écran 2021-11-25 à 11.42.59 AM.png");
-    ui ->transport_label -> setPixmap(pix2.scaled(250,200, Qt::KeepAspectRatio));
+    QPixmap pix2("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/plane-pic.png");
+    ui ->transport_label -> setPixmap(pix2.scaled(350,150, Qt::KeepAspectRatio));
 
     QPixmap pix3("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/home-pic.png");
     ui ->home_label -> setPixmap(pix3.scaled(350,150, Qt::KeepAspectRatio));

@@ -731,7 +731,7 @@ public:
 
         transport_label = new QLabel(tab_3);
         transport_label->setObjectName(QString::fromUtf8("transport_label"));
-        transport_label->setPixmap(QPixmap(QString::fromUtf8("build/tips photos/Capture d\342\200\231\303\251cran 2021-11-25 \303\240 11.42.59 AM.png")));
+        transport_label->setPixmap(QPixmap(QString::fromUtf8("build/tips photos/plane-pic.png")));
 
         verticalLayout_21->addWidget(transport_label);
 

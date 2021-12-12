@@ -2360,7 +2360,7 @@ p, li { white-space: pre-wrap; }
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap>build/tips photos/Capture d’écran 2021-11-25 à 11.42.59 AM.png</pixmap>
+             <pixmap>build/tips photos/plane-pic.png</pixmap>
             </property>
            </widget>
           </item>
