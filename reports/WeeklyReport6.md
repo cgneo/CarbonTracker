@@ -23,3 +23,7 @@ Next week, I am going to create a gif and illustration for the ranking and “yo
 This week, I fixed the console program bug and now the TCPserver server has been fully implemented. I worked with UI team to integrate the TCPclient with the existing UI.
 
 Next week, I will create the console version of client TCPserver and help merge  them with the UI.
+
+# Amine Lamouchi 
+
+This week, I first attended a meeting to present the progress of the data team and did some demos of the code I wrote so far. After that I worked on merging the OCR with the queries program, but I was unsuccessful in solving their compatibility issues. This is mostly due to the difficulty of sending multiple queries at once, and parsing their response one by one. My goal is to solve this in the first half of the coming week as we are currently merging the different branches. 
