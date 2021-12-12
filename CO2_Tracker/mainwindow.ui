@@ -206,7 +206,8 @@
        <string notr="true">QTabWidget::pane { /* The tab widget frame */
     border-top: 2px solid #C2C7CB;
 	
-	background-color:rgba(182, 212, 166, 180);
+	
+	background-color: rgb(215, 217, 217);
 }
 
 
@@ -1778,6 +1779,16 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
+           <widget class="QLabel" name="food_label">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>build/tips photos/food-pic.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QTextEdit" name="textEdit_3">
             <property name="maximumSize">
              <size>
@@ -2344,6 +2355,16 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
+           <widget class="QLabel" name="transport_label">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>build/tips photos/plane-pic.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QTextEdit" name="textEdit_5">
             <property name="maximumSize">
              <size>
@@ -2464,6 +2485,16 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Home&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="home_label">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>build/tips photos/home-pic.png</pixmap>
             </property>
            </widget>
           </item>
