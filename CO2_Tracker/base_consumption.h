@@ -23,6 +23,7 @@ public:
     double get_total_footprint();
     int get_size();
 
+
     //Other methods
 
     vector<Object> *calculate_base_consumption(double c_footprint, int roommates);//Receive as parameters the info from the survey
