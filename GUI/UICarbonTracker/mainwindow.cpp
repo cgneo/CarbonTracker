@@ -86,6 +86,7 @@ void MainWindow::on_Surveybutton_clicked()
 {
 
        ui->tabWidget->setCurrentIndex( (ui->tabWidget->currentIndex()+1) % ui->tabWidget->count() );
+       daily_challenges["challenge_1"] = "reduce meat consumption";
 }
 
 

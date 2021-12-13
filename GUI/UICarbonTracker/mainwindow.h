@@ -40,6 +40,7 @@ private:
     QPropertyAnimation *animation_3;
     QPropertyAnimation *animation_4;
     QPropertyAnimation *animation_seed;
+    std::map<std::string, std::string> daily_challenges;
 
     QGraphicsOpacityEffect *opacity_effect_1;
     QGraphicsOpacityEffect *opacity_effect_2;
