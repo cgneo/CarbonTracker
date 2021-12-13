@@ -3,6 +3,9 @@
 #include <QPixmap>
 #include <QMessageBox>
 
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
 Survey::Survey(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Survey)
@@ -85,10 +88,11 @@ void Survey::on_buttonNextTransport3_clicked()
     }
 }
 
+//linking mainwindow and survey by a click on the "Account button"
 void Survey::on_buttonAccount_clicked()
 {
-    if (ui->tabMain->count() > 1) {
-        ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
-    }
+    mainwindow = new MainWindow(this);
+    mainwindow->show();
+    hide();
 }
 

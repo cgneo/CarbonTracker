@@ -9,8 +9,6 @@
 #include <QImage>
 #include <QMap>
 
-#include "survey.h"
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -41,7 +39,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Survey *survey;
 
     QPropertyAnimation *animation_1;
     QPropertyAnimation *animation_2;

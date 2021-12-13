@@ -1283,19 +1283,6 @@ p, li { white-space: pre-wrap; }
        <attribute name="title">
         <string>Survey</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton">
-        <property name="geometry">
-         <rect>
-          <x>130</x>
-          <y>70</y>
-          <width>80</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Go to survey</string>
-        </property>
-       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
