@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
     Json_DB obj;
 
     Tests t;
+    t.test_does_file_exist();
+    obj.create_empty_file();
     bool new_user = !t.test_does_file_exist();
     qDebug() << new_user;
 
@@ -30,17 +32,5 @@ int main(int argc, char *argv[])
         return a.exec();
     }
 
-
-//    Date *fecha = new Date(01,01,2021);
-//    Object o(fecha, "metro", "transport");
-//    Transport *m = new Transport();
-//    ParseClass p;
-//    p.create_empty_file();
-
-
-//    Locomotive *m = new Locomotive(fecha, "metro", "transport", "100");
-
-//    calculator(argc, argv, "economy international flight", "10000", m);
-//    std::cout << std::to_string(m->get_footprint()) << std::endl
 
 }

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <filesystem>
 #include <QFileInfo>
+#include <QCoreApplication>
 
 using namespace std;
 
@@ -54,6 +55,9 @@ bool Tests::test_JsonUser(){//Trigger function for module
 
 
 bool Tests::test_does_file_exist(){
+    QString path = QCoreApplication::applicationDirPath();
+    qDebug() << path;
+
     Json_DB* json = new Json_DB();
     QFileInfo check_file(json->get_path()+json->get_FileName());//Define file to search
 
