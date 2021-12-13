@@ -46,8 +46,8 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
     QString string = "clicked";
 
 
-    QPieSlice::connect(slice1, &QPieSlice::hovered,
-                    slice1, &QPieSlice::setLabel(QString string));
+    //QPieSlice::connect(slice1, &QPieSlice::hovered,
+      //                 slice1, &QPieSlice::setLabel();
 
     //create a floating label
 
