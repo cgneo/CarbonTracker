@@ -1,6 +1,13 @@
 #include "food.h"
 #include <string>
 
+Food::Food(){
+    set_barcode(00000000000000);
+    set_quantity(1);
+    set_category("food");
+    set_footprint(0,1);
+}
+
 Food::Food(double barcode) {
     double co2_total = retrieve_carbon(barcode);
     string str = retrieve_category(barcode);

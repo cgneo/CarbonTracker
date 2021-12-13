@@ -1,0 +1,13 @@
+debug/base_consumption.o
+debug/consumption.o
+debug/date.o
+debug/json.o
+debug/object.o
+debug/food.o
+debug/tests.o
+debug/transport.o
+debug/user.o
+debug/main.o
+debug/mainwindow.o
+debug/receipt.o
+debug/moc_mainwindow.o

@@ -96,8 +96,14 @@ void Consumption::add_base_consumption(Base_Consumption base){
     int size = base.get_size();
     for(int i=0;i<size;i++){
         Object new_obj = base.get_object_i(i);
-        add_object(new_obj);//tbd
+        add_object(new_obj);
         total_footprint += new_obj.get_footprint();
+        if(new_obj.get_type() == "food"){
+            food_footprint += new_obj.get_footprint();
+        }
+        if(new_obj.get_type() == "transport"){
+            transport_footprint += new_obj.get_footprint();
+        }
     }
 }
 

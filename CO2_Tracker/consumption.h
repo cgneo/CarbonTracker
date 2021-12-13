@@ -32,7 +32,7 @@ public:
     Object get_object_i(int i);
 
     //Other methods
-    void calculate_each_footprint();
+    void calculate_each_footprint(); //initialization method
     void add_object(Object obj);
     void remove_object(Object obj);
     void add_base_consumption(Base_Consumption base);

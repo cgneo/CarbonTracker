@@ -6,6 +6,7 @@
 
 class Food : public Object {
    public:
+    Food();
     Food(double barcode);
     void set_quantity(double quantity);
     void set_barcode(double barcode);

@@ -1,0 +1,13 @@
+release/base_consumption.o
+release/consumption.o
+release/date.o
+release/json.o
+release/object.o
+release/food.o
+release/tests.o
+release/transport.o
+release/user.o
+release/main.o
+release/mainwindow.o
+release/receipt.o
+release/moc_mainwindow.o
