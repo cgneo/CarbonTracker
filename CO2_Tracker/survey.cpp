@@ -88,6 +88,7 @@ void Survey::on_buttonNextTransport3_clicked()
     }
 }
 
+//linking mainwindow and survey by a click on the "Account button"
 void Survey::on_buttonAccount_clicked()
 {
     mainwindow = new MainWindow(this);

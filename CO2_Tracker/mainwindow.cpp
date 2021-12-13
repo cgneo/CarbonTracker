@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "survey.h"
 #include <QPixmap>
 #include <QDebug>
 #include <QMap>
@@ -150,13 +149,6 @@ void MainWindow::get_seed()
     if (ui -> SeedsprogressBar -> value() == 100){
         animation_seed -> start();
     }
-}
-
-//linking mainwindow and survey
-void MainWindow::on_pushButton_clicked()
-{
-    survey = new Survey(this);
-    survey->show();
 }
 
 //explicitly defining the array with the key(name) and value(explanation text) of a challenge
