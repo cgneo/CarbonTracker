@@ -19,16 +19,20 @@ public:
     MainWindow(QWidget *parent = nullptr/*,double* data*/);
     ~MainWindow();
 
-/*public slots:
-    void QPieSlice::hoverexplode(QPieSlice slice){
+public slots:
+    /*void QPieSlice::hoverexplode(QPieSlice slice){
         slice.hovered(slice.state);
         slice.setExploded(state);
         emit slice.hovered(slice.state);
-            };
+            };*/
+    //void setLabel(QString);
+
 signals:
     //void element_hovered(bool state);
-    void QPieSlice::hovered(bool state);
-*/
+    //void QPieSlice::hovered(bool state);
+    //void clicked(bool);
+
+
 private:
     Ui::MainWindow *ui;
 };

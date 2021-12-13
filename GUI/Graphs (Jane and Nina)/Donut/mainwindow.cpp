@@ -43,8 +43,19 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
                        slice3, &QPieSlice::setExploded);
 
 
-    QPieSlice::connect(slice1, &QPieSlice::clicked,
-                       slice1, &QPieSlice::setLabel);
+    QString string = "clicked";
+
+
+    QPieSlice::connect(slice1, &QPieSlice::hovered,
+                    slice1, &QPieSlice::setLabel(QString string));
+
+    //create a floating label
+
+    //if (slice1->hovered(bool slice1(state))){
+    //    slice1->setLabel(Qstring "newlabel");
+    //}
+
+    //connect(slice1, SIGNAL(hovered()), slice1, SLOT(setLabel(QString"clicked")));
 
     QChart *chart = new QChart();
     chart->addSeries(series);
@@ -52,13 +63,12 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
     chart->setTitle("My Transport Footprint");
     chart->setTheme(QChart::ChartThemeBrownSand);
 
-
     QChartView *chartview = new QChartView(chart);
     chartview->setRenderHint(QPainter::Antialiasing);
 
     chartview->setParent(ui->horizontalFrame);
 
-    chart->legend()->setVisible(false);
+    chart->legend()->setVisible(true);
     chart->legend()->setAlignment(Qt::AlignLeft);
 }
 
