@@ -16,6 +16,9 @@ public:
     //Date
     void test_add_duration();
 
+    //User
+    void test_user(User *user);
+
     // -----------------Json and data fetching-------------------
     bool test_does_file_exist();
     void test_createJsonUserObject(Json_DB* json);

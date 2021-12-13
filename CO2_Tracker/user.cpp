@@ -1,6 +1,10 @@
 #include "user.h"
+#include "date.h"
 #include <iostream>
+#include <regex>
 using namespace std;
+
+int User::days_in_month[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
 void User::set_userId(){
     int last_Id = 0;
@@ -53,3 +57,47 @@ User::~User() {
     delete &seeds;
     delete &living_partners;
 };
+
+bool User::name_is_valid(){
+        // If first character is invalid
+        if (!((name[0] >= 'A' && name[0] <= 'Z')))
+            throw std::invalid_argument("First character should be a big letter");
+
+        // Traverse the string for the rest of the characters
+        for (int i = 1; i < name.length(); i++) {
+            if (!((name[i] >= 'a' && name[i] <= 'z') || (name[i] >= 'A' && name[i] <= 'Z') || (name[i] == ' ')))
+                throw std::invalid_argument("You entered an invalid character");
+        }
+
+        // String is a valid identifier
+        return true;
+}
+
+bool User::birthday_is_valid(){
+    if (birthday->is_valid()) return true;
+    else
+        throw std::invalid_argument("Invalid year");
+}
+
+bool User::email_is_valid(){
+       // define a regular expression
+       const regex pattern ("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+
+       // try to match the string with the regular expression
+       return regex_match(email, pattern);
+}
+
+bool User::seeds_are_valid(){
+    if (seeds < 0) throw std::invalid_argument("Invalid number");
+    return true;
+}
+
+bool User::living_partners_are_valid(){
+    if (living_partners < 0) throw std::invalid_argument("Invalid number");
+    return true;
+}
+
+bool User::footprint_is_valid(){
+    if (footprint < 0) throw std::invalid_argument("Invalid number");
+    return true;
+}
