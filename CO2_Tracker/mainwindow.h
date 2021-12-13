@@ -7,6 +7,7 @@
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
 #include <QImage>
+#include <QMap>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +20,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void insert_challenge(QString key, QString value); //insert a new challenge to challenge_dictionary
 
 private slots:
 
@@ -49,6 +51,10 @@ private:
     QGraphicsOpacityEffect *opacity_effect_3;
     QGraphicsOpacityEffect *opacity_effect_4;
     QGraphicsOpacityEffect *opacity_effect_seed;
+
+    QMap<QString,QString> challenge_dictionary;
+    const QString key[10];
+    const QString value[10];
 
 };
 #endif // MAINWINDOW_H

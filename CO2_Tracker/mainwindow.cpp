@@ -1,14 +1,25 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "survey.h"
 #include <QPixmap>
 #include <QDebug>
-
+#include <QMap>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    QPixmap pix1("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/food-pic.png");
+    ui ->food_label -> setPixmap(pix1.scaled(450,250, Qt::KeepAspectRatio));
+
+    QPixmap pix2("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/new_plane_pic.png");
+    ui ->transport_label -> setPixmap(pix2.scaled(450,250, Qt::KeepAspectRatio));
+
+    QPixmap pix3("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/home-pic.png");
+    ui ->home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
+
 
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
@@ -140,4 +151,19 @@ void MainWindow::get_seed()
         animation_seed -> start();
     }
 }
+
+//linking mainwindow and survey
+void MainWindow::on_pushButton_clicked()
+{
+    survey = new Survey(this);
+    survey->show();
+}
+
+//explicitly defining the array with the key(name) and value(explanation text) of a challenge
+
+const QString key[10] = {"Challenge 1","Challenge 2", "Challenge 3", "Challenge 4", "Challenge 5", "Challenge 6","Challenge 7", "Challenge 8", "Challenge 9", "Challenge 10"};
+const QString value[10] = {"Challenge 1","Challenge 2", "Challenge 3", "Challenge 4", "Challenge 5", "Challenge 6","Challenge 7", "Challenge 8", "Challenge 9", "Challenge 10"};
+
+//creating a challenge
+void MainWindow :: insert_challenge(QString key, QString value){}
 
