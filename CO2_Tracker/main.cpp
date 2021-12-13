@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
 //    Locomotive *m = new Locomotive(fecha, "metro", "transport", "100");
     QApplication a(argc, argv);
-    Survey window;
+    api_transport window;
 
 //    calculator(argc, argv, "economy international flight", "10000", m);
 //    std::cout << std::to_string(m->get_footprint()) << std::endl

@@ -28,15 +28,18 @@ class api_transport : public QMainWindow
 public:
     QByteArray get_API();
     char *get_transport_ID(char *input);
-    double calculator2(QPushButton *button, char* input,char* distance);
+    //double calculator2(QPushButton *button, char* input,char* distance);
     explicit api_transport(QWidget *parent = nullptr);
     ~api_transport();
 
 private slots:
+    void downloadFinished(QNetworkReply*);
     void on_pushButton_clicked();
 
 private:
     Ui::api_transport *ui;
+    QString url="https://beta2.api.climatiq.io/estimate";
+
 };
 
 #endif // API_TRANSPORT_H
