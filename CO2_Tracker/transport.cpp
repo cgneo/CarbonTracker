@@ -1,31 +1,29 @@
 
 #include "transport.h"
 Transport :: Transport(){
-    duration = 0;
+    distance = "0";
 }
 
-void Transport:: set_duration(double time){
-    duration = time;
-}
-
-double Transport:: get_duration(){
-    return duration;
+void Transport:: set_distance(char* travelled){
+    distance = travelled;
 }
 
 Locomotive :: Locomotive(){
-    carbon_coefficient = 0;
-    footprint = duration*carbon_coefficient;
-
+    footprint = 0;
 }
 
 Airplane :: Airplane(){
-    carbon_coefficient = 0;
-    footprint = duration*carbon_coefficient;
+        footprint = 0;
 
 }
 
 Car :: Car(){
-    carbon_coefficient = 0;
-    footprint = duration*carbon_coefficient;
-
+        footprint = 0;
 }
+
+void Locomotive ::  set_footprint(double estimate){footprint = estimate;}
+void Car ::  set_footprint(double estimate){footprint = estimate;}
+void Airplane ::  set_footprint(double estimate){footprint = estimate;}
+double Locomotive ::  get_footprint(){return footprint;}
+double Car ::  get_footprint(){return footprint;}
+double Airplane ::  get_footprint(){return footprint;}
