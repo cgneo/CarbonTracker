@@ -41,7 +41,7 @@ void Food::set_category(string str) {
 
 
 string Food::retrieve_category(double barcode){
-    return "category";//will replace "category" with function that calls API
+    return "food";//will replace "category" with function that calls API
                         // to get category of food item
 }
 

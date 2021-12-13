@@ -22,16 +22,17 @@ private:
 public:
     //Seters and getters
     Consumption(int userId);
+    Consumption(int userId, Base_Consumption base, vector<Object>);
     ~Consumption();
     int get_consumptionId();
     int get_userId();
     int get_base_consumptionId();
     double get_food_footprint();
     double get_transport_footprint();
+    Object get_object_i(int i);
 
     //Other methods
-    double calculate_food_footprint();
-    double calculate_transport_footprint();
+    void calculate_each_footprint();
     void add_object(Object obj);
     void remove_object(Object obj);
     void add_base_consumption(Base_Consumption base);
