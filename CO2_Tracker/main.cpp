@@ -11,7 +11,6 @@
 
 int main(int argc, char *argv[])
 {
-    return 0;
 
 //    w.show();
 //    return a.exec();

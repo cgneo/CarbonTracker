@@ -36,7 +36,7 @@ void Tests::test_add_duration(){
 void test_user(User *user){ // need to change this test
     try{
           user->name_is_valid(); // Test if the name is valid
-          user->birthday_is_vaild(); //this line is wrong, need to att a get_birthday() function
+         // user->birthday_is_vaild(); //this line is wrong, need to att a get_birthday() function
           user->email_is_valid();
           user->seeds_are_valid();
           user->living_partners_are_valid();
