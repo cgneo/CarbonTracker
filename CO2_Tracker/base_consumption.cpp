@@ -46,10 +46,23 @@ void Base_Consumption::add_object(Object item) {
     footprint += item.get_footprint();
 }
 
-double Base_Consumption::total_base_footprint() {
+double Base_Consumption::total_base_food() {
+    double food_print = 0;
     for(vector<Object>::iterator i = base_consumption.begin(); i != base_consumption.end(); i++) {
-        footprint += i->get_footprint();
+        if(i->get_type() == "food") {
+            food_print += i->get_footprint();
+        }
     }
-    return footprint;
+    return food_print;
+}
+
+double Base_Consumption::total_base_transport() {
+    double transport_print = 0;
+    for(vector<Object>::iterator i = base_consumption.begin(); i != base_consumption.end(); i++) {
+        if(i->get_type() == "transport") {
+            transport_print += i->get_footprint();
+        }
+    }
+    return transport_print;
 }
 

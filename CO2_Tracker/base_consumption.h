@@ -21,16 +21,15 @@ public:
     int get_userId();
     int get_base_consumptionId();
     double get_total_footprint();
+    int get_size();
 
     //Other methods
 
     vector<Object> *calculate_base_consumption(double c_footprint, int roommates);//Receive as parameters the info from the survey
 
     void add_object(Object item);
-    double total_base_footprint();
-
-
-//
+    double total_base_food();
+    double total_base_transport();
 
 
 };
