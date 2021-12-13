@@ -18,8 +18,8 @@ Object::Object(Date *current_date, string object_name, string object_type){
 }
 
 //---------------------Get Methods--------------------------
-Date Object::get_date(){
-    return *date;
+Date* Object::get_date(){
+    return date;
 }
 
 double Object::get_footprint(){

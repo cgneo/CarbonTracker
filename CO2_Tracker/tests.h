@@ -1,6 +1,7 @@
 #ifndef TESTS_H
 #define TESTS_H
 #include "json_DB.hpp"
+#include "user.h"
 
 
 class Tests
