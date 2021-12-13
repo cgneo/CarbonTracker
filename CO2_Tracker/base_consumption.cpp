@@ -32,3 +32,6 @@ vector<Object> Base_Consumption::*calculate_base_consumption(double c_footprint,
     //get base footprint and divide by number of roommates
 }
 
+Object Base_Consumption::get_object_i(int i){
+    return base_consumption[i];
+}

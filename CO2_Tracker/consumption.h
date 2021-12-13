@@ -15,6 +15,8 @@ private:
     int base_consumptionId;
     vector<Object> total_consumption; //Array of objects
     double total_footprint;
+    double food_footprint;
+    double transport_footprint;
     Base_Consumption base;
 
 public:
@@ -24,8 +26,12 @@ public:
     int get_consumptionId();
     int get_userId();
     int get_base_consumptionId();
+    double get_food_footprint();
+    double get_transport_footprint();
 
     //Other methods
+    double calculate_food_footprint();
+    double calculate_transport_footprint();
     void add_object(Object obj);
     void remove_object(Object obj);
     void add_base_consumption(Base_Consumption base);

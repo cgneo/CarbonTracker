@@ -22,6 +22,7 @@ public:
     int get_base_consumptionId();
     double get_total_footprint();
     int get_size();
+    Object get_object_i(int i);
 
 
     //Other methods
