@@ -4,6 +4,7 @@
 #include <QPixmap>
 #include <QDebug>
 #include <QMap>
+#include "json_DB.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -83,6 +84,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(animation_seed, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
 
+    ui->daily_challenge_1->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 1")));
+    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 2")));
+    ui->daily_challenge_3->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 3")));
+    ui->daily_challenge_4->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 4")));
 }
 
 
@@ -104,7 +109,6 @@ void MainWindow::on_Scanbutton_clicked()
 {
 
 }
-
 
 void MainWindow::on_daily_challenge_1_stateChanged(int)
 {
