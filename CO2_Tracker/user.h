@@ -37,6 +37,7 @@ public:
   void set_name(string name);
 
   void set_birthday(int birthday_day, int birthday_month, int birthday_year);
+  Date* get_birthday();
 
   void set_country(string country);
 

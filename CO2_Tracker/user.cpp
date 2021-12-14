@@ -16,7 +16,7 @@ void User::set_userId(){
 void User::set_username(string username)
 {this->username = username;}
 
-string User::get_username( )
+string User::get_username()
 {return username;}
 
 void User::set_name(string name)
@@ -24,6 +24,10 @@ void User::set_name(string name)
 
 void User::set_birthday(int birthday_day, int birthday_month, int birthday_year)
     {this->birthday = new Date(birthday_day, birthday_month, birthday_year);}
+
+Date* User::get_birthday() {
+    return birthday;
+}
 
 void User::set_country(string country)
     {this->country = country;}
@@ -66,6 +70,8 @@ bool User::name_is_valid(){
         // Traverse the string for the rest of the characters
         for (int i = 1; i < name.length(); i++) {
             if (!((name[i] >= 'a' && name[i] <= 'z') || (name[i] >= 'A' && name[i] <= 'Z') || (name[i] == ' ')))
+                throw std::invalid_argument("You entered an invalid character");
+            else if (name[i-1] == ' ' && !(name[i] >= 'A' && name[i] <= 'Z')) // if there is a space before a letter, it means that there is another name added, which has to start with capital letter, else it is not a valid name
                 throw std::invalid_argument("You entered an invalid character");
         }
 
