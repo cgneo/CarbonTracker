@@ -1,18 +1,20 @@
 #include <QGraphicsWidget>
-#include "transport_API.cpp"
+#include "transport_api.cpp"
 #include "tests.h"
 #include "json_DB.hpp"
 #include "object.h"
 #include "transport.h"
-#include "api_transport.h"
+#include "transport_api.h"
 #include "mainwindow.h"
 #include "survey.h"
 #include <QApplication>
-
+#include <cstring>
 
 int main(int argc, char *argv[])
 {
+
     QApplication a(argc, argv);
+    /*
     Json_DB obj;
 
     Tests t;
@@ -43,4 +45,28 @@ int main(int argc, char *argv[])
 //    calculator(argc, argv, "economy international flight", "10000", m);
 //    std::cout << std::to_string(m->get_footprint()) << std::endl
 
+
+
+*/
+    Transport bus;
+    bus.set_name("petrol car");
+    string s = bus.get_name();
+
+        int n = s.length();
+
+        // declaring character array
+        char char_array[n + 1];
+
+        // copying the contents of the
+        // string to char array
+    strcpy(char_array, s.c_str());
+    bus.set_distance("1000");
+    transport_api api;
+    api.get_reply(bus.get_distance(),char_array);
+    bus.set_footprint(api.get_emission());
+    std::cout<<bus.get_footprint()<<std::endl;
+    qDebug()<<api.get_emission_unit();
+    //return a.exec();
+    Car car;
+    std::cout<<car.get_name()<<std::endl;
 }
