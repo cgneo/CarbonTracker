@@ -94,3 +94,13 @@ void Receipt::add_receipt(string str){//Takes a string with file directory and c
 
     }
 }
+
+bool Receipt::duration_is_valid(){
+    if (duration < 0) throw std::invalid_argument("Invalid number");
+    return true;
+}
+
+bool Receipt::number_of_people_is_valid(){
+    if (number_of_people < 0) throw std::invalid_argument("Invalid number");
+    return true;
+}
