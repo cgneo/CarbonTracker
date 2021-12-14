@@ -1,18 +1,45 @@
-#include "mainwindow.h"
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QNetworkRequest>
-#include <QJsonArray>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonValue>
-#include <QApplication>
-#include <QtWidgets>
-#include <QtNetwork>
-#include <iostream>
-#include <QFile>
+#include "transport_api.h"
 
-QByteArray get_API(){
+transport_api::transport_api(){
+    connect(&networkManager,&QNetworkAccessManager::finished,this,&transport_api::parse_reply);
+    emission = 10;
+}
+
+void transport_api::get_reply(){
+    QUrl url("https://beta2.api.climatiq.io/estimate");
+    QNetworkRequest networkRequest(url);
+    networkRequest.setRawHeader("Authorization", api_key);
+    networkRequest.setRawHeader("Content-Type","application/json");
+    QByteArray data("{\"emission_factor\": \"");
+    data.append("passenger_train-route_type_urban-fuel_source_diesel");
+    data.append("\",\"parameters\":{\"distance\": ");
+    data.append("100000");
+    data.append(",\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
+    QEventLoop loop;
+    QNetworkReply* reply = networkManager.post(networkRequest, data);
+    connect(reply , SIGNAL(finished()), &loop, SLOT(quit()));
+    loop.exec();
+}
+
+void transport_api::parse_reply(QNetworkReply* reply){
+QString strValue;
+    if(reply->error() != QNetworkReply::NoError){
+        networkManager.clearAccessCache();
+
+    } else {
+        //parse the reply JSON
+        QJsonObject jsonObject = QJsonDocument::fromJson(reply->readAll()).object();
+        //get code
+        QJsonValue alpha = jsonObject.value("co2e");
+        double beta = alpha.toDouble();
+        QString code = jsonObject["co2e_unit"].toString();
+        strValue = QString::number(beta, 'f', 3);
+        emission = beta;
+    }
+}
+
+
+void transport_api ::set_api_key(){
     QFile file("/Users/apple/Desktop/CSE201/CarbonTracker/CO2_Tracker/API_KEY.txt");
     //QByteArray *bytes = new Q;
     QByteArray bytes;
@@ -25,8 +52,12 @@ QByteArray get_API(){
             std::cout << "Error";
         }
     }
-    return  bytes;
+    api_key=bytes;
 }
+
+
+
+/*
 
 char* get_transport_ID(char* input){
     if (input =="international train"){
@@ -71,6 +102,7 @@ char* get_transport_ID(char* input){
 }
 
 int calculator(int argc, char *argv[], char* input,char* distance)
+transport_api::transport_api()
 {
 QApplication a(argc, argv);
 //setup GUI (you could be doing this in the designer)
@@ -131,4 +163,4 @@ QObject::connect(&button, &QPushButton::clicked, [&](){
 widget.show();
 return a.exec();
 }
-
+*/

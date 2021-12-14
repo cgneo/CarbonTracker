@@ -53,10 +53,12 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../CO2_Tracker/main.cpp \
-		../CO2_Tracker/mainwindow.cpp moc_mainwindow.cpp
+		../CO2_Tracker/mainwindow.cpp moc_mainwindow.cpp \
+		moc_transport_api.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		moc_mainwindow.o
+		moc_mainwindow.o \
+		moc_transport_api.o
 DIST          = ../../../../Qt/6.1.3/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.1.3/macos/mkspecs/features/device_config.prf \
 		../../../../Qt/6.1.3/macos/mkspecs/common/unix.conf \
@@ -185,7 +187,8 @@ DIST          = ../../../../Qt/6.1.3/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.1.3/macos/mkspecs/features/exceptions.prf \
 		../../../../Qt/6.1.3/macos/mkspecs/features/yacc.prf \
 		../../../../Qt/6.1.3/macos/mkspecs/features/lex.prf \
-		../CO2_Tracker/CO2_Tracker.pro ../CO2_Tracker/mainwindow.h ../CO2_Tracker/main.cpp \
+		../CO2_Tracker/CO2_Tracker.pro ../CO2_Tracker/mainwindow.h \
+		../CO2_Tracker/transport_api.h ../CO2_Tracker/main.cpp \
 		../CO2_Tracker/mainwindow.cpp
 QMAKE_TARGET  = CarbonTracker_exe
 DESTDIR       = 
@@ -507,8 +510,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/6.1.3/macos/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../CO2_Tracker/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../CO2_Tracker/mainwindow.h ../CO2_Tracker/transport_api.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/transport_API.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../CO2_Tracker/mainwindow.ui $(DISTDIR)/
 
 
@@ -544,42 +547,19 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../../Qt/6.1.3/macos/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -mmacosx-version-min=10.14 -Wall -Wextra -dM -E -o moc_predefs.h ../../../../Qt/6.1.3/macos/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_transport_api.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_transport_api.cpp
 moc_mainwindow.cpp: ../CO2_Tracker/mainwindow.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QByteArray \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		moc_predefs.h \
 		../../../../Qt/6.1.3/macos/libexec/moc
 	/Users/apple/Qt/6.1.3/macos/libexec/moc $(DEFINES) --include /Users/apple/Desktop/CSE201/CarbonTracker/build-CO2_Tracker-Qt_6_1_3_for_macOS-Debug/moc_predefs.h -I/Users/apple/Qt/6.1.3/macos/mkspecs/macx-clang -I/Users/apple/Desktop/CSE201/CarbonTracker/CO2_Tracker -I/Users/apple/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers -I/Users/apple/Qt/6.1.3/macos/lib/QtGui.framework/Headers -I/Users/apple/Qt/6.1.3/macos/lib/QtNetwork.framework/Headers -I/Users/apple/Qt/6.1.3/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/apple/Qt/6.1.3/macos/lib ../CO2_Tracker/mainwindow.h -o moc_mainwindow.cpp
 
-compiler_moc_objc_header_make_all:
-compiler_moc_objc_header_clean:
-compiler_moc_source_make_all:
-compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
-compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
-ui_mainwindow.h: ../CO2_Tracker/mainwindow.ui \
-		../../../../Qt/6.1.3/macos/libexec/uic
-	/Users/apple/Qt/6.1.3/macos/libexec/uic ../CO2_Tracker/mainwindow.ui -o ui_mainwindow.h
-
-compiler_rez_source_make_all:
-compiler_rez_source_clean:
-compiler_yacc_decl_make_all:
-compiler_yacc_decl_clean:
-compiler_yacc_impl_make_all:
-compiler_yacc_impl_clean:
-compiler_lex_make_all:
-compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
-
-####### Compile
-
-main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.h \
-		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+moc_transport_api.cpp: ../CO2_Tracker/transport_api.h \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/QNetworkAccessManager \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkaccessmanager.h \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/QNetworkReply \
@@ -664,6 +644,7 @@ main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlineedit.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlistview.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlistwidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmdiarea.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmdisubwindow.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmenu.h \
@@ -757,10 +738,224 @@ main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.h \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
 		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qudpsocket.h \
-		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtnetworkversion.h
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtnetworkversion.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QFile \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfile.h \
+		moc_predefs.h \
+		../../../../Qt/6.1.3/macos/libexec/moc
+	/Users/apple/Qt/6.1.3/macos/libexec/moc $(DEFINES) --include /Users/apple/Desktop/CSE201/CarbonTracker/build-CO2_Tracker-Qt_6_1_3_for_macOS-Debug/moc_predefs.h -I/Users/apple/Qt/6.1.3/macos/mkspecs/macx-clang -I/Users/apple/Desktop/CSE201/CarbonTracker/CO2_Tracker -I/Users/apple/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers -I/Users/apple/Qt/6.1.3/macos/lib/QtGui.framework/Headers -I/Users/apple/Qt/6.1.3/macos/lib/QtNetwork.framework/Headers -I/Users/apple/Qt/6.1.3/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/apple/Qt/6.1.3/macos/lib ../CO2_Tracker/transport_api.h -o moc_transport_api.cpp
+
+compiler_moc_objc_header_make_all:
+compiler_moc_objc_header_clean:
+compiler_moc_source_make_all:
+compiler_moc_source_clean:
+compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_clean:
+	-$(DEL_FILE) ui_mainwindow.h
+ui_mainwindow.h: ../CO2_Tracker/mainwindow.ui \
+		../../../../Qt/6.1.3/macos/libexec/uic
+	/Users/apple/Qt/6.1.3/macos/libexec/uic ../CO2_Tracker/mainwindow.ui -o ui_mainwindow.h
+
+compiler_rez_source_make_all:
+compiler_rez_source_clean:
+compiler_yacc_decl_make_all:
+compiler_yacc_decl_clean:
+compiler_yacc_impl_make_all:
+compiler_yacc_impl_clean:
+compiler_lex_make_all:
+compiler_lex_clean:
+compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+
+####### Compile
+
+main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/transport_API.cpp \
+		../CO2_Tracker/transport_api.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/QNetworkAccessManager \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkaccessmanager.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/QNetworkReply \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkreply.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/QNetworkRequest \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkrequest.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QJsonArray \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsonarray.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QJsonDocument \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsondocument.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QJsonObject \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsonobject.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QJsonValue \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsonvalue.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QApplication \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qapplication.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QtWidgets \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtwidgetsglobal.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qabstractbutton.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qabstractitemdelegate.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qabstractitemview.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qabstractscrollarea.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qabstractslider.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qabstractspinbox.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qaccessiblewidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qaction.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qactiongroup.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qboxlayout.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qbuttongroup.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qcheckbox.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qcolordialog.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qcolormap.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qcolumnview.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qcombobox.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qcommandlinkbutton.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qcommonstyle.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qcompleter.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qdatawidgetmapper.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qdatetimeedit.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qdial.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qdialogbuttonbox.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qdockwidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qdrawutil.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qerrormessage.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qfiledialog.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qfileiconprovider.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qfilesystemmodel.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qfocusframe.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qfontcombobox.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qfontdialog.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qformlayout.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qframe.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgesture.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgesturerecognizer.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicsanchorlayout.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicsgridlayout.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicsitemanimation.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicslayout.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicslayoutitem.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicslinearlayout.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicsproxywidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicssceneevent.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicstransform.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicsview.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgraphicswidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qgroupbox.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qheaderview.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qinputdialog.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qitemdelegate.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qitemeditorfactory.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qkeysequenceedit.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlayout.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlayoutitem.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlcdnumber.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlineedit.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlistview.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlistwidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmdiarea.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmdisubwindow.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmenu.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmenubar.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qplaintextedit.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qprogressbar.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qprogressdialog.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qproxystyle.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qradiobutton.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qrubberband.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qscrollarea.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qscrollbar.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qscroller.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qscrollerproperties.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qshortcut.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qsizegrip.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qsizepolicy.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qslider.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qspinbox.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qsplashscreen.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qsplitter.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qstackedlayout.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qstatusbar.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qstyle.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qstyleditemdelegate.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qstylefactory.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qstyleoption.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qstylepainter.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qstyleplugin.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qsystemtrayicon.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtabbar.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtableview.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtablewidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtabwidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtextbrowser.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtextedit.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtoolbar.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtoolbox.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtoolbutton.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtooltip.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtreeview.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtreewidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtreewidgetitemiterator.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qundogroup.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qundostack.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qundoview.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qwhatsthis.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qwidgetaction.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qwizard.h \
+		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qtwidgetsversion.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/QtNetwork \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtnetworkglobal.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qabstractnetworkcache.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qauthenticator.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qdnslookup.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qdtls.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qhostinfo.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qhstspolicy.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qhttp2configuration.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qhttpmultipart.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qlocalserver.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qlocalsocket.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkcookie.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkcookiejar.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkdatagram.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkdiskcache.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkinformation.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkinterface.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qnetworkproxy.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qocspresponse.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qpassworddigestor.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsctpserver.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsctpsocket.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qssl.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsslcertificate.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsslcertificateextension.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsslcipher.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsslconfiguration.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qssldiffiehellmanparameters.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsslellipticcurve.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsslerror.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsslkey.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsslpresharedkeyauthenticator.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qsslsocket.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qudpsocket.h \
+		../../../../Qt/6.1.3/macos/lib/QtNetwork.framework/Headers/qtnetworkversion.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QFile \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../CO2_Tracker/main.cpp
 
 mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/QByteArray \
+		../../../../Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		ui_mainwindow.h
@@ -768,6 +963,9 @@ mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_transport_api.o: moc_transport_api.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_transport_api.o moc_transport_api.cpp
 
 ####### Install
 

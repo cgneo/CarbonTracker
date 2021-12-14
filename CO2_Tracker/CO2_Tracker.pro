@@ -15,7 +15,8 @@ SOURCES += \
     transport_API.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    transport_api.h
 
 FORMS += \
     mainwindow.ui
