@@ -56,7 +56,7 @@ public:
   ~User();
 
   bool name_is_valid();
-  bool birthday_is_valid();
+  bool birthday_is_valid(int birthday_day, int birthday_month, int birthday_year);
   bool email_is_valid();
   bool seeds_are_valid();
   bool living_partners_are_valid();

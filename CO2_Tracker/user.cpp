@@ -79,10 +79,19 @@ bool User::name_is_valid(){
         return true;
 }
 
-bool User::birthday_is_valid(){
-    if (birthday->is_valid()) return true;
-    else
-        throw std::invalid_argument("Invalid year");
+bool User::birthday_is_valid(int birthday_day, int birthday_month, int birthday_year){
+    if (birthday_year >= 1910 && birthday_year < 2020){
+        if (birthday_month >= 0 && birthday_month <= 12){
+            if (birthday_day >= 0 && birthday_day <= days_in_month[birthday_month]){
+                return true;}
+            else{
+                throw std::invalid_argument("Invalid days");}
+        }
+        else{
+            throw std::invalid_argument("Invalid month");}
+    }
+    else{
+        throw std::invalid_argument("Invalid year");}
 }
 
 bool User::email_is_valid(){
