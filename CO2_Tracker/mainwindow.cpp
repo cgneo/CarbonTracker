@@ -20,6 +20,9 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix3("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/home-pic.png");
     ui ->home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
+    QPixmap pix4("/Users/dainjung/seed.png");
+    ui -> seed -> setPixmap(pix4.scaled(300,200, Qt::KeepAspectRatio));
+
 
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
@@ -70,15 +73,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(animation_4, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
 
-    opacity_effect_seed = new QGraphicsOpacityEffect( ui -> seed);
+    opacity_effect_seed = new QGraphicsOpacityEffect( ui -> seed );
     animation_seed = new QPropertyAnimation(opacity_effect_seed,"opacity", this);
     ui-> seed -> setGraphicsEffect(opacity_effect_seed);
-    opacity_effect_seed -> setOpacity(1);
-    animation_seed-> setDuration(500);
+    opacity_effect_seed -> setOpacity(0);
     animation_seed -> setStartValue(0);
     animation_seed -> setEndValue(1);
+    animation_seed-> setDuration(1000);
     animation_seed -> setEasingCurve(QEasingCurve::InBack);
-    animation_seed-> start(QPropertyAnimation::DeleteWhenStopped);
+    //animation_seed-> start(QPropertyAnimation::DeleteWhenStopped);
 
     connect(animation_seed, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));

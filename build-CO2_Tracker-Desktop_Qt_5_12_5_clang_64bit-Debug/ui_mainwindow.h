@@ -16,6 +16,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
@@ -38,6 +39,7 @@ public:
     QWidget *tab;
     QFrame *verticalFrame;
     QVBoxLayout *verticalLayout;
+    QFrame *label_img;
     QProgressBar *SeedsprogressBar;
     QLabel *seed;
     QPushButton *Scanbutton;
@@ -95,6 +97,9 @@ public:
     QCheckBox *checkBox_13;
     QWidget *tab_4;
     QHBoxLayout *horizontalLayout_2;
+    QListView *listView;
+    QFrame *rankingpage;
+    QVBoxLayout *verticalLayout_7;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -102,7 +107,8 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(921, 670);
+        MainWindow->resize(1024, 1067);
+        MainWindow->setMaximumSize(QSize(1024, 1067));
         QPalette palette;
         QBrush brush(QColor(232, 233, 237, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -127,6 +133,7 @@ public:
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setEnabled(true);
+        tabWidget->setMaximumSize(QSize(1000, 1000));
         QPalette palette1;
         QBrush brush3(QColor(233, 208, 160, 255));
         brush3.setStyle(Qt::SolidPattern);
@@ -251,6 +258,14 @@ public:
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(5, 5, 5, 5);
+        label_img = new QFrame(verticalFrame);
+        label_img->setObjectName(QString::fromUtf8("label_img"));
+        label_img->setMaximumSize(QSize(300, 200));
+        label_img->setFrameShape(QFrame::StyledPanel);
+        label_img->setFrameShadow(QFrame::Raised);
+
+        verticalLayout->addWidget(label_img);
+
         SeedsprogressBar = new QProgressBar(verticalFrame);
         SeedsprogressBar->setObjectName(QString::fromUtf8("SeedsprogressBar"));
         QFont font;
@@ -277,8 +292,8 @@ public:
 
         seed = new QLabel(verticalFrame);
         seed->setObjectName(QString::fromUtf8("seed"));
-        seed->setMaximumSize(QSize(16777215, 16777215));
-        seed->setPixmap(QPixmap(QString::fromUtf8("../2021-12-09 11.11.21.jpg")));
+        seed->setMaximumSize(QSize(100, 100));
+        seed->setPixmap(QPixmap(QString::fromUtf8("../../seed.png")));
 
         verticalLayout->addWidget(seed);
 
@@ -873,6 +888,25 @@ public:
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         horizontalLayout_2 = new QHBoxLayout(tab_4);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        listView = new QListView(tab_4);
+        listView->setObjectName(QString::fromUtf8("listView"));
+        listView->setMaximumSize(QSize(500, 500));
+
+        horizontalLayout_2->addWidget(listView);
+
+        rankingpage = new QFrame(tab_4);
+        rankingpage->setObjectName(QString::fromUtf8("rankingpage"));
+        rankingpage->setMaximumSize(QSize(200, 300));
+        rankingpage->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"    border-radius: 4px;\n"
+"    padding: 2px;\n"
+"	background-color: rgba(236, 234, 238,100);\n"
+"}"));
+        verticalLayout_7 = new QVBoxLayout(rankingpage);
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+
+        horizontalLayout_2->addWidget(rankingpage);
+
         tabWidget->addTab(tab_4, QString());
 
         horizontalLayout->addWidget(tabWidget);
@@ -880,7 +914,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 921, 24));
+        menubar->setGeometry(QRect(0, 0, 1024, 24));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -889,7 +923,7 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(SeedsprogressBar, SIGNAL(valueChanged(int)), seed, SLOT(raise()));
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
