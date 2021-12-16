@@ -5,7 +5,7 @@
 
 netclient::netclient()
 {
-    std::cout << "hi from client" << std::endl;
+    socket = new QTcpSocket();
 }
 
 netclient::~netclient()
@@ -19,15 +19,11 @@ void netclient::startClient() {
     try
     {
         connect(this, &netclient::newMessage, this, &netclient::displayMessage);
-//        connect(socket, &QTcpSocket::readyRead, this, &netclient::readSocket);
-//        connect(socket, &QTcpSocket::disconnected, this, &netclient::discardSocket);
-//        connect(socket, &QAbstractSocket::errorOccurred, this, &netclient::displayError);
-
-        std::cout << "hi from client1" << std::endl;
+        connect(socket, &QTcpSocket::readyRead, this, &netclient::readSocket);
+        connect(socket, &QTcpSocket::disconnected, this, &netclient::discardSocket);
+        connect(socket, &QAbstractSocket::errorOccurred, this, &netclient::displayError);
 
         socket->connectToHost(QHostAddress::LocalHost,8080);
-
-        std::cout << "hi from client2" << std::endl;
 
         if (socket->waitForConnected())
             std::cout << "ClientMsg: Connected to Server" << std::endl;

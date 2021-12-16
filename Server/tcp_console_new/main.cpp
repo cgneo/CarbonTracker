@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     // Create a server
-//    netserver* tcp = new netserver();
-//    tcp->startServer();
+    netserver* tcp = new netserver();
+    tcp->startServer();
 
     // Create a client
     netclient* receive = new netclient();
