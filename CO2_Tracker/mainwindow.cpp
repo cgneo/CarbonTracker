@@ -23,6 +23,9 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix4("/Users/dainjung/seed.png");
     ui -> seed -> setPixmap(pix4.scaled(300,200, Qt::KeepAspectRatio));
 
+    ui -> MessageChallenges -> addItem("Send a message to your friend");
+    ui -> MessageChallenges -> addItem("Challenge your friend");
+
 
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);

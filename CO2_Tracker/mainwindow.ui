@@ -1311,6 +1311,19 @@ p, li { white-space: pre-wrap; }
        <attribute name="title">
         <string>Survey</string>
        </attribute>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>70</y>
+          <width>80</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Go to survey</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -2618,32 +2631,25 @@ p, li { white-space: pre-wrap; }
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QListView" name="listView">
+         <widget class="QListView" name="Friends_list">
           <property name="maximumSize">
            <size>
             <width>500</width>
             <height>500</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QListView{
+
+    border-radius: 4px;
+    padding: 2px;
+	background-color: rgba(214, 238, 216, 100);
+}</string>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QFrame" name="rankingpage">
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>300</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QFrame {
-    border-radius: 4px;
-    padding: 2px;
-	background-color: rgba(236, 234, 238,100);
-}</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_7"/>
-         </widget>
+         <widget class="QComboBox" name="MessageChallenges"/>
         </item>
        </layout>
       </widget>

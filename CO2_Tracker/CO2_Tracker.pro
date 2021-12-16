@@ -16,6 +16,8 @@ SOURCES += \
     date.cpp \
     friends.cpp \
     json_DB.cpp \
+    netclient.cpp \
+    netserver.cpp \
     object.cpp \
     food.cpp \
     tests.cpp \
@@ -31,10 +33,13 @@ SOURCES += \
 HEADERS += \
     api_transport.h \
     base_consumption.h \
+    colormod.h \
     consumption.h \
     date.h \
     friends.h \
     json_DB.hpp \
+    netclient.h \
+    netserver.h \
     object.h \
     food.h \
     tests.h \
