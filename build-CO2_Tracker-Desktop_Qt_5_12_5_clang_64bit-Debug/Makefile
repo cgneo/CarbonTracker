@@ -998,7 +998,8 @@ moc_mainwindow.cpp: ../CO2_Tracker/mainwindow.h \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QImage \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qimage.h \
-		../CO2_Tracker/survey.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
 		moc_predefs.h \
 		../../../Qt/5.12.5/clang_64/bin/moc
 	/Users/cyrine/Qt/5.12.5/clang_64/bin/moc $(DEFINES) --include /Users/cyrine/Downloads/CarbonTracker/build-CO2_Tracker-Desktop_Qt_5_12_5_clang_64bit-Debug/moc_predefs.h -I/Users/cyrine/Qt/5.12.5/clang_64/mkspecs/macx-clang -I/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/cyrine/Qt/5.12.5/clang_64/lib ../CO2_Tracker/mainwindow.h -o moc_mainwindow.cpp
@@ -1006,6 +1007,19 @@ moc_mainwindow.cpp: ../CO2_Tracker/mainwindow.h \
 moc_survey.cpp: ../CO2_Tracker/survey.h \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../CO2_Tracker/mainwindow.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QGraphicsOpacityEffect \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QImage \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qimage.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
 		moc_predefs.h \
 		../../../Qt/5.12.5/clang_64/bin/moc
 	/Users/cyrine/Qt/5.12.5/clang_64/bin/moc $(DEFINES) --include /Users/cyrine/Downloads/CarbonTracker/build-CO2_Tracker-Desktop_Qt_5_12_5_clang_64bit-Debug/moc_predefs.h -I/Users/cyrine/Qt/5.12.5/clang_64/mkspecs/macx-clang -I/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtGui.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtNetwork.framework/Headers -I/Users/cyrine/Qt/5.12.5/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/cyrine/Qt/5.12.5/clang_64/lib ../CO2_Tracker/survey.h -o moc_survey.cpp
@@ -1535,6 +1549,8 @@ main.o: ../CO2_Tracker/main.cpp ../../../Qt/5.12.5/clang_64/lib/QtWidgets.framew
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QGraphicsOpacityEffect \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QImage \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qimage.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
 		../CO2_Tracker/survey.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../CO2_Tracker/main.cpp
 
@@ -1556,7 +1572,8 @@ mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QImage \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qimage.h \
-		../CO2_Tracker/survey.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
 		ui_mainwindow.h \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
@@ -1567,11 +1584,25 @@ mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 survey.o: ../CO2_Tracker/survey.cpp ../CO2_Tracker/survey.h \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../CO2_Tracker/mainwindow.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QPropertyAnimation \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qpropertyanimation.h \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QGraphicsOpacityEffect \
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QImage \
+		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qimage.h \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QMap \
+		../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qmap.h \
 		ui_survey.h \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/QPixmap \
 		../../../Qt/5.12.5/clang_64/lib/QtGui.framework/Headers/qpixmap.h \
 		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
-		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+		../../../Qt/5.12.5/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o survey.o ../CO2_Tracker/survey.cpp
 
 moc_api_transport.o: moc_api_transport.cpp 

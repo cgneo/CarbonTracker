@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>3474</width>
-    <height>1347</height>
+    <width>1024</width>
+    <height>1067</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>1067</height>
+   </size>
   </property>
   <property name="palette">
    <palette>
@@ -110,6 +116,12 @@
      <widget class="QTabWidget" name="tabWidget">
       <property name="enabled">
        <bool>true</bool>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1000</width>
+        <height>1000</height>
+       </size>
       </property>
       <property name="palette">
        <palette>
@@ -232,7 +244,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <property name="iconSize">
        <size>
@@ -720,6 +732,22 @@ QTabBar::tab:selected, QTabBar::tab:hover {
           <number>5</number>
          </property>
          <item>
+          <widget class="QFrame" name="label_img">
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QProgressBar" name="SeedsprogressBar">
            <property name="font">
             <font>
@@ -752,15 +780,15 @@ QProgressBar::chunk{
           <widget class="QLabel" name="seed">
            <property name="maximumSize">
             <size>
-             <width>16777215</width>
-             <height>16777215</height>
+             <width>100</width>
+             <height>100</height>
             </size>
            </property>
            <property name="text">
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>../2021-12-09 11.11.21.jpg</pixmap>
+            <pixmap>../../seed.png</pixmap>
            </property>
           </widget>
          </item>
@@ -2588,7 +2616,36 @@ p, li { white-space: pre-wrap; }
        <attribute name="title">
         <string>Your friends</string>
        </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QListView" name="listView">
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>500</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="rankingpage">
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>300</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame {
+    border-radius: 4px;
+    padding: 2px;
+	background-color: rgba(236, 234, 238,100);
+}</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7"/>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -2599,8 +2656,8 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>3474</width>
-     <height>22</height>
+     <width>1024</width>
+     <height>24</height>
     </rect>
    </property>
   </widget>

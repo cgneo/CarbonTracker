@@ -59,7 +59,6 @@ public:
     QFrame *gridFrame;
     QGridLayout *gridLayout;
     QWidget *tab_2;
-    QPushButton *pushButton;
     QWidget *tab_21;
     QWidget *tab_3;
     QHBoxLayout *horizontalLayout_4;
@@ -493,9 +492,6 @@ public:
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
-        pushButton = new QPushButton(tab_2);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(130, 70, 80, 22));
         tabWidget->addTab(tab_2, QString());
         tab_21 = new QWidget();
         tab_21->setObjectName(QString::fromUtf8("tab_21"));
@@ -922,7 +918,6 @@ public:
         daily_challenge_3->setText(QApplication::translate("MainWindow", "Challenge #3", nullptr));
         daily_challenge_4->setText(QApplication::translate("MainWindow", "Challenge #4", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Profile page", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "Go to survey", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Survey", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_21), QApplication::translate("MainWindow", "Graph page", nullptr));
         textEdit_2->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

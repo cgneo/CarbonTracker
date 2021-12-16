@@ -3,7 +3,7 @@
 #include <QPixmap>
 #include <QDebug>
 #include <QMap>
-#include "json_DB.hpp"
+#include <iostream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,6 +19,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     QPixmap pix3("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/home-pic.png");
     ui ->home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
+
+    QPixmap pix4("/Users/dainjung/seed.png");
+    ui -> seed -> setPixmap(pix4.scaled(300,200, Qt::KeepAspectRatio));
+
+
 
 
 
@@ -70,23 +75,19 @@ MainWindow::MainWindow(QWidget *parent)
     connect(animation_4, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
 
-    opacity_effect_seed = new QGraphicsOpacityEffect( ui -> seed);
+    opacity_effect_seed = new QGraphicsOpacityEffect( ui -> seed );
     animation_seed = new QPropertyAnimation(opacity_effect_seed,"opacity", this);
     ui-> seed -> setGraphicsEffect(opacity_effect_seed);
-    opacity_effect_seed -> setOpacity(1);
-    animation_seed-> setDuration(500);
+    opacity_effect_seed -> setOpacity(0);
     animation_seed -> setStartValue(0);
     animation_seed -> setEndValue(1);
+    animation_seed-> setDuration(1000);
     animation_seed -> setEasingCurve(QEasingCurve::InBack);
-    animation_seed-> start(QPropertyAnimation::DeleteWhenStopped);
+    //animation_seed-> start(QPropertyAnimation::DeleteWhenStopped);
 
     connect(animation_seed, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
 
-    ui->daily_challenge_1->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 1")));
-    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 2")));
-    ui->daily_challenge_3->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 3")));
-    ui->daily_challenge_4->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 4")));
 }
 
 
@@ -108,6 +109,7 @@ void MainWindow::on_Scanbutton_clicked()
 {
 
 }
+
 
 void MainWindow::on_daily_challenge_1_stateChanged(int)
 {
