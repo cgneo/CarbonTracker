@@ -4,6 +4,7 @@
 #include <QPixmap>
 #include <QDebug>
 #include <QMap>
+#include <iostream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
