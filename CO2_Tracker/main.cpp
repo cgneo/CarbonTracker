@@ -1,3 +1,29 @@
+/*
+#include "mainwindow.h"
+
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 #include <QGraphicsWidget>
 #include "transport_api.cpp"
 #include "tests.h"
@@ -66,5 +92,6 @@ int main(int argc, char *argv[])
     bus.set_footprint(api.get_emission());
     std::cout<<bus.get_footprint()<<std::endl;
     qDebug()<<api.get_emission_unit();
-    return a.exec();
+    //return a.exec();
 }
+

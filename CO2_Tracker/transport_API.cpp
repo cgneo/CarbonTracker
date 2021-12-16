@@ -28,7 +28,10 @@ void transport_api::get_reply(char*distance, char*id){
     data.append("\",\"parameters\":{\"distance\": ");
     data.append(distance);
     data.append(",\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
-    networkManager.post(networkRequest, data);
+    QEventLoop loop;
+    QNetworkReply* reply = networkManager.post(networkRequest, data);
+    connect(reply , SIGNAL(finished()), &loop, SLOT(quit()));
+    loop.exec();
 
 }
 double transport_api::get_emission(){return emission;}
