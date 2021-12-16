@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 {
 
     QApplication a(argc, argv);
-
+/*
     Json_DB obj;
 
     Tests t;
@@ -71,11 +71,11 @@ int main(int argc, char *argv[])
 //    calculator(argc, argv, "economy international flight", "10000", m);
 //    std::cout << std::to_string(m->get_footprint()) << std::endl
 
-
+*/
 
 
     Transport bus;
-    bus.set_name("economy class international flight");
+    bus.set_name("first class international flight");
     string s = bus.get_name();
 
         int n = s.length();
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
         // copying the contents of the
         // string to char array
     strcpy(char_array, s.c_str());
-    bus.set_distance("1000");
+    bus.set_distance("100000");
     transport_api api;
     api.get_reply(bus.get_distance(),char_array);
     bus.set_footprint(api.get_emission());
