@@ -1,6 +1,8 @@
 #ifndef TESTS_H
 #define TESTS_H
 #include "user.h"
+#include "transport.h"
+#include "receipt.h"
 
 class Tests
 {
@@ -17,6 +19,12 @@ public:
 
     //User
     void test_user(User *user);
+
+    //Transport
+    void test_transport(Transport *transport);
+
+    //Receipt
+    void test_receipt(Receipt *receipt);
 
     // -----------------Json and data fetching-------------------
     void test_does_file_exist();
