@@ -12,13 +12,13 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPixmap pix1("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/food-pic.png");
+    QPixmap pix1(":/challenges/food-pic.png");
     ui ->food_label -> setPixmap(pix1.scaled(450,250, Qt::KeepAspectRatio));
 
-    QPixmap pix2("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/new_plane_pic.png");
+    QPixmap pix2(":/challenges/plane-pic.png");
     ui ->transport_label -> setPixmap(pix2.scaled(450,250, Qt::KeepAspectRatio));
 
-    QPixmap pix3("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/home-pic.png");
+    QPixmap pix3(":/challenges/home-pic.png");
     ui ->home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
 
@@ -88,6 +88,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 2")));
     ui->daily_challenge_3->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 3")));
     ui->daily_challenge_4->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 4")));
+
 }
 
 

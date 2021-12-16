@@ -31,24 +31,25 @@ int main(int argc, char *argv[])
     obj.writeJsonUser(u);
 
 
-//    Tests t;
-//    QString file = obj.get_path() + obj.get_FileName();
-//    t.test_does_file_exist(file);
+   Tests t;
+   QString file = obj.get_path() + obj.get_FileName();
+   t.test_does_file_exist(file);
 
 
 
-//    bool new_user = !t.test_does_file_exist(file);
+   bool new_user = !t.test_does_file_exist(file);
 
-//    if (new_user){ //If user is new, open profile set_up
-//        Survey window;
-//        window.show();
-//        return a.exec();
-//    }
-//    else{ //Else open regular window
-//        MainWindow window;
-//        window.show();
-//        return a.exec();
-// //    }
+   if (new_user){ //If user is new, open profile set_up
+       Survey window;
+       window.show();
+       return a.exec();
+   }
+   else{ //Else open regular window
+       MainWindow window;
+       window.show();
+       return a.exec();
+   }
+
 //     Object *ham = new Object();
 //     Object *amg = new Object();
 //     Object *bread = new Object();
