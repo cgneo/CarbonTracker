@@ -2,7 +2,7 @@
 
 transport_api::transport_api(){
     connect(&networkManager,&QNetworkAccessManager::finished,this,&transport_api::parse_reply);
-    emission = 10;
+    emission = -5;
     QFile file("/Users/apple/Desktop/CSE201/CarbonTracker/CO2_Tracker/API_KEY.txt");
     //QByteArray *bytes = new Q;
     QByteArray bytes;
@@ -28,10 +28,8 @@ void transport_api::get_reply(char*distance, char*id){
     data.append("\",\"parameters\":{\"distance\": ");
     data.append(distance);
     data.append(",\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
-    QEventLoop loop;
-    QNetworkReply* reply = networkManager.post(networkRequest, data);
-    connect(reply , SIGNAL(finished()), &loop, SLOT(quit()));
-    loop.exec();
+    networkManager.post(networkRequest, data);
+
 }
 double transport_api::get_emission(){return emission;}
 
@@ -51,6 +49,7 @@ QString strValue;
         emission_unit = code;
         emission = beta;
     }
+    reply->deleteLater();
 }
 
 QString transport_api::get_emission_unit(){return emission_unit;}
@@ -72,15 +71,6 @@ case hash("petrol motorbike") : return "passenger_vehicle-vehicle_type_large_mot
 case hash("first class international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_first-contrails_included";
 case hash("domestic flight") : return "passenger_flight-route_type_domestic-aircraft_type_na-distance_na-class_na-contrails_included";
 case hash("business class international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_business-contrails_included";
-case hash("economy international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_economy-contrails_included";
+case hash("economy class international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_economy-contrails_included";
 }}
 
-/*
-    if (input == "business class international flight"){
-        return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_business-contrails_included";
-    }
-    if (input == "economy international flight"){
-        return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_economy-contrails_included";
-    }
-
-*/

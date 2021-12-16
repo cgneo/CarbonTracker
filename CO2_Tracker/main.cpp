@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
 
     QApplication a(argc, argv);
-    /*
+
     Json_DB obj;
 
     Tests t;
@@ -47,9 +47,9 @@ int main(int argc, char *argv[])
 
 
 
-*/
+
     Transport bus;
-    bus.set_name("petrol car");
+    bus.set_name("economy class international flight");
     string s = bus.get_name();
 
         int n = s.length();
@@ -66,7 +66,5 @@ int main(int argc, char *argv[])
     bus.set_footprint(api.get_emission());
     std::cout<<bus.get_footprint()<<std::endl;
     qDebug()<<api.get_emission_unit();
-    //return a.exec();
-    Car car;
-    std::cout<<car.get_name()<<std::endl;
+    return a.exec();
 }
