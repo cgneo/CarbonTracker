@@ -8,6 +8,7 @@
 #include "mainwindow.h"
 #include "survey.h"
 #include <QApplication>
+#include <json_DB.hpp>
 
 
 int main(int argc, char *argv[])

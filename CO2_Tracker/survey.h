@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "mainwindow.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class Survey; }
 QT_END_NAMESPACE
@@ -27,5 +29,6 @@ private slots:
 
 private:
     Ui::Survey *ui;
+    MainWindow *mainwindow;
 };
 #endif // SURVEY_H

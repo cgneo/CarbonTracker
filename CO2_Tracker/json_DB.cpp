@@ -31,6 +31,18 @@ void Json_DB::set_path(){
     path = exec_path.mid(0, to_del);
 }
 
+std::unordered_map<std::string, std::string> Json_DB::daily_challenges = {
+    {"Challenge 1", "Eat less meat"},
+    {"Challenge 2", "Eat the rich"},
+    {"Challenge 3", "Don't have babies"},
+    {"Challenge 4", "Unplug your devices"},
+
+};
+
+std::string Json_DB::get_challenge_by_key(std::string s) {
+    return daily_challenges.at(s);
+}
+
 QString Json_DB::get_path(){
     return path;
 }

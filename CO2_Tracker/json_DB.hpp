@@ -43,10 +43,14 @@ public:
     void parseJsonObject(QJsonArray::const_iterator iter);
     void parseJsonFile(const QString &fileName);
     void initList();
+    static std::string get_challenge_by_key(std::string s);
 
 private:
     static const QString file_name;
     static QString path;
+    static std::unordered_map<std::string, std::string> daily_challenges;
+
+
 
 signals:
 

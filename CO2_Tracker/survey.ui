@@ -419,7 +419,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
               <item>
                <widget class="QTabWidget" name="tabHousing">
                 <property name="currentIndex">
-                 <number>2</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab_11">
                  <attribute name="title">
@@ -760,7 +760,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                 <item>
                  <widget class="QTabWidget" name="tabTransport">
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>0</number>
                   </property>
                   <widget class="QWidget" name="tab_14">
                    <attribute name="title">
@@ -1014,7 +1014,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        </attribute>
        <layout class="QGridLayout" name="gridLayout_10">
         <item row="0" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_19">
+         <layout class="QVBoxLayout" name="verticalLayout_23">
           <item>
            <spacer name="verticalSpacer_13">
             <property name="orientation">
@@ -1044,7 +1044,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
              </spacer>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_20">
+             <layout class="QVBoxLayout" name="verticalLayout_22">
               <item>
                <widget class="QLabel" name="label_27">
                 <property name="font">
@@ -1054,7 +1054,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                  </font>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#8962b4;&quot;&gt;Sign up&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#8962b4;&quot;&gt;Create your account&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::AutoText</enum>
@@ -1070,7 +1070,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                  </font>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Please give you information:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Please submit your information:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -1095,9 +1095,9 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_21">
                   <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                   <layout class="QHBoxLayout" name="horizontalLayout_7">
                     <item>
-                     <layout class="QVBoxLayout" name="verticalLayout_22">
+                     <layout class="QVBoxLayout" name="verticalLayout_13">
                       <item>
                        <widget class="QLabel" name="label_3">
                         <property name="text">
@@ -1126,31 +1126,10 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                         </property>
                        </widget>
                       </item>
-                      <item>
-                       <widget class="Line" name="line">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_2">
-                        <property name="text">
-                         <string>Username</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_9">
-                        <property name="text">
-                         <string>Password</string>
-                        </property>
-                       </widget>
-                      </item>
                      </layout>
                     </item>
                     <item>
-                     <layout class="QVBoxLayout" name="verticalLayout_23">
+                     <layout class="QVBoxLayout" name="verticalLayout_14">
                       <item>
                        <widget class="QLineEdit" name="lineEdit">
                         <property name="minimumSize">
@@ -1230,13 +1209,45 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                       <item>
                        <widget class="QLineEdit" name="lineEdit_4"/>
                       </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="Line" name="line_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayout_19">
                       <item>
-                       <widget class="Line" name="line_2">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
+                       <widget class="QLabel" name="label_2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Username</string>
                         </property>
                        </widget>
                       </item>
+                      <item>
+                       <widget class="QLabel" name="label_9">
+                        <property name="text">
+                         <string>Password</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayout_20">
                       <item>
                        <widget class="QLineEdit" name="lineEdit_5"/>
                       </item>

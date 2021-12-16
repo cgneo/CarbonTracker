@@ -113,7 +113,7 @@ QObject::connect(&networkManager, &QNetworkAccessManager::finished,
 //url parameters
 char* transport_type;
 transport_type = get_transport_ID(input);
-QUrl url("https://beta2.api.climatiq.io/estimate");
+QString url="https://beta2.api.climatiq.io/estimate";
 QNetworkRequest networkRequest(url);
 QByteArray key = get_API();
 networkRequest.setRawHeader("Authorization", key);

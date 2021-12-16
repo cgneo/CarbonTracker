@@ -2,21 +2,24 @@
 #include "ui_mainwindow.h"
 #include <QPixmap>
 #include <QDebug>
-
+#include <QMap>
+#include "json_DB.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
-    QPixmap pix1("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/food-pic.png");
-    ui ->food_label -> setPixmap(pix1.scaled(350,150, Qt::KeepAspectRatio));
 
-    QPixmap pix2("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/plane-pic.png");
-    ui ->transport_label -> setPixmap(pix2.scaled(350,150, Qt::KeepAspectRatio));
+    QPixmap pix1("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/food-pic.png");
+    ui ->food_label -> setPixmap(pix1.scaled(450,250, Qt::KeepAspectRatio));
+
+    QPixmap pix2("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/new_plane_pic.png");
+    ui ->transport_label -> setPixmap(pix2.scaled(450,250, Qt::KeepAspectRatio));
 
     QPixmap pix3("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/home-pic.png");
-    ui ->home_label -> setPixmap(pix3.scaled(350,150, Qt::KeepAspectRatio));
+    ui ->home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
+
+
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
     ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);
@@ -79,6 +82,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(animation_seed, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
 
+    ui->daily_challenge_1->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 1")));
+    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 2")));
+    ui->daily_challenge_3->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 3")));
+    ui->daily_challenge_4->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 4")));
 }
 
 
@@ -100,7 +107,6 @@ void MainWindow::on_Scanbutton_clicked()
 {
 
 }
-
 
 void MainWindow::on_daily_challenge_1_stateChanged(int)
 {
@@ -148,5 +154,11 @@ void MainWindow::get_seed()
     }
 }
 
+//explicitly defining the array with the key(name) and value(explanation text) of a challenge
 
+const QString key[10] = {"Challenge 1","Challenge 2", "Challenge 3", "Challenge 4", "Challenge 5", "Challenge 6","Challenge 7", "Challenge 8", "Challenge 9", "Challenge 10"};
+const QString value[10] = {"Challenge 1","Challenge 2", "Challenge 3", "Challenge 4", "Challenge 5", "Challenge 6","Challenge 7", "Challenge 8", "Challenge 9", "Challenge 10"};
+
+//creating a challenge
+void MainWindow :: insert_challenge(QString key, QString value){}
 
