@@ -20,7 +20,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void insert_challenge(QString key, QString value); //insert a new challenge to challenge_dictionary
 
 private slots:
 
@@ -34,8 +33,6 @@ private slots:
     void on_daily_challenge_4_stateChanged(int arg1);
 
     void get_seed();
-
-    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -51,10 +48,6 @@ private:
     QGraphicsOpacityEffect *opacity_effect_3;
     QGraphicsOpacityEffect *opacity_effect_4;
     QGraphicsOpacityEffect *opacity_effect_seed;
-
-    QMap<QString,QString> challenge_dictionary;
-    const QString key[10];
-    const QString value[10];
 
 };
 #endif // MAINWINDOW_H
