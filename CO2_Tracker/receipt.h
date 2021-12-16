@@ -17,8 +17,10 @@ class Receipt{
     ~Receipt();
     void set_footprint(double footprint);
     void set_duration(int duration);
+    bool duration_is_valid();
     void set_dates(Date* start_date);
     void set_number_of_people(double number_of_people);
+    bool number_of_people_is_valid();
 
     double get_footprint();
     double get_duration();

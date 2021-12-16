@@ -5,16 +5,31 @@
 #include <QJsonObject>
 #include <string>
 #include <fstream>
-#include <QDir>
+#include <filesystem>
 #include <QDesktopServices>
 #include <QSaveFile>
+#include <QFileInfo>
+#include <QDir>
+#include <QCoreApplication>
+#include "tests.h"
+#include "user.h"
+
 
 //---------------------Basic methods ---------------------------
-Json_DB::Json_DB(){};
+Json_DB::Json_DB(){
+    set_path();
+};
+
 Json_DB::~Json_DB(){};
 
-const QString Json_DB::file_name = "CarbonTracker_data.txt";
-const QString Json_DB::path = "/Users/alex_christlieb/Documents/Ecole Polytechnique/Courses/Year 2/CSE201/Project/CarbonTracker/CO2_Tracker/build/";
+const QString Json_DB::file_name = "CarbonTracker_data.json";
+QString Json_DB::path = "/Users/alex_christlieb/Documents/Ecole Polytechnique/Courses/Year 2/CSE201/Project/CarbonTracker/CO2_Tracker/resources/";
+
+void Json_DB::set_path(){
+    QString exec_path = QCoreApplication::applicationDirPath() ; //Get executable path
+    int to_del = exec_path.indexOf("build/CarbonTracker_exe.app"); //Getting index to delete
+    path = exec_path.mid(0, to_del);
+}
 
 std::unordered_map<std::string, std::string> Json_DB::daily_challenges = {
     {"Challenge 1", "Eat less meat"},
@@ -36,8 +51,6 @@ QString Json_DB::get_FileName(){
     return file_name;
 }
 
-//Json_DB::Json_DB(QObject *parent) : QObject(parent)
-//{}
 
 using namespace std;
 
@@ -66,84 +79,50 @@ void Json_DB::clearJsonObject(QJsonObject &object)
     }
 }
 
-QJsonObject Json_DB::createJsonUserObject()
+void Json_DB::createJsonUserObject(QJsonObject &obj, User &user)
 {
-    QJsonArray jsonArray;
-    QJsonObject rootObject;
-    QJsonObject branchObject;
-    QJsonObject leafObject;
-    //leafObject.insert(" ", value);
-    branchObject.insert("User_id", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
+    obj["Username"] = user.get_username();
+    obj["Name"] = user.get_name();
+    QJsonArray date = {user.get_birthday()->get_day(), user.get_birthday()->get_month()
+                      , user.get_birthday()->get_year()};
+    obj["Date"] = date;
+    obj["Email"] = user.get_email();
+    obj["Country"] = user.get_country();
+    obj["Footprint"] = user.get_footprint();
+    obj["Seeds"] = user.get_seeds();
 
-    //leafObject.insert(" ", value);
-    branchObject.insert("Username", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
+    QJsonObject friends;
+    obj["Friends"] = friends;
 
-    //leafObject.insert(" ", value);
-    branchObject.insert("Name", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Age", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Country", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert("value", 3);
-    branchObject.insert("Email", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Footprint", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Friends", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Seeds", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    rootObject.insert("User", jsonArray);
-
-    return rootObject;
+    QJsonObject consumption;
+    obj["Consumption"] = consumption;
+    obj["Base consumption"] = consumption;
 }
 
-void Json_DB::writeJsonUser(){
+void Json_DB::writeJsonUser(User &user){
     create_empty_file();
 
-    QJsonObject user = createJsonUserObject();
+    Tests t;
+    t.test_does_file_exist(path + file_name); //
 
-    QFile file(file_name);
+    QJsonObject user_json;
+    createJsonUserObject(user_json, user);
+
+    QFile file(path+file_name);
+
+    qDebug() << "File: " << file.exists();
+
+//    file.setFileName("Hello.json");
+
+//    QFileInfo check_file(file_name);
 
     if (!file.open(QIODevice::WriteOnly)) {
             qWarning("Couldn't open save file");
         }
 
-    file.write(QJsonDocument(user).toJson());
-    qDebug() << "Is doc empty?" << QJsonDocument(user);
+    file.write(QJsonDocument(user_json).toJson());
+    qDebug() << "Is doc empty?" << QJsonDocument(user_json).isEmpty();
+
 }
 
 

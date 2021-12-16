@@ -1,6 +1,9 @@
 #ifndef TESTS_H
 #define TESTS_H
 #include "json_DB.hpp"
+#include "user.h"
+#include "transport.h"
+#include "receipt.h"
 
 
 class Tests
@@ -16,9 +19,18 @@ public:
     //Date
     void test_add_duration();
 
+    //User
+    void test_user(User *user);
+
+    //Transport
+    void test_transport(Transport *transport);
+
+    //Receipt
+    void test_receipt(Receipt *receipt);
+
     // -----------------Json and data fetching-------------------
-    void test_does_file_exist(Json_DB* json);
-    void test_createJsonUserObject(Json_DB* json);
+    bool test_does_file_exist(QString file);
+    void test_createJsonUserObject(Json_DB &json, User &user);
     void test_writeJsonUser(Json_DB* json);
 
 };

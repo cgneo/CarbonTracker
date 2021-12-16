@@ -6,7 +6,9 @@
 
 class Food : public Object {
    public:
+    Food();
     Food(double barcode);
+    ~Food();
     void set_quantity(double quantity);
     void set_barcode(double barcode);
     void set_category(string str);
@@ -18,6 +20,7 @@ class Food : public Object {
 
     double retrieve_carbon(double barcode);
     string retrieve_category(double barcode);
+    void create_food_item(double barcode);
 
 protected:
     double barcode;
