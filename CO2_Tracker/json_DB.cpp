@@ -39,6 +39,27 @@ std::unordered_map<std::string, std::string> Json_DB::daily_challenges = {
 
 };
 
+std::unordered_map<std::string, std::string> Json_DB::food_tips = {
+    {"Tip 1", "Reduce dairy consumption"},
+    {"Tip 2", "Consume local and seasonal products"},
+    {"Tip 3", "Eat less read meat"},
+
+};
+
+std::unordered_map<std::string, std::string> Json_DB::transportation_tips = {
+    {"Tip 1", "Avoid dricing at peak times"},
+    {"Tip 2", "Sharing a car to go to work"},
+    {"Tip 3", "Prioritise the use of public transport"},
+
+};
+
+std::unordered_map<std::string, std::string> Json_DB::house_tips = {
+    {"Tip 1", "Unplug your charger when not in use"},
+    {"Tip 2", "Turn off the lights"},
+    {"Tip 3", "Wait until dishwasher is full to use it"},
+
+};
+
 std::string Json_DB::get_challenge_by_key(std::string s) {
     return daily_challenges.at(s);
 }
