@@ -22,7 +22,7 @@ public:
 
     // -----------------Json and data fetching-------------------
     bool test_does_file_exist(QString file);
-    void test_createJsonUserObject(Json_DB* json);
+    void test_createJsonUserObject(Json_DB &json, User &user);
     void test_writeJsonUser(Json_DB* json);
 
 };

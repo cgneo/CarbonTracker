@@ -12,6 +12,7 @@
 #include <QDir>
 #include <QCoreApplication>
 #include "tests.h"
+#include "user.h"
 
 
 //---------------------Basic methods ---------------------------
@@ -66,79 +67,34 @@ void Json_DB::clearJsonObject(QJsonObject &object)
     }
 }
 
-QJsonObject Json_DB::createJsonUserObject()
+void Json_DB::createJsonUserObject(QJsonObject &obj, User &user)
 {
-    QJsonArray jsonArray;
-    QJsonObject rootObject;
-    QJsonObject branchObject;
-    QJsonObject leafObject;
-    //leafObject.insert(" ", value);
-    branchObject.insert("User_id", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
+    obj["Username"] = user.get_username();
+    obj["Name"] = user.get_name();
+    QJsonArray date = {user.get_birthday()->get_day(), user.get_birthday()->get_month()
+                      , user.get_birthday()->get_year()};
+    obj["Date"] = date;
+    obj["Email"] = user.get_email();
+    obj["Country"] = user.get_country();
+    obj["Footprint"] = user.get_footprint();
+    obj["Seeds"] = user.get_seeds();
 
-    //leafObject.insert(" ", value);
-    branchObject.insert("Username", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
+    QJsonObject friends;
+    obj["Friends"] = friends;
 
-    //leafObject.insert(" ", value);
-    branchObject.insert("Name", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Age", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Country", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert("value", 3);
-    branchObject.insert("Email", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Footprint", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Friends", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    //leafObject.insert(" ", value);
-    branchObject.insert("Seeds", leafObject);
-    jsonArray.append(branchObject);
-    clearJsonObject(leafObject);
-    clearJsonObject(branchObject);
-
-    rootObject.insert("User", jsonArray);
-
-    qDebug() << rootObject;
-    return rootObject;
+    QJsonObject consumption;
+    obj["Consumption"] = consumption;
+    obj["Base consumption"] = consumption;
 }
 
-void Json_DB::writeJsonUser(){
+void Json_DB::writeJsonUser(User &user){
     create_empty_file();
+
     Tests t;
+    t.test_does_file_exist(path + file_name); //
 
-    t.test_does_file_exist(path + file_name);
-
-    QJsonObject user_json = createJsonUserObject();
+    QJsonObject user_json;
+    createJsonUserObject(user_json, user);
 
     QFile file(path+file_name);
 

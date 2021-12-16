@@ -21,6 +21,7 @@ private:
 
 public:
     //Seters and getters
+    Consumption();
     Consumption(int userId);
     Consumption(int userId, Base_Consumption base, vector<Object>);
     ~Consumption();

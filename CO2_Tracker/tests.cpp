@@ -63,8 +63,9 @@ void test_user(User *user){ // need to change this test
 bool Tests::test_JsonUser(){//Trigger function for module
     qDebug() << "-----Testing Json DB Module-------";
     Json_DB* p = new Json_DB();
+    User* user = new User();
 
-    test_createJsonUserObject(p);
+    test_createJsonUserObject(*p, *user);
     test_writeJsonUser(p);
    }
 
@@ -90,9 +91,10 @@ bool Tests::test_does_file_exist(QString file){
         }
 }
 
-void Tests::test_createJsonUserObject(Json_DB* json){
+void Tests::test_createJsonUserObject(Json_DB &json, User &user){
     try{
-        json->createJsonUserObject();
+        QJsonObject o;
+        json.createJsonUserObject(o, user);
     }
     catch(...){
         throw invalid_argument("Test: Create Json User Object - Fail");

@@ -1,6 +1,8 @@
 #include "consumption.h"
 #include "object.h"
 
+Consumption::Consumption(){}
+
 Consumption::Consumption(int userId)
 {
     this->userId = userId;
@@ -22,11 +24,8 @@ Consumption::Consumption(int userId, Base_Consumption base, vector<Object> total
     calculate_each_footprint();
 }
 
-Consumption::~Consumption(){
-    delete &userId;
-    delete &base_consumptionId;
-    delete &total_footprint;
-    delete &total_consumption;
+Consumption::~Consumption(){ //To be properly done
+    //delete &total_consumption;
 }
 
 int Consumption::get_userId(){

@@ -232,7 +232,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -2600,7 +2600,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>921</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

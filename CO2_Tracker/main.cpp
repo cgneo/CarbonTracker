@@ -14,26 +14,40 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Json_DB obj;
-    obj.writeJsonUser();
+    QJsonObject doc;
 
-    Tests t;
-    QString file = obj.get_path() + obj.get_FileName();
+    QString username = "alex.christlieb";
+    QString name = "Alejandro Christlieb";
+    QString email = "alexchristlieb@gmail.com";
+    QString country = "Mexico";
+    int living_partners = 3;
+    int birthday = 13;
+    int birthmonth = 10;
+    int birthyear = 2001;
+
+    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+    //obj.createJsonUserObject(doc, u);
+    obj.writeJsonUser(u);
+
+
+//    Tests t;
+//    QString file = obj.get_path() + obj.get_FileName();
 //    t.test_does_file_exist(file);
 
 
-/*
-    bool new_user = !t.test_does_file_exist();
 
-    if (new_user){ //If user is new, open profile set_up
-        Survey window;
-        window.show();
-        return a.exec();
-    }
-    else{ //Else open regular window
-        MainWindow window;
-        window.show();
-        return a.exec();
-    }*/
+//    bool new_user = !t.test_does_file_exist(file);
+
+//    if (new_user){ //If user is new, open profile set_up
+//        Survey window;
+//        window.show();
+//        return a.exec();
+//    }
+//    else{ //Else open regular window
+//        MainWindow window;
+//        window.show();
+//        return a.exec();
+//    }
 
 
 }

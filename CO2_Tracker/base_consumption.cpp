@@ -14,7 +14,6 @@ Base_Consumption::Base_Consumption(int userId)
 }
 
 Base_Consumption::~Base_Consumption(){
-    delete &userId;
 //    delete &base_consumption;
 }
 
