@@ -79,13 +79,20 @@ void User::set_userId(){
 void User::set_username(QString username)
 {this->username = username;}
 
-void User::set_name(QString name)
+string User::get_username()
+{return username;}
+
+void User::set_name(string name)
     {this->name = name;}
 
 void User::set_birthday(int birthday_day, int birthday_month, int birthday_year)
     {this->birthday = new Date(birthday_day, birthday_month, birthday_year);}
 
-void User::set_country(QString country)
+Date* User::get_birthday() {
+    return birthday;
+}
+
+void User::set_country(string country)
     {this->country = country;}
 
 void User::set_email(QString email)
@@ -118,16 +125,27 @@ bool User::name_is_valid(){
         for (int i = 1; i < name.length(); i++) {
             if (!((name[i] >= 'a' && name[i] <= 'z') || (name[i] >= 'A' && name[i] <= 'Z') || (name[i] == ' ')))
                 throw std::invalid_argument("You entered an invalid character");
+            else if (name[i-1] == ' ' && !(name[i] >= 'A' && name[i] <= 'Z')) // if there is a space before a letter, it means that there is another name added, which has to start with capital letter, else it is not a valid name
+                throw std::invalid_argument("You entered an invalid character");
         }
 
         // String is a valid identifier
         return true;
 }
 
-bool User::birthday_is_valid(){
-    if (birthday->is_valid()) return true;
-    else
-        throw std::invalid_argument("Invalid year");
+bool User::birthday_is_valid(int birthday_day, int birthday_month, int birthday_year){
+    if (birthday_year >= 1910 && birthday_year < 2020){
+        if (birthday_month >= 0 && birthday_month <= 12){
+            if (birthday_day >= 0 && birthday_day <= days_in_month[birthday_month]){
+                return true;}
+            else{
+                throw std::invalid_argument("Invalid days");}
+        }
+        else{
+            throw std::invalid_argument("Invalid month");}
+    }
+    else{
+        throw std::invalid_argument("Invalid year");}
 }
 
 bool User::email_is_valid(){

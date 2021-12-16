@@ -9,7 +9,7 @@ class Base_Consumption
 private:
     int consumptionId;
     int base_consumptionId; // all the three id's can be the same
-    vector<Object> base_consumption;
+    vector<Object *> base_consumption;
     double footprint;
 
 public:
@@ -22,14 +22,15 @@ public:
     int get_base_consumptionId();
     double get_total_footprint();
     int get_size();
-    Object get_object_i(int i);
+    Object *get_object_i(int i);
+    double get_footprint();
 
 
     //Other methods
 
-    vector<Object> *calculate_base_consumption(double c_footprint, int roommates);//Receive as parameters the info from the survey
+    //vector<Object> *calculate_base_consumption(double c_footprint, int roommates);//Receive as parameters the info from the survey
 
-    void add_object(Object item);
+    void add_object(Object *item);
     double total_base_food();
     double total_base_transport();
 
