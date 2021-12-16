@@ -31,10 +31,36 @@ int Base_Consumption::get_base_consumptionId(){
 int Base_Consumption::get_size(){
     return base_consumption.size();
 }
+
+Object Base_Consumption::get_object_i(int i){
+    return base_consumption[i];
+}
+
 vector<Object> Base_Consumption::*calculate_base_consumption(double c_footprint, int roommates){
     //get base footprint and divide by number of roommates
 }
 
-Object Base_Consumption::get_object_i(int i){
-    return base_consumption[i];
+void Base_Consumption::add_object(Object item) {
+    base_consumption.push_back(item);
+    footprint += item.get_footprint();
+}
+
+double Base_Consumption::total_base_food() {
+    double food_print = 0;
+    for(vector<Object>::iterator i = base_consumption.begin(); i != base_consumption.end(); i++) {
+        if(i->get_type() == "food") {
+            food_print += i->get_footprint();
+        }
+    }
+    return food_print;
+}
+
+double Base_Consumption::total_base_transport() {
+    double transport_print = 0;
+    for(vector<Object>::iterator i = base_consumption.begin(); i != base_consumption.end(); i++) {
+        if(i->get_type() == "transport") {
+            transport_print += i->get_footprint();
+        }
+    }
+    return transport_print;
 }
