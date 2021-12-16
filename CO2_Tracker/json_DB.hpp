@@ -13,6 +13,8 @@
 #include <QList>
 #include <string>
 #include "user.h"
+#include <QMap>
+#include <unordered_map>
 
 using namespace std;
 
