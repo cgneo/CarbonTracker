@@ -14,25 +14,29 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Json_DB obj;
-    QJsonObject doc;
+    MainWindow window;
+    window.show();
+    return a.exec();
 
-    QString username = "alex.christlieb";
-    QString name = "Alejandro Christlieb";
-    QString email = "alexchristlieb@gmail.com";
-    QString country = "Mexico";
-    int living_partners = 3;
-    int birthday = 13;
-    int birthmonth = 10;
-    int birthyear = 2001;
+//    Json_DB obj;
+//    QJsonObject doc;
 
-    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
-    //obj.createJsonUserObject(doc, u);
-    obj.writeJsonUser(u);
+//    QString username = "alex.christlieb";
+//    QString name = "Alejandro Christlieb";
+//    QString email = "alexchristlieb@gmail.com";
+//    QString country = "Mexico";
+//    int living_partners = 3;
+//    int birthday = 13;
+//    int birthmonth = 10;
+//    int birthyear = 2001;
+
+//    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+//    //obj.createJsonUserObject(doc, u);
+//    obj.writeJsonUser(u);
 
 
-//    Tests t;
-//    QString file = obj.get_path() + obj.get_FileName();
+ //   Tests t;
+ //   QString file = obj.get_path() + obj.get_FileName();
 //    t.test_does_file_exist(file);
 
 
@@ -48,7 +52,8 @@ int main(int argc, char *argv[])
 //        MainWindow window;
 //        window.show();
 //        return a.exec();
-// //    }
+//     }
+
 //     Object *ham = new Object();
 //     Object *amg = new Object();
 //     Object *bread = new Object();
