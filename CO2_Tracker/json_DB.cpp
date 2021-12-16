@@ -6,16 +6,29 @@
 #include <string>
 #include <fstream>
 #include <filesystem>
-#include <QDir>
 #include <QDesktopServices>
 #include <QSaveFile>
+#include <QFileInfo>
+#include <QDir>
+#include <QCoreApplication>
+#include "tests.h"
+
 
 //---------------------Basic methods ---------------------------
-Json_DB::Json_DB(){};
+Json_DB::Json_DB(){
+    set_path();
+};
+
 Json_DB::~Json_DB(){};
 
 const QString Json_DB::file_name = "CarbonTracker_data.json";
-const QString Json_DB::path = "/Users/alex_christlieb/Documents/Ecole Polytechnique/Courses/Year 2/CSE201/Project/CarbonTracker/CO2_Tracker/build/";
+QString Json_DB::path = "/Users/alex_christlieb/Documents/Ecole Polytechnique/Courses/Year 2/CSE201/Project/CarbonTracker/CO2_Tracker/resources/";
+
+void Json_DB::set_path(){
+    QString exec_path = QCoreApplication::applicationDirPath() ; //Get executable path
+    int to_del = exec_path.indexOf("build/CarbonTracker_exe.app"); //Getting index to delete
+    path = exec_path.mid(0, to_del);
+}
 
 QString Json_DB::get_path(){
     return path;
@@ -25,8 +38,6 @@ QString Json_DB::get_FileName(){
     return file_name;
 }
 
-//Json_DB::Json_DB(QObject *parent) : QObject(parent)
-//{}
 
 using namespace std;
 
@@ -117,22 +128,33 @@ QJsonObject Json_DB::createJsonUserObject()
 
     rootObject.insert("User", jsonArray);
 
+    qDebug() << rootObject;
     return rootObject;
 }
 
 void Json_DB::writeJsonUser(){
     create_empty_file();
+    Tests t;
 
-    QJsonObject user = createJsonUserObject();
+    t.test_does_file_exist(path + file_name);
 
-    QFile file(file_name);
+    QJsonObject user_json = createJsonUserObject();
+
+    QFile file(path+file_name);
+
+    qDebug() << "File: " << file.exists();
+
+//    file.setFileName("Hello.json");
+
+//    QFileInfo check_file(file_name);
 
     if (!file.open(QIODevice::WriteOnly)) {
             qWarning("Couldn't open save file");
         }
 
-    file.write(QJsonDocument(user).toJson());
-    qDebug() << "Is doc empty?" << QJsonDocument(user);
+    file.write(QJsonDocument(user_json).toJson());
+    qDebug() << "Is doc empty?" << QJsonDocument(user_json).isEmpty();
+
 }
 
 

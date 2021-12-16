@@ -21,7 +21,7 @@ public:
     void test_user(User *user);
 
     // -----------------Json and data fetching-------------------
-    bool test_does_file_exist();
+    bool test_does_file_exist(QString file);
     void test_createJsonUserObject(Json_DB* json);
     void test_writeJsonUser(Json_DB* json);
 

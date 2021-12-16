@@ -14,12 +14,15 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Json_DB obj;
+    obj.writeJsonUser();
 
     Tests t;
-    t.test_does_file_exist();
-    obj.create_empty_file();
+    QString file = obj.get_path() + obj.get_FileName();
+//    t.test_does_file_exist(file);
+
+
+/*
     bool new_user = !t.test_does_file_exist();
-    qDebug() << new_user;
 
     if (new_user){ //If user is new, open profile set_up
         Survey window;
@@ -30,7 +33,7 @@ int main(int argc, char *argv[])
         MainWindow window;
         window.show();
         return a.exec();
-    }
+    }*/
 
 
 }

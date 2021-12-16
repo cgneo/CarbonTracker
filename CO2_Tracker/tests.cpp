@@ -6,6 +6,7 @@
 #include <filesystem>
 #include <QFileInfo>
 #include <QCoreApplication>
+#include <QFileInfo>
 
 using namespace std;
 
@@ -68,12 +69,16 @@ bool Tests::test_JsonUser(){//Trigger function for module
    }
 
 
-bool Tests::test_does_file_exist(){
-    QString path = QCoreApplication::applicationDirPath();
-    qDebug() << path;
+bool Tests::test_does_file_exist(QString file){
 
-    Json_DB* json = new Json_DB();
-    QFileInfo check_file(json->get_path()+json->get_FileName());//Define file to search
+//    Json_DB* json = new Json_DB();
+//    qDebug() << json->get_path();
+
+//    json->create_empty_file();
+
+//    qDebug() << json->createJsonUserObject();
+
+    QFileInfo check_file(file);//Define file to search
 
     if (check_file.exists() && check_file.isFile()) {
             qDebug() << "test_does_file_exist() - Success";
@@ -97,7 +102,7 @@ void Tests::test_createJsonUserObject(Json_DB* json){
 
 void Tests::test_writeJsonUser(Json_DB *json){
     try{
-        json->writeJsonUser();
+        //json->writeJsonUser();
     }
     catch(...){
         throw invalid_argument("test_writeJsonUser - Error writing file");

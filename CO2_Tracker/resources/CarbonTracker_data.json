@@ -1,0 +1,40 @@
+{
+    "User": [
+        {
+            "User_id": {
+            }
+        },
+        {
+            "Username": {
+            }
+        },
+        {
+            "Name": {
+            }
+        },
+        {
+            "Age": {
+            }
+        },
+        {
+            "Country": {
+            }
+        },
+        {
+            "Email": {
+            }
+        },
+        {
+            "Footprint": {
+            }
+        },
+        {
+            "Friends": {
+            }
+        },
+        {
+            "Seeds": {
+            }
+        }
+    ]
+}
