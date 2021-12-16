@@ -1,7 +1,6 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef NETSERVER_H
+#define NETSERVER_H
 
-#endif // MAIN_H
 
 #include <ostream>
 
@@ -10,17 +9,18 @@
 
 
 // inherits from QObject (so that connect method can be accessed)
-class TCPserver : public QObject {
+class netserver : public QObject {
 
     Q_OBJECT
 
     public:
         void startServer();
-        explicit TCPserver();
-        ~TCPserver();
+        explicit netserver();
+        ~netserver();
 
     signals:
         void newMessage(QString);
+
     private slots:
         void newConnection();
         void appendToSocketList(QTcpSocket* socket);
@@ -41,3 +41,7 @@ class TCPserver : public QObject {
         QTcpServer* m_server;
         QSet<QTcpSocket*> connection_set;
 };
+
+
+
+#endif // NETSERVER_H
