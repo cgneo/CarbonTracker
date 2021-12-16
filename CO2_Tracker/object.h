@@ -10,7 +10,7 @@ class Object{
 public:
     Object();
     Object(Date *current_date, string object_name, string object_type);
-    ~Object();
+    virtual ~Object();
 
     Date get_date();
     double get_footprint();

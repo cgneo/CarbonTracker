@@ -783,7 +783,13 @@ food.o: ../CO2_Tracker/food.cpp ../CO2_Tracker/food.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o food.o ../CO2_Tracker/food.cpp
 
 tests.o: ../CO2_Tracker/tests.cpp ../CO2_Tracker/tests.h \
+		../CO2_Tracker/user.h \
 		../CO2_Tracker/date.h \
+		../CO2_Tracker/consumption.h \
+		../CO2_Tracker/object.h \
+		../CO2_Tracker/base_consumption.h \
+		../CO2_Tracker/transport.h \
+		../CO2_Tracker/receipt.h \
 		../CO2_Tracker/json.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tests.o ../CO2_Tracker/tests.cpp
 
@@ -810,6 +816,10 @@ main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/mainwindow.h \
 		../CO2_Tracker/date.h \
 		../CO2_Tracker/object.h \
 		../CO2_Tracker/tests.h \
+		../CO2_Tracker/user.h \
+		../CO2_Tracker/consumption.h \
+		../CO2_Tracker/base_consumption.h \
+		../CO2_Tracker/transport.h \
 		../CO2_Tracker/food.h \
 		../../../5.12.11/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../5.12.11/clang_64/lib/QtWidgets.framework/Headers/qapplication.h

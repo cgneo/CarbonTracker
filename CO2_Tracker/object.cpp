@@ -54,8 +54,8 @@ void Object::set_type(string object_type){
 
 Object::~Object(){
     delete date;
-    type.clear();
-    name.clear();
+//    type.clear();
+//    name.clear();
     //footprint.clear();
 }
 
