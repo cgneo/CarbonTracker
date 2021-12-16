@@ -23,6 +23,7 @@ public:
     double get_total_footprint();
     int get_size();
     Object get_object_i(int i);
+    double get_footprint();
 
 
     //Other methods
