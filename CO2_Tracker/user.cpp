@@ -79,20 +79,15 @@ void User::set_userId(){
 void User::set_username(QString username)
 {this->username = username;}
 
-string User::get_username()
-{return username;}
 
-void User::set_name(string name)
+void User::set_name(QString name)
     {this->name = name;}
 
 void User::set_birthday(int birthday_day, int birthday_month, int birthday_year)
     {this->birthday = new Date(birthday_day, birthday_month, birthday_year);}
 
-Date* User::get_birthday() {
-    return birthday;
-}
 
-void User::set_country(string country)
+void User::set_country(QString country)
     {this->country = country;}
 
 void User::set_email(QString email)
@@ -102,7 +97,7 @@ void User::set_footprint(double footprint)
     {this->footprint = footprint;}
 
 void User::set_friends(QString friend_id)
-    {friends.push_back(friend_id.toStdString());}
+    {friends.push_back(friend_id);}
 
 void User::set_seeds(int seeds)
     {this->seeds = seeds;}
@@ -133,19 +128,20 @@ bool User::name_is_valid(){
         return true;
 }
 
-bool User::birthday_is_valid(int birthday_day, int birthday_month, int birthday_year){
-    if (birthday_year >= 1910 && birthday_year < 2020){
-        if (birthday_month >= 0 && birthday_month <= 12){
-            if (birthday_day >= 0 && birthday_day <= days_in_month[birthday_month]){
-                return true;}
-            else{
-                throw std::invalid_argument("Invalid days");}
-        }
-        else{
-            throw std::invalid_argument("Invalid month");}
-    }
-    else{
-        throw std::invalid_argument("Invalid year");}
+bool User::birthday_is_valid(){
+    return birthday->is_valid();
+//    if (birthday_year >= 1910 && birthday_year < 2020){
+//        if (birthday_month >= 0 && birthday_month <= 12){
+//            if (birthday_day >= 0 && birthday_day <= days_in_month[birthday_month]){
+//                return true;}
+//            else{
+//                throw std::invalid_argument("Invalid days");}
+//        }
+//        else{
+//            throw std::invalid_argument("Invalid month");}
+//    }
+//    else{
+//        throw std::invalid_argument("Invalid year");}
 }
 
 bool User::email_is_valid(){

@@ -19,7 +19,7 @@ private :
   QString country;
   QString email;
   double footprint;
-  vector<string> friends;
+  vector<QString> friends;
   int seeds;
   Consumption consumption; //should be a pointer
   Base_Consumption base_consumption; //should be a pointer
@@ -57,7 +57,7 @@ public:
   void set_picture(QString picture);
 
   bool name_is_valid();
-  bool birthday_is_valid(int birthday_day, int birthday_month, int birthday_year);
+  bool birthday_is_valid();
   bool email_is_valid();
   bool seeds_are_valid();
   bool living_partners_are_valid();

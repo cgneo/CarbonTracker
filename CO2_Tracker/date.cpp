@@ -65,7 +65,7 @@ Date* Date::add_duration(int duration){//creates a date objects "duration" days 
 }
 
 bool Date::is_valid(){
-    if (year >= 2021 && year < 2030){
+    if (year >= 1920 && year < 2030){
         if (month >= 0 && month <= 12){
             if (day >= 0 && day <= days_in_month[month]){
                 return true;}
