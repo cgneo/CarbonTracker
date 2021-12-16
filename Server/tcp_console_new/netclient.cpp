@@ -119,7 +119,7 @@ void netclient::displayError(QAbstractSocket::SocketError socketError)
 }
 
 // could be improved: instead of passing QString, one can use pointer
-void netclient::on_pushButton_sendMessage_clicked(QString str)
+void netclient::on_pushButton_sendMessage_clicked(QString& str)
 {
     if(socket)
     {

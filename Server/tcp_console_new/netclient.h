@@ -30,7 +30,7 @@ private slots:
     void displayError(QAbstractSocket::SocketError socketError);
 
     void displayMessage(const QString& str);
-    void on_pushButton_sendMessage_clicked(QString str);
+    void on_pushButton_sendMessage_clicked(QString& str);
     void on_pushButton_sendAttachment_clicked();
 
 private:
