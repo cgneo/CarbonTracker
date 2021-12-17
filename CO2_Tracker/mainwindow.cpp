@@ -89,6 +89,19 @@ MainWindow::MainWindow(QWidget *parent)
     ui->daily_challenge_3->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 3")));
     ui->daily_challenge_4->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 4")));
 
+    ui->food_tip_1->setText(QString::fromStdString(Json_DB::get_ftip_by_key("Food Tip 1")));
+    ui->food_tip_2->setText(QString::fromStdString(Json_DB::get_ftip_by_key("Food Tip 2")));
+    ui->food_tip_3->setText(QString::fromStdString(Json_DB::get_ftip_by_key("Food Tip 3")));
+
+    ui->transportation_tip_1->setText(QString::fromStdString(Json_DB::get_ttip_by_key("Transportation Tip 1")));
+    ui->transportation_tip_2->setText(QString::fromStdString(Json_DB::get_ttip_by_key("Transportation Tip 2")));
+    ui->transportation_tip_3->setText(QString::fromStdString(Json_DB::get_ttip_by_key("Transportation Tip 3")));
+
+    ui->house_tip_1->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 1")));
+    ui->house_tip_2->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 2")));
+    ui->house_tip_3->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 3")));
+
+
 }
 
 
