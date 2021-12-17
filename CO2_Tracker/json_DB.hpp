@@ -49,6 +49,7 @@ public:
     static std::string get_ftip_by_key(std::string s);
     static std::string get_ttip_by_key(std::string s);
     static std::string get_htip_by_key(std::string s);
+    static std::string random_key(std::unordered_map<std::string, std::string> m);
 
 private:
     static const QString file_name;

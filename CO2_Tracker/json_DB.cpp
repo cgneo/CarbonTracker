@@ -13,6 +13,7 @@
 #include <QCoreApplication>
 #include "tests.h"
 #include "user.h"
+#include <random>
 
 
 //---------------------Basic methods ---------------------------
@@ -36,6 +37,8 @@ std::unordered_map<std::string, std::string> Json_DB::daily_challenges = {
     {"Challenge 2", "Substitute driving by biking or walking"},
     {"Challenge 3", "Minimise food waste at home"},
     {"Challenge 4", "Unplug your devices"},
+    {"Challenge 5", "Minimise food waste at home"},
+    {"Challenge 6", "Unplug your devices"},
 
 };
 
@@ -54,6 +57,8 @@ std::unordered_map<std::string, std::string> Json_DB::transportation_tips = {
     {"Transportation Tip 2", "Sharing a car to go to work"},
     {"Transportation Tip 3", "Prioritise the use of public transport"},
     {"Transportation Tip 4", "Travel by train instead of plane"},
+    {"Transportation Tip 5", "Prioritise the use of public transport"},
+    {"Transportation Tip 6", "Travel by train instead of plane"},
 
 };
 
@@ -81,6 +86,13 @@ std::string Json_DB::get_ttip_by_key(std::string s) {
 
 std::string Json_DB::get_htip_by_key(std::string s) {
     return house_tips.at(s);
+}
+
+std::string Json_DB::random_key(std::unordered_map<std::string, std::string> m){
+    auto it = std::begin(m);
+    int random_index = rand() % m.size();
+    std::next(it, random_index);
+    return it->first;
 }
 
 QString Json_DB::get_path(){
