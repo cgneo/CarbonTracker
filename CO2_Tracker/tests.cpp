@@ -101,9 +101,22 @@ bool Tests::test_JsonUser(){//Trigger function for module
     User* user = new User();
 
     test_createJsonUserObject(*p, *user);
-    test_writeJsonUser(p);
+    test_writeJsonUser(*p);
    }
 
+void Tests::test_is_path_correct(Json_DB &json){
+    QString full_path = json.get_path() + json.get_FileName();
+    QString expected_path = "CO2_Tracker/resources/CarbonTracker_data.json";
+    int length = expected_path.length();
+
+    if (full_path.right(length) != expected_path){
+        qDebug() << "test_is_path_correct() - Fail";
+    }
+    else{
+        qDebug() << "test_is_path_correct() - Success";
+    }
+
+}
 
 bool Tests::test_does_file_exist(QString file){
 
@@ -137,7 +150,7 @@ void Tests::test_createJsonUserObject(Json_DB &json, User &user){
     qDebug() << "Test: Create Json User Object - Success";
 }
 
-void Tests::test_writeJsonUser(Json_DB *json){
+void Tests::test_writeJsonUser(Json_DB &json){//Unimplemented
     try{
         //json->writeJsonUser();
     }

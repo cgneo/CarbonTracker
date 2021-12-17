@@ -1,5 +1,7 @@
 #ifndef SERVERCLIENT_HPP
 #define SERVERCLIENT_HPP
+#include "user.h"
+#include "object.h"
 
 #include <QObject>
 #include <QJsonDocument>
@@ -12,7 +14,6 @@
 #include <QDebug>
 #include <QList>
 #include <string>
-#include "user.h"
 #include <QMap>
 #include <unordered_map>
 
@@ -23,7 +24,7 @@ class Json_DB
     Q_OBJECT*/
 
 public:
-    //Constructos, destructor
+    //Constructor, destructor
     Json_DB ();
     ~Json_DB();
 
@@ -32,13 +33,18 @@ public:
     QString get_FileName();
     void set_path();
 
-//    explicit Json_DB(QObject *parent = nullptr);
+    //Basic functions manipulating json files and objects
     void create_empty_file();
     void clearJsonObject(QJsonObject &object); //Clears a JSON file
+    QJsonDocument *read_JsonFile();
+    void write_in_file(QJsonObject &json_obj);
+
+    //Create initial user_json file
     void createJsonUserObject(QJsonObject &obj, User &user);
     void writeJsonUser(User &user);
 
-
+    //Add object to the file
+    void addObject_to_file(Object &obj);
 
     void parseJsonObjectV(QJsonObject &object);
     void parseJsonObjectI(QJsonObject &object);

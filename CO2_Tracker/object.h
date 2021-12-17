@@ -3,29 +3,34 @@
 
 #include <string>
 #include "date.h"
+#include <QString>
+#include <QJsonObject>
+#include <QJsonArray>
 
 using namespace std;
 
 class Object{
 public:
     Object();
-    Object(Date *current_date, string object_name, string object_type);
+    Object(Date *current_date, QString object_name, QString object_type);
     virtual ~Object();
 
     Date *get_date();
     double get_footprint();
-    string get_type();
-    string get_name();
+    QString get_type();
+    QString get_name();
     void set_date(Date *current_date);
     virtual void set_footprint(double co2_emission);
-    void set_name(string object_name);
-    void set_type(string object_type);
+    void set_name(QString object_name);
+    void set_type(QString object_type);
+
+    void object_to_json(QJsonObject &obj);
 
 protected:
     Date *date;
     double footprint;
-    string type;
-    string name;
+    QString type;
+    QString name;
 };
 
 

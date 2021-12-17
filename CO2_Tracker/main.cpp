@@ -14,26 +14,47 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow window;
-    window.show();
-    return a.exec();
+//    MainWindow window;
+//    window.show();
+//    return a.exec();
 
-//    Json_DB obj;
-//    QJsonObject doc;
+    Json_DB json_obj;
+    QJsonObject doc;
 
-//    QString username = "alex.christlieb";
-//    QString name = "Alejandro Christlieb";
-//    QString email = "alexchristlieb@gmail.com";
-//    QString country = "Mexico";
-//    int living_partners = 3;
-//    int birthday = 13;
-//    int birthmonth = 10;
-//    int birthyear = 2001;
+    QString username = "alex.christlieb";
+    QString name = "Alejandro Christlieb";
+    QString email = "alexchristlieb@gmail.com";
+    QString country = "Mexico";
+    int living_partners = 3;
+    int birthday = 13;
+    int birthmonth = 10;
+    int birthyear = 2001;
 
-//    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
-//    //obj.createJsonUserObject(doc, u);
-//    obj.writeJsonUser(u);
+    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+    //json_obj.createJsonUserObject(doc, u);
+//    json_obj.writeJsonUser(u);
 
+
+    Tests t;
+    QString full_path = json_obj.get_path() + json_obj.get_FileName();
+    t.test_is_path_correct(json_obj);
+    t.test_does_file_exist(full_path);
+
+
+
+    Date* fecha = new Date(01,04,2019);
+    Date* fech2 = new Date(02,03,2020);
+    Object obj(fecha, "Metro", "Transport");
+    Object obj2(fecha, "Avion", "Transport");
+    obj.set_footprint(10390);
+    obj2.set_footprint(1000000);
+    json_obj.addObject_to_file(obj);
+    json_obj.addObject_to_file(obj2);
+
+
+//    Survey window;
+//    window.show();
+//    return a.exec();
 
  //   Tests t;
  //   QString file = obj.get_path() + obj.get_FileName();

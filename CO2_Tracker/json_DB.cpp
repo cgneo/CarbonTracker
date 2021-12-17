@@ -23,7 +23,7 @@ Json_DB::Json_DB(){
 Json_DB::~Json_DB(){};
 
 const QString Json_DB::file_name = "CarbonTracker_data.json";
-QString Json_DB::path = "/Users/alex_christlieb/Documents/Ecole Polytechnique/Courses/Year 2/CSE201/Project/CarbonTracker/CO2_Tracker/resources/";
+QString Json_DB::path = "";
 
 void Json_DB::set_path(){
     QString exec_path = QCoreApplication::applicationDirPath() ; //Get executable path
@@ -91,40 +91,73 @@ void Json_DB::createJsonUserObject(QJsonObject &obj, User &user)
     obj["Footprint"] = user.get_footprint();
     obj["Seeds"] = user.get_seeds();
 
-    QJsonObject friends;
+    QJsonArray friends;
     obj["Friends"] = friends;
 
-    QJsonObject consumption;
+    QJsonArray consumption;
     obj["Consumption"] = consumption;
     obj["Base consumption"] = consumption;
 }
 
 void Json_DB::writeJsonUser(User &user){
-    create_empty_file();
-
-    Tests t;
-    t.test_does_file_exist(path + file_name); //
+    create_empty_file(); //Ensure that file exists, or create it otherwise
 
     QJsonObject user_json;
-    createJsonUserObject(user_json, user);
+    createJsonUserObject(user_json, user); //Create json_user
 
     QFile file(path+file_name);
-
-    qDebug() << "File: " << file.exists();
-
-//    file.setFileName("Hello.json");
-
-//    QFileInfo check_file(file_name);
 
     if (!file.open(QIODevice::WriteOnly)) {
             qWarning("Couldn't open save file");
         }
 
     file.write(QJsonDocument(user_json).toJson());
-    qDebug() << "Is doc empty?" << QJsonDocument(user_json).isEmpty();
-
 }
 
+QJsonDocument *Json_DB::read_JsonFile(){
+    QFile file(path+file_name);
+
+    if (!file.open(QIODevice::ReadOnly)) {
+            qWarning("Couldn't open save file");
+        }
+
+    QByteArray data = file.readAll();
+
+    QJsonDocument *json_doc = new QJsonDocument(QJsonDocument::fromJson(data));
+    return json_doc;
+}
+
+void Json_DB::write_in_file(QJsonObject &json_obj){
+    QFile file(path+file_name);
+
+    if (!file.open(QIODevice::WriteOnly)) {
+            qWarning("Couldn't open save file");
+        }
+    file.write(QJsonDocument(json_obj).toJson());
+}
+
+void Json_DB::addObject_to_file(Object &obj){
+
+    QFile file(path+file_name);
+
+    QJsonDocument* current_doc = read_JsonFile(); //Retrieve the current json file
+
+    QJsonObject json_file = current_doc->object(); //Full json object
+    QJsonObject object_json;
+    obj.object_to_json(object_json); //Creating an object in json format
+
+    if (json_file.contains("Consumption") && json_file["Consumption"].isArray()){
+        QJsonArray consumption = json_file["Consumption"].toArray(); //Store the consumption json array
+        consumption.append(object_json);
+        json_file["Consumption"] = consumption; //Updating the consumption array
+    }
+    else{
+        qDebug() << "Consumption array is not in json file";
+    }
+
+    delete current_doc;
+    write_in_file(json_file); //Update file
+}
 
 void Json_DB::parseJsonFile(const QString &fileName)
 {
@@ -164,7 +197,7 @@ void Json_DB::parseJsonFile(const QString &fileName)
                 QStringList leafKeys=leafObject.keys();
                 for(auto&leafKey:leafKeys){
                     double value=leafObject.value(leafKey).toDouble();
-                    qDebug()<<"    "<<leafKey<<":"<<value<<"\r\n"; //displaying the values of each attribute
+                    qDebug()<<"  h  "<<leafKey<<":"<<value<<"\r\n"; //displaying the values of each attribute
                 }
             }
         }
