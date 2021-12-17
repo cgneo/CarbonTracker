@@ -32,36 +32,55 @@ void Json_DB::set_path(){
 }
 
 std::unordered_map<std::string, std::string> Json_DB::daily_challenges = {
-    {"Challenge 1", "Eat less meat"},
-    {"Challenge 2", "Eat the rich"},
-    {"Challenge 3", "Don't have babies"},
+    {"Challenge 1", "Don't eat meat today"},
+    {"Challenge 2", "Substitute driving by biking or walking"},
+    {"Challenge 3", "Minimise food waste at home"},
     {"Challenge 4", "Unplug your devices"},
 
 };
 
 std::unordered_map<std::string, std::string> Json_DB::food_tips = {
-    {"Tip 1", "Reduce dairy consumption"},
-    {"Tip 2", "Consume local and seasonal products"},
-    {"Tip 3", "Eat less read meat"},
+    {"Food Tip 1", "Reduce dairy consumption"},
+    {"Food Tip 2", "Consume local and seasonal products"},
+    {"Food Tip 3", "Eat less read meat"},
+    {"Food Tip 4", "Avoid food with plastic wraps"},
+    {"Food Tip 5", "Cover pots and pans while cooking"},
+    {"Food Tip 6", "Use your own bags for groceries"},
 
 };
 
 std::unordered_map<std::string, std::string> Json_DB::transportation_tips = {
-    {"Tip 1", "Avoid dricing at peak times"},
-    {"Tip 2", "Sharing a car to go to work"},
-    {"Tip 3", "Prioritise the use of public transport"},
+    {"Transportation Tip 1", "Avoid driving at peak times"},
+    {"Transportation Tip 2", "Sharing a car to go to work"},
+    {"Transportation Tip 3", "Prioritise the use of public transport"},
+    {"Transportation Tip 4", "Travel by train instead of plane"},
 
 };
 
 std::unordered_map<std::string, std::string> Json_DB::house_tips = {
-    {"Tip 1", "Unplug your charger when not in use"},
-    {"Tip 2", "Turn off the lights"},
-    {"Tip 3", "Wait until dishwasher is full to use it"},
+    {"House Tip 1", "Unplug your charger when not in use"},
+    {"House Tip 2", "Turn off the lights"},
+    {"House Tip 3", "Wait until dishwasher is full to use it"},
+    {"House Tip 4", "Turn off the lights when you leave a room"},
+    {"House Tip 5", "Close the shower tap while soaping"},
+    {"House Tip 6", "Taking the stairs instead of the lift"},
 
 };
 
 std::string Json_DB::get_challenge_by_key(std::string s) {
     return daily_challenges.at(s);
+}
+
+std::string Json_DB::get_ftip_by_key(std::string s) {
+    return food_tips.at(s);
+}
+
+std::string Json_DB::get_ttip_by_key(std::string s) {
+    return transportation_tips.at(s);
+}
+
+std::string Json_DB::get_htip_by_key(std::string s) {
+    return house_tips.at(s);
 }
 
 QString Json_DB::get_path(){

@@ -46,6 +46,9 @@ public:
     void parseJsonFile(const QString &fileName);
     void initList();
     static std::string get_challenge_by_key(std::string s);
+    static std::string get_ftip_by_key(std::string s);
+    static std::string get_ttip_by_key(std::string s);
+    static std::string get_htip_by_key(std::string s);
 
 private:
     static const QString file_name;
