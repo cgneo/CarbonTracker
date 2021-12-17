@@ -50,14 +50,14 @@ public:
     static std::string get_ttip_by_key(std::string s);
     static std::string get_htip_by_key(std::string s);
     static std::string random_key(std::unordered_map<std::string, std::string> m);
-
-private:
-    static const QString file_name;
-    static QString path;
     static std::unordered_map<std::string, std::string> daily_challenges;
     static std::unordered_map<std::string, std::string> food_tips;
     static std::unordered_map<std::string, std::string> transportation_tips;
     static std::unordered_map<std::string, std::string> house_tips;
+
+private:
+    static const QString file_name;
+    static QString path;
 
 
 

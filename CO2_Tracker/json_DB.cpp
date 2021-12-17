@@ -14,6 +14,7 @@
 #include "tests.h"
 #include "user.h"
 #include <random>
+#include <ctime>
 
 
 //---------------------Basic methods ---------------------------
@@ -90,8 +91,9 @@ std::string Json_DB::get_htip_by_key(std::string s) {
 
 std::string Json_DB::random_key(std::unordered_map<std::string, std::string> m){
     auto it = std::begin(m);
+    srand((unsigned) time(0));
     int random_index = rand() % m.size();
-    std::next(it, random_index);
+    std::advance(it, random_index);
     return it->first;
 }
 

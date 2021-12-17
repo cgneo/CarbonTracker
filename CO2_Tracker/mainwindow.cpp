@@ -85,10 +85,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(animation_seed, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
 
-//    std::string i = Json_DB::random_key(std::unordered_map<std::string, std::string> (daily_challenges));
+    std::string a = Json_DB::random_key(Json_DB::daily_challenges);
+    std::string b = Json_DB::random_key(Json_DB::daily_challenges);
 
-    ui->daily_challenge_1->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 1")));
-    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 2")));
+    ui->daily_challenge_1->setText(QString::fromStdString(Json_DB::get_challenge_by_key(a)));
+    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key(b)));
     ui->daily_challenge_3->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 3")));
     ui->daily_challenge_4->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 4")));
 
