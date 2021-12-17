@@ -8,25 +8,11 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    /*QPieSlice::connect(ui->horizontalFrame,SIGNAL(slice2.hovered(slice2.state))),
-            ui->horizontalFrame,SLOT(slice2->setExploded());*/
-
-
-/*
-    QPieSlice a, b;
-    QObject::connect(&a, &QPieSlice::hovered,
-                    &b, &QPieSlice::hoverexplode);
-
-*/
-
-
 
     QPieSeries *series = new QPieSeries();
     series->setHoleSize(0.35);
     QPieSlice *slice1 = series->append("Locomotive", 1);
 
-
-    //slice->setExploded();
     QPieSlice *slice2 =series->append("Airplane", 2);
     QPieSlice *slice3 =series->append("Car", 2);
 
@@ -45,18 +31,6 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
 
     QString string = "clicked";
 
-
-    //QPieSlice::connect(slice1, &QPieSlice::hovered,
-      //                 slice1, &QPieSlice::setLabel();
-
-    //create a floating label
-
-    //if (slice1->hovered(bool slice1(state))){
-    //    slice1->setLabel(Qstring "newlabel");
-    //}
-
-    //connect(slice1, SIGNAL(hovered()), slice1, SLOT(setLabel(QString"clicked")));
-
     QChart *chart = new QChart();
     chart->addSeries(series);
     chart->setAnimationOptions(QChart::SeriesAnimations);
@@ -68,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent /*,double* data*/)
 
     chartview->setParent(ui->horizontalFrame);
 
-    chart->legend()->setVisible(true);
+    chart->legend()->setVisible(false);
     chart->legend()->setAlignment(Qt::AlignLeft);
 }
 
