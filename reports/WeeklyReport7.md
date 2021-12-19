@@ -33,3 +33,8 @@ This week I added functions to the base consumption class in order to merge with
   This week, I started working with the server team for " your friends " part. We came up with more ideas that we can implement on CarbonTracker, also made "friends" class and functions to link the server and the UI team. However, in order to make the server work on my QT, I had to update my QT version to the latest one (over 6). After updating, I tried to pull changes from my Git, and I got many conflicts and errors that I couldn't solve. I believe that it may be caused by the version conflict.
 
   Next week, I will solve the conflict and keep working on the "your friends" part. I will implement more functions and work on the UI part of updating your friends, showing who is active and creating a chat box to send a message or challenge to your fiends.
+
+ # Amine Lamouchi 
+  
+  This week I was finally able to merge the OCR with the API. This concludes one of our goals for this project: a feature that allows the user to upload their grocery receipts and get the carbon footprint of what they bought. We first parse the receipt using OCR and extract the ID of each product, we then send queries to the database in order to retrieve the carbon footprints. I have also dealt with the lack of standardisation of the database by adding error handling messages and certain checks before sending queries. This ensures that we won’t get errors that may crash the system. 
+Now that this is done, I will collaborate with the UI team on the way to display the query results, and if we need to retrieve more details about each product. 
