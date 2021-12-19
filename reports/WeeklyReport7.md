@@ -28,7 +28,7 @@ My objectives for the next two weeks are to fully finish the UI. Personally I wi
 # Lucas Serog
 This week I added functions to the base consumption class in order to merge with the ui team and be able to obtain information from the user and get their base footprints. When all was said and done I took a while to test the class and ran into many errors such as destroying/deleting things twice. To fix this issue, I changed multiple variables in the class to pointers and adjusted the iterators as well. Since the consumption class runs similarly I made the same changes to the consumption class so that both ran correctly.
   
-#Dain Jung
+# Dain Jung
 
   This week, I started working with the server team for " your friends " part. We came up with more ideas that we can implement on CarbonTracker, also made "friends" class and functions to link the server and the UI team. However, in order to make the server work on my QT, I had to update my QT version to the latest one (over 6). After updating, I tried to pull changes from my Git, and I got many conflicts and errors that I couldn't solve. I believe that it may be caused by the version conflict.
 
