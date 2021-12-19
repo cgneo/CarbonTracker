@@ -19,7 +19,7 @@ This week I worked on merging the donut graph into the final project. There were
 # Alexandra Catalina Negoita
 This week I completed tests for the User’s input, by testing the tests checking the validity of the input. Everything is in the tests class (from the Data-Classes file). I also started doing tests of the input for transport, and receipt. I will need to merge the tests in Data-Classes and in the Merging branch, and then I will make tests that check if the program crashes while running it.
   
-#Andrés Orduña Correcher
+# Andrés Orduña Correcher
   
 This week, I particularly focused on finishing the main template for the challenges map. I created one function to pick the associated value to a key of those maps, and one function to gets a random key from any unordered map. That way, we can display different challenges and tips for the user, and they change every time they use our app. I fixed some displaying problems of the main window in full screen, as well as adding relative paths for all the files we uploaded individually, for them to be available from any device. Inside of the UI team, as sub-leader I made sure that everyone knew what they had to work on for the holidays, to ensure we finish everything on time even if we are away.
 
