@@ -16,6 +16,9 @@ As Git leader, I provided support on merging files while maintaining every membe
 # Nina Bili Rossi
 This week I worked on merging the donut graph into the final project. There were issues with my code not working anymore because of a Qt Update on my computer (?), and on other people’s computer as well (overall, a very confusing problem). Once I overcame that I started to implement the merging. The graph does not render yet but I definitely made progress, working with Jade and Zhihui.
   
+# Jane Peltier
+This week and next week, I am working on merging my work with the main UI branch and running tests to see if the display of graphs on the main UI window works well. Then I was thinking about ways to make the graphs more respectful of the overall color theme. 
+  
 # Alexandra Catalina Negoita
 This week I completed tests for the User’s input, by testing the tests checking the validity of the input. Everything is in the tests class (from the Data-Classes file). I also started doing tests of the input for transport, and receipt. I will need to merge the tests in Data-Classes and in the Merging branch, and then I will make tests that check if the program crashes while running it.
   
