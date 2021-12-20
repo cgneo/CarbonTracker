@@ -38,3 +38,8 @@ This week I added functions to the base consumption class in order to merge with
   
   This week I was finally able to merge the OCR with the API. This concludes one of our goals for this project: a feature that allows the user to upload their grocery receipts and get the carbon footprint of what they bought. We first parse the receipt using OCR and extract the ID of each product, we then send queries to the database in order to retrieve the carbon footprints. I have also dealt with the lack of standardisation of the database by adding error handling messages and certain checks before sending queries. This ensures that we won’t get errors that may crash the system. 
 Now that this is done, I will collaborate with the UI team on the way to display the query results, and if we need to retrieve more details about each product. 
+
+
+# Alejandro Christlieb 
+
+This week I worked primarily on helping on the merging of the different parts of the project, specially the UI team and the data team. Likewise, I worked on creating the JSON file where all the data will be stored and saving it in a folder inside the project by utilizing relative directory paths. I also worked on the functions that initialize and add new objects to the dictionary in the JSON file. Now I just have to create the reading functions and this should help connect the UI and the data team even better.
