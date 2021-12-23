@@ -28,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
+
+
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
     ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);
     opacity_effect_1 -> setOpacity(1);

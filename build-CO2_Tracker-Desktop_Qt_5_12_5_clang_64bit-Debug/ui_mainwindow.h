@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
@@ -98,6 +99,7 @@ public:
     QWidget *tab_4;
     QHBoxLayout *horizontalLayout_2;
     QListView *Friends_list;
+    QComboBox *MessageChallenges;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -896,6 +898,65 @@ public:
 
         horizontalLayout_2->addWidget(Friends_list);
 
+        MessageChallenges = new QComboBox(tab_4);
+        MessageChallenges->addItem(QString::fromUtf8("Choose ... "));
+        MessageChallenges->addItem(QString());
+        MessageChallenges->addItem(QString());
+        MessageChallenges->setObjectName(QString::fromUtf8("MessageChallenges"));
+        MessageChallenges->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+"    border-radius: 3px;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"    min-width: 6em;\n"
+"	\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    \n"
+"	background-color: rgb(233, 208, 160);\n"
+"}\n"
+"\n"
+"QComboBox:!editable, QComboBox::drop-down:editable {\n"
+"     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,\n"
+"                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);\n"
+"}\n"
+"\n"
+"/* QComboBox gets the \"on\" state when the popup is open */\n"
+"QComboBox:!editable:on, QComboBox::drop-down:editable:on {\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,\n"
+"                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);\n"
+"}\n"
+"\n"
+"QComboBox:on { /* shift the text when the popup opens */\n"
+"    padding-top: 3px;\n"
+"    padding-left: 4px;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+""
+                        "    subcontrol-position: top right;\n"
+"    width: 15px;\n"
+"\n"
+"    border-left-width: 1px;\n"
+"    border-left-color: orange;\n"
+"    border-left-style: solid; /* just a single line */\n"
+"    border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"    border-bottom-right-radius: 3px;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"    image: url(/usr/share/icons/crystalsvg/16x16/actions/1downarrow.png);\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"    top: 1px;\n"
+"    left: 1px;\n"
+"}"));
+
+        horizontalLayout_2->addWidget(MessageChallenges);
+
         tabWidget->addTab(tab_4, QString());
 
         horizontalLayout->addWidget(tabWidget);
@@ -912,7 +973,7 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(SeedsprogressBar, &QProgressBar::valueChanged, seed, qOverload<>(&QLabel::raise));
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1008,6 +1069,9 @@ public:
         checkBox_12->setText(QCoreApplication::translate("MainWindow", "Turn off the lights", nullptr));
         checkBox_13->setText(QCoreApplication::translate("MainWindow", "Use the dishwasher when it is full", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Challenges/info/tips", nullptr));
+        MessageChallenges->setItemText(1, QCoreApplication::translate("MainWindow", "Send a message to your friend", nullptr));
+        MessageChallenges->setItemText(2, QCoreApplication::translate("MainWindow", "Challenge your friend", nullptr));
+
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Your friends", nullptr));
     } // retranslateUi
 

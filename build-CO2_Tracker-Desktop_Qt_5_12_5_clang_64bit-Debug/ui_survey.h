@@ -950,9 +950,9 @@ public:
         Survey->setStatusBar(statusbar);
 
         retranslateUi(Survey);
-        QObject::connect(horizontalSlider_3, &QSlider::valueChanged, label_18, &QLabel::setNum);
+        //QObject::connect(horizontalSlider_3, &QSlider::valueChanged, label_18, &QLabel::setNum);
 
-        tabMain->setCurrentIndex(3);
+        tabMain->setCurrentIndex(1);
         tabHousing->setCurrentIndex(2);
         tabTransport->setCurrentIndex(1);
 
