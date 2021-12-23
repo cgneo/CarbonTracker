@@ -50,6 +50,8 @@ private:
     QGraphicsOpacityEffect *opacity_effect_4;
     QGraphicsOpacityEffect *opacity_effect_seed;
 
+
+
 };
 #endif // MAINWINDOW_H
 

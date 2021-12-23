@@ -232,7 +232,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>4</number>
       </property>
       <property name="iconSize">
        <size>
@@ -686,7 +686,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <attribute name="title">
         <string>Profile page</string>
        </attribute>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -2669,7 +2669,11 @@ p, li { white-space: pre-wrap; }
        <attribute name="title">
         <string>Your friends</string>
        </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QListView" name="listView"/>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
