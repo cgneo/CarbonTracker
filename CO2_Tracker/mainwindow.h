@@ -35,6 +35,8 @@ private slots:
 
     void get_seed();
 
+    void on_buttonTransport_clicked();
+
 private:
     Ui::MainWindow *ui;
 

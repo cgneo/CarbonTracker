@@ -4,7 +4,9 @@ transport_api::transport_api(){
     connect(&networkManager,&QNetworkAccessManager::finished,this,&transport_api::parse_reply);
     emission = -5;
     QFile file("C:/Users/smvhe/Desktop/CarbonTracker/CO2_Tracker/API_KEY.txt");
+
     //QByteArray *bytes = new Q;
+
     QByteArray bytes;
     if( file.open( QIODevice::ReadOnly ) )
     {

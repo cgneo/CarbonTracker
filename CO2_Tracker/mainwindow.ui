@@ -1364,6 +1364,32 @@ p, li { white-space: pre-wrap; }
        <attribute name="title">
         <string>Survey</string>
        </attribute>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>80</y>
+          <width>135</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="buttonTransport">
+           <property name="text">
+            <string>PushButton</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="outputTransport">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -2700,12 +2726,12 @@ p, li { white-space: pre-wrap; }
    <slot>raise()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>156</x>
-     <y>87</y>
+     <x>308</x>
+     <y>116</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>188</y>
+     <x>308</x>
+     <y>275</y>
     </hint>
    </hints>
   </connection>

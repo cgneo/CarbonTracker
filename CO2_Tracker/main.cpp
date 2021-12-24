@@ -1,4 +1,3 @@
-#include <QGraphicsWidget>
 #include "transport_API.cpp"
 #include "tests.h"
 #include "json_DB.hpp"
@@ -7,9 +6,11 @@
 #include "transport_api.h"
 #include "mainwindow.h"
 #include "survey.h"
+
+#include <QGraphicsWidget>
 #include <QApplication>
 #include <json_DB.hpp>
-
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
@@ -50,6 +51,7 @@ int main(int argc, char *argv[])
        return a.exec();
    }
 
+
 //     Object *ham = new Object();
 //     Object *amg = new Object();
 //     Object *bread = new Object();
@@ -69,7 +71,4 @@ int main(int argc, char *argv[])
 
 //     double cbf = week1.get_footprint();
 //     std::cout << cbf << std::endl;
-
-
-
 }

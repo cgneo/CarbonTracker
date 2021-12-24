@@ -1,9 +1,10 @@
 #include "transport.h"
+
 Transport :: Transport():Object(){
-    distance = "0";
+    distance = 0;
 }
 
-void Transport:: set_distance(char* travelled){
+void Transport :: set_distance(char* travelled){
     distance = travelled;
 }
 char* Transport:: get_distance(){

@@ -7,6 +7,8 @@
 #include "json_DB.hpp"
 #include "json_DB.cpp"
 
+#include "transport_api.h"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -173,3 +175,24 @@ void MainWindow::get_seed()
         animation_seed -> start();
     }
 }
+
+void MainWindow::on_buttonTransport_clicked()
+{
+    Transport transport;
+    transport.set_name("first class international flight");
+
+    string s = transport.get_name();
+    int n = s.length();
+    char char_array[n+1];
+    strcpy(char_array, s.c_str());
+
+    transport.set_distance("1000");
+
+    transport_api api;
+    api.get_reply(transport.get_distance(), char_array);
+
+    transport.set_footprint(api.get_emission());
+
+    std::cout<<transport.get_footprint()<<std::endl;
+}
+
