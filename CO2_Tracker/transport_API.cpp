@@ -1,9 +1,24 @@
 #include "transport_api.h"
 
+
+
 transport_api::transport_api(){
     connect(&networkManager,&QNetworkAccessManager::finished,this,&transport_api::parse_reply);
     emission = -5;
-}
+    QFile file("/Users/apple/Desktop/CSE201/CarbonTracker/CO2_Tracker/API_KEY.txt");
+        //QByteArray *bytes = new Q;
+        QByteArray bytes;
+        if( file.open( QIODevice::ReadOnly ) )
+        {
+            try{
+                bytes = file.readAll();
+                file.close();
+            } catch(...) {
+                std::cout << "Error";
+            }
+        }
+        api_key=bytes;
+    }
 
 void transport_api::get_reply(char*distance, char*id){
     QUrl url("https://beta2.api.climatiq.io/estimate");
@@ -11,7 +26,7 @@ void transport_api::get_reply(char*distance, char*id){
     networkRequest.setRawHeader("Authorization", api_key);
     networkRequest.setRawHeader("Content-Type","application/json");
     QByteArray data("{\"emission_factor\": \"");
-    data.append("Bearer PMM4N5N6DEMY3VHQJXZ3S0FEE9GZ");
+    data.append(get_transport_ID(id));
     data.append("\",\"parameters\":{\"distance\": ");
     data.append(distance);
     data.append(",\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
