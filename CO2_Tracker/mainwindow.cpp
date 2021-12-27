@@ -178,21 +178,26 @@ void MainWindow::get_seed()
 
 void MainWindow::on_buttonTransport_clicked()
 {
-    Transport transport;
-    transport.set_name("first class international flight");
+    string vehicle = ui->vehicleTransport->currentText().toStdString(); // taking input from user for vehicle
+    string distance = ui->distanceTransport->cleanText().toStdString(); // taking input from user for distance
 
-    string s = transport.get_name();
-    int n = s.length();
-    char char_array[n+1];
-    strcpy(char_array, s.c_str());
+    // converting std strings to char arrays
+        // vehicle
+    int n = vehicle.length();
+    char char_array_name[n+1];
+    strcpy(char_array_name, vehicle.c_str());
 
-    transport.set_distance("1000");
+        // distance
+    int m = distance.length();
+    char char_array_distance[m+1];
+    strcpy(char_array_distance, distance.c_str());
 
+    // calling the (transport) api
     transport_api api;
-    api.get_reply(transport.get_distance(), char_array);
+    api.get_reply(char_array_distance, char_array_name);
 
-    transport.set_footprint(api.get_emission());
-
-    std::cout<<transport.get_footprint()<<std::endl;
+    // outputting the emission for given vehicle and distance
+    QString emission = QString::number(api.get_emission());
+    ui->outputTransport->setText(emission);
 }
 

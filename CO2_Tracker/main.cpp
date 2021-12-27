@@ -6,6 +6,7 @@
 #include "transport_api.h"
 #include "mainwindow.h"
 #include "survey.h"
+#include <QSsl>
 
 #include <QGraphicsWidget>
 #include <QApplication>
@@ -31,12 +32,9 @@ int main(int argc, char *argv[])
     //obj.createJsonUserObject(doc, u);
     obj.writeJsonUser(u);
 
-
    Tests t;
    QString file = obj.get_path() + obj.get_FileName();
    t.test_does_file_exist(file);
-
-
 
    bool new_user = !t.test_does_file_exist(file);
 
@@ -50,7 +48,6 @@ int main(int argc, char *argv[])
        window.show();
        return a.exec();
    }
-
 
 //     Object *ham = new Object();
 //     Object *amg = new Object();
