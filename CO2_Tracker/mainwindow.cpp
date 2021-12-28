@@ -28,11 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui -> home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
 
-    QMovie *movie = new QMovie(":/challenges/Tree-animation.gif");
-    ui -> tree ->setMovie(movie);
-    QSize scaledSize(300, 450);
-    movie -> setScaledSize(scaledSize);
-    movie -> start();
+
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
     ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);
@@ -116,6 +112,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->house_tip_3->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 3")));
 
 
+    connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(disableButton));
 }
 
 
@@ -209,15 +206,37 @@ void MainWindow::on_buttonTransport_clicked()
     ui->outputTransport->setText(emission);
 }
 
-
+void MainWindow::disableButton()
+{
+    ui -> tree_button ->setEnabled(false);
+}
 
 
 
 
 void MainWindow::on_tree_button_clicked()
 {
-//    gif_anim->setMovie(movie);
-//    movie->setSpeed(100);
-//    movie->start();
-}
+    QMovie *movie = new QMovie(":/challenges/tree_animation.gif");
+    ui -> tree ->setMovie(movie);
+    QSize scaledSize(200, 300);
+    movie -> setScaledSize(scaledSize);
+    if (movie ->currentFrameNumber() < 3){
+    movie -> start();
+    }
+    if (movie -> currentFrameNumber() == 3){
+        movie -> stop();
+    }
 
+//    if(movie->currentFrameNumber() == (movie->frameCount() - 1))
+//            {
+//                movie->stop();
+//                //Explicity emit finished signal so that label **
+//                //can show the image instead of a frozen gif
+//                //Also, double check that movie stopped before emiting
+//                if (movie->state() == QMovie::NotRunning)
+//                {
+//                    emit movie->finished();
+//                }
+//            }
+
+}

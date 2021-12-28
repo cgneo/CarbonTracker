@@ -12,6 +12,7 @@
 #include <QMovie>
 #include <QLabel>
 #include <QGraphicsScene>
+#include <QPushButton>
 
 
 QT_BEGIN_NAMESPACE
@@ -43,6 +44,8 @@ private slots:
 
     void on_tree_button_clicked();
 
+    void disableButton();
+
 private:
     Ui::MainWindow *ui;
 
@@ -57,6 +60,7 @@ private:
     QGraphicsOpacityEffect *opacity_effect_3;
     QGraphicsOpacityEffect *opacity_effect_4;
     QGraphicsOpacityEffect *opacity_effect_seed;
+
 
 
 

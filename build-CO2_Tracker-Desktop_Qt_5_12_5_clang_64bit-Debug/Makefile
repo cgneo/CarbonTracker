@@ -960,6 +960,7 @@ qrc_images.cpp: ../CO2_Tracker/resources/pictures/images.qrc \
 		../../Qt/6.2.2/macos/libexec/rcc \
 		../CO2_Tracker/resources/pictures/home-pic.png \
 		../CO2_Tracker/resources/pictures/Tree-animation.gif \
+		../CO2_Tracker/resources/pictures/tree_animation.gif \
 		../CO2_Tracker/resources/pictures/plane-pic.png \
 		../CO2_Tracker/resources/pictures/trasnport_icon.png \
 		../CO2_Tracker/resources/pictures/food-pic.png \
@@ -1177,6 +1178,8 @@ moc_mainwindow.cpp: ../CO2_Tracker/mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		../../Qt/6.2.2/macos/libexec/moc
 	/Users/dainjung/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/dainjung/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/dainjung/CarbonTracker/CO2_Tracker -I/Users/dainjung/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtNetwork.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/dainjung/Qt/6.2.2/macos/lib ../CO2_Tracker/mainwindow.h -o moc_mainwindow.cpp
 
@@ -1202,6 +1205,8 @@ moc_survey.cpp: ../CO2_Tracker/survey.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		../../Qt/6.2.2/macos/libexec/moc
 	/Users/dainjung/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/dainjung/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/dainjung/CarbonTracker/CO2_Tracker -I/Users/dainjung/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtNetwork.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/dainjung/Qt/6.2.2/macos/lib ../CO2_Tracker/survey.h -o moc_survey.cpp
 
@@ -1531,6 +1536,7 @@ main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/transport_API.cpp \
 		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qmovie.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QLabel \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QPushButton \
 		../CO2_Tracker/survey.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QSsl \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsWidget
@@ -1562,6 +1568,8 @@ mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		ui_mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QPixmap \
 		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qpixmap.h \
@@ -1689,7 +1697,6 @@ mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qprogressbar.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qprogressdialog.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qproxystyle.h \
-		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qradiobutton.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qrubberband.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qscrollarea.h \
@@ -1798,6 +1805,8 @@ survey.o: ../CO2_Tracker/survey.cpp ../CO2_Tracker/survey.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		ui_survey.h \
 		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QPixmap \
 		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qpixmap.h \

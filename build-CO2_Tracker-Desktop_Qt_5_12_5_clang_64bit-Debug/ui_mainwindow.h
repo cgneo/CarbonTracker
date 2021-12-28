@@ -17,6 +17,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
@@ -139,10 +140,11 @@ public:
     QCheckBox *house_tip_2;
     QCheckBox *house_tip_3;
     QWidget *tab_4;
-    QHBoxLayout *horizontalLayout_2;
+    QComboBox *comboBox;
     QLabel *tree;
     QPushButton *tree_button;
-    QComboBox *comboBox;
+    QListView *listView;
+    QPushButton *select_button;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -1146,26 +1148,127 @@ public:
         tabWidget->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
-        horizontalLayout_2 = new QHBoxLayout(tab_4);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        tree = new QLabel(tab_4);
-        tree->setObjectName(QString::fromUtf8("tree"));
-        tree->setPixmap(QPixmap(QString::fromUtf8("../../Downloads/Tree animation.gif")));
-
-        horizontalLayout_2->addWidget(tree);
-
-        tree_button = new QPushButton(tab_4);
-        tree_button->setObjectName(QString::fromUtf8("tree_button"));
-
-        horizontalLayout_2->addWidget(tree_button);
-
         comboBox = new QComboBox(tab_4);
+        comboBox->addItem(QString::fromUtf8("Choose your activity ..."));
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-
-        horizontalLayout_2->addWidget(comboBox);
-
+        comboBox->setGeometry(QRect(620, 275, 231, 31));
+        comboBox->setFont(font);
+        comboBox->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+"    border: 2px solid black;\n"
+"    border-radius: 3px;\n"
+"    padding: 5px 18px 5px 70px;\n"
+"    min-width: 6em;\n"
+"}\n"
+"\n"
+"QComboBox:editable {\n"
+"    background: black;\n"
+"}\n"
+"\n"
+"QComboBox:!editable, QComboBox::drop-down:editable {\n"
+"     background: rgb(171, 197, 153);\n"
+"}\n"
+"\n"
+"/* QComboBox gets the \"on\" state when the popup is open */\n"
+"QComboBox:!editable:on, QComboBox::drop-down:editable:on {\n"
+"    background: rgb(171, 197, 153);\n"
+"}\n"
+"\n"
+"QComboBox:on { /* shift the text when the popup opens */\n"
+"    padding-top: 3px;\n"
+"    padding-left: 4px;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 15px;\n"
+"\n"
+"    border-left-width: 1px;\n"
+"    border-left-color: darkgray;\n"
+"    border-left-style: solid; /* just a single line */\n"
+"    border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"    border-bottom-right-radius: 3px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QComboBox"
+                        "::down-arrow:on { /* shift the arrow when popup is open */\n"
+"    top: 1px;\n"
+"    left: 1px;\n"
+"}"));
+        tree = new QLabel(tab_4);
+        tree->setObjectName(QString::fromUtf8("tree"));
+        tree->setGeometry(QRect(80, 122, 211, 341));
+        tree->setPixmap(QPixmap(QString::fromUtf8("resources/pictures/tree_animation.gif")));
+        tree_button = new QPushButton(tab_4);
+        tree_button->setObjectName(QString::fromUtf8("tree_button"));
+        tree_button->setGeometry(QRect(20, 490, 271, 35));
+        QPalette palette7;
+        palette7.setBrush(QPalette::Active, QPalette::Button, brush11);
+        palette7.setBrush(QPalette::Active, QPalette::Base, brush11);
+        palette7.setBrush(QPalette::Active, QPalette::Window, brush11);
+        palette7.setBrush(QPalette::Inactive, QPalette::Button, brush11);
+        palette7.setBrush(QPalette::Inactive, QPalette::Base, brush11);
+        palette7.setBrush(QPalette::Inactive, QPalette::Window, brush11);
+        palette7.setBrush(QPalette::Disabled, QPalette::Button, brush11);
+        palette7.setBrush(QPalette::Disabled, QPalette::Base, brush11);
+        palette7.setBrush(QPalette::Disabled, QPalette::Window, brush11);
+        tree_button->setPalette(palette7);
+        tree_button->setFont(font);
+        tree_button->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"     border: 2px solid black;\n"
+"    padding: 5px 18px 5px 70px;\n"
+"    min-width: 6em;\n"
+"    border-radius: 6px;\n"
+"    background-color: rgb(234, 147, 96);\n"
+"    min-width: 100px;\n"
+"	padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(233, 208, 160);\n"
+"}\n"
+"\n"
+""));
+        listView = new QListView(tab_4);
+        listView->setObjectName(QString::fromUtf8("listView"));
+        listView->setGeometry(QRect(300, 30, 311, 481));
+        listView->setStyleSheet(QString::fromUtf8("QListView {\n"
+"    alternate-background-color: rgba(233, 232, 235, 166);\n"
+"}\n"
+"\n"
+"QListView {\n"
+"    show-decoration-selected: 1; /* make the selection span the entire width of the view */\n"
+"}\n"
+"\n"
+"QListView::item:alternate {\n"
+"    background: rgb(233, 208, 160);\n"
+"}\n"
+"\n"
+"QListView::item:selected {\n"
+"    border: 1px solid #6a6ea9;\n"
+"}\n"
+"\n"
+"QListView::item:selected:!active {\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #ABAFE5, stop: 1 #8588B2);\n"
+"}\n"
+"\n"
+"QListView::item:selected:active {\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #6a6ea9, stop: 1 #888dd9);\n"
+"}\n"
+"\n"
+"QListView::item:hover {\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #FAFBFE, stop: 1 #DCDEF1);\n"
+"}"));
+        select_button = new QPushButton(tab_4);
+        select_button->setObjectName(QString::fromUtf8("select_button"));
+        select_button->setGeometry(QRect(300, 520, 113, 32));
         tabWidget->addTab(tab_4, QString());
 
         gridLayout_2->addWidget(tabWidget, 0, 0, 1, 1);
@@ -1300,11 +1403,12 @@ public:
         house_tip_2->setText(QCoreApplication::translate("MainWindow", "Turn off the lights", nullptr));
         house_tip_3->setText(QCoreApplication::translate("MainWindow", "Use the dishwasher when it is full", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Challenges/info/tips", nullptr));
-        tree->setText(QString());
-        tree_button->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Chat", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Send challenges", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Chat", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "Send challenges", nullptr));
 
+        tree->setText(QString());
+        tree_button->setText(QCoreApplication::translate("MainWindow", "Grow your tree", nullptr));
+        select_button->setText(QCoreApplication::translate("MainWindow", "Select", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Your friends", nullptr));
     } // retranslateUi
 
