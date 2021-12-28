@@ -9,6 +9,10 @@
 #include <QGraphicsOpacityEffect>
 #include <QImage>
 #include <QMap>
+#include <QMovie>
+#include <QLabel>
+#include <QGraphicsScene>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -37,6 +41,8 @@ private slots:
 
     void on_buttonTransport_clicked();
 
+    void on_tree_button_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -51,6 +57,7 @@ private:
     QGraphicsOpacityEffect *opacity_effect_3;
     QGraphicsOpacityEffect *opacity_effect_4;
     QGraphicsOpacityEffect *opacity_effect_seed;
+
 
 
 

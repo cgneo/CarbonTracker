@@ -6,8 +6,11 @@
 #include <QMap>
 #include "json_DB.hpp"
 #include "json_DB.cpp"
-
+#include <QApplication>
 #include "transport_api.h"
+#include <QMovie>
+#include <QLabel>
+#include <QGraphicsScene>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -16,15 +19,20 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     QPixmap pix1(":/challenges/food-pic.png");
-    ui ->food_label -> setPixmap(pix1.scaled(450,250, Qt::KeepAspectRatio));
+    ui -> food_label -> setPixmap(pix1.scaled(450,250, Qt::KeepAspectRatio));
 
     QPixmap pix2(":/challenges/plane-pic.png");
-    ui ->transport_label -> setPixmap(pix2.scaled(450,250, Qt::KeepAspectRatio));
+    ui -> transport_label -> setPixmap(pix2.scaled(450,250, Qt::KeepAspectRatio));
 
     QPixmap pix3(":/challenges/home-pic.png");
-    ui ->home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
+    ui -> home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
 
+    QMovie *movie = new QMovie(":/challenges/Tree-animation.gif");
+    ui -> tree ->setMovie(movie);
+    QSize scaledSize(300, 450);
+    movie -> setScaledSize(scaledSize);
+    movie -> start();
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
     ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);
@@ -199,5 +207,17 @@ void MainWindow::on_buttonTransport_clicked()
     // outputting the emission for given vehicle and distance
     QString emission = QString::number(api.get_emission());
     ui->outputTransport->setText(emission);
+}
+
+
+
+
+
+
+void MainWindow::on_tree_button_clicked()
+{
+//    gif_anim->setMovie(movie);
+//    movie->setSpeed(100);
+//    movie->start();
 }
 

@@ -12,16 +12,17 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextBrowser>
@@ -72,6 +73,38 @@ public:
     QCheckBox *checkBox_4;
     QSpacerItem *horizontalSpacer_3;
     QWidget *tab_2;
+    QGridLayout *gridLayout_3;
+    QVBoxLayout *verticalLayout_12;
+    QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout_11;
+    QSpacerItem *horizontalSpacer_10;
+    QVBoxLayout *verticalLayout_11;
+    QLabel *label_27;
+    QLabel *label_28;
+    QHBoxLayout *horizontalLayout_10;
+    QSpacerItem *horizontalSpacer_7;
+    QVBoxLayout *verticalLayout_10;
+    QHBoxLayout *horizontalLayout_7;
+    QVBoxLayout *verticalLayout_8;
+    QLabel *label_2;
+    QComboBox *vehicleTransport;
+    QVBoxLayout *verticalLayout_9;
+    QLabel *label;
+    QHBoxLayout *horizontalLayout;
+    QSpinBox *distanceTransport;
+    QLabel *label_3;
+    QHBoxLayout *horizontalLayout_9;
+    QSpacerItem *horizontalSpacer_5;
+    QPushButton *buttonTransport;
+    QSpacerItem *horizontalSpacer_6;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *label_6;
+    QLabel *outputTransport;
+    QLabel *label_5;
+    QSpacerItem *horizontalSpacer_8;
+    QSpacerItem *horizontalSpacer_9;
+    QSpacerItem *verticalSpacer_4;
+    QSpacerItem *verticalSpacer_5;
     QWidget *tab_21;
     QWidget *tab_3;
     QHBoxLayout *horizontalLayout_4;
@@ -107,7 +140,9 @@ public:
     QCheckBox *house_tip_3;
     QWidget *tab_4;
     QHBoxLayout *horizontalLayout_2;
-    QListView *listView;
+    QLabel *tree;
+    QPushButton *tree_button;
+    QComboBox *comboBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -557,6 +592,185 @@ public:
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        gridLayout_3 = new QGridLayout(tab_2);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        verticalLayout_12 = new QVBoxLayout();
+        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_12->addItem(verticalSpacer);
+
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_11->addItem(horizontalSpacer_10);
+
+        verticalLayout_11 = new QVBoxLayout();
+        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
+        label_27 = new QLabel(tab_2);
+        label_27->setObjectName(QString::fromUtf8("label_27"));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Gill Sans")});
+        font3.setPointSize(30);
+        label_27->setFont(font3);
+        label_27->setTextFormat(Qt::AutoText);
+
+        verticalLayout_11->addWidget(label_27);
+
+        label_28 = new QLabel(tab_2);
+        label_28->setObjectName(QString::fromUtf8("label_28"));
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Gill Sans")});
+        font4.setPointSize(16);
+        label_28->setFont(font4);
+        label_28->setTextFormat(Qt::RichText);
+
+        verticalLayout_11->addWidget(label_28);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_10->addItem(horizontalSpacer_7);
+
+        verticalLayout_10 = new QVBoxLayout();
+        verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        label_2 = new QLabel(tab_2);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        verticalLayout_8->addWidget(label_2);
+
+        vehicleTransport = new QComboBox(tab_2);
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->addItem(QString());
+        vehicleTransport->setObjectName(QString::fromUtf8("vehicleTransport"));
+
+        verticalLayout_8->addWidget(vehicleTransport);
+
+
+        horizontalLayout_7->addLayout(verticalLayout_8);
+
+        verticalLayout_9 = new QVBoxLayout();
+        verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
+        label = new QLabel(tab_2);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        verticalLayout_9->addWidget(label);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        distanceTransport = new QSpinBox(tab_2);
+        distanceTransport->setObjectName(QString::fromUtf8("distanceTransport"));
+        distanceTransport->setMinimum(0);
+        distanceTransport->setMaximum(10000);
+        distanceTransport->setSingleStep(10);
+        distanceTransport->setStepType(QAbstractSpinBox::DefaultStepType);
+        distanceTransport->setValue(10);
+        distanceTransport->setDisplayIntegerBase(10);
+
+        horizontalLayout->addWidget(distanceTransport);
+
+        label_3 = new QLabel(tab_2);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        horizontalLayout->addWidget(label_3);
+
+
+        verticalLayout_9->addLayout(horizontalLayout);
+
+
+        horizontalLayout_7->addLayout(verticalLayout_9);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_7);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_9->addItem(horizontalSpacer_5);
+
+        buttonTransport = new QPushButton(tab_2);
+        buttonTransport->setObjectName(QString::fromUtf8("buttonTransport"));
+
+        horizontalLayout_9->addWidget(buttonTransport);
+
+        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_9->addItem(horizontalSpacer_6);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_9);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        label_6 = new QLabel(tab_2);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_8->addWidget(label_6);
+
+        outputTransport = new QLabel(tab_2);
+        outputTransport->setObjectName(QString::fromUtf8("outputTransport"));
+        outputTransport->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_8->addWidget(outputTransport);
+
+        label_5 = new QLabel(tab_2);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        horizontalLayout_8->addWidget(label_5);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_8);
+
+
+        horizontalLayout_10->addLayout(verticalLayout_10);
+
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_10->addItem(horizontalSpacer_8);
+
+
+        verticalLayout_11->addLayout(horizontalLayout_10);
+
+
+        horizontalLayout_11->addLayout(verticalLayout_11);
+
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_11->addItem(horizontalSpacer_9);
+
+
+        verticalLayout_12->addLayout(horizontalLayout_11);
+
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_12->addItem(verticalSpacer_4);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_12->addItem(verticalSpacer_5);
+
+
+        gridLayout_3->addLayout(verticalLayout_12, 0, 0, 1, 1);
+
         tabWidget->addTab(tab_2, QString());
         tab_21 = new QWidget();
         tab_21->setObjectName(QString::fromUtf8("tab_21"));
@@ -934,10 +1148,23 @@ public:
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         horizontalLayout_2 = new QHBoxLayout(tab_4);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        listView = new QListView(tab_4);
-        listView->setObjectName(QString::fromUtf8("listView"));
+        tree = new QLabel(tab_4);
+        tree->setObjectName(QString::fromUtf8("tree"));
+        tree->setPixmap(QPixmap(QString::fromUtf8("../../Downloads/Tree animation.gif")));
 
-        horizontalLayout_2->addWidget(listView);
+        horizontalLayout_2->addWidget(tree);
+
+        tree_button = new QPushButton(tab_4);
+        tree_button->setObjectName(QString::fromUtf8("tree_button"));
+
+        horizontalLayout_2->addWidget(tree_button);
+
+        comboBox = new QComboBox(tab_4);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+
+        horizontalLayout_2->addWidget(comboBox);
 
         tabWidget->addTab(tab_4, QString());
 
@@ -988,6 +1215,29 @@ public:
         checkBox_5->setText(QCoreApplication::translate("MainWindow", "Challenge # 3", nullptr));
         checkBox_4->setText(QCoreApplication::translate("MainWindow", "Challenge # 4", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Profile page", nullptr));
+        label_27->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Transport emissions</span></p></body></html>", nullptr));
+        label_28->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Input your emissions due to transport here!</p></body></html>", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Select your vehicle", nullptr));
+        vehicleTransport->setItemText(0, QCoreApplication::translate("MainWindow", "business class international flight", nullptr));
+        vehicleTransport->setItemText(1, QCoreApplication::translate("MainWindow", "electric car", nullptr));
+        vehicleTransport->setItemText(2, QCoreApplication::translate("MainWindow", "petrol car", nullptr));
+        vehicleTransport->setItemText(3, QCoreApplication::translate("MainWindow", "diesel car", nullptr));
+        vehicleTransport->setItemText(4, QCoreApplication::translate("MainWindow", "petrol motorbike", nullptr));
+        vehicleTransport->setItemText(5, QCoreApplication::translate("MainWindow", "bus", nullptr));
+        vehicleTransport->setItemText(6, QCoreApplication::translate("MainWindow", "metro", nullptr));
+        vehicleTransport->setItemText(7, QCoreApplication::translate("MainWindow", "ferry", nullptr));
+        vehicleTransport->setItemText(8, QCoreApplication::translate("MainWindow", "national train", nullptr));
+        vehicleTransport->setItemText(9, QCoreApplication::translate("MainWindow", "international train", nullptr));
+        vehicleTransport->setItemText(10, QCoreApplication::translate("MainWindow", "domestic flight", nullptr));
+        vehicleTransport->setItemText(11, QCoreApplication::translate("MainWindow", "first class international flight", nullptr));
+        vehicleTransport->setItemText(12, QCoreApplication::translate("MainWindow", "economy class internationl flight", nullptr));
+
+        label->setText(QCoreApplication::translate("MainWindow", "Select the distance", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "km", nullptr));
+        buttonTransport->setText(QCoreApplication::translate("MainWindow", "Calculate your emissions", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "Your emissions are:", nullptr));
+        outputTransport->setText(QString());
+        label_5->setText(QCoreApplication::translate("MainWindow", "kg of CO2", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Survey", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_21), QCoreApplication::translate("MainWindow", "Graph page", nullptr));
         textEdit_2->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -1050,6 +1300,11 @@ public:
         house_tip_2->setText(QCoreApplication::translate("MainWindow", "Turn off the lights", nullptr));
         house_tip_3->setText(QCoreApplication::translate("MainWindow", "Use the dishwasher when it is full", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Challenges/info/tips", nullptr));
+        tree->setText(QString());
+        tree_button->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Chat", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Send challenges", nullptr));
+
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Your friends", nullptr));
     } // retranslateUi
 

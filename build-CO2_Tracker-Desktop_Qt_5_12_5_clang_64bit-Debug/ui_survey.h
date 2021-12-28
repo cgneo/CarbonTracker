@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
@@ -99,15 +100,17 @@ public:
     QGridLayout *gridLayout_12;
     QGridLayout *gridLayout_9;
     QSpacerItem *verticalSpacer_4;
+    QSpacerItem *verticalSpacer_6;
+    QSpacerItem *verticalSpacer_5;
     QHBoxLayout *horizontalLayout_8;
     QSpacerItem *horizontalSpacer_11;
+    QSpacerItem *horizontalSpacer_3;
     QVBoxLayout *verticalLayout_18;
     QVBoxLayout *verticalLayout_5;
     QLabel *pic_label_3;
     QLabel *label_21;
     QLabel *label_22;
     QHBoxLayout *horizontalLayout_3;
-    QSpacerItem *horizontalSpacer_3;
     QTabWidget *tabTransport;
     QWidget *tab_14;
     QGridLayout *gridLayout_6;
@@ -136,9 +139,6 @@ public:
     QPushButton *buttonNextTransport3;
     QSpacerItem *horizontalSpacer_4;
     QSpacerItem *horizontalSpacer_12;
-    QSpacerItem *verticalSpacer_5;
-    QSpacerItem *verticalSpacer_6;
-    QLabel *label_pic_2;
     QWidget *tab_5;
     QGridLayout *gridLayout_10;
     QVBoxLayout *verticalLayout_23;
@@ -165,7 +165,7 @@ public:
     QSpinBox *spinBox_3;
     QSpacerItem *horizontalSpacer_15;
     QSpinBox *spinBox;
-    QLineEdit *lineEdit_2;
+    QComboBox *comboBox;
     QLineEdit *lineEdit_4;
     QFrame *line_2;
     QHBoxLayout *horizontalLayout_9;
@@ -537,11 +537,23 @@ public:
 
         gridLayout_9->addItem(verticalSpacer_4, 0, 0, 1, 1);
 
+        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_9->addItem(verticalSpacer_6, 3, 0, 1, 1);
+
+        verticalSpacer_5 = new QSpacerItem(20, 100, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_9->addItem(verticalSpacer_5, 2, 0, 1, 1);
+
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
         horizontalSpacer_11 = new QSpacerItem(78, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_8->addItem(horizontalSpacer_11);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_8->addItem(horizontalSpacer_3);
 
         verticalLayout_18 = new QVBoxLayout();
         verticalLayout_18->setObjectName(QString::fromUtf8("verticalLayout_18"));
@@ -572,10 +584,6 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        horizontalSpacer_3 = new QSpacerItem(100, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_3->addItem(horizontalSpacer_3);
-
         tabTransport = new QTabWidget(tab_3);
         tabTransport->setObjectName(QString::fromUtf8("tabTransport"));
         tab_14 = new QWidget();
@@ -700,15 +708,15 @@ public:
 
         horizontalLayout_3->addWidget(tabTransport);
 
-        horizontalSpacer_4 = new QSpacerItem(100, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_3->addItem(horizontalSpacer_4);
-
 
         verticalLayout_18->addLayout(horizontalLayout_3);
 
 
         horizontalLayout_8->addLayout(verticalLayout_18);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_8->addItem(horizontalSpacer_4);
 
         horizontalSpacer_12 = new QSpacerItem(78, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -717,21 +725,8 @@ public:
 
         gridLayout_9->addLayout(horizontalLayout_8, 1, 0, 1, 1);
 
-        verticalSpacer_5 = new QSpacerItem(20, 100, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_9->addItem(verticalSpacer_5, 2, 0, 1, 1);
-
-        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_9->addItem(verticalSpacer_6, 3, 0, 1, 1);
-
 
         gridLayout_12->addLayout(gridLayout_9, 0, 0, 2, 2);
-
-        label_pic_2 = new QLabel(tab_3);
-        label_pic_2->setObjectName(QString::fromUtf8("label_pic_2"));
-
-        gridLayout_12->addWidget(label_pic_2, 1, 1, 1, 1);
 
         tabMain->addTab(tab_3, QString());
         tab_5 = new QWidget();
@@ -844,10 +839,21 @@ public:
 
         verticalLayout_14->addLayout(horizontalLayout_12);
 
-        lineEdit_2 = new QLineEdit(tab_5);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        comboBox = new QComboBox(tab_5);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
 
-        verticalLayout_14->addWidget(lineEdit_2);
+        verticalLayout_14->addWidget(comboBox);
 
         lineEdit_4 = new QLineEdit(tab_5);
         lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
@@ -952,7 +958,7 @@ public:
         retranslateUi(Survey);
         //QObject::connect(horizontalSlider_3, &QSlider::valueChanged, label_18, &QLabel::setNum);
 
-        tabMain->setCurrentIndex(2);
+        tabMain->setCurrentIndex(3);
         tabHousing->setCurrentIndex(0);
         tabTransport->setCurrentIndex(0);
 
@@ -1009,7 +1015,6 @@ public:
         label_26->setText(QCoreApplication::translate("Survey", "0", nullptr));
         buttonNextTransport3->setText(QCoreApplication::translate("Survey", "Next", nullptr));
         tabTransport->setTabText(tabTransport->indexOf(tab_16), QCoreApplication::translate("Survey", "Question 3", nullptr));
-        label_pic_2->setText(QCoreApplication::translate("Survey", "<html><head/><body><p><br/></p></body></html>", nullptr));
         tabMain->setTabText(tabMain->indexOf(tab_3), QCoreApplication::translate("Survey", "Transport", nullptr));
         label_27->setText(QCoreApplication::translate("Survey", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Create your account</span></p></body></html>", nullptr));
         label_28->setText(QCoreApplication::translate("Survey", "<html><head/><body><p align=\"center\">Please submit your information:</p></body></html>", nullptr));
@@ -1017,6 +1022,18 @@ public:
         label_10->setText(QCoreApplication::translate("Survey", "Date of birth (DD/MM/YYYY)", nullptr));
         label_7->setText(QCoreApplication::translate("Survey", "Country", nullptr));
         label_8->setText(QCoreApplication::translate("Survey", "Email", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("Survey", "France", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("Survey", "German", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("Survey", "Japan", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("Survey", "Korea", nullptr));
+        comboBox->setItemText(4, QCoreApplication::translate("Survey", "Lebanon", nullptr));
+        comboBox->setItemText(5, QCoreApplication::translate("Survey", "Mexico", nullptr));
+        comboBox->setItemText(6, QCoreApplication::translate("Survey", "Netherlands", nullptr));
+        comboBox->setItemText(7, QCoreApplication::translate("Survey", "Romania", nullptr));
+        comboBox->setItemText(8, QCoreApplication::translate("Survey", "Spain", nullptr));
+        comboBox->setItemText(9, QCoreApplication::translate("Survey", "Tunesia", nullptr));
+        comboBox->setItemText(10, QCoreApplication::translate("Survey", "United States", nullptr));
+
         label_2->setText(QCoreApplication::translate("Survey", "Username", nullptr));
         label_9->setText(QCoreApplication::translate("Survey", "Password", nullptr));
         buttonAccount->setText(QCoreApplication::translate("Survey", "Submit", nullptr));
