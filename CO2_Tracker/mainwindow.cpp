@@ -111,8 +111,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->house_tip_2->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 2")));
     ui->house_tip_3->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 3")));
 
-
-    connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(disableButton));
+    ui -> tree_button -> setEnabled(false);
+    connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
 }
 
 
@@ -178,6 +178,7 @@ void MainWindow::get_seed()
 {
     if (ui -> SeedsprogressBar -> value() == 100){
         animation_seed -> start();
+        enableButton();
     }
 }
 
@@ -206,9 +207,9 @@ void MainWindow::on_buttonTransport_clicked()
     ui->outputTransport->setText(emission);
 }
 
-void MainWindow::disableButton()
+void MainWindow::enableButton()
 {
-    ui -> tree_button ->setEnabled(false);
+    ui -> tree_button ->setEnabled(true);
 }
 
 

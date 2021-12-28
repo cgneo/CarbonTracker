@@ -24,7 +24,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     const uint offsetsAndSize[26];
-    char stringdata0[272];
+    char stringdata0[271];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
@@ -42,7 +42,7 @@ QT_MOC_LITERAL(165, 33), // "on_daily_challenge_4_stateCha..."
 QT_MOC_LITERAL(199, 8), // "get_seed"
 QT_MOC_LITERAL(208, 26), // "on_buttonTransport_clicked"
 QT_MOC_LITERAL(235, 22), // "on_tree_button_clicked"
-QT_MOC_LITERAL(258, 13) // "disableButton"
+QT_MOC_LITERAL(258, 12) // "enableButton"
 
     },
     "MainWindow\0on_Surveybutton_clicked\0\0"
@@ -52,7 +52,7 @@ QT_MOC_LITERAL(258, 13) // "disableButton"
     "on_daily_challenge_3_stateChanged\0"
     "on_daily_challenge_4_stateChanged\0"
     "get_seed\0on_buttonTransport_clicked\0"
-    "on_tree_button_clicked\0disableButton"
+    "on_tree_button_clicked\0enableButton"
 };
 #undef QT_MOC_LITERAL
 
@@ -111,7 +111,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->get_seed(); break;
         case 7: _t->on_buttonTransport_clicked(); break;
         case 8: _t->on_tree_button_clicked(); break;
-        case 9: _t->disableButton(); break;
+        case 9: _t->enableButton(); break;
         default: ;
         }
     }

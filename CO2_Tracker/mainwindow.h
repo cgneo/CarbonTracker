@@ -44,7 +44,7 @@ private slots:
 
     void on_tree_button_clicked();
 
-    void disableButton();
+    void enableButton();
 
 private:
     Ui::MainWindow *ui;
