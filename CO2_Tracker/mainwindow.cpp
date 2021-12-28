@@ -189,8 +189,8 @@ void MainWindow::on_buttonTransport_clicked()
     // converting std strings to char arrays
         // vehicle
     int n = vehicle.length();
-    char char_array_name[n+1];
-    strcpy(char_array_name, vehicle.c_str());
+    char char_array_vehicle[n+1];
+    strcpy(char_array_vehicle, vehicle.c_str());
 
         // distance
     int m = distance.length();
@@ -199,7 +199,7 @@ void MainWindow::on_buttonTransport_clicked()
 
     // calling the (transport) api
     transport_api api;
-    api.get_reply(char_array_distance, char_array_name);
+    api.get_reply(char_array_distance, char_array_vehicle);
 
     // outputting the emission for given vehicle and distance
     QString emission = QString::number(api.get_emission());
