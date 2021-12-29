@@ -6,6 +6,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "json_DB.hpp"
+#include "object.h"
+
 Survey::Survey(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Survey)
@@ -35,33 +38,7 @@ void Survey::on_buttonMain_clicked()
 
 void Survey::on_buttonNextHousing1_clicked()
 {
-    QString test;
-    QString output = test;
-    if (ui->radioH1_1->isChecked()){output += "answer 1";}
-    if (ui->radioH1_2->isChecked()){output += "answer 2";}
-    if (ui->radioH1_3->isChecked()){output += "answer 3";}
-    if (ui->radioH1_4->isChecked()){output += "answer 4";}
-
-    if (ui->tabHousing->count() > 1) {
-        if (output == test){
-            QMessageBox::warning(this, "Warning", "You did not select an answer.");
-        } else {
-            ui->tabHousing->setCurrentIndex( (ui->tabHousing->currentIndex()+1) % ui->tabHousing->count() );
-        }
-    }
-}
-
-void Survey::on_buttonNextHousing2_clicked()
-{
-    if (ui->tabHousing->count() > 1) {
-        ui->tabHousing->setCurrentIndex( (ui->tabHousing->currentIndex()+1) % ui->tabHousing->count() );
-    }
-}
-
-
-void Survey::on_buttonNextHousing3_clicked()
-{
-    if (ui->tabHousing->count() > 1) {
+    if (ui->tabMain->count() > 1) {
         ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
     }
 }
@@ -90,7 +67,23 @@ void Survey::on_buttonNextTransport3_clicked()
 
 //linking mainwindow and survey by a click on the "Account button"
 void Survey::on_buttonAccount_clicked()
-{
+{        
+    // initializing an account given the information inputted by the user in the survey
+    QString username = ui->lineUsername->text();
+    QString name = ui->lineName->text();
+    QString email = ui->lineEmail->text();
+    QString country = ui->comboCountry->currentText();
+    // QString password = ui->linePassword->text(); // is a password needed?
+    int living_partners = ui->sliderLivingPartners->value();
+    int birthday = ui->spinBoxDay->value();
+    int birthmonth = ui->spinBoxMonth->value();
+    int birthyear = ui->spinBoxYear->value();
+
+    Json_DB obj;
+    QJsonObject doc;
+    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+    obj.writeJsonUser(u);
+
     mainwindow = new MainWindow(this);
     mainwindow->show();
     hide();
