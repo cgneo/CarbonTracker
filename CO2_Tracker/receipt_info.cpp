@@ -19,13 +19,17 @@
 
 // Checks that a string "str" is only made of numeric characters
 // This function is used to know which part of the file corresponds to a product's id.
-bool is_id(string str) {
+bool is_id(string str)
+{
     char space = ' ';
-    if (!isdigit(str.at(str.length()-1)) and (str.at(str.length()-1) != space)) {
+    if (!isdigit(str.at(str.length() - 1)) and (str.at(str.length() - 1) != space))
+    {
         return false;
     }
-    for (int i = 0; i < int(str.length()) -1; i++) {
-        if (!isdigit(str.at(i))) {
+    for (int i = 0; i < int(str.length()) - 1; i++)
+    {
+        if (!isdigit(str.at(i)))
+        {
             return false;
         }
     }
@@ -33,9 +37,12 @@ bool is_id(string str) {
 }
 
 // Helper function that check that a string "str" is only made of numeric characters
-bool num_str(string str) {
-    for (char c: str) {
-        if (!isdigit(c) and c != ',' and c != '.') {
+bool num_str(string str)
+{
+    for (char c : str)
+    {
+        if (!isdigit(c) and c != ',' and c != '.')
+        {
             return false;
         }
     }
@@ -44,21 +51,24 @@ bool num_str(string str) {
 
 // Helper function that takes a string "line" and returns a vector "words" containing the words within the line
 // Here a word is defined as a non-empty string between two spaces.
-vector<string> decompose_line(string line) {
+vector<string> decompose_line(string line)
+{
     string space_delimiter = " ";
-    vector<string> words {};
+    vector<string> words{};
     size_t pos = 0;
-    while ((pos = line.find(space_delimiter)) != string::npos) {
-            words.push_back(line.substr(0, pos));
-            line.erase(0, pos + space_delimiter.length());
-        }
+    while ((pos = line.find(space_delimiter)) != string::npos)
+    {
+        words.push_back(line.substr(0, pos));
+        line.erase(0, pos + space_delimiter.length());
+    }
     return words;
 }
 
 // Helper function that takes a vector of words (corresponding to a line in the file) and returns a size-2 vector
 // Hhere the first element in a reference number for a product (its id) and the second element is the quantity
-vector<string> extract_id_quant(vector<string> words) {
-    string id = words[0];                                       // The id is always the first word in a line (by observation)
+vector<string> extract_id_quant(vector<string> words)
+{
+    string id = words[0]; // The id is always the first word in a line (by observation)
     string quantity = words[words.size() - 5];
     vector<string> res;
     res.push_back(id);
@@ -69,49 +79,56 @@ vector<string> extract_id_quant(vector<string> words) {
 // This function takes a file "filename" as input and returns "res_vector" a vector of vectors of the form {id, quantity}
 // i.e each element of res_vector is a vector containing the reference number of a product and its quantity.
 // The returned vector will later be used to send queries to the data base and calculate the carbon footprint of the receipt given in the file.
-vector<vector<string>> file_to_vector(string filename) {
-    ifstream myfile(filename);                                  // Open file in read mode
+vector<vector<string>> file_to_vector(string filename)
+{
+    ifstream myfile(filename); // Open file in read mode
     vector<vector<string>> id_quant_pairs;
-    if (myfile.is_open()) {
+    if (myfile.is_open())
+    {
         string line;
-        while (getline(myfile,line)) {                          // Read file line by line
-            if (!line.empty()) {
+        while (getline(myfile, line))
+        { // Read file line by line
+            if (!line.empty())
+            {
                 string potential_id = line.substr(0, 13);
                 bool id = is_id(potential_id);
-                if (id) {                                           // If the line begins with an id
-                    vector<string> words = decompose_line(line);    // Decompose the line into a vector of words
-                    vector<string> pair = extract_id_quant(words);  // Extract the id and the quantity of the product in the line
-                    id_quant_pairs.push_back(pair);                     // Append this pair to res_vector
+                if (id)
+                {                                                  // If the line begins with an id
+                    vector<string> words = decompose_line(line);   // Decompose the line into a vector of words
+                    vector<string> pair = extract_id_quant(words); // Extract the id and the quantity of the product in the line
+                    id_quant_pairs.push_back(pair);                // Append this pair to res_vector
                 }
             }
         }
         myfile.close();
     }
-    else cout << "Unable to open file";                         // Error handling message
+    else
+        cout << "Unable to open file"; // Error handling message
     return id_quant_pairs;
 }
 
-int main(int argc, char *argv[])
+vector<vector<string>> get_receipt_info(string filepath)
 {
     char *outText;
 
     tesseract::TessBaseAPI *api = new tesseract::TessBaseAPI();
 
     // Initialize tesseract-ocr with French, without specifying tessdata path
-    if (api->Init(NULL, "fra")) {
+    if (api->Init(NULL, "fra"))
+    {
         fprintf(stderr, "Could not initialize tesseract.\n");
         exit(1);
     }
 
     // Open input image with leptonica library
-    Pix *image = pixRead("/Users/aminelamouchi/Desktop/carrefour.png");
+    Pix *image = pixRead(filepath);
     api->SetImage(image);
 
     // Get OCR result
     outText = api->GetUTF8Text();
 
     // Put OCR result in a file
-    string filename = "/Users/aminelamouchi/Desktop/carrefour.txt";
+    string filename = "/tmp/ocr_result.txt";
     ofstream file(filename);
     file << string(outText);
     file.close();
@@ -122,10 +139,8 @@ int main(int argc, char *argv[])
     // Destroy used object and release memory
     api->End();
     delete api;
-    delete [] outText;
+    delete[] outText;
     pixDestroy(&image);
-
-    QApplication a(argc, argv);
 
     // simulate a vector of pairs {product_id, quantity}
     //vector<vector<string>> id_quant_pairs = {{"8076809578257", "1"}, {"8076809530668", "1"}, {"8076809513388", "1"}};
@@ -134,72 +149,17 @@ int main(int argc, char *argv[])
     vector<vector<string>> receipt_info = {};
 
     // loop over id_quant_pairs and append each product_info to receipt_info
-    for (vector<string> pair: id_quant_pairs) {
+    for (vector<string> pair : id_quant_pairs)
+    {
         food_api api(pair[0], pair[1]);
         api.get_reply();
         receipt_info.push_back(api.get_product_info());
     }
 
     // print the result
-    for (vector<string> pair_info : receipt_info) {
+    for (vector<string> pair_info : receipt_info)
+    {
         cout << "ID: " << pair_info[0] << " ECOSCORE: " << pair_info[1] << " BRAND: " << pair_info[2] << " CATEGORY: " << pair_info[3] << endl;
     }
-
-    /*
-    Json_DB obj;
-
-    Tests t;
-    bool new_user = !t.test_does_file_exist();
-    qDebug() << new_user;
-
-    if (new_user){ //If user is new, open profile set_up
-        Survey window;
-        window.show();
-        return a.exec();
-    }
-    else{ //Else open regular window
-        MainWindow window;
-        window.show();
-        return a.exec();
-    }
-
-
-//    Date *fecha = new Date(01,01,2021);
-//    Object o(fecha, "metro", "transport");
-//    Transport *m = new Transport();
-//    ParseClass p;
-//    p.create_empty_file();
-
-
-//    Locomotive *m = new Locomotive(fecha, "metro", "transport", "100");
-
-//    calculator(argc, argv, "economy international flight", "10000", m);
-//    std::cout << std::to_string(m->get_footprint()) << std::endl
-
-
-
-
-    Transport bus;
-    bus.set_name("petrol car");
-    string s = bus.get_name();
-
-        int n = s.length();
-
-        // declaring character array
-        char char_array[n + 1];
-
-        // copying the contents of the
-        // string to char array
-    strcpy(char_array, s.c_str());
-    bus.set_distance("1000");
-    transport_api api;
-    api.get_reply(bus.get_distance(),char_array);
-    bus.set_footprint(api.get_emission());
-    std::cout<<bus.get_footprint()<<std::endl;
-    qDebug()<<api.get_emission_unit();
-    //return a.exec();
-    Car car;
-    std::cout<<car.get_name()<<std::endl;
-    */
-
+    return receipt_info;
 }
