@@ -8,6 +8,7 @@ class Transport : public Object{
    public:
     Transport();
     void set_distance(char* distance);
+    char* get_distance();
 protected:
     char* distance;
 };
@@ -17,8 +18,6 @@ public:
     Locomotive();
     void set_footprint(double estimate);
     double  get_footprint();
-private:
-    double footprint;
 };
 
 
@@ -27,8 +26,6 @@ public:
     Airplane();
     void set_footprint(double estimate);
     double  get_footprint();
-private:
-    double footprint;
 };
 
 class Car: public Transport{
@@ -36,7 +33,5 @@ public:
     Car();
     void set_footprint(double estimate);
     double  get_footprint();
-private:
-    double footprint;
 };
 #endif // TRANSPORT_H

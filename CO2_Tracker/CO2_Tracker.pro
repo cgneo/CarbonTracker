@@ -1,6 +1,6 @@
 TEMPLATE = app
 QT += core gui network
-
+QT += charts
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -10,7 +10,6 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    api_transport.cpp \
     base_consumption.cpp \
     consumption.cpp \
     date.cpp \
@@ -19,16 +18,15 @@ SOURCES += \
     food.cpp \
     tests.cpp \
     transport.cpp \
+    transport_api.cpp \
     user.cpp\
     main.cpp \
     receipt.cpp \
-    transport_API.cpp \
     mainwindow.cpp \
     survey.cpp
 
 
 HEADERS += \
-    api_transport.h \
     base_consumption.h \
     consumption.h \
     date.h \
@@ -37,13 +35,13 @@ HEADERS += \
     food.h \
     tests.h \
     transport.h \
+    transport_api.h \
     user.h \
     receipt.h \
     mainwindow.h \
     survey.h
 
 FORMS += \
-    api_transport.ui \
     mainwindow.ui \
     survey.ui
 
