@@ -10,6 +10,7 @@
 
 #include <QGraphicsWidget>
 #include <QApplication>
+#include <json_DB.hpp>
 #include <iostream>
 
 int main(int argc, char *argv[])
