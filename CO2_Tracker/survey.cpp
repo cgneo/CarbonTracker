@@ -46,13 +46,7 @@ void Survey::on_buttonNextHousing1_clicked()
 void Survey::on_buttonNextTransport1_clicked()
 {
     if (ui->tabTransport->count() > 1) {
-        if (ui->radioButton_commuteY->isChecked() == 0 && ui->radioButton_commuteN->isChecked() == 0){
-            QMessageBox::warning(this, "Warning", "You have not selected an answer");
-        } else if (ui->radioButton_commuteY->isChecked()){
-            ui->tabTransport->setCurrentIndex( (ui->tabTransport->currentIndex()+1) % ui->tabTransport->count() );
-        } else {
-            ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
-        }
+        ui->tabTransport->setCurrentIndex( (ui->tabTransport->currentIndex()+1) % ui->tabTransport->count() );
     }
 }
 
