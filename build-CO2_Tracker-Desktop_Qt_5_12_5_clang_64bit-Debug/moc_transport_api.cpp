@@ -1,22 +1,18 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'transport_api.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.2)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.12.5)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include <memory>
 #include "../CO2_Tracker/transport_api.h"
-#include <QtNetwork/QSslError>
-#include <QtGui/qtextcursor.h>
-#include <QScreen>
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'transport_api.h' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.2.2. It"
+#elif Q_MOC_OUTPUT_REVISION != 67
+#error "This file was generated using the moc from 5.12.5. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -25,14 +21,17 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_transport_api_t {
-    const uint offsetsAndSize[2];
+    QByteArrayData data[1];
     char stringdata0[14];
 };
-#define QT_MOC_LITERAL(ofs, len) \
-    uint(offsetof(qt_meta_stringdata_transport_api_t, stringdata0) + ofs), len 
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_transport_api_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
 static const qt_meta_stringdata_transport_api_t qt_meta_stringdata_transport_api = {
     {
-QT_MOC_LITERAL(0, 13) // "transport_api"
+QT_MOC_LITERAL(0, 0, 13) // "transport_api"
 
     },
     "transport_api"
@@ -42,7 +41,7 @@ QT_MOC_LITERAL(0, 13) // "transport_api"
 static const uint qt_meta_data_transport_api[] = {
 
  // content:
-      10,       // revision
+       8,       // revision
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
@@ -57,24 +56,18 @@ static const uint qt_meta_data_transport_api[] = {
 
 void transport_api::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    (void)_o;
-    (void)_id;
-    (void)_c;
-    (void)_a;
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
 }
 
-const QMetaObject transport_api::staticMetaObject = { {
-    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_meta_stringdata_transport_api.offsetsAndSize,
+QT_INIT_METAOBJECT const QMetaObject transport_api::staticMetaObject = { {
+    &QObject::staticMetaObject,
+    qt_meta_stringdata_transport_api.data,
     qt_meta_data_transport_api,
     qt_static_metacall,
     nullptr,
-qt_incomplete_metaTypeArray<qt_meta_stringdata_transport_api_t
-, QtPrivate::TypeAndForceComplete<transport_api, std::true_type>
-
-
-
->,
     nullptr
 } };
 

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.2
+** Created by: Qt User Interface Compiler version 5.12.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -315,7 +315,7 @@ public:
         SeedsprogressBar = new QProgressBar(verticalFrame);
         SeedsprogressBar->setObjectName(QString::fromUtf8("SeedsprogressBar"));
         QFont font;
-        font.setFamilies({QString::fromUtf8("Gill Sans")});
+        font.setFamily(QString::fromUtf8("Gill Sans"));
         SeedsprogressBar->setFont(font);
         SeedsprogressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
 "	\n"
@@ -474,9 +474,10 @@ public:
         palette4.setBrush(QPalette::Disabled, QPalette::Window, brush12);
         textBrowser_4->setPalette(palette4);
         QFont font1;
-        font1.setFamilies({QString::fromUtf8("Gill Sans")});
+        font1.setFamily(QString::fromUtf8("Gill Sans"));
         font1.setBold(true);
         font1.setItalic(true);
+        font1.setWeight(75);
         textBrowser_4->setFont(font1);
         textBrowser_4->setStyleSheet(QString::fromUtf8("QTextBrowser{\n"
 "\n"
@@ -535,10 +536,11 @@ public:
         textBrowser_5->setObjectName(QString::fromUtf8("textBrowser_5"));
         textBrowser_5->setMaximumSize(QSize(150, 35));
         QFont font2;
-        font2.setFamilies({QString::fromUtf8("Gill Sans")});
+        font2.setFamily(QString::fromUtf8("Gill Sans"));
         font2.setPointSize(13);
         font2.setBold(false);
         font2.setItalic(false);
+        font2.setWeight(50);
         textBrowser_5->setFont(font2);
         textBrowser_5->setStyleSheet(QString::fromUtf8("QTextBrowser{\n"
 "\n"
@@ -613,7 +615,7 @@ public:
         label_27 = new QLabel(tab_2);
         label_27->setObjectName(QString::fromUtf8("label_27"));
         QFont font3;
-        font3.setFamilies({QString::fromUtf8("Gill Sans")});
+        font3.setFamily(QString::fromUtf8("Gill Sans"));
         font3.setPointSize(30);
         label_27->setFont(font3);
         label_27->setTextFormat(Qt::AutoText);
@@ -623,7 +625,7 @@ public:
         label_28 = new QLabel(tab_2);
         label_28->setObjectName(QString::fromUtf8("label_28"));
         QFont font4;
-        font4.setFamilies({QString::fromUtf8("Gill Sans")});
+        font4.setFamily(QString::fromUtf8("Gill Sans"));
         font4.setPointSize(16);
         label_28->setFont(font4);
         label_28->setTextFormat(Qt::RichText);
@@ -1283,9 +1285,9 @@ public:
         MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
-        QObject::connect(SeedsprogressBar, &QProgressBar::valueChanged, seed, qOverload<>(&QLabel::raise));
+        QObject::connect(SeedsprogressBar, SIGNAL(valueChanged(int)), seed, SLOT(raise()));
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1293,123 +1295,123 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         seed->setText(QString());
-        Scanbutton->setText(QCoreApplication::translate("MainWindow", "Scan my activities", nullptr));
-        Surveybutton->setText(QCoreApplication::translate("MainWindow", "My activities today", nullptr));
-        textBrowser_4->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        Scanbutton->setText(QApplication::translate("MainWindow", "Scan my activities", nullptr));
+        Surveybutton->setText(QApplication::translate("MainWindow", "My activities today", nullptr));
+        textBrowser_4->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Gill Sans'; font-size:13pt; font-weight:600; font-style:italic;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; font-weight:400; font-style:normal; color:#ffffff;\">Daily challenges</span></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.AppleSystemUIFont'; font-weight:400; font-style:normal; color:#ffffff;\"><br /></p></body></html>", nullptr));
-        daily_challenge_1->setText(QCoreApplication::translate("MainWindow", "Challenge #1", nullptr));
-        daily_challenge_2->setText(QCoreApplication::translate("MainWindow", "Challenge #2", nullptr));
-        daily_challenge_3->setText(QCoreApplication::translate("MainWindow", "Challenge #3", nullptr));
-        daily_challenge_4->setText(QCoreApplication::translate("MainWindow", "Challenge #4", nullptr));
-        textBrowser_5->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        daily_challenge_1->setText(QApplication::translate("MainWindow", "Challenge #1", nullptr));
+        daily_challenge_2->setText(QApplication::translate("MainWindow", "Challenge #2", nullptr));
+        daily_challenge_3->setText(QApplication::translate("MainWindow", "Challenge #3", nullptr));
+        daily_challenge_4->setText(QApplication::translate("MainWindow", "Challenge #4", nullptr));
+        textBrowser_5->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Gill Sans'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; color:#ffffff;\">Monthly challenges</span></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.AppleSystemUIFont'; color:#ffffff;\"><br /></p></body></html>", nullptr));
-        checkBox_6->setText(QCoreApplication::translate("MainWindow", "Challenge # 1", nullptr));
-        checkBox_7->setText(QCoreApplication::translate("MainWindow", "Challenge # 2", nullptr));
-        checkBox_5->setText(QCoreApplication::translate("MainWindow", "Challenge # 3", nullptr));
-        checkBox_4->setText(QCoreApplication::translate("MainWindow", "Challenge # 4", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Profile page", nullptr));
-        label_27->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Transport emissions</span></p></body></html>", nullptr));
-        label_28->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Input your emissions due to transport here!</p></body></html>", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Select your vehicle", nullptr));
-        vehicleTransport->setItemText(0, QCoreApplication::translate("MainWindow", "business class international flight", nullptr));
-        vehicleTransport->setItemText(1, QCoreApplication::translate("MainWindow", "electric car", nullptr));
-        vehicleTransport->setItemText(2, QCoreApplication::translate("MainWindow", "petrol car", nullptr));
-        vehicleTransport->setItemText(3, QCoreApplication::translate("MainWindow", "diesel car", nullptr));
-        vehicleTransport->setItemText(4, QCoreApplication::translate("MainWindow", "petrol motorbike", nullptr));
-        vehicleTransport->setItemText(5, QCoreApplication::translate("MainWindow", "bus", nullptr));
-        vehicleTransport->setItemText(6, QCoreApplication::translate("MainWindow", "metro", nullptr));
-        vehicleTransport->setItemText(7, QCoreApplication::translate("MainWindow", "ferry", nullptr));
-        vehicleTransport->setItemText(8, QCoreApplication::translate("MainWindow", "national train", nullptr));
-        vehicleTransport->setItemText(9, QCoreApplication::translate("MainWindow", "international train", nullptr));
-        vehicleTransport->setItemText(10, QCoreApplication::translate("MainWindow", "domestic flight", nullptr));
-        vehicleTransport->setItemText(11, QCoreApplication::translate("MainWindow", "first class international flight", nullptr));
-        vehicleTransport->setItemText(12, QCoreApplication::translate("MainWindow", "economy class internationl flight", nullptr));
+        checkBox_6->setText(QApplication::translate("MainWindow", "Challenge # 1", nullptr));
+        checkBox_7->setText(QApplication::translate("MainWindow", "Challenge # 2", nullptr));
+        checkBox_5->setText(QApplication::translate("MainWindow", "Challenge # 3", nullptr));
+        checkBox_4->setText(QApplication::translate("MainWindow", "Challenge # 4", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Profile page", nullptr));
+        label_27->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Transport emissions</span></p></body></html>", nullptr));
+        label_28->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Input your emissions due to transport here!</p></body></html>", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Select your vehicle", nullptr));
+        vehicleTransport->setItemText(0, QApplication::translate("MainWindow", "business class international flight", nullptr));
+        vehicleTransport->setItemText(1, QApplication::translate("MainWindow", "electric car", nullptr));
+        vehicleTransport->setItemText(2, QApplication::translate("MainWindow", "petrol car", nullptr));
+        vehicleTransport->setItemText(3, QApplication::translate("MainWindow", "diesel car", nullptr));
+        vehicleTransport->setItemText(4, QApplication::translate("MainWindow", "petrol motorbike", nullptr));
+        vehicleTransport->setItemText(5, QApplication::translate("MainWindow", "bus", nullptr));
+        vehicleTransport->setItemText(6, QApplication::translate("MainWindow", "metro", nullptr));
+        vehicleTransport->setItemText(7, QApplication::translate("MainWindow", "ferry", nullptr));
+        vehicleTransport->setItemText(8, QApplication::translate("MainWindow", "national train", nullptr));
+        vehicleTransport->setItemText(9, QApplication::translate("MainWindow", "international train", nullptr));
+        vehicleTransport->setItemText(10, QApplication::translate("MainWindow", "domestic flight", nullptr));
+        vehicleTransport->setItemText(11, QApplication::translate("MainWindow", "first class international flight", nullptr));
+        vehicleTransport->setItemText(12, QApplication::translate("MainWindow", "economy class internationl flight", nullptr));
 
-        label->setText(QCoreApplication::translate("MainWindow", "Select the distance", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "km", nullptr));
-        buttonTransport->setText(QCoreApplication::translate("MainWindow", "Calculate your emissions", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "Your emissions are:", nullptr));
+        label->setText(QApplication::translate("MainWindow", "Select the distance", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "km", nullptr));
+        buttonTransport->setText(QApplication::translate("MainWindow", "Calculate your emissions", nullptr));
+        label_6->setText(QApplication::translate("MainWindow", "Your emissions are:", nullptr));
         outputTransport->setText(QString());
-        label_5->setText(QCoreApplication::translate("MainWindow", "kg of CO2", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Survey", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_21), QCoreApplication::translate("MainWindow", "Graph page", nullptr));
-        textEdit_2->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        label_5->setText(QApplication::translate("MainWindow", "kg of CO2", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Survey", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_21), QApplication::translate("MainWindow", "Graph page", nullptr));
+        textEdit_2->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Food</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         food_label->setText(QString());
-        textEdit_3->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        textEdit_3->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Info</p></body></html>", nullptr));
-        textEdit->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        textEdit->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Food Tips</p></body></html>", nullptr));
-        food_tip_1->setText(QCoreApplication::translate("MainWindow", "Reduce dairy consumption", nullptr));
-        food_tip_2->setText(QCoreApplication::translate("MainWindow", "Consume local and seasonal products", nullptr));
-        food_tip_3->setText(QCoreApplication::translate("MainWindow", "Eat less red meat", nullptr));
-        textEdit_4->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        food_tip_1->setText(QApplication::translate("MainWindow", "Reduce dairy consumption", nullptr));
+        food_tip_2->setText(QApplication::translate("MainWindow", "Consume local and seasonal products", nullptr));
+        food_tip_3->setText(QApplication::translate("MainWindow", "Eat less red meat", nullptr));
+        textEdit_4->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Transportation</p></body></html>", nullptr));
         transport_label->setText(QString());
-        textEdit_5->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        textEdit_5->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Info</p></body></html>", nullptr));
-        textEdit_6->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        textEdit_6->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Transportation Tips</p></body></html>", nullptr));
-        transportation_tip_1->setText(QCoreApplication::translate("MainWindow", "Avoid driving at peak times", nullptr));
-        transportation_tip_2->setText(QCoreApplication::translate("MainWindow", "Sharing a car to go to work", nullptr));
-        transportation_tip_3->setText(QCoreApplication::translate("MainWindow", "Replace the car with public transports ", nullptr));
-        textEdit_7->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        transportation_tip_1->setText(QApplication::translate("MainWindow", "Avoid driving at peak times", nullptr));
+        transportation_tip_2->setText(QApplication::translate("MainWindow", "Sharing a car to go to work", nullptr));
+        transportation_tip_3->setText(QApplication::translate("MainWindow", "Replace the car with public transports ", nullptr));
+        textEdit_7->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Home</p></body></html>", nullptr));
         home_label->setText(QString());
-        textEdit_8->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        textEdit_8->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Info</p></body></html>", nullptr));
-        textEdit_9->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        textEdit_9->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">House Tips</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
-        house_tip_1->setText(QCoreApplication::translate("MainWindow", "Unplug your charger when not in use", nullptr));
-        house_tip_2->setText(QCoreApplication::translate("MainWindow", "Turn off the lights", nullptr));
-        house_tip_3->setText(QCoreApplication::translate("MainWindow", "Use the dishwasher when it is full", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Challenges/info/tips", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Chat", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "Send challenges", nullptr));
+        house_tip_1->setText(QApplication::translate("MainWindow", "Unplug your charger when not in use", nullptr));
+        house_tip_2->setText(QApplication::translate("MainWindow", "Turn off the lights", nullptr));
+        house_tip_3->setText(QApplication::translate("MainWindow", "Use the dishwasher when it is full", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Challenges/info/tips", nullptr));
+        comboBox->setItemText(1, QApplication::translate("MainWindow", "Chat", nullptr));
+        comboBox->setItemText(2, QApplication::translate("MainWindow", "Send challenges", nullptr));
 
         tree->setText(QString());
-        tree_button->setText(QCoreApplication::translate("MainWindow", "Grow your tree", nullptr));
-        select_button->setText(QCoreApplication::translate("MainWindow", "Select", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Your friends", nullptr));
+        tree_button->setText(QApplication::translate("MainWindow", "Grow your tree", nullptr));
+        select_button->setText(QApplication::translate("MainWindow", "Select", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "Your friends", nullptr));
     } // retranslateUi
 
 };

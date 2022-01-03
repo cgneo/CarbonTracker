@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'survey.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.2
+** Created by: Qt User Interface Compiler version 5.12.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -56,7 +56,7 @@ public:
     QSpacerItem *verticalSpacer_9;
     QWidget *tab_2;
     QGridLayout *gridLayout_3;
-    QVBoxLayout *verticalLayout_17;
+    QVBoxLayout *verticalLayout_3;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
@@ -70,38 +70,19 @@ public:
     QGridLayout *gridLayout_2;
     QVBoxLayout *verticalLayout;
     QLabel *label_15;
-    QVBoxLayout *verticalLayout_11;
-    QRadioButton *radioH1_1;
-    QRadioButton *radioH1_2;
-    QRadioButton *radioH1_3;
-    QRadioButton *radioH1_4;
-    QPushButton *buttonNextHousing1;
-    QWidget *tab_12;
-    QGridLayout *gridLayout_5;
-    QVBoxLayout *verticalLayout_4;
-    QLabel *label_16;
-    QRadioButton *radioH2_1;
-    QRadioButton *radioH2_2;
-    QRadioButton *radioH2_3;
-    QRadioButton *radioH2_4;
-    QPushButton *buttonNextHousing2;
-    QWidget *tab_13;
-    QGridLayout *gridLayout_4;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *label_17;
     QHBoxLayout *horizontalLayout_2;
-    QSlider *horizontalSlider_3;
-    QLabel *label_18;
-    QPushButton *buttonNextHousing3;
+    QSlider *sliderLivingPartners;
+    QLabel *label;
+    QPushButton *buttonNextHousing1;
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *verticalSpacer;
     QSpacerItem *verticalSpacer_3;
     QWidget *tab_3;
     QGridLayout *gridLayout_12;
     QGridLayout *gridLayout_9;
+    QSpacerItem *verticalSpacer_5;
     QSpacerItem *verticalSpacer_4;
     QSpacerItem *verticalSpacer_6;
-    QSpacerItem *verticalSpacer_5;
     QHBoxLayout *horizontalLayout_8;
     QSpacerItem *horizontalSpacer_11;
     QSpacerItem *horizontalSpacer_3;
@@ -117,8 +98,8 @@ public:
     QVBoxLayout *verticalLayout_6;
     QLabel *label_23;
     QVBoxLayout *verticalLayout_12;
-    QRadioButton *radioButton_13;
-    QRadioButton *radioButton_14;
+    QRadioButton *radioButton_commuteY;
+    QRadioButton *radioButton_commuteN;
     QPushButton *buttonNextTransport1;
     QWidget *tab_15;
     QGridLayout *gridLayout_7;
@@ -158,23 +139,23 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QVBoxLayout *verticalLayout_14;
-    QLineEdit *lineEdit;
+    QLineEdit *lineName;
     QHBoxLayout *horizontalLayout_12;
-    QSpinBox *spinBox_2;
+    QSpinBox *spinBoxDay;
     QSpacerItem *horizontalSpacer_16;
-    QSpinBox *spinBox_3;
+    QSpinBox *spinBoxMonth;
     QSpacerItem *horizontalSpacer_15;
-    QSpinBox *spinBox;
-    QComboBox *comboBox;
-    QLineEdit *lineEdit_4;
+    QSpinBox *spinBoxYear;
+    QComboBox *comboCountry;
+    QLineEdit *lineEmail;
     QFrame *line_2;
     QHBoxLayout *horizontalLayout_9;
     QVBoxLayout *verticalLayout_19;
     QLabel *label_2;
     QLabel *label_9;
     QVBoxLayout *verticalLayout_20;
-    QLineEdit *lineEdit_5;
-    QLineEdit *lineEdit_3;
+    QLineEdit *lineUsername;
+    QLineEdit *linePassword;
     QPushButton *buttonAccount;
     QSpacerItem *horizontalSpacer_17;
     QSpacerItem *horizontalSpacer_18;
@@ -186,7 +167,7 @@ public:
     {
         if (Survey->objectName().isEmpty())
             Survey->setObjectName(QString::fromUtf8("Survey"));
-        Survey->resize(928, 679);
+        Survey->resize(940, 679);
         centralwidget = new QWidget(Survey);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout_13 = new QGridLayout(centralwidget);
@@ -243,7 +224,7 @@ public:
         label_5 = new QLabel(tab);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         QFont font;
-        font.setFamilies({QString::fromUtf8("Gill Sans")});
+        font.setFamily(QString::fromUtf8("Gill Sans"));
         font.setPointSize(42);
         label_5->setFont(font);
         label_5->setAlignment(Qt::AlignCenter);
@@ -253,7 +234,7 @@ public:
         label_6 = new QLabel(tab);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         QFont font1;
-        font1.setFamilies({QString::fromUtf8("Gill Sans")});
+        font1.setFamily(QString::fromUtf8("Gill Sans"));
         font1.setPointSize(37);
         label_6->setFont(font1);
         label_6->setAlignment(Qt::AlignCenter);
@@ -326,11 +307,11 @@ public:
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         gridLayout_3 = new QGridLayout(tab_2);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        verticalLayout_17 = new QVBoxLayout();
-        verticalLayout_17->setObjectName(QString::fromUtf8("verticalLayout_17"));
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_17->addItem(verticalSpacer_2);
+        verticalLayout_3->addItem(verticalSpacer_2);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -351,7 +332,7 @@ public:
         label_14 = new QLabel(tab_2);
         label_14->setObjectName(QString::fromUtf8("label_14"));
         QFont font2;
-        font2.setFamilies({QString::fromUtf8("Gill Sans")});
+        font2.setFamily(QString::fromUtf8("Gill Sans"));
         font2.setPointSize(30);
         label_14->setFont(font2);
         label_14->setTextFormat(Qt::AutoText);
@@ -361,7 +342,7 @@ public:
         label_13 = new QLabel(tab_2);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         QFont font3;
-        font3.setFamilies({QString::fromUtf8("Gill Sans")});
+        font3.setFamily(QString::fromUtf8("Gill Sans"));
         font3.setPointSize(16);
         label_13->setFont(font3);
         label_13->setTextFormat(Qt::RichText);
@@ -387,30 +368,24 @@ public:
 
         verticalLayout->addWidget(label_15);
 
-        verticalLayout_11 = new QVBoxLayout();
-        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
-        radioH1_1 = new QRadioButton(tab_11);
-        radioH1_1->setObjectName(QString::fromUtf8("radioH1_1"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        sliderLivingPartners = new QSlider(tab_11);
+        sliderLivingPartners->setObjectName(QString::fromUtf8("sliderLivingPartners"));
+        sliderLivingPartners->setMaximum(12);
+        sliderLivingPartners->setSliderPosition(0);
+        sliderLivingPartners->setOrientation(Qt::Horizontal);
 
-        verticalLayout_11->addWidget(radioH1_1);
+        horizontalLayout_2->addWidget(sliderLivingPartners);
 
-        radioH1_2 = new QRadioButton(tab_11);
-        radioH1_2->setObjectName(QString::fromUtf8("radioH1_2"));
+        label = new QLabel(tab_11);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setMinimumSize(QSize(16, 0));
 
-        verticalLayout_11->addWidget(radioH1_2);
-
-        radioH1_3 = new QRadioButton(tab_11);
-        radioH1_3->setObjectName(QString::fromUtf8("radioH1_3"));
-
-        verticalLayout_11->addWidget(radioH1_3);
-
-        radioH1_4 = new QRadioButton(tab_11);
-        radioH1_4->setObjectName(QString::fromUtf8("radioH1_4"));
-
-        verticalLayout_11->addWidget(radioH1_4);
+        horizontalLayout_2->addWidget(label);
 
 
-        verticalLayout->addLayout(verticalLayout_11);
+        verticalLayout->addLayout(horizontalLayout_2);
 
         buttonNextHousing1 = new QPushButton(tab_11);
         buttonNextHousing1->setObjectName(QString::fromUtf8("buttonNextHousing1"));
@@ -421,87 +396,6 @@ public:
         gridLayout_2->addLayout(verticalLayout, 0, 0, 1, 1);
 
         tabHousing->addTab(tab_11, QString());
-        tab_12 = new QWidget();
-        tab_12->setObjectName(QString::fromUtf8("tab_12"));
-        gridLayout_5 = new QGridLayout(tab_12);
-        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
-        verticalLayout_4 = new QVBoxLayout();
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        label_16 = new QLabel(tab_12);
-        label_16->setObjectName(QString::fromUtf8("label_16"));
-
-        verticalLayout_4->addWidget(label_16);
-
-        radioH2_1 = new QRadioButton(tab_12);
-        radioH2_1->setObjectName(QString::fromUtf8("radioH2_1"));
-
-        verticalLayout_4->addWidget(radioH2_1);
-
-        radioH2_2 = new QRadioButton(tab_12);
-        radioH2_2->setObjectName(QString::fromUtf8("radioH2_2"));
-
-        verticalLayout_4->addWidget(radioH2_2);
-
-        radioH2_3 = new QRadioButton(tab_12);
-        radioH2_3->setObjectName(QString::fromUtf8("radioH2_3"));
-
-        verticalLayout_4->addWidget(radioH2_3);
-
-        radioH2_4 = new QRadioButton(tab_12);
-        radioH2_4->setObjectName(QString::fromUtf8("radioH2_4"));
-
-        verticalLayout_4->addWidget(radioH2_4);
-
-        buttonNextHousing2 = new QPushButton(tab_12);
-        buttonNextHousing2->setObjectName(QString::fromUtf8("buttonNextHousing2"));
-
-        verticalLayout_4->addWidget(buttonNextHousing2);
-
-
-        gridLayout_5->addLayout(verticalLayout_4, 0, 0, 1, 1);
-
-        tabHousing->addTab(tab_12, QString());
-        tab_13 = new QWidget();
-        tab_13->setObjectName(QString::fromUtf8("tab_13"));
-        gridLayout_4 = new QGridLayout(tab_13);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        label_17 = new QLabel(tab_13);
-        label_17->setObjectName(QString::fromUtf8("label_17"));
-
-        verticalLayout_3->addWidget(label_17);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        horizontalSlider_3 = new QSlider(tab_13);
-        horizontalSlider_3->setObjectName(QString::fromUtf8("horizontalSlider_3"));
-        horizontalSlider_3->setMaximum(10);
-        horizontalSlider_3->setSingleStep(1);
-        horizontalSlider_3->setOrientation(Qt::Horizontal);
-        horizontalSlider_3->setTickPosition(QSlider::TicksBelow);
-        horizontalSlider_3->setTickInterval(1);
-
-        horizontalLayout_2->addWidget(horizontalSlider_3);
-
-        label_18 = new QLabel(tab_13);
-        label_18->setObjectName(QString::fromUtf8("label_18"));
-        label_18->setMinimumSize(QSize(16, 0));
-
-        horizontalLayout_2->addWidget(label_18);
-
-
-        verticalLayout_3->addLayout(horizontalLayout_2);
-
-        buttonNextHousing3 = new QPushButton(tab_13);
-        buttonNextHousing3->setObjectName(QString::fromUtf8("buttonNextHousing3"));
-
-        verticalLayout_3->addWidget(buttonNextHousing3);
-
-
-        gridLayout_4->addLayout(verticalLayout_3, 0, 0, 1, 1);
-
-        tabHousing->addTab(tab_13, QString());
 
         verticalLayout_16->addWidget(tabHousing);
 
@@ -513,18 +407,18 @@ public:
         horizontalLayout->addItem(horizontalSpacer_2);
 
 
-        verticalLayout_17->addLayout(horizontalLayout);
+        verticalLayout_3->addLayout(horizontalLayout);
 
         verticalSpacer = new QSpacerItem(20, 100, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_17->addItem(verticalSpacer);
+        verticalLayout_3->addItem(verticalSpacer);
 
         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_17->addItem(verticalSpacer_3);
+        verticalLayout_3->addItem(verticalSpacer_3);
 
 
-        gridLayout_3->addLayout(verticalLayout_17, 0, 0, 1, 1);
+        gridLayout_3->addLayout(verticalLayout_3, 0, 0, 1, 1);
 
         tabMain->addTab(tab_2, QString());
         tab_3 = new QWidget();
@@ -533,6 +427,10 @@ public:
         gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
         gridLayout_9 = new QGridLayout();
         gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
+        verticalSpacer_5 = new QSpacerItem(20, 100, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_9->addItem(verticalSpacer_5, 2, 0, 1, 1);
+
         verticalSpacer_4 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_9->addItem(verticalSpacer_4, 0, 0, 1, 1);
@@ -540,10 +438,6 @@ public:
         verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_9->addItem(verticalSpacer_6, 3, 0, 1, 1);
-
-        verticalSpacer_5 = new QSpacerItem(20, 100, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_9->addItem(verticalSpacer_5, 2, 0, 1, 1);
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
@@ -602,15 +496,15 @@ public:
 
         verticalLayout_12 = new QVBoxLayout();
         verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
-        radioButton_13 = new QRadioButton(tab_14);
-        radioButton_13->setObjectName(QString::fromUtf8("radioButton_13"));
+        radioButton_commuteY = new QRadioButton(tab_14);
+        radioButton_commuteY->setObjectName(QString::fromUtf8("radioButton_commuteY"));
 
-        verticalLayout_12->addWidget(radioButton_13);
+        verticalLayout_12->addWidget(radioButton_commuteY);
 
-        radioButton_14 = new QRadioButton(tab_14);
-        radioButton_14->setObjectName(QString::fromUtf8("radioButton_14"));
+        radioButton_commuteN = new QRadioButton(tab_14);
+        radioButton_commuteN->setObjectName(QString::fromUtf8("radioButton_commuteN"));
 
-        verticalLayout_12->addWidget(radioButton_14);
+        verticalLayout_12->addWidget(radioButton_commuteN);
 
 
         verticalLayout_6->addLayout(verticalLayout_12);
@@ -798,67 +692,68 @@ public:
 
         verticalLayout_14 = new QVBoxLayout();
         verticalLayout_14->setObjectName(QString::fromUtf8("verticalLayout_14"));
-        lineEdit = new QLineEdit(tab_5);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setMinimumSize(QSize(150, 0));
+        lineName = new QLineEdit(tab_5);
+        lineName->setObjectName(QString::fromUtf8("lineName"));
+        lineName->setMinimumSize(QSize(150, 0));
 
-        verticalLayout_14->addWidget(lineEdit);
+        verticalLayout_14->addWidget(lineName);
 
         horizontalLayout_12 = new QHBoxLayout();
         horizontalLayout_12->setObjectName(QString::fromUtf8("horizontalLayout_12"));
-        spinBox_2 = new QSpinBox(tab_5);
-        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
-        spinBox_2->setMinimum(1);
-        spinBox_2->setMaximum(31);
+        spinBoxDay = new QSpinBox(tab_5);
+        spinBoxDay->setObjectName(QString::fromUtf8("spinBoxDay"));
+        spinBoxDay->setMinimum(1);
+        spinBoxDay->setMaximum(31);
 
-        horizontalLayout_12->addWidget(spinBox_2);
+        horizontalLayout_12->addWidget(spinBoxDay);
 
         horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_12->addItem(horizontalSpacer_16);
 
-        spinBox_3 = new QSpinBox(tab_5);
-        spinBox_3->setObjectName(QString::fromUtf8("spinBox_3"));
-        spinBox_3->setMinimum(1);
-        spinBox_3->setMaximum(12);
+        spinBoxMonth = new QSpinBox(tab_5);
+        spinBoxMonth->setObjectName(QString::fromUtf8("spinBoxMonth"));
+        spinBoxMonth->setMinimum(1);
+        spinBoxMonth->setMaximum(12);
 
-        horizontalLayout_12->addWidget(spinBox_3);
+        horizontalLayout_12->addWidget(spinBoxMonth);
 
         horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_12->addItem(horizontalSpacer_15);
 
-        spinBox = new QSpinBox(tab_5);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
-        spinBox->setMinimum(1000);
-        spinBox->setMaximum(2022);
-        spinBox->setValue(1990);
+        spinBoxYear = new QSpinBox(tab_5);
+        spinBoxYear->setObjectName(QString::fromUtf8("spinBoxYear"));
+        spinBoxYear->setMinimum(1000);
+        spinBoxYear->setMaximum(2022);
+        spinBoxYear->setValue(1990);
 
-        horizontalLayout_12->addWidget(spinBox);
+        horizontalLayout_12->addWidget(spinBoxYear);
 
 
         verticalLayout_14->addLayout(horizontalLayout_12);
 
-        comboBox = new QComboBox(tab_5);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboCountry = new QComboBox(tab_5);
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->addItem(QString());
+        comboCountry->setObjectName(QString::fromUtf8("comboCountry"));
 
-        verticalLayout_14->addWidget(comboBox);
+        verticalLayout_14->addWidget(comboCountry);
 
-        lineEdit_4 = new QLineEdit(tab_5);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        lineEmail = new QLineEdit(tab_5);
+        lineEmail->setObjectName(QString::fromUtf8("lineEmail"));
 
-        verticalLayout_14->addWidget(lineEdit_4);
+        verticalLayout_14->addWidget(lineEmail);
 
 
         horizontalLayout_7->addLayout(verticalLayout_14);
@@ -893,16 +788,16 @@ public:
 
         verticalLayout_20 = new QVBoxLayout();
         verticalLayout_20->setObjectName(QString::fromUtf8("verticalLayout_20"));
-        lineEdit_5 = new QLineEdit(tab_5);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+        lineUsername = new QLineEdit(tab_5);
+        lineUsername->setObjectName(QString::fromUtf8("lineUsername"));
 
-        verticalLayout_20->addWidget(lineEdit_5);
+        verticalLayout_20->addWidget(lineUsername);
 
-        lineEdit_3 = new QLineEdit(tab_5);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setEchoMode(QLineEdit::Password);
+        linePassword = new QLineEdit(tab_5);
+        linePassword->setObjectName(QString::fromUtf8("linePassword"));
+        linePassword->setEchoMode(QLineEdit::Password);
 
-        verticalLayout_20->addWidget(lineEdit_3);
+        verticalLayout_20->addWidget(linePassword);
 
 
         horizontalLayout_9->addLayout(verticalLayout_20);
@@ -956,9 +851,9 @@ public:
         Survey->setStatusBar(statusbar);
 
         retranslateUi(Survey);
-        //QObject::connect(horizontalSlider_3, &QSlider::valueChanged, label_18, &QLabel::setNum);
+        QObject::connect(sliderLivingPartners, SIGNAL(valueChanged(int)), label, SLOT(setNum(int)));
 
-        tabMain->setCurrentIndex(3);
+        tabMain->setCurrentIndex(2);
         tabHousing->setCurrentIndex(0);
         tabTransport->setCurrentIndex(0);
 
@@ -968,76 +863,63 @@ public:
 
     void retranslateUi(QMainWindow *Survey)
     {
-        Survey->setWindowTitle(QCoreApplication::translate("Survey", "MainWindow", nullptr));
-        label_5->setText(QCoreApplication::translate("Survey", "CARBON TRACKER", nullptr));
-        label_6->setText(QCoreApplication::translate("Survey", "ARE YOU READY FOR A CHANGE?", nullptr));
+        Survey->setWindowTitle(QApplication::translate("Survey", "MainWindow", nullptr));
+        label_5->setText(QApplication::translate("Survey", "CARBON TRACKER", nullptr));
+        label_6->setText(QApplication::translate("Survey", "ARE YOU READY FOR A CHANGE?", nullptr));
         label_pic->setText(QString());
-        buttonMain->setText(QCoreApplication::translate("Survey", "Compute your carbon footprint", nullptr));
-        tabMain->setTabText(tabMain->indexOf(tab), QCoreApplication::translate("Survey", "Welcome", nullptr));
+        buttonMain->setText(QApplication::translate("Survey", "Compute your carbon footprint", nullptr));
+        tabMain->setTabText(tabMain->indexOf(tab), QApplication::translate("Survey", "Welcome", nullptr));
         label_pic_3->setText(QString());
-        label_14->setText(QCoreApplication::translate("Survey", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Housing</span></p></body></html>", nullptr));
-        label_13->setText(QCoreApplication::translate("Survey", "<html><head/><body><p align=\"center\">Housing leaves a footprint. Let's see how sustainable your way of living is.</p></body></html>", nullptr));
-        label_15->setText(QCoreApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:18pt;\">Do you live alone or do you have flatmates?</span></p></body></html>", nullptr));
-        radioH1_1->setText(QCoreApplication::translate("Survey", "Alone", nullptr));
-        radioH1_2->setText(QCoreApplication::translate("Survey", "1-2", nullptr));
-        radioH1_3->setText(QCoreApplication::translate("Survey", "3-4", nullptr));
-        radioH1_4->setText(QCoreApplication::translate("Survey", "5+", nullptr));
-        buttonNextHousing1->setText(QCoreApplication::translate("Survey", "Next", nullptr));
-        tabHousing->setTabText(tabHousing->indexOf(tab_11), QCoreApplication::translate("Survey", "Question 1", nullptr));
-        label_16->setText(QCoreApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:16pt;\">How much do you spend a year in furniture?</span></p></body></html>", nullptr));
-        radioH2_1->setText(QCoreApplication::translate("Survey", "I don't buy furniture often", nullptr));
-        radioH2_2->setText(QCoreApplication::translate("Survey", "Less than 200 \342\202\254", nullptr));
-        radioH2_3->setText(QCoreApplication::translate("Survey", "200-1000 \342\202\254", nullptr));
-        radioH2_4->setText(QCoreApplication::translate("Survey", "More than a 1000 \342\202\254", nullptr));
-        buttonNextHousing2->setText(QCoreApplication::translate("Survey", "Next", nullptr));
-        tabHousing->setTabText(tabHousing->indexOf(tab_12), QCoreApplication::translate("Survey", "Question 2", nullptr));
-        label_17->setText(QCoreApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:16pt;\">How much electricity do you consume in average monthly</span></p></body></html>", nullptr));
-        label_18->setText(QCoreApplication::translate("Survey", "0", nullptr));
-        buttonNextHousing3->setText(QCoreApplication::translate("Survey", "Next", nullptr));
-        tabHousing->setTabText(tabHousing->indexOf(tab_13), QCoreApplication::translate("Survey", "Question 3", nullptr));
-        tabMain->setTabText(tabMain->indexOf(tab_2), QCoreApplication::translate("Survey", "Housing", nullptr));
+        label_14->setText(QApplication::translate("Survey", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Housing</span></p></body></html>", nullptr));
+        label_13->setText(QApplication::translate("Survey", "<html><head/><body><p align=\"center\">Housing leaves a footprint. Let's see how sustainable your way of living is.</p></body></html>", nullptr));
+        label_15->setText(QApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:18pt;\">Do you live alone or do you have flatmates?</span></p></body></html>", nullptr));
+        label->setText(QApplication::translate("Survey", "0", nullptr));
+        buttonNextHousing1->setText(QApplication::translate("Survey", "Next", nullptr));
+        tabHousing->setTabText(tabHousing->indexOf(tab_11), QApplication::translate("Survey", "Question 1", nullptr));
+        tabMain->setTabText(tabMain->indexOf(tab_2), QApplication::translate("Survey", "Housing", nullptr));
         pic_label_3->setText(QString());
-        label_21->setText(QCoreApplication::translate("Survey", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Transport</span></p></body></html>", nullptr));
-        label_22->setText(QCoreApplication::translate("Survey", "<html><head/><body><p align=\"center\">Transportation leaves a footprint. We would like to know your base consumption in transport.</p></body></html>", nullptr));
-        label_23->setText(QCoreApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:18pt;\">Do you commute to work?</span></p></body></html>", nullptr));
-        radioButton_13->setText(QCoreApplication::translate("Survey", "Yes", nullptr));
-        radioButton_14->setText(QCoreApplication::translate("Survey", "No", nullptr));
-        buttonNextTransport1->setText(QCoreApplication::translate("Survey", "Next", nullptr));
-        tabTransport->setTabText(tabTransport->indexOf(tab_14), QCoreApplication::translate("Survey", "Question 1", nullptr));
-        label_24->setText(QCoreApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:16pt;\">Do you commute to work?</span></p></body></html>", nullptr));
-        radio1_4->setText(QCoreApplication::translate("Survey", "Yes", nullptr));
-        radio2_4->setText(QCoreApplication::translate("Survey", "Less than 200 \342\202\254", nullptr));
-        radio3_4->setText(QCoreApplication::translate("Survey", "200-1000 \342\202\254", nullptr));
-        radio4_4->setText(QCoreApplication::translate("Survey", "More than a 1000 \342\202\254", nullptr));
-        buttonNextTransport2->setText(QCoreApplication::translate("Survey", "Next", nullptr));
-        tabTransport->setTabText(tabTransport->indexOf(tab_15), QCoreApplication::translate("Survey", "Question 2", nullptr));
-        label_25->setText(QCoreApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:16pt;\">How much electricity do you consume in average monthly</span></p></body></html>", nullptr));
-        label_26->setText(QCoreApplication::translate("Survey", "0", nullptr));
-        buttonNextTransport3->setText(QCoreApplication::translate("Survey", "Next", nullptr));
-        tabTransport->setTabText(tabTransport->indexOf(tab_16), QCoreApplication::translate("Survey", "Question 3", nullptr));
-        tabMain->setTabText(tabMain->indexOf(tab_3), QCoreApplication::translate("Survey", "Transport", nullptr));
-        label_27->setText(QCoreApplication::translate("Survey", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Create your account</span></p></body></html>", nullptr));
-        label_28->setText(QCoreApplication::translate("Survey", "<html><head/><body><p align=\"center\">Please submit your information:</p></body></html>", nullptr));
-        label_3->setText(QCoreApplication::translate("Survey", "Name", nullptr));
-        label_10->setText(QCoreApplication::translate("Survey", "Date of birth (DD/MM/YYYY)", nullptr));
-        label_7->setText(QCoreApplication::translate("Survey", "Country", nullptr));
-        label_8->setText(QCoreApplication::translate("Survey", "Email", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("Survey", "France", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("Survey", "German", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("Survey", "Japan", nullptr));
-        comboBox->setItemText(3, QCoreApplication::translate("Survey", "Korea", nullptr));
-        comboBox->setItemText(4, QCoreApplication::translate("Survey", "Lebanon", nullptr));
-        comboBox->setItemText(5, QCoreApplication::translate("Survey", "Mexico", nullptr));
-        comboBox->setItemText(6, QCoreApplication::translate("Survey", "Netherlands", nullptr));
-        comboBox->setItemText(7, QCoreApplication::translate("Survey", "Romania", nullptr));
-        comboBox->setItemText(8, QCoreApplication::translate("Survey", "Spain", nullptr));
-        comboBox->setItemText(9, QCoreApplication::translate("Survey", "Tunesia", nullptr));
-        comboBox->setItemText(10, QCoreApplication::translate("Survey", "United States", nullptr));
+        label_21->setText(QApplication::translate("Survey", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Transport</span></p></body></html>", nullptr));
+        label_22->setText(QApplication::translate("Survey", "<html><head/><body><p align=\"center\">Transportation leaves a footprint. We would like to know your base consumption in transport.</p></body></html>", nullptr));
+        label_23->setText(QApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:18pt;\">Do you commute to work?</span></p></body></html>", nullptr));
+        radioButton_commuteY->setText(QApplication::translate("Survey", "Yes", nullptr));
+        radioButton_commuteN->setText(QApplication::translate("Survey", "No", nullptr));
+        buttonNextTransport1->setText(QApplication::translate("Survey", "Next", nullptr));
+        tabTransport->setTabText(tabTransport->indexOf(tab_14), QApplication::translate("Survey", "Question 1", nullptr));
+        label_24->setText(QApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:16pt;\">Do you commute to work?</span></p></body></html>", nullptr));
+        radio1_4->setText(QApplication::translate("Survey", "Yes", nullptr));
+        radio2_4->setText(QApplication::translate("Survey", "Less than 200 \342\202\254", nullptr));
+        radio3_4->setText(QApplication::translate("Survey", "200-1000 \342\202\254", nullptr));
+        radio4_4->setText(QApplication::translate("Survey", "More than a 1000 \342\202\254", nullptr));
+        buttonNextTransport2->setText(QApplication::translate("Survey", "Next", nullptr));
+        tabTransport->setTabText(tabTransport->indexOf(tab_15), QApplication::translate("Survey", "Question 2", nullptr));
+        label_25->setText(QApplication::translate("Survey", "<html><head/><body><p><span style=\" font-size:16pt;\">How much electricity do you consume in average monthly</span></p></body></html>", nullptr));
+        label_26->setText(QApplication::translate("Survey", "0", nullptr));
+        buttonNextTransport3->setText(QApplication::translate("Survey", "Next", nullptr));
+        tabTransport->setTabText(tabTransport->indexOf(tab_16), QApplication::translate("Survey", "Question 3", nullptr));
+        tabMain->setTabText(tabMain->indexOf(tab_3), QApplication::translate("Survey", "Transport", nullptr));
+        label_27->setText(QApplication::translate("Survey", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Create your account</span></p></body></html>", nullptr));
+        label_28->setText(QApplication::translate("Survey", "<html><head/><body><p align=\"center\">Please submit your information:</p></body></html>", nullptr));
+        label_3->setText(QApplication::translate("Survey", "Name", nullptr));
+        label_10->setText(QApplication::translate("Survey", "Date of birth (DD/MM/YYYY)", nullptr));
+        label_7->setText(QApplication::translate("Survey", "Country", nullptr));
+        label_8->setText(QApplication::translate("Survey", "Email", nullptr));
+        comboCountry->setItemText(0, QApplication::translate("Survey", "France", nullptr));
+        comboCountry->setItemText(1, QApplication::translate("Survey", "China", nullptr));
+        comboCountry->setItemText(2, QApplication::translate("Survey", "German", nullptr));
+        comboCountry->setItemText(3, QApplication::translate("Survey", "Japan", nullptr));
+        comboCountry->setItemText(4, QApplication::translate("Survey", "Korea", nullptr));
+        comboCountry->setItemText(5, QApplication::translate("Survey", "Lebanon", nullptr));
+        comboCountry->setItemText(6, QApplication::translate("Survey", "Mexico", nullptr));
+        comboCountry->setItemText(7, QApplication::translate("Survey", "Netherlands", nullptr));
+        comboCountry->setItemText(8, QApplication::translate("Survey", "Romania", nullptr));
+        comboCountry->setItemText(9, QApplication::translate("Survey", "Spain", nullptr));
+        comboCountry->setItemText(10, QApplication::translate("Survey", "Tunesia", nullptr));
+        comboCountry->setItemText(11, QApplication::translate("Survey", "United States", nullptr));
 
-        label_2->setText(QCoreApplication::translate("Survey", "Username", nullptr));
-        label_9->setText(QCoreApplication::translate("Survey", "Password", nullptr));
-        buttonAccount->setText(QCoreApplication::translate("Survey", "Submit", nullptr));
-        tabMain->setTabText(tabMain->indexOf(tab_5), QCoreApplication::translate("Survey", "Create your account", nullptr));
+        label_2->setText(QApplication::translate("Survey", "Username", nullptr));
+        label_9->setText(QApplication::translate("Survey", "Password", nullptr));
+        buttonAccount->setText(QApplication::translate("Survey", "Submit", nullptr));
+        tabMain->setTabText(tabMain->indexOf(tab_5), QApplication::translate("Survey", "Create your account", nullptr));
     } // retranslateUi
 
 };

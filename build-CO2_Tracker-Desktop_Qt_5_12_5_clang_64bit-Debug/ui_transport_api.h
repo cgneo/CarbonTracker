@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'transport_api.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.2
+** Created by: Qt User Interface Compiler version 5.12.5
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -98,9 +98,9 @@ public:
 
     void retranslateUi(QMainWindow *api_transport)
     {
-        api_transport->setWindowTitle(QCoreApplication::translate("api_transport", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("api_transport", "Magic", nullptr));
-        label->setText(QCoreApplication::translate("api_transport", "CO2 Emissions: ", nullptr));
+        api_transport->setWindowTitle(QApplication::translate("api_transport", "MainWindow", nullptr));
+        pushButton->setText(QApplication::translate("api_transport", "Magic", nullptr));
+        label->setText(QApplication::translate("api_transport", "CO2 Emissions: ", nullptr));
     } // retranslateUi
 
 };
