@@ -1,16 +1,17 @@
-#include <QGraphicsWidget>
 #include "transport_API.cpp"
 #include "tests.h"
 #include "json_DB.hpp"
 #include "object.h"
 #include "transport.h"
-#include "api_transport.h"
+#include "transport_api.h"
 #include "mainwindow.h"
 #include "survey.h"
 #include "donut.h"
+#include <QSsl>
+#include <QGraphicsWidget>
 #include <QApplication>
 #include <json_DB.hpp>
-
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
@@ -35,6 +36,9 @@ int main(int argc, char *argv[])
     //json_obj.createJsonUserObject(doc, u);
 //    json_obj.writeJsonUser(u);
 
+   Tests t;
+   QString file = obj.get_path() + obj.get_FileName();
+   t.test_does_file_exist(file);
 
 //    Tests t;
 //    t.test_JsonUser();
@@ -68,7 +72,18 @@ int main(int argc, char *argv[])
  //   QString file = obj.get_path() + obj.get_FileName();
 //    t.test_does_file_exist(file);
 
+   bool new_user = !t.test_does_file_exist(file);
 
+   if (new_user){ //If user is new, open profile set_up
+       Survey window;
+       window.show();
+       return a.exec();
+   }
+   else{ //Else open regular window
+       MainWindow window;
+       window.show();
+       return a.exec();
+   }
 
 //    bool new_user = !t.test_does_file_exist(file);
 
@@ -103,7 +118,4 @@ int main(int argc, char *argv[])
 
 //     double cbf = week1.get_footprint();
 //     std::cout << cbf << std::endl;
-
-
-
 }

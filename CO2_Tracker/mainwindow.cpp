@@ -5,6 +5,17 @@
 #include <QDebug>
 #include <QMap>
 #include "json_DB.hpp"
+#include "json_DB.cpp"
+#include <QApplication>
+#include "transport_api.h"
+#include <QMovie>
+#include <QLabel>
+#include <QGraphicsScene>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QDir>
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,15 +23,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPixmap pix1("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/food-pic.png");
-    //ui ->food_label -> setPixmap(pix1.scaled(450,250, Qt::KeepAspectRatio));
+    QPixmap pix1(":/challenges/food-pic.png");
+    ui -> food_label -> setPixmap(pix1.scaled(450,250, Qt::KeepAspectRatio));
 
-    QPixmap pix2("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/new_plane_pic.png");
-    ui ->transport_label -> setPixmap(pix2.scaled(450,250, Qt::KeepAspectRatio));
+    QPixmap pix2(":/challenges/plane-pic.png");
+    ui -> transport_label -> setPixmap(pix2.scaled(450,250, Qt::KeepAspectRatio));
 
-    QPixmap pix3("/Users/cyrine/Downloads/CarbonTracker/CO2_Tracker/build/tips photos/home-pic.png");
-    ui ->home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
+    QPixmap pix3(":/challenges/home-pic.png");
+    ui -> home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
+    QPixmap pix4(":/challenges/seed.png");
+    ui -> seed -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
 
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
@@ -84,10 +97,28 @@ MainWindow::MainWindow(QWidget *parent)
     connect(animation_seed, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
 
-    ui->daily_challenge_1->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 1")));
-    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 2")));
+    std::string a = Json_DB::random_key(Json_DB::daily_challenges);
+    std::string b = Json_DB::random_key(Json_DB::daily_challenges);
+
+    ui->daily_challenge_1->setText(QString::fromStdString(Json_DB::get_challenge_by_key(a)));
+    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key(b)));
     ui->daily_challenge_3->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 3")));
     ui->daily_challenge_4->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 4")));
+
+    ui->food_tip_1->setText(QString::fromStdString(Json_DB::get_ftip_by_key("Food Tip 1")));
+    ui->food_tip_2->setText(QString::fromStdString(Json_DB::get_ftip_by_key("Food Tip 2")));
+    ui->food_tip_3->setText(QString::fromStdString(Json_DB::get_ftip_by_key("Food Tip 3")));
+
+    ui->transportation_tip_1->setText(QString::fromStdString(Json_DB::get_ttip_by_key("Transportation Tip 1")));
+    ui->transportation_tip_2->setText(QString::fromStdString(Json_DB::get_ttip_by_key("Transportation Tip 2")));
+    ui->transportation_tip_3->setText(QString::fromStdString(Json_DB::get_ttip_by_key("Transportation Tip 3")));
+
+    ui->house_tip_1->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 1")));
+    ui->house_tip_2->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 2")));
+    ui->house_tip_3->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 3")));
+
+    ui -> tree_button -> setEnabled(false);
+    connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
 }
 
 
@@ -107,7 +138,9 @@ void MainWindow::on_Surveybutton_clicked()
 
 void MainWindow::on_Scanbutton_clicked()
 {
-
+    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
+    QMessageBox::information(this, "...", file_name);
+    //amine_function(file_name)
 }
 
 void MainWindow::on_daily_challenge_1_stateChanged(int)
@@ -144,6 +177,7 @@ void MainWindow::on_daily_challenge_4_stateChanged(int)
     if (ui-> daily_challenge_4-> isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
         animation_4 -> start();
+        enableButton();
     }else{
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() - 25);
     }
@@ -153,5 +187,70 @@ void MainWindow::get_seed()
 {
     if (ui -> SeedsprogressBar -> value() == 100){
         animation_seed -> start();
+        enableButton();
     }
+}
+
+void MainWindow::on_buttonTransport_clicked()
+{
+    Transport t;
+    string vehicle = ui->vehicleTransport->currentText().toStdString(); // taking input from user for vehicle
+    string distance = ui->distanceTransport->cleanText().toStdString(); // taking input from user for distance
+    t.set_type(vehicle);
+    char* d = 0;//distance
+    t.set_distance(d);// convert distance to char
+    // converting std strings to char arrays
+        // vehicle
+    int n = vehicle.length();
+    char char_array_vehicle[n+1];
+    strcpy(char_array_vehicle, vehicle.c_str());
+
+        // distance
+    int m = distance.length();
+    char char_array_distance[m+1];
+    strcpy(char_array_distance, distance.c_str());
+
+    // calling the (transport) api
+    transport_api api;
+    api.get_reply(char_array_distance, char_array_vehicle);
+
+    // outputting the emission for given vehicle and distance
+    QString emission = QString::number(api.get_emission());
+    t.set_footprint(api.get_emission());
+    ui->outputTransport->setText(emission);
+}
+
+void MainWindow::enableButton()
+{
+    ui -> tree_button ->setEnabled(true);
+}
+
+
+
+
+void MainWindow::on_tree_button_clicked()
+{
+    QMovie *movie = new QMovie(":/challenges/tree_animation.gif");
+    ui -> tree ->setMovie(movie);
+    QSize scaledSize(200, 300);
+    movie -> setScaledSize(scaledSize);
+    if (movie ->currentFrameNumber() < 3){
+    movie -> start();
+    }
+    if (movie -> currentFrameNumber() == 3){
+        movie -> stop();
+    }
+
+//    if(movie->currentFrameNumber() == (movie->frameCount() - 1))
+//            {
+//                movie->stop();
+//                //Explicity emit finished signal so that label **
+//                //can show the image instead of a frozen gif
+//                //Also, double check that movie stopped before emiting
+//                if (movie->state() == QMovie::NotRunning)
+//                {
+//                    emit movie->finished();
+//                }
+//            }
+
 }

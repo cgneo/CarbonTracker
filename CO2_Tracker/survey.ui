@@ -679,6 +679,32 @@ QTabBar::tab:selected, QTabBar::tab:hover {
             </property>
            </spacer>
           </item>
+          <item row="3" column="0">
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>100</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item row="1" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
@@ -689,6 +715,19 @@ QTabBar::tab:selected, QTabBar::tab:hover {
               <property name="sizeHint" stdset="0">
                <size>
                 <width>78</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
                 <height>20</height>
                </size>
               </property>
@@ -744,19 +783,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
               </item>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <item>
-                 <spacer name="horizontalSpacer_3">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>100</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
                 <item>
                  <widget class="QTabWidget" name="tabTransport">
                   <property name="currentIndex">
@@ -939,22 +965,22 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                   </widget>
                  </widget>
                 </item>
-                <item>
-                 <spacer name="horizontalSpacer_4">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>100</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
                </layout>
               </item>
              </layout>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
             </item>
             <item>
              <spacer name="horizontalSpacer_12">
@@ -971,40 +997,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
             </item>
            </layout>
           </item>
-          <item row="2" column="0">
-           <spacer name="verticalSpacer_5">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>100</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="3" column="0">
-           <spacer name="verticalSpacer_6">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
          </layout>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="label_pic_2">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
         </item>
        </layout>
       </widget>
@@ -1204,7 +1197,63 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                        </layout>
                       </item>
                       <item>
-                       <widget class="QLineEdit" name="lineEdit_2"/>
+                       <widget class="QComboBox" name="comboBox">
+                        <item>
+                         <property name="text">
+                          <string>France</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>German</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Japan</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Korea</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Lebanon</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Mexico</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Netherlands</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Romania</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Spain</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Tunesia</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>United States</string>
+                         </property>
+                        </item>
+                       </widget>
                       </item>
                       <item>
                        <widget class="QLineEdit" name="lineEdit_4"/>
