@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "profile_picture.h"
 #include <QGraphicsWidget>
 #include <receipt.h>
 #include "tests.h"

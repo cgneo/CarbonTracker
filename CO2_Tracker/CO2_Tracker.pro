@@ -16,11 +16,11 @@ SOURCES += \
     json.cpp \
     object.cpp \
     food.cpp \
+    profile_picture.cpp \
     tests.cpp \
     transport.cpp \
     user.cpp\
     main.cpp \
-    mainwindow.cpp \
     receipt.cpp \
 
 
@@ -31,14 +31,14 @@ HEADERS += \
     json.h \
     object.h \
     food.h \
+    profile_picture.h \
     tests.h \
     transport.h \
     user.h \
-    mainwindow.h \
     receipt.h
 
 FORMS += \
-    mainwindow.ui
+    profile_picture.ui
 
 TARGET = CarbonTracker_exe
 
