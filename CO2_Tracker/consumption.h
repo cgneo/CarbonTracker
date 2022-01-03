@@ -33,12 +33,16 @@ public:
     Object *get_object_i(int i);
 
     //Other methods
-    void calculate_each_footprint(); //initialization method
+        //Initialization methods
+    void calculate_each_footprint();
     void add_object(Object *obj);
-    void remove_object(Object *obj);
     void add_base_consumption(Base_Consumption base);
+
+        //Methods for graphs
     double get_vehicle_footprint(string vehicle_name);
-    double get_monthly_footprint(int month);
+    double get_yearly_footprint(int year);
+    double get_monthly_footprint(int month, int year);
+    double get_daily_footprint(int day, int month, int year);
 
 };
 

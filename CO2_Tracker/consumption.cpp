@@ -78,19 +78,6 @@ void Consumption::add_object(Object *obj){
     }
 }
 
-/*
-void Consumption::remove_object(Object obj){
-
-    int size = total_consumption.size();
-    for(vector<Object>::iterator i=total_consumption.begin(); i!=total_consumption.end();i++){
-        if(total_consumption[i]==obj){
-
-        }
-    }
-
-}Object get_object_i(int i)
-*/ // not sure yet if we will need this
-
 void Consumption::add_base_consumption(Base_Consumption base){
     int size = base.get_size();
     for(int i=0;i<size;i++){
@@ -107,8 +94,9 @@ void Consumption::add_base_consumption(Base_Consumption base){
 }
 
 double Consumption::get_vehicle_footprint(string vehicle_name){
+    int size = total_consumption.size();
     double vehicle_footprint = 0;
-    for(int i=0;;){
+    for(int i=0;i<size;i++){
         if(total_consumption[i]->get_name()==vehicle_name){
             vehicle_footprint += total_consumption[i]->get_footprint();
         }
@@ -116,14 +104,46 @@ double Consumption::get_vehicle_footprint(string vehicle_name){
     return vehicle_footprint;
 }
 
-double Consumption::get_monthly_footprint(int month){
-    double month_footprint = 0;
-    for(int i=0;;){
-        if(total_consumption[i]->get_date()->get_month()==month){
-            month_footprint += total_consumption[i]->get_footprint();
+double Consumption::get_yearly_footprint(int year){
+    int size = total_consumption.size();
+    double year_footprint = 0;
+    for(int i=0;i<size;i++){
+        if(total_consumption[i]->get_date()->get_year()==year){
+            year_footprint += total_consumption[i]->get_footprint();
+            }
         }
+    return year_footprint;
+}
+
+double Consumption::get_monthly_footprint(int month, int year){
+    int size = total_consumption.size();
+    double month_footprint = 0;
+    for(int i=0;i<size;i++){
+        if(total_consumption[i]->get_date()->get_year()==year){
+            if(total_consumption[i]->get_date()->get_month()==month){
+                month_footprint += total_consumption[i]->get_footprint();
+            }
+        }
+
     }
     return month_footprint;
+}
+
+double Consumption::get_daily_footprint(int day, int month, int year){
+    int size = total_consumption.size();
+    double daily_footprint = 0;
+    for(int i=0;i<size;i++){
+        if(total_consumption[i]->get_date()->get_year()==year){
+            if(total_consumption[i]->get_date()->get_month()==month){
+                if(total_consumption[i]->get_date()->get_day()==day){
+                    daily_footprint += total_consumption[i]->get_footprint();
+                }
+            }
+        }
+
+    }
+    return daily_footprint;
+
 }
 
 
