@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 //    MainWindow window;
 //    window.show();
 //    return a.exec();
-/*
+
     Json_DB json_obj;
     QJsonObject doc;
 
@@ -32,58 +32,58 @@ int main(int argc, char *argv[])
     int birthmonth = 10;
     int birthyear = 2001;
 
-    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);*/
+    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+
     //json_obj.createJsonUserObject(doc, u);
 //    json_obj.writeJsonUser(u);
 
-   Tests t;
-   QString file = obj.get_path() + obj.get_FileName();
-   t.test_does_file_exist(file);
+    Tests t;
+//   QString file = obj.get_path() + obj.get_FileName();
+//   t.test_does_file_exist(file);
 
 //    Tests t;
-//    t.test_JsonUser();
+    t.test_JsonUser();
 
 //    QString full_path = json_obj.get_path() + json_obj.get_FileName();
 
 
-//    Date* fecha = new Date(01,04,2019);
-//    Date* fech2 = new Date(02,03,2020);
-//    Object obj(fecha, "Metro", "Transport");
-//    Object obj2(fecha, "Avion", "Transport");
-//    obj.set_footprint(10390);
-//    obj2.set_footprint(1000000);
+    Date* fecha = new Date(01,04,2019);
+    Date* fech2 = new Date(02,03,2020);
+    Object obj(fecha, "Metro", "Transport");
+    Object obj2(fech2, "Avion", "Transport");
+    obj.set_footprint(10390);
+    obj2.set_footprint(1000000);
 
-
-//    json_obj.writeJsonUser(u);
-//    json_obj.addObject_to_file(obj);
-//    json_obj.addObject_to_file(obj2);
+    //json_obj.writeJsonUser(u);
+    json_obj.addObject_to_file(obj);
+    json_obj.addObject_to_file(obj2);
 
 
 //    Survey window;
 //    window.show();
 //    return a.exec();
 
-      Donut d;
-      d.show();
-      return a.exec();
+//      Donut d;
+//      d.show();
+//      return a.exec();
+//    Json_DB obj;
 
-
- //   Tests t;
- //   QString file = obj.get_path() + obj.get_FileName();
+//    Tests t;
+//    QString file = obj.get_path() + obj.get_FileName();
 //    t.test_does_file_exist(file);
 
-   bool new_user = !t.test_does_file_exist(file);
+//   bool new_user = !t.test_does_file_exist(file);
 
-   if (new_user){ //If user is new, open profile set_up
-       Survey window;
-       window.show();
-       return a.exec();
-   }
-   else{ //Else open regular window
-       MainWindow window;
-       window.show();
-       return a.exec();
-   }
+//   if (new_user){ //If user is new, open profile set_up
+//       Survey window;
+//       window.show();
+//       return a.exec();
+//   }
+//   else{ //Else open regular window
+//       MainWindow window;
+//       window.show();
+//       return a.exec();
+//   }
 
 //    bool new_user = !t.test_does_file_exist(file);
 
@@ -94,9 +94,9 @@ int main(int argc, char *argv[])
 //        return a.exec();
 //    }
 //    else{ //Else open regular window
-        MainWindow window;
-        window.show();
-        return a.exec();
+//        MainWindow window;
+//        window.show();
+//        return a.exec();
 //     }
 
 //     Object *ham = new Object();

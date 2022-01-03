@@ -24,9 +24,9 @@ void profile_picture::on_button_image_clicked()
         bool valid = image.load(filename); // if the file of the image is corrupted or invalid, then "valid" will be false
 
         if (valid)
-        {
-            image = image.scaledToWidth(ui->label_img->width(), Qt::SmoothTransformation);
-            ui->label_img->setPixmap(QPixmap::fromImage(image));
+        {//Commented for the project to work
+            //image = image.scaledToWidth(ui->label_img->width(), Qt::SmoothTransformation);
+            //ui->label_img->setPixmap(QPixmap::fromImage(image));
         }
         else
         {

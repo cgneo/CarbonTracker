@@ -37,7 +37,7 @@ public:
     void add_object(Object *obj);
     void remove_object(Object *obj);
     void add_base_consumption(Base_Consumption base);
-    double get_vehicle_footprint(string vehicle_name);
+    double get_vehicle_footprint(QString vehicle_name);
     double get_monthly_footprint(int month);
 
 };

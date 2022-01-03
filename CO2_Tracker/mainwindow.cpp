@@ -194,7 +194,7 @@ void MainWindow::get_seed()
 void MainWindow::on_buttonTransport_clicked()
 {
     Transport t;
-    string vehicle = ui->vehicleTransport->currentText().toStdString(); // taking input from user for vehicle
+    QString vehicle = ui->vehicleTransport->currentText(); // taking input from user for vehicle
     string distance = ui->distanceTransport->cleanText().toStdString(); // taking input from user for distance
     t.set_type(vehicle);
     char* d = 0;//distance
@@ -203,7 +203,7 @@ void MainWindow::on_buttonTransport_clicked()
         // vehicle
     int n = vehicle.length();
     char char_array_vehicle[n+1];
-    strcpy(char_array_vehicle, vehicle.c_str());
+    strcpy(char_array_vehicle, vehicle.toStdString().c_str());
 
         // distance
     int m = distance.length();

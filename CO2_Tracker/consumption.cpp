@@ -106,7 +106,7 @@ void Consumption::add_base_consumption(Base_Consumption base){
     }
 }
 
-double Consumption::get_vehicle_footprint(string vehicle_name){
+double Consumption::get_vehicle_footprint(QString vehicle_name){
     double vehicle_footprint = 0;
     for(int i=0;;){
         if(total_consumption[i]->get_name()==vehicle_name){
