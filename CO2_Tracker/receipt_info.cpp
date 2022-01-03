@@ -1,18 +1,9 @@
 #include <QGraphicsWidget>
-#include "tests.h"
-#include "json_DB.hpp"
-#include "object.h"
-#include "transport.h"
-#include "transport_api.h"
-#include "mainwindow.h"
-#include "survey.h"
 #include <QApplication>
-#include <cstring>
 #include "food_api.h"
 #include <string>
 #include <iostream>
 #include <fstream>
-#include <filesystem>
 #include <vector>
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
@@ -121,7 +112,7 @@ vector<vector<string>> get_receipt_info(string filepath)
     }
 
     // Open input image with leptonica library
-    Pix *image = pixRead(filepath);
+    Pix *image = pixRead(filepath.c_str());
     api->SetImage(image);
 
     // Get OCR result
@@ -156,10 +147,5 @@ vector<vector<string>> get_receipt_info(string filepath)
         receipt_info.push_back(api.get_product_info());
     }
 
-    // print the result
-    for (vector<string> pair_info : receipt_info)
-    {
-        cout << "ID: " << pair_info[0] << " ECOSCORE: " << pair_info[1] << " BRAND: " << pair_info[2] << " CATEGORY: " << pair_info[3] << endl;
-    }
     return receipt_info;
 }
