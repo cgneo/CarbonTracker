@@ -190,7 +190,8 @@ void MainWindow::on_buttonTransport_clicked()
     string vehicle = ui->vehicleTransport->currentText().toStdString(); // taking input from user for vehicle
     string distance = ui->distanceTransport->cleanText().toStdString(); // taking input from user for distance
     t.set_type(vehicle);
-    t.set_distance(distance); // convert to int
+    char* d = 0;//distance
+    t.set_distance(d);// convert distance to char
     // converting std strings to char arrays
         // vehicle
     int n = vehicle.length();
