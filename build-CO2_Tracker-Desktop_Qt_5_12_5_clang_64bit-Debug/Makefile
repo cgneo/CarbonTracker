@@ -961,9 +961,11 @@ qrc_images.cpp: ../CO2_Tracker/resources/pictures/images.qrc \
 		../CO2_Tracker/resources/pictures/home-pic.png \
 		../CO2_Tracker/resources/pictures/Tree-animation.gif \
 		../CO2_Tracker/resources/pictures/tree_animation.gif \
+		../CO2_Tracker/resources/pictures/seed.png \
 		../CO2_Tracker/resources/pictures/plane-pic.png \
 		../CO2_Tracker/resources/pictures/trasnport_icon.png \
 		../CO2_Tracker/resources/pictures/food-pic.png \
+		../CO2_Tracker/resources/pictures/tree.png \
 		../CO2_Tracker/resources/pictures/home_icon2.png \
 		../CO2_Tracker/resources/pictures/trasnport_icon.png \
 		../CO2_Tracker/resources/pictures/logo_CT.jpeg

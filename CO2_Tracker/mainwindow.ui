@@ -204,17 +204,17 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QTabWidget::pane { /* The tab widget frame */
-    border-top: 2px solid #C2C7CB;
-	
-	
-	background-color: rgb(215, 217, 217);
+    border-top: 2px solid;
+	border-color: rgb(255, 255, 255);
+	background-color: rgb(255, 255, 255);
 }
 
 
 QTabBar::tab {
     
-	background-color: rgb(103, 116, 81);
-    border: 1px solid #C4C4C3;
+	background-color: rgb(148, 173, 135);
+    border: 1px solid;
+	border-color: rgb(255, 255, 255);
     border-bottom-color: #C2C7CB; /* same as the pane color */
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -225,14 +225,14 @@ QTabBar::tab {
 
 QTabBar::tab:selected, QTabBar::tab:hover {
     
-	background-color: rgb(201, 199, 203);
+	background-color: rgb(234, 147, 96);
 }</string>
       </property>
       <property name="tabShape">
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -717,8 +717,11 @@ QTabBar::tab:selected, QTabBar::tab:hover {
               <string notr="true">QFrame {
     border-radius: 4px;
     padding: 2px;
-	
+	background-color: rgb(224, 222, 226);
 	background-color: rgba(236, 234, 238,100);
+	border-color: rgb(214, 238, 216);
+ border: 2px;
+	
 }</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout">
@@ -770,15 +773,18 @@ QProgressBar::chunk{
                <widget class="QLabel" name="seed">
                 <property name="maximumSize">
                  <size>
-                  <width>16777215</width>
-                  <height>16777215</height>
+                  <width>100</width>
+                  <height>150</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap>../2021-12-09 11.11.21.jpg</pixmap>
+                 <pixmap>resources/pictures/seed.png</pixmap>
                 </property>
                </widget>
               </item>
@@ -1017,10 +1023,11 @@ QPushButton:default {
                 <widget class="QFrame" name="verticalFrame_3">
                  <property name="styleSheet">
                   <string notr="true">QFrame {
-   
-    border-radius: 4px;
+border-radius: 4px;
     padding: 2px;
 	background-color: rgba(236, 234, 238,100);
+	border-color: rgb(214, 238, 216);
+ border: 2px;
 }</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -1050,27 +1057,27 @@ QPushButton:default {
                        <colorrole role="Button">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>136</red>
-                          <green>159</green>
-                          <blue>124</blue>
+                          <red>234</red>
+                          <green>147</green>
+                          <blue>96</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Base">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>136</red>
-                          <green>159</green>
-                          <blue>124</blue>
+                          <red>234</red>
+                          <green>147</green>
+                          <blue>96</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Window">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>136</red>
-                          <green>159</green>
-                          <blue>124</blue>
+                          <red>234</red>
+                          <green>147</green>
+                          <blue>96</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -1079,27 +1086,27 @@ QPushButton:default {
                        <colorrole role="Button">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>136</red>
-                          <green>159</green>
-                          <blue>124</blue>
+                          <red>234</red>
+                          <green>147</green>
+                          <blue>96</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Base">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>136</red>
-                          <green>159</green>
-                          <blue>124</blue>
+                          <red>234</red>
+                          <green>147</green>
+                          <blue>96</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Window">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>136</red>
-                          <green>159</green>
-                          <blue>124</blue>
+                          <red>234</red>
+                          <green>147</green>
+                          <blue>96</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -1108,27 +1115,27 @@ QPushButton:default {
                        <colorrole role="Button">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>136</red>
-                          <green>159</green>
-                          <blue>124</blue>
+                          <red>234</red>
+                          <green>147</green>
+                          <blue>96</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Base">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>136</red>
-                          <green>159</green>
-                          <blue>124</blue>
+                          <red>234</red>
+                          <green>147</green>
+                          <blue>96</blue>
                          </color>
                         </brush>
                        </colorrole>
                        <colorrole role="Window">
                         <brush brushstyle="SolidPattern">
                          <color alpha="255">
-                          <red>136</red>
-                          <green>159</green>
-                          <blue>124</blue>
+                          <red>234</red>
+                          <green>147</green>
+                          <blue>96</blue>
                          </color>
                         </brush>
                        </colorrole>
@@ -1146,10 +1153,13 @@ QPushButton:default {
                     <property name="styleSheet">
                      <string notr="true">QTextBrowser{
 
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124);
+	background-image: url(:/i18n/UICarbonTracker_en_150.qm);
+    border: 2px solid;;
+    border-radius: 6px;
+	border-color: rgb(234, 147, 96);
+	background-color: rgb(234, 147, 96);
+    min-width: 100px;
+	padding: 3px;
 
 }</string>
                     </property>
@@ -1165,6 +1175,70 @@ p, li { white-space: pre-wrap; }
                   </item>
                   <item>
                    <widget class="QCheckBox" name="daily_challenge_1">
+                    <property name="palette">
+                     <palette>
+                      <active>
+                       <colorrole role="Button">
+                        <brush brushstyle="SolidPattern">
+                         <color alpha="100">
+                          <red>0</red>
+                          <green>0</green>
+                          <blue>0</blue>
+                         </color>
+                        </brush>
+                       </colorrole>
+                       <colorrole role="BrightText">
+                        <brush brushstyle="SolidPattern">
+                         <color alpha="255">
+                          <red>0</red>
+                          <green>0</green>
+                          <blue>0</blue>
+                         </color>
+                        </brush>
+                       </colorrole>
+                      </active>
+                      <inactive>
+                       <colorrole role="Button">
+                        <brush brushstyle="SolidPattern">
+                         <color alpha="100">
+                          <red>0</red>
+                          <green>0</green>
+                          <blue>0</blue>
+                         </color>
+                        </brush>
+                       </colorrole>
+                       <colorrole role="BrightText">
+                        <brush brushstyle="SolidPattern">
+                         <color alpha="255">
+                          <red>0</red>
+                          <green>0</green>
+                          <blue>0</blue>
+                         </color>
+                        </brush>
+                       </colorrole>
+                      </inactive>
+                      <disabled>
+                       <colorrole role="Button">
+                        <brush brushstyle="SolidPattern">
+                         <color alpha="100">
+                          <red>0</red>
+                          <green>0</green>
+                          <blue>0</blue>
+                         </color>
+                        </brush>
+                       </colorrole>
+                       <colorrole role="BrightText">
+                        <brush brushstyle="SolidPattern">
+                         <color alpha="255">
+                          <red>0</red>
+                          <green>0</green>
+                          <blue>0</blue>
+                         </color>
+                        </brush>
+                       </colorrole>
+                      </disabled>
+                     </palette>
+                    </property>
                     <property name="font">
                      <font>
                       <family>Gill Sans</family>
@@ -1231,10 +1305,11 @@ p, li { white-space: pre-wrap; }
                 <widget class="QFrame" name="verticalFrame_2">
                  <property name="styleSheet">
                   <string notr="true">QFrame{
-background-color: rgba(236, 234, 238,100);
-
-    border-radius: 4px;
+border-radius: 4px;
     padding: 2px;
+	background-color: rgba(236, 234, 238,100);
+	 border: 2px;
+	border-color: rgb(214, 238, 216);
 }</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1270,11 +1345,13 @@ background-color: rgba(236, 234, 238,100);
                     <property name="styleSheet">
                      <string notr="true">QTextBrowser{
 
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124);
-	font: 13pt &quot;Gill Sans&quot;;
+	background-image: url(:/i18n/UICarbonTracker_en_150.qm);
+    border: 2px solid;;
+    border-radius: 6px;
+	border-color: rgb(234, 147, 96);
+	background-color: rgb(234, 147, 96);
+    min-width: 100px;
+	padding: 3px;
 }</string>
                     </property>
                     <property name="html">
@@ -3293,29 +3370,12 @@ QListView::item:hover {
      <x>0</x>
      <y>0</y>
      <width>950</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>SeedsprogressBar</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>seed</receiver>
-   <slot>raise()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>303</x>
-     <y>116</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>303</x>
-     <y>362</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

@@ -27,7 +27,8 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix3(":/challenges/home-pic.png");
     ui -> home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
-
+    QPixmap pix4(":/challenges/seed.png");
+    ui -> seed -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
 
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
@@ -169,6 +170,7 @@ void MainWindow::on_daily_challenge_4_stateChanged(int)
     if (ui-> daily_challenge_4-> isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
         animation_4 -> start();
+        enableButton();
     }else{
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() - 25);
     }
