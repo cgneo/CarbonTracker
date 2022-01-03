@@ -11,6 +11,11 @@
 #include <QMovie>
 #include <QLabel>
 #include <QGraphicsScene>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QDir>
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -133,7 +138,9 @@ void MainWindow::on_Surveybutton_clicked()
 
 void MainWindow::on_Scanbutton_clicked()
 {
-
+    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
+    QMessageBox::information(this, "...", file_name);
+    //amine_function(file_name)
 }
 
 void MainWindow::on_daily_challenge_1_stateChanged(int)
