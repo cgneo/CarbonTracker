@@ -11,5 +11,7 @@
         <file>trasnport_icon.png</file>
         <file>Tree-animation.gif</file>
         <file>tree_animation.gif</file>
+        <file>tree.png</file>
+        <file>seed.png</file>
     </qresource>
 </RCC>
