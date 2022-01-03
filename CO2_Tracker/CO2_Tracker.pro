@@ -18,6 +18,7 @@ SOURCES += \
     json_DB.cpp \
     object.cpp \
     food.cpp \
+    profile_picture.cpp \
     tests.cpp \
     transport.cpp \
     user.cpp\
@@ -37,6 +38,7 @@ HEADERS += \
     json_DB.hpp \
     object.h \
     food.h \
+    profile_picture.h \
     tests.h \
     transport.h \
     user.h \
