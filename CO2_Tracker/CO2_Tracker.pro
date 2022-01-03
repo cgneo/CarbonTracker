@@ -1,5 +1,5 @@
 TEMPLATE = app
-QT += core gui network
+QT += core gui network charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,6 +14,7 @@ SOURCES += \
     base_consumption.cpp \
     consumption.cpp \
     date.cpp \
+    donut.cpp \
     json_DB.cpp \
     object.cpp \
     food.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     base_consumption.h \
     consumption.h \
     date.h \
+    donut.h \
     json_DB.hpp \
     object.h \
     food.h \

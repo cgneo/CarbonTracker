@@ -7,6 +7,7 @@
 #include "api_transport.h"
 #include "mainwindow.h"
 #include "survey.h"
+#include "donut.h"
 #include <QApplication>
 #include <json_DB.hpp>
 
@@ -37,6 +38,7 @@ int main(int argc, char *argv[])
 
     Tests t;
     QString full_path = json_obj.get_path() + json_obj.get_FileName();
+
     t.test_is_path_correct(json_obj);
     t.test_does_file_exist(full_path);
 
@@ -56,6 +58,11 @@ int main(int argc, char *argv[])
 //    window.show();
 //    return a.exec();
 
+      Donut d;
+      d.show();
+      return a.exec();
+
+
  //   Tests t;
  //   QString file = obj.get_path() + obj.get_FileName();
 //    t.test_does_file_exist(file);
@@ -70,9 +77,9 @@ int main(int argc, char *argv[])
 //        return a.exec();
 //    }
 //    else{ //Else open regular window
-//        MainWindow window;
-//        window.show();
-//        return a.exec();
+        MainWindow window;
+        window.show();
+        return a.exec();
 //     }
 
 //     Object *ham = new Object();
