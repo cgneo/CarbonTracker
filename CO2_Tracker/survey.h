@@ -20,8 +20,6 @@ public:
 private slots:
     void on_buttonMain_clicked();
     void on_buttonNextHousing1_clicked();
-    void on_buttonNextHousing2_clicked();
-    void on_buttonNextHousing3_clicked();
     void on_buttonNextTransport1_clicked();
     void on_buttonNextTransport2_clicked();
     void on_buttonNextTransport3_clicked();
