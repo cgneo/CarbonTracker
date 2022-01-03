@@ -193,9 +193,11 @@ void MainWindow::get_seed()
 
 void MainWindow::on_buttonTransport_clicked()
 {
+    Transport t;
     string vehicle = ui->vehicleTransport->currentText().toStdString(); // taking input from user for vehicle
     string distance = ui->distanceTransport->cleanText().toStdString(); // taking input from user for distance
-
+    t.set_type(vehicle);
+    t.set_distance(distance); // convert to int
     // converting std strings to char arrays
         // vehicle
     int n = vehicle.length();
@@ -213,6 +215,7 @@ void MainWindow::on_buttonTransport_clicked()
 
     // outputting the emission for given vehicle and distance
     QString emission = QString::number(api.get_emission());
+    t.set_footprint(api.get_emission());
     ui->outputTransport->setText(emission);
 }
 
