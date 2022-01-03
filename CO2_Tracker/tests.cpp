@@ -100,8 +100,9 @@ bool Tests::test_JsonUser(){//Trigger function for module
     Json_DB* p = new Json_DB();
     User* user = new User();
 
-    test_createJsonUserObject(*p, *user);
+    //test_createJsonUserObject(*p, *user);
     test_writeJsonUser(*p);
+    test_is_path_correct(*p);
    }
 
 void Tests::test_is_path_correct(Json_DB &json){
