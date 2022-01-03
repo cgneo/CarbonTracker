@@ -106,5 +106,24 @@ void Consumption::add_base_consumption(Base_Consumption base){
     }
 }
 
+double Consumption::get_vehicle_footprint(string vehicle_name){
+    double vehicle_footprint = 0;
+    for(int i=0;;){
+        if(total_consumption[i]->get_name()==vehicle_name){
+            vehicle_footprint += total_consumption[i]->get_footprint();
+        }
+    }
+    return vehicle_footprint;
+}
+
+double Consumption::get_monthly_footprint(int month){
+    double month_footprint = 0;
+    for(int i=0;;){
+        if(total_consumption[i]->get_date()->get_month()==month){
+            month_footprint += total_consumption[i]->get_footprint();
+        }
+    }
+    return month_footprint;
+}
 
 
