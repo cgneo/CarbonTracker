@@ -27,7 +27,9 @@ SOURCES += \
     receipt.cpp \
     transport_API.cpp \
     mainwindow.cpp \
-    survey.cpp
+    survey.cpp \
+    receipt_info.cpp \
+    food_api.cpp \
 
 
 HEADERS += \
@@ -43,9 +45,10 @@ HEADERS += \
     transport.h \
     transport_api.h \
     user.h \
-    receipt.h \
     mainwindow.h \
-    survey.h
+    survey.h \
+    receipt.h \
+    food_api.h
 
 FORMS += \
     mainwindow.ui \
@@ -61,3 +64,17 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resources/pictures/images.qrc
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/release/ -llept.5
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/debug/ -llept.5
+else:unix: LIBS += -L$$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/ -llept.5
+
+INCLUDEPATH += $$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/include
+DEPENDPATH += $$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/lib/release/ -ltesseract.4
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/lib/debug/ -ltesseract.4
+else:unix: LIBS += -L$$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/lib/ -ltesseract.4
+
+INCLUDEPATH += $$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/include
+DEPENDPATH += $$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/include
