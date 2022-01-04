@@ -2011,12 +2011,6 @@ p, li { white-space: pre-wrap; }
             </disabled>
            </palette>
           </property>
-          <property name="font">
-           <font>
-            <family>Menlo</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
