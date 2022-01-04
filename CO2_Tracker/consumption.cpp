@@ -21,7 +21,7 @@ Consumption::Consumption(int userId, Base_Consumption base, vector<Object*> tota
     consumptionId = (this->userId); // Creates unique id equal to that of the user
     this -> base = base;
     add_base_consumption(base);
-    calculate_each_footprint();
+    calculate_footprint();
 }
 
 Consumption::~Consumption(){ //To be properly done
@@ -33,6 +33,9 @@ int Consumption::get_userId(){
 }
 int Consumption::get_consumptionId(){
     return consumptionId;
+}
+double Consumption::get_total_footprint(){
+    return total_footprint;
 }
 
 double Consumption::get_food_footprint(){
@@ -46,7 +49,7 @@ Object *Consumption::get_object_i(int i){
     return total_consumption[i];
 }
 
-void Consumption::calculate_each_footprint(){ // should be part of initialization
+void Consumption::calculate_footprint(){ // should be part of initialization
     for(Object *i : total_consumption){
         Object obj = *i;
         if(obj.get_type() == "food"){
@@ -80,10 +83,10 @@ void Consumption::add_object(Object *obj){
 
 void Consumption::add_base_consumption(Base_Consumption base){
     int size = base.get_size();
+    total_footprint += base.get_footprint();
     for(int i=0;i<size;i++){
         Object *new_obj = base.get_object_i(i);
         add_object(new_obj);
-        total_footprint += new_obj->get_footprint();
         if(new_obj->get_type() == "food"){
             food_footprint += new_obj->get_footprint();
         }
@@ -146,4 +149,14 @@ double Consumption::get_daily_footprint(int day, int month, int year){
 
 }
 
+void Consumption::add_receipt(Receipt receipt){
+    int size = receipt.get_receipt_content().size();
+    total_footprint += receipt.get_footprint();
+    vector<Object> content = receipt.get_receipt_content();
+    for(int i=0;i<size;i++){
+        Object *new_obj = content[i];
+        add_object(new_obj);
+        food_footprint += new_obj->get_footprint();
 
+    }
+}

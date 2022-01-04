@@ -8,6 +8,7 @@ class Food : public Object {
    public:
     Food();
     Food(double barcode);
+    Food(int quantity, double barcode, double footprint);
     ~Food();
     void set_quantity(double quantity);
     void set_barcode(double barcode);

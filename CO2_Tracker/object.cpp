@@ -10,9 +10,9 @@ Object::Object(){
     type = "food";
 }
 
-Object::Object(Date *current_date, string object_name, string object_type){
+Object::Object(Date *current_date, string object_name, string object_type, double footprint){
     date = current_date;
-    footprint = 0;
+    this -> footprint = footprint;
     name = object_name;
     type = object_type;
 }

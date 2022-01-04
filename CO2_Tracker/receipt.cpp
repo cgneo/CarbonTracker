@@ -104,3 +104,7 @@ bool Receipt::number_of_people_is_valid(){
     if (number_of_people < 0) throw std::invalid_argument("Invalid number");
     return true;
 }
+
+vector<Object> Receipt::get_receipt_content(){
+    return content;
+}

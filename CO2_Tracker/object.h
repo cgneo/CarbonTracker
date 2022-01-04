@@ -9,7 +9,7 @@ using namespace std;
 class Object{
 public:
     Object();
-    Object(Date *current_date, string object_name, string object_type);
+    Object(Date *current_date, string object_name, string object_type, double footprint);
     virtual ~Object();
 
     Date *get_date();

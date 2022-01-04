@@ -28,6 +28,7 @@ class Receipt{
     int get_userId();
     int get_receiptId();
     Date* get_dates();
+    vector<Object> get_receipt_content();
 
     void print();
     void add_to_footprint(int new_footprint);
