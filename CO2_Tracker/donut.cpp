@@ -39,7 +39,7 @@ Donut::Donut(QWidget *parent /*,double* data*/)
     QChartView *chartview = new QChartView(chart);
     chartview->setRenderHint(QPainter::Antialiasing);
 
-    chartview->setParent(ui->transportsframe);
+    //chartview->setParent(ui->transportsframe);
     //Commented to run
 
     chart->legend()->setVisible(true);

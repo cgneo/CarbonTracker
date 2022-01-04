@@ -27,6 +27,43 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     //begining of graphs
+    //Donutchart
+
+    QPieSeries *dseries = new QPieSeries();
+    dseries->setHoleSize(0.35);
+    QPieSlice *dslice1 = dseries->append("Locomotive", 1);
+
+    QPieSlice *dslice2 =dseries->append("Airplane", 2);
+    QPieSlice *dslice3 =dseries->append("Car", 2);
+
+    dslice1->setLabelVisible();
+    dslice2->setLabelVisible();
+    dslice3->setLabelVisible();
+
+    QPieSlice::connect(dslice1, &QPieSlice::hovered,
+                       dslice1, &QPieSlice::setExploded);
+    QPieSlice::connect(dslice2, &QPieSlice::hovered,
+                       dslice2, &QPieSlice::setExploded);
+    QPieSlice::connect(dslice3, &QPieSlice::hovered,
+                       dslice3, &QPieSlice::setExploded);
+
+    QString string = "clicked";
+
+    QChart *dchart = new QChart();
+    dchart->addSeries(dseries);
+    dchart->setAnimationOptions(QChart::SeriesAnimations);
+    dchart->setTitle("My Transport Footprint");
+    dchart->setTheme(QChart::ChartThemeBrownSand);
+
+    QChartView *dchartview = new QChartView(dchart);
+    dchartview->setRenderHint(QPainter::Antialiasing);
+
+    dchartview->setParent(ui->transportsframe);
+    //Commented to run
+
+    dchart->legend()->setVisible(true);
+    dchart->legend()->setAlignment(Qt::AlignLeft);
+
     //Daily
 
     QBarSet *set0 = new QBarSet("Food");
