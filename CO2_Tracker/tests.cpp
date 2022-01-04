@@ -96,11 +96,23 @@ void test_user(User *user){ // need to change this test
 
 //---------------------Json------------------------------
 bool Tests::test_JsonUser(){//Trigger function for module
+
     qDebug() << "-----Testing Json DB Module-------";
     Json_DB* p = new Json_DB();
-    User* user = new User();
 
-    //test_createJsonUserObject(*p, *user);
+    //Creating user to test
+    QString username = "alex.christlieb";
+    QString name = "Alejandro Christlieb";
+    QString email = "alexchristlieb@gmail.com";
+    QString country = "Mexico";
+    int living_partners = 3;
+    int birthday = 13;
+    int birthmonth = 10;
+    int birthyear = 2001;
+
+    User* user = new User(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+
+    test_createJsonUserObject(*p, *user);
     test_writeJsonUser(*p);
     test_is_path_correct(*p);
    }
@@ -148,7 +160,7 @@ void Tests::test_createJsonUserObject(Json_DB &json, User &user){
     catch(...){
         throw invalid_argument("Test: Create Json User Object - Fail");
     }
-    qDebug() << "Test: Create Json User Object - Success";
+    qDebug() << "test_createJsonUserObject() - Success";
 }
 
 void Tests::test_writeJsonUser(Json_DB &json){//Unimplemented

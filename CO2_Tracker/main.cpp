@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 //    Tests t;
     t.test_JsonUser();
 
-//    QString full_path = json_obj.get_path() + json_obj.get_FileName();
+    QString full_path = json_obj.get_path() + json_obj.get_FileName();
 
 
     Date* fecha = new Date(01,04,2019);
@@ -54,9 +54,11 @@ int main(int argc, char *argv[])
     obj.set_footprint(10390);
     obj2.set_footprint(1000000);
 
-    //json_obj.writeJsonUser(u);
+    json_obj.writeJsonUser(u);
     json_obj.addObject_to_file(obj);
     json_obj.addObject_to_file(obj2);
+
+    //json_obj.parseJsonFile(full_path);
 
 
 //    Survey window;
