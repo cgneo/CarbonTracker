@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent)
     QChart *dchart = new QChart();
     dchart->addSeries(dseries);
     dchart->setAnimationOptions(QChart::SeriesAnimations);
-    dchart->setTitle("My Transport Footprint");
+    dchart->setTitle("My Transportation Footprint");
     dchart->setTheme(QChart::ChartThemeBrownSand);
 
     QChartView *dchartview = new QChartView(dchart);

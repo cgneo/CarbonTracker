@@ -864,10 +864,6 @@ public:
         palette6.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush5);
 #endif
         label_4->setPalette(palette6);
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("Menlo"));
-        font5.setPointSize(12);
-        label_4->setFont(font5);
         label_4->setAutoFillBackground(false);
         label_4->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "\n"
@@ -914,9 +910,9 @@ public:
         palette7.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
 #endif
         label_7->setPalette(palette7);
-        QFont font6;
-        font6.setPointSize(12);
-        label_7->setFont(font6);
+        QFont font5;
+        font5.setPointSize(12);
+        label_7->setFont(font5);
         label_7->setAutoFillBackground(false);
         label_7->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "\n"
@@ -959,7 +955,7 @@ public:
         palette8.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush5);
 #endif
         label_8->setPalette(palette8);
-        label_8->setFont(font6);
+        label_8->setFont(font5);
         label_8->setAutoFillBackground(false);
         label_8->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "\n"
