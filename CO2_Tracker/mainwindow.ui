@@ -1769,7 +1769,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -2528,6 +2528,35 @@ p, li { white-space: pre-wrap; }
            <string>My Transportation Journal: (write down some of your thoughts 
 and resolutions to improve your carbon footpring linked to 
 transports)</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_10">
+         <attribute name="title">
+          <string>LineChart</string>
+         </attribute>
+         <widget class="QFrame" name="LineFrame">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>30</y>
+            <width>841</width>
+            <height>501</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_14"/>
+         </widget>
+         <widget class="QLabel" name="label_9">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>120</y>
+            <width>141</width>
+            <height>261</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>food creates pollution</string>
           </property>
          </widget>
         </widget>
@@ -4207,7 +4236,7 @@ QListView::item:hover {
      <x>0</x>
      <y>0</y>
      <width>1536</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
