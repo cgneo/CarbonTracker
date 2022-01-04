@@ -12,7 +12,7 @@ using namespace std;
 class Object{
 public:
     Object();
-    Object(Date *current_date, QString object_name, QString object_type);
+    Object(Date *current_date, QString object_name, QString object_type, double footprint);
     virtual ~Object();
 
     Date *get_date();

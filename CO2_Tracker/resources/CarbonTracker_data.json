@@ -21,26 +21,6 @@
             "Footprint": 1000000,
             "Name": "Avion",
             "Type": "Transport"
-        },
-        {
-            "Date": [
-                1,
-                4,
-                2019
-            ],
-            "Footprint": 10390,
-            "Name": "Metro",
-            "Type": "Transport"
-        },
-        {
-            "Date": [
-                2,
-                3,
-                2020
-            ],
-            "Footprint": 1000000,
-            "Name": "Avion",
-            "Type": "Transport"
         }
     ],
     "Country": "Mexico",

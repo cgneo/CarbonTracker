@@ -137,7 +137,7 @@ void Json_DB::createJsonUserObject(QJsonObject &obj, User &user)
     obj["Username"] = user.get_username();
     obj["Name"] = user.get_name();
     QJsonArray date = {user.get_birthday()->get_day(), user.get_birthday()->get_month()
-                      , user.get_birthday()->get_year()};
+                      ,user.get_birthday()->get_year()};
     obj["Date"] = date;
     obj["Email"] = user.get_email();
     obj["Country"] = user.get_country();
@@ -232,7 +232,10 @@ void Json_DB::parseJsonFile(const QString &fileName)
     }
     QJsonObject rootObject = jsonDocument.object();
     QStringList rootKeys=rootObject.keys();
+
+
     qDebug()<<rootKeys<<"\r\n";
+
 
     for(auto&rootKey:rootKeys){
 
