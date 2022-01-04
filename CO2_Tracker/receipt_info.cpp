@@ -8,18 +8,27 @@
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
 
+bool check_digit(char c) {
+    vector<char> digit_vec = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    if (find(digit_vec.begin(), digit_vec.end(), c) != digit_vec.end()) {
+        return true;
+    }
+    return false;
+}
+
+
 // Checks that a string "str" is only made of numeric characters
 // This function is used to know which part of the file corresponds to a product's id.
 bool is_id(string str)
 {
     char space = ' ';
-    if (!isdigit(str.at(str.length() - 1)) and (str.at(str.length() - 1) != space))
+    if (!check_digit(str.at(str.length() - 1)) and (str.at(str.length() - 1) != space))
     {
         return false;
     }
     for (int i = 0; i < int(str.length()) - 1; i++)
     {
-        if (!isdigit(str.at(i)))
+        if (!check_digit(str.at(i)))
         {
             return false;
         }
@@ -32,7 +41,7 @@ bool num_str(string str)
 {
     for (char c : str)
     {
-        if (!isdigit(c) and c != ',' and c != '.')
+        if (!check_digit(c) and c != ',' and c != '.')
         {
             return false;
         }
