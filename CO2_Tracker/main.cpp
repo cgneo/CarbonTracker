@@ -12,6 +12,12 @@
 #include <QApplication>
 #include <json_DB.hpp>
 #include <iostream>
+#include <QApplication>
+#include <QtCharts>
+#include <QChartView>
+#include <QBarSet>
+#include <QBarSeries>
+
 
 int main(int argc, char *argv[])
 {

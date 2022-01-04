@@ -28,6 +28,7 @@ class Receipt{
     int get_userId();
     int get_receiptId();
     Date* get_dates();
+    vector<Object *> get_receipt_content();
 
     void print();
     void add_to_footprint(int new_footprint);
@@ -45,7 +46,7 @@ class Receipt{
     int duration; // length in days
     Date* date = new Date[2];
     int number_of_people;
-    vector<Object> content; //list of barcodes from receipt
+    vector<Object *> content; //list of barcodes from receipt
 };
 
 #endif // RECEIPT_H
