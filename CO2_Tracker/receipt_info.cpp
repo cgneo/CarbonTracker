@@ -116,8 +116,8 @@ vector<vector<string>> get_receipt_info(string filepath)
     // Initialize tesseract-ocr with French, without specifying tessdata path
     if (api->Init(NULL, "fra"))
     {
-        fprintf(stderr, "Could not initialize tesseract.\n");
-        exit(1);
+        std::cerr << "Could not initialize tesseract.\n";
+        //exit(1);
     }
 
     // Open input image with leptonica library
