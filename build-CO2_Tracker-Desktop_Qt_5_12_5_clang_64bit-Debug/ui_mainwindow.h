@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
@@ -107,6 +108,27 @@ public:
     QSpacerItem *verticalSpacer_4;
     QSpacerItem *verticalSpacer_5;
     QWidget *tab_21;
+    QTabWidget *tabWidget_2;
+    QWidget *tab_9;
+    QFrame *transportsframe;
+    QVBoxLayout *verticalLayout_13;
+    QWidget *tab_5;
+    QFrame *horizontalFrame1;
+    QHBoxLayout *horizontalLayout_2;
+    QWidget *tab_6;
+    QFrame *horizontalFrame2;
+    QHBoxLayout *horizontalLayout_12;
+    QWidget *tab_7;
+    QFrame *horizontalFrame3;
+    QHBoxLayout *horizontalLayout_13;
+    QWidget *tab_8;
+    QFrame *horizontalFrame1sum;
+    QHBoxLayout *horizontalLayout_14;
+    QFrame *horizontalFrame2sum;
+    QHBoxLayout *horizontalLayout_15;
+    QFrame *horizontalFrame3sum;
+    QHBoxLayout *horizontalLayout_16;
+    QCalendarWidget *calendarWidget;
     QWidget *tab_3;
     QHBoxLayout *horizontalLayout_4;
     QVBoxLayout *verticalLayout1;
@@ -152,7 +174,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(950, 686);
+        MainWindow->resize(1536, 1325);
         QPalette palette;
         QBrush brush(QColor(232, 233, 237, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -318,7 +340,6 @@ public:
         SeedsprogressBar = new QProgressBar(verticalFrame);
         SeedsprogressBar->setObjectName(QString::fromUtf8("SeedsprogressBar"));
         QFont font;
-        font.setFamily(QString::fromUtf8("Gill Sans"));
         SeedsprogressBar->setFont(font);
         SeedsprogressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
 "	\n"
@@ -477,10 +498,8 @@ public:
         palette4.setBrush(QPalette::Disabled, QPalette::Window, brush11);
         textBrowser_4->setPalette(palette4);
         QFont font1;
-        font1.setFamily(QString::fromUtf8("Gill Sans"));
         font1.setBold(true);
         font1.setItalic(true);
-        font1.setWeight(75);
         textBrowser_4->setFont(font1);
         textBrowser_4->setStyleSheet(QString::fromUtf8("QTextBrowser{\n"
 "\n"
@@ -553,11 +572,9 @@ public:
         textBrowser_5->setObjectName(QString::fromUtf8("textBrowser_5"));
         textBrowser_5->setMaximumSize(QSize(150, 35));
         QFont font2;
-        font2.setFamily(QString::fromUtf8("Gill Sans"));
         font2.setPointSize(13);
         font2.setBold(false);
         font2.setItalic(false);
-        font2.setWeight(50);
         textBrowser_5->setFont(font2);
         textBrowser_5->setStyleSheet(QString::fromUtf8("QTextBrowser{\n"
 "\n"
@@ -634,7 +651,6 @@ public:
         label_27 = new QLabel(tab_2);
         label_27->setObjectName(QString::fromUtf8("label_27"));
         QFont font3;
-        font3.setFamily(QString::fromUtf8("Gill Sans"));
         font3.setPointSize(30);
         label_27->setFont(font3);
         label_27->setTextFormat(Qt::AutoText);
@@ -644,7 +660,6 @@ public:
         label_28 = new QLabel(tab_2);
         label_28->setObjectName(QString::fromUtf8("label_28"));
         QFont font4;
-        font4.setFamily(QString::fromUtf8("Gill Sans"));
         font4.setPointSize(16);
         label_28->setFont(font4);
         label_28->setTextFormat(Qt::RichText);
@@ -797,6 +812,62 @@ public:
         tabWidget->addTab(tab_2, QString());
         tab_21 = new QWidget();
         tab_21->setObjectName(QString::fromUtf8("tab_21"));
+        tabWidget_2 = new QTabWidget(tab_21);
+        tabWidget_2->setObjectName(QString::fromUtf8("tabWidget_2"));
+        tabWidget_2->setGeometry(QRect(20, 10, 1391, 1221));
+        tab_9 = new QWidget();
+        tab_9->setObjectName(QString::fromUtf8("tab_9"));
+        transportsframe = new QFrame(tab_9);
+        transportsframe->setObjectName(QString::fromUtf8("transportsframe"));
+        transportsframe->setGeometry(QRect(80, 30, 561, 471));
+        verticalLayout_13 = new QVBoxLayout(transportsframe);
+        verticalLayout_13->setObjectName(QString::fromUtf8("verticalLayout_13"));
+        tabWidget_2->addTab(tab_9, QString());
+        tab_5 = new QWidget();
+        tab_5->setObjectName(QString::fromUtf8("tab_5"));
+        horizontalFrame1 = new QFrame(tab_5);
+        horizontalFrame1->setObjectName(QString::fromUtf8("horizontalFrame1"));
+        horizontalFrame1->setGeometry(QRect(10, 10, 901, 521));
+        horizontalLayout_2 = new QHBoxLayout(horizontalFrame1);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        tabWidget_2->addTab(tab_5, QString());
+        tab_6 = new QWidget();
+        tab_6->setObjectName(QString::fromUtf8("tab_6"));
+        horizontalFrame2 = new QFrame(tab_6);
+        horizontalFrame2->setObjectName(QString::fromUtf8("horizontalFrame2"));
+        horizontalFrame2->setGeometry(QRect(10, 10, 891, 511));
+        horizontalLayout_12 = new QHBoxLayout(horizontalFrame2);
+        horizontalLayout_12->setObjectName(QString::fromUtf8("horizontalLayout_12"));
+        tabWidget_2->addTab(tab_6, QString());
+        tab_7 = new QWidget();
+        tab_7->setObjectName(QString::fromUtf8("tab_7"));
+        horizontalFrame3 = new QFrame(tab_7);
+        horizontalFrame3->setObjectName(QString::fromUtf8("horizontalFrame3"));
+        horizontalFrame3->setGeometry(QRect(10, 10, 881, 541));
+        horizontalLayout_13 = new QHBoxLayout(horizontalFrame3);
+        horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
+        tabWidget_2->addTab(tab_7, QString());
+        tab_8 = new QWidget();
+        tab_8->setObjectName(QString::fromUtf8("tab_8"));
+        horizontalFrame1sum = new QFrame(tab_8);
+        horizontalFrame1sum->setObjectName(QString::fromUtf8("horizontalFrame1sum"));
+        horizontalFrame1sum->setGeometry(QRect(10, 10, 741, 451));
+        horizontalLayout_14 = new QHBoxLayout(horizontalFrame1sum);
+        horizontalLayout_14->setObjectName(QString::fromUtf8("horizontalLayout_14"));
+        horizontalFrame2sum = new QFrame(tab_8);
+        horizontalFrame2sum->setObjectName(QString::fromUtf8("horizontalFrame2sum"));
+        horizontalFrame2sum->setGeometry(QRect(710, 10, 781, 451));
+        horizontalLayout_15 = new QHBoxLayout(horizontalFrame2sum);
+        horizontalLayout_15->setObjectName(QString::fromUtf8("horizontalLayout_15"));
+        horizontalFrame3sum = new QFrame(tab_8);
+        horizontalFrame3sum->setObjectName(QString::fromUtf8("horizontalFrame3sum"));
+        horizontalFrame3sum->setGeometry(QRect(710, 470, 781, 461));
+        horizontalLayout_16 = new QHBoxLayout(horizontalFrame3sum);
+        horizontalLayout_16->setObjectName(QString::fromUtf8("horizontalLayout_16"));
+        calendarWidget = new QCalendarWidget(tab_8);
+        calendarWidget->setObjectName(QString::fromUtf8("calendarWidget"));
+        calendarWidget->setGeometry(QRect(10, 470, 691, 461));
+        tabWidget_2->addTab(tab_8, QString());
         tabWidget->addTab(tab_21, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
@@ -1299,7 +1370,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 950, 24));
+        menubar->setGeometry(QRect(0, 0, 1536, 24));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -1307,7 +1378,8 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
+        tabWidget_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1320,9 +1392,9 @@ public:
         Scanbutton->setText(QApplication::translate("MainWindow", "Scan my activities", nullptr));
         Surveybutton->setText(QApplication::translate("MainWindow", "My activities today", nullptr));
         textBrowser_4->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Gill Sans'; font-size:13pt; font-weight:600; font-style:italic;\">\n"
+"</style></head><body style=\" font-family:'Gill Sans'; font-size:13pt; font-weight:700; font-style:italic;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; font-weight:400; font-style:normal; color:#ffffff;\">Daily challenges</span></p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.AppleSystemUIFont'; font-weight:400; font-style:normal; color:#ffffff;\"><br /></p></body></html>", nullptr));
         daily_challenge_1->setText(QApplication::translate("MainWindow", "Challenge #1", nullptr));
@@ -1330,7 +1402,7 @@ public:
         daily_challenge_3->setText(QApplication::translate("MainWindow", "Challenge #3", nullptr));
         daily_challenge_4->setText(QApplication::translate("MainWindow", "Challenge #4", nullptr));
         textBrowser_5->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Gill Sans'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'.AppleSystemUIFont'; color:#ffffff;\">Monthly challenges</span></p>\n"
@@ -1364,21 +1436,26 @@ public:
         outputTransport->setText(QString());
         label_5->setText(QApplication::translate("MainWindow", "kg of CO2", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Survey", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_9), QApplication::translate("MainWindow", "Transports", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_5), QApplication::translate("MainWindow", "Daily", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_6), QApplication::translate("MainWindow", "Monthly", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_7), QApplication::translate("MainWindow", "Yearly", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_8), QApplication::translate("MainWindow", "Summary", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_21), QApplication::translate("MainWindow", "Graph page", nullptr));
         textEdit_2->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Food</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         food_label->setText(QString());
         textEdit_3->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Info</p></body></html>", nullptr));
         textEdit->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Food Tips</p></body></html>", nullptr));
@@ -1386,18 +1463,18 @@ public:
         food_tip_2->setText(QApplication::translate("MainWindow", "Consume local and seasonal products", nullptr));
         food_tip_3->setText(QApplication::translate("MainWindow", "Eat less red meat", nullptr));
         textEdit_4->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Transportation</p></body></html>", nullptr));
         transport_label->setText(QString());
         textEdit_5->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Info</p></body></html>", nullptr));
         textEdit_6->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Transportation Tips</p></body></html>", nullptr));
@@ -1405,18 +1482,18 @@ public:
         transportation_tip_2->setText(QApplication::translate("MainWindow", "Sharing a car to go to work", nullptr));
         transportation_tip_3->setText(QApplication::translate("MainWindow", "Replace the car with public transports ", nullptr));
         textEdit_7->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Home</p></body></html>", nullptr));
         home_label->setText(QString());
         textEdit_8->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Info</p></body></html>", nullptr));
         textEdit_9->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">House Tips</p>\n"

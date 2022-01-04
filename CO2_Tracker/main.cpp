@@ -89,9 +89,9 @@ int main(int argc, char *argv[])
 //    window.show();
 //    return a.exec();
 
-//      Donut d;
-//      d.show();
-//      return a.exec();
+      Donut d;
+      d.show();
+      return a.exec();
     Json_DB obj;
 
     Tests t1;

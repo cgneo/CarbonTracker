@@ -168,6 +168,7 @@
 #define __INT_LEAST8_MAX__ 127
 #define __INT_LEAST8_TYPE__ signed char
 #define __INT_MAX__ 2147483647
+#define __LAHF_SAHF__ 1
 #define __LDBL_DECIMAL_DIG__ 21
 #define __LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L
 #define __LDBL_DIG__ 18
@@ -243,6 +244,7 @@
 #define __SSP__ 1
 #define __SSSE3__ 1
 #define __STDCPP_DEFAULT_NEW_ALIGNMENT__ 16UL
+#define __STDCPP_THREADS__ 1
 #define __STDC_HOSTED__ 1
 #define __STDC_NO_THREADS__ 1
 #define __STDC_UTF_16__ 1
@@ -340,7 +342,7 @@
 #define __UINT_LEAST8_MAX__ 255
 #define __UINT_LEAST8_TYPE__ unsigned char
 #define __USER_LABEL_PREFIX__ _
-#define __VERSION__ "Apple LLVM 12.0.5 (clang-1205.0.22.11)"
+#define __VERSION__ "Apple LLVM 13.0.0 (clang-1300.0.29.30)"
 #define __WCHAR_MAX__ 2147483647
 #define __WCHAR_TYPE__ int
 #define __WCHAR_WIDTH__ 32
@@ -349,13 +351,13 @@
 #define __WINT_WIDTH__ 32
 #define __amd64 1
 #define __amd64__ 1
-#define __apple_build_version__ 12050022
+#define __apple_build_version__ 13000029
 #define __block __attribute__((__blocks__(byref)))
 #define __clang__ 1
-#define __clang_major__ 12
+#define __clang_major__ 13
 #define __clang_minor__ 0
-#define __clang_patchlevel__ 5
-#define __clang_version__ "12.0.5 (clang-1205.0.22.11)"
+#define __clang_patchlevel__ 0
+#define __clang_version__ "13.0.0 (clang-1300.0.29.30)"
 #define __code_model_small__ 1
 #define __core2 1
 #define __core2__ 1
