@@ -43,26 +43,26 @@ int main(int argc, char *argv[])
     //json_obj.createJsonUserObject(doc, u);
 //    json_obj.writeJsonUser(u);
 
-    Tests t;
+
 //   QString file = obj.get_path() + obj.get_FileName();
 //   t.test_does_file_exist(file);
 
 //    Tests t;
-    t.test_JsonUser();
+//    t.test_JsonUser();
 
-    QString full_path = json_obj.get_path() + json_obj.get_FileName();
+//    QString full_path = json_obj.get_path() + json_obj.get_FileName();
 
 
-    Date* fecha = new Date(01,04,2019);
-    Date* fech2 = new Date(02,03,2020);
-    Object obj(fecha, "Metro", "Transport");
-    Object obj2(fech2, "Avion", "Transport");
-    obj.set_footprint(10390);
-    obj2.set_footprint(1000000);
+//    Date* fecha = new Date(01,04,2019);
+//    Date* fech2 = new Date(02,03,2020);
+//    Object obj(fecha, "Metro", "Transport",100);
+//    Object obj2(fech2, "Avion", "Transport",100);
+//    obj.set_footprint(10390);
+//    obj2.set_footprint(1000000);
 
-    json_obj.writeJsonUser(u);
-    json_obj.addObject_to_file(obj);
-    json_obj.addObject_to_file(obj2);
+//    json_obj.writeJsonUser(u);
+//    json_obj.addObject_to_file(obj);
+//    json_obj.addObject_to_file(obj2);
 
     //json_obj.parseJsonFile(full_path);
 
@@ -74,24 +74,24 @@ int main(int argc, char *argv[])
 //      Donut d;
 //      d.show();
 //      return a.exec();
-//    Json_DB obj;
+    Json_DB obj;
 
-//    Tests t;
-//    QString file = obj.get_path() + obj.get_FileName();
-//    t.test_does_file_exist(file);
+    Tests t;
+    QString file = obj.get_path() + obj.get_FileName();
+    t.test_does_file_exist(file);
 
-//   bool new_user = !t.test_does_file_exist(file);
+   bool new_user = !t.test_does_file_exist(file);
 
-//   if (new_user){ //If user is new, open profile set_up
-//       Survey window;
-//       window.show();
-//       return a.exec();
-//   }
-//   else{ //Else open regular window
-//       MainWindow window;
-//       window.show();
-//       return a.exec();
-//   }
+   if (new_user){ //If user is new, open profile set_up
+       Survey window;
+       window.show();
+       return a.exec();
+   }
+   else{ //Else open regular window
+       MainWindow window;
+       window.show();
+       return a.exec();
+   }
 
 //    bool new_user = !t.test_does_file_exist(file);
 

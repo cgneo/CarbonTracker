@@ -43,7 +43,7 @@ public:
     void add_base_consumption(Base_Consumption base);
 
         //Methods for graphs
-    double get_vehicle_footprint(string vehicle_name);
+    double get_vehicle_footprint(QString vehicle_name);
     double get_yearly_footprint(int year);
     double get_monthly_footprint(int month, int year);
     double get_daily_footprint(int day, int month, int year);

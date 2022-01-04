@@ -10,9 +10,9 @@ Object::Object(){
     type = "food";
 }
 
-Object::Object(Date *current_date, string object_name, string object_type, double footprint){
+Object::Object(Date *current_date, QString object_name, QString object_type, double footprint){
     date = current_date;
-    this -> footprint = footprint;
+    this->footprint = footprint;
     name = object_name;
     type = object_type;
 }
