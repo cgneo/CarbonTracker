@@ -1,6 +1,6 @@
 TEMPLATE = app
 QT += core gui network charts
-QT += core
+
 DEFINES += Test #variable that allows the execution of the tests
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets

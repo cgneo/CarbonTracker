@@ -43,19 +43,19 @@ int main(int argc, char *argv[])
 //    window.show();
 //    return a.exec();
 
-    Json_DB json_obj;
-    QJsonObject doc;
+//    Json_DB json_obj;
+//    QJsonObject doc;
 
-    QString username = "alex.christlieb";
-    QString name = "Alejandro Christlieb";
-    QString email = "alexchristlieb@gmail.com";
-    QString country = "Mexico";
-    int living_partners = 3;
-    int birthday = 13;
-    int birthmonth = 10;
-    int birthyear = 2001;
+//    QString username = "alex.christlieb";
+//    QString name = "Alejandro Christlieb";
+//    QString email = "alexchristlieb@gmail.com";
+//    QString country = "Mexico";
+//    int living_partners = 3;
+//    int birthday = 13;
+//    int birthmonth = 10;
+//    int birthyear = 2001;
 
-    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+//    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
 
     //json_obj.createJsonUserObject(doc, u);
 //    json_obj.writeJsonUser(u);
