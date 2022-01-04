@@ -1,5 +1,6 @@
 TEMPLATE = app
 QT += core gui network
+QT += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
