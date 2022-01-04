@@ -1,16 +1,15 @@
 #ifndef TESTS_H
 #define TESTS_H
+#include <QString>
 #include "json_DB.hpp"
 #include "user.h"
 #include "transport.h"
 #include "receipt.h"
 
-
 class Tests
 {
 public:
     Tests();
-
     bool start_test();
 
     bool test_JsonUser();
@@ -33,7 +32,6 @@ public:
     void test_createJsonUserObject(Json_DB &json, User &user);
     void test_writeJsonUser(Json_DB &json);
     void test_is_path_correct(Json_DB &json);
-
 };
 
 #endif // TESTS_H
