@@ -7,11 +7,23 @@
 #include "api_transport.h"
 #include "mainwindow.h"
 #include "survey.h"
+#include "receipt_info.cpp"
 #include <QApplication>
 
 
 int main(int argc, char *argv[])
 {
+
+    QApplication a(argc, argv);
+    string filepath = "/Users/aminelamouchi/Desktop/carrefour.png";
+    vector<vector<string>> receipt_info = get_receipt_info(filepath);
+
+    // print the content of receipt_info
+    for (vector<string> pair_info : receipt_info)
+    {
+        cout << "ID: " << pair_info[0] << " ECOSCORE: " << pair_info[1] << " BRAND: " << pair_info[2] << " CATEGORY: " << pair_info[3] << endl;
+    }
+    /*
     QApplication a(argc, argv);
     Json_DB obj;
 
@@ -42,5 +54,5 @@ int main(int argc, char *argv[])
 
 //    calculator(argc, argv, "economy international flight", "10000", m);
 //    std::cout << std::to_string(m->get_footprint()) << std::endl
-
+*/
 }
