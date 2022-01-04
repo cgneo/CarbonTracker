@@ -269,6 +269,10 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix4(":/challenges/seed.png");
     ui -> seed -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
 
+    QPixmap pix5(":/survey/trasnport_icon.png");
+    ui -> trans_picture -> setPixmap(pix5.scaled(500,300, Qt::KeepAspectRatio));
+
+
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
     ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);
