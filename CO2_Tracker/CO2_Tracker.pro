@@ -1,5 +1,7 @@
 TEMPLATE = app
-QT += core gui network
+QT += core gui network charts
+QT += core
+DEFINES += Test #variable that allows the execution of the tests
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,13 +12,14 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    api_transport.cpp \
     base_consumption.cpp \
     consumption.cpp \
     date.cpp \
+    donut.cpp \
     json_DB.cpp \
     object.cpp \
     food.cpp \
+    profile_picture.cpp \
     tests.cpp \
     transport.cpp \
     user.cpp\
@@ -28,24 +31,26 @@ SOURCES += \
 
 
 HEADERS += \
-    api_transport.h \
     base_consumption.h \
     consumption.h \
     date.h \
+    donut.h \
     json_DB.hpp \
     object.h \
     food.h \
+    profile_picture.h \
     tests.h \
     transport.h \
+    transport_api.h \
     user.h \
     receipt.h \
     mainwindow.h \
     survey.h
 
 FORMS += \
-    api_transport.ui \
     mainwindow.ui \
-    survey.ui
+    survey.ui \
+    transport_api.ui
 
 TARGET = CarbonTracker_exe
 
@@ -53,3 +58,6 @@ TARGET = CarbonTracker_exe
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources/pictures/images.qrc

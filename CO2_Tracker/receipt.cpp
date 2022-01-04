@@ -13,7 +13,7 @@ Receipt::Receipt(type receipt, Date *start_date, int num_people, int duration) {
 
 Receipt::~Receipt(){
     delete[] date;
-    vector<Object>().swap(content); //Free memory from vector
+    vector<Object *>().swap(content); //Free memory from vector
 };//To be constructed
 
 
@@ -46,11 +46,11 @@ Date* Receipt::get_dates(){
 void Receipt::set_footprint(double footprint) {
     if (receipt_type == food){
         for (int i = 0; i < content.size(); i++){
-            footprint += content[i].get_footprint();
+            footprint += content[i]->get_footprint();
         } //Iterate through content and add footprint of each object
     }
     else{
-        footprint = content[0].get_footprint(); //footprint is the footprint of the transport object
+        footprint = content[0]->get_footprint(); //footprint is the footprint of the transport object
     }
 }
 
@@ -93,4 +93,18 @@ void Receipt::add_receipt(string str){//Takes a string with file directory and c
     for(int i = 0; i<array; i++){//change to array.size() //addthe footprint of each item to the overall footprint
 
     }
+}
+
+bool Receipt::duration_is_valid(){
+    if (duration < 0) throw std::invalid_argument("Invalid number");
+    return true;
+}
+
+bool Receipt::number_of_people_is_valid(){
+    if (number_of_people < 0) throw std::invalid_argument("Invalid number");
+    return true;
+}
+
+vector<Object *> Receipt::get_receipt_content(){
+    return content;
 }

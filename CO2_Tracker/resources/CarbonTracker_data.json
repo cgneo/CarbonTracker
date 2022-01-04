@@ -1,0 +1,39 @@
+{
+    "Base consumption": [
+    ],
+    "Consumption": [
+        {
+            "Date": [
+                1,
+                4,
+                2019
+            ],
+            "Footprint": 10390,
+            "Name": "Metro",
+            "Type": "Transport"
+        },
+        {
+            "Date": [
+                2,
+                3,
+                2020
+            ],
+            "Footprint": 1000000,
+            "Name": "Avion",
+            "Type": "Transport"
+        }
+    ],
+    "Country": "Mexico",
+    "Date": [
+        13,
+        10,
+        2001
+    ],
+    "Email": "alexchristlieb@gmail.com",
+    "Footprint": 0,
+    "Friends": [
+    ],
+    "Name": "Alejandro Christlieb",
+    "Seeds": 0,
+    "Username": "alex.christlieb"
+}

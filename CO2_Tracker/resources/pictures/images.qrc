@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/survey">
+        <file>trasnport_icon.png</file>
+        <file>home_icon2.png</file>
+        <file>logo_CT.jpeg</file>
+    </qresource>
+    <qresource prefix="/challenges">
+        <file>plane-pic.png</file>
+        <file>home-pic.png</file>
+        <file>food-pic.png</file>
+        <file>trasnport_icon.png</file>
+        <file>Tree-animation.gif</file>
+        <file>tree_animation.gif</file>
+        <file>tree.png</file>
+        <file>seed.png</file>
+    </qresource>
+</RCC>

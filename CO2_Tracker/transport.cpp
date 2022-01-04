@@ -1,25 +1,20 @@
-
 #include "transport.h"
-Transport :: Transport(){
-    distance = "0";
+
+Transport :: Transport():Object(){
+    distance = 0;
 }
 
-void Transport:: set_distance(char* travelled){
+void Transport :: set_distance(char* travelled){
     distance = travelled;
 }
-
-Locomotive :: Locomotive(){
-    footprint = 0;
+char* Transport:: get_distance(){
+    return distance;
 }
+Locomotive :: Locomotive():Transport(){}
 
-Airplane :: Airplane(){
-        footprint = 0;
+Airplane :: Airplane():Transport(){}
 
-}
-
-Car :: Car(){
-        footprint = 0;
-}
+Car :: Car():Transport(){}
 
 void Locomotive ::  set_footprint(double estimate){footprint = estimate;}
 void Car ::  set_footprint(double estimate){footprint = estimate;}
