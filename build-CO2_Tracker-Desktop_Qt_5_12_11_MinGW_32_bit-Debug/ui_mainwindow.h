@@ -75,9 +75,13 @@ public:
     QCheckBox *checkBox_4;
     QSpacerItem *horizontalSpacer_3;
     QWidget *tab_2;
-    QGridLayout *gridLayout_3;
-    QVBoxLayout *verticalLayout_12;
+    QWidget *layoutWidget1;
+    QVBoxLayout *verticalLayout_43;
     QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout_4;
+    QSpacerItem *horizontalSpacer_11;
+    QLabel *trans_picture;
+    QSpacerItem *horizontalSpacer_12;
     QHBoxLayout *horizontalLayout_11;
     QSpacerItem *horizontalSpacer_10;
     QVBoxLayout *verticalLayout_11;
@@ -134,7 +138,7 @@ public:
     QHBoxLayout *horizontalLayout_16;
     QCalendarWidget *calendarWidget;
     QWidget *tab_3;
-    QWidget *layoutWidget1;
+    QWidget *layoutWidget2;
     QGridLayout *gridLayout_4;
     QVBoxLayout *verticalLayout_16;
     QVBoxLayout *verticalLayout_15;
@@ -642,13 +646,34 @@ public:
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
-        gridLayout_3 = new QGridLayout(tab_2);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        verticalLayout_12 = new QVBoxLayout();
-        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
+        layoutWidget1 = new QWidget(tab_2);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(410, 10, 681, 731));
+        verticalLayout_43 = new QVBoxLayout(layoutWidget1);
+        verticalLayout_43->setObjectName(QString::fromUtf8("verticalLayout_43"));
+        verticalLayout_43->setContentsMargins(0, 0, 0, 0);
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_12->addItem(verticalSpacer);
+        verticalLayout_43->addItem(verticalSpacer);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_11);
+
+        trans_picture = new QLabel(layoutWidget1);
+        trans_picture->setObjectName(QString::fromUtf8("trans_picture"));
+        trans_picture->setMinimumSize(QSize(450, 250));
+
+        horizontalLayout_4->addWidget(trans_picture);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_12);
+
+
+        verticalLayout_43->addLayout(horizontalLayout_4);
 
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
@@ -658,7 +683,7 @@ public:
 
         verticalLayout_11 = new QVBoxLayout();
         verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
-        label_27 = new QLabel(tab_2);
+        label_27 = new QLabel(layoutWidget1);
         label_27->setObjectName(QString::fromUtf8("label_27"));
         QFont font3;
         font3.setPointSize(30);
@@ -667,7 +692,7 @@ public:
 
         verticalLayout_11->addWidget(label_27);
 
-        label_28 = new QLabel(tab_2);
+        label_28 = new QLabel(layoutWidget1);
         label_28->setObjectName(QString::fromUtf8("label_28"));
         QFont font4;
         font4.setPointSize(16);
@@ -688,12 +713,12 @@ public:
         horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
-        label_2 = new QLabel(tab_2);
+        label_2 = new QLabel(layoutWidget1);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         verticalLayout_8->addWidget(label_2);
 
-        vehicleTransport = new QComboBox(tab_2);
+        vehicleTransport = new QComboBox(layoutWidget1);
         vehicleTransport->addItem(QString());
         vehicleTransport->addItem(QString());
         vehicleTransport->addItem(QString());
@@ -716,14 +741,14 @@ public:
 
         verticalLayout_9 = new QVBoxLayout();
         verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
-        label = new QLabel(tab_2);
+        label = new QLabel(layoutWidget1);
         label->setObjectName(QString::fromUtf8("label"));
 
         verticalLayout_9->addWidget(label);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        distanceTransport = new QSpinBox(tab_2);
+        distanceTransport = new QSpinBox(layoutWidget1);
         distanceTransport->setObjectName(QString::fromUtf8("distanceTransport"));
         distanceTransport->setMinimum(0);
         distanceTransport->setMaximum(10000);
@@ -734,7 +759,7 @@ public:
 
         horizontalLayout->addWidget(distanceTransport);
 
-        label_3 = new QLabel(tab_2);
+        label_3 = new QLabel(layoutWidget1);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         horizontalLayout->addWidget(label_3);
@@ -754,7 +779,7 @@ public:
 
         horizontalLayout_9->addItem(horizontalSpacer_5);
 
-        buttonTransport = new QPushButton(tab_2);
+        buttonTransport = new QPushButton(layoutWidget1);
         buttonTransport->setObjectName(QString::fromUtf8("buttonTransport"));
 
         horizontalLayout_9->addWidget(buttonTransport);
@@ -768,19 +793,19 @@ public:
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
-        label_6 = new QLabel(tab_2);
+        label_6 = new QLabel(layoutWidget1);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_8->addWidget(label_6);
 
-        outputTransport = new QLabel(tab_2);
+        outputTransport = new QLabel(layoutWidget1);
         outputTransport->setObjectName(QString::fromUtf8("outputTransport"));
         outputTransport->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_8->addWidget(outputTransport);
 
-        label_5 = new QLabel(tab_2);
+        label_5 = new QLabel(layoutWidget1);
         label_5->setObjectName(QString::fromUtf8("label_5"));
 
         horizontalLayout_8->addWidget(label_5);
@@ -806,18 +831,15 @@ public:
         horizontalLayout_11->addItem(horizontalSpacer_9);
 
 
-        verticalLayout_12->addLayout(horizontalLayout_11);
+        verticalLayout_43->addLayout(horizontalLayout_11);
 
         verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_12->addItem(verticalSpacer_4);
+        verticalLayout_43->addItem(verticalSpacer_4);
 
         verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_12->addItem(verticalSpacer_5);
-
-
-        gridLayout_3->addLayout(verticalLayout_12, 0, 0, 1, 1);
+        verticalLayout_43->addItem(verticalSpacer_5);
 
         tabWidget->addTab(tab_2, QString());
         tab_21 = new QWidget();
@@ -992,7 +1014,7 @@ public:
         tab_7->setObjectName(QString::fromUtf8("tab_7"));
         horizontalFrame3 = new QFrame(tab_7);
         horizontalFrame3->setObjectName(QString::fromUtf8("horizontalFrame3"));
-        horizontalFrame3->setGeometry(QRect(0, 0, 801, 441));
+        horizontalFrame3->setGeometry(QRect(0, 0, 861, 541));
         horizontalLayout_13 = new QHBoxLayout(horizontalFrame3);
         horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
         tabWidget_2->addTab(tab_7, QString());
@@ -1020,17 +1042,17 @@ public:
         tabWidget->addTab(tab_21, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
-        layoutWidget1 = new QWidget(tab_3);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(40, 10, 1251, 691));
-        gridLayout_4 = new QGridLayout(layoutWidget1);
+        layoutWidget2 = new QWidget(tab_3);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(40, 10, 1251, 691));
+        gridLayout_4 = new QGridLayout(layoutWidget2);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
         verticalLayout_16 = new QVBoxLayout();
         verticalLayout_16->setObjectName(QString::fromUtf8("verticalLayout_16"));
         verticalLayout_15 = new QVBoxLayout();
         verticalLayout_15->setObjectName(QString::fromUtf8("verticalLayout_15"));
-        label_9 = new QLabel(layoutWidget1);
+        label_9 = new QLabel(layoutWidget2);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setMaximumSize(QSize(165777, 25));
         label_9->setStyleSheet(QString::fromUtf8("QLabel{\n"
@@ -1046,14 +1068,14 @@ public:
 
         verticalLayout_15->addWidget(label_9);
 
-        food_label = new QLabel(layoutWidget1);
+        food_label = new QLabel(layoutWidget2);
         food_label->setObjectName(QString::fromUtf8("food_label"));
         food_label->setMaximumSize(QSize(351, 16777215));
         food_label->setPixmap(QPixmap(QString::fromUtf8("build/tips photos/food-pic.png")));
 
         verticalLayout_15->addWidget(food_label);
 
-        label_11 = new QLabel(layoutWidget1);
+        label_11 = new QLabel(layoutWidget2);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setMaximumSize(QSize(16777215, 233));
         label_11->setStyleSheet(QString::fromUtf8("QLabel{\n"
@@ -1074,7 +1096,7 @@ public:
 
         verticalLayout_14 = new QVBoxLayout();
         verticalLayout_14->setObjectName(QString::fromUtf8("verticalLayout_14"));
-        label_10 = new QLabel(layoutWidget1);
+        label_10 = new QLabel(layoutWidget2);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setMinimumSize(QSize(341, 25));
         label_10->setMaximumSize(QSize(16777215, 25));
@@ -1093,17 +1115,17 @@ public:
 
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        food_tip_1 = new QCheckBox(layoutWidget1);
+        food_tip_1 = new QCheckBox(layoutWidget2);
         food_tip_1->setObjectName(QString::fromUtf8("food_tip_1"));
 
         verticalLayout_4->addWidget(food_tip_1);
 
-        food_tip_2 = new QCheckBox(layoutWidget1);
+        food_tip_2 = new QCheckBox(layoutWidget2);
         food_tip_2->setObjectName(QString::fromUtf8("food_tip_2"));
 
         verticalLayout_4->addWidget(food_tip_2);
 
-        food_tip_3 = new QCheckBox(layoutWidget1);
+        food_tip_3 = new QCheckBox(layoutWidget2);
         food_tip_3->setObjectName(QString::fromUtf8("food_tip_3"));
 
         verticalLayout_4->addWidget(food_tip_3);
@@ -1121,7 +1143,7 @@ public:
         verticalLayout_18->setObjectName(QString::fromUtf8("verticalLayout_18"));
         verticalLayout_19 = new QVBoxLayout();
         verticalLayout_19->setObjectName(QString::fromUtf8("verticalLayout_19"));
-        label_14 = new QLabel(layoutWidget1);
+        label_14 = new QLabel(layoutWidget2);
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setMaximumSize(QSize(165777, 25));
         label_14->setStyleSheet(QString::fromUtf8("QLabel{\n"
@@ -1137,13 +1159,13 @@ public:
 
         verticalLayout_19->addWidget(label_14);
 
-        transport_label = new QLabel(layoutWidget1);
+        transport_label = new QLabel(layoutWidget2);
         transport_label->setObjectName(QString::fromUtf8("transport_label"));
         transport_label->setPixmap(QPixmap(QString::fromUtf8("build/tips photos/new_plane_pic.png")));
 
         verticalLayout_19->addWidget(transport_label);
 
-        label_15 = new QLabel(layoutWidget1);
+        label_15 = new QLabel(layoutWidget2);
         label_15->setObjectName(QString::fromUtf8("label_15"));
         label_15->setMaximumSize(QSize(16777215, 233));
         label_15->setStyleSheet(QString::fromUtf8("QLabel{\n"
@@ -1164,7 +1186,7 @@ public:
 
         verticalLayout_20 = new QVBoxLayout();
         verticalLayout_20->setObjectName(QString::fromUtf8("verticalLayout_20"));
-        label_16 = new QLabel(layoutWidget1);
+        label_16 = new QLabel(layoutWidget2);
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setMinimumSize(QSize(341, 25));
         label_16->setMaximumSize(QSize(16777215, 25));
@@ -1183,17 +1205,17 @@ public:
 
         verticalLayout_21 = new QVBoxLayout();
         verticalLayout_21->setObjectName(QString::fromUtf8("verticalLayout_21"));
-        transportation_tip_1 = new QCheckBox(layoutWidget1);
+        transportation_tip_1 = new QCheckBox(layoutWidget2);
         transportation_tip_1->setObjectName(QString::fromUtf8("transportation_tip_1"));
 
         verticalLayout_21->addWidget(transportation_tip_1);
 
-        transportation_tip_2 = new QCheckBox(layoutWidget1);
+        transportation_tip_2 = new QCheckBox(layoutWidget2);
         transportation_tip_2->setObjectName(QString::fromUtf8("transportation_tip_2"));
 
         verticalLayout_21->addWidget(transportation_tip_2);
 
-        transportation_tip_3 = new QCheckBox(layoutWidget1);
+        transportation_tip_3 = new QCheckBox(layoutWidget2);
         transportation_tip_3->setObjectName(QString::fromUtf8("transportation_tip_3"));
 
         verticalLayout_21->addWidget(transportation_tip_3);
@@ -1211,7 +1233,7 @@ public:
         verticalLayout_22->setObjectName(QString::fromUtf8("verticalLayout_22"));
         verticalLayout_23 = new QVBoxLayout();
         verticalLayout_23->setObjectName(QString::fromUtf8("verticalLayout_23"));
-        label_17 = new QLabel(layoutWidget1);
+        label_17 = new QLabel(layoutWidget2);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setMaximumSize(QSize(165777, 25));
         label_17->setStyleSheet(QString::fromUtf8("QLabel{\n"
@@ -1227,13 +1249,13 @@ public:
 
         verticalLayout_23->addWidget(label_17);
 
-        home_label = new QLabel(layoutWidget1);
+        home_label = new QLabel(layoutWidget2);
         home_label->setObjectName(QString::fromUtf8("home_label"));
         home_label->setPixmap(QPixmap(QString::fromUtf8("build/tips photos/home-pic.png")));
 
         verticalLayout_23->addWidget(home_label);
 
-        label_18 = new QLabel(layoutWidget1);
+        label_18 = new QLabel(layoutWidget2);
         label_18->setObjectName(QString::fromUtf8("label_18"));
         label_18->setMaximumSize(QSize(16777215, 233));
         label_18->setStyleSheet(QString::fromUtf8("QLabel{\n"
@@ -1254,7 +1276,7 @@ public:
 
         verticalLayout_24 = new QVBoxLayout();
         verticalLayout_24->setObjectName(QString::fromUtf8("verticalLayout_24"));
-        label_19 = new QLabel(layoutWidget1);
+        label_19 = new QLabel(layoutWidget2);
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setMinimumSize(QSize(341, 25));
         label_19->setMaximumSize(QSize(16777215, 25));
@@ -1273,17 +1295,17 @@ public:
 
         verticalLayout_25 = new QVBoxLayout();
         verticalLayout_25->setObjectName(QString::fromUtf8("verticalLayout_25"));
-        house_tip_1 = new QCheckBox(layoutWidget1);
+        house_tip_1 = new QCheckBox(layoutWidget2);
         house_tip_1->setObjectName(QString::fromUtf8("house_tip_1"));
 
         verticalLayout_25->addWidget(house_tip_1);
 
-        house_tip_2 = new QCheckBox(layoutWidget1);
+        house_tip_2 = new QCheckBox(layoutWidget2);
         house_tip_2->setObjectName(QString::fromUtf8("house_tip_2"));
 
         verticalLayout_25->addWidget(house_tip_2);
 
-        house_tip_3 = new QCheckBox(layoutWidget1);
+        house_tip_3 = new QCheckBox(layoutWidget2);
         house_tip_3->setObjectName(QString::fromUtf8("house_tip_3"));
 
         verticalLayout_25->addWidget(house_tip_3);
@@ -1437,7 +1459,7 @@ public:
         retranslateUi(MainWindow);
 
         tabWidget->setCurrentIndex(2);
-        tabWidget_2->setCurrentIndex(4);
+        tabWidget_2->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1470,6 +1492,7 @@ public:
         checkBox_5->setText(QApplication::translate("MainWindow", "Challenge # 3", nullptr));
         checkBox_4->setText(QApplication::translate("MainWindow", "Challenge # 4", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Profile page", nullptr));
+        trans_picture->setText(QString());
         label_27->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#8962b4;\">Transport emissions</span></p></body></html>", nullptr));
         label_28->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">Input your emissions due to transport here!</p></body></html>", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Select your vehicle", nullptr));
