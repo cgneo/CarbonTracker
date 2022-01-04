@@ -148,7 +148,7 @@ double Consumption::get_daily_footprint(int day, int month, int year){
     return daily_footprint;
 
 }
-/*
+
 void Consumption::add_receipt(Receipt receipt){
     int size = receipt.get_receipt_content().size();
     total_footprint += receipt.get_footprint();
@@ -159,4 +159,4 @@ void Consumption::add_receipt(Receipt receipt){
         food_footprint += new_obj->get_footprint();
     }
 }
-*/
+
