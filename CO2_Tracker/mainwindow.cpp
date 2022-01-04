@@ -186,8 +186,8 @@ MainWindow::MainWindow(QWidget *parent)
     chartsum->addAxis(axisXsum, Qt::AlignBottom);
     seriessum->attachAxis(axisXsum);
     QValueAxis *axisYsum = new QValueAxis();
-    chart->addAxis(axisYsum, Qt::AlignLeft);
-    series->attachAxis(axisYsum);
+    chartsum->addAxis(axisYsum, Qt::AlignLeft);
+    seriessum->attachAxis(axisYsum);
 
     chartsum->legend()->setVisible(true);
     chartsum->legend()->setAlignment(Qt::AlignBottom);
