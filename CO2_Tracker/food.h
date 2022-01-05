@@ -8,7 +8,9 @@ class Food : public Object {
    public:
     Food();
     Food(double barcode);
-    Food(int quantity, double barcode, double footprint);
+    Food(Object o);
+    Food(Date *current_date, QString object_name,
+         int quantity, double barcode, QString category);
     ~Food();
     void set_quantity(double quantity);
     void set_barcode(double barcode);
@@ -22,6 +24,8 @@ class Food : public Object {
     double retrieve_carbon(double barcode);
     string retrieve_category(double barcode);
     void create_food_item(double barcode);
+
+    virtual void object_to_json(QJsonObject &obj); //Get an empy QJsonObject and encodes a food object
 
 protected:
     double barcode;

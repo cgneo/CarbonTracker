@@ -15,15 +15,18 @@ Food::Food(double barcode) {
     set_footprint(co2_total, 1);
 }
 
-Food::Food(int quantity, double barcode, double footprint){
-    set_type("food");
+Food::Food(Date *current_date, QString object_name,
+               int quantity, double barcode, QString category)
+                :Object(current_date, object_name){
+    set_type("Food");
     set_quantity(quantity);
     set_barcode(barcode);
-    set_footprint(footprint, quantity);
+    //set_footprint(footprint, quantity);
+    set_category(category.toStdString());
 }
 
 Food::~Food(){
-
+    delete date;
 }
 //---------------------Get Methods--------------------------
 double Food::get_quantity() {
@@ -67,3 +70,15 @@ double Food::retrieve_carbon(double barcode) {
                //C02 footprint of food item
 }
 
+void Food::object_to_json(QJsonObject &obj){
+    obj["Type"] = type;
+    obj["Name"] = name;
+
+    QJsonArray json_date = {date->get_day(), date->get_month()
+                      , date->get_year()};
+    obj["Date"] = json_date;
+    obj["Footprint"] = footprint;
+    obj["Barcode"] = barcode;
+    obj["Quantity"] = quantity;
+    obj["Category"] = QString::fromStdString(category);
+}

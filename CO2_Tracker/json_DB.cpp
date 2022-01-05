@@ -12,6 +12,7 @@
 #include <QCoreApplication>
 #include "tests.h"
 #include "user.h"
+#include "food.h"
 #include <random>
 #include <ctime>
 
@@ -167,7 +168,7 @@ void Json_DB::writeJsonUser(User &user){
     file.write(QJsonDocument(user_json).toJson());
 }
 
-QJsonDocument *Json_DB::read_JsonFile(){
+QJsonDocument *Json_DB::read_JsonFile(){ //Returns an object on the heap. REMEMBER TO DELETE
     QFile file(path+file_name);
 
     if (!file.open(QIODevice::ReadOnly)) {
@@ -179,6 +180,62 @@ QJsonDocument *Json_DB::read_JsonFile(){
     QJsonDocument *json_doc = new QJsonDocument(QJsonDocument::fromJson(data));
     return json_doc;
 }
+
+vector<Object> Json_DB::get_consumption(){
+    QJsonDocument* current_doc = read_JsonFile(); //Retrieve the current json file
+    QJsonObject json_file = current_doc->object(); //Full json object
+
+    //Get the consumption array of json objects
+    QJsonArray consumption_json = json_file["Consumption"].toArray();
+
+    int size = consumption_json.size();
+
+    vector<Object> consumption;
+
+    for (int i = size - 1; i >= 0; i--){ //Iterate through the json array backwards to get newer elements in front
+        QJsonObject json_object = consumption_json.at(i).toObject();
+
+        //Unpack the date of the object
+        QJsonArray date_json = json_object["Date"].toArray();
+        int day = date_json.at(0).toInt();
+        int month = date_json.at(1).toInt();
+        int year = date_json.at(2).toInt();
+        qDebug() << day;
+        qDebug() << month;
+        qDebug() << year;
+
+        Date *date = new Date(day,month, year);
+
+        qDebug() << QString::fromStdString(date->print2());
+
+        //Unpack the other attributes
+        double footprint = json_object["Footprint"].toDouble();
+        QString type = json_object["Type"].toString();
+        QString name = json_object["Name"].toString();
+
+        if (type == "Transport"){ //If its a transport object, unpack transport attributes
+            string distance = json_object["Distance"].toString().toStdString();
+            char * d = new char[distance.length() + 1];
+
+            Transport t(date, name, d); //Create a transport object
+            t.set_footprint(footprint);
+
+            consumption.push_back(t);//Put object in vector
+        }
+        else if (type == "Food"){ //Unpack food attributes
+            double barcode = json_object["Barcode"].toDouble();
+            double quantity =json_object["Quantity"].toDouble();
+            QString category = json_object["Category"].toString();
+
+            Food f(date, name, quantity, barcode, category);
+            f.set_footprint(footprint, quantity); //Build food object
+
+            consumption.push_back(f); //Put object in vector
+        }
+    }
+    delete current_doc; // Delete used pointer
+    return consumption;
+   }
 
 void Json_DB::write_in_file(QJsonObject &json_obj){
     QFile file(path+file_name);

@@ -10,6 +10,11 @@ Object::Object(){
     type = "food";
 }
 
+Object::Object(Date *current_date, QString object_name){
+    date = current_date;
+    name = object_name;
+}
+
 Object::Object(Date *current_date, QString object_name, QString object_type, double footprint){
     date = current_date;
     this->footprint = footprint;
@@ -18,7 +23,8 @@ Object::Object(Date *current_date, QString object_name, QString object_type, dou
 }
 
 Object::~Object(){
-    //delete date; Can crash the program if two objects with same date are generated together
+    //delete date;
+    //Can crash the program if two objects with same date are generated together
 }
 
 

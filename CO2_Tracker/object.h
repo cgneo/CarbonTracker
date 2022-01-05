@@ -12,6 +12,7 @@ using namespace std;
 class Object{
 public:
     Object();
+    Object(Date *current_date, QString object_name);
     Object(Date *current_date, QString object_name, QString object_type, double footprint);
     virtual ~Object();
 
@@ -24,7 +25,7 @@ public:
     void set_name(QString object_name);
     void set_type(QString object_type);
 
-    void object_to_json(QJsonObject &obj);
+    virtual void object_to_json(QJsonObject &obj); //Gets an empy QJsonObj and encodes an object
 
 protected:
     Date *date;

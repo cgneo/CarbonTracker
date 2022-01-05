@@ -22,6 +22,7 @@
 #include <QChartView>
 #include <QBarSet>
 #include <QBarSeries>
+#include "food.h"
 
 
 /**
@@ -41,20 +42,45 @@ int main(int argc, char *argv[])
 {
 
     QApplication a(argc, argv);
-    string filepath = "/Users/aminelamouchi/Desktop/carrefour.png";
-    vector<vector<string>> receipt_info = get_receipt_info(filepath);
+  //  ------------------Try Amine's code--------------------
+//    string filepath = "/Users/alex_christlieb/Desktop/Carrefour_receipt.png";
+//    vector<vector<string>> receipt_info = get_receipt_info(filepath);
 
-    // print the content of receipt_info
-    for (vector<string> pair_info : receipt_info)
-    {
-        cout << "ID: " << pair_info[0] << " ECOSCORE: " << pair_info[1] << " BRAND: " << pair_info[2] << " CATEGORY: " << pair_info[3] << endl;
-    }
-    /*
-    QApplication a(argc, argv);
-//    MainWindow window;
-//    window.show();
-//    return a.exec();
+//    // print the content of receipt_info
+//    for (vector<string> pair_info : receipt_info)
+//    {
+//        cout << "ID: " << pair_info[0] << " ECOSCORE: " << pair_info[1] << " BRAND: " << pair_info[2] << " CATEGORY: " << pair_info[3] << endl;
+//    }
 
+//-------------------Try reading the json file to get consumption array--------------
+
+//    Json_DB json_obj;
+//    vector<Object> consumption = json_obj.get_consumption();
+
+//    int size =  consumption.size();
+
+//    for (int i = 0; i < size; i++){//Iterate through vector
+//        qDebug() << "Object - " << QString::number(i);
+//        Object *o = &consumption[i];
+//        string date = o->get_date()->print2();
+//        qDebug() << o->get_type();
+//        qDebug() << o->get_name();
+//        qDebug() << o->get_footprint();
+//        qDebug() << QString::fromStdString(date);
+
+//        if (o->get_type() == "Food"){
+//            Food* f = static_cast<Food*>(o);
+//            qDebug() << QString::number(f->get_barcode());
+//            //qDebug() << QString::fromStdString(f->get_category());
+//            qDebug() << QString::number(f->get_quantity());
+//        }
+//        else if (o->get_type() == "Transport"){
+//            Transport* t = static_cast<Transport*>(o);
+//            qDebug() << t->get_distance();
+//        }
+//    }
+
+//-----------------Try Writing into json file------------
 //    Json_DB json_obj;
 //    QJsonObject doc;
 
@@ -69,61 +95,41 @@ int main(int argc, char *argv[])
 
 //    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
 
-    //json_obj.createJsonUserObject(doc, u);
-//    json_obj.writeJsonUser(u);
-
-#ifdef Test
-    Tests t;
-//   QString file = obj.get_path() + obj.get_FileName();
-//   t.test_does_file_exist(file);
-
-//    Tests t;
-    t.start_test();
-#endif
-//    QString full_path = json_obj.get_path() + json_obj.get_FileName();
-
-
 //    Date* fecha = new Date(01,04,2019);
 //    Date* fech2 = new Date(02,03,2020);
+//    Food food(fecha, "Nuevo", 100, 12432543, "Epicerie");
+
+//    std::string distance = "1000";
+//    char *d = new char[distance.length() + 1];
+//    Transport trans(fech2, "Nuevisimo", d);
+//    trans.set_footprint(69);
+
 //    Object obj(fecha, "Metro", "Transport",100);
 //    Object obj2(fech2, "Avion", "Transport",100);
 //    obj.set_footprint(10390);
 //    obj2.set_footprint(1000000);
 
 //    json_obj.writeJsonUser(u);
-//    json_obj.addObject_to_file(obj);
-//    json_obj.addObject_to_file(obj2);
+//    json_obj.addObject_to_file(food);
+//    json_obj.addObject_to_file(food);
+//    json_obj.addObject_to_file(trans);
 
-    //json_obj.parseJsonFile(full_path);
+//--------------------------Try Catalina's Testing---------
+#ifdef Test
+    Tests t;
+    //t.start_test();
+#endif
 
 
-//    Survey window;
-//    window.show();
-//    return a.exec();
+//--------------------------Run the UI--------------------
+//
+//   Json_DB obj;
 
-//      Donut d;
-//      d.show();
-//      return a.exec();
-    Json_DB obj;
+//   Tests t1;
+//   QString file = json_obj.get_path() + json_obj.get_FileName();
+//   t1.test_does_file_exist(file);
 
-    Tests t1;
-    QString file = obj.get_path() + obj.get_FileName();
-    t1.test_does_file_exist(file);
-
-   bool new_user = !t1.test_does_file_exist(file);
-
-   if (new_user){ //If user is new, open profile set_up
-       Survey window;
-       window.show();
-       return a.exec();
-   }
-   else{ //Else open regular window
-       MainWindow window;
-       window.show();
-       return a.exec();
-   }
-
-//    bool new_user = !t.test_does_file_exist(file);
+//   bool new_user = !t1.test_does_file_exist(file);
 
     //This code is actually USED
 //    if (new_user){ //If user is new, open profile set_up
@@ -137,23 +143,5 @@ int main(int argc, char *argv[])
 //        return a.exec();
 //     }
 
-//     Object *ham = new Object();
-//     Object *amg = new Object();
-//     Object *bread = new Object();
-//     Object *aston = new Object();
-//     ham->set_footprint(10);
-//     amg->set_type("transport");
-//     amg->set_footprint(20);
-//     bread->set_footprint(35);
-//     aston->set_type("transport");
-//     aston->set_footprint(80);
 
-//     Base_Consumption week1;
-//     week1.add_object(ham);
-//     //week1.add_object(amg);
-//     //week1.add_object(bread);
-//     //week1.add_object(aston);
-
-//     double cbf = week1.get_footprint();
-//     std::cout << cbf << std::endl;
 }

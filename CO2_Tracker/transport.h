@@ -1,14 +1,18 @@
 #ifndef TRANSPORT_H
 #define TRANSPORT_H
-
 #include "object.h"
-
+#include <string>
 
 class Transport : public Object{
    public:
     Transport();
+    Transport(Date *current_date, QString object_name, char* distance);
+    ~Transport();
+
     void set_distance(char* distance);
     char* get_distance();
+
+    virtual void object_to_json(QJsonObject &obj); //Get an empy QJsonObject and encodes a food object
 protected:
     char* distance;
 };
