@@ -146,7 +146,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                <widget class="QLabel" name="label_5">
                 <property name="font">
                  <font>
-                  <family>Gill Sans</family>
                   <pointsize>42</pointsize>
                  </font>
                 </property>
@@ -162,7 +161,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                <widget class="QLabel" name="label_6">
                 <property name="font">
                  <font>
-                  <family>Gill Sans</family>
                   <pointsize>37</pointsize>
                  </font>
                 </property>
@@ -339,323 +337,197 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_17">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>118</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <spacer name="verticalSpacer_2">
+           <spacer name="horizontalSpacer">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>20</width>
+              <width>100</width>
               <height>20</height>
              </size>
             </property>
            </spacer>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
+           <layout class="QVBoxLayout" name="verticalLayout_16">
             <item>
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>100</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_16">
+             <layout class="QVBoxLayout" name="verticalLayout_2">
               <item>
-               <layout class="QVBoxLayout" name="verticalLayout_2">
-                <item>
-                 <widget class="QLabel" name="label_pic_3">
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="label_14">
-                  <property name="font">
-                   <font>
-                    <family>Gill Sans</family>
-                    <pointsize>30</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#8962b4;&quot;&gt;Housing&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::AutoText</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="label_13">
-                  <property name="font">
-                   <font>
-                    <family>Gill Sans</family>
-                    <pointsize>16</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Housing leaves a footprint. Let's see how sustainable your way of living is.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                  <property name="textFormat">
-                   <enum>Qt::RichText</enum>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+               <widget class="QLabel" name="label_pic_3">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
               </item>
               <item>
-               <widget class="QTabWidget" name="tabHousing">
-                <property name="currentIndex">
-                 <number>0</number>
+               <widget class="QLabel" name="label_14">
+                <property name="font">
+                 <font>
+                  <pointsize>30</pointsize>
+                 </font>
                 </property>
-                <widget class="QWidget" name="tab_11">
-                 <attribute name="title">
-                  <string>Question 1</string>
-                 </attribute>
-                 <layout class="QGridLayout" name="gridLayout_2">
-                  <item row="0" column="0">
-                   <layout class="QVBoxLayout" name="verticalLayout">
-                    <item>
-                     <widget class="QLabel" name="label_15">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>60</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>60</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Gill Sans</family>
-                        <pointsize>16</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Do you live alone or do you have flatmates?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <layout class="QVBoxLayout" name="verticalLayout_11">
-                      <item>
-                       <widget class="QRadioButton" name="radioH1_1">
-                        <property name="text">
-                         <string>Alone</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QRadioButton" name="radioH1_2">
-                        <property name="text">
-                         <string>1-2</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QRadioButton" name="radioH1_3">
-                        <property name="text">
-                         <string>3-4</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QRadioButton" name="radioH1_4">
-                        <property name="text">
-                         <string>5+</string>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="buttonNextHousing1">
-                      <property name="text">
-                       <string>Next</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QWidget" name="tab_12">
-                 <attribute name="title">
-                  <string>Question 2</string>
-                 </attribute>
-                 <layout class="QGridLayout" name="gridLayout_5">
-                  <item row="0" column="0">
-                   <layout class="QVBoxLayout" name="verticalLayout_4">
-                    <item>
-                     <widget class="QLabel" name="label_16">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;How much do you spend a year in furniture?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QRadioButton" name="radioH2_1">
-                      <property name="text">
-                       <string>I don't buy furniture often</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QRadioButton" name="radioH2_2">
-                      <property name="text">
-                       <string>Less than 200 €</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QRadioButton" name="radioH2_3">
-                      <property name="text">
-                       <string>200-1000 €</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QRadioButton" name="radioH2_4">
-                      <property name="text">
-                       <string>More than a 1000 €</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="buttonNextHousing2">
-                      <property name="text">
-                       <string>Next</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QWidget" name="tab_13">
-                 <attribute name="title">
-                  <string>Question 3</string>
-                 </attribute>
-                 <layout class="QGridLayout" name="gridLayout_4">
-                  <item row="0" column="0">
-                   <layout class="QVBoxLayout" name="verticalLayout_3">
-                    <item>
-                     <widget class="QLabel" name="label_17">
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;How much electricity do you consume in average monthly&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_2">
-                      <item>
-                       <widget class="QSlider" name="horizontalSlider_3">
-                        <property name="maximum">
-                         <number>10</number>
-                        </property>
-                        <property name="singleStep">
-                         <number>1</number>
-                        </property>
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="tickPosition">
-                         <enum>QSlider::TicksBelow</enum>
-                        </property>
-                        <property name="tickInterval">
-                         <number>1</number>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_18">
-                        <property name="minimumSize">
-                         <size>
-                          <width>16</width>
-                          <height>0</height>
-                         </size>
-                        </property>
-                        <property name="text">
-                         <string>0</string>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="buttonNextHousing3">
-                      <property name="text">
-                       <string>Next</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </widget>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#8962b4;&quot;&gt;Housing&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::AutoText</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_13">
+                <property name="font">
+                 <font>
+                  <pointsize>16</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Housing leaves a footprint. Let's see how sustainable your way of living is.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::RichText</enum>
+                </property>
                </widget>
               </item>
              </layout>
             </item>
             <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+             <widget class="QTabWidget" name="tabHousing">
+              <property name="currentIndex">
+               <number>0</number>
               </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>100</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
+              <widget class="QWidget" name="tab_11">
+               <attribute name="title">
+                <string>Question 1</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_2">
+                <item row="0" column="0">
+                 <layout class="QVBoxLayout" name="verticalLayout">
+                  <item>
+                   <widget class="QLabel" name="label_15">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>60</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>60</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>16</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;With how many people do you live?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_2">
+                    <item>
+                     <widget class="QSlider" name="living_partners">
+                      <property name="maximum">
+                       <number>12</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label">
+                      <property name="minimumSize">
+                       <size>
+                        <width>16</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>0</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="buttonNextHousing1">
+                    <property name="text">
+                     <string>Next</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
             </item>
            </layout>
           </item>
           <item>
-           <spacer name="verticalSpacer">
+           <spacer name="horizontalSpacer_2">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>20</width>
-              <height>100</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
+              <width>100</width>
+              <height>20</height>
              </size>
             </property>
            </spacer>
           </item>
          </layout>
+        </item>
+        <item row="2" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>118</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>118</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>
@@ -663,10 +535,10 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <attribute name="title">
         <string>Transport</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_12">
-        <item row="0" column="0" rowspan="2" colspan="2">
-         <layout class="QGridLayout" name="gridLayout_9">
-          <item row="0" column="0">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
            <spacer name="verticalSpacer_4">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -674,38 +546,12 @@ QTabBar::tab:selected, QTabBar::tab:hover {
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>20</height>
+              <height>108</height>
              </size>
             </property>
            </spacer>
           </item>
-          <item row="3" column="0">
-           <spacer name="verticalSpacer_6">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="0">
-           <spacer name="verticalSpacer_5">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>100</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="0">
+          <item>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
              <spacer name="horizontalSpacer_11">
@@ -715,19 +561,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
               <property name="sizeHint" stdset="0">
                <size>
                 <width>78</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
                 <height>20</height>
                </size>
               </property>
@@ -751,7 +584,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                  <widget class="QLabel" name="label_21">
                   <property name="font">
                    <font>
-                    <family>Gill Sans</family>
                     <pointsize>30</pointsize>
                    </font>
                   </property>
@@ -767,7 +599,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                  <widget class="QLabel" name="label_22">
                   <property name="font">
                    <font>
-                    <family>Gill Sans</family>
                     <pointsize>16</pointsize>
                    </font>
                   </property>
@@ -811,7 +642,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                         </property>
                         <property name="font">
                          <font>
-                          <family>Gill Sans</family>
                           <pointsize>16</pointsize>
                          </font>
                         </property>
@@ -823,14 +653,14 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                       <item>
                        <layout class="QVBoxLayout" name="verticalLayout_12">
                         <item>
-                         <widget class="QRadioButton" name="radioButton_13">
+                         <widget class="QRadioButton" name="radioButton_TransY">
                           <property name="text">
                            <string>Yes</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QRadioButton" name="radioButton_14">
+                         <widget class="QRadioButton" name="radioButton_TransN">
                           <property name="text">
                            <string>No</string>
                           </property>
@@ -859,37 +689,83 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                       <item>
                        <widget class="QLabel" name="label_24">
                         <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Do you commute to work?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Which vehicle do you use?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QRadioButton" name="radio1_4">
-                        <property name="text">
-                         <string>Yes</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QRadioButton" name="radio2_4">
-                        <property name="text">
-                         <string>Less than 200 €</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QRadioButton" name="radio3_4">
-                        <property name="text">
-                         <string>200-1000 €</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QRadioButton" name="radio4_4">
-                        <property name="text">
-                         <string>More than a 1000 €</string>
-                        </property>
-                       </widget>
+                       <layout class="QHBoxLayout" name="horizontalLayout_4">
+                        <item>
+                         <spacer name="horizontalSpacer_19">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QComboBox" name="vehicleT">
+                          <item>
+                           <property name="text">
+                            <string>electric car</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>petrol car</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>diesel car</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>petrol motorbike</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>bus</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>metro</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>ferry</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>national train</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_20">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                       </layout>
                       </item>
                       <item>
                        <widget class="QPushButton" name="buttonNextTransport2">
@@ -912,43 +788,66 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                       <item>
                        <widget class="QLabel" name="label_25">
                         <property name="text">
-                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;How much electricity do you consume in average monthly&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;What is the total distance travelled during one day of your commute? &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <layout class="QHBoxLayout" name="horizontalLayout_4">
+                       <layout class="QHBoxLayout" name="horizontalLayout_13">
                         <item>
-                         <widget class="QSlider" name="horizontalSlider_4">
-                          <property name="maximum">
-                           <number>10</number>
-                          </property>
-                          <property name="singleStep">
-                           <number>1</number>
-                          </property>
+                         <spacer name="horizontalSpacer_9">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>
-                          <property name="tickPosition">
-                           <enum>QSlider::TicksBelow</enum>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
                           </property>
-                          <property name="tickInterval">
-                           <number>1</number>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QSpinBox" name="distanceT">
+                          <property name="minimum">
+                           <number>0</number>
+                          </property>
+                          <property name="maximum">
+                           <number>100</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>5</number>
+                          </property>
+                          <property name="stepType">
+                           <enum>QAbstractSpinBox::DefaultStepType</enum>
+                          </property>
+                          <property name="value">
+                           <number>10</number>
+                          </property>
+                          <property name="displayIntegerBase">
+                           <number>10</number>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="label_26">
-                          <property name="minimumSize">
-                           <size>
-                            <width>16</width>
-                            <height>0</height>
-                           </size>
-                          </property>
+                         <widget class="QLabel" name="label_4">
                           <property name="text">
-                           <string>0</string>
+                           <string>km</string>
                           </property>
                          </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_10">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
                         </item>
                        </layout>
                       </item>
@@ -970,19 +869,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
              </layout>
             </item>
             <item>
-             <spacer name="horizontalSpacer_4">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
              <spacer name="horizontalSpacer_12">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -996,6 +882,32 @@ QTabBar::tab:selected, QTabBar::tab:hover {
              </spacer>
             </item>
            </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>108</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>108</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </item>
@@ -1042,7 +954,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                <widget class="QLabel" name="label_27">
                 <property name="font">
                  <font>
-                  <family>Gill Sans</family>
                   <pointsize>30</pointsize>
                  </font>
                 </property>
@@ -1058,7 +969,6 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                <widget class="QLabel" name="label_28">
                 <property name="font">
                  <font>
-                  <family>Gill Sans</family>
                   <pointsize>16</pointsize>
                  </font>
                 </property>
@@ -1124,7 +1034,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                     <item>
                      <layout class="QVBoxLayout" name="verticalLayout_14">
                       <item>
-                       <widget class="QLineEdit" name="lineEdit">
+                       <widget class="QLineEdit" name="Name">
                         <property name="minimumSize">
                          <size>
                           <width>150</width>
@@ -1136,7 +1046,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_12">
                         <item>
-                         <widget class="QSpinBox" name="spinBox_2">
+                         <widget class="QSpinBox" name="Day">
                           <property name="minimum">
                            <number>1</number>
                           </property>
@@ -1159,7 +1069,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                          </spacer>
                         </item>
                         <item>
-                         <widget class="QSpinBox" name="spinBox_3">
+                         <widget class="QSpinBox" name="Month">
                           <property name="minimum">
                            <number>1</number>
                           </property>
@@ -1182,7 +1092,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                          </spacer>
                         </item>
                         <item>
-                         <widget class="QSpinBox" name="spinBox">
+                         <widget class="QSpinBox" name="Year">
                           <property name="minimum">
                            <number>1000</number>
                           </property>
@@ -1197,10 +1107,15 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                        </layout>
                       </item>
                       <item>
-                       <widget class="QComboBox" name="comboBox">
+                       <widget class="QComboBox" name="Country">
                         <item>
                          <property name="text">
                           <string>France</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>China</string>
                          </property>
                         </item>
                         <item>
@@ -1256,7 +1171,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLineEdit" name="lineEdit_4"/>
+                       <widget class="QLineEdit" name="Email"/>
                       </item>
                      </layout>
                     </item>
@@ -1298,10 +1213,10 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                     <item>
                      <layout class="QVBoxLayout" name="verticalLayout_20">
                       <item>
-                       <widget class="QLineEdit" name="lineEdit_5"/>
+                       <widget class="QLineEdit" name="Username"/>
                       </item>
                       <item>
-                       <widget class="QLineEdit" name="lineEdit_3">
+                       <widget class="QLineEdit" name="Password">
                         <property name="echoMode">
                          <enum>QLineEdit::Password</enum>
                         </property>
@@ -1391,18 +1306,18 @@ QTabBar::tab:selected, QTabBar::tab:hover {
  <resources/>
  <connections>
   <connection>
-   <sender>horizontalSlider_3</sender>
+   <sender>living_partners</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>label_18</receiver>
+   <receiver>label</receiver>
    <slot>setNum(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>610</x>
-     <y>364</y>
+     <x>280</x>
+     <y>355</y>
     </hint>
     <hint type="destinationlabel">
-     <x>686</x>
-     <y>371</y>
+     <x>703</x>
+     <y>358</y>
     </hint>
    </hints>
   </connection>
