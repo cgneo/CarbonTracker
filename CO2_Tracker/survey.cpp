@@ -91,39 +91,8 @@ void Survey::on_buttonAccount_clicked()
     // Using information from 'housing' tab
     int living_partners = ui->living_partners->value();
 
-    // Using information from 'transport' tab
-    bool yes = ui->radioButton_TransY->isChecked();
-
-    if(yes){
-        Transport t;
-        QString vehicle = ui->vehicleT->currentText(); // taking input from user for vehicle
-        string distance = ui->distanceT->cleanText().toStdString(); // taking input from user for distance
-        t.set_type(vehicle);
-        char* d = 0;//distance
-        t.set_distance(d);// convert distance to char
-        // converting std strings to char arrays
-            // vehicle
-        int n = vehicle.length();
-        char char_array_vehicle[n+1];
-        strcpy(char_array_vehicle, vehicle.toStdString().c_str());
-
-            // distance
-        int m = distance.length();
-        char char_array_distance[m+1];
-        strcpy(char_array_distance, distance.c_str());
-
-        // calling the (transport) api
-        transport_api api;
-        api.get_reply(char_array_distance, char_array_vehicle);
-
-        // outputting the emission for given vehicle and distance
-        QString emission = QString::number(api.get_emission());
-        t.set_footprint(api.get_emission());
-
-        // the value 'emission' contains a QString of the number of kg of CO2 emitted by the transport.
-    }
-
     // Using information from 'create account' tab
+        // Warning messages
     if ((ui->Name->text().isEmpty())){
         QMessageBox::warning(this, "Warning", "You have not submitted a name.");
     } else if ((ui->Email->text().isEmpty())){
@@ -133,6 +102,38 @@ void Survey::on_buttonAccount_clicked()
     } else if (ui->Password->text().isEmpty()){
         QMessageBox::warning(this, "Warning", "You have not submitted a password.");
     } else {
+
+        // Using information from 'transport' tab
+        bool yes = ui->radioButton_TransY->isChecked();
+
+        if(yes){
+            Transport t;
+            QString vehicle = ui->vehicleT->currentText(); // taking input from user for vehicle
+            string distance = ui->distanceT->cleanText().toStdString(); // taking input from user for distance
+            t.set_type(vehicle);
+            char* d = 0;//distance
+            t.set_distance(d);// convert distance to char
+            // converting std strings to char arrays
+                // vehicle
+            int n = vehicle.length();
+            char char_array_vehicle[n+1];
+            strcpy(char_array_vehicle, vehicle.toStdString().c_str());
+
+                // distance
+            int m = distance.length();
+            char char_array_distance[m+1];
+            strcpy(char_array_distance, distance.c_str());
+
+            // calling the (transport) api
+            transport_api api;
+            api.get_reply(char_array_distance, char_array_vehicle);
+
+            // outputting the emission for given vehicle and distance
+            QString emission = QString::number(api.get_emission());
+            t.set_footprint(api.get_emission());
+
+            // the value 'emission' contains a QString of the number of kg of CO2 emitted by the transport.
+        }
 
     QString username = ui->Username->text();
     QString name = ui->Name->text();

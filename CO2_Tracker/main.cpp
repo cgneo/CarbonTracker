@@ -38,9 +38,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Survey window;
-    window.show();
-    return a.exec();
+//    MainWindow window;
+//    window.show();
+//    return a.exec();
 
 //    Json_DB json_obj;
 //    QJsonObject doc;
