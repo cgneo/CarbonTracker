@@ -14,6 +14,9 @@
 #include <QGraphicsScene>
 #include <QPushButton>
 
+#include <netserver.h>
+#include <netclient.h>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,6 +29,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    netserver* CB_server;
+    netclient* CB_receiver;
+
 
 private slots:
 

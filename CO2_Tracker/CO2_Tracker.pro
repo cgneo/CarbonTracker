@@ -17,6 +17,8 @@ SOURCES += \
     date.cpp \
     donut.cpp \
     json_DB.cpp \
+    netclient.cpp \
+    netserver.cpp \
     object.cpp \
     food.cpp \
     profile_picture.cpp \
@@ -32,10 +34,13 @@ SOURCES += \
 
 HEADERS += \
     base_consumption.h \
+    colormod.h \
     consumption.h \
     date.h \
     donut.h \
     json_DB.hpp \
+    netclient.h \
+    netserver.h \
     object.h \
     food.h \
     profile_picture.h \

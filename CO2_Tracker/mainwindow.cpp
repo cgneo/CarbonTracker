@@ -20,10 +20,26 @@
 #include <QBarSet>
 #include <QBarSeries>
 
+
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
+    // Create a server
+    CB_server = new netserver();
+    CB_server->startServer();
+
+    // Create a client
+    CB_receiver = new netclient();
+    CB_receiver->startClient();
+
+    // Invoke the flush and call it manually.
+    std::cout.flush();
+
+
     ui->setupUi(this);
 
     //begining of graphs
@@ -361,6 +377,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui -> tree_button -> setEnabled(false);
     connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
+
+
 }
 
 
@@ -496,3 +514,5 @@ void MainWindow::on_tree_button_clicked()
 //            }
 
 }
+
+
