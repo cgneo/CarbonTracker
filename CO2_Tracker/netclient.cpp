@@ -87,7 +87,16 @@ void netclient::readSocket()
 
     } else if(fileType=="message") {
         QString message = QString("%1 :: %2").arg(socket->socketDescriptor()).arg(QString::fromStdString(buffer.toStdString()));
-        emit newMessage(message);
+        // emit newMessage(message);
+
+        // here, whoSentIt gives you the ID of the user
+        // whatIsTheText gives you the message
+        qintptr whoSentIt = socket->socketDescriptor();
+        QString whatIsTheText = QString::fromStdString(buffer.toStdString());
+
+        std::cout << std::to_string(whoSentIt);
+        std::cout << " :: ";
+        std::cout << whatIsTheText.toStdString() << std::endl;
     }
 }
 
