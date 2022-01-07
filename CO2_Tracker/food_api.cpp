@@ -31,7 +31,7 @@ void food_api::parse_reply(QNetworkReply* reply){
         // enter product object
         QJsonObject productKey = jsonObject["product"].toObject();
         // initialise the elements of product_info
-        string code, brand, eco_score, category;
+        string code, brand, eco_score, category, co2_total;
 
         // get code or store error message
         if (jsonObject.contains("code")){
@@ -67,8 +67,27 @@ void food_api::parse_reply(QNetworkReply* reply){
             category = "_";
         }
 
+        if (productKey.contains("ecoscore_data")) {
+            QJsonObject ecoscore_data = productKey["ecoscore_data"].toObject();
+            if (ecoscore_data.contains("agribalyse")) {
+                QJsonObject agribalyseKey = ecoscore_data["agribalyse"].toObject();
+                if (agribalyseKey.contains("co2_total")) {
+                    co2_total = agribalyseKey["co2_total"].toString().toStdString();
+                }
+                else {
+                    co2_total = "can't access co2_data from agribalyse (level 3)";
+                }
+            }
+            else {
+                co2_total = "can't access agribalyse from ecoscore_data (level 2)";
+            }
+        }
+        else {
+            co2_total = "can't access ecoscore_data from product (level 1)";
+        }
+
         //store information in product_info
-        product_info = {code, eco_score, brand, category};
+        product_info = {code, eco_score, brand, category, co2_total};
 
     }
 }
