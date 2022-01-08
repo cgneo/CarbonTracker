@@ -113,8 +113,8 @@ void User::set_living_partners(int living_partners)
 void User::set_picture(QString image)
     {this->image = image;}
 
-void User::set_consumption(Consumption &consumption){
-    this->consumption = &consumption;
+void User::set_consumption(Consumption *consumption){
+    this->consumption = consumption;
 }
 
 

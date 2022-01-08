@@ -203,12 +203,12 @@ User *Json_DB::readUser_from_Json(){
     int profile_pic = json_file["Profile picture"].toInt();
 
     User *u = new User (username, name, day, month, year, email, country, partners, profile_pic);
-    get_consumption_from_Json(*u,  *current_doc);
+    read_consumption_from_Json(u,  *current_doc);
     //Should add base_consumption as well
     return u;
 }
 
-void Json_DB::get_consumption_from_Json(User &u, QJsonDocument &current_doc){
+void Json_DB::read_consumption_from_Json(User* u, QJsonDocument &current_doc){
     QJsonObject json_file = current_doc.object(); //Full json object
 
     //Get the consumption array of json objects
@@ -216,7 +216,8 @@ void Json_DB::get_consumption_from_Json(User &u, QJsonDocument &current_doc){
 
     int size = consumption_json.size();
 
-    Consumption consumption;
+    Consumption *consumption = new Consumption();
+    consumption->set_userId(3);
 
     for (int i = size - 1; i >= 0; i--){ //Iterate through the json array backwards to get newer elements in front
         QJsonObject json_object = consumption_json.at(i).toObject();
@@ -238,8 +239,10 @@ void Json_DB::get_consumption_from_Json(User &u, QJsonDocument &current_doc){
         double footprint = json_object["Footprint"].toDouble();
         QString type = json_object["Type"].toString();
         QString name = json_object["Name"].toString();
-        Object o(date, name, type, footprint);
-        consumption.add_object(&o, false);
+        Object *o = new Object(date, name, type, footprint);
+        consumption->add_object(o, false);
+        consumption->set_userId(3);
+        consumption->get_object_i(0);
 //        if (type == "Transport"){ //If its a transport object, unpack transport attributes
 //            string distance = json_object["Distance"].toString().toStdString();
 //            char * d = new char[distance.length() + 1];
@@ -260,7 +263,9 @@ void Json_DB::get_consumption_from_Json(User &u, QJsonDocument &current_doc){
 //            consumption.push_back(f); //Put object in vector
 //        }
         }
-    u.set_consumption(consumption);
+    u->set_consumption(consumption);
+
+     qDebug() << u->get_consumption();
 
    }
 

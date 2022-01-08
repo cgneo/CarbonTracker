@@ -67,6 +67,10 @@ Consumption::~Consumption(){ //To be properly done
 int Consumption::get_userId(){
     return userId;
 }
+
+void Consumption::set_userId(int user){
+    userId = user;
+}
 int Consumption::get_consumptionId(){
     return consumptionId;
 }

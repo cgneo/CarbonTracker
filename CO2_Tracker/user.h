@@ -58,7 +58,7 @@ public:
   void set_seeds(int seeds);
   void set_living_partners(int living_partners);
   void set_picture(QString picture);
-  void set_consumption(Consumption &consumption);
+  void set_consumption(Consumption *consumption);
 
   bool name_is_valid();
   bool birthday_is_valid();

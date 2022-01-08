@@ -121,6 +121,7 @@ int main(int argc, char *argv[])
 //    json_obj.addObject_to_file(t3);
 //    json_obj.addObject_to_file(t4);
 
+
 //--------------------------Try Catalina's Testing---------
 #ifdef Test
     Tests t;
@@ -132,12 +133,16 @@ int main(int argc, char *argv[])
 //
     Json_DB json_obj;
     User *u = json_obj.readUser_from_Json();
-    qDebug() << u->get_name();
-    qDebug() << u->get_consumption()->get_object_i(0)->get_name();
-    MainWindow window;
-    window.set_user(*u);
+    Consumption *c = u->get_consumption();
+    qDebug() << c->get_object_i(0)->get_name();
+
+    //qDebug() << u->get_name();
+    //qDebug() << u->get_consumption()->get_object_i(0)->get_name();
+    //MainWindow window;
+    //window.set_user(*u);
 
     //User *u2 = window.get_user();
+    //qDebug() << u2->get_name();
     //Object *temp = u2->get_consumption()->get_object_i(0);
     //qDebug() << temp->get_name();
     //qDebug() << temp->get_footprint();

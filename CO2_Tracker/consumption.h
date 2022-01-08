@@ -29,7 +29,7 @@ public:
     //Seters and getters
     Consumption();
     Consumption(Base_Consumption base, vector<Object*>);
-    ~Consumption();
+    ~Consumption(); //To implement
 
     //Get methods
     int get_consumptionId();
@@ -49,6 +49,8 @@ public:
     void calculate_footprint();
     void add_object(Object *obj, bool new_object);
     void add_base_consumption(Base_Consumption base);
+
+    void set_userId(int user);
 
         //Methods for graphs
     double get_vehicle_footprint(string vehicle_name);

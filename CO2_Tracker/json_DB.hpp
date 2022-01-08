@@ -46,7 +46,7 @@ public:
 
     //Read json file
     User* readUser_from_Json();
-    void get_consumption_from_Json(User &u, QJsonDocument &current_doc);
+    void read_consumption_from_Json(User* u, QJsonDocument &current_doc);
 
 
 
