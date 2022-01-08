@@ -114,7 +114,7 @@ void User::set_picture(QString image)
     {this->image = image;}
 
 void User::set_consumption(Consumption &consumption){
-    this->consumption = consumption;
+    this->consumption = &consumption;
 }
 
 

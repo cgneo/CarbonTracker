@@ -54,31 +54,31 @@ int main(int argc, char *argv[])
 
 //-------------------Try reading the json file to get consumption array--------------
 
-    Json_DB json_obj;
-    User *u = json_obj.readUser_from_Json();
+//    Json_DB json_obj;
+//    User *u = json_obj.readUser_from_Json();
 
-    int size =  u->get_consumption()->get_total_consumption()->size();
+//    int size =  u->get_consumption()->get_total_consumption()->size();
 
-    for (int i = 0; i < size; i++){//Iterate through vector
-        qDebug() << "Object - " << QString::number(i);
-        Object *o = u->get_consumption()->get_object_i(i);
-        string date = o->get_date()->print2();
-        qDebug() << o->get_type();
-        qDebug() << o->get_name();
-        qDebug() << o->get_footprint();
-        qDebug() << QString::fromStdString(date);
+//    for (int i = 0; i < size; i++){//Iterate through vector
+//        qDebug() << "Object - " << QString::number(i);
+//        Object *o = u->get_consumption()->get_object_i(i);
+//        string date = o->get_date()->print2();
+//        qDebug() << o->get_type();
+//        qDebug() << o->get_name();
+//        qDebug() << o->get_footprint();
+//        qDebug() << QString::fromStdString(date);
 
-        if (o->get_type() == "Food"){
-            Food* f = static_cast<Food*>(o);
-            qDebug() << QString::number(f->get_barcode());
-            //qDebug() << QString::fromStdString(f->get_category());
-            qDebug() << QString::number(f->get_quantity());
-        }
-        else if (o->get_type() == "Transport"){
-            Transport* t = static_cast<Transport*>(o);
-            qDebug() << t->get_distance();
-        }
-    }
+//        if (o->get_type() == "Food"){
+//            Food* f = static_cast<Food*>(o);
+//            qDebug() << QString::number(f->get_barcode());
+//            //qDebug() << QString::fromStdString(f->get_category());
+//            qDebug() << QString::number(f->get_quantity());
+//        }
+//        else if (o->get_type() == "Transport"){
+//            Transport* t = static_cast<Transport*>(o);
+//            qDebug() << t->get_distance();
+//        }
+//    }
 
 //-----------------Try Writing into json file------------
 //    Json_DB json_obj;
@@ -123,18 +123,21 @@ int main(int argc, char *argv[])
 
 //--------------------------Run the UI--------------------
 //
-//   Json_DB json_obj;
+   Json_DB json_obj;
 
 
-//   Tests t1;
-//   QString file = json_obj.get_path() + json_obj.get_FileName();
-//   t1.test_does_file_exist(file);
-//   User u;
-//   //json_obj.writeJsonUser(u);
+   Tests t1;
+   QString file = json_obj.get_path() + json_obj.get_FileName();
+   t1.test_does_file_exist(file);
+   User u;
+   //json_obj.writeJsonUser(u);
 
-//   bool new_user = !t1.test_does_file_exist(file);
+   bool new_user = !t1.test_does_file_exist(file);
 
-//    //This code is actually USED
+   MainWindow window;
+   window.show();
+   return a.exec();
+    //This code is actually USED
 //    if (new_user){ //If user is new, open profile set_up
 //        Survey window;
 //        window.show();

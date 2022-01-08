@@ -145,7 +145,7 @@ void Json_DB::createJsonUserObject(QJsonObject &obj, User &user)
     obj["Footprint"] = user.get_footprint();
     obj["Seeds"] = user.get_seeds();
     obj["Living partners"] = user.get_living_partners();
-    obj["Profile picture"] = user.get_profile_picture();
+    //obj["Profile picture"] = user.get_profile_picture();
 
 
 //    QJsonArray friends;
