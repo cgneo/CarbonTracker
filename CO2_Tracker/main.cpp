@@ -131,15 +131,22 @@ int main(int argc, char *argv[])
 
 //--------------------------Run the UI--------------------
 //
-    Json_DB json_obj;
-    User *u = json_obj.readUser_from_Json();
+
+//    std::unordered_map<string, double>* dic = u->get_consumption()->footprint_by_vehicle;
+//    qDebug() << dic->at("Electric car");
+//    Consumption c;
+//    std::unordered_map<string, double>* dic2 = c.footprint_by_vehicle;
+//    qDebug()<<dic2->at("Bus");
+
     //Consumption *c = u->get_consumption();
     //qDebug() << c->get_object_i(0)->get_name();
 
     //qDebug() << u->get_name();
     //qDebug() << u->get_consumption()->get_object_i(0)->get_name();
     MainWindow window;
-    window.set_user(u);
+
+
+    //window.set_user(u);
 
     //User *u2 = window.get_user();
     //qDebug() << u2->get_name();

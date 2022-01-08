@@ -22,20 +22,10 @@ Consumption::Consumption(){ // Creates unique id equal to that of the user
     transport_footprint = 0;
     base = Base_Consumption();
 
-    footprint_by_vehicle = {
-        {"Electric car", 0},
-        {"Petrol car", 0},
-        {"Diesel car", 0},
-        {"Petrol motorbike", 0},
-        {"Bus", 0},
-        {"Metro", 0},
-        {"Ferry", 0},
-        {"National train", 0},
-        {"International train", 0},
-        {"Domestic flight", 0},
-        {"First class international flight", 0},
-        {"Economy class international flight", 0},
-    };
+    for (int i = 0; i < 12; i++){
+        std::pair<std::string,double> pair (vehicles[i], 0);
+        footprint_by_vehicle->insert(pair);
+    }
 }
 
 Consumption::Consumption(Base_Consumption base, vector<Object*> total_consumption){
@@ -43,20 +33,14 @@ Consumption::Consumption(Base_Consumption base, vector<Object*> total_consumptio
     calculate_footprint();
     this -> base = base;
     add_base_consumption(base);
-    footprint_by_vehicle = {
-        {"Electric car", 0},
-        {"Petrol car", 0},
-        {"Diesel car", 0},
-        {"Petrol motorbike", 0},
-        {"Bus", 0},
-        {"Metro", 0},
-        {"Ferry", 0},
-        {"National train", 0},
-        {"International train", 0},
-        {"Domestic flight", 0},
-        {"First class international flight", 0},
-        {"Economy class international flight", 0},
-    };
+
+    footprint_by_vehicle = new std::unordered_map<string, double>; //Assigning dictionaries
+    footprint_by_date = new std::unordered_map<string, double>;
+
+    for (int i = 0; i < 12; i++){
+        std::pair<std::string,double> pair (vehicles[i], 0);
+        footprint_by_vehicle->insert(pair);
+    }
 }
 
 Consumption::~Consumption(){ //To be properly done
@@ -111,7 +95,7 @@ void Consumption::calculate_footprint(){ // should be part of initialization
 
         }
         else if(type == "transport"){
-            footprint_by_vehicle[name] += footprint;
+            footprint_by_vehicle->at(name) += footprint;
             transport_footprint += footprint;
         }
         int day = date->get_day();
@@ -122,9 +106,9 @@ void Consumption::calculate_footprint(){ // should be part of initialization
         string key_month = to_string(month) + to_string(year);
         string key_year = to_string(year);
 
-        footprint_by_date[key_day] += footprint;
-        footprint_by_date[key_month] += footprint;
-        footprint_by_date[key_year] += footprint;
+        footprint_by_date->at(key_day) += footprint;
+        footprint_by_date->at(key_month) += footprint;
+        footprint_by_date->at(key_year) += footprint;
 
     }
 }
@@ -150,27 +134,44 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
     Date *date = obj->get_date();
 
     total_footprint += footprint; //update total footprint
+
     if(type == "food"){
-        food_footprint += footprint;
+        food_footprint += footprint; //Update food footprint
 
     }
     else if(type == "transport"){
-        footprint_by_vehicle[name] += footprint;
-        transport_footprint += footprint;
+        footprint_by_vehicle->at(name) += footprint;
+        transport_footprint += footprint; //Update transport footprint
     }
+
     int day = date->get_day();
     int month = date->get_month();
     int year = date->get_year();
 
     string key_day = to_string(day)+to_string(month)+to_string(year);
-    string key_month = to_string(month) + to_string(year);
-    string key_year = to_string(year);
+    string key_month = "00"+to_string(month) + to_string(year);
+    string key_year = "0000"+to_string(year); //Creating standarized hash keys for dates
 
+    if (footprint_by_date->find(key_day) == footprint_by_date->end()){
+        footprint_by_date->insert({key_day, footprint});
+    } //Check if key is in dictionary. Add key if not, update value if it is in dictionary
+    else{
+        footprint_by_date->at(key_day) += footprint;
+    }
 
+    if (footprint_by_date->find(key_month) == footprint_by_date->end()){
+        footprint_by_date->insert({key_month, footprint});
+    } //Repeat process for month key
+    else{
+        footprint_by_date->at(key_month) += footprint;
+    }
 
-    footprint_by_date[key_day] += footprint;
-    footprint_by_date[key_month] += footprint;
-    footprint_by_date[key_year] += footprint;
+    if (footprint_by_date->find(key_year) == footprint_by_date->end()){
+        footprint_by_date->insert({key_year, footprint});
+    } //Repeat process for year_key
+    else{
+        footprint_by_date->at(key_year) += footprint;
+    }
 
 }
 
@@ -183,19 +184,19 @@ void Consumption::add_base_consumption(Base_Consumption base){
 }
 
 double Consumption::get_vehicle_footprint(string vehicle_name){
-    return footprint_by_vehicle[vehicle_name];
+    return footprint_by_vehicle->at(vehicle_name);
 }
 
 double Consumption::get_yearly_footprint(string year){
-    return footprint_by_date[year];
+    return footprint_by_date->at(year);
 }
 
 double Consumption::get_monthly_footprint(string month){
-    return footprint_by_date[month];
+    return footprint_by_date->at(month);
 }
 
 double Consumption::get_daily_footprint(string day){
-    return footprint_by_date[day];
+    return footprint_by_date->at(day);
 
 }
 

@@ -25,10 +25,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    int a;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow(); //Needs to be edited
     void set_user(User* u);
     User *get_user();
+    void set_int(int a);
 
 private slots:
     void on_Surveybutton_clicked();
@@ -48,9 +50,10 @@ private slots:
 
     void enableButton();
 
+
 private:
     Ui::MainWindow *ui;
-    User * current_user;
+    User *current_user;
 
     QPropertyAnimation *animation_1;
     QPropertyAnimation *animation_2;
