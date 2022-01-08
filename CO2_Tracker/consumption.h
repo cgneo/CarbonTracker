@@ -1,10 +1,11 @@
-#ifndef CONSUMPTION_H
+﻿#ifndef CONSUMPTION_H
 #define CONSUMPTION_H
 #include <string>
 #include <vector>
 #include "object.h"
 #include "base_consumption.h"
 #include "receipt.h"
+#include <unordered_map>
 
 
 
@@ -19,13 +20,16 @@ private:
     double food_footprint;
     double transport_footprint;
     Base_Consumption base;
+    std::unordered_map<string, int> footprint_by_vehicle;
+    std::unordered_map<string, int> footprint_by_date;
 
 public:
+
+    static string vehicles[12];
     //Seters and getters
     Consumption();
-    Consumption(int userId);
-    Consumption(int userId, Base_Consumption base, vector<Object*>);
-    ~Consumption(); //Shall be implemented
+    Consumption(Base_Consumption base, vector<Object*>);
+    ~Consumption();
 
     //Get methods
     int get_consumptionId();
@@ -47,10 +51,10 @@ public:
     void add_base_consumption(Base_Consumption base);
 
         //Methods for graphs
-    double get_vehicle_footprint(QString vehicle_name);
-    double get_yearly_footprint(int year);
-    double get_monthly_footprint(int month, int year);
-    double get_daily_footprint(int day, int month, int year);
+    double get_vehicle_footprint(string vehicle_name);
+    double get_yearly_footprint(string month);
+    double get_monthly_footprint(string month);
+    double get_daily_footprint(string month);
 
         //Other
     void add_receipt(Receipt receipt);
