@@ -2,7 +2,8 @@
 #include "ui_mainwindow.h"
 #include <QPixmap>
 #include <QDebug>
-
+#include <QListWidget>
+#include <QListWidgetItem>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -78,6 +79,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(animation_seed, SIGNAL(stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)),
             this, SLOT(on_animation_stateChanged(QAbstractAnimation::State,QAbstractAnimation::State)));
+
+    ui->setupUi(this);
+    QListWidgetItem *item = new QListWidgetItem(QIcon("profile_photo"), "user_name1");
+    ui->userlist->addItem(item);
+    QListWidgetItem *item2 = new QListWidgetItem(QIcon("profile_photo"), "user_name1");
+    ui->userlist->addItem(item2);
+    QListWidgetItem *item3 = new QListWidgetItem(QIcon("profile_photo"), "user_name1");
+    ui->userlist->addItem(item3);
+
 
 }
 
