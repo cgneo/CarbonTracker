@@ -29,7 +29,7 @@ public:
     string get_quantity();
 private:
     QNetworkAccessManager networkManager;
-    vector<string> product_info; // = {code, eco_score, brand, category}
+    vector<string> product_info; // = {code, eco_score, brand, category, co2_total}
     string product_id;
     string quantity;
 };
