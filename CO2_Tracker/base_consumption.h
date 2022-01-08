@@ -15,7 +15,6 @@ private:
 public:
     int userId;
     Base_Consumption();
-    Base_Consumption(const int userId); //Args missing
     ~Base_Consumption();
     int get_consumptionId();
     int get_userId();

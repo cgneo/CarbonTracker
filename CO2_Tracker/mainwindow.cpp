@@ -14,6 +14,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QDir>
+#include "consumption.h"
 
 #include <QtCharts>
 #include <QChartView>
@@ -25,16 +26,44 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    Json_DB json_obj;
+    User *u = json_obj.readUser_from_Json();
 
     //begining of graphs
     //Donutchart
 
+
+    //calling data
+    //build
     QPieSeries *dseries = new QPieSeries();
     dseries->setHoleSize(0.35);
-    QPieSlice *dslice1 = dseries->append("Locomotive", 1);
 
+    //QPieSlice *slices[12];
+    Consumption *c = u->get_consumption();
+
+
+    QPieSlice *slice;
+
+    for (int i = 0; i < 12; i++){
+        qDebug() << QString::fromStdString(c->vehicles[i]);
+        string vehicle = c->vehicles[i];
+
+        //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
+
+
+        slice =  dseries->append(QString::fromStdString(vehicle), c->get_vehicle_footprint(vehicle));
+        //slices[i] = dseries->append(c.vehicles[i], 1);
+        slice->setLabelVisible();
+        QPieSlice::connect(slice, &QPieSlice::hovered,
+                           slice, &QPieSlice::setExploded);
+    }
+
+    /*
+    QPieSlice *dslice1 = dseries->append("Locomotive", 1);
     QPieSlice *dslice2 =dseries->append("Airplane", 2);
     QPieSlice *dslice3 =dseries->append("Car", 2);
+
+    QPieSlice *slices[12] = {dslice1, dslice2, dslice3, dslice4, dslice5, dslice6, dslice7, dslice8, dslice9, dslice10, dslice11, dslice12};
 
     dslice1->setLabelVisible();
     dslice2->setLabelVisible();
@@ -46,7 +75,7 @@ MainWindow::MainWindow(QWidget *parent)
                        dslice2, &QPieSlice::setExploded);
     QPieSlice::connect(dslice3, &QPieSlice::hovered,
                        dslice3, &QPieSlice::setExploded);
-
+*/
     QString string = "clicked";
 
     QChart *dchart = new QChart();
@@ -361,7 +390,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::set_user(User *u){
+    current_user = u;
+}
 
+User * MainWindow::get_user(){
+    return current_user;
+}
+
+void MainWindow::set_int(int a){
+    this->a = a;
+}
 
 void MainWindow::on_Surveybutton_clicked()
 {

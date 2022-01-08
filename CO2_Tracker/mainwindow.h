@@ -13,6 +13,7 @@
 #include <QLabel>
 #include <QGraphicsScene>
 #include <QPushButton>
+#include "user.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -24,11 +25,14 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    int a;
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow(); //Needs to be edited
+    void set_user(User* u);
+    User *get_user();
+    void set_int(int a);
 
 private slots:
-
     void on_Surveybutton_clicked();
 
     void on_Scanbutton_clicked();
@@ -46,8 +50,10 @@ private slots:
 
     void enableButton();
 
+
 private:
     Ui::MainWindow *ui;
+    User *current_user;
 
     QPropertyAnimation *animation_1;
     QPropertyAnimation *animation_2;

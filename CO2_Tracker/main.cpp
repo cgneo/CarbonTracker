@@ -55,13 +55,13 @@ int main(int argc, char *argv[])
 //-------------------Try reading the json file to get consumption array--------------
 
 //    Json_DB json_obj;
-//    vector<Object> consumption = json_obj.get_consumption();
+//    User *u = json_obj.readUser_from_Json();
 
-//    int size =  consumption.size();
+//    int size =  u->get_consumption()->get_total_consumption()->size();
 
 //    for (int i = 0; i < size; i++){//Iterate through vector
 //        qDebug() << "Object - " << QString::number(i);
-//        Object *o = &consumption[i];
+//        Object *o = u->get_consumption()->get_object_i(i);
 //        string date = o->get_date()->print2();
 //        qDebug() << o->get_type();
 //        qDebug() << o->get_name();
@@ -92,12 +92,18 @@ int main(int argc, char *argv[])
 //    int birthday = 13;
 //    int birthmonth = 10;
 //    int birthyear = 2001;
+//    int profile_pic = 0;
 
-//    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+//    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners, profile_pic);
 
 //    Date* fecha = new Date(01,04,2019);
 //    Date* fech2 = new Date(02,03,2020);
-//    Food food(fecha, "Nuevo", 100, 12432543, "Epicerie");
+//    Date* fech3 = new Date(02,03,2020);
+//    Date* fech4 = new Date(02,03,2020);
+//    Object t1(fech2, "Eletric car", "transport", 33);
+//    Object t2(fecha, "Bus", "transport", 54);
+//    Object t3(fecha, "Ferry", "transport", 12);
+//    Object t4(fecha, "Metro", "transport", 20);
 
 //    std::string distance = "1000";
 //    char *d = new char[distance.length() + 1];
@@ -110,9 +116,11 @@ int main(int argc, char *argv[])
 //    obj2.set_footprint(1000000);
 
 //    json_obj.writeJsonUser(u);
-//    json_obj.addObject_to_file(food);
-//    json_obj.addObject_to_file(food);
-//    json_obj.addObject_to_file(trans);
+//    json_obj.addObject_to_file(t1);
+//    json_obj.addObject_to_file(t2);
+//    json_obj.addObject_to_file(t3);
+//    json_obj.addObject_to_file(t4);
+
 
 //--------------------------Try Catalina's Testing---------
 #ifdef Test
@@ -123,7 +131,33 @@ int main(int argc, char *argv[])
 
 //--------------------------Run the UI--------------------
 //
-//   Json_DB json_obj;
+
+//    std::unordered_map<string, double>* dic = u->get_consumption()->footprint_by_vehicle;
+//    qDebug() << dic->at("Electric car");
+//    Consumption c;
+//    std::unordered_map<string, double>* dic2 = c.footprint_by_vehicle;
+//    qDebug()<<dic2->at("Bus");
+
+    //Consumption *c = u->get_consumption();
+    //qDebug() << c->get_object_i(0)->get_name();
+
+    //qDebug() << u->get_name();
+    //qDebug() << u->get_consumption()->get_object_i(0)->get_name();
+    MainWindow window;
+
+
+    //window.set_user(u);
+
+    //User *u2 = window.get_user();
+    //qDebug() << u2->get_name();
+    //Object *temp = u2->get_consumption()->get_object_i(0);
+    //qDebug() << temp->get_name();
+    //qDebug() << temp->get_footprint();
+
+    window.show();
+    return a.exec();
+
+
 
 
 //   Tests t1;
@@ -134,7 +168,11 @@ int main(int argc, char *argv[])
 
 //   bool new_user = !t1.test_does_file_exist(file);
 
-//    //This code is actually USED
+
+
+
+
+    //This code is actually USED
 //    if (new_user){ //If user is new, open profile set_up
 //        Survey window;
 //        window.show();

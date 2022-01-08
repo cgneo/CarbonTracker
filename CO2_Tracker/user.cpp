@@ -8,7 +8,7 @@ using namespace std;
 
 //-----------------------Constructors, and destructor ------------
 User::User(QString username, QString name, int birthday, int birthmonth,
-           int birthyear, QString email, QString country, int living_partners){
+           int birthyear, QString email, QString country, int living_partners, int profile_pic){
     set_username(username);
     set_birthday(birthday, birthmonth, birthyear);
     set_name(name);
@@ -17,6 +17,7 @@ User::User(QString username, QString name, int birthday, int birthmonth,
     set_living_partners(living_partners);
     footprint = 0;
     seeds = 0;
+    this->profile_picture = profile_pic;
 }
 
 User::User(){
@@ -67,6 +68,10 @@ double User::get_footprint(){
     return footprint;
 }
 
+Consumption* User::get_consumption(){
+    return consumption;
+}
+
 
 //-------------------------Set methods----------------------
 void User::set_userId(){
@@ -107,6 +112,10 @@ void User::set_living_partners(int living_partners)
 
 void User::set_picture(QString image)
     {this->image = image;}
+
+void User::set_consumption(Consumption *consumption){
+    this->consumption = consumption;
+}
 
 
 

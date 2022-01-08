@@ -38,14 +38,18 @@ public:
     void clearJsonObject(QJsonObject &object); //Clears a JSON file
     QJsonDocument *read_JsonFile();
     void write_in_file(QJsonObject &json_obj);
-    vector<Object> get_consumption();
 
-    //Create initial user_json file
+    //Writing to json file
     void createJsonUserObject(QJsonObject &obj, User &user);
     void writeJsonUser(User &user);
-
-    //Add object to the file
     void addObject_to_file(Object &obj);
+
+    //Read json file
+    User* readUser_from_Json();
+    void read_consumption_from_Json(User* u, QJsonDocument &current_doc);
+
+
+
 
     void parseJsonObjectV(QJsonObject &object);
     void parseJsonObjectI(QJsonObject &object);

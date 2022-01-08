@@ -1,0 +1,58 @@
+{
+    "Base consumption": [
+    ],
+    "Birthday": [
+        13,
+        10,
+        2001
+    ],
+    "Consumption": [
+        {
+            "Date": [
+                2,
+                3,
+                2020
+            ],
+            "Footprint": 33,
+            "Name": "Electric car",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                1,
+                4,
+                2019
+            ],
+            "Footprint": 54,
+            "Name": "Bus",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                1,
+                4,
+                2019
+            ],
+            "Footprint": 12,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                1,
+                4,
+                2019
+            ],
+            "Footprint": 20,
+            "Name": "Metro",
+            "Type": "transport"
+        }
+    ],
+    "Country": "Mexico",
+    "Email": "alexchristlieb@gmail.com",
+    "Footprint": 0,
+    "Living partners": 3,
+    "Name": "Alejandro Christlieb",
+    "Seeds": 0,
+    "Username": "alex.christlieb"
+}
