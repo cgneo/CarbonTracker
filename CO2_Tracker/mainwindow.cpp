@@ -380,8 +380,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::set_user(User &u){
-    current_user = &u;
+void MainWindow::set_user(User *u){
+    current_user = u;
 }
 
 User * MainWindow::get_user(){

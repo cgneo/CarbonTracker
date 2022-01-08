@@ -166,6 +166,8 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
     string key_month = to_string(month) + to_string(year);
     string key_year = to_string(year);
 
+
+
     footprint_by_date[key_day] += footprint;
     footprint_by_date[key_month] += footprint;
     footprint_by_date[key_year] += footprint;

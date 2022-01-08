@@ -27,7 +27,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow(); //Needs to be edited
-    void set_user(User &u);
+    void set_user(User* u);
     User *get_user();
 
 private slots:

@@ -133,13 +133,13 @@ int main(int argc, char *argv[])
 //
     Json_DB json_obj;
     User *u = json_obj.readUser_from_Json();
-    Consumption *c = u->get_consumption();
-    qDebug() << c->get_object_i(0)->get_name();
+    //Consumption *c = u->get_consumption();
+    //qDebug() << c->get_object_i(0)->get_name();
 
     //qDebug() << u->get_name();
     //qDebug() << u->get_consumption()->get_object_i(0)->get_name();
-    //MainWindow window;
-    //window.set_user(*u);
+    MainWindow window;
+    window.set_user(u);
 
     //User *u2 = window.get_user();
     //qDebug() << u2->get_name();
@@ -147,8 +147,8 @@ int main(int argc, char *argv[])
     //qDebug() << temp->get_name();
     //qDebug() << temp->get_footprint();
 
-//    window.show();
-//    return a.exec();
+    window.show();
+    return a.exec();
 
 
 
