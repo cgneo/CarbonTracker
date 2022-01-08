@@ -36,7 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     QPieSeries *dseries = new QPieSeries();
     dseries->setHoleSize(0.35);
 
-    QPieSlice *slices[12];
+    //QPieSlice *slices[12];
     Consumption c;
     QPieSlice *slice;
 
@@ -400,6 +400,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::set_user(User &u){
+    current_user = &u;
+}
+
+User * MainWindow::get_user(){
+    return current_user;
+}
 
 
 void MainWindow::on_Surveybutton_clicked()

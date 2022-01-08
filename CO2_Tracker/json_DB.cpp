@@ -226,13 +226,13 @@ void Json_DB::get_consumption_from_Json(User &u, QJsonDocument &current_doc){
         int day = date_json.at(0).toInt();
         int month = date_json.at(1).toInt();
         int year = date_json.at(2).toInt();
-        qDebug() << day;
-        qDebug() << month;
-        qDebug() << year;
+//        qDebug() << day;
+//        qDebug() << month;
+//        qDebug() << year;
 
         Date *date = new Date(day,month, year);
 
-        qDebug() << QString::fromStdString(date->print2());
+        //qDebug() << QString::fromStdString(date->print2());
 
         //Unpack the other attributes
         double footprint = json_object["Footprint"].toDouble();

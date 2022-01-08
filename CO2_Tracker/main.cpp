@@ -92,12 +92,18 @@ int main(int argc, char *argv[])
 //    int birthday = 13;
 //    int birthmonth = 10;
 //    int birthyear = 2001;
+//    int profile_pic = 0;
 
-//    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+//    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners, profile_pic);
 
 //    Date* fecha = new Date(01,04,2019);
 //    Date* fech2 = new Date(02,03,2020);
-//    Food food(fecha, "Nuevo", 100, 12432543, "Epicerie");
+//    Date* fech3 = new Date(02,03,2020);
+//    Date* fech4 = new Date(02,03,2020);
+//    Object t1(fech2, "Eletric car", "transport", 33);
+//    Object t2(fecha, "Bus", "transport", 54);
+//    Object t3(fecha, "Ferry", "transport", 12);
+//    Object t4(fecha, "Metro", "transport", 20);
 
 //    std::string distance = "1000";
 //    char *d = new char[distance.length() + 1];
@@ -110,9 +116,10 @@ int main(int argc, char *argv[])
 //    obj2.set_footprint(1000000);
 
 //    json_obj.writeJsonUser(u);
-//    json_obj.addObject_to_file(food);
-//    json_obj.addObject_to_file(food);
-//    json_obj.addObject_to_file(trans);
+//    json_obj.addObject_to_file(t1);
+//    json_obj.addObject_to_file(t2);
+//    json_obj.addObject_to_file(t3);
+//    json_obj.addObject_to_file(t4);
 
 //--------------------------Try Catalina's Testing---------
 #ifdef Test
@@ -123,20 +130,36 @@ int main(int argc, char *argv[])
 
 //--------------------------Run the UI--------------------
 //
-   Json_DB json_obj;
+    Json_DB json_obj;
+    User *u = json_obj.readUser_from_Json();
+    qDebug() << u->get_name();
+    qDebug() << u->get_consumption()->get_object_i(0)->get_name();
+    MainWindow window;
+    window.set_user(*u);
+
+    //User *u2 = window.get_user();
+    //Object *temp = u2->get_consumption()->get_object_i(0);
+    //qDebug() << temp->get_name();
+    //qDebug() << temp->get_footprint();
+
+//    window.show();
+//    return a.exec();
 
 
-   Tests t1;
-   QString file = json_obj.get_path() + json_obj.get_FileName();
-   t1.test_does_file_exist(file);
-   User u;
-   //json_obj.writeJsonUser(u);
 
-   bool new_user = !t1.test_does_file_exist(file);
 
-   MainWindow window;
-   window.show();
-   return a.exec();
+//   Tests t1;
+//   QString file = json_obj.get_path() + json_obj.get_FileName();
+//   t1.test_does_file_exist(file);
+//   User u;
+//   //json_obj.writeJsonUser(u);
+
+//   bool new_user = !t1.test_does_file_exist(file);
+
+
+
+
+
     //This code is actually USED
 //    if (new_user){ //If user is new, open profile set_up
 //        Survey window;
