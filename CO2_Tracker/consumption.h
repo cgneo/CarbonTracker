@@ -20,11 +20,12 @@ private:
     double food_footprint;
     double transport_footprint;
     Base_Consumption base;
+    std::unordered_map<string, int> footprint_by_vehicle;
+    std::unordered_map<string, int> footprint_by_date;
 
 public:
+
     static string vehicles[12];
-    std::unordered_map<string, int> transportfootprint;
-    std::unordered_map<string, int> datefootprint;
     //Seters and getters
     Consumption();
     Consumption(Base_Consumption base, vector<Object*>);

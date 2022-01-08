@@ -2,7 +2,7 @@
 #include "object.h"
 #include "json_DB.hpp"
 
-QString Consumption::vehicles[12] = {"Electric car",
+string Consumption::vehicles[12] = {"Electric car",
                                  "Petrol car",
                                  "Diesel car",
                                  "Petrol motorbike",
@@ -22,7 +22,7 @@ Consumption::Consumption(){ // Creates unique id equal to that of the user
     transport_footprint = 0;
     base = Base_Consumption();
 
-    transportfootprint = {
+    footprint_by_vehicle = {
         {"Electric car", 0},
         {"Petrol car", 0},
         {"Diesel car", 0},
@@ -43,7 +43,7 @@ Consumption::Consumption(Base_Consumption base, vector<Object*> total_consumptio
     calculate_footprint();
     this -> base = base;
     add_base_consumption(base);
-    transportfootprint = {
+    footprint_by_vehicle = {
         {"Electric car", 0},
         {"Petrol car", 0},
         {"Diesel car", 0},
@@ -102,7 +102,7 @@ void Consumption::calculate_footprint(){ // should be part of initialization
 
         }
         else if(type == "transport"){
-            transportfootprint[name] += footprint;
+            footprint_by_vehicle[name] += footprint;
             transport_footprint += footprint;
         }
         int day = date->get_day();
@@ -113,9 +113,9 @@ void Consumption::calculate_footprint(){ // should be part of initialization
         string key_month = to_string(month) + to_string(year);
         string key_year = to_string(year);
 
-        datefootprint[key_day] += footprint;
-        datefootprint[key_month] += footprint;
-        datefootprint[key_year] += footprint;
+        footprint_by_date[key_day] += footprint;
+        footprint_by_date[key_month] += footprint;
+        footprint_by_date[key_year] += footprint;
 
     }
 }
@@ -146,7 +146,7 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
 
     }
     else if(type == "transport"){
-        transportfootprint[name] += footprint;
+        footprint_by_vehicle[name] += footprint;
         transport_footprint += footprint;
     }
     int day = date->get_day();
@@ -157,9 +157,9 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
     string key_month = to_string(month) + to_string(year);
     string key_year = to_string(year);
 
-    datefootprint[key_day] += footprint;
-    datefootprint[key_month] += footprint;
-    datefootprint[key_year] += footprint;
+    footprint_by_date[key_day] += footprint;
+    footprint_by_date[key_month] += footprint;
+    footprint_by_date[key_year] += footprint;
 
 }
 
@@ -172,19 +172,19 @@ void Consumption::add_base_consumption(Base_Consumption base){
 }
 
 double Consumption::get_vehicle_footprint(string vehicle_name){
-    return transportfootprint[vehicle_name];
+    return footprint_by_vehicle[vehicle_name];
 }
 
 double Consumption::get_yearly_footprint(string year){
-    return datefootprint[year];
+    return footprint_by_date[year];
 }
 
 double Consumption::get_monthly_footprint(string month){
-    return datefootprint[month]
+    return footprint_by_date[month];
 }
 
 double Consumption::get_daily_footprint(string day){
-    return datefootprint[day];
+    return footprint_by_date[day];
 
 }
 
