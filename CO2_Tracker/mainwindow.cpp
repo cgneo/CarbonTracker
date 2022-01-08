@@ -37,11 +37,11 @@ MainWindow::MainWindow(QWidget *parent)
     dseries->setHoleSize(0.35);
 
     //QPieSlice *slices[12];
-    Consumption c;
+    Consumption *c = this->get_user()->get_consumption();
     QPieSlice *slice;
 
     for (int i = 0; i < 12; i++){
-        slice =  dseries->append(QString::fromStdString(c.vehicles[i]), c.get_vehicle_footprint(c.vehicles[i]));
+        slice =  dseries->append(QString::fromStdString(c->vehicles[i]), c->get_vehicle_footprint(c->vehicles[i]));
         //slices[i] = dseries->append(c.vehicles[i], 1);
         slice->setLabelVisible();
         QPieSlice::connect(slice, &QPieSlice::hovered,
