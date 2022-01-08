@@ -71,8 +71,13 @@ int Consumption::get_base_consumptionId(){
     return base.get_userId();
 }
 
-void Consumption::add_object(Object *obj){
-    total_consumption.push_back(obj);
+void Consumption::add_object(Object *obj, bool new_object){ //New object = True if object is added by user
+    total_consumption.push_back(obj);                       //False if it is read from Json file
+    Json_DB json_obj;
+
+    if (new_object){ // If object is new, write into json file
+        json_obj.addObject_to_file(*obj);
+    } //Otherwise, we are just adding the object to the total_consumption vector
 
     total_footprint += obj->get_footprint();
     if(obj->get_type() == "food"){
@@ -88,7 +93,7 @@ void Consumption::add_base_consumption(Base_Consumption base){
     total_footprint += base.get_footprint();
     for(int i=0;i<size;i++){
         Object *new_obj = base.get_object_i(i);
-        add_object(new_obj);
+        add_object(new_obj, true);
         if(new_obj->get_type() == "food"){
             food_footprint += new_obj->get_footprint();
         }
@@ -157,7 +162,7 @@ void Consumption::add_receipt(Receipt receipt){
     vector<Object *> content = receipt.get_receipt_content();
     for(int i=0;i<size;i++){
         Object *new_obj = content[i];
-        add_object(new_obj);
+        add_object(new_obj, true);
         food_footprint += new_obj->get_footprint();
     }
 }

@@ -39,7 +39,7 @@ public:
     //Other methods
         //Initialization methods
     void calculate_footprint();
-    void add_object(Object *obj);
+    void add_object(Object *obj, bool new_object);
     void add_base_consumption(Base_Consumption base);
 
         //Methods for graphs
