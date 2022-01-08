@@ -35,6 +35,7 @@ public:
     double get_food_footprint();
     double get_transport_footprint();
     Object *get_object_i(int i);
+    vector<Object*> *get_total_consumption();
 
     //Set method
     void  set_total_consumption(vector<Object*> consumption);

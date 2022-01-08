@@ -21,8 +21,8 @@ private :
   double footprint;
   vector<QString> friends;
   int seeds;
-  Consumption consumption; //should be a pointer
-  Base_Consumption base_consumption; //should be a pointer
+  Consumption *consumption; //should be a pointer
+  Base_Consumption *base_consumption; //should be a pointer
   int living_partners;
   int profile_picture;
   QString image;
@@ -31,7 +31,7 @@ public:
   User();
   User(QString username, QString name, int birthday, int birthmonth,
        int birthyear, QString email, QString country, int living_partners, int profile_pic);
-  ~User();
+  ~User(); //To be defined
 
   //Get and set methods
   int get_userId(); //Do we need an user_id?
@@ -44,6 +44,7 @@ public:
   int get_living_partners();
   int get_seeds();
   double get_footprint();
+  Consumption * get_consumption();
 
 
   void set_name(QString name);
