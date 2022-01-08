@@ -114,8 +114,9 @@ bool Tests::test_JsonUser(){//Trigger function for module
     int birthday = 13;
     int birthmonth = 10;
     int birthyear = 2001;
+    int pic = 0;
 
-    User* user = new User(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+    User* user = new User(username, name, birthday, birthmonth, birthyear, email, country, living_partners, pic);
 
     test_createJsonUserObject(*p, *user);
     test_writeJsonUser(*p);

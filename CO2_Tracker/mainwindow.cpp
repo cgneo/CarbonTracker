@@ -14,6 +14,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QDir>
+#include "consumption.h"
 
 #include <QtCharts>
 #include <QChartView>
@@ -29,16 +30,54 @@ MainWindow::MainWindow(QWidget *parent)
     //begining of graphs
     //Donutchart
 
+
+    //calling data
+    //build
     QPieSeries *dseries = new QPieSeries();
     dseries->setHoleSize(0.35);
-    QPieSlice *dslice1 = dseries->append("Locomotive", 1);
 
+    QPieSlice *slices[12];
+    Consumption c;
+    QPieSlice *slice;
+
+    for (int i = 0; i < 12; i++){
+        slice =  dseries->append(c.vehicles[i], 1);
+        //slices[i] = dseries->append(c.vehicles[i], 1);
+        slice->setLabelVisible();
+        QPieSlice::connect(slice, &QPieSlice::hovered,
+                           slice, &QPieSlice::setExploded);
+    }
+
+    /*
+    QPieSlice *dslice1 = dseries->append("Locomotive", 1);
     QPieSlice *dslice2 =dseries->append("Airplane", 2);
     QPieSlice *dslice3 =dseries->append("Car", 2);
+    QPieSlice *dslice4 = dseries->append("Locomotive", 1);
+    QPieSlice *dslice5 =dseries->append("Airplane", 2);
+    QPieSlice *dslice6 =dseries->append("Car", 2);
+    QPieSlice *dslice7 = dseries->append("Locomotive", 1);
+    QPieSlice *dslice8 =dseries->append("Airplane", 2);
+    QPieSlice *dslice9 =dseries->append("Car", 2);
+    QPieSlice *dslice10 = dseries->append("Locomotive", 1);
+    QPieSlice *dslice11 =dseries->append("Airplane", 2);
+    QPieSlice *dslice12 =dseries->append("Car", 2);
+
+    QPieSlice *slices[12] = {dslice1, dslice2, dslice3, dslice4, dslice5, dslice6, dslice7, dslice8, dslice9, dslice10, dslice11, dslice12};
+
 
     dslice1->setLabelVisible();
     dslice2->setLabelVisible();
     dslice3->setLabelVisible();
+    dslice4->setLabelVisible();
+    dslice5->setLabelVisible();
+    dslice6->setLabelVisible();
+    dslice7->setLabelVisible();
+    dslice8->setLabelVisible();
+    dslice9->setLabelVisible();
+    dslice10->setLabelVisible();
+    dslice11->setLabelVisible();
+    dslice12->setLabelVisible();
+
 
     QPieSlice::connect(dslice1, &QPieSlice::hovered,
                        dslice1, &QPieSlice::setExploded);
@@ -46,7 +85,7 @@ MainWindow::MainWindow(QWidget *parent)
                        dslice2, &QPieSlice::setExploded);
     QPieSlice::connect(dslice3, &QPieSlice::hovered,
                        dslice3, &QPieSlice::setExploded);
-
+*/
     QString string = "clicked";
 
     QChart *dchart = new QChart();
