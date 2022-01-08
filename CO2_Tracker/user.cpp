@@ -68,6 +68,10 @@ double User::get_footprint(){
     return footprint;
 }
 
+Consumption* User::get_consumption(){
+    return consumption;
+}
+
 
 //-------------------------Set methods----------------------
 void User::set_userId(){

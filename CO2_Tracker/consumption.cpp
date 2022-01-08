@@ -61,6 +61,7 @@ Consumption::Consumption(Base_Consumption base, vector<Object*> total_consumptio
 
 Consumption::~Consumption(){ //To be properly done
     //delete &total_consumption;
+
 }
 
 int Consumption::get_userId(){
@@ -83,6 +84,10 @@ double Consumption::get_transport_footprint(){
 
 Object *Consumption::get_object_i(int i){
     return total_consumption[i];
+}
+
+vector<Object*> *Consumption::get_total_consumption(){
+    return &total_consumption;
 }
 
 void Consumption::calculate_footprint(){ // should be part of initialization
