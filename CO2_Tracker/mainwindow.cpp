@@ -14,6 +14,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QDir>
+#include <QListWidgetItem>
+#include <QListWidget>
 
 #include <QtCharts>
 #include <QChartView>
@@ -371,6 +373,14 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix6(":/challenges/graph photo.png");
     ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
 
+    //Creating list of users
+    ui->setupUi(this);
+    QListWidgetItem *item = new QListWidgetItem(QIcon(":/challenges/user_icon.png"), "user_name1");
+    ui->userlist->addItem(item);
+    QListWidgetItem *item2 = new QListWidgetItem(QIcon(":/challenges/user_icon.png"), "user_name1");
+    ui->userlist->addItem(item2);
+    QListWidgetItem *item3 = new QListWidgetItem(QIcon(":/challenges/user_icon.png"), "user_name1");
+    ui->userlist->addItem(item3);
 
 
 
