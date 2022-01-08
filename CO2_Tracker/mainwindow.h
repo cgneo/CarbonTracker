@@ -15,6 +15,9 @@
 #include <QPushButton>
 #include "user.h"
 
+#include <netserver.h>
+#include <netclient.h>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,10 +30,10 @@ class MainWindow : public QMainWindow
 public:
     int a;
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow(); //Needs to be edited
-    void set_user(User* u);
-    User *get_user();
-    void set_int(int a);
+    ~MainWindow();
+    netserver* CB_server;
+    netclient* CB_receiver;
+
 
 private slots:
     void on_Surveybutton_clicked();

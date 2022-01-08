@@ -20,15 +20,111 @@
 #include <QBarSet>
 #include <QBarSeries>
 
+
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
+    // Create a server
+    CB_server = new netserver();
+    CB_server->startServer();
+
+    // Create a client
+    CB_receiver = new netclient();
+    CB_receiver->startClient();
+
+    // Invoke the flush and call it manually.
+    std::cout.flush();
+
+
     ui->setupUi(this);
     Json_DB json_obj;
     User *u = json_obj.readUser_from_Json();
 
     //begining of graphs
+    //LineChart
+
+    QLineSeries *Lseries = new QLineSeries();
+
+        Lseries->append(0, 6);
+        Lseries->append(2, 4);
+        Lseries->append(3, 8);
+        Lseries->append(7, 4);
+        Lseries->append(10, 5);
+
+
+        *Lseries << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
+                << QPointF(20, 2);
+
+        QChart *Lchart = new QChart();
+        Lchart->legend()->hide();
+        Lchart->addSeries(Lseries);
+        Lchart->createDefaultAxes();
+
+    /*
+        QStringList categories;
+       categories << "Jan" << "Feb" << "Mar" << "Apr" << "May" << "Jun";
+       QBarCategoryAxis *axisX = new QBarCategoryAxis();
+       axisX->append(categories);
+       chart->addAxis(axisX, Qt::AlignBottom);
+       series->attachAxis(axisX);
+       axisX->setRange(QString("Jan"), QString("Jun"));
+       QValueAxis *axisY = new QValueAxis();
+       chart->addAxis(axisY, Qt::AlignLeft);
+       series->attachAxis(axisY);
+       //axisY->setRange(0, 20);*/
+
+
+        Lchart->setTitle("Your carbon footprint through your food time");
+
+        //chart->legend()->setVisible(true);
+        //chart->legend()->setAlignment(Qt::AlignBottom);
+
+        //axisY = QValueAxis();
+        //axisY.setTitleText("Loss (W)");
+
+        Lchart->setAnimationOptions(QChart::SeriesAnimations);
+        Lchart->setTheme(QChart::ChartThemeBrownSand);
+
+        // Customize series
+        QPen pen(QRgb(0xfdb157));
+        pen.setWidth(5);
+        Lseries->setPen(pen);
+
+        // Customize chart title
+        QFont font;
+        font.setPixelSize(18);
+        Lchart->setTitleFont(font);
+        Lchart->setTitleBrush(QBrush(Qt::white));
+
+        // Customize chart background
+        QLinearGradient backgroundGradient;
+        backgroundGradient.setStart(QPointF(0, 0));
+        backgroundGradient.setFinalStop(QPointF(0, 1));
+        backgroundGradient.setColorAt(0.0, QRgb(0xd2d0d1));
+
+        Lchart->setBackgroundBrush(backgroundGradient);
+
+        // Customize plot area background
+        QLinearGradient plotAreaGradient;
+        plotAreaGradient.setStart(QPointF(0, 1));
+        plotAreaGradient.setFinalStop(QPointF(1, 0));
+        plotAreaGradient.setColorAt(0.0, QRgb(0x555555));
+        plotAreaGradient.setColorAt(1.0, QRgb(0x55aa55));
+        plotAreaGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+        Lchart->setPlotAreaBackgroundBrush(plotAreaGradient);
+        Lchart->setPlotAreaBackgroundVisible(true);
+
+
+        Lchart->setTheme(QChart::ChartThemeBrownSand);
+        QChartView *LchartView = new QChartView(Lchart);
+        LchartView->setRenderHint(QPainter::Antialiasing);
+        LchartView->setParent(ui->LineFrame);
+
+
     //Donutchart
 
 
@@ -80,7 +176,7 @@ MainWindow::MainWindow(QWidget *parent)
     QChart *dchart = new QChart();
     dchart->addSeries(dseries);
     dchart->setAnimationOptions(QChart::SeriesAnimations);
-    dchart->setTitle("My Transport Footprint");
+    dchart->setTitle("My Transportation Footprint");
     dchart->setTheme(QChart::ChartThemeBrownSand);
 
     QChartView *dchartview = new QChartView(dchart);
@@ -91,7 +187,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     dchart->legend()->setVisible(true);
     dchart->legend()->setAlignment(Qt::AlignLeft);
-
+    //
     //Daily
 
     QBarSet *set0 = new QBarSet("Food");
@@ -214,8 +310,8 @@ MainWindow::MainWindow(QWidget *parent)
     chartsum->addAxis(axisXsum, Qt::AlignBottom);
     seriessum->attachAxis(axisXsum);
     QValueAxis *axisYsum = new QValueAxis();
-    chart->addAxis(axisYsum, Qt::AlignLeft);
-    series->attachAxis(axisYsum);
+    chartsum->addAxis(axisYsum, Qt::AlignLeft);
+    seriessum->attachAxis(axisYsum);
 
     chartsum->legend()->setVisible(true);
     chartsum->legend()->setAlignment(Qt::AlignBottom);
@@ -296,6 +392,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     QPixmap pix4(":/challenges/seed.png");
     ui -> seed -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
+
+    QPixmap pix5(":/survey/trasnport_icon.png");
+    ui -> trans_picture -> setPixmap(pix5.scaled(500,300, Qt::KeepAspectRatio));
+
+    QPixmap pix6(":/challenges/graph photo.png");
+    ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
+
+
 
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
@@ -381,6 +485,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui -> tree_button -> setEnabled(false);
     connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
+
+
 }
 
 
@@ -526,3 +632,5 @@ void MainWindow::on_tree_button_clicked()
 //            }
 
 }
+
+

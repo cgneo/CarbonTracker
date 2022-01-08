@@ -10,13 +10,12 @@
 #include "mainwindow.h"
 #include "survey.h"
 #include "donut.h"
+#include <iostream>
 #include <QSsl>
 #include <QString>
 #include <QGraphicsWidget>
 #include "receipt_info.cpp"
 #include <QApplication>
-#include <json_DB.hpp>
-#include <iostream>
 #include <QApplication>
 #include <QtCharts>
 #include <QChartView>
