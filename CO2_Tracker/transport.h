@@ -12,7 +12,7 @@ class Transport : public Object{
     void set_distance(char* distance);
     char* get_distance();
 
-    virtual void object_to_json(QJsonObject &obj); //Get an empy QJsonObject and encodes a food object
+    //(virtual void object_to_json(QJsonObject &obj); //Get an empy QJsonObject and encodes a food object
 protected:
     char* distance;
 };

@@ -25,7 +25,7 @@ public:
     void set_name(QString object_name);
     void set_type(QString object_type);
 
-    virtual void object_to_json(QJsonObject &obj); //Gets an empy QJsonObj and encodes an object
+    void object_to_json(QJsonObject &obj); //Gets an empy QJsonObj and encodes an object
 
 protected:
     Date *date;

@@ -39,6 +39,9 @@ public:
     double get_transport_footprint();
     Object *get_object_i(int i);
 
+    //Set method
+    void  set_total_consumption(vector<Object*> consumption);
+
     //Other methods
         //Initialization methods
     void calculate_footprint();
