@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 {
 
     QApplication a(argc, argv);
-    string filepath = "/Users/aminelamouchi/Desktop/carrefour.png";
+    string filepath = "/Users/andres/Desktop/carrefour.png";
 
     vector<vector<string>> receipt_info = get_receipt_info(filepath);
 
