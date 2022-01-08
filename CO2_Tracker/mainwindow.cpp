@@ -14,7 +14,10 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QDir>
-
+#include <iostream>
+#include <QTcpServer>
+#include <QTcpSocket>
+#include <QFile>
 #include <QtCharts>
 #include <QChartView>
 #include <QBarSet>
@@ -515,4 +518,27 @@ void MainWindow::on_tree_button_clicked()
 
 }
 
+
+
+void MainWindow::on_send_button_clicked()
+{
+    netclient net;
+    QString message = ui -> chatbox_write ->text().trimmed();
+    if(!message.isEmpty())
+    {
+       net.on_pushButton_sendMessage_clicked(message);
+        User u;
+       ui-> chatbox ->append("<b>" + u.get_username() + "</b>: " + message);
+    }
+
+    ui -> chatbox_write->clear();
+    ui -> chatbox_write ->setFocus();
+
+}
+
+
+void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
+{
+
+}
 

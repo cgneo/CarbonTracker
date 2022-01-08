@@ -232,7 +232,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -3091,8 +3091,8 @@ transports)</string>
        <widget class="QComboBox" name="comboBox">
         <property name="geometry">
          <rect>
-          <x>620</x>
-          <y>275</y>
+          <x>330</x>
+          <y>50</y>
           <width>231</width>
           <height>31</height>
          </rect>
@@ -3160,22 +3160,6 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
           <string>Send challenges</string>
          </property>
         </item>
-       </widget>
-       <widget class="QLabel" name="tree">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>122</y>
-          <width>211</width>
-          <height>341</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>resources/pictures/tree_animation.gif</pixmap>
-        </property>
        </widget>
        <widget class="QPushButton" name="tree_button">
         <property name="geometry">
@@ -3301,59 +3285,117 @@ QPushButton:pressed {
          <string>Grow your tree</string>
         </property>
        </widget>
-       <widget class="QListView" name="listView">
-        <property name="geometry">
-         <rect>
-          <x>300</x>
-          <y>30</y>
-          <width>311</width>
-          <height>481</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QListView {
-    alternate-background-color: rgba(233, 232, 235, 166);
-}
-
-QListView {
-    show-decoration-selected: 1; /* make the selection span the entire width of the view */
-}
-
-QListView::item:alternate {
-    background: rgb(233, 208, 160);
-}
-
-QListView::item:selected {
-    border: 1px solid #6a6ea9;
-}
-
-QListView::item:selected:!active {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #ABAFE5, stop: 1 #8588B2);
-}
-
-QListView::item:selected:active {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #6a6ea9, stop: 1 #888dd9);
-}
-
-QListView::item:hover {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #FAFBFE, stop: 1 #DCDEF1);
-}</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="select_button">
         <property name="geometry">
          <rect>
-          <x>300</x>
-          <y>520</y>
+          <x>390</x>
+          <y>430</y>
           <width>113</width>
           <height>32</height>
          </rect>
         </property>
         <property name="text">
          <string>Select</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="chatbox">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>90</y>
+          <width>461</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gill Sans</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit, QListView {
+    background-color: white;
+	border: 2px solid rgb(234, 147, 96);
+    background-attachment: scroll;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="chatbox_write">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>290</y>
+          <width>371</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gill Sans</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    border-radius: 10px;
+    padding: 0 8px;
+    background: rgba(171, 197, 153, 202);
+    selection-background-color: darkgray;
+}</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="send_button">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>290</y>
+          <width>80</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gill Sans</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    padding: 5px 18px 5px 20px;
+    min-width: 6em;
+    border-radius: 6px;
+    background-color: rgb(234, 147, 96);
+    min-width: 10px;
+	padding: 3px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(233, 208, 160);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>send</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="tree">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>120</y>
+          <width>211</width>
+          <height>341</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>resources/pictures/tree_animation.gif</pixmap>
         </property>
        </widget>
       </widget>
