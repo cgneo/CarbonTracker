@@ -123,15 +123,18 @@ int main(int argc, char *argv[])
 
 //--------------------------Run the UI--------------------
 //
-//   Json_DB obj;
+//   Json_DB json_obj;
+
 
 //   Tests t1;
 //   QString file = json_obj.get_path() + json_obj.get_FileName();
 //   t1.test_does_file_exist(file);
+//   User u;
+//   //json_obj.writeJsonUser(u);
 
 //   bool new_user = !t1.test_does_file_exist(file);
 
-    //This code is actually USED
+//    //This code is actually USED
 //    if (new_user){ //If user is new, open profile set_up
 //        Survey window;
 //        window.show();

@@ -1,5 +1,6 @@
 #include "consumption.h"
 #include "object.h"
+#include "json_DB.hpp"
 
 Consumption::Consumption(){}
 
@@ -72,6 +73,7 @@ int Consumption::get_base_consumptionId(){
 
 void Consumption::add_object(Object *obj){
     total_consumption.push_back(obj);
+
     total_footprint += obj->get_footprint();
     if(obj->get_type() == "food"){
         food_footprint += obj->get_footprint();
