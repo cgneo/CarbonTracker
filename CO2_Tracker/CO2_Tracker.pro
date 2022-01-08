@@ -65,16 +65,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     resources/pictures/images.qrc
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/lib/release/ -ltesseract.5
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/lib/debug/ -ltesseract.5
-else:unix: LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/lib/ -ltesseract.5
+#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/lib/release/ -ltesseract.5
+#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/lib/debug/ -ltesseract.5
+#else:unix: LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/lib/ -ltesseract.5
 
-INCLUDEPATH += $$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/include
-DEPENDPATH += $$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/include
+#INCLUDEPATH += $$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/include
+#DEPENDPATH += $$PWD/../../../../../../../../../../usr/local/Cellar/tesseract/5.0.0/include
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/release/ -llept.5
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/debug/ -llept.5
-else:unix: LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/ -llept.5
+#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/release/ -llept.5
+#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/debug/ -llept.5
+#else:unix: LIBS += -L$$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/ -llept.5
 
-INCLUDEPATH += $$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/include
-DEPENDPATH += $$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/include
+#INCLUDEPATH += $$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/include
+#DEPENDPATH += $$PWD/../../../../../../../../../../usr/local/Cellar/leptonica/1.82.0/include
