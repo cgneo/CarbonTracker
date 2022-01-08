@@ -10,12 +10,11 @@
 #include "mainwindow.h"
 #include "survey.h"
 #include "donut.h"
+#include <iostream>
 #include <QSsl>
 #include <QString>
 #include <QGraphicsWidget>
 #include <QApplication>
-#include <json_DB.hpp>
-#include <iostream>
 #include <QApplication>
 #include <QtCharts>
 #include <QChartView>
@@ -39,9 +38,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow window;
-    window.show();
-    return a.exec();
+//    MainWindow window;
+//    window.show();
+//    return a.exec();
 
 //    Json_DB json_obj;
 //    QJsonObject doc;

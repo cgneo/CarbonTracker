@@ -20,10 +20,26 @@
 #include <QBarSet>
 #include <QBarSeries>
 
+
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
+    // Create a server
+    CB_server = new netserver();
+    CB_server->startServer();
+
+    // Create a client
+    CB_receiver = new netclient();
+    CB_receiver->startClient();
+
+    // Invoke the flush and call it manually.
+    std::cout.flush();
+
+
     ui->setupUi(this);
 
     //begining of graphs
@@ -266,8 +282,8 @@ MainWindow::MainWindow(QWidget *parent)
     chartsum->addAxis(axisXsum, Qt::AlignBottom);
     seriessum->attachAxis(axisXsum);
     QValueAxis *axisYsum = new QValueAxis();
-    chart->addAxis(axisYsum, Qt::AlignLeft);
-    series->attachAxis(axisYsum);
+    chartsum->addAxis(axisYsum, Qt::AlignLeft);
+    seriessum->attachAxis(axisYsum);
 
     chartsum->legend()->setVisible(true);
     chartsum->legend()->setAlignment(Qt::AlignBottom);
@@ -348,6 +364,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     QPixmap pix4(":/challenges/seed.png");
     ui -> seed -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
+
+    QPixmap pix5(":/survey/trasnport_icon.png");
+    ui -> trans_picture -> setPixmap(pix5.scaled(500,300, Qt::KeepAspectRatio));
+
+    QPixmap pix6(":/challenges/graph photo.png");
+    ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
+
+
 
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
@@ -433,6 +457,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui -> tree_button -> setEnabled(false);
     connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
+
+
 }
 
 
@@ -568,3 +594,5 @@ void MainWindow::on_tree_button_clicked()
 //            }
 
 }
+
+
