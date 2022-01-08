@@ -2,7 +2,7 @@
 #include "object.h"
 #include "json_DB.hpp"
 
-QString Consumption::vehicles[12] = {"Electric car",
+string Consumption::vehicles[12] = {"Electric car",
                                  "Petrol car",
                                  "Diesel car",
                                  "Petrol motorbike",
@@ -22,7 +22,7 @@ Consumption::Consumption(){ // Creates unique id equal to that of the user
     transport_footprint = 0;
     base = Base_Consumption();
 
-    transportfootprint = {
+    footprint_by_vehicle = {
         {"Electric car", 0},
         {"Petrol car", 0},
         {"Diesel car", 0},
@@ -43,7 +43,7 @@ Consumption::Consumption(Base_Consumption base, vector<Object*> total_consumptio
     calculate_footprint();
     this -> base = base;
     add_base_consumption(base);
-    transportfootprint = {
+    footprint_by_vehicle = {
         {"Electric car", 0},
         {"Petrol car", 0},
         {"Diesel car", 0},
@@ -89,30 +89,34 @@ void Consumption::calculate_footprint(){ // should be part of initialization
     for(Object *i : total_consumption){
         Object obj = *i;
 
-        QString type = obj.get_type();
-        QString name = obj.get_name();
+        QString type_ = obj.get_type();
+        string type = type_.toStdString();
+        QString name_ = obj.get_name();
+        string name = name_.toStdString();
         double footprint = obj.get_footprint();
         Date *date = obj.get_date();
 
         total_footprint += footprint; //update total footprint
         if(type == "food"){
             food_footprint += footprint;
+
         }
         else if(type == "transport"){
-            transportfootprint[name] += footprint;
+            footprint_by_vehicle[name] += footprint;
             transport_footprint += footprint;
         }
         int day = date->get_day();
         int month = date->get_month();
         int year = date->get_year();
 
-        QString key_day = QString::number(day)+QString::number(month) + QString::number(year);
-        QString key_month = QString::number(month) + QString::number(year);
-        QString key_year = QString::number(year);
+        string key_day = to_string(day)+to_string(month)+to_string(year);
+        string key_month = to_string(month) + to_string(year);
+        string key_year = to_string(year);
 
-        datefootprint[key_day] += footprint;
-        datefootprint[key_month] += footprint;
-        datefootprint[key_year] += footprint;
+        footprint_by_date[key_day] += footprint;
+        footprint_by_date[key_month] += footprint;
+        footprint_by_date[key_year] += footprint;
+
     }
 }
 
@@ -129,30 +133,33 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
         json_obj.addObject_to_file(*obj);
     } //Otherwise, we are just adding the object to the total_consumption vector
 
-    QString type = obj->get_type();
-    QString name = obj->get_name();
+    QString type_ = obj->get_type();
+    string type = type_.toStdString();
+    QString name_ = obj->get_name();
+    string name = name_.toStdString();
     double footprint = obj->get_footprint();
     Date *date = obj->get_date();
 
     total_footprint += footprint; //update total footprint
     if(type == "food"){
         food_footprint += footprint;
+
     }
     else if(type == "transport"){
-        transportfootprint[name] += footprint;
+        footprint_by_vehicle[name] += footprint;
         transport_footprint += footprint;
     }
     int day = date->get_day();
     int month = date->get_month();
     int year = date->get_year();
 
-    QString key_day = QString::number(day)+QString::number(month) + QString::number(year);
-    QString key_month = QString::number(month) + QString::number(year);
-    QString key_year = QString::number(year);
+    string key_day = to_string(day)+to_string(month)+to_string(year);
+    string key_month = to_string(month) + to_string(year);
+    string key_year = to_string(year);
 
-    datefootprint[key_day] += footprint;
-    datefootprint[key_month] += footprint;
-    datefootprint[key_year] += footprint;
+    footprint_by_date[key_day] += footprint;
+    footprint_by_date[key_month] += footprint;
+    footprint_by_date[key_year] += footprint;
 
 }
 
@@ -164,20 +171,20 @@ void Consumption::add_base_consumption(Base_Consumption base){
     }
 }
 
-double Consumption::get_vehicle_footprint(QString vehicle_name){
-    return transportfootprint[vehicle_name];
+double Consumption::get_vehicle_footprint(string vehicle_name){
+    return footprint_by_vehicle[vehicle_name];
 }
 
-double Consumption::get_yearly_footprint(QString year){
-    return datefootprint[year];
+double Consumption::get_yearly_footprint(string year){
+    return footprint_by_date[year];
 }
 
-double Consumption::get_monthly_footprint(QString month){
-    return datefootprint[month]
+double Consumption::get_monthly_footprint(string month){
+    return footprint_by_date[month];
 }
 
-double Consumption::get_daily_footprint(QString day){
-    return datefootprint[day];
+double Consumption::get_daily_footprint(string day){
+    return footprint_by_date[day];
 
 }
 

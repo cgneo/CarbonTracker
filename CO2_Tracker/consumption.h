@@ -20,11 +20,12 @@ private:
     double food_footprint;
     double transport_footprint;
     Base_Consumption base;
+    std::unordered_map<string, int> footprint_by_vehicle;
+    std::unordered_map<string, int> footprint_by_date;
 
 public:
-    static QString vehicles[12];
-    std::unordered_map<QString, int> transportfootprint;
-    std::unordered_map<QString, int> datefootprint;
+
+    static string vehicles[12];
     //Seters and getters
     Consumption();
     Consumption(Base_Consumption base, vector<Object*>);
@@ -49,10 +50,10 @@ public:
     void add_base_consumption(Base_Consumption base);
 
         //Methods for graphs
-    double get_vehicle_footprint(QString vehicle_name);
-    double get_yearly_footprint(QString month);
-    double get_monthly_footprint(QString month);
-    double get_daily_footprint(QString month);
+    double get_vehicle_footprint(string vehicle_name);
+    double get_yearly_footprint(string month);
+    double get_monthly_footprint(string month);
+    double get_daily_footprint(string month);
 
         //Other
     void add_receipt(Receipt receipt);
