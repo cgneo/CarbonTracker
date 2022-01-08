@@ -25,7 +25,7 @@ public:
     Consumption();
     Consumption(int userId);
     Consumption(int userId, Base_Consumption base, vector<Object*>);
-    ~Consumption();
+    ~Consumption(); //Shall be implemented
 
     //Get methods
     int get_consumptionId();
@@ -35,6 +35,9 @@ public:
     double get_food_footprint();
     double get_transport_footprint();
     Object *get_object_i(int i);
+
+    //Set method
+    void  set_total_consumption(vector<Object*> consumption);
 
     //Other methods
         //Initialization methods

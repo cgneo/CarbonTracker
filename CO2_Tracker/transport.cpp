@@ -23,16 +23,16 @@ char* Transport:: get_distance(){
     return distance;
 }
 
-void Transport::object_to_json(QJsonObject &obj){
-    obj["Type"] = type;
-    obj["Name"] = name;
+//void Transport::object_to_json(QJsonObject &obj){
+//    obj["Type"] = type;
+//    obj["Name"] = name;
 
-    QJsonArray json_date = {date->get_day(), date->get_month()
-                      , date->get_year()};
-    obj["Date"] = json_date;
-    obj["Footprint"] = footprint;
-    obj["Distance"] = QString::fromStdString(distance);
-}
+//    QJsonArray json_date = {date->get_day(), date->get_month()
+//                      , date->get_year()};
+//    obj["Date"] = json_date;
+//    obj["Footprint"] = footprint;
+//    obj["Distance"] = QString::fromStdString(distance);
+//}
 
 Locomotive :: Locomotive():Transport(){}
 

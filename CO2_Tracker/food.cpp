@@ -70,15 +70,15 @@ double Food::retrieve_carbon(double barcode) {
                //C02 footprint of food item
 }
 
-void Food::object_to_json(QJsonObject &obj){
-    obj["Type"] = type;
-    obj["Name"] = name;
+//void Food::object_to_json(QJsonObject &obj){
+//    obj["Type"] = type;
+//    obj["Name"] = name;
 
-    QJsonArray json_date = {date->get_day(), date->get_month()
-                      , date->get_year()};
-    obj["Date"] = json_date;
-    obj["Footprint"] = footprint;
-    obj["Barcode"] = barcode;
-    obj["Quantity"] = quantity;
-    obj["Category"] = QString::fromStdString(category);
-}
+//    QJsonArray json_date = {date->get_day(), date->get_month()
+//                      , date->get_year()};
+//    obj["Date"] = json_date;
+//    obj["Footprint"] = footprint;
+//    obj["Barcode"] = barcode;
+//    obj["Quantity"] = quantity;
+//    obj["Category"] = QString::fromStdString(category);
+//}

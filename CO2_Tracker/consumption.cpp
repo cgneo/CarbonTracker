@@ -167,3 +167,7 @@ void Consumption::add_receipt(Receipt receipt){
     }
 }
 
+void Consumption::set_total_consumption(vector<Object *> consumption){
+    total_consumption = consumption;
+}
+

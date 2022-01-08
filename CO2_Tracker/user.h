@@ -24,16 +24,18 @@ private :
   Consumption consumption; //should be a pointer
   Base_Consumption base_consumption; //should be a pointer
   int living_partners;
+  int profile_picture;
   QString image;
 
 public:
   User();
   User(QString username, QString name, int birthday, int birthmonth,
-       int birthyear, QString email, QString country, int living_partners);
+       int birthyear, QString email, QString country, int living_partners, int profile_pic);
   ~User();
 
   //Get and set methods
   int get_userId(); //Do we need an user_id?
+  int get_profile_picture();
   QString get_name();
   QString get_username();
   QString get_country();
@@ -55,6 +57,7 @@ public:
   void set_seeds(int seeds);
   void set_living_partners(int living_partners);
   void set_picture(QString picture);
+  void set_consumption(Consumption &consumption);
 
   bool name_is_valid();
   bool birthday_is_valid();

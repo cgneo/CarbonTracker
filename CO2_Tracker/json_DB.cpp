@@ -139,14 +139,17 @@ void Json_DB::createJsonUserObject(QJsonObject &obj, User &user)
     obj["Name"] = user.get_name();
     QJsonArray date = {user.get_birthday()->get_day(), user.get_birthday()->get_month()
                       ,user.get_birthday()->get_year()};
-    obj["Date"] = date;
+    obj["Birthday"] = date;
     obj["Email"] = user.get_email();
     obj["Country"] = user.get_country();
     obj["Footprint"] = user.get_footprint();
     obj["Seeds"] = user.get_seeds();
+    obj["Living partners"] = user.get_living_partners();
+    obj["Profile picture"] = user.get_profile_picture();
 
-    QJsonArray friends;
-    obj["Friends"] = friends;
+
+//    QJsonArray friends;
+//    obj["Friends"] = friends;
 
     QJsonArray consumption;
     obj["Consumption"] = consumption;
@@ -181,16 +184,39 @@ QJsonDocument *Json_DB::read_JsonFile(){ //Returns an object on the heap. REMEMB
     return json_doc;
 }
 
-vector<Object> Json_DB::get_consumption(){
+
+User *Json_DB::readUser_from_Json(){
     QJsonDocument* current_doc = read_JsonFile(); //Retrieve the current json file
     QJsonObject json_file = current_doc->object(); //Full json object
+
+    QString username = json_file["Username"].toString();
+    QString name = json_file["Name"].toString();
+    QJsonArray date_json = json_file["Birthday"].toArray();
+    int day = date_json.at(0).toInt();
+    int month = date_json.at(1).toInt();
+    int year = date_json.at(2).toInt();
+    QString email = json_file["Email"].toString();
+    QString country = json_file["Country"].toString();
+    double footprint = json_file["Footprint"].toDouble();
+    int seeds = json_file["Seeds"].toInt();
+    int partners = json_file["Living partners"].toInt();
+    int profile_pic = json_file["Profile picture"].toInt();
+
+    User *u = new User (username, name, day, month, year, email, country, partners, profile_pic);
+    get_consumption_from_Json(*u,  *current_doc);
+    //Should add base_consumption as well
+    return u;
+}
+
+void Json_DB::get_consumption_from_Json(User &u, QJsonDocument &current_doc){
+    QJsonObject json_file = current_doc.object(); //Full json object
 
     //Get the consumption array of json objects
     QJsonArray consumption_json = json_file["Consumption"].toArray();
 
     int size = consumption_json.size();
 
-    vector<Object> consumption;
+    Consumption consumption;
 
     for (int i = size - 1; i >= 0; i--){ //Iterate through the json array backwards to get newer elements in front
         QJsonObject json_object = consumption_json.at(i).toObject();
@@ -212,29 +238,30 @@ vector<Object> Json_DB::get_consumption(){
         double footprint = json_object["Footprint"].toDouble();
         QString type = json_object["Type"].toString();
         QString name = json_object["Name"].toString();
+        Object o(date, name, type, footprint);
+        consumption.add_object(&o, false);
+//        if (type == "Transport"){ //If its a transport object, unpack transport attributes
+//            string distance = json_object["Distance"].toString().toStdString();
+//            char * d = new char[distance.length() + 1];
 
-        if (type == "Transport"){ //If its a transport object, unpack transport attributes
-            string distance = json_object["Distance"].toString().toStdString();
-            char * d = new char[distance.length() + 1];
+//            Transport t(date, name, d); //Create a transport object
+//            t.set_footprint(footprint);
 
-            Transport t(date, name, d); //Create a transport object
-            t.set_footprint(footprint);
+//            consumption.add_object(t);//Put object in vector
+//        }
+//        else if (type == "Food"){ //Unpack food attributes
+//            double barcode = json_object["Barcode"].toDouble();
+//            double quantity =json_object["Quantity"].toDouble();
+//            QString category = json_object["Category"].toString();
 
-            consumption.push_back(t);//Put object in vector
+//            Food f(date, name, quantity, barcode, category);
+//            f.set_footprint(footprint, quantity); //Build food object
+
+//            consumption.push_back(f); //Put object in vector
+//        }
         }
-        else if (type == "Food"){ //Unpack food attributes
-            double barcode = json_object["Barcode"].toDouble();
-            double quantity =json_object["Quantity"].toDouble();
-            QString category = json_object["Category"].toString();
+    u.set_consumption(consumption);
 
-            Food f(date, name, quantity, barcode, category);
-            f.set_footprint(footprint, quantity); //Build food object
-
-            consumption.push_back(f); //Put object in vector
-        }
-    }
-    delete current_doc; // Delete used pointer
-    return consumption;
    }
 
 void Json_DB::write_in_file(QJsonObject &json_obj){

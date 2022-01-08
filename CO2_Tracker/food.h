@@ -25,7 +25,7 @@ class Food : public Object {
     string retrieve_category(double barcode);
     void create_food_item(double barcode);
 
-    virtual void object_to_json(QJsonObject &obj); //Get an empy QJsonObject and encodes a food object
+    //virtual void object_to_json(QJsonObject &obj); //Get an empy QJsonObject and encodes a food object
 
 protected:
     double barcode;
