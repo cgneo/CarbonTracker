@@ -10,7 +10,6 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    api_transport.cpp \
     base_consumption.cpp \
     consumption.cpp \
     date.cpp \
@@ -32,7 +31,6 @@ SOURCES += \
 
 
 HEADERS += \
-    api_transport.h \
     base_consumption.h \
     colormod.h \
     consumption.h \
@@ -48,10 +46,10 @@ HEADERS += \
     mainwindow.h \
     survey.h \
     receipt.h \
-    food_api.h
+    food_api.h \
+    transport_api.h
 
 FORMS += \
-    api_transport.ui \
     mainwindow.ui \
     survey.ui
 
@@ -62,16 +60,16 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../usr/local/Cellar/tesseract/5.0.0/lib/release/ -ltesseract.5
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../usr/local/Cellar/tesseract/5.0.0/lib/debug/ -ltesseract.5
-else:unix: LIBS += -L$$PWD/../../../../../usr/local/Cellar/tesseract/5.0.0/lib/ -ltesseract.5
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/lib/release/ -ltesseract.4
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/lib/debug/ -ltesseract.4
+else:unix: LIBS += -L$$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/lib/ -ltesseract.4
 
-INCLUDEPATH += $$PWD/../../../../../usr/local/Cellar/tesseract/5.0.0/include
-DEPENDPATH += $$PWD/../../../../../usr/local/Cellar/tesseract/5.0.0/include
+INCLUDEPATH += $$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/include
+DEPENDPATH += $$PWD/../../../../../../usr/local/Cellar/tesseract/4.1.1/include
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../usr/local/Cellar/leptonica/1.82.0/lib/release/ -llept.5
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../usr/local/Cellar/leptonica/1.82.0/lib/debug/ -llept.5
-else:unix: LIBS += -L$$PWD/../../../../../usr/local/Cellar/leptonica/1.82.0/lib/ -llept.5
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/release/ -llept.5
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/debug/ -llept.5
+else:unix: LIBS += -L$$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/lib/ -llept.5
 
-INCLUDEPATH += $$PWD/../../../../../usr/local/Cellar/leptonica/1.82.0/include
-DEPENDPATH += $$PWD/../../../../../usr/local/Cellar/leptonica/1.82.0/include
+INCLUDEPATH += $$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/include
+DEPENDPATH += $$PWD/../../../../../../usr/local/Cellar/leptonica/1.82.0/include

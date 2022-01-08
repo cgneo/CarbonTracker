@@ -2,6 +2,10 @@
 #include "date.h"
 #include <string>
 
+Receipt::Receipt() {
+
+}
+
 Receipt::Receipt(type receipt, Date *start_date, int num_people, int duration) {
     receipt_type = receipt;
     number_of_people = num_people;
@@ -12,8 +16,7 @@ Receipt::Receipt(type receipt, Date *start_date, int num_people, int duration) {
 }
 
 Receipt::~Receipt(){
-    delete[] date;
-    vector<Object *>().swap(content); //Free memory from vector
+    //Free memory from vector
 };//To be constructed
 
 
@@ -46,11 +49,11 @@ Date* Receipt::get_dates(){
 void Receipt::set_footprint(double footprint) {
     if (receipt_type == food){
         for (int i = 0; i < content.size(); i++){
-            footprint += content[i]->get_footprint();
+            //footprint += content[i]->get_footprint();
         } //Iterate through content and add footprint of each object
     }
     else{
-        footprint = content[0]->get_footprint(); //footprint is the footprint of the transport object
+        //footprint = content[0]->get_footprint(); //footprint is the footprint of the transport object
     }
 }
 
@@ -105,6 +108,14 @@ bool Receipt::number_of_people_is_valid(){
     return true;
 }
 
-vector<Object *> Receipt::get_receipt_content(){
+vector<vector<string>> Receipt::get_receipt_content(){
     return content;
+}
+
+void Receipt::set_content(vector<vector<string>> content) {
+    this->content=content;
+}
+
+void Receipt::receipt_to_consumption() {
+
 }

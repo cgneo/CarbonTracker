@@ -145,7 +145,7 @@ void Survey::on_buttonAccount_clicked()
     int birthmonth = ui->Month->value();
     int birthyear = ui->Year->value();
 
-    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners);
+    User u(username, name, birthday, birthmonth, birthyear, email, country, living_partners, 0);
 
     json_obj.createJsonUserObject(doc, u);
     json_obj.writeJsonUser(u);
