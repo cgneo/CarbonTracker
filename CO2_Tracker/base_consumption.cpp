@@ -2,19 +2,7 @@
 
 
 Base_Consumption::Base_Consumption(){
-    userId = 0;
-    base_consumptionId = 0;
-    consumptionId = 0;
     footprint = 0;
-}
-
-Base_Consumption::Base_Consumption(int userId)
-{
-    this->userId = userId;
-    base_consumptionId = userId;
-    consumptionId = userId;
-    footprint = 0;
-//    base_consumption = calculate_base_consumption();//Args missing
 }
 
 Base_Consumption::~Base_Consumption(){
@@ -55,7 +43,7 @@ void Base_Consumption::add_object(Object *item) {
     footprint += item->get_footprint();
 }
 
-
+/*
 //returns the total (base) food footprint of user
 double Base_Consumption::total_base_food() {
     double food_print = 0;
@@ -78,3 +66,4 @@ double Base_Consumption::total_base_transport() {
     }
     return transport_print;
 }
+*/
