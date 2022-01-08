@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
     QPieSlice *slice;
 
     for (int i = 0; i < 12; i++){
-        slice =  dseries->append(c.vehicles[i], 1);
+        slice =  dseries->append(QString::fromStdString(c.vehicles[i]), 1);
         //slices[i] = dseries->append(c.vehicles[i], 1);
         slice->setLabelVisible();
         QPieSlice::connect(slice, &QPieSlice::hovered,
