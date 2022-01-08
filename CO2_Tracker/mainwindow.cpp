@@ -15,7 +15,6 @@
 #include <QMessageBox>
 #include <QDir>
 #include "consumption.h"
-
 #include <QtCharts>
 #include <QChartView>
 #include <QBarSet>
