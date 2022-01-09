@@ -33,7 +33,8 @@ public:
     ~MainWindow();
     netserver* CB_server;
     netclient* CB_receiver;
-
+    void access_ui_message(QString message);
+    Ui::MainWindow *ui;
 
 private slots:
     void on_Surveybutton_clicked();
@@ -59,7 +60,7 @@ private slots:
     void on_send_button_clicked();
 
 private:
-    Ui::MainWindow *ui;
+
     User *current_user;
 
     QPropertyAnimation *animation_1;
@@ -79,6 +80,8 @@ private:
 
 
 };
+
+void message_received(QString message);
 #endif // MAINWINDOW_H
 
 

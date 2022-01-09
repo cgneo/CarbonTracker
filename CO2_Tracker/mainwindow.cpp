@@ -50,6 +50,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     QLineSeries *Lseries = new QLineSeries();
 
+
+
     Lseries->append(0, 500);
      Lseries->append(10, 850);
      Lseries->append(20, 1000);
@@ -281,6 +283,7 @@ MainWindow::MainWindow(QWidget *parent)
     Date d;
     d.get_current_date();
 
+
     *set0 << c->get_daily_footprint(d.to_String()) << 7 << 70 ;
     //*set1 << 5 << 0 << 0;
 
@@ -314,7 +317,7 @@ MainWindow::MainWindow(QWidget *parent)
     QBarSet *set4 = new QBarSet("General footprint");
     //QBarSet *set5 = new QBarSet("Transports");
 
-    *set4 << c->get_monthly_footprint("00012022") << 208 << 2087;
+    *set4 << c->get_monthly_footprint(to_string(d.get_month()) + to_string(d.get_year())) << 208 << 2087;
     //*set5 << 50 << 2 << 2;
 
     QStackedBarSeries *series2 = new QStackedBarSeries();
@@ -347,7 +350,7 @@ MainWindow::MainWindow(QWidget *parent)
     QBarSet *set7 = new QBarSet("General footprint");
     //QBarSet *set8 = new QBarSet("Transports");
 
-    *set7 << c->get_yearly_footprint("00002022") << 2505 << 25052 ;
+    *set7 << c->get_yearly_footprint(to_string(d.get_year())) << 2505 << 25052 ;
     //*set8 << 500 << 20 << 20;
 
     QStackedBarSeries *series3 = new QStackedBarSeries();
@@ -523,6 +526,8 @@ void MainWindow::on_Scanbutton_clicked()
     Receipt rec;
     Date *today = new  Date();
     today->get_current_date();
+    std::cout << today->to_String() << std::endl;
+
     rec.set_dates(today);
     rec.set_content(receipt_vec);
     //rec.set_dates(); HAVE TO SET DATE OF RECEIPT
@@ -652,21 +657,25 @@ void MainWindow::on_tree_button_clicked()
 
 void MainWindow::on_send_button_clicked()
 {
-    //netclient net;
-
-
-//    if(!message.isEmpty())
-//    {
-       //net.on_pushButton_sendMessage_clicked(message);
-
         QString message = current_user->get_username();
-        //std::cout<<"username :" << message.toStdString()<<std::endl;
-        message.append(": ");
-        message.append(ui -> chatbox_write ->text().trimmed());
-       ui-> chatbox ->append(message);
-//    }
+    //std::cout<<"username :" << message.toStdString()<<std::endl;
+    message.append(": ");
+    message.append(ui -> chatbox_write ->text().trimmed());
+   ui-> chatbox ->append(message);
+   CB_receiver -> on_pushButton_sendMessage_clicked(message);
 
     ui -> chatbox_write->clear();
     ui -> chatbox_write ->setFocus();
 }
+void MainWindow::access_ui_message(QString message){
+    ui -> chatbox -> append(message);
+    std::cout<<"this is the second step"<< message.toStdString() << std::endl;
+}
+
+void message_received(QString message){
+    MainWindow main;
+    main.access_ui_message(message);
+    std::cout<<"this is the first step"<< message.toStdString() << std::endl;
+}
+
 

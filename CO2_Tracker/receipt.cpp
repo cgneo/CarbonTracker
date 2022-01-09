@@ -124,7 +124,7 @@ void Receipt::receipt_to_consumption(Consumption* c) {
        }
        else {
            double co2 = atof(product_info[4].c_str());
-           Food* product_object = new Food(&date[1], category, stoi(product_info[5]), product_info[0], co2);
+           Food* product_object = new Food(&date[0], category, stoi(product_info[5]), product_info[0], co2);
            c->add_object(product_object, true);
        }
    }
