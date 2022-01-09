@@ -43,9 +43,9 @@ int main(int argc, char *argv[])
     if( Testing != 1)
         {Tests t;
         t.start_test();}
-    else
+    else{
 
-    {Tests t1;
+    Tests t1;
     Json_DB json_obj;
     QString file = json_obj.get_path() + json_obj.get_FileName();
     t1.test_does_file_exist(file);

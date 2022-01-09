@@ -58,7 +58,7 @@ FORMS += \
 
 TARGET = CarbonTracker_exe
 
-DESTDIR = CarbonTracker/CO2_Tracker/resources/build
+#DESTDIR = /resources/build
 
 
 # Default rules for deployment.
