@@ -65,17 +65,17 @@ constexpr unsigned int hash(const char *s, int off = 0) {
 
 char* transport_api::get_transport_ID(char* input){
 switch( hash(input) ){
-case hash("international train") : return "passenger_train-route_type_international_rail-fuel_source_na";
-case hash("metro") : return "passenger_train-route_type_urban-fuel_source_diesel";
-case hash("national train") :  return "passenger_train-route_type_national_rail-fuel_source_na";
-case hash("bus") : return "passenger_train-route_type_national_rail-fuel_source_na";
-case hash("ferry") : return "passenger_ferry-route_type_na-fuel_source_na";
-case hash("electric car") : return "passenger_vehicle-vehicle_type_car-fuel_source_bev-engine_size_na-vehicle_age_na-vehicle_weight_na";
-case hash("petrol car") :  return "passenger_vehicle-vehicle_type_car-fuel_source_petrol-engine_size_na-vehicle_age_na-vehicle_weight_na";
-case hash("diesel car") : return "passenger_vehicle-vehicle_type_car-fuel_source_diesel-engine_size_na-vehicle_age_na-vehicle_weight_na";
-case hash("petrol motorbike") : return "passenger_vehicle-vehicle_type_large_motorbike-fuel_source_petrol-engine_size_na-vehicle_age_na-vehicle_weight_na";
-case hash("first class international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_first-contrails_included";
-case hash("domestic flight") : return "passenger_flight-route_type_domestic-aircraft_type_na-distance_na-class_na-contrails_included";
-case hash("business class international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_business-contrails_included";
-case hash("economy class international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_economy-contrails_included";
+case hash("International train") : return "passenger_train-route_type_international_rail-fuel_source_na";
+case hash("Metro") : return "passenger_train-route_type_urban-fuel_source_diesel";
+case hash("National train") :  return "passenger_train-route_type_national_rail-fuel_source_na";
+case hash("Bus") : return "passenger_train-route_type_national_rail-fuel_source_na";
+case hash("Ferry") : return "passenger_ferry-route_type_na-fuel_source_na";
+case hash("Electric car") : return "passenger_vehicle-vehicle_type_car-fuel_source_bev-engine_size_na-vehicle_age_na-vehicle_weight_na";
+case hash("Petrol car") :  return "passenger_vehicle-vehicle_type_car-fuel_source_petrol-engine_size_na-vehicle_age_na-vehicle_weight_na";
+case hash("Diesel car") : return "passenger_vehicle-vehicle_type_car-fuel_source_diesel-engine_size_na-vehicle_age_na-vehicle_weight_na";
+case hash("Petrol motorbike") : return "passenger_vehicle-vehicle_type_large_motorbike-fuel_source_petrol-engine_size_na-vehicle_age_na-vehicle_weight_na";
+case hash("First class international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_first-contrails_included";
+case hash("Domestic flight") : return "passenger_flight-route_type_domestic-aircraft_type_na-distance_na-class_na-contrails_included";
+case hash("Business class international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_business-contrails_included";
+case hash("Economy class international flight") : return "passenger_flight-route_type_outside_uk-aircraft_type_na-distance_na-class_economy-contrails_included";
 }}
