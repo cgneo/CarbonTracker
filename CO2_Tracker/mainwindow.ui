@@ -232,7 +232,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -692,7 +692,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
           <x>170</x>
           <y>20</y>
           <width>1161</width>
-          <height>691</height>
+          <height>739</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -1000,10 +1000,20 @@ QPushButton:default {
             </spacer>
            </item>
            <item>
-            <widget class="QLabel" name="graph_pic">
-             <property name="text">
-              <string/>
+            <widget class="QFrame" name="foodframe2">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
              </property>
+             <property name="baseSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7"/>
             </widget>
            </item>
            <item>
@@ -1820,7 +1830,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -2581,7 +2591,7 @@ and resolutions to improve your carbon footpring linked to
 transports)</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="RefreshPushButton">
           <property name="geometry">
            <rect>
             <x>50</x>
@@ -2599,16 +2609,16 @@ transports)</string>
          <attribute name="title">
           <string>Food</string>
          </attribute>
-         <widget class="QFrame" name="foodframe">
+         <widget class="QFrame" name="foodframe1">
           <property name="geometry">
            <rect>
-            <x>570</x>
-            <y>140</y>
-            <width>561</width>
-            <height>471</height>
+            <x>79</x>
+            <y>29</y>
+            <width>731</width>
+            <height>441</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_17"/>
+          <layout class="QVBoxLayout" name="verticalLayout_6"/>
          </widget>
         </widget>
         <widget class="QWidget" name="tab_10">

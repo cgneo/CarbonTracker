@@ -9,9 +9,19 @@
     "Consumption": [
         {
             "Date": [
-                103,
-                0,
-                131072
+                9,
+                1,
+                2022
+            ],
+            "Footprint": 0.5031,
+            "Name": "Electric car",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
             ],
             "Footprint": 1.90945832,
             "Name": "Epicerie",
@@ -19,9 +29,9 @@
         },
         {
             "Date": [
-                103,
-                0,
-                131072
+                11,
+                8,
+                2111
             ],
             "Footprint": 1.284906,
             "Name": "Epicerie",
@@ -29,9 +39,9 @@
         },
         {
             "Date": [
-                103,
-                0,
-                131072
+                11,
+                8,
+                2111
             ],
             "Footprint": 5.7867376,
             "Name": "Epicerie",
@@ -39,9 +49,9 @@
         },
         {
             "Date": [
-                103,
-                0,
-                131072
+                11,
+                8,
+                2111
             ],
             "Footprint": 1.1515773,
             "Name": "_",
@@ -49,9 +59,9 @@
         },
         {
             "Date": [
-                103,
-                0,
-                131072
+                11,
+                8,
+                2111
             ],
             "Footprint": 3.4352998,
             "Name": "Aliments et boissons à base de végétaux",
@@ -59,9 +69,9 @@
         },
         {
             "Date": [
-                103,
-                0,
-                131072
+                11,
+                8,
+                2111
             ],
             "Footprint": 9.8742343,
             "Name": "_",
@@ -69,9 +79,9 @@
         },
         {
             "Date": [
-                103,
-                0,
-                131072
+                11,
+                8,
+                2111
             ],
             "Footprint": 5.7867376,
             "Name": "Epicerie",
@@ -79,9 +89,9 @@
         },
         {
             "Date": [
-                103,
-                0,
-                131072
+                11,
+                8,
+                2111
             ],
             "Footprint": 6.8705996,
             "Name": "Aliments et boissons à base de végétaux",
@@ -89,9 +99,9 @@
         },
         {
             "Date": [
-                103,
-                0,
-                131072
+                11,
+                8,
+                2111
             ],
             "Footprint": 29.341248,
             "Name": "Epicerie",
@@ -99,9 +109,529 @@
         },
         {
             "Date": [
-                103,
-                0,
-                131072
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 1.90945832,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 1.284906,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 1.1515773,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 9.8742343,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 6.8705996,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 29.341248,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                11,
+                8,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": 0.44600000000000006,
+            "Name": "Bus",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 1.90945832,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 1.284906,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 1.1515773,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 9.8742343,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 6.8705996,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 29.341248,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                17,
+                10,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": 5625.099999999999,
+            "Name": "First class international flight",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 1.90945832,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 1.284906,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 1.1515773,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 9.8742343,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 6.8705996,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 29.341248,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 1.90945832,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 1.284906,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 1.1515773,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 9.8742343,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 6.8705996,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 29.341248,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 1.90945832,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 1.284906,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 1.1515773,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 3.4352998,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 9.8742343,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 5.7867376,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 6.8705996,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
+            ],
+            "Footprint": 29.341248,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                8,
+                10,
+                2111
             ],
             "Footprint": 3.4352998,
             "Name": "Aliments et boissons à base de végétaux",
@@ -109,10 +639,10 @@
         }
     ],
     "Country": "France",
-    "Email": "sdf",
+    "Email": "test",
     "Footprint": 0,
     "Living partners": 0,
-    "Name": "A",
+    "Name": "añine",
     "Seeds": 0,
-    "Username": "dsf"
+    "Username": "qbc"
 }

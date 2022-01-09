@@ -31,14 +31,16 @@ public:
     int a;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-//    netserver* CB_server;
-//    netclient* CB_receiver;
+    netserver* CB_server;
+    netclient* CB_receiver;
 
 
 private slots:
     void on_Surveybutton_clicked();
 
     void on_Scanbutton_clicked();
+
+    void on_RefreshPushButton_clicked();
 
     void on_daily_challenge_1_stateChanged(int arg1);
     void on_daily_challenge_2_stateChanged(int arg1);

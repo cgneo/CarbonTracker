@@ -22,20 +22,20 @@
 #include "receipt_info.cpp"
 
 
-
+#include <iostream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
 
-//    // Create a server
-//    CB_server = new netserver();
-//    CB_server->startServer();
+    // Create a server
+    CB_server = new netserver();
+    CB_server->startServer();
 
-//    // Create a client
-//    CB_receiver = new netclient();
-//    CB_receiver->startClient();
+    // Create a client
+    CB_receiver = new netclient();
+    CB_receiver->startClient();
 
     // Invoke the flush and call it manually.
     std::cout.flush();
@@ -50,15 +50,23 @@ MainWindow::MainWindow(QWidget *parent)
 
     QLineSeries *Lseries = new QLineSeries();
 
-        Lseries->append(0, 6);
-        Lseries->append(2, 4);
-        Lseries->append(3, 8);
-        Lseries->append(7, 4);
-        Lseries->append(10, 5);
+    Lseries->append(0, 500);
+     Lseries->append(10, 850);
+     Lseries->append(20, 1000);
+     Lseries->append(30, 1000);
+     Lseries->append(40, 1250);
+     Lseries->append(50, 1500);
+     Lseries->append(60, 2500);
+     Lseries->append(70, 4000);
+     Lseries->append(80, 5300);
+     Lseries->append(90, 6000);
+     Lseries->append(100, 6650);
+     Lseries->append(110, 9900);
 
 
-        *Lseries << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
-                << QPointF(20, 2);
+
+   //     *Lseries << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
+     //           << QPointF(20, 2);
 
         QChart *Lchart = new QChart();
         Lchart->legend()->hide();
@@ -79,7 +87,7 @@ MainWindow::MainWindow(QWidget *parent)
        //axisY->setRange(0, 20);*/
 
 
-        Lchart->setTitle("Your carbon footprint through your food time");
+        Lchart->setTitle("The World's carbon footprint through time since 1900");
 
         //chart->legend()->setVisible(true);
         //chart->legend()->setAlignment(Qt::AlignBottom);
@@ -134,6 +142,12 @@ MainWindow::MainWindow(QWidget *parent)
     QPieSeries *dseries = new QPieSeries();
     dseries->setHoleSize(0.35);
 
+    QPieSeries *dseries2 = new QPieSeries();
+    dseries2->setHoleSize(0.35);
+
+    QPieSeries *dseries3 = new QPieSeries();
+    dseries2->setHoleSize(0.35);
+
     //QPieSlice *slices[12];
     Consumption *c = u->get_consumption();
 
@@ -141,79 +155,133 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Code to do pie chart with food
     vector<string> keys = c->get_keys(c->footprint_by_food_category);
+    vector<string> keys2 = c->get_keys(c->footprint_by_vehicle);
+
 
     int size = keys.size();
+    int size2 = keys2.size();
 
-        for (int i = 0; i < size; i++){
-            //qDebug() << QString::fromStdString(c->vehicles[i]);
-            string label = keys.at(i);
+    for (int i = 0; i < size; i++){
+        //qDebug() << QString::fromStdString(c->vehicles[i]);
+        string label = keys.at(i);
 
-            //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
+        //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
 
 
-            slice =  dseries->append(QString::fromStdString(label), c->get_category_footprint(label));
-            //slices[i] = dseries->append(c.vehicles[i], 1);
+        slice =  dseries->append(QString::fromStdString(label), c->get_category_footprint(label));
+        //slices[i] = dseries->append(c.vehicles[i], 1);
+        if(c->get_category_footprint(label)!=0){
             slice->setLabelVisible();
-            QPieSlice::connect(slice, &QPieSlice::hovered,
-                               slice, &QPieSlice::setExploded);
         }
 
-    //Code to graph transport categories
-//    for (int i = 0; i < 12; i++){
-//        qDebug() << QString::fromStdString(c->vehicles[i]);
-//        string vehicle = c->vehicles[i];
+        QPieSlice::connect(slice, &QPieSlice::hovered,
+                           slice, &QPieSlice::setExploded);
+    }
+
+    QPieSlice * slice_food =  dseries3->append("Food", c->get_food_footprint());
+    QPieSlice * slice_transport =  dseries3->append("Transport", c->get_transport_footprint());
+    //QPieSlice * slice_housing =  dseries3->append("Food", 1);
+    QPieSlice::connect(slice_food, &QPieSlice::hovered,
+                       slice_food, &QPieSlice::setExploded);
+    QPieSlice::connect(slice_transport, &QPieSlice::hovered,
+                       slice_transport, &QPieSlice::setExploded);
+
+    //    for (int i = 0; i < size3; i++){
+//        //qDebug() << QString::fromStdString(c->vehicles[i]);
+//        string label = keys3.at(i);
 
 //        //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
 
 
-//        slice =  dseries->append(QString::fromStdString(vehicle), c->get_vehicle_footprint(vehicle));
+//        slice =  dseries3->append(QString::fromStdString(label), c->get_category_footprint(label));
 //        //slices[i] = dseries->append(c.vehicles[i], 1);
-//        slice->setLabelVisible();
+//        if(c->get_category_footprint(label)!=0){
+//            slice->setLabelVisible();
+//        }
+
 //        QPieSlice::connect(slice, &QPieSlice::hovered,
 //                           slice, &QPieSlice::setExploded);
 //    }
 
-    /*
-    QPieSlice *dslice1 = dseries->append("Locomotive", 1);
-    QPieSlice *dslice2 =dseries->append("Airplane", 2);
-    QPieSlice *dslice3 =dseries->append("Car", 2);
+    for (int i = 0; i < size2; i++){
+        //qDebug() << QString::fromStdString(c->vehicles[i]);
+        string label = keys2.at(i);
 
-    QPieSlice *slices[12] = {dslice1, dslice2, dslice3, dslice4, dslice5, dslice6, dslice7, dslice8, dslice9, dslice10, dslice11, dslice12};
+        //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
 
-    dslice1->setLabelVisible();
-    dslice2->setLabelVisible();
-    dslice3->setLabelVisible();
 
-    QPieSlice::connect(dslice1, &QPieSlice::hovered,
-                       dslice1, &QPieSlice::setExploded);
-    QPieSlice::connect(dslice2, &QPieSlice::hovered,
-                       dslice2, &QPieSlice::setExploded);
-    QPieSlice::connect(dslice3, &QPieSlice::hovered,
-                       dslice3, &QPieSlice::setExploded);
-*/
-    QString string = "clicked";
+        slice =  dseries2->append(QString::fromStdString(label), c->get_vehicle_footprint(label));
+        //slices[i] = dseries->append(c.vehicles[i], 1);
+        if(c->get_vehicle_footprint(label)!=0){
+            slice->setLabelVisible();
+        }
+
+        QPieSlice::connect(slice, &QPieSlice::hovered,
+                           slice, &QPieSlice::setExploded);
+    }
+
+
+
 
     QChart *dchart = new QChart();
     dchart->addSeries(dseries);
     dchart->setAnimationOptions(QChart::SeriesAnimations);
-    dchart->setTitle("My Transportation Footprint");
+    dchart->setTitle("My Food Footprint");
     dchart->setTheme(QChart::ChartThemeBrownSand);
 
     QChartView *dchartview = new QChartView(dchart);
     dchartview->setRenderHint(QPainter::Antialiasing);
 
-    dchartview->setParent(ui->transportsframe);
+    dchartview->setParent(ui->foodframe1);
     //Commented to run
 
     dchart->legend()->setVisible(true);
-    dchart->legend()->setAlignment(Qt::AlignLeft);
+    dchart->legend()->setAlignment(Qt::AlignBottom);
+
+   //transports
+
+    QChart *dchart2 = new QChart();
+    dchart2->addSeries(dseries2);
+    dchart2->setAnimationOptions(QChart::SeriesAnimations);
+    dchart2->setTitle("My Transportation Footprint");
+    dchart2->setTheme(QChart::ChartThemeBrownSand);
+
+    QChartView *dchartview2 = new QChartView(dchart2);
+    dchartview2->setRenderHint(QPainter::Antialiasing);
+
+    dchartview2->setParent(ui->transportsframe);
+    //Commented to run
+
+    dchart2->legend()->setVisible(true);
+    dchart2->legend()->setAlignment(Qt::AlignLeft);
     //
+    //the one on the first page
+
+    QChart *dchart3 = new QChart();
+    dchart3->addSeries(dseries3);
+    dchart3->setAnimationOptions(QChart::SeriesAnimations);
+    dchart3->setTitle("My Global Footprint");
+    dchart3->setTheme(QChart::ChartThemeBrownSand);
+
+    QChartView *dchartview3 = new QChartView(dchart3);
+    dchartview3->setRenderHint(QPainter::Antialiasing);
+
+    dchartview3->setParent(ui->foodframe2);
+    //Commented to run
+
+    dchart3->legend()->setVisible(true);
+    dchart3->legend()->setAlignment(Qt::AlignBottom);
+
+
     //Daily
 
     QBarSet *set0 = new QBarSet("General footrpint");
     //QBarSet *set1 = new QBarSet("Transports");
 
-    *set0 << c->get_daily_footprint("01012022") << 7 << 70 ;
+    Date d;
+    d.get_current_date();
+
+    *set0 << c->get_daily_footprint(d.to_String()) << 7 << 70 ;
     //*set1 << 5 << 0 << 0;
 
     QStackedBarSeries *series = new QStackedBarSeries();
@@ -288,7 +356,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QChart *chart3 = new QChart();
     chart3->addSeries(series3);
-    chart3->setTitle("Your yearly emission compared to public figures' (in CO2/kg)");
+    chart3->setTitle("Your yearly emission compared to public figures' (in kgCO2)");
     chart3->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories3;
@@ -307,98 +375,7 @@ MainWindow::MainWindow(QWidget *parent)
     QChartView *chartView3 = new QChartView(chart3);
     chartView3->setParent(ui->horizontalFrame3);
 
-    //Summary(Daily, Monthly, Yearly all in one page)
 
-    //daily
-    /*QBarSet *set0sum = new QBarSet("Food");
-    QBarSet *set1sum = new QBarSet("Transports");
-
-    *set0sum << 1 << 2 << 3;
-    *set1sum << 5 << 0 << 0;
-
-    QStackedBarSeries *seriessum = new QStackedBarSeries();
-    seriessum->append(set0sum);
-    seriessum->append(set1sum);
-
-    QChart *chartsum = new QChart();
-    chartsum->addSeries(seriessum);
-    chartsum->setTitle("Your daily emission compared to public figures' (in CO2/kg)");
-    chartsum->setAnimationOptions(QChart::SeriesAnimations);
-
-    QBarCategoryAxis *axisXsum = new QBarCategoryAxis();
-    axisXsum->append(categories);
-    chartsum->addAxis(axisXsum, Qt::AlignBottom);
-    seriessum->attachAxis(axisXsum);
-    QValueAxis *axisYsum = new QValueAxis();
-    chartsum->addAxis(axisYsum, Qt::AlignLeft);
-    seriessum->attachAxis(axisYsum);
-
-    chartsum->legend()->setVisible(true);
-    chartsum->legend()->setAlignment(Qt::AlignBottom);
-
-    QChartView *chartViewsum = new QChartView(chartsum);
-    chartViewsum->setParent(ui->horizontalFrame1);
-
-    //monthly
-    QBarSet *set4sum = new QBarSet("Food");
-    QBarSet *set5sum = new QBarSet("Transports");
-
-    *set4sum << 10 << 20 << 30;
-    *set5sum << 50 << 2 << 2;
-
-    QStackedBarSeries *series2sum = new QStackedBarSeries();
-    series2sum->append(set4sum);
-    series2sum->append(set5sum);
-
-    QChart *chart2sum = new QChart();
-    chart2sum->addSeries(series2sum);
-    chart2sum->setTitle("Your monthly emission compared to public figures' (in CO2/kg)");
-    chart2sum->setAnimationOptions(QChart::SeriesAnimations);
-
-    QBarCategoryAxis *axisX2sum = new QBarCategoryAxis();
-    axisX2sum->append(categories2);
-    chart2sum->addAxis(axisX2sum, Qt::AlignBottom);
-    series2sum->attachAxis(axisX2sum);
-    QValueAxis *axisY2sum = new QValueAxis();
-    chart2sum->addAxis(axisY2sum, Qt::AlignLeft);
-    series2sum->attachAxis(axisY2sum);
-
-    chart2sum->legend()->setVisible(true);
-    chart2sum->legend()->setAlignment(Qt::AlignBottom);
-
-    QChartView *chartView2sum = new QChartView(chart2sum);
-    chartView2sum->setParent(ui->horizontalFrame2);
-
-    //yearly
-    QBarSet *set7sum = new QBarSet("Food");
-    QBarSet *set8sum = new QBarSet("Transports");
-
-    *set7sum << 10 << 20 << 30;
-    *set8sum << 50 << 2 << 2;
-
-    QStackedBarSeries *series3sum = new QStackedBarSeries();
-    series3sum->append(set7sum);
-    series3sum->append(set8sum);
-
-    QChart *chart3sum = new QChart();
-    chart3sum->addSeries(series3sum);
-    chart3sum->setTitle("Your yearly emission compared to public figures' (in CO2/kg)");
-    chart3sum->setAnimationOptions(QChart::SeriesAnimations);
-
-    QBarCategoryAxis *axisX3sum = new QBarCategoryAxis();
-    axisX3sum->append(categories3);
-    chart3sum->addAxis(axisX3sum, Qt::AlignBottom);
-    series3sum->attachAxis(axisX3sum);
-    QValueAxis *axisY3sum = new QValueAxis();
-    chart3sum->addAxis(axisY3sum, Qt::AlignLeft);
-    series3sum->attachAxis(axisY3sum);
-
-    chart3sum->legend()->setVisible(true);
-    chart3sum->legend()->setAlignment(Qt::AlignBottom);
-
-    QChartView *chartView3sum = new QChartView(chart3sum);
-    chartView3sum->setParent(ui->horizontalFrame3);
-*/
     //end of graphs
 
     QPixmap pix1(":/challenges/food-pic.png");
@@ -416,8 +393,8 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix5(":/survey/trasnport_icon.png");
     ui -> trans_picture -> setPixmap(pix5.scaled(500,300, Qt::KeepAspectRatio));
 
-    QPixmap pix6(":/challenges/graph photo.png");
-    ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
+    //QPixmap pix6(":/challenges/graph photo.png");
+    //ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
 
 
 
@@ -521,15 +498,25 @@ void MainWindow::on_Surveybutton_clicked()
 
        ui->tabWidget->setCurrentIndex( (ui->tabWidget->currentIndex()+1) % ui->tabWidget->count() );
 }
+void MainWindow::on_RefreshPushButton_clicked(){
+    MainWindow *new_window = new MainWindow(this);
+    new_window->show();
+    hide();
 
+}
 
 void MainWindow::on_Scanbutton_clicked()
 {
-//    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
-//    QMessageBox::information(this, "...", file_name);
-    string filepath = "/Users/alex_christlieb/Desktop/carrefour.png";
-    vector<vector<string>> receipt_vec = get_receipt_info(filepath);
+    // get dir of receipt
+    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
+    // computing vector with information of the receipt
+    vector<vector<string>> receipt_vec = get_receipt_info(file_name.toStdString());
+    QMessageBox::information(this, "...", file_name);
+
     Receipt rec;
+    Date *today = new  Date();
+    today->get_current_date();
+    rec.set_dates(today);
     rec.set_content(receipt_vec);
     //rec.set_dates(); HAVE TO SET DATE OF RECEIPT
     rec.receipt_to_consumption(current_user->get_consumption());
@@ -590,22 +577,23 @@ void MainWindow::get_seed()
 
 void MainWindow::on_buttonTransport_clicked()
 {
-    Transport t;
     QString vehicle = ui->vehicleTransport->currentText(); // taking input from user for vehicle
     string distance = ui->distanceTransport->cleanText().toStdString(); // taking input from user for distance
-    t.set_type(vehicle);
-    char* d = 0;//distance
-    t.set_distance(d);// convert distance to char
+
+    // convert distance to char arrays
     // converting std strings to char arrays
-        // vehicle
+    // vehicle
     int n = vehicle.length();
     char char_array_vehicle[n+1];
     strcpy(char_array_vehicle, vehicle.toStdString().c_str());
-
-        // distance
+    // distance
     int m = distance.length();
     char char_array_distance[m+1];
     strcpy(char_array_distance, distance.c_str());
+    Date* d = new Date();
+    d->get_current_date();
+
+    Transport* t = new Transport(d,vehicle,char_array_distance);
 
     // calling the (transport) api
     transport_api api;
@@ -613,8 +601,10 @@ void MainWindow::on_buttonTransport_clicked()
 
     // outputting the emission for given vehicle and distance
     QString emission = QString::number(api.get_emission());
-    t.set_footprint(api.get_emission());
+    t->set_footprint(api.get_emission());
     ui->outputTransport->setText(emission);
+
+    current_user->get_consumption()->add_object(t, true);
 }
 
 void MainWindow::enableButton()
