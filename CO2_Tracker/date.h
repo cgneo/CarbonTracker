@@ -14,6 +14,7 @@ public:
     int get_month();
     int get_year();
     Date* add_duration(int days);
+    void get_current_date();
 
     void print();
     std::string print2();

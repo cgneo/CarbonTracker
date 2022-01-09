@@ -249,6 +249,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     dchart->legend()->setVisible(true);
     dchart->legend()->setAlignment(Qt::AlignLeft);
+
+    //if we refresh
+
+
     //Daily
 
     QBarSet *set0 = new QBarSet("general footprint (food and transports)");
@@ -259,11 +263,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     QStackedBarSeries *series = new QStackedBarSeries();
     series->append(set0);
-    series->append(set1);
+    //series->append(set1);
 
     QChart *chart = new QChart();
     chart->addSeries(series);
-    chart->setTitle("Your daily emission compared to public figures' (in CO2/kg)");
+    chart->setTitle("Your daily emission compared to public figures' (in kg.CO2)");
     chart->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories;
@@ -296,7 +300,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QChart *chart2 = new QChart();
     chart2->addSeries(series2);
-    chart2->setTitle("Your monthly emission compared to public figures' (in CO2/kg)");
+    chart2->setTitle("Your monthly emission compared to public figures' (in kg.CO2)");
     chart2->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories2;
@@ -329,7 +333,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QChart *chart3 = new QChart();
     chart3->addSeries(series3);
-    chart3->setTitle("Your yearly emission compared to public figures' (in CO2/kg)");
+    chart3->setTitle("Your yearly emission compared to public figures' (in kg.CO2)");
     chart3->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories3;
@@ -556,6 +560,70 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_Refresh_clicked(){
+    Json_DB json_obj;
+    User *u = json_obj.readUser_from_Json();
+    current_user = u;
+
+        QPieSeries *dseries = new QPieSeries();
+        dseries->setHoleSize(0.35);
+        Consumption *c = u->get_consumption();
+
+        QPieSlice *slice;
+
+        //Code to do pie chart with food
+        vector<string> keys = c->get_keys(c->footprint_by_food_category);
+        int size = keys.size();
+        for (int i = 0; i < size; i++){
+            string label = keys.at(i);
+            slice =  dseries->append(QString::fromStdString(label), c->get_category_footprint(label));
+            slice->setLabelVisible();
+            QPieSlice::connect(slice, &QPieSlice::hovered,
+                               slice, &QPieSlice::setExploded);
+        }
+        //Code to do pie chart with transports
+        QPieSeries *dseries2 = new QPieSeries();
+        dseries2->setHoleSize(0.35);
+        vector<string> keys2 = c->get_keys(c->footprint_by_vehicle);
+        int size2 = keys2.size();
+
+        for (int i = 0; i < size2; i++){
+            string label2 = keys2.at(i);
+            slice =  dseries2->append(QString::fromStdString(label2), c->get_vehicle_footprint(label2));
+            slice->setLabelVisible();
+            QPieSlice::connect(slice, &QPieSlice::hovered,
+                               slice, &QPieSlice::setExploded);
+            }
+
+        QChart *dchart = new QChart();
+        dchart->addSeries(dseries);
+        dchart->setAnimationOptions(QChart::SeriesAnimations);
+        dchart->setTitle("My Food Footprint");
+        dchart->setTheme(QChart::ChartThemeBrownSand);
+
+        QChartView *dchartview = new QChartView(dchart);
+        dchartview->setRenderHint(QPainter::Antialiasing);
+
+        dchartview->setParent(ui->foodframe);
+        dchart->legend()->setVisible(true);
+        dchart->legend()->setAlignment(Qt::AlignLeft);
+        //second chart
+
+        QChart *dchart2 = new QChart();
+        dchart2->addSeries(dseries);
+        dchart2->setAnimationOptions(QChart::SeriesAnimations);
+        dchart2->setTitle("My Transportation Footprint");
+        dchart2->setTheme(QChart::ChartThemeBrownSand);
+
+        QChartView *dchartview2 = new QChartView(dchart2);
+        dchartview2->setRenderHint(QPainter::Antialiasing);
+
+        dchartview2->setParent(ui->transportsframe);
+        //Commented to run
+
+        dchart->legend()->setVisible(true);
+        dchart->legend()->setAlignment(Qt::AlignLeft);
+    }
 
 void MainWindow::on_Surveybutton_clicked()
 {

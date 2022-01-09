@@ -39,14 +39,8 @@ void Survey::on_buttonMain_clicked()
 
 void Survey::on_buttonNextHousing1_clicked()
 {
-    ui->tabHousing->setCurrentIndex( (ui->tabHousing->currentIndex()+1) % ui->tabHousing->count() );
-}
-
-void Survey::on_buttonNextHousing2_clicked()
-{
     ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
 }
-
 
 void Survey::on_buttonNextTransport1_clicked()
 {
@@ -162,12 +156,6 @@ void Survey::on_buttonAccount_clicked()
 
     }
 }
-
-void Survey::on_kwh_valueChanged(int value)
-{
-    ui->label_kwh->setNum(value);
-}
-
 
 void Survey::on_living_partners_valueChanged(int value)
 {

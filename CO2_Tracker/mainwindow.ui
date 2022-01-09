@@ -1805,7 +1805,7 @@ p, li { white-space: pre-wrap; }
        <attribute name="title">
         <string>Graph page</string>
        </attribute>
-       <widget class="QTabWidget" name="tabWidget_2">
+       <widget class="QTabWidget" name="Refresh">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1815,7 +1815,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -1824,9 +1824,9 @@ p, li { white-space: pre-wrap; }
          <widget class="QFrame" name="transportsframe">
           <property name="geometry">
            <rect>
-            <x>80</x>
-            <y>30</y>
-            <width>561</width>
+            <x>30</x>
+            <y>70</y>
+            <width>591</width>
             <height>471</height>
            </rect>
           </property>
@@ -2576,6 +2576,19 @@ and resolutions to improve your carbon footpring linked to
 transports)</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="pushButton">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>20</y>
+            <width>100</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Refresh</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab_8">
          <attribute name="title">
@@ -2679,10 +2692,10 @@ transports)</string>
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-          <x>40</x>
+          <x>20</x>
           <y>10</y>
-          <width>1251</width>
-          <height>691</height>
+          <width>2148</width>
+          <height>1149</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
@@ -2727,7 +2740,7 @@ transports)</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>build/tips photos/food-pic.png</pixmap>
+                <pixmap>resources/pictures/food-pic.png</pixmap>
                </property>
               </widget>
              </item>
@@ -2852,10 +2865,7 @@ transports)</string>
              <item>
               <widget class="QLabel" name="transport_label">
                <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>build/tips photos/new_plane_pic.png</pixmap>
+                <string>TextLabel</string>
                </property>
               </widget>
              </item>
@@ -2983,7 +2993,7 @@ transports)</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>build/tips photos/home-pic.png</pixmap>
+                <pixmap>resources/pictures/home-pic.png</pixmap>
                </property>
               </widget>
              </item>
