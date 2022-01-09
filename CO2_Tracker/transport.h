@@ -1,42 +1,20 @@
 #ifndef TRANSPORT_H
 #define TRANSPORT_H
-
 #include "object.h"
-
+#include <string>
 
 class Transport : public Object{
    public:
     Transport();
+    Transport(Date *current_date, QString object_name, char* distance);
+    ~Transport();
+
     void set_distance(char* distance);
-protected:
-    char* distance;
-};
-
-class Locomotive: public Transport{
-public:
-    Locomotive();
+    char* get_distance();
     void set_footprint(double estimate);
     double  get_footprint();
 private:
-    double footprint;
+    char* distance; //It needs to be char* because of the way the API POST request is constructed
 };
 
-
-class Airplane: public Transport{
-public:
-    Airplane();
-    void set_footprint(double estimate);
-    double  get_footprint();
-private:
-    double footprint;
-};
-
-class Car: public Transport{
-public:
-    Car();
-    void set_footprint(double estimate);
-    double  get_footprint();
-private:
-    double footprint;
-};
 #endif // TRANSPORT_H

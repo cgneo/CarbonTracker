@@ -1,20 +1,35 @@
 #include "object.h"
 #include "date.h"
 
-Object::Object(){
-                footprint = 0;
-                name = "Jesus";
-                type = "Food";}
 
-Object::Object(Date *current_date, string object_name, string object_type){
-    date = current_date;
+
+Object::Object(){
+    date = new Date(0,0,0);
     footprint = 0;
+    name = "jesus";
+    type = "food";
+}
+
+Object::Object(Date *current_date, QString object_name){
+    date = current_date;
+    name = object_name;
+}
+
+Object::Object(Date *current_date, QString object_name, QString object_type, double footprint){
+    date = current_date;
+    this->footprint = footprint;
     name = object_name;
     type = object_type;
 }
 
+Object::~Object(){
+    //delete date;
+    //Can crash the program if two objects with same date are generated together
+}
+
+
 //---------------------Get Methods--------------------------
-Date *Object::get_date(){
+Date* Object::get_date(){
     return date;
 }
 
@@ -22,11 +37,11 @@ double Object::get_footprint(){
     return footprint;
 }
 
-string Object::get_type(){
+QString Object::get_type(){
     return type;
 }
 
-string Object::get_name(){
+QString Object::get_name(){
     return name;
 }
 
@@ -39,20 +54,21 @@ void Object::set_footprint(double co2_emission){
     footprint = co2_emission;
 }
 
-void Object::set_name(string object_name){
+void Object::set_name(QString object_name){
     name = object_name;
 }
 
-void Object::set_type(string object_type){
+void Object::set_type(QString object_type){
     type = object_type;
 }
 
+//---------------------Other methods------------------------------
+void Object::object_to_json(QJsonObject &obj){
+    obj["Type"] = type;
+    obj["Name"] = name;
 
-Object::~Object(){
-//    delete &date;
-    type.clear();
-    name.clear();
-//    delete &footprint;
+    QJsonArray json_date = {date->get_day(), date->get_month()
+                      , date->get_year()};
+    obj["Date"] = json_date;
+    obj["Footprint"] = footprint;
 }
-
-

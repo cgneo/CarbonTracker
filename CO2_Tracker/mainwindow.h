@@ -1,3 +1,4 @@
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -7,6 +8,16 @@
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
 #include <QImage>
+#include <QMap>
+#include <QMovie>
+#include <QLabel>
+#include <QGraphicsScene>
+#include <QPushButton>
+#include "user.h"
+
+#include <netserver.h>
+#include <netclient.h>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,11 +28,14 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    int a;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+//    netserver* CB_server;
+//    netclient* CB_receiver;
+
 
 private slots:
-
     void on_Surveybutton_clicked();
 
     void on_Scanbutton_clicked();
@@ -33,8 +47,17 @@ private slots:
 
     void get_seed();
 
+    void on_buttonTransport_clicked();
+
+    void on_tree_button_clicked();
+
+    void enableButton();
+
+
 private:
     Ui::MainWindow *ui;
+    User *current_user;
+
     QPropertyAnimation *animation_1;
     QPropertyAnimation *animation_2;
     QPropertyAnimation *animation_3;
@@ -47,9 +70,12 @@ private:
     QGraphicsOpacityEffect *opacity_effect_4;
     QGraphicsOpacityEffect *opacity_effect_seed;
 
+
+
+
+
 };
 #endif // MAINWINDOW_H
-
 
 
 

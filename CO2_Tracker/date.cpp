@@ -32,6 +32,20 @@ int Date::get_year() {
     return year;
 }
 
+using namespace std;
+
+string Date::to_String(){
+    return to_string(day) + to_string(month) + to_string(year);
+}
+
+using namespace std;
+bool Date::operator==(Date *d1){
+    if (to_string(day)+ to_string(month)+to_string(year) == to_string(d1->get_day())+ to_string(d1->get_month())+to_string(d1->get_year())){
+        return true;
+    }
+    return false;
+}
+
 Date* Date::add_duration(int duration){//creates a date objects "duration" days after
     int num_days_in_month = days_in_month[month];
     int new_month = month;
@@ -65,7 +79,7 @@ Date* Date::add_duration(int duration){//creates a date objects "duration" days 
 }
 
 bool Date::is_valid(){
-    if (year >= 2021 && year < 2030){
+    if (year >= 1920 && year < 2030){
         if (month >= 0 && month <= 12){
             if (day >= 0 && day <= days_in_month[month]){
                 return true;}
