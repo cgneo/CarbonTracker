@@ -364,8 +364,8 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix3(":/challenges/home-pic.png");
     ui -> home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
-    QPixmap pix4(":/challenges/seed.png");
-    ui -> seed -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
+//    QPixmap pix4(":/challenges/tree_growing_once.png");
+//    ui -> tree_growing -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
 
     QPixmap pix5(":/survey/trasnport_icon.png");
     ui -> trans_picture -> setPixmap(pix5.scaled(500,300, Qt::KeepAspectRatio));
@@ -527,6 +527,11 @@ void MainWindow::on_daily_challenge_4_stateChanged(int)
     if (ui-> daily_challenge_4-> isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
         animation_4 -> start();
+        QMovie *movie = new QMovie(":/challenges/tree_growing_once.gif");
+        ui -> seed ->setMovie(movie);
+        QSize scaledSize(200, 300);
+        movie -> setScaledSize(scaledSize);
+        movie -> start();
         enableButton();
     }else{
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() - 25);

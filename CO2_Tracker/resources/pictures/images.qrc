@@ -15,5 +15,6 @@
         <file>seed.png</file>
         <file>graph photo.png</file>
         <file>user_icon.png</file>
+        <file>tree_growing_once.gif</file>
     </qresource>
 </RCC>
