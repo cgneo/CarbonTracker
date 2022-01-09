@@ -209,7 +209,38 @@ void Consumption::add_receipt(Receipt receipt){
     }
 }
 
-void Consumption::set_total_consumption(vector<Object *> consumption){
+void Consumption::set_total_consumption(vector<Object*> consumption){
+    for(int i=0;;i++){
+
+        Object obj = *consumption[i];
+        QString type_ = obj.get_type();
+        string type = type_.toStdString();
+        QString name_ = obj.get_name();
+        string name = name_.toStdString();
+        double footprint = obj.get_footprint();
+        Date *date = obj.get_date();
+
+        total_footprint += footprint; //update total footprint
+        if(type == "food"){
+            food_footprint += footprint;
+
+        }
+        else if(type == "transport"){
+            footprint_by_vehicle[name] += footprint;
+            transport_footprint += footprint;
+        }
+        int day = date->get_day();
+        int month = date->get_month();
+        int year = date->get_year();
+
+        string key_day = to_string(day)+to_string(month)+to_string(year);
+        string key_month = to_string(month) + to_string(year);
+        string key_year = to_string(year);
+
+        footprint_by_date[key_day] += footprint;
+        footprint_by_date[key_month] += footprint;
+        footprint_by_date[key_year] += footprint;
+    }
     total_consumption = consumption;
 }
 
