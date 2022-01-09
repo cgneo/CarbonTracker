@@ -1,7 +1,7 @@
 #include "date.h"
 #include <iostream>
 #include <string>
-#include <ctime>
+#include <time.h>
 
 int Date::days_in_month[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
@@ -96,18 +96,14 @@ bool Date::is_valid(){
 
 
 void Date::get_current_date(){
-        int MAXLEN = 80;
-        char s[MAXLEN];
-        time_t t = time(0);
-        strftime(s, MAXLEN, "%m/%d/%Y", localtime(&t));
-        std::cout << s << '\n';
-//    time_t now = time(0);
+    time_t our_time = time(NULL);
+    struct tm * aTime = localtime(&our_time);
 
-//    char* date_time_str = ctime(&now);
+    int day = aTime->tm_mday;
+    int month = aTime->tm_mon + 1;
+    int year = aTime->tm_year + 1900;
 
-//    int day = (int)date_time_str[9];
-
-//    std::cout << day<< std::endl;
+    set_date(day, month, year);
 
 }
 
