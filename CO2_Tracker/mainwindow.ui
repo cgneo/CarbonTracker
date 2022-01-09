@@ -692,7 +692,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
           <x>170</x>
           <y>20</y>
           <width>1161</width>
-          <height>691</height>
+          <height>739</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -769,8 +769,8 @@ QProgressBar::chunk{
              <widget class="QLabel" name="seed">
               <property name="maximumSize">
                <size>
-                <width>100</width>
-                <height>150</height>
+                <width>180</width>
+                <height>200</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -780,7 +780,10 @@ QProgressBar::chunk{
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>resources/pictures/seed.png</pixmap>
+               <pixmap>resources/pictures/tree_once.gif</pixmap>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -997,10 +1000,20 @@ QPushButton:default {
             </spacer>
            </item>
            <item>
-            <widget class="QLabel" name="graph_pic">
-             <property name="text">
-              <string/>
+            <widget class="QFrame" name="foodframe2">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
              </property>
+             <property name="baseSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7"/>
             </widget>
            </item>
            <item>
@@ -1815,7 +1828,9 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+
+         <number>1</number>
+         
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -2576,7 +2591,7 @@ and resolutions to improve your carbon footpring linked to
 transports)</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="RefreshPushButton">
           <property name="geometry">
            <rect>
             <x>50</x>
@@ -2594,16 +2609,16 @@ transports)</string>
          <attribute name="title">
           <string>Food</string>
          </attribute>
-         <widget class="QFrame" name="foodframe">
+         <widget class="QFrame" name="foodframe1">
           <property name="geometry">
            <rect>
-            <x>570</x>
-            <y>140</y>
-            <width>561</width>
-            <height>471</height>
+            <x>79</x>
+            <y>29</y>
+            <width>731</width>
+            <height>441</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_17"/>
+          <layout class="QVBoxLayout" name="verticalLayout_6"/>
          </widget>
         </widget>
         <widget class="QWidget" name="tab_10">
@@ -3023,8 +3038,8 @@ transports)</string>
        <widget class="QComboBox" name="comboBox">
         <property name="geometry">
          <rect>
-          <x>620</x>
-          <y>275</y>
+          <x>380</x>
+          <y>480</y>
           <width>231</width>
           <height>31</height>
          </rect>
@@ -3236,8 +3251,8 @@ QPushButton:pressed {
        <widget class="QListView" name="listView">
         <property name="geometry">
          <rect>
-          <x>300</x>
-          <y>30</y>
+          <x>310</x>
+          <y>-10</y>
           <width>311</width>
           <height>481</height>
          </rect>
@@ -3287,6 +3302,92 @@ QListView::item:hover {
         <property name="text">
          <string>Select</string>
         </property>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>50</y>
+          <width>401</width>
+          <height>341</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QTextEdit" name="chatbox">
+           <property name="font">
+            <font>
+             <family>Gill Sans</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTextEdit{
+	background-color: rgba(171, 197, 153, 131);
+border-radius: 5px;
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLineEdit" name="chatbox_write">
+             <property name="font">
+              <font>
+               <family>Gill Sans</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+    border-radius: 10px;
+    padding: 8px;
+    background: white;
+color: black;
+border: 2px solid  rgb(234, 147, 96);
+
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="send_button">
+             <property name="font">
+              <font>
+               <family>Gill Sans</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    border-radius: 6px;
+	background-color:  rgb(234, 147, 96);
+	padding: 8px;
+    min-width: 50px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+             </property>
+             <property name="text">
+              <string>send</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
        </widget>
       </widget>
      </widget>
