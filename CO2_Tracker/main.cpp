@@ -181,5 +181,8 @@ int main(int argc, char *argv[])
         return a.exec();
      }
 
+    Date d;
+    d.get_current_date();
+
 
 }

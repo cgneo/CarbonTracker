@@ -103,7 +103,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -1304,22 +1304,5 @@ QTabBar::tab:selected, QTabBar::tab:hover {
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>living_partners</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>label</receiver>
-   <slot>setNum(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>280</x>
-     <y>355</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>703</x>
-     <y>358</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

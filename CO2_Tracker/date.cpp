@@ -1,6 +1,7 @@
 #include "date.h"
 #include <iostream>
 #include <string>
+#include <ctime>
 
 int Date::days_in_month[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
@@ -92,6 +93,18 @@ bool Date::is_valid(){
     else{
         throw std::invalid_argument("Invalid year");}
 }
+
+
+void Date::get_current_date(){
+    time_t now = time(0);
+
+    char* date_time = ctime(&now);
+
+    std::cout << date_time << std::endl;
+
+}
+
+
 
 void Date::print(){//prints a date object
     std::cout << "Day: " << get_day() << ", Month: "
