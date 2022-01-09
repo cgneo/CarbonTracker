@@ -25,7 +25,7 @@
 
     - Alexandra-Catalina Negoita - team leader
     - Alejandro Christlieb Picazo
-    - Zhihui Li - git manager
+    - Zhihui Li
     - (Amine Lamouchi)
 
 
@@ -36,14 +36,7 @@
 “Bearer ABCDEFGH” (without quotations of course). Then you have to copy the path of that file and modify the existing path in the constructor in transport_API.cpp  .
 
 
-- Peer-to-Peer (netclient, netserver):
-  - Requires at least Qt 5.15 above (preferably the latest Qt 6.2.2: you can update your Qt by opening MaintenanceTool)
-  1. You can test peer-to-peer functionality by first going into /Server/example-QTcpSocket/QTCPClient, and build it;
-  2. After building the testing client, you'll find a folder called "build-*", which we will use later;
-  3. Go to CarbonTracker, open and run it inside Qt.
-  4. Go to /Server/example-QTcpSocket/build*..., open the executable, and you will be able to send message to CarbonTracker (by looking at the console output).
-
-## OCR Dependencies
+- OCR Dependencies
 
 The OCR module depends on two libraries: Tesseract and Leptonica. For Mac users, we first need to install a package manager (Homebrew) before downloading the libraries.
 
@@ -73,6 +66,15 @@ Now that the libraries are downloaded, we need to specify their path. To do so:
     Add include path and library path of Leptonica (/usr/local/Cellar/Leptonica)
     
 This finishes setting the libraries and we can now execute the project.
+
+
+- Peer-to-Peer (netclient, netserver):
+  - Requires at least Qt 5.15 above (preferably the latest Qt 6.2.2: you can update your Qt by opening MaintenanceTool)
+  1. You can test peer-to-peer functionality by first going into /Server/example-QTcpSocket/QTCPClient, and build it;
+  2. After building the testing client, you'll find a folder called "build-*", which we will use later;
+  3. Go to CarbonTracker, open and run it inside Qt.
+  4. Go to /Server/example-QTcpSocket/build*..., open the executable, and you will be able to send message to CarbonTracker (by looking at the console output).
+
 
 ## Introduction
 CarbonTracker is a desktop GUI app that quantifies and analyzes CO2 emissions, using databases, by retrieving and computing the environmental impact
