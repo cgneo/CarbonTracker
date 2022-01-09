@@ -158,6 +158,32 @@ MainWindow::MainWindow(QWidget *parent)
                                slice, &QPieSlice::setExploded);
         }
 
+        //Code to do pie chart with transports
+        QPieSeries *dseries2 = new QPieSeries();
+        dseries2->setHoleSize(0.35);
+
+        //QPieSlice *slices[12];
+        //Consumption *c = u->get_consumption();
+
+        //QPieSlice *slice;
+        vector<string> keys2 = c->get_keys(c->footprint_by_vehicle);
+
+        int size2 = keys2.size();
+
+            for (int i = 0; i < size2; i++){
+                //qDebug() << QString::fromStdString(c->vehicles[i]);
+                string label2 = keys2.at(i);
+
+                //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
+
+
+                slice =  dseries2->append(QString::fromStdString(label2), c->get_vehicle_footprint(label2));
+                //slices[i] = dseries->append(c.vehicles[i], 1);
+                slice->setLabelVisible();
+                QPieSlice::connect(slice, &QPieSlice::hovered,
+                                   slice, &QPieSlice::setExploded);
+            }
+
     //Code to graph transport categories
 //    for (int i = 0; i < 12; i++){
 //        qDebug() << QString::fromStdString(c->vehicles[i]);
@@ -196,7 +222,7 @@ MainWindow::MainWindow(QWidget *parent)
     QChart *dchart = new QChart();
     dchart->addSeries(dseries);
     dchart->setAnimationOptions(QChart::SeriesAnimations);
-    dchart->setTitle("My Transportation Footprint");
+    dchart->setTitle("My Food Footprint");
     dchart->setTheme(QChart::ChartThemeBrownSand);
 
     QChartView *dchartview = new QChartView(dchart);
@@ -207,13 +233,28 @@ MainWindow::MainWindow(QWidget *parent)
 
     dchart->legend()->setVisible(true);
     dchart->legend()->setAlignment(Qt::AlignLeft);
-    //
+    //second chart
+
+    QChart *dchart2 = new QChart();
+    dchart2->addSeries(dseries);
+    dchart2->setAnimationOptions(QChart::SeriesAnimations);
+    dchart2->setTitle("My Transportation Footprint");
+    dchart2->setTheme(QChart::ChartThemeBrownSand);
+
+    QChartView *dchartview2 = new QChartView(dchart2);
+    dchartview2->setRenderHint(QPainter::Antialiasing);
+
+    dchartview2->setParent(ui->transportsframe);
+    //Commented to run
+
+    dchart->legend()->setVisible(true);
+    dchart->legend()->setAlignment(Qt::AlignLeft);
     //Daily
 
     QBarSet *set0 = new QBarSet("general footprint (food and transports)");
     //QBarSet *set1 = new QBarSet("Transports");
 
-    *set0 << c->get_daily_footprint('01012022') << 2 << 3; //missing arguments
+    *set0 << c->get_daily_footprint("01012022") << 2 << 3; //missing arguments
     //*set1 << c->get_transport_footprint() << 0 << 0;
 
     QStackedBarSeries *series = new QStackedBarSeries();
