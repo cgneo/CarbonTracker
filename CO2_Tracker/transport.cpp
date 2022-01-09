@@ -7,7 +7,7 @@ Transport :: Transport():Object(){
 Transport::Transport(Date *current_date, QString object_name,
                      char* distance)
     :Object(current_date, object_name){
-    set_type("Transport");
+    set_type("transport");
     this->distance = distance;
 }
 
