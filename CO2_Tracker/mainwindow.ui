@@ -1817,7 +1817,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -2578,7 +2578,7 @@ and resolutions to improve your carbon footpring linked to
 transports)</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="RefreshPushButton">
           <property name="geometry">
            <rect>
             <x>50</x>
@@ -2596,16 +2596,16 @@ transports)</string>
          <attribute name="title">
           <string>Food</string>
          </attribute>
-         <widget class="QFrame" name="foodframe">
+         <widget class="QFrame" name="foodframe1">
           <property name="geometry">
            <rect>
-            <x>570</x>
-            <y>140</y>
-            <width>561</width>
-            <height>471</height>
+            <x>79</x>
+            <y>29</y>
+            <width>731</width>
+            <height>441</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_17"/>
+          <layout class="QVBoxLayout" name="verticalLayout_6"/>
          </widget>
         </widget>
         <widget class="QWidget" name="tab_10">
@@ -3374,7 +3374,7 @@ QListView::item:hover {
      <x>0</x>
      <y>0</y>
      <width>1536</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

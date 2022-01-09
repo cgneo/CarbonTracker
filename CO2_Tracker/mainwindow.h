@@ -40,6 +40,8 @@ private slots:
 
     void on_Scanbutton_clicked();
 
+    void on_RefreshPushButton_clicked();
+
     void on_daily_challenge_1_stateChanged(int arg1);
     void on_daily_challenge_2_stateChanged(int arg1);
     void on_daily_challenge_3_stateChanged(int arg1);

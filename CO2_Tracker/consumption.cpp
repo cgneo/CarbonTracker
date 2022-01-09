@@ -163,8 +163,8 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
     int year = date->get_year();
 
     string key_day = to_string(day)+to_string(month)+to_string(year);
-    string key_month = "00"+to_string(month) + to_string(year);
-    string key_year = "0000"+to_string(year); //Creating standarized hash keys for dates
+    string key_month = to_string(month) + to_string(year);
+    string key_year = to_string(year); //Creating standarized hash keys for dates
 
     if (footprint_by_date->find(key_day) == footprint_by_date->end()){
         footprint_by_date->insert({key_day, footprint});
