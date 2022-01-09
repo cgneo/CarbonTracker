@@ -379,9 +379,10 @@ public:
 
         seed = new QLabel(verticalFrame);
         seed->setObjectName(QString::fromUtf8("seed"));
-        seed->setMaximumSize(QSize(100, 150));
+        seed->setMaximumSize(QSize(180, 200));
         seed->setStyleSheet(QString::fromUtf8(""));
-        seed->setPixmap(QPixmap(QString::fromUtf8("resources/pictures/seed.png")));
+        seed->setPixmap(QPixmap(QString::fromUtf8("resources/pictures/tree_once.gif")));
+        seed->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(seed);
 
@@ -1333,7 +1334,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(620, 275, 231, 31));
+        comboBox->setGeometry(QRect(380, 480, 231, 31));
         comboBox->setFont(font);
         comboBox->setStyleSheet(QString::fromUtf8("QComboBox {\n"
 "    border: 2px solid black;\n"
@@ -1415,7 +1416,7 @@ public:
 ""));
         listView = new QListView(tab_4);
         listView->setObjectName(QString::fromUtf8("listView"));
-        listView->setGeometry(QRect(300, 30, 311, 481));
+        listView->setGeometry(QRect(310, -10, 311, 481));
         listView->setStyleSheet(QString::fromUtf8("QListView {\n"
 "    alternate-background-color: rgba(233, 232, 235, 166);\n"
 "}\n"
@@ -1451,12 +1452,15 @@ public:
         select_button->setGeometry(QRect(300, 520, 113, 32));
         verticalLayoutWidget = new QWidget(tab_4);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(670, 50, 381, 181));
+        verticalLayoutWidget->setGeometry(QRect(670, 50, 401, 341));
         verticalLayout_6 = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         verticalLayout_6->setContentsMargins(0, 0, 0, 0);
         chatbox = new QTextEdit(verticalLayoutWidget);
         chatbox->setObjectName(QString::fromUtf8("chatbox"));
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Gill Sans")});
+        chatbox->setFont(font6);
         chatbox->setStyleSheet(QString::fromUtf8("QTextEdit{\n"
 "	background-color: rgba(171, 197, 153, 131);\n"
 "border-radius: 5px;\n"
@@ -1468,11 +1472,13 @@ public:
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         chatbox_write = new QLineEdit(verticalLayoutWidget);
         chatbox_write->setObjectName(QString::fromUtf8("chatbox_write"));
+        chatbox_write->setFont(font6);
         chatbox_write->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "    border-radius: 10px;\n"
 "    padding: 8px;\n"
 "    background: white;\n"
-"border: 2px solid rgba(239, 175, 108, 194);\n"
+"color: black;\n"
+"border: 2px solid  rgb(234, 147, 96);\n"
 "\n"
 "}"));
 
@@ -1480,9 +1486,10 @@ public:
 
         send_button = new QPushButton(verticalLayoutWidget);
         send_button->setObjectName(QString::fromUtf8("send_button"));
+        send_button->setFont(font6);
         send_button->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    border-radius: 6px;\n"
-"	background-color: rgba(239, 175, 108, 194);\n"
+"	background-color:  rgb(234, 147, 96);\n"
 "	padding: 8px;\n"
 "    min-width: 50px;\n"
 "}\n"
@@ -1631,6 +1638,7 @@ public:
         tree->setText(QString());
         tree_button->setText(QCoreApplication::translate("MainWindow", "Grow your tree", nullptr));
         select_button->setText(QCoreApplication::translate("MainWindow", "Select", nullptr));
+        chatbox_write->setText(QString());
         send_button->setText(QCoreApplication::translate("MainWindow", "send", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Your friends", nullptr));
     } // retranslateUi
