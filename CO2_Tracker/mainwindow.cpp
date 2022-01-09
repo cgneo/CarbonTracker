@@ -145,6 +145,9 @@ MainWindow::MainWindow(QWidget *parent)
     QPieSeries *dseries2 = new QPieSeries();
     dseries2->setHoleSize(0.35);
 
+    QPieSeries *dseries3 = new QPieSeries();
+    dseries2->setHoleSize(0.35);
+
     //QPieSlice *slices[12];
     Consumption *c = u->get_consumption();
 
@@ -153,6 +156,7 @@ MainWindow::MainWindow(QWidget *parent)
     //Code to do pie chart with food
     vector<string> keys = c->get_keys(c->footprint_by_food_category);
     vector<string> keys2 = c->get_keys(c->footprint_by_vehicle);
+
 
     int size = keys.size();
     int size2 = keys2.size();
@@ -174,6 +178,31 @@ MainWindow::MainWindow(QWidget *parent)
                            slice, &QPieSlice::setExploded);
     }
 
+    QPieSlice * slice_food =  dseries3->append("Food", c->get_food_footprint());
+    QPieSlice * slice_transport =  dseries3->append("Transport", c->get_transport_footprint());
+    //QPieSlice * slice_housing =  dseries3->append("Food", 1);
+    QPieSlice::connect(slice_food, &QPieSlice::hovered,
+                       slice_food, &QPieSlice::setExploded);
+    QPieSlice::connect(slice_transport, &QPieSlice::hovered,
+                       slice_transport, &QPieSlice::setExploded);
+
+    //    for (int i = 0; i < size3; i++){
+//        //qDebug() << QString::fromStdString(c->vehicles[i]);
+//        string label = keys3.at(i);
+
+//        //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
+
+
+//        slice =  dseries3->append(QString::fromStdString(label), c->get_category_footprint(label));
+//        //slices[i] = dseries->append(c.vehicles[i], 1);
+//        if(c->get_category_footprint(label)!=0){
+//            slice->setLabelVisible();
+//        }
+
+//        QPieSlice::connect(slice, &QPieSlice::hovered,
+//                           slice, &QPieSlice::setExploded);
+//    }
+
     for (int i = 0; i < size2; i++){
         //qDebug() << QString::fromStdString(c->vehicles[i]);
         string label = keys2.at(i);
@@ -191,40 +220,8 @@ MainWindow::MainWindow(QWidget *parent)
                            slice, &QPieSlice::setExploded);
     }
 
-    //Code to graph transport categories
-//    for (int i = 0; i < 12; i++){
-//        qDebug() << QString::fromStdString(c->vehicles[i]);
-//        string vehicle = c->vehicles[i];
-
-//        //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
 
 
-//        slice =  dseries->append(QString::fromStdString(vehicle), c->get_vehicle_footprint(vehicle));
-//        //slices[i] = dseries->append(c.vehicles[i], 1);
-//        slice->setLabelVisible();
-//        QPieSlice::connect(slice, &QPieSlice::hovered,
-//                           slice, &QPieSlice::setExploded);
-//    }
-
-    /*
-    QPieSlice *dslice1 = dseries->append("Locomotive", 1);
-    QPieSlice *dslice2 =dseries->append("Airplane", 2);
-    QPieSlice *dslice3 =dseries->append("Car", 2);
-
-    QPieSlice *slices[12] = {dslice1, dslice2, dslice3, dslice4, dslice5, dslice6, dslice7, dslice8, dslice9, dslice10, dslice11, dslice12};
-
-    dslice1->setLabelVisible();
-    dslice2->setLabelVisible();
-    dslice3->setLabelVisible();
-
-    QPieSlice::connect(dslice1, &QPieSlice::hovered,
-                       dslice1, &QPieSlice::setExploded);
-    QPieSlice::connect(dslice2, &QPieSlice::hovered,
-                       dslice2, &QPieSlice::setExploded);
-    QPieSlice::connect(dslice3, &QPieSlice::hovered,
-                       dslice3, &QPieSlice::setExploded);
-*/
-    QString string = "clicked";
 
     QChart *dchart = new QChart();
     dchart->addSeries(dseries);
@@ -258,6 +255,22 @@ MainWindow::MainWindow(QWidget *parent)
     dchart2->legend()->setVisible(true);
     dchart2->legend()->setAlignment(Qt::AlignLeft);
     //
+    //the one on the first page
+
+    QChart *dchart3 = new QChart();
+    dchart3->addSeries(dseries3);
+    dchart3->setAnimationOptions(QChart::SeriesAnimations);
+    dchart3->setTitle("My Global Footprint");
+    dchart3->setTheme(QChart::ChartThemeBrownSand);
+
+    QChartView *dchartview3 = new QChartView(dchart3);
+    dchartview3->setRenderHint(QPainter::Antialiasing);
+
+    dchartview3->setParent(ui->foodframe2);
+    //Commented to run
+
+    dchart3->legend()->setVisible(true);
+    dchart3->legend()->setAlignment(Qt::AlignBottom);
 
 
     //Daily
@@ -380,8 +393,8 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix5(":/survey/trasnport_icon.png");
     ui -> trans_picture -> setPixmap(pix5.scaled(500,300, Qt::KeepAspectRatio));
 
-    QPixmap pix6(":/challenges/graph photo.png");
-    ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
+    //QPixmap pix6(":/challenges/graph photo.png");
+    //ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
 
 
 
