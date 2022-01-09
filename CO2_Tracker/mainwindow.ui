@@ -239,7 +239,7 @@ add color: black;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1984,6 +1984,15 @@ color: black;
                     </item>
                     <item>
                      <widget class="QLabel" name="outputTransport">
+                      <property name="styleSheet">
+                       <string notr="true">QLabel{
+border-radius: 4px;
+padding: 2px;
+border-color: rgb(136,159,124);
+border: 4px;
+color: black;
+}</string>
+                      </property>
                       <property name="text">
                        <string/>
                       </property>
