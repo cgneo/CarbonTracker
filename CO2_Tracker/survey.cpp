@@ -10,6 +10,8 @@
 #include "transport.h"
 #include "transport_api.h"
 
+#include "housing.h"
+
 Survey::Survey(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Survey)
@@ -38,6 +40,11 @@ void Survey::on_buttonMain_clicked()
 }
 
 void Survey::on_buttonNextHousing1_clicked()
+{
+    ui->tabHousing->setCurrentIndex( (ui->tabHousing->currentIndex()+1) % ui->tabHousing->count() );
+}
+
+void Survey::on_buttonNextHousing2_clicked()
 {
     ui->tabMain->setCurrentIndex( (ui->tabMain->currentIndex()+1) % ui->tabMain->count() );
 }
@@ -105,7 +112,10 @@ void Survey::on_buttonAccount_clicked()
 
         // Using information from 'housing' tab
         int energy_consumption_monthly = ui->kwh->value();
-        int energy_consumption_daily = energy_consumption_monthly/30;
+        double energy_consumption_daily = energy_consumption_monthly/30;
+
+        Housing h;
+        h.set_footprint(energy_consumption_daily);
 
         // Using information from 'transport' tab
         bool yes = ui->radioButton_TransY->isChecked();
@@ -164,5 +174,10 @@ void Survey::on_buttonAccount_clicked()
 void Survey::on_living_partners_valueChanged(int value)
 {
     ui->label->setNum(value);
+}
+
+void Survey::on_kwh_valueChanged(int value)
+{
+    ui->label_kwh->setNum(value);
 }
 

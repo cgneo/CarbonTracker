@@ -20,12 +20,14 @@ public:
 private slots:
     void on_buttonMain_clicked();
     void on_buttonNextHousing1_clicked();
+    void on_buttonNextHousing2_clicked();
     void on_buttonNextTransport1_clicked();
     void on_buttonNextTransport2_clicked();
     void on_buttonNextTransport3_clicked();
     void on_buttonAccount_clicked();
 
     void on_living_partners_valueChanged(int value);
+    void on_kwh_valueChanged(int value);
 
 private:
     Ui::Survey *ui;
