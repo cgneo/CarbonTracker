@@ -50,11 +50,18 @@ MainWindow::MainWindow(QWidget *parent)
 
     QLineSeries *Lseries = new QLineSeries();
 
-        Lseries->append(0, 6);
-        Lseries->append(2, 4);
-        Lseries->append(3, 8);
-        Lseries->append(7, 4);
-        Lseries->append(10, 5);
+        Lseries->append(0, 500);
+        Lseries->append(10, 850);
+        Lseries->append(20, 1000);
+        Lseries->append(30, 1000);
+        Lseries->append(40, 1250);
+        Lseries->append(50, 1500);
+        Lseries->append(60, 2500);
+        Lseries->append(70, 4000);
+        Lseries->append(80, 5300);
+        Lseries->append(90, 6000);
+        Lseries->append(100, 6650);
+        Lseries->append(110, 9900);
 
 
         *Lseries << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
@@ -79,7 +86,7 @@ MainWindow::MainWindow(QWidget *parent)
        //axisY->setRange(0, 20);*/
 
 
-        Lchart->setTitle("Your carbon footprint through your food time");
+        Lchart->setTitle("The World's Carbon Footprint through time since 1900");
 
         //chart->legend()->setVisible(true);
         //chart->legend()->setAlignment(Qt::AlignBottom);
@@ -158,6 +165,32 @@ MainWindow::MainWindow(QWidget *parent)
                                slice, &QPieSlice::setExploded);
         }
 
+        //Code to do pie chart with transports
+        QPieSeries *dseries2 = new QPieSeries();
+        dseries2->setHoleSize(0.35);
+
+        //QPieSlice *slices[12];
+        //Consumption *c = u->get_consumption();
+
+        //QPieSlice *slice;
+        vector<string> keys2 = c->get_keys(c->footprint_by_vehicle);
+
+        int size2 = keys2.size();
+
+            for (int i = 0; i < size2; i++){
+                //qDebug() << QString::fromStdString(c->vehicles[i]);
+                string label2 = keys2.at(i);
+
+                //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
+
+
+                slice =  dseries2->append(QString::fromStdString(label2), c->get_vehicle_footprint(label2));
+                //slices[i] = dseries->append(c.vehicles[i], 1);
+                slice->setLabelVisible();
+                QPieSlice::connect(slice, &QPieSlice::hovered,
+                                   slice, &QPieSlice::setExploded);
+            }
+
     //Code to graph transport categories
 //    for (int i = 0; i < 12; i++){
 //        qDebug() << QString::fromStdString(c->vehicles[i]);
@@ -196,33 +229,52 @@ MainWindow::MainWindow(QWidget *parent)
     QChart *dchart = new QChart();
     dchart->addSeries(dseries);
     dchart->setAnimationOptions(QChart::SeriesAnimations);
-    dchart->setTitle("My Transportation Footprint");
+    dchart->setTitle("My Food Footprint");
     dchart->setTheme(QChart::ChartThemeBrownSand);
 
     QChartView *dchartview = new QChartView(dchart);
     dchartview->setRenderHint(QPainter::Antialiasing);
 
-    dchartview->setParent(ui->transportsframe);
+    dchartview->setParent(ui->foodframe);
     //Commented to run
 
     dchart->legend()->setVisible(true);
     dchart->legend()->setAlignment(Qt::AlignLeft);
-    //
+    //second chart
+
+    QChart *dchart2 = new QChart();
+    dchart2->addSeries(dseries);
+    dchart2->setAnimationOptions(QChart::SeriesAnimations);
+    dchart2->setTitle("My Transportation Footprint");
+    dchart2->setTheme(QChart::ChartThemeBrownSand);
+
+    QChartView *dchartview2 = new QChartView(dchart2);
+    dchartview2->setRenderHint(QPainter::Antialiasing);
+
+    dchartview2->setParent(ui->transportsframe);
+    //Commented to run
+
+    dchart->legend()->setVisible(true);
+    dchart->legend()->setAlignment(Qt::AlignLeft);
+
+    //if we refresh
+
+
     //Daily
 
-    QBarSet *set0 = new QBarSet("Food");
-    QBarSet *set1 = new QBarSet("Transports");
+    QBarSet *set0 = new QBarSet("general footprint (food and transports)");
+    //QBarSet *set1 = new QBarSet("Transports");
 
-    *set0 << 1 << 2 << 3;
-    *set1 << 5 << 0 << 0;
+    *set0 << c->get_daily_footprint("01012022") << 2 << 3; //missing arguments
+    //*set1 << c->get_transport_footprint() << 0 << 0;
 
     QStackedBarSeries *series = new QStackedBarSeries();
     series->append(set0);
-    series->append(set1);
+    //series->append(set1);
 
     QChart *chart = new QChart();
     chart->addSeries(series);
-    chart->setTitle("Your daily emission compared to public figures' (in CO2/kg)");
+    chart->setTitle("Your daily emission compared to public figures' (in kg.CO2)");
     chart->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories;
@@ -243,19 +295,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Monthly
 
-    QBarSet *set4 = new QBarSet("Food");
-    QBarSet *set5 = new QBarSet("Transports");
+    QBarSet *set4 = new QBarSet("General footprint (food and transports");
+    //QBarSet *set5 = new QBarSet("Transports");
 
-    *set4 << 10 << 20 << 30;
-    *set5 << 50 << 2 << 2;
+    *set4 << c->get_monthly_footprint("00012022") << 20 << 30; //missing arguments
+    //*set5 << 50 << 2 << 2;
 
     QStackedBarSeries *series2 = new QStackedBarSeries();
     series2->append(set4);
-    series2->append(set5);
+    //series2->append(set5);
 
     QChart *chart2 = new QChart();
     chart2->addSeries(series2);
-    chart2->setTitle("Your monthly emission compared to public figures' (in CO2/kg)");
+    chart2->setTitle("Your monthly emission compared to public figures' (in kg.CO2)");
     chart2->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories2;
@@ -276,19 +328,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Yearly
 
-    QBarSet *set7 = new QBarSet("Food");
-    QBarSet *set8 = new QBarSet("Transports");
+    QBarSet *set7 = new QBarSet("General footprint");
+    //QBarSet *set8 = new QBarSet("Transports");
 
-    *set7 << 100 << 200 << 300;
-    *set8 << 500 << 20 << 20;
+    *set7 << c->get_yearly_footprint("00002022") << 200 << 300; // missing arguments
+    //*set8 << 500 << 20 << 20;
 
     QStackedBarSeries *series3 = new QStackedBarSeries();
     series3->append(set7);
-    series3->append(set8);
+    //series3->append(set8);
 
     QChart *chart3 = new QChart();
     chart3->addSeries(series3);
-    chart3->setTitle("Your yearly emission compared to public figures' (in CO2/kg)");
+    chart3->setTitle("Your yearly emission compared to public figures' (in kg.CO2)");
     chart3->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories3;
@@ -310,7 +362,7 @@ MainWindow::MainWindow(QWidget *parent)
     //Summary(Daily, Monthly, Yearly all in one page)
 
     //daily
-    QBarSet *set0sum = new QBarSet("Food");
+    /*QBarSet *set0sum = new QBarSet("Food");
     QBarSet *set1sum = new QBarSet("Transports");
 
     *set0sum << 1 << 2 << 3;
@@ -397,7 +449,7 @@ MainWindow::MainWindow(QWidget *parent)
     chart3sum->legend()->setAlignment(Qt::AlignBottom);
 
     QChartView *chartView3sum = new QChartView(chart3sum);
-    chartView3sum->setParent(ui->horizontalFrame3sum);
+    chartView3sum->setParent(ui->horizontalFrame3sum);*/
 
     //end of graphs
 
@@ -515,6 +567,70 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_Refresh_clicked(){
+    Json_DB json_obj;
+    User *u = json_obj.readUser_from_Json();
+    current_user = u;
+
+        QPieSeries *dseries = new QPieSeries();
+        dseries->setHoleSize(0.35);
+        Consumption *c = u->get_consumption();
+
+        QPieSlice *slice;
+
+        //Code to do pie chart with food
+        vector<string> keys = c->get_keys(c->footprint_by_food_category);
+        int size = keys.size();
+        for (int i = 0; i < size; i++){
+            string label = keys.at(i);
+            slice =  dseries->append(QString::fromStdString(label), c->get_category_footprint(label));
+            slice->setLabelVisible();
+            QPieSlice::connect(slice, &QPieSlice::hovered,
+                               slice, &QPieSlice::setExploded);
+        }
+        //Code to do pie chart with transports
+        QPieSeries *dseries2 = new QPieSeries();
+        dseries2->setHoleSize(0.35);
+        vector<string> keys2 = c->get_keys(c->footprint_by_vehicle);
+        int size2 = keys2.size();
+
+        for (int i = 0; i < size2; i++){
+            string label2 = keys2.at(i);
+            slice =  dseries2->append(QString::fromStdString(label2), c->get_vehicle_footprint(label2));
+            slice->setLabelVisible();
+            QPieSlice::connect(slice, &QPieSlice::hovered,
+                               slice, &QPieSlice::setExploded);
+            }
+
+        QChart *dchart = new QChart();
+        dchart->addSeries(dseries);
+        dchart->setAnimationOptions(QChart::SeriesAnimations);
+        dchart->setTitle("My Food Footprint");
+        dchart->setTheme(QChart::ChartThemeBrownSand);
+
+        QChartView *dchartview = new QChartView(dchart);
+        dchartview->setRenderHint(QPainter::Antialiasing);
+
+        dchartview->setParent(ui->foodframe);
+        dchart->legend()->setVisible(true);
+        dchart->legend()->setAlignment(Qt::AlignLeft);
+        //second chart
+
+        QChart *dchart2 = new QChart();
+        dchart2->addSeries(dseries);
+        dchart2->setAnimationOptions(QChart::SeriesAnimations);
+        dchart2->setTitle("My Transportation Footprint");
+        dchart2->setTheme(QChart::ChartThemeBrownSand);
+
+        QChartView *dchartview2 = new QChartView(dchart2);
+        dchartview2->setRenderHint(QPainter::Antialiasing);
+
+        dchartview2->setParent(ui->transportsframe);
+        //Commented to run
+
+        dchart->legend()->setVisible(true);
+        dchart->legend()->setAlignment(Qt::AlignLeft);
+    }
 
 void MainWindow::on_Surveybutton_clicked()
 {

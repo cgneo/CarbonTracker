@@ -232,7 +232,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1143,7 +1143,6 @@ border-radius: 4px;
                   </property>
                   <property name="font">
                    <font>
-                    <weight>75</weight>
                     <italic>true</italic>
                     <bold>true</bold>
                    </font>
@@ -1163,9 +1162,9 @@ border-radius: 4px;
                   </property>
                   <property name="html">
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:600; font-style:italic;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:700; font-style:italic;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400; font-style:normal; color:#ffffff;&quot;&gt;Daily challenges&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:400; font-style:normal; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
@@ -1326,7 +1325,6 @@ border-radius: 4px;
                   <property name="font">
                    <font>
                     <pointsize>13</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1345,7 +1343,7 @@ border-radius: 4px;
                   </property>
                   <property name="html">
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Monthly challenges&lt;/span&gt;&lt;/p&gt;
@@ -1807,7 +1805,7 @@ p, li { white-space: pre-wrap; }
        <attribute name="title">
         <string>Graph page</string>
        </attribute>
-       <widget class="QTabWidget" name="tabWidget_2">
+       <widget class="QTabWidget" name="Refresh">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1817,7 +1815,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -1826,9 +1824,9 @@ p, li { white-space: pre-wrap; }
          <widget class="QFrame" name="transportsframe">
           <property name="geometry">
            <rect>
-            <x>80</x>
-            <y>30</y>
-            <width>561</width>
+            <x>30</x>
+            <y>70</y>
+            <width>591</width>
             <height>471</height>
            </rect>
           </property>
@@ -2578,6 +2576,35 @@ and resolutions to improve your carbon footpring linked to
 transports)</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="pushButton">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>20</y>
+            <width>100</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Refresh</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_8">
+         <attribute name="title">
+          <string>Food</string>
+         </attribute>
+         <widget class="QFrame" name="foodframe">
+          <property name="geometry">
+           <rect>
+            <x>570</x>
+            <y>140</y>
+            <width>561</width>
+            <height>471</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_17"/>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab_10">
          <attribute name="title">
@@ -2656,54 +2683,6 @@ transports)</string>
           <layout class="QHBoxLayout" name="horizontalLayout_13"/>
          </widget>
         </widget>
-        <widget class="QWidget" name="tab_8">
-         <attribute name="title">
-          <string>Summary</string>
-         </attribute>
-         <widget class="QFrame" name="horizontalFrame1sum">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>631</width>
-            <height>431</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_14"/>
-         </widget>
-         <widget class="QFrame" name="horizontalFrame2sum">
-          <property name="geometry">
-           <rect>
-            <x>600</x>
-            <y>0</y>
-            <width>781</width>
-            <height>431</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_15"/>
-         </widget>
-         <widget class="QFrame" name="horizontalFrame3sum">
-          <property name="geometry">
-           <rect>
-            <x>600</x>
-            <y>430</y>
-            <width>781</width>
-            <height>431</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_16"/>
-         </widget>
-         <widget class="QCalendarWidget" name="calendarWidget">
-          <property name="geometry">
-           <rect>
-            <x>7</x>
-            <y>432</y>
-            <width>591</width>
-            <height>431</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_3">
@@ -2713,10 +2692,10 @@ transports)</string>
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-          <x>40</x>
+          <x>20</x>
           <y>10</y>
-          <width>1251</width>
-          <height>691</height>
+          <width>2148</width>
+          <height>1149</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
@@ -2761,7 +2740,7 @@ transports)</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>build/tips photos/food-pic.png</pixmap>
+                <pixmap>resources/pictures/food-pic.png</pixmap>
                </property>
               </widget>
              </item>
@@ -2886,10 +2865,7 @@ transports)</string>
              <item>
               <widget class="QLabel" name="transport_label">
                <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>build/tips photos/new_plane_pic.png</pixmap>
+                <string>TextLabel</string>
                </property>
               </widget>
              </item>
@@ -3017,7 +2993,7 @@ transports)</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>build/tips photos/home-pic.png</pixmap>
+                <pixmap>resources/pictures/home-pic.png</pixmap>
                </property>
               </widget>
              </item>

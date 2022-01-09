@@ -37,6 +37,7 @@ public:
 
 private slots:
     void on_Surveybutton_clicked();
+    void on_Refresh_clicked();
 
     void on_Scanbutton_clicked();
 
