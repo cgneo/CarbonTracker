@@ -93,6 +93,8 @@ In order for the project to compile properly and all functionalities to run, it 
     On the left toolbar, click "Projects"
     Under "Build & Run" select "Build"
     In the window for "General" in "Build Settings", click "Choose" to select a directory path
-    
+    Enter the following relative path "../CarbonTracker/CO2_Tracker/resources/build/"
+    This will be the specified location where the building will happen (needed for the project to work properly) and where the executable will be 
+   
 # Run the project 
 
