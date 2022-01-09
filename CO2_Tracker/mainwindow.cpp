@@ -499,6 +499,9 @@ void MainWindow::on_Scanbutton_clicked()
     string filepath = "/Users/alex_christlieb/Desktop/carrefour.png";
     vector<vector<string>> receipt_vec = get_receipt_info(filepath);
     Receipt rec;
+    Date *today = new  Date();
+    today->get_current_date();
+    rec.set_dates(today);
     rec.set_content(receipt_vec);
     //rec.set_dates(); HAVE TO SET DATE OF RECEIPT
     rec.receipt_to_consumption(current_user->get_consumption());
@@ -554,22 +557,23 @@ void MainWindow::get_seed()
 
 void MainWindow::on_buttonTransport_clicked()
 {
-    Transport t;
     QString vehicle = ui->vehicleTransport->currentText(); // taking input from user for vehicle
     string distance = ui->distanceTransport->cleanText().toStdString(); // taking input from user for distance
-    t.set_type(vehicle);
-    char* d = 0;//distance
-    t.set_distance(d);// convert distance to char
+
+    // convert distance to char arrays
     // converting std strings to char arrays
-        // vehicle
+    // vehicle
     int n = vehicle.length();
     char char_array_vehicle[n+1];
     strcpy(char_array_vehicle, vehicle.toStdString().c_str());
-
-        // distance
+    // distance
     int m = distance.length();
     char char_array_distance[m+1];
     strcpy(char_array_distance, distance.c_str());
+    Date* d = new Date();
+    d->get_current_date();
+
+    Transport* t = new Transport(d,vehicle,char_array_distance);
 
     // calling the (transport) api
     transport_api api;
@@ -577,8 +581,10 @@ void MainWindow::on_buttonTransport_clicked()
 
     // outputting the emission for given vehicle and distance
     QString emission = QString::number(api.get_emission());
-    t.set_footprint(api.get_emission());
+    t->set_footprint(api.get_emission());
     ui->outputTransport->setText(emission);
+
+    current_user->get_consumption()->add_object(t, true);
 }
 
 void MainWindow::enableButton()
