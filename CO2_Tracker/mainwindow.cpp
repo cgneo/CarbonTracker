@@ -158,6 +158,32 @@ MainWindow::MainWindow(QWidget *parent)
                                slice, &QPieSlice::setExploded);
         }
 
+        //Code to do pie chart with transports
+        QPieSeries *dseries2 = new QPieSeries();
+        dseries2->setHoleSize(0.35);
+
+        //QPieSlice *slices[12];
+        //Consumption *c = u->get_consumption();
+
+        //QPieSlice *slice;
+        vector<string> keys2 = c->get_keys(c->footprint_by_vehicle);
+
+        int size2 = keys2.size();
+
+            for (int i = 0; i < size2; i++){
+                //qDebug() << QString::fromStdString(c->vehicles[i]);
+                string label2 = keys2.at(i);
+
+                //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
+
+
+                slice =  dseries2->append(QString::fromStdString(label2), c->get_vehicle_footprint(label2));
+                //slices[i] = dseries->append(c.vehicles[i], 1);
+                slice->setLabelVisible();
+                QPieSlice::connect(slice, &QPieSlice::hovered,
+                                   slice, &QPieSlice::setExploded);
+            }
+
     //Code to graph transport categories
 //    for (int i = 0; i < 12; i++){
 //        qDebug() << QString::fromStdString(c->vehicles[i]);
@@ -196,25 +222,40 @@ MainWindow::MainWindow(QWidget *parent)
     QChart *dchart = new QChart();
     dchart->addSeries(dseries);
     dchart->setAnimationOptions(QChart::SeriesAnimations);
-    dchart->setTitle("My Transportation Footprint");
+    dchart->setTitle("My Food Footprint");
     dchart->setTheme(QChart::ChartThemeBrownSand);
 
     QChartView *dchartview = new QChartView(dchart);
     dchartview->setRenderHint(QPainter::Antialiasing);
 
-    dchartview->setParent(ui->transportsframe);
+    dchartview->setParent(ui->foodframe);
     //Commented to run
 
     dchart->legend()->setVisible(true);
     dchart->legend()->setAlignment(Qt::AlignLeft);
-    //
+    //second chart
+
+    QChart *dchart2 = new QChart();
+    dchart2->addSeries(dseries);
+    dchart2->setAnimationOptions(QChart::SeriesAnimations);
+    dchart2->setTitle("My Transportation Footprint");
+    dchart2->setTheme(QChart::ChartThemeBrownSand);
+
+    QChartView *dchartview2 = new QChartView(dchart2);
+    dchartview2->setRenderHint(QPainter::Antialiasing);
+
+    dchartview2->setParent(ui->transportsframe);
+    //Commented to run
+
+    dchart->legend()->setVisible(true);
+    dchart->legend()->setAlignment(Qt::AlignLeft);
     //Daily
 
-    QBarSet *set0 = new QBarSet("Food");
-    QBarSet *set1 = new QBarSet("Transports");
+    QBarSet *set0 = new QBarSet("general footprint (food and transports)");
+    //QBarSet *set1 = new QBarSet("Transports");
 
-    *set0 << 1 << 2 << 3;
-    *set1 << 5 << 0 << 0;
+    *set0 << c->get_daily_footprint("01012022") << 2 << 3; //missing arguments
+    //*set1 << c->get_transport_footprint() << 0 << 0;
 
     QStackedBarSeries *series = new QStackedBarSeries();
     series->append(set0);
@@ -243,15 +284,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Monthly
 
-    QBarSet *set4 = new QBarSet("Food");
-    QBarSet *set5 = new QBarSet("Transports");
+    QBarSet *set4 = new QBarSet("General footprint (food and transports");
+    //QBarSet *set5 = new QBarSet("Transports");
 
-    *set4 << 10 << 20 << 30;
-    *set5 << 50 << 2 << 2;
+    *set4 << c->get_monthly_footprint("00012022") << 20 << 30; //missing arguments
+    //*set5 << 50 << 2 << 2;
 
     QStackedBarSeries *series2 = new QStackedBarSeries();
     series2->append(set4);
-    series2->append(set5);
+    //series2->append(set5);
 
     QChart *chart2 = new QChart();
     chart2->addSeries(series2);
@@ -276,15 +317,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Yearly
 
-    QBarSet *set7 = new QBarSet("Food");
-    QBarSet *set8 = new QBarSet("Transports");
+    QBarSet *set7 = new QBarSet("General footprint");
+    //QBarSet *set8 = new QBarSet("Transports");
 
-    *set7 << 100 << 200 << 300;
-    *set8 << 500 << 20 << 20;
+    *set7 << c->get_yearly_footprint("00002022") << 200 << 300; // missing arguments
+    //*set8 << 500 << 20 << 20;
 
     QStackedBarSeries *series3 = new QStackedBarSeries();
     series3->append(set7);
-    series3->append(set8);
+    //series3->append(set8);
 
     QChart *chart3 = new QChart();
     chart3->addSeries(series3);
@@ -310,7 +351,7 @@ MainWindow::MainWindow(QWidget *parent)
     //Summary(Daily, Monthly, Yearly all in one page)
 
     //daily
-    QBarSet *set0sum = new QBarSet("Food");
+    /*QBarSet *set0sum = new QBarSet("Food");
     QBarSet *set1sum = new QBarSet("Transports");
 
     *set0sum << 1 << 2 << 3;
@@ -397,7 +438,7 @@ MainWindow::MainWindow(QWidget *parent)
     chart3sum->legend()->setAlignment(Qt::AlignBottom);
 
     QChartView *chartView3sum = new QChartView(chart3sum);
-    chartView3sum->setParent(ui->horizontalFrame3sum);
+    chartView3sum->setParent(ui->horizontalFrame3sum);*/
 
     //end of graphs
 
