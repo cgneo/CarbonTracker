@@ -1,5 +1,31 @@
 # CarbonTracker
 
+## Introduction
+CarbonTracker is a desktop GUI app that quantifies and analyzes CO2 emissions, using databases, by retrieving and computing the environmental impact
+of food, transport, and shopping on our everyday lifestyle.
+
+Examples of databases used: OpenFood Facts, Good on You, ... .
+
+An interactive and friendly user interface gathers the data, displays it in graphics, and implements rewards and ranking to boost usability of the app.
+After analyzing the user's input data, CarbonTracker provides a personalized feedback proposing specific improvements on their lifestyle.
+Another feature of the app is creating a network that connects the app users to generate a healthy competition among individuals.
+
+## Members
+
+- Alejandro Christlieb Picazo, alexchristlieb, alejandrochristliebpicazo, project leader
+- Zhihui Li, cgneo, ZVapp, git leader
+- Jade Rakotondradano, jaderakoton, jaderakoton, trello leader
+- Amine Lamouchi, amine-lamouchi, aminelamouchi11
+- Alexandra-Catalina Negoita, Catalina-13, alexandracatalinanegoita
+- Andrés Orduña, andres_ordunya, andresorduna2
+- Cyrine Ben Tanfous, GitHub name, cyrinebentanfous1
+- Dain Jung, DainjungBX, dainjung3
+- Jane Peltier, janepeltier, janepeltier
+- Lucas Serog, lserog, lucasserog1
+- Marc Saouda, marc-saouda, marcsaouda
+- Nina Bili Rossi, nina-bilirossi, ninabilirossi
+- Steven van Heiningen, Steven-van-Heiningen, stevenvanheiningen
+
 ## Teams
 
     ### UI Team
@@ -88,28 +114,3 @@ In order for the project to compile properly and all functionalities to run, it 
 Finally, to run the project as a new user (first time), it is important to corroborate that on the folder "resources", there is no .json file.
 
 
-## Introduction
-CarbonTracker is a desktop GUI app that quantifies and analyzes CO2 emissions, using databases, by retrieving and computing the environmental impact
-of food, transport, and shopping on our everyday lifestyle.
-
-Examples of databases used: OpenFood Facts, Good on You, ... .
-
-An interactive and friendly user interface gathers the data, displays it in graphics, and implements rewards and ranking to boost usability of the app.
-After analyzing the user's input data, CarbonTracker provides a personalized feedback proposing specific improvements on their lifestyle.
-Another feature of the app is creating a network that connects the app users to generate a healthy competition among individuals.
-
-## Members
-
-- Alejandro Christlieb Picazo, alexchristlieb, alejandrochristliebpicazo, project leader
-- Zhihui Li, cgneo, ZVapp, git leader
-- Jade Rakotondradano, jaderakoton, jaderakoton, trello leader
-- Amine Lamouchi, amine-lamouchi, aminelamouchi11
-- Alexandra-Catalina Negoita, Catalina-13, alexandracatalinanegoita
-- Andrés Orduña, andres_ordunya, andresorduna2
-- Cyrine Ben Tanfous, GitHub name, cyrinebentanfous1
-- Dain Jung, DainjungBX, dainjung3
-- Jane Peltier, janepeltier, janepeltier
-- Lucas Serog, lserog, lucasserog1
-- Marc Saouda, marc-saouda, marcsaouda
-- Nina Bili Rossi, nina-bilirossi, ninabilirossi
-- Steven van Heiningen, Steven-van-Heiningen, stevenvanheiningen
