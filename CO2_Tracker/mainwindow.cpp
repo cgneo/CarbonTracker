@@ -287,7 +287,7 @@ MainWindow::MainWindow(QWidget *parent)
     QBarSet *set4 = new QBarSet("General footprint (food and transports");
     //QBarSet *set5 = new QBarSet("Transports");
 
-    *set4 << c->get_monthly_footprint('00012022') << 20 << 30; //missing arguments
+    *set4 << c->get_monthly_footprint("00012022") << 20 << 30; //missing arguments
     //*set5 << 50 << 2 << 2;
 
     QStackedBarSeries *series2 = new QStackedBarSeries();
@@ -320,7 +320,7 @@ MainWindow::MainWindow(QWidget *parent)
     QBarSet *set7 = new QBarSet("General footprint");
     //QBarSet *set8 = new QBarSet("Transports");
 
-    *set7 << c->get_yearly_footprint('00002022') << 200 << 300; // missing arguments
+    *set7 << c->get_yearly_footprint("00002022") << 200 << 300; // missing arguments
     //*set8 << 500 << 20 << 20;
 
     QStackedBarSeries *series3 = new QStackedBarSeries();
