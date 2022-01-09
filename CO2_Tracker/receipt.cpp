@@ -116,6 +116,16 @@ void Receipt::set_content(vector<vector<string>> content) {
     this->content=content;
 }
 
-void Receipt::receipt_to_consumption() {
-
+void Receipt::receipt_to_consumption(Consumption* c) {
+   for (vector<string> product_info: content) {
+       QString category = QString::fromStdString(product_info[3]);
+       if (product_info[4] == "_") {
+           continue;
+       }
+       else {
+           double co2 = atof(product_info[-1].c_str());
+           Object* product_object = new Object(&date[1], category, "food", co2);
+           c->add_object(product_object, true);
+       }
+   }
 }

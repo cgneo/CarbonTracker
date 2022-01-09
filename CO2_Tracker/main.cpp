@@ -14,7 +14,6 @@
 #include <QSsl>
 #include <QString>
 #include <QGraphicsWidget>
-#include "receipt_info.cpp"
 #include <QApplication>
 #include <QApplication>
 #include <QtCharts>

@@ -4,7 +4,6 @@
 #include <vector>
 #include "object.h"
 #include "base_consumption.h"
-#include "receipt.h"
 #include <unordered_map>
 
 
@@ -60,7 +59,7 @@ public:
     double get_daily_footprint(string month);
 
         //Other
-    void add_receipt(Receipt receipt);
+    //void add_receipt(Receipt receipt);
 
 };
 

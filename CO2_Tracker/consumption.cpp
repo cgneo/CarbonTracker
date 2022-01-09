@@ -200,14 +200,14 @@ double Consumption::get_daily_footprint(string day){
 
 }
 
-void Consumption::add_receipt(Receipt receipt){
-    int size = receipt.get_receipt_content().size();
-    vector<Object *> content = receipt.get_receipt_content();
-    for(int i=0;i<size;i++){
-        Object *new_obj = content[i];
-        add_object(new_obj, true);
-    }
-}
+//void Consumption::add_receipt(Receipt receipt){
+//    int size = receipt.get_receipt_content().size();
+//    vector<Object *> content = receipt.get_receipt_content();
+//    for(int i=0;i<size;i++){
+//        Object *new_obj = content[i];
+//        add_object(new_obj, true);
+//    }
+//}
 
 void Consumption::set_total_consumption(vector<Object *> consumption){
     total_consumption = consumption;

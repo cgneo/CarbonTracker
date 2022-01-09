@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "json_DB.hpp"
+#include "consumption.h"
 using namespace std;
 
 enum type {food, transport};
@@ -31,7 +31,7 @@ class Receipt{
     int get_receiptId();
     Date* get_dates();
     vector<vector<string>> get_receipt_content();
-    void receipt_to_consumption();
+    void receipt_to_consumption(Consumption* c);
 
     void print();
     void add_to_footprint(int new_footprint);

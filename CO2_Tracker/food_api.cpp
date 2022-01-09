@@ -75,15 +75,15 @@ void food_api::parse_reply(QNetworkReply* reply){
                     co2_total = agribalyseKey["co2_total"].toString().toStdString();
                 }
                 else {
-                    co2_total = "can't access co2_data from agribalyse (level 3)";
+                    co2_total = "_";
                 }
             }
             else {
-                co2_total = "can't access agribalyse from ecoscore_data (level 2)";
+                co2_total = "_";
             }
         }
         else {
-            co2_total = "can't access ecoscore_data from product (level 1)";
+            co2_total = "_";
         }
 
         //store information in product_info

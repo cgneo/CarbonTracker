@@ -46,6 +46,176 @@
             "Footprint": 20,
             "Name": "Metro",
             "Type": "transport"
+        },
+        {
+            "Date": [
+                32757,
+                -1409781798,
+                145762
+            ],
+            "Footprint": 0,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32757,
+                -1409781798,
+                145762
+            ],
+            "Footprint": 0,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32757,
+                -1409781798,
+                145762
+            ],
+            "Footprint": 0,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32757,
+                -1409781798,
+                145762
+            ],
+            "Footprint": 0,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32757,
+                -1409781798,
+                145762
+            ],
+            "Footprint": 0,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32757,
+                -1409781798,
+                145762
+            ],
+            "Footprint": 0,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                0,
+                1,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "_",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "Epicerie",
+            "Type": "food"
+        },
+        {
+            "Date": [
+                32737,
+                0,
+                131072
+            ],
+            "Footprint": 0,
+            "Name": "Aliments et boissons à base de végétaux",
+            "Type": "food"
         }
     ],
     "Country": "Mexico",

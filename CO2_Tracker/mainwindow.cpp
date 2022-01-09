@@ -19,6 +19,7 @@
 #include <QChartView>
 #include <QBarSet>
 #include <QBarSeries>
+#include "receipt_info.cpp"
 
 
 
@@ -28,13 +29,13 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
 
-    // Create a server
-    CB_server = new netserver();
-    CB_server->startServer();
+//    // Create a server
+//    CB_server = new netserver();
+//    CB_server->startServer();
 
-    // Create a client
-    CB_receiver = new netclient();
-    CB_receiver->startClient();
+//    // Create a client
+//    CB_receiver = new netclient();
+//    CB_receiver->startClient();
 
     // Invoke the flush and call it manually.
     std::cout.flush();
@@ -43,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     Json_DB json_obj;
     User *u = json_obj.readUser_from_Json();
-
+    current_user = u;
     //begining of graphs
     //LineChart
 
@@ -495,17 +496,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::set_user(User *u){
-    current_user = u;
-}
-
-User * MainWindow::get_user(){
-    return current_user;
-}
-
-void MainWindow::set_int(int a){
-    this->a = a;
-}
 
 void MainWindow::on_Surveybutton_clicked()
 {
@@ -516,9 +506,13 @@ void MainWindow::on_Surveybutton_clicked()
 
 void MainWindow::on_Scanbutton_clicked()
 {
-    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
-    QMessageBox::information(this, "...", file_name);
-    //amine_function(file_name)
+//    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
+//    QMessageBox::information(this, "...", file_name);
+    string filepath = "/Users/aminelamouchi/Desktop/carrefour.png";
+    vector<vector<string>> receipt_vec = get_receipt_info(filepath);
+    Receipt rec;
+    rec.set_content(receipt_vec);
+    rec.receipt_to_consumption(current_user->get_consumption());
 }
 
 void MainWindow::on_daily_challenge_1_stateChanged(int)
