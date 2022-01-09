@@ -3,6 +3,9 @@
 #include <iostream>
 #include <regex>
 #include <QString>
+#include <QMap>
+#include <iterator>
+#include <map>
 
 using namespace std;
 
@@ -17,7 +20,8 @@ User::User(QString username, QString name, int birthday, int birthmonth,
     set_living_partners(living_partners);
     footprint = 0;
     seeds = 0;
-    this->profile_picture = profile_pic;
+
+    //this->profile_picture = profile_pic;
 }
 
 User::User(){
@@ -117,6 +121,14 @@ void User::set_consumption(Consumption *consumption){
     this->consumption = consumption;
 }
 
+std::unordered_map<int, std::string> User::profile_picture = {
+    {1, "Icon 1"},
+    {2, "Icon 2"},
+    {3, "Icon 3"},
+    {4, "Icon 4"},
+    {5, "Icon 5"},
+
+};
 
 
 //--------------------------Test methods--------------------

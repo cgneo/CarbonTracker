@@ -7,6 +7,7 @@
 #include "consumption.h"
 #include "base_consumption.h"
 #include <QString>
+#include <unordered_map>
 
 using namespace std;
 
@@ -24,7 +25,6 @@ private :
   Consumption *consumption; //should be a pointer
   Base_Consumption *base_consumption; //should be a pointer
   int living_partners;
-  int profile_picture;
   QString image;
 
 public:
@@ -60,6 +60,8 @@ public:
   void set_picture(QString picture);
   void set_consumption(Consumption *consumption);
 
+  static unordered_map<int, std::string> profile_picture;
+
   bool name_is_valid();
   bool birthday_is_valid();
   bool email_is_valid();
@@ -67,7 +69,6 @@ public:
   bool living_partners_are_valid();
   bool footprint_is_valid();
 
-  //Additional functions to write
 
   int lastId(); //Get the last user_id stored in the DB
 
