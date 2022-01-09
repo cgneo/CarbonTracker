@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1536</width>
-    <height>1325</height>
+    <height>572</height>
    </rect>
   </property>
   <property name="palette">
@@ -232,7 +232,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1143,7 +1143,6 @@ border-radius: 4px;
                   </property>
                   <property name="font">
                    <font>
-                    <weight>75</weight>
                     <italic>true</italic>
                     <bold>true</bold>
                    </font>
@@ -1163,9 +1162,9 @@ border-radius: 4px;
                   </property>
                   <property name="html">
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:600; font-style:italic;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:700; font-style:italic;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400; font-style:normal; color:#ffffff;&quot;&gt;Daily challenges&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:400; font-style:normal; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
@@ -1326,7 +1325,6 @@ border-radius: 4px;
                   <property name="font">
                    <font>
                     <pointsize>13</pointsize>
-                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1345,7 +1343,7 @@ border-radius: 4px;
                   </property>
                   <property name="html">
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Monthly challenges&lt;/span&gt;&lt;/p&gt;
@@ -1817,7 +1815,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -2691,402 +2689,329 @@ transports)</string>
        <attribute name="title">
         <string>Challenges/info/tips</string>
        </attribute>
-       <widget class="QWidget" name="layoutWidget">
+       <widget class="QCheckBox" name="effacer_3">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>10</y>
-          <width>2148</width>
-          <height>1149</height>
+          <x>40</x>
+          <y>540</y>
+          <width>85</width>
+          <height>22</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_4">
-         <item row="0" column="0">
-          <layout class="QVBoxLayout" name="verticalLayout_16">
+        <property name="text">
+         <string>CheckBox</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="effacer">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>540</y>
+          <width>85</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>CheckBox</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="effacer_2">
+        <property name="geometry">
+         <rect>
+          <x>1040</x>
+          <y>540</y>
+          <width>85</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>CheckBox</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>10</y>
+          <width>731</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_15">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_19">
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_15">
-             <item>
-              <widget class="QLabel" name="label_9">
-               <property name="maximumSize">
-                <size>
-                 <width>165777</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
+            <widget class="QLabel" name="label_10">
+             <property name="styleSheet">
+              <string notr="true">QLabel{
 
 	border: 2px solid rgb(37, 39, 48);
 	border-radius: 6px;
 	border-color: rgb(136, 159, 124);
 	background-color: rgb(136, 159, 124);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Food</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="food_label">
-               <property name="maximumSize">
-                <size>
-                 <width>351</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>resources/pictures/food-pic.png</pixmap>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_11">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>233</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124,77);
-
+	color: white;
 
 }</string>
-               </property>
-               <property name="text">
-                <string>Info</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+             </property>
+             <property name="text">
+              <string>Food</string>
+             </property>
+            </widget>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_14">
-             <item>
-              <widget class="QLabel" name="label_10">
-               <property name="minimumSize">
-                <size>
-                 <width>341</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
+            <widget class="QLabel" name="food_label">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap>resources/pictures/food-pic.png</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_13">
+             <property name="styleSheet">
+              <string notr="true">QLabel{
 
+	border: 1px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: white;
+	color: rgb(136, 159, 124);
+
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;* Food accounts for 10-30% of a household’s carbon footprint, &lt;/p&gt;&lt;p&gt;typically a higher portion in lower-income households.&lt;/p&gt;&lt;p&gt;Production accounts for 68% of food emissions, &lt;/p&gt;&lt;p&gt;while transportation accounts for 5%.&lt;/p&gt;&lt;p&gt;* Food production emissions consist mainly of CO2, N2O, and CH4,&lt;/p&gt;&lt;p&gt; which result primarily from agricultural practices.&lt;/p&gt;&lt;p&gt;* Meat products have larger carbon footprints per calorie &lt;/p&gt;&lt;p&gt;than grain or vegetable products because of the inefficient conversion&lt;/p&gt;&lt;p&gt;of plant to animal energy and due to CH4 released from manure &lt;/p&gt;&lt;p&gt;management and enteric fermentation in ruminants.&lt;/p&gt;&lt;p&gt;* Ruminants such as cattle, sheep, and goats produced &lt;/p&gt;&lt;p&gt;179 million metric tons (mmt) CO2e of enteric methane in the U.S. in 2019.&lt;/p&gt;&lt;p&gt;* In an average U.S. household, eliminating the transport of food &lt;/p&gt;&lt;p&gt;for one year could save the GHG equivalent of driving 1,000 miles, &lt;/p&gt;&lt;p&gt;while shifting to a vegetarian meal one day a week could save&lt;/p&gt;&lt;p&gt; the equivalent of driving 1,160 miles.&lt;/p&gt;&lt;p&gt;* A vegetarian diet greatly reduces an individual’s carbon footprint, &lt;/p&gt;&lt;p&gt;but switching to less carbon intensive meats can have &lt;/p&gt;&lt;p&gt;a major impact as well. For example, beef's GHG emissions &lt;/p&gt;&lt;p&gt;per kilogram are 7.2 times greater than those of chicken.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_16">
+             <property name="styleSheet">
+              <string notr="true">QLabel{
 
 	border: 2px solid rgb(37, 39, 48);
 	border-radius: 6px;
 	border-color: rgb(136, 159, 124);
 	background-color: rgb(136, 159, 124);
-
+	color: white;
 
 }</string>
-               </property>
-               <property name="text">
-                <string>Food Tips</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_4">
-               <item>
-                <widget class="QCheckBox" name="food_tip_1">
-                 <property name="text">
-                  <string>Reduce dairy consumption</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="food_tip_2">
-                 <property name="text">
-                  <string>Consume local and seasonal products</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="food_tip_3">
-                 <property name="text">
-                  <string>Eat less red meat</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
+             </property>
+             <property name="text">
+              <string>Food Tips</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="food_tip_1">
+             <property name="text">
+              <string>CheckBox</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="food_tip_2">
+             <property name="text">
+              <string>CheckBox</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="food_tip_3">
+             <property name="text">
+              <string>CheckBox</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
-         <item row="0" column="1">
-          <layout class="QVBoxLayout" name="verticalLayout_18">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_20">
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_19">
-             <item>
-              <widget class="QLabel" name="label_14">
-               <property name="maximumSize">
-                <size>
-                 <width>165777</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
+            <widget class="QLabel" name="label_12">
+             <property name="styleSheet">
+              <string notr="true">QLabel{
 
 	border: 2px solid rgb(37, 39, 48);
 	border-radius: 6px;
 	border-color: rgb(136, 159, 124);
 	background-color: rgb(136, 159, 124);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Transport</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="transport_label">
-               <property name="text">
-                <string>TextLabel</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_15">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>233</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124,77);
-
+	color: white;
 
 }</string>
-               </property>
-               <property name="text">
-                <string>Info</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+             </property>
+             <property name="text">
+              <string>House</string>
+             </property>
+            </widget>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_20">
-             <item>
-              <widget class="QLabel" name="label_16">
-               <property name="minimumSize">
-                <size>
-                 <width>341</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
+            <widget class="QLabel" name="home_label">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap>resources/pictures/home-pic.png</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="styleSheet">
+              <string notr="true">QLabel{
 
+	border: 1px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: white;
+	color: rgb(136, 159, 124);
+
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;* For each kWh generated in the U.S., an average of 0.889 pounds of CO2e&lt;/p&gt;&lt;p&gt;is released at the power plant.&lt;/p&gt;&lt;p&gt;* Coal releases 2.2 pounds, petroleum releases 1.9 pounds, &lt;/p&gt;&lt;p&gt;and natural gas releases 0.9 pounds. Nuclear, solar, wind, &lt;/p&gt;&lt;p&gt;and hydroelectric release no CO2&lt;/p&gt;&lt;p&gt;when they produce electricity, but emissions are released during upstream production activities (e.g., solar cells, nuclear fuels, cement production).&lt;/p&gt;&lt;p&gt;* Residential electricity use in 2019 emitted 598.8 mmt CO2e, 9.1% of &lt;/p&gt;&lt;p&gt;the U.S. total.&lt;/p&gt;&lt;p&gt;* Space heating and cooling are estimated to account for 42% of energy&lt;/p&gt;&lt;p&gt;in U.S. homes in 2021.&lt;/p&gt;&lt;p&gt;* Refrigerators are one of the largest users of household appliance energy; &lt;/p&gt;&lt;p&gt;in 2019, an average of 672 lbs CO2e per household was due to refrigeration.&lt;/p&gt;&lt;p&gt;* 26 mmt CO2e are released in the U.S. each year from washing clothes. &lt;/p&gt;&lt;p&gt;Switching to a cold water wash once per week can reduce household GHG emissions by over 70 lbs annually.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_17">
+             <property name="styleSheet">
+              <string notr="true">QLabel{
 
 	border: 2px solid rgb(37, 39, 48);
 	border-radius: 6px;
 	border-color: rgb(136, 159, 124);
 	background-color: rgb(136, 159, 124);
-
+	color: white;
 
 }</string>
-               </property>
-               <property name="text">
-                <string>Transport Tips</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_21">
-               <item>
-                <widget class="QCheckBox" name="transportation_tip_1">
-                 <property name="text">
-                  <string>Avoid driving at peak times</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="transportation_tip_2">
-                 <property name="text">
-                  <string>Sharing a car to go to work</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="transportation_tip_3">
-                 <property name="text">
-                  <string>Replace the car with public transports </string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
+             </property>
+             <property name="text">
+              <string>Transport Tips</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="house_tip_1">
+             <property name="text">
+              <string>CheckBox</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="house_tip_2">
+             <property name="text">
+              <string>CheckBox</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="house_tip_3">
+             <property name="text">
+              <string>CheckBox</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
-         <item row="0" column="2">
-          <layout class="QVBoxLayout" name="verticalLayout_22">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_23">
-             <item>
-              <widget class="QLabel" name="label_17">
-               <property name="maximumSize">
-                <size>
-                 <width>165777</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Home</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="home_label">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>resources/pictures/home-pic.png</pixmap>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_18">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>233</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124,77);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Info</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_24">
-             <item>
-              <widget class="QLabel" name="label_19">
-               <property name="minimumSize">
-                <size>
-                 <width>341</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>391</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_21">
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
 
 	border: 2px solid rgb(37, 39, 48);
 	border-radius: 6px;
 	border-color: rgb(136, 159, 124);
 	background-color: rgb(136, 159, 124);
-
+	color: white;
 
 }</string>
-               </property>
-               <property name="text">
-                <string>Transport Tips</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_25">
-               <item>
-                <widget class="QCheckBox" name="house_tip_1">
-                 <property name="text">
-                  <string>Turn off the lights</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="house_tip_2">
-                 <property name="text">
-                  <string>Unplug your charger when not in use</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="house_tip_3">
-                 <property name="text">
-                  <string>Use the dishwasher when full</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-          </layout>
+           </property>
+           <property name="text">
+            <string>Transportation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="transport_label">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>resources/pictures/plane-pic.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_15">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+
+	border: 1px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: white;
+	color: rgb(136, 159, 124);
+
+}</string>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;* U.S. fuel economy (mpg) declined by 12% from 1988-2004, &lt;/p&gt;&lt;p&gt;then improved by 29% from 2004-2019, reaching an average&lt;/p&gt;&lt;p&gt; of 24.9 mpg in 2019.&lt;/p&gt;&lt;p&gt;* Annual per capita miles driven increased 9% since 1995 &lt;/p&gt;&lt;p&gt;to 9,919 miles in 2018.&lt;/p&gt;&lt;p&gt;* Cars and light trucks emitted 1.1 billion metric tons CO2e &lt;/p&gt;&lt;p&gt;or 17% of the total U.S. GHG emissions in 2019.&lt;/p&gt;&lt;p&gt;* Of the roughly 66,000 lbs CO2e emitted over the lifetime&lt;/p&gt;&lt;p&gt; of an internal combustion engine car (assuming 93,000 miles driven), &lt;/p&gt;&lt;p&gt;84% come from the use phase.&lt;/p&gt;&lt;p&gt;* Gasoline releases 19.6 pounds of CO2 per gallon when burned, &lt;/p&gt;&lt;p&gt;compared to 22.4 pounds per gallon for diesel.&lt;/p&gt;&lt;p&gt;However, diesel has 11% more BTU per gallon, &lt;/p&gt;&lt;p&gt;which improves its fuel economy.&lt;/p&gt;&lt;p&gt;* The average passenger car emits 0.78 pounds of CO2 per mile driven.&lt;/p&gt;&lt;p&gt;* Automobile fuel economy can improve 7-14% &lt;/p&gt;&lt;p&gt;by simply observing the speed limit. &lt;/p&gt;&lt;p&gt;Every 5 mph increase in vehicle speed over 50 mph&lt;/p&gt;&lt;p&gt; is equivalent to paying an extra $0.20-$0.40 per gallon.&lt;/p&gt;&lt;p&gt;* Commercial aircraft GHG emissions vary according to aircraft type, &lt;/p&gt;&lt;p&gt;trip length, occupancy rates, and passenger and cargo weight, &lt;/p&gt;&lt;p&gt;and totaled 135.4 mmt CO2e in 2019.6 In 2019, &lt;/p&gt;&lt;p&gt;the average domestic commercial flight emitted 0.39 pounds of CO2e per passenger mile.&lt;/p&gt;&lt;p&gt;* Domestic air travel fuel efficiency rose by 115% from 1990 to 2019,&lt;/p&gt;&lt;p&gt;largely due to increased occupancy.&lt;/p&gt;&lt;p&gt; Emissions per domestic passenger-mile decreased 45% from 1990-2019, due to increased occupancy and fuel efficiency.&lt;/p&gt;&lt;p&gt;* In 2019, rail transportation emitted 40.8 mmt CO2e, accounting for 2% of transportation emissions in the U.S.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_18">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+	color: white;
+
+}</string>
+           </property>
+           <property name="text">
+            <string>House Tips</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="transportation_tip_1">
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="transportation_tip_2">
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="transportation_tip_3">
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -3374,7 +3299,7 @@ QListView::item:hover {
      <x>0</x>
      <y>0</y>
      <width>1536</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
