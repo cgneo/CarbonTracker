@@ -7,9 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1536</width>
-
     <height>1325</height>
-
    </rect>
   </property>
   <property name="palette">
@@ -242,7 +240,6 @@ add color: black;
       </property>
       <property name="currentIndex">
        <number>0</number>
-
       </property>
       <property name="iconSize">
        <size>
@@ -702,7 +699,7 @@ add color: black;
           <x>170</x>
           <y>20</y>
           <width>1161</width>
-          <height>808</height>
+          <height>817</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -1262,6 +1259,15 @@ p, li { white-space: pre-wrap; }
                   <property name="palette">
                    <palette>
                     <active>
+                     <colorrole role="WindowText">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
                      <colorrole role="Button">
                       <brush brushstyle="SolidPattern">
                        <color alpha="100">
@@ -1271,9 +1277,36 @@ p, li { white-space: pre-wrap; }
                        </color>
                       </brush>
                      </colorrole>
+                     <colorrole role="Text">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
                      <colorrole role="BrightText">
                       <brush brushstyle="SolidPattern">
                        <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                     <colorrole role="ButtonText">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                     <colorrole role="PlaceholderText">
+                      <brush brushstyle="NoBrush">
+                       <color alpha="128">
                         <red>0</red>
                         <green>0</green>
                         <blue>0</blue>
@@ -1282,6 +1315,15 @@ p, li { white-space: pre-wrap; }
                      </colorrole>
                     </active>
                     <inactive>
+                     <colorrole role="WindowText">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
                      <colorrole role="Button">
                       <brush brushstyle="SolidPattern">
                        <color alpha="100">
@@ -1291,9 +1333,36 @@ p, li { white-space: pre-wrap; }
                        </color>
                       </brush>
                      </colorrole>
+                     <colorrole role="Text">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
                      <colorrole role="BrightText">
                       <brush brushstyle="SolidPattern">
                        <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                     <colorrole role="ButtonText">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                     <colorrole role="PlaceholderText">
+                      <brush brushstyle="NoBrush">
+                       <color alpha="128">
                         <red>0</red>
                         <green>0</green>
                         <blue>0</blue>
@@ -1302,6 +1371,15 @@ p, li { white-space: pre-wrap; }
                      </colorrole>
                     </inactive>
                     <disabled>
+                     <colorrole role="WindowText">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
                      <colorrole role="Button">
                       <brush brushstyle="SolidPattern">
                        <color alpha="100">
@@ -1311,9 +1389,36 @@ p, li { white-space: pre-wrap; }
                        </color>
                       </brush>
                      </colorrole>
+                     <colorrole role="Text">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
                      <colorrole role="BrightText">
                       <brush brushstyle="SolidPattern">
                        <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                     <colorrole role="ButtonText">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                     <colorrole role="PlaceholderText">
+                      <brush brushstyle="NoBrush">
+                       <color alpha="128">
                         <red>0</red>
                         <green>0</green>
                         <blue>0</blue>
@@ -1326,6 +1431,11 @@ p, li { white-space: pre-wrap; }
                   <property name="font">
                    <font/>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QCheckBox{
+color: black;
+}</string>
+                  </property>
                   <property name="text">
                    <string>Challenge #1</string>
                   </property>
@@ -1335,6 +1445,11 @@ p, li { white-space: pre-wrap; }
                  <widget class="QCheckBox" name="daily_challenge_2">
                   <property name="font">
                    <font/>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QCheckBox{
+color: black;
+}</string>
                   </property>
                   <property name="text">
                    <string>Challenge #2</string>
@@ -1346,6 +1461,11 @@ p, li { white-space: pre-wrap; }
                   <property name="font">
                    <font/>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QCheckBox{
+color: black;
+}</string>
+                  </property>
                   <property name="text">
                    <string>Challenge #3</string>
                   </property>
@@ -1355,6 +1475,11 @@ p, li { white-space: pre-wrap; }
                  <widget class="QCheckBox" name="daily_challenge_4">
                   <property name="font">
                    <font/>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QCheckBox{
+color: black;
+}</string>
                   </property>
                   <property name="text">
                    <string>Challenge #4</string>
@@ -1445,6 +1570,11 @@ p, li { white-space: pre-wrap; }
                   <property name="font">
                    <font/>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QCheckBox{
+color: black;
+}</string>
+                  </property>
                   <property name="text">
                    <string>Read &quot;The Uninhabitable Earth&quot;</string>
                   </property>
@@ -1454,6 +1584,11 @@ p, li { white-space: pre-wrap; }
                  <widget class="QCheckBox" name="checkBox_7">
                   <property name="font">
                    <font/>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QCheckBox{
+color: black;
+}</string>
                   </property>
                   <property name="text">
                    <string>Monthly vegetarian challenge</string>
@@ -1465,6 +1600,11 @@ p, li { white-space: pre-wrap; }
                   <property name="font">
                    <font/>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QCheckBox{
+color: black;
+}</string>
+                  </property>
                   <property name="text">
                    <string>No car use in a month</string>
                   </property>
@@ -1474,6 +1614,11 @@ p, li { white-space: pre-wrap; }
                  <widget class="QCheckBox" name="checkBox_4">
                   <property name="font">
                    <font/>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QCheckBox{
+color: black;
+}</string>
                   </property>
                   <property name="text">
                    <string>Buy seasonal products from local stores</string>
@@ -1940,9 +2085,7 @@ color: black;
          </rect>
         </property>
         <property name="currentIndex">
-
          <number>1</number>
-
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -2868,6 +3011,7 @@ border-radius: 4px;
 	background-color: rgb(136, 159, 124,77);
 	border-color: rgb(136, 159, 124);
  border: 4px;
+color: black;
 }</string>
              </property>
              <property name="text">
@@ -2884,6 +3028,7 @@ border-radius: 4px;
 	background-color: rgb(136, 159, 124,77);
 	border-color: rgb(136, 159, 124);
  border: 4px;
+color: black;
 }</string>
              </property>
              <property name="text">
@@ -2900,6 +3045,7 @@ border-radius: 4px;
 	background-color: rgb(136, 159, 124,77);
 	border-color: rgb(136, 159, 124);
  border: 4px;
+color: black;
 }</string>
              </property>
              <property name="text">
@@ -2998,12 +3144,10 @@ border-radius: 4px;
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-
           <x>40</x>
           <y>560</y>
           <width>431</width>
           <height>211</height>
-
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -3049,6 +3193,7 @@ border-radius: 4px;
 	background-color: rgb(136, 159, 124,77);
 	border-color: rgb(136, 159, 124);
  border: 4px;
+color:black;
 }</string>
              </property>
              <property name="text">
@@ -3065,6 +3210,7 @@ border-radius: 4px;
 	background-color: rgb(136, 159, 124,77);
 	border-color: rgb(136, 159, 124);
  border: 4px;
+color: black;
 }</string>
              </property>
              <property name="text">
@@ -3081,6 +3227,7 @@ border-radius: 4px;
 	background-color: rgb(136, 159, 124,77);
 	border-color: rgb(136, 159, 124);
  border: 4px;
+color: black;
 }</string>
              </property>
              <property name="text">
@@ -3144,6 +3291,7 @@ border-radius: 4px;
 	background-color: rgb(136, 159, 124,77);
 	border-color: rgb(136, 159, 124);
  border: 4px;
+color: black;
 }</string>
              </property>
              <property name="text">
@@ -3160,6 +3308,7 @@ border-radius: 4px;
 	background-color: rgb(136, 159, 124,77);
 	border-color: rgb(136, 159, 124);
  border: 4px;
+color: black;
 }</string>
              </property>
              <property name="text">
@@ -3176,6 +3325,7 @@ border-radius: 4px;
 	background-color: rgb(136, 159, 124,77);
 	border-color: rgb(136, 159, 124);
  border: 4px;
+color: black;
 }</string>
              </property>
              <property name="text">
@@ -3190,12 +3340,10 @@ border-radius: 4px;
        <widget class="QLabel" name="label_17">
         <property name="geometry">
          <rect>
-
           <x>971</x>
           <y>11</y>
           <width>411</width>
           <height>20</height>
-
          </rect>
         </property>
         <property name="maximumSize">
