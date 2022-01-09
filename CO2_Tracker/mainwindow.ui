@@ -769,8 +769,8 @@ QProgressBar::chunk{
              <widget class="QLabel" name="seed">
               <property name="maximumSize">
                <size>
-                <width>100</width>
-                <height>150</height>
+                <width>180</width>
+                <height>200</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -780,7 +780,10 @@ QProgressBar::chunk{
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>resources/pictures/seed.png</pixmap>
+               <pixmap>resources/pictures/tree_once.gif</pixmap>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -3108,8 +3111,8 @@ transports)</string>
        <widget class="QComboBox" name="comboBox">
         <property name="geometry">
          <rect>
-          <x>620</x>
-          <y>275</y>
+          <x>380</x>
+          <y>480</y>
           <width>231</width>
           <height>31</height>
          </rect>
@@ -3321,8 +3324,8 @@ QPushButton:pressed {
        <widget class="QListView" name="listView">
         <property name="geometry">
          <rect>
-          <x>300</x>
-          <y>30</y>
+          <x>310</x>
+          <y>-10</y>
           <width>311</width>
           <height>481</height>
          </rect>
@@ -3378,13 +3381,18 @@ QListView::item:hover {
          <rect>
           <x>670</x>
           <y>50</y>
-          <width>381</width>
-          <height>181</height>
+          <width>401</width>
+          <height>341</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
           <widget class="QTextEdit" name="chatbox">
+           <property name="font">
+            <font>
+             <family>Gill Sans</family>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">QTextEdit{
 	background-color: rgba(171, 197, 153, 131);
@@ -3397,23 +3405,37 @@ border-radius: 5px;
           <layout class="QHBoxLayout" name="horizontalLayout_6">
            <item>
             <widget class="QLineEdit" name="chatbox_write">
+             <property name="font">
+              <font>
+               <family>Gill Sans</family>
+              </font>
+             </property>
              <property name="styleSheet">
               <string notr="true">QLineEdit{
     border-radius: 10px;
     padding: 8px;
     background: white;
-border: 2px solid rgba(239, 175, 108, 194);
+color: black;
+border: 2px solid  rgb(234, 147, 96);
 
 }</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="send_button">
+             <property name="font">
+              <font>
+               <family>Gill Sans</family>
+              </font>
+             </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
     border-radius: 6px;
-	background-color: rgba(239, 175, 108, 194);
+	background-color:  rgb(234, 147, 96);
 	padding: 8px;
     min-width: 50px;
 }

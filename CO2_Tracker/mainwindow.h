@@ -56,6 +56,8 @@ private slots:
     void enableButton();
 
 
+    void on_send_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     User *current_user;
