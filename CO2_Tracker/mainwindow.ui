@@ -232,7 +232,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -2679,10 +2679,10 @@ transports)</string>
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-          <x>40</x>
+          <x>20</x>
           <y>10</y>
-          <width>1251</width>
-          <height>691</height>
+          <width>2148</width>
+          <height>1149</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
@@ -2727,7 +2727,7 @@ transports)</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>build/tips photos/food-pic.png</pixmap>
+                <pixmap>resources/pictures/food-pic.png</pixmap>
                </property>
               </widget>
              </item>
@@ -2852,10 +2852,7 @@ transports)</string>
              <item>
               <widget class="QLabel" name="transport_label">
                <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>build/tips photos/new_plane_pic.png</pixmap>
+                <string>TextLabel</string>
                </property>
               </widget>
              </item>
@@ -2983,7 +2980,7 @@ transports)</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>build/tips photos/home-pic.png</pixmap>
+                <pixmap>resources/pictures/home-pic.png</pixmap>
                </property>
               </widget>
              </item>
@@ -3362,7 +3359,7 @@ QListView::item:hover {
      <x>0</x>
      <y>0</y>
      <width>1536</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
