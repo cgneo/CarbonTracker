@@ -31,8 +31,8 @@ public:
     int a;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-//    netserver* CB_server;
-//    netclient* CB_receiver;
+    netserver* CB_server;
+    netclient* CB_receiver;
 
 
 private slots:
