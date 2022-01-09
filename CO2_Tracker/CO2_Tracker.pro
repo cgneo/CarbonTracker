@@ -58,8 +58,6 @@ FORMS += \
 
 TARGET = CarbonTracker_exe
 
-#DESTDIR = /resources/build
-
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

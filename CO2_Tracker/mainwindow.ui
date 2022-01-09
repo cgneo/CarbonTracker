@@ -239,7 +239,7 @@ add color: black;
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -3643,7 +3643,7 @@ QPushButton:default {
      <x>0</x>
      <y>0</y>
      <width>1536</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
