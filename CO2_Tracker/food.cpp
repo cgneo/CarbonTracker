@@ -8,21 +8,20 @@ Food::Food(){
     set_footprint(0000000000000,0);
 }
 
-Food::Food(double barcode) {
-    double co2_total = retrieve_carbon(barcode);
+Food::Food(string barcode) {
+    //double co2_total = retrieve_carbon(barcode);
     set_quantity(1);
     set_barcode(barcode);
-    set_footprint(co2_total, 1);
+    //set_footprint(co2_total, 1);
 }
 
 Food::Food(Date *current_date, QString object_name,
-               int quantity, double barcode, QString category)
+               int quantity, string barcode, double footprint)
                 :Object(current_date, object_name){
     set_type("Food");
     set_quantity(quantity);
     set_barcode(barcode);
-    //set_footprint(footprint, quantity);
-    set_category(category.toStdString());
+    set_footprint(footprint, quantity);
 }
 
 Food::~Food(){
@@ -33,7 +32,7 @@ double Food::get_quantity() {
     return quantity;
 }
 
-double Food::get_barcode() {
+string Food::get_barcode() {
     return barcode;
 }
 string Food::get_category(){
@@ -49,7 +48,7 @@ void Food::set_footprint(double barcode, double quantity) {
     footprint = retrieve_carbon(barcode) * quantity/1000;
 }
 
-void Food::set_barcode(double barcode) {
+void Food::set_barcode(string barcode) {
     this -> barcode = barcode;
 }
 
