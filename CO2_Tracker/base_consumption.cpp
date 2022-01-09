@@ -40,11 +40,6 @@ Date Base_Consumption::get_last_added_date(){
     return last_added_date;
 }
 
-//vector<Object> Base_Consumption::*calculate_base_consumption(double c_footprint, int roommates){
-//    //get base footprint and divide by number of roommates
-//}
-
-
 //Adds object to base_consumption vector and adds its carbon footprint to footprint
 void Base_Consumption::add_object(Object *item) {
     base_consumption.push_back(item);

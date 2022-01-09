@@ -3,8 +3,13 @@
 
 
 transport_api::transport_api(){
+    /*
+     This constructors connects the network manager which is the sender and waits for the signal
+     &QNetworkAccessManager::finished to do transport_api::parse_reply
+     */
     connect(&networkManager,&QNetworkAccessManager::finished,this,&transport_api::parse_reply);
     emission = -5;
+    // We now need to get the API key
     QFile file("/Users/apple/Desktop/CSE201/CarbonTracker/CO2_Tracker/API_KEY.txt");
         //QByteArray *bytes = new Q;
         QByteArray bytes;
@@ -21,6 +26,7 @@ transport_api::transport_api(){
     }
 
 void transport_api::get_reply(char*distance, char*id){
+    // We construct the URL and give it the headers and data
     QUrl url("https://beta2.api.climatiq.io/estimate");
     QNetworkRequest networkRequest(url);
     networkRequest.setRawHeader("Authorization", api_key);
@@ -30,8 +36,10 @@ void transport_api::get_reply(char*distance, char*id){
     data.append("\",\"parameters\":{\"distance\": ");
     data.append(distance);
     data.append(",\"distance_unit\": \"km\"},\"metadata\": {\"scope\": \"2\",\"category\": \"string\"}}");
+    // Create a loop to prevent callbacks and wait for reply to fully download
     QEventLoop loop;
     QNetworkReply* reply = networkManager.post(networkRequest, data);
+    // Send a POST request
     connect(reply , SIGNAL(finished()), &loop, SLOT(quit()));
     loop.exec();
 }
@@ -39,7 +47,7 @@ void transport_api::get_reply(char*distance, char*id){
 double transport_api::get_emission(){return emission;}
 
 double transport_api::parse_reply(QNetworkReply* reply){
-QString strValue;
+    // Check if there is a reply error. If so, print out the error number (famous convention that assigns for each number an error)
     if(reply->error() != QNetworkReply::NoError){
         networkManager.clearAccessCache();
         emission=-1;
@@ -48,7 +56,7 @@ QString strValue;
     } else {
         //parse the reply JSON
         QJsonObject jsonObject = QJsonDocument::fromJson(reply->readAll()).object();
-        //get code
+        //get CO2 amount and unit
         QJsonValue alpha = jsonObject.value("co2e");
         double beta = alpha.toDouble();
         QString code = jsonObject["co2e_unit"].toString();
@@ -59,10 +67,13 @@ QString strValue;
 }
 
 QString transport_api::get_emission_unit(){return emission_unit;}
+
+// create hash function to be able to compare strings
 constexpr unsigned int hash(const char *s, int off = 0) {
     return !s[off] ? 5381 : (hash(s, off+1)*33) ^ s[off];
 }
 
+// compare the input with strings to get corresponding ID for URL data
 char* transport_api::get_transport_ID(char* input){
 switch( hash(input) ){
 case hash("International train") : return "passenger_train-route_type_international_rail-fuel_source_na";
