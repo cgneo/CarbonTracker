@@ -50,11 +50,18 @@ MainWindow::MainWindow(QWidget *parent)
 
     QLineSeries *Lseries = new QLineSeries();
 
-        Lseries->append(0, 6);
-        Lseries->append(2, 4);
-        Lseries->append(3, 8);
-        Lseries->append(7, 4);
-        Lseries->append(10, 5);
+        Lseries->append(0, 500);
+        Lseries->append(10, 850);
+        Lseries->append(20, 1000);
+        Lseries->append(30, 1000);
+        Lseries->append(40, 1250);
+        Lseries->append(50, 1500);
+        Lseries->append(60, 2500);
+        Lseries->append(70, 4000);
+        Lseries->append(80, 5300);
+        Lseries->append(90, 6000);
+        Lseries->append(100, 6650);
+        Lseries->append(110, 9900);
 
 
         *Lseries << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
@@ -79,7 +86,7 @@ MainWindow::MainWindow(QWidget *parent)
        //axisY->setRange(0, 20);*/
 
 
-        Lchart->setTitle("Your carbon footprint through your food time");
+        Lchart->setTitle("The World's Carbon Footprint through time since 1900");
 
         //chart->legend()->setVisible(true);
         //chart->legend()->setAlignment(Qt::AlignBottom);
