@@ -206,7 +206,7 @@
        <string notr="true">QTabWidget::pane { /* The tab widget frame */
     border-top: 2px solid;
 	border-color: rgb(255, 255, 255);
-	background-color: rgb(255, 255, 255);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(171, 197, 153, 255), stop:1 rgba(255, 255, 255, 255));
 }
 
 
@@ -1143,6 +1143,7 @@ border-radius: 4px;
                   </property>
                   <property name="font">
                    <font>
+                    <weight>75</weight>
                     <italic>true</italic>
                     <bold>true</bold>
                    </font>
@@ -1162,9 +1163,9 @@ border-radius: 4px;
                   </property>
                   <property name="html">
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:700; font-style:italic;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:600; font-style:italic;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400; font-style:normal; color:#ffffff;&quot;&gt;Daily challenges&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:400; font-style:normal; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
@@ -1325,6 +1326,7 @@ border-radius: 4px;
                   <property name="font">
                    <font>
                     <pointsize>13</pointsize>
+                    <weight>50</weight>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -1335,15 +1337,15 @@ border-radius: 4px;
 	background-image: url(:/i18n/UICarbonTracker_en_150.qm);
     border: 2px solid;;
     border-radius: 6px;
-	border-color: rgb(234, 147, 96);
-	background-color: rgb(234, 147, 96);
+	border-color: rgba(162, 155, 255, 204);
+    background-color: rgba(162, 155, 255, 204);
     min-width: 100px;
 	padding: 3px;
 }</string>
                   </property>
                   <property name="html">
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Monthly challenges&lt;/span&gt;&lt;/p&gt;
@@ -3325,90 +3327,6 @@ QPushButton:pressed {
          <string>Select</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="chatbox">
-        <property name="geometry">
-         <rect>
-          <x>330</x>
-          <y>90</y>
-          <width>461</width>
-          <height>191</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Gill Sans</family>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QTextEdit, QListView {
-    background-color: white;
-	border: 2px solid rgb(234, 147, 96);
-    background-attachment: scroll;
-}</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="chatbox_write">
-        <property name="geometry">
-         <rect>
-          <x>330</x>
-          <y>290</y>
-          <width>371</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Gill Sans</family>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
-    border-radius: 10px;
-    padding: 0 8px;
-    background: rgba(171, 197, 153, 202);
-    selection-background-color: darkgray;
-}</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="send_button">
-        <property name="geometry">
-         <rect>
-          <x>710</x>
-          <y>290</y>
-          <width>80</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>80</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Gill Sans</family>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    padding: 5px 18px 5px 20px;
-    min-width: 6em;
-    border-radius: 6px;
-    background-color: rgb(234, 147, 96);
-    min-width: 10px;
-	padding: 3px;
-}
-
-QPushButton:pressed {
-    background-color: rgb(233, 208, 160);
-}
-</string>
-        </property>
-        <property name="text">
-         <string>send</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="tree">
         <property name="geometry">
          <rect>
@@ -3435,6 +3353,87 @@ QPushButton:pressed {
          </rect>
         </property>
        </widget>
+       <widget class="QFrame" name="verticalFrame">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>170</y>
+          <width>381</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QTextEdit" name="chatbox">
+           <property name="font">
+            <font>
+             <family>Gill Sans</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTextEdit, QListView {
+    background-color: rgba(255, 167, 88, 103);
+    background-attachment: scroll;
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLineEdit" name="chatbox_write">
+             <property name="font">
+              <font>
+               <family>Gill Sans</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border-radius: 10px;
+    padding: 0 8px;
+    background: rgba(171, 197, 153, 202);
+    selection-background-color: darkgray;
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="send_button">
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Gill Sans</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    padding: 5px 18px 5px 20px;
+    min-width: 6em;
+    border-radius: 6px;
+    background-color: rgb(234, 147, 96);
+    min-width: 10px;
+	padding: 3px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(233, 208, 160);
+}
+</string>
+             </property>
+             <property name="text">
+              <string>send</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -3446,7 +3445,7 @@ QPushButton:pressed {
      <x>0</x>
      <y>0</y>
      <width>1536</width>
-     <height>21</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

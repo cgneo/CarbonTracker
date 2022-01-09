@@ -17,7 +17,6 @@
 
 #include <QListWidgetItem>
 #include <QListWidget>
-
 #include <QtCharts>
 #include <QChartView>
 #include <QBarSet>
@@ -612,11 +611,20 @@ void MainWindow::on_send_button_clicked()
 {
     netclient net;
     QString message = ui -> chatbox_write ->text().trimmed();
+    User u;
+    QString user_name = u.get_username();
     if(!message.isEmpty())
     {
-       net.on_pushButton_sendMessage_clicked(message);
-        User u;
-       ui-> chatbox ->append("<b>" + u.get_username() + "</b>: " + message);
+        net.on_pushButton_sendMessage_clicked(message);
+        net.readSocket();
+       ui -> chatbox -> append("<b>" + user_name + "</b>: " + message);
+//       qintptr whoSentIt = socket -> socketDescriptor();
+//       QString whatIsTheText = QString::fromStdString(buffer.toStdString());
+
+//       std::cout << std::to_string(whoSentIt);
+//       std::cout << " :: ";
+//       std::cout << whatIsTheText.toStdString() << std::endl;
+        //ui-> chatbox ->append(message);
     }
 
     ui -> chatbox_write->clear();
@@ -629,4 +637,6 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
 {
 
 }
+
+
 
