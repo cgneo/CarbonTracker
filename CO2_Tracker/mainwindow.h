@@ -55,6 +55,8 @@ private slots:
     //void set_server_reply(QString reply){server_reply = reply;};
     void on_send_button_clicked();
 
+    void on_pushButton_clicked();
+
 private:
 
     User *current_user;
