@@ -390,14 +390,14 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix3(":/challenges/home-pic.png");
     ui -> home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
-//    QPixmap pix4(":/challenges/seed.png");
-//    ui -> seed -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
+    QPixmap pix4(":/survey/logo_CT.jpeg");
+    ui -> seed -> setPixmap(pix4.scaled(230,230, Qt::KeepAspectRatio));
 
     QPixmap pix5(":/survey/trasnport_icon.png");
     ui -> trans_picture -> setPixmap(pix5.scaled(500,300, Qt::KeepAspectRatio));
 
     //QPixmap pix6(":/challenges/graph photo.png");
-    //ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
+    //ui -> graph_pic -> setPixmap(pix6.scaled(300,400, Qt::KeepAspectRatio));
 
     QPixmap pix6(":/challenges/food fact.png");
     ui -> food_fact -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
@@ -474,7 +474,7 @@ MainWindow::MainWindow(QWidget *parent)
     std::string b = Json_DB::random_key(Json_DB::daily_challenges);
 
     ui->daily_challenge_1->setText(QString::fromStdString(Json_DB::get_challenge_by_key(a)));
-    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key(b)));
+    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 2")));
     ui->daily_challenge_3->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 3")));
     ui->daily_challenge_4->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 4")));
 
@@ -490,8 +490,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->house_tip_2->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 2")));
     ui->house_tip_3->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 3")));
 
-    ui -> tree_button -> setEnabled(false);
-    connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
+
 
 
 }
@@ -568,7 +567,6 @@ void MainWindow::on_daily_challenge_4_stateChanged(int)
     if (ui-> daily_challenge_4-> isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
         animation_4 -> start();
-        enableButton();
         QMovie *movie = new QMovie(":/challenges/tree_once.gif");
         ui -> seed ->setMovie(movie);
         QSize scaledSize(200, 300);
@@ -579,13 +577,7 @@ void MainWindow::on_daily_challenge_4_stateChanged(int)
     }
 }
 
-void MainWindow::get_seed()
-{
-    if (ui -> SeedsprogressBar -> value() == 100){
-        animation_seed -> start();
-        enableButton();
-    }
-}
+
 
 void MainWindow::on_buttonTransport_clicked()
 {
@@ -619,40 +611,7 @@ void MainWindow::on_buttonTransport_clicked()
     current_user->get_consumption()->add_object(t, true);
 }
 
-void MainWindow::enableButton()
-{
-    ui -> tree_button ->setEnabled(true);
-}
 
-
-
-
-void MainWindow::on_tree_button_clicked()
-{
-    QMovie *movie = new QMovie(":/challenges/tree_once.gif");
-    ui -> seed ->setMovie(movie);
-    QSize scaledSize(200, 300);
-    movie -> setScaledSize(scaledSize);
-    if (movie ->currentFrameNumber() < 3){
-    movie -> start();
-    }
-    if (movie -> currentFrameNumber() == 3){
-        movie -> stop();
-    }
-
-//    if(movie->currentFrameNumber() == (movie->frameCount() - 1))
-//            {
-//                movie->stop();
-//                //Explicity emit finished signal so that label **
-//                //can show the image instead of a frozen gif
-//                //Also, double check that movie stopped before emiting
-//                if (movie->state() == QMovie::NotRunning)
-//                {
-//                    emit movie->finished();
-//                }
-//            }
-
-}
 
 
 void MainWindow::on_send_button_clicked()
@@ -667,15 +626,17 @@ void MainWindow::on_send_button_clicked()
     ui -> chatbox_write->clear();
     ui -> chatbox_write ->setFocus();
 }
-void MainWindow::access_ui_message(QString message){
-    ui -> chatbox -> append(message);
-    std::cout<<"this is the second step"<< message.toStdString() << std::endl;
-}
+//void MainWindow::access_ui_message(QString message){
+//    ui -> chatbox -> append(server_reply);
+//    std::cout<<"this is the second step"<< message.toStdString() << std::endl;
+//}
 
-void message_received(QString message){
-    MainWindow main;
-    main.access_ui_message(message);
-    std::cout<<"this is the first step"<< message.toStdString() << std::endl;
-}
 
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    int total =  current_user->get_consumption() -> get_total_footprint();
+    ui -> total_carbon->setNum(total);
+}
 

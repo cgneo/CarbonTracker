@@ -15,5 +15,10 @@
         <file>seed.png</file>
         <file>graph photo.png</file>
         <file>tree_once.gif</file>
+        <file>transport fact.png</file>
+        <file>food fact.png</file>
+        <file>house fact.png</file>
+        <file>house fact 2.png</file>
+        <file>transport fact 2.png</file>
     </qresource>
 </RCC>

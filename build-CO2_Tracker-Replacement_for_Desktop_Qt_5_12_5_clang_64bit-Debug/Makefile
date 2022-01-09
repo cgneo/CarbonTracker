@@ -987,15 +987,20 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_images.cpp
 qrc_images.cpp: ../CO2_Tracker/resources/pictures/images.qrc \
 		../../Qt/6.2.2/macos/libexec/rcc \
+		../CO2_Tracker/resources/pictures/food\ fact.png \
+		../CO2_Tracker/resources/pictures/house\ fact\ 2.png \
 		../CO2_Tracker/resources/pictures/tree_animation.gif \
 		../CO2_Tracker/resources/pictures/plane-pic.png \
+		../CO2_Tracker/resources/pictures/transport\ fact\ 2.png \
 		../CO2_Tracker/resources/pictures/home-pic.png \
 		../CO2_Tracker/resources/pictures/Tree-animation.gif \
 		../CO2_Tracker/resources/pictures/seed.png \
 		../CO2_Tracker/resources/pictures/tree_once.gif \
+		../CO2_Tracker/resources/pictures/house\ fact.png \
 		../CO2_Tracker/resources/pictures/trasnport_icon.png \
 		../CO2_Tracker/resources/pictures/food-pic.png \
 		../CO2_Tracker/resources/pictures/graph\ photo.png \
+		../CO2_Tracker/resources/pictures/transport\ fact.png \
 		../CO2_Tracker/resources/pictures/tree.png \
 		../CO2_Tracker/resources/pictures/home_icon2.png \
 		../CO2_Tracker/resources/pictures/trasnport_icon.png \
@@ -1699,7 +1704,9 @@ netserver.o: ../CO2_Tracker/netserver.cpp ../CO2_Tracker/netserver.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStandardPaths \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDir \
-		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdir.h
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdir.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDataStream \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdatastream.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o netserver.o ../CO2_Tracker/netserver.cpp
 
 object.o: ../CO2_Tracker/object.cpp ../CO2_Tracker/object.h \
