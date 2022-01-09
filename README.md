@@ -85,6 +85,8 @@ In order for the project to compile properly and all functionalities to run, it 
   3. Go to CarbonTracker, open and run it inside Qt.
   4. Go to /Server/example-QTcpSocket/build*..., open the executable, and you will be able to send message to CarbonTracker (by looking at the console output).
 
+Finally, to run the project as a new user (first time), it is important to corroborate that on the folder "resources", there is no .json file.
+
 
 ## Introduction
 CarbonTracker is a desktop GUI app that quantifies and analyzes CO2 emissions, using databases, by retrieving and computing the environmental impact
