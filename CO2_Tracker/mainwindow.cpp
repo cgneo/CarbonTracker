@@ -396,7 +396,14 @@ MainWindow::MainWindow(QWidget *parent)
     //QPixmap pix6(":/challenges/graph photo.png");
     //ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
 
+    QPixmap pix6(":/challenges/food fact.png");
+    ui -> food_fact -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
 
+    QPixmap pix7(":/challenges/transport fact 2.png");
+    ui -> transport_fact -> setPixmap(pix7.scaled(500,300, Qt::KeepAspectRatio));
+
+    QPixmap pix8(":/challenges/house fact 2.png");
+    ui -> house_fact -> setPixmap(pix8.scaled(500,300, Qt::KeepAspectRatio));
 
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
