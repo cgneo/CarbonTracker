@@ -446,6 +446,156 @@
             "Footprint": 281.3,
             "Name": "International train",
             "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Ferry",
+            "Type": "transport"
+        },
+        {
+            "Date": [
+                9,
+                1,
+                2022
+            ],
+            "Footprint": -1,
+            "Name": "Petrol motorbike",
+            "Type": "transport"
         }
     ],
     "Country": "France",
