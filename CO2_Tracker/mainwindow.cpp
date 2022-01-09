@@ -525,10 +525,12 @@ void MainWindow::on_Surveybutton_clicked()
 
 void MainWindow::on_Scanbutton_clicked()
 {
-//    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
-//    QMessageBox::information(this, "...", file_name);
-    string filepath = "/Users/alex_christlieb/Desktop/carrefour.png";
-    vector<vector<string>> receipt_vec = get_receipt_info(filepath);
+    // get dir of receipt
+    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
+    // computing vector with information of the receipt
+    vector<vector<string>> receipt_vec = get_receipt_info(file_name.toStdString());
+    QMessageBox::information(this, "...", file_name);
+
     Receipt rec;
     rec.set_content(receipt_vec);
     //rec.set_dates(); HAVE TO SET DATE OF RECEIPT
