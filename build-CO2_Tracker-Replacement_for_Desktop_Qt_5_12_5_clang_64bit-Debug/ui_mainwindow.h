@@ -56,7 +56,8 @@ public:
     QFrame *gridFrame;
     QGridLayout *gridLayout;
     QSpacerItem *verticalSpacer_3;
-    QLabel *graph_pic;
+    QFrame *foodframe2;
+    QVBoxLayout *verticalLayout_7;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_3;
     QFrame *verticalFrame_3;
@@ -121,10 +122,10 @@ public:
     QLabel *label_4;
     QLabel *label_7;
     QLabel *label_8;
-    QPushButton *pushButton;
+    QPushButton *RefreshPushButton;
     QWidget *tab_8;
-    QFrame *foodframe;
-    QVBoxLayout *verticalLayout_17;
+    QFrame *foodframe1;
+    QVBoxLayout *verticalLayout_6;
     QWidget *tab_10;
     QFrame *LineFrame;
     QVBoxLayout *verticalLayout_14;
@@ -181,7 +182,7 @@ public:
     QListView *listView;
     QPushButton *select_button;
     QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout_6;
+    QVBoxLayout *verticalLayout_61;
     QTextEdit *chatbox;
     QHBoxLayout *horizontalLayout_6;
     QLineEdit *chatbox_write;
@@ -331,7 +332,7 @@ public:
         tab->setPalette(palette2);
         layoutWidget = new QWidget(tab);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(170, 20, 1161, 691));
+        layoutWidget->setGeometry(QRect(170, 20, 1161, 739));
         horizontalLayout_5 = new QHBoxLayout(layoutWidget);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -483,10 +484,14 @@ public:
 
         verticalLayout_5->addItem(verticalSpacer_3);
 
-        graph_pic = new QLabel(layoutWidget);
-        graph_pic->setObjectName(QString::fromUtf8("graph_pic"));
+        foodframe2 = new QFrame(layoutWidget);
+        foodframe2->setObjectName(QString::fromUtf8("foodframe2"));
+        foodframe2->setMinimumSize(QSize(600, 500));
+        foodframe2->setBaseSize(QSize(0, 0));
+        verticalLayout_7 = new QVBoxLayout(foodframe2);
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
 
-        verticalLayout_5->addWidget(graph_pic);
+        verticalLayout_5->addWidget(foodframe2);
 
         verticalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -1000,17 +1005,17 @@ public:
 "	color: white;\n"
 "\n"
 "}"));
-        pushButton = new QPushButton(tab_9);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(50, 20, 100, 32));
+        RefreshPushButton = new QPushButton(tab_9);
+        RefreshPushButton->setObjectName(QString::fromUtf8("RefreshPushButton"));
+        RefreshPushButton->setGeometry(QRect(50, 20, 100, 32));
         Refresh->addTab(tab_9, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QString::fromUtf8("tab_8"));
-        foodframe = new QFrame(tab_8);
-        foodframe->setObjectName(QString::fromUtf8("foodframe"));
-        foodframe->setGeometry(QRect(570, 140, 561, 471));
-        verticalLayout_17 = new QVBoxLayout(foodframe);
-        verticalLayout_17->setObjectName(QString::fromUtf8("verticalLayout_17"));
+        foodframe1 = new QFrame(tab_8);
+        foodframe1->setObjectName(QString::fromUtf8("foodframe1"));
+        foodframe1->setGeometry(QRect(79, 29, 731, 441));
+        verticalLayout_6 = new QVBoxLayout(foodframe1);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         Refresh->addTab(tab_8, QString());
         tab_10 = new QWidget();
         tab_10->setObjectName(QString::fromUtf8("tab_10"));
@@ -1453,9 +1458,9 @@ public:
         verticalLayoutWidget = new QWidget(tab_4);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(670, 50, 401, 341));
-        verticalLayout_6 = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
-        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_61 = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout_61->setObjectName(QString::fromUtf8("verticalLayout_61"));
+        verticalLayout_61->setContentsMargins(0, 0, 0, 0);
         chatbox = new QTextEdit(verticalLayoutWidget);
         chatbox->setObjectName(QString::fromUtf8("chatbox"));
         QFont font6;
@@ -1466,7 +1471,7 @@ public:
 "border-radius: 5px;\n"
 "}"));
 
-        verticalLayout_6->addWidget(chatbox);
+        verticalLayout_61->addWidget(chatbox);
 
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
@@ -1510,7 +1515,7 @@ public:
         horizontalLayout_6->addWidget(send_button);
 
 
-        verticalLayout_6->addLayout(horizontalLayout_6);
+        verticalLayout_61->addLayout(horizontalLayout_6);
 
         tabWidget->addTab(tab_4, QString());
 
@@ -1528,7 +1533,7 @@ public:
         retranslateUi(MainWindow);
 
         tabWidget->setCurrentIndex(4);
-        Refresh->setCurrentIndex(3);
+        Refresh->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1540,7 +1545,6 @@ public:
         seed->setText(QString());
         Scanbutton->setText(QCoreApplication::translate("MainWindow", "Scan my activities", nullptr));
         Surveybutton->setText(QCoreApplication::translate("MainWindow", "My activities today", nullptr));
-        graph_pic->setText(QString());
         textBrowser_4->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -1601,7 +1605,7 @@ public:
         label_8->setText(QCoreApplication::translate("MainWindow", "My Transportation Journal: (write down some of your thoughts \n"
 "and resolutions to improve your carbon footpring linked to \n"
 "transports)", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
+        RefreshPushButton->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
         Refresh->setTabText(Refresh->indexOf(tab_9), QCoreApplication::translate("MainWindow", "Transports", nullptr));
         Refresh->setTabText(Refresh->indexOf(tab_8), QCoreApplication::translate("MainWindow", "Food", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "food creates pollution", nullptr));

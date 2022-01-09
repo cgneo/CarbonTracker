@@ -1,7 +1,7 @@
 #include "netclient.h"
-
 #include <iostream>
 #include <QDir>
+#include <mainwindow.h>
 
 netclient::netclient()
 {
@@ -44,6 +44,7 @@ void netclient::startClient() {
 
 
 void netclient::readSocket()
+
 {
     QByteArray buffer;
 
@@ -95,8 +96,9 @@ void netclient::readSocket()
         QString whatIsTheText = QString::fromStdString(buffer.toStdString());
 
         std::cout << std::to_string(whoSentIt);
-        std::cout << " :: ";
+        std::cout << " :!: ";
         std::cout << whatIsTheText.toStdString() << std::endl;
+
     }
 }
 

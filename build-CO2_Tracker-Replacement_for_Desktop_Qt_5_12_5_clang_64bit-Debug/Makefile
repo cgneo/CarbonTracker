@@ -68,6 +68,8 @@ SOURCES       = ../CO2_Tracker/base_consumption.cpp \
 		../CO2_Tracker/mainwindow.cpp \
 		../CO2_Tracker/survey.cpp \
 		../CO2_Tracker/food_api.cpp qrc_images.cpp \
+		moc_netclient.cpp \
+		moc_netserver.cpp \
 		moc_mainwindow.cpp \
 		moc_survey.cpp \
 		moc_food_api.cpp \
@@ -89,6 +91,8 @@ OBJECTS       = base_consumption.o \
 		survey.o \
 		food_api.o \
 		qrc_images.o \
+		moc_netclient.o \
+		moc_netserver.o \
 		moc_mainwindow.o \
 		moc_survey.o \
 		moc_food_api.o \
@@ -998,9 +1002,37 @@ qrc_images.cpp: ../CO2_Tracker/resources/pictures/images.qrc \
 		../CO2_Tracker/resources/pictures/logo_CT.jpeg
 	/Users/dainjung/Qt/6.2.2/macos/libexec/rcc -name images ../CO2_Tracker/resources/pictures/images.qrc -o qrc_images.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_survey.cpp moc_food_api.cpp moc_transport_api.cpp
+compiler_moc_header_make_all: moc_netclient.cpp moc_netserver.cpp moc_mainwindow.cpp moc_survey.cpp moc_food_api.cpp moc_transport_api.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_survey.cpp moc_food_api.cpp moc_transport_api.cpp
+	-$(DEL_FILE) moc_netclient.cpp moc_netserver.cpp moc_mainwindow.cpp moc_survey.cpp moc_food_api.cpp moc_transport_api.cpp
+moc_netclient.cpp: ../CO2_Tracker/netclient.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QAbstractSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QFile \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qfile.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QHostAddress \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMetaType \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmetatype.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QString \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstring.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStandardPaths \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../Qt/6.2.2/macos/libexec/moc
+	/Users/dainjung/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/dainjung/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/dainjung/CarbonTracker/CO2_Tracker -I/../../../../../../usr/local/Cellar/tesseract/5.0.0/include -I/../../../../../../usr/local/Cellar/leptonica/1.82.0/include -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCharts.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtOpenGLWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtOpenGL.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtNetwork.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/dainjung/Qt/6.2.2/macos/lib ../CO2_Tracker/netclient.h -o moc_netclient.cpp
+
+moc_netserver.cpp: ../CO2_Tracker/netserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpServer \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../Qt/6.2.2/macos/libexec/moc
+	/Users/dainjung/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/dainjung/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/dainjung/CarbonTracker/CO2_Tracker -I/../../../../../../usr/local/Cellar/tesseract/5.0.0/include -I/../../../../../../usr/local/Cellar/leptonica/1.82.0/include -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCharts.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtOpenGLWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtOpenGL.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtNetwork.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/dainjung/Qt/6.2.2/macos/lib ../CO2_Tracker/netserver.h -o moc_netserver.cpp
+
 moc_mainwindow.cpp: ../CO2_Tracker/mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -1036,7 +1068,21 @@ moc_mainwindow.cpp: ../CO2_Tracker/mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qjsonarray.h \
 		../CO2_Tracker/base_consumption.h \
 		../CO2_Tracker/netserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpServer \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
 		../CO2_Tracker/netclient.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QAbstractSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QHostAddress \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMetaType \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmetatype.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStandardPaths \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
 		../../Qt/6.2.2/macos/libexec/moc
 	/Users/dainjung/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/dainjung/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/dainjung/CarbonTracker/CO2_Tracker -I/../../../../../../usr/local/Cellar/tesseract/5.0.0/include -I/../../../../../../usr/local/Cellar/leptonica/1.82.0/include -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCharts.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtOpenGLWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtOpenGL.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtNetwork.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/dainjung/Qt/6.2.2/macos/lib ../CO2_Tracker/mainwindow.h -o moc_mainwindow.cpp
 
@@ -1076,7 +1122,21 @@ moc_survey.cpp: ../CO2_Tracker/survey.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qjsonarray.h \
 		../CO2_Tracker/base_consumption.h \
 		../CO2_Tracker/netserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpServer \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
 		../CO2_Tracker/netclient.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QAbstractSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QHostAddress \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMetaType \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmetatype.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStandardPaths \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
 		../../Qt/6.2.2/macos/libexec/moc
 	/Users/dainjung/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/dainjung/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/dainjung/CarbonTracker/CO2_Tracker -I/../../../../../../usr/local/Cellar/tesseract/5.0.0/include -I/../../../../../../usr/local/Cellar/leptonica/1.82.0/include -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCharts.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtOpenGLWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtOpenGL.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtNetwork.framework/Headers -I/Users/dainjung/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/dainjung/Qt/6.2.2/macos/lib ../CO2_Tracker/survey.h -o moc_survey.cpp
 
@@ -1533,10 +1593,113 @@ housing.o: ../CO2_Tracker/housing.cpp ../CO2_Tracker/housing.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qjsonarray.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o housing.o ../CO2_Tracker/housing.cpp
 
-netclient.o: ../CO2_Tracker/netclient.cpp 
+netclient.o: ../CO2_Tracker/netclient.cpp ../CO2_Tracker/netclient.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QAbstractSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QFile \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qfile.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QHostAddress \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMetaType \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmetatype.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QString \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstring.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStandardPaths \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDir \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdir.h \
+		../CO2_Tracker/mainwindow.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QTextStream \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qtextstream.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QPropertyAnimation \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qpropertyanimation.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsOpacityEffect \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
+		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QImage \
+		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qimage.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMap \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmap.h \
+		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QMovie \
+		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qmovie.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		../CO2_Tracker/user.h \
+		../CO2_Tracker/date.h \
+		../CO2_Tracker/consumption.h \
+		../CO2_Tracker/object.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QJsonObject \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qjsonobject.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QJsonArray \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qjsonarray.h \
+		../CO2_Tracker/base_consumption.h \
+		../CO2_Tracker/netserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpServer \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpserver.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o netclient.o ../CO2_Tracker/netclient.cpp
 
-netserver.o: ../CO2_Tracker/netserver.cpp 
+netserver.o: ../CO2_Tracker/netserver.cpp ../CO2_Tracker/netserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpServer \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../CO2_Tracker/colormod.h \
+		../CO2_Tracker/mainwindow.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QFile \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qfile.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QTextStream \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qtextstream.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QPropertyAnimation \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qpropertyanimation.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsOpacityEffect \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qgraphicseffect.h \
+		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QImage \
+		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qimage.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMap \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmap.h \
+		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QMovie \
+		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qmovie.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		../CO2_Tracker/user.h \
+		../CO2_Tracker/date.h \
+		../CO2_Tracker/consumption.h \
+		../CO2_Tracker/object.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QString \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstring.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QJsonObject \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qjsonobject.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QJsonArray \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qjsonarray.h \
+		../CO2_Tracker/base_consumption.h \
+		../CO2_Tracker/netclient.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QAbstractSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QHostAddress \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMetaType \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmetatype.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStandardPaths \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDir \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdir.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o netserver.o ../CO2_Tracker/netserver.cpp
 
 object.o: ../CO2_Tracker/object.cpp ../CO2_Tracker/object.h \
@@ -1844,7 +2007,15 @@ main.o: ../CO2_Tracker/main.cpp ../CO2_Tracker/transport_API.cpp \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QPushButton \
 		../CO2_Tracker/netserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpServer \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
 		../CO2_Tracker/netclient.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QAbstractSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QHostAddress \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMetaType \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmetatype.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStandardPaths \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
 		../CO2_Tracker/survey.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QSsl \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QGraphicsWidget \
@@ -1959,12 +2130,24 @@ mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qjsonarray.h \
 		../CO2_Tracker/base_consumption.h \
 		../CO2_Tracker/netserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpServer \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
 		../CO2_Tracker/netclient.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QAbstractSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QHostAddress \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMetaType \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmetatype.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStandardPaths \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
 		ui_mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QPixmap \
 		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qpixmap.h \
-		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
-		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h \
 		../CO2_Tracker/json_DB.hpp \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QObject \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qobject.h \
@@ -2124,11 +2307,9 @@ mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QtNetwork \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtnetworkglobal.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractnetworkcache.h \
-		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qauthenticator.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qdnslookup.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qdtls.h \
-		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostinfo.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhstspolicy.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhttp2configuration.h \
@@ -2157,8 +2338,6 @@ mainwindow.o: ../CO2_Tracker/mainwindow.cpp ../CO2_Tracker/mainwindow.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qsslkey.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qsslpresharedkeyauthenticator.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qsslsocket.h \
-		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
-		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qudpsocket.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtnetworkversion.h \
 		../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QFileDialog \
@@ -2299,7 +2478,21 @@ survey.o: ../CO2_Tracker/survey.cpp ../CO2_Tracker/survey.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qjsonarray.h \
 		../CO2_Tracker/base_consumption.h \
 		../CO2_Tracker/netserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpServer \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
 		../CO2_Tracker/netclient.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QAbstractSocket \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QHostAddress \
+		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QMetaType \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qmetatype.h \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStandardPaths \
+		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
 		ui_survey.h \
 		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QPixmap \
 		../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qpixmap.h \
@@ -2315,8 +2508,6 @@ survey.o: ../CO2_Tracker/survey.cpp ../CO2_Tracker/survey.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qiodevice.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QStringList \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstringlist.h \
-		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
-		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QList \
 		../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qlist.h \
 		ui_mainwindow.h \
@@ -2452,11 +2643,9 @@ survey.o: ../CO2_Tracker/survey.cpp ../CO2_Tracker/survey.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/QtNetwork \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtnetworkglobal.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractnetworkcache.h \
-		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qabstractsocket.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qauthenticator.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qdnslookup.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qdtls.h \
-		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostaddress.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhostinfo.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhstspolicy.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qhttp2configuration.h \
@@ -2485,8 +2674,6 @@ survey.o: ../CO2_Tracker/survey.cpp ../CO2_Tracker/survey.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qsslkey.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qsslpresharedkeyauthenticator.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qsslsocket.h \
-		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpserver.h \
-		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qudpsocket.h \
 		../../Qt/6.2.2/macos/lib/QtNetwork.framework/Headers/qtnetworkversion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o survey.o ../CO2_Tracker/survey.cpp
@@ -2677,6 +2864,12 @@ food_api.o: ../CO2_Tracker/food_api.cpp ../CO2_Tracker/food_api.h \
 
 qrc_images.o: qrc_images.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_images.o qrc_images.cpp
+
+moc_netclient.o: moc_netclient.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_netclient.o moc_netclient.cpp
+
+moc_netserver.o: moc_netserver.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_netserver.o moc_netserver.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

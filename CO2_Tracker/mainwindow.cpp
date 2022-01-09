@@ -645,21 +645,25 @@ void MainWindow::on_tree_button_clicked()
 
 void MainWindow::on_send_button_clicked()
 {
-    //netclient net;
-
-
-//    if(!message.isEmpty())
-//    {
-       //net.on_pushButton_sendMessage_clicked(message);
-
         QString message = current_user->get_username();
-        //std::cout<<"username :" << message.toStdString()<<std::endl;
-        message.append(": ");
-        message.append(ui -> chatbox_write ->text().trimmed());
-       ui-> chatbox ->append(message);
-//    }
+    //std::cout<<"username :" << message.toStdString()<<std::endl;
+    message.append(": ");
+    message.append(ui -> chatbox_write ->text().trimmed());
+   ui-> chatbox ->append(message);
+   CB_receiver -> on_pushButton_sendMessage_clicked(message);
 
     ui -> chatbox_write->clear();
     ui -> chatbox_write ->setFocus();
 }
+void MainWindow::access_ui_message(QString message){
+    ui -> chatbox -> append(message);
+    std::cout<<"this is the second step"<< message.toStdString() << std::endl;
+}
+
+void message_received(QString message){
+    MainWindow main;
+    main.access_ui_message(message);
+    std::cout<<"this is the first step"<< message.toStdString() << std::endl;
+}
+
 
