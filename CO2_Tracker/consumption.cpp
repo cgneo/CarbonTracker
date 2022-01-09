@@ -136,7 +136,21 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
     total_footprint += footprint; //update total footprint
 
     if(type == "food"){
+
         food_footprint += footprint; //Update food footprint
+
+        if (name == "_"){
+            name = "Non-categorized";
+        }
+
+        //Update the food_by_category dictionary
+        if (footprint_by_food_category->find(name) == footprint_by_food_category->end()){
+            std::pair<std::string,double> pair (name, footprint);
+            footprint_by_food_category->insert(pair);
+        } //Check if key is in dictionary. Add key if not, update value if it is in dictionary
+        else{
+            footprint_by_food_category->at(name) += footprint;
+        }
 
     }
     else if(type == "transport"){
@@ -173,6 +187,8 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
         footprint_by_date->at(key_year) += footprint;
     }
 
+
+
 }
 
 void Consumption::add_base_consumption(Base_Consumption base){
@@ -185,6 +201,10 @@ void Consumption::add_base_consumption(Base_Consumption base){
 
 double Consumption::get_vehicle_footprint(string vehicle_name){
     return footprint_by_vehicle->at(vehicle_name);
+}
+
+double Consumption::get_category_footprint(string food_category){
+    return footprint_by_food_category->at(food_category);
 }
 
 double Consumption::get_yearly_footprint(string year){
@@ -211,5 +231,16 @@ double Consumption::get_daily_footprint(string day){
 
 void Consumption::set_total_consumption(vector<Object *> consumption){
     total_consumption = consumption;
+}
+
+vector<string> Consumption::get_keys(std::unordered_map<string, double> *map){
+    vector<string> keys;
+    keys.reserve(map->size());
+
+    for(auto kv : *map) {
+        keys.push_back(kv.first);
+    }
+
+    return keys;
 }
 

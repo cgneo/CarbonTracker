@@ -49,6 +49,7 @@ class Receipt{
     int duration; // length in days
     Date* date = new Date[2];
     int number_of_people;
+
     vector<vector<string>> content; //list of barcodes from receipt
 };
 

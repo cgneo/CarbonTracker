@@ -23,6 +23,7 @@ private:
 public:
     std::unordered_map<string, double>* footprint_by_vehicle = new std::unordered_map<string, double>;
     std::unordered_map<string, double>* footprint_by_date = new std::unordered_map<string, double>;
+    std::unordered_map<string, double>* footprint_by_food_category = new std::unordered_map<string, double>;
 
     static string vehicles[12];
 
@@ -54,6 +55,11 @@ public:
 
         //Methods for graphs
     double get_vehicle_footprint(string vehicle_name);
+
+    double get_category_footprint(string food_category);
+
+    vector<string> get_keys(std::unordered_map<string, double>* dictionary);
+
     double get_yearly_footprint(string month);
     double get_monthly_footprint(string month);
     double get_daily_footprint(string month);

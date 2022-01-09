@@ -143,6 +143,12 @@ int main(int argc, char *argv[])
     //qDebug() << u->get_consumption()->get_object_i(0)->get_name();
     MainWindow window;
 
+//    Consumption c;
+
+
+//    vector<string> keys = c.get_keys(c.footprint_by_vehicle);
+
+//    qDebug() << QString::fromStdString(keys.at(0));
 
     //window.set_user(u);
 

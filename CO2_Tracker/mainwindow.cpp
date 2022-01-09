@@ -137,22 +137,41 @@ MainWindow::MainWindow(QWidget *parent)
     //QPieSlice *slices[12];
     Consumption *c = u->get_consumption();
 
-
     QPieSlice *slice;
 
-    for (int i = 0; i < 12; i++){
-        qDebug() << QString::fromStdString(c->vehicles[i]);
-        string vehicle = c->vehicles[i];
+    //Code to do pie chart with food
+    vector<string> keys = c->get_keys(c->footprint_by_food_category);
 
-        //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
+    int size = keys.size();
+
+        for (int i = 0; i < size; i++){
+            //qDebug() << QString::fromStdString(c->vehicles[i]);
+            string label = keys.at(i);
+
+            //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
 
 
-        slice =  dseries->append(QString::fromStdString(vehicle), c->get_vehicle_footprint(vehicle));
-        //slices[i] = dseries->append(c.vehicles[i], 1);
-        slice->setLabelVisible();
-        QPieSlice::connect(slice, &QPieSlice::hovered,
-                           slice, &QPieSlice::setExploded);
-    }
+            slice =  dseries->append(QString::fromStdString(label), c->get_category_footprint(label));
+            //slices[i] = dseries->append(c.vehicles[i], 1);
+            slice->setLabelVisible();
+            QPieSlice::connect(slice, &QPieSlice::hovered,
+                               slice, &QPieSlice::setExploded);
+        }
+
+    //Code to graph transport categories
+//    for (int i = 0; i < 12; i++){
+//        qDebug() << QString::fromStdString(c->vehicles[i]);
+//        string vehicle = c->vehicles[i];
+
+//        //std::unordered_map<string, double>* dic = c2->footprint_by_vehicle;
+
+
+//        slice =  dseries->append(QString::fromStdString(vehicle), c->get_vehicle_footprint(vehicle));
+//        //slices[i] = dseries->append(c.vehicles[i], 1);
+//        slice->setLabelVisible();
+//        QPieSlice::connect(slice, &QPieSlice::hovered,
+//                           slice, &QPieSlice::setExploded);
+//    }
 
     /*
     QPieSlice *dslice1 = dseries->append("Locomotive", 1);
@@ -512,6 +531,7 @@ void MainWindow::on_Scanbutton_clicked()
     vector<vector<string>> receipt_vec = get_receipt_info(filepath);
     Receipt rec;
     rec.set_content(receipt_vec);
+    //rec.set_dates(); HAVE TO SET DATE OF RECEIPT
     rec.receipt_to_consumption(current_user->get_consumption());
 }
 

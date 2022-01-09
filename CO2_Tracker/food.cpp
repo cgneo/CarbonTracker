@@ -46,7 +46,7 @@ void Food::set_quantity(double quantity) {
 }
 
 void Food::set_footprint(double footprint, double quantity) {
-    footprint = footprint * quantity;
+    this->footprint = footprint * quantity;
     //footprint = footprint * quantity/1000;
 }
 
