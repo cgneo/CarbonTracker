@@ -59,6 +59,8 @@ private slots:
 
     void on_send_button_clicked();
 
+    void on_pushButton_clicked();
+
 private:
 
     User *current_user;

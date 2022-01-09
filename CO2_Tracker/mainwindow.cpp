@@ -390,14 +390,14 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix3(":/challenges/home-pic.png");
     ui -> home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
-//    QPixmap pix4(":/challenges/seed.png");
-//    ui -> seed -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
+    QPixmap pix4(":/survey/logo_CT.jpeg");
+    ui -> seed -> setPixmap(pix4.scaled(230,230, Qt::KeepAspectRatio));
 
     QPixmap pix5(":/survey/trasnport_icon.png");
     ui -> trans_picture -> setPixmap(pix5.scaled(500,300, Qt::KeepAspectRatio));
 
     //QPixmap pix6(":/challenges/graph photo.png");
-    //ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
+    //ui -> graph_pic -> setPixmap(pix6.scaled(300,400, Qt::KeepAspectRatio));
 
     QPixmap pix6(":/challenges/food fact.png");
     ui -> food_fact -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
@@ -474,7 +474,7 @@ MainWindow::MainWindow(QWidget *parent)
     std::string b = Json_DB::random_key(Json_DB::daily_challenges);
 
     ui->daily_challenge_1->setText(QString::fromStdString(Json_DB::get_challenge_by_key(a)));
-    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key(b)));
+    ui->daily_challenge_2->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 2")));
     ui->daily_challenge_3->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 3")));
     ui->daily_challenge_4->setText(QString::fromStdString(Json_DB::get_challenge_by_key("Challenge 4")));
 
@@ -678,4 +678,11 @@ void message_received(QString message){
     std::cout<<"this is the first step"<< message.toStdString() << std::endl;
 }
 
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    int total =  current_user->get_consumption() -> get_total_footprint();
+    ui -> total_carbon->setNum(total);
+}
 

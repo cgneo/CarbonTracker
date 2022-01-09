@@ -228,13 +228,17 @@ QTabBar::tab:selected, QTabBar::tab:hover {
 	background-color: rgb(234, 147, 96);
 }
 
-add color: rgb(0, 0, 0)</string>
+add color: rgb(0, 0, 0);
+
+add color: black;
+
+</string>
       </property>
       <property name="tabShape">
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -694,7 +698,7 @@ add color: rgb(0, 0, 0)</string>
           <x>170</x>
           <y>20</y>
           <width>1161</width>
-          <height>739</height>
+          <height>808</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -713,15 +717,20 @@ add color: rgb(0, 0, 0)</string>
          </item>
          <item>
           <widget class="QFrame" name="verticalFrame">
+           <property name="minimumSize">
+            <size>
+             <width>250</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">QFrame {
-    border-radius: 4px;
-    padding: 2px;
-	background-color: rgb(224, 222, 226);
-	background-color: rgba(236, 234, 238,100);
-	border-color: rgb(214, 238, 216);
- border: 2px;
-	
+	border: 4px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124,77);
+
+
 }</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout">
@@ -769,6 +778,12 @@ QProgressBar::chunk{
             </item>
             <item>
              <widget class="QLabel" name="seed">
+              <property name="minimumSize">
+               <size>
+                <width>230</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>180</width>
@@ -977,12 +992,61 @@ QPushButton:default {
              <property name="styleSheet">
               <string notr="true">QFrame {
    
-    border-radius: 4px;
-    padding: 2px;
-	background-color: rgba(236, 234, 238,100);
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124,77);
+
+
 }</string>
              </property>
-             <layout class="QGridLayout" name="gridLayout"/>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="1">
+               <widget class="QLabel" name="total_carbon">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_11">
+                <property name="text">
+                 <string>Your total carbon footprint is:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-image: url(:/i18n/UICarbonTracker_en_150.qm);
+    border: 2px solid;;
+    border-radius: 6px;
+	border-color: rgb(234, 147, 96);
+	background-color: rgb(234, 147, 96);
+    min-width: 100px;
+	padding: 10px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; 
+}
+
+QPushButton:default {
+    border-color: navy; 
+}</string>
+             </property>
+             <property name="text">
+              <string>Compute total carbon footprint</string>
+             </property>
             </widget>
            </item>
            <item>
@@ -1039,10 +1103,13 @@ QPushButton:default {
                 <string notr="true">QFrame {
 border-radius: 4px;
     padding: 2px;
-	background-color: rgba(236, 234, 238,100);
-	border-color: rgb(214, 238, 216);
- border: 2px;
-}</string>
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}
+
+
+</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_3">
                 <property name="leftMargin">
@@ -1309,13 +1376,14 @@ p, li { white-space: pre-wrap; }
              <item>
               <widget class="QFrame" name="verticalFrame_2">
                <property name="styleSheet">
-                <string notr="true">QFrame{
+                <string notr="true">QFrame {
 border-radius: 4px;
     padding: 2px;
-	background-color: rgba(236, 234, 238,100);
-	 border: 2px;
-	border-color: rgb(214, 238, 216);
-}</string>
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 2px;
+}
+</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_2">
                 <property name="leftMargin">
@@ -1374,7 +1442,7 @@ p, li { white-space: pre-wrap; }
                    <font/>
                   </property>
                   <property name="text">
-                   <string>Challenge # 1</string>
+                   <string>Read &quot;The Uninhabitable Earth&quot;</string>
                   </property>
                  </widget>
                 </item>
@@ -1384,7 +1452,7 @@ p, li { white-space: pre-wrap; }
                    <font/>
                   </property>
                   <property name="text">
-                   <string>Challenge # 2</string>
+                   <string>Monthly vegetarian challenge</string>
                   </property>
                  </widget>
                 </item>
@@ -1394,7 +1462,7 @@ p, li { white-space: pre-wrap; }
                    <font/>
                   </property>
                   <property name="text">
-                   <string>Challenge # 3</string>
+                   <string>No car use in a month</string>
                   </property>
                  </widget>
                 </item>
@@ -1404,7 +1472,7 @@ p, li { white-space: pre-wrap; }
                    <font/>
                   </property>
                   <property name="text">
-                   <string>Challenge # 4</string>
+                   <string>Buy seasonal products from local stores</string>
                   </property>
                  </widget>
                 </item>
@@ -2706,7 +2774,7 @@ transports)</string>
        <attribute name="title">
         <string>Challenges/info/tips</string>
        </attribute>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>510</x>
@@ -2751,6 +2819,15 @@ transports)</string>
           <layout class="QVBoxLayout" name="verticalLayout_21">
            <item>
             <widget class="QCheckBox" name="transportation_tip_1">
+             <property name="styleSheet">
+              <string notr="true">QCheckBox {
+border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}</string>
+             </property>
              <property name="text">
               <string>Avoid driving at peak times</string>
              </property>
@@ -2758,6 +2835,15 @@ transports)</string>
            </item>
            <item>
             <widget class="QCheckBox" name="transportation_tip_2">
+             <property name="styleSheet">
+              <string notr="true">QCheckBox {
+border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}</string>
+             </property>
              <property name="text">
               <string>Sharing a car to go to work</string>
              </property>
@@ -2765,6 +2851,15 @@ transports)</string>
            </item>
            <item>
             <widget class="QCheckBox" name="transportation_tip_3">
+             <property name="styleSheet">
+              <string notr="true">QCheckBox {
+border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}</string>
+             </property>
              <property name="text">
               <string>Replace the car with public transports </string>
              </property>
@@ -2858,7 +2953,7 @@ transports)</string>
          <pixmap>resources/pictures/food-pic.png</pixmap>
         </property>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>40</x>
@@ -2904,7 +2999,13 @@ transports)</string>
            <item>
             <widget class="QCheckBox" name="food_tip_1">
              <property name="styleSheet">
-              <string notr="true">add color: rgb(0, 0, 0)</string>
+              <string notr="true">QCheckBox {
+border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}</string>
              </property>
              <property name="text">
               <string>Reduce dairy consumption</string>
@@ -2913,6 +3014,15 @@ transports)</string>
            </item>
            <item>
             <widget class="QCheckBox" name="food_tip_2">
+             <property name="styleSheet">
+              <string notr="true">QCheckBox {
+border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}</string>
+             </property>
              <property name="text">
               <string>Consume local and seasonal products</string>
              </property>
@@ -2920,6 +3030,15 @@ transports)</string>
            </item>
            <item>
             <widget class="QCheckBox" name="food_tip_3">
+             <property name="styleSheet">
+              <string notr="true">QCheckBox {
+border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}</string>
+             </property>
              <property name="text">
               <string>Eat less red meat</string>
              </property>
@@ -2929,7 +3048,7 @@ transports)</string>
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>1010</x>
@@ -2974,6 +3093,15 @@ transports)</string>
           <layout class="QVBoxLayout" name="verticalLayout_25">
            <item>
             <widget class="QCheckBox" name="house_tip_1">
+             <property name="styleSheet">
+              <string notr="true">QCheckBox {
+border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}</string>
+             </property>
              <property name="text">
               <string>Turn off the lights</string>
              </property>
@@ -2981,6 +3109,15 @@ transports)</string>
            </item>
            <item>
             <widget class="QCheckBox" name="house_tip_2">
+             <property name="styleSheet">
+              <string notr="true">QCheckBox {
+border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}</string>
+             </property>
              <property name="text">
               <string>Unplug your charger when not in use</string>
              </property>
@@ -2988,6 +3125,15 @@ transports)</string>
            </item>
            <item>
             <widget class="QCheckBox" name="house_tip_3">
+             <property name="styleSheet">
+              <string notr="true">QCheckBox {
+border-radius: 4px;
+    padding: 2px;
+	background-color: rgb(136, 159, 124,77);
+	border-color: rgb(136, 159, 124);
+ border: 4px;
+}</string>
+             </property>
              <property name="text">
               <string>Use the dishwasher when full</string>
              </property>
