@@ -22,20 +22,20 @@
 #include "receipt_info.cpp"
 
 
-
+#include <iostream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
 
-//    // Create a server
-//    CB_server = new netserver();
-//    CB_server->startServer();
+    // Create a server
+    CB_server = new netserver();
+    CB_server->startServer();
 
-//    // Create a client
-//    CB_receiver = new netclient();
-//    CB_receiver->startClient();
+    // Create a client
+    CB_receiver = new netclient();
+    CB_receiver->startClient();
 
     // Invoke the flush and call it manually.
     std::cout.flush();
@@ -507,10 +507,12 @@ void MainWindow::on_RefreshPushButton_clicked(){
 
 void MainWindow::on_Scanbutton_clicked()
 {
-//    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
-//    QMessageBox::information(this, "...", file_name);
-    string filepath = "/Users/alex_christlieb/Desktop/carrefour.png";
-    vector<vector<string>> receipt_vec = get_receipt_info(filepath);
+    // get dir of receipt
+    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
+    // computing vector with information of the receipt
+    vector<vector<string>> receipt_vec = get_receipt_info(file_name.toStdString());
+    QMessageBox::information(this, "...", file_name);
+
     Receipt rec;
     Date *today = new  Date();
     today->get_current_date();
