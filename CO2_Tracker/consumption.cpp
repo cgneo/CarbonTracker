@@ -221,26 +221,46 @@ void Consumption::set_total_consumption(vector<Object*> consumption){
         Date *date = obj.get_date();
 
         total_footprint += footprint; //update total footprint
+
         if(type == "food"){
-            food_footprint += footprint;
+            food_footprint += footprint; //Update food footprint
 
         }
         else if(type == "transport"){
-            footprint_by_vehicle[name] += footprint;
-            transport_footprint += footprint;
+            footprint_by_vehicle->at(name) += footprint;
+            transport_footprint += footprint; //Update transport footprint
         }
+
         int day = date->get_day();
         int month = date->get_month();
         int year = date->get_year();
 
         string key_day = to_string(day)+to_string(month)+to_string(year);
-        string key_month = to_string(month) + to_string(year);
-        string key_year = to_string(year);
+        string key_month = "00"+to_string(month) + to_string(year);
+        string key_year = "0000"+to_string(year); //Creating standarized hash keys for dates
 
-        footprint_by_date[key_day] += footprint;
-        footprint_by_date[key_month] += footprint;
-        footprint_by_date[key_year] += footprint;
+        if (footprint_by_date->find(key_day) == footprint_by_date->end()){
+            footprint_by_date->insert({key_day, footprint});
+        } //Check if key is in dictionary. Add key if not, update value if it is in dictionary
+        else{
+            footprint_by_date->at(key_day) += footprint;
+        }
+
+        if (footprint_by_date->find(key_month) == footprint_by_date->end()){
+            footprint_by_date->insert({key_month, footprint});
+        } //Repeat process for month key
+        else{
+            footprint_by_date->at(key_month) += footprint;
+        }
+
+        if (footprint_by_date->find(key_year) == footprint_by_date->end()){
+            footprint_by_date->insert({key_year, footprint});
+        } //Repeat process for year_key
+        else{
+            footprint_by_date->at(key_year) += footprint;
+        }
     }
+
     total_consumption = consumption;
 }
 
