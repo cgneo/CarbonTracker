@@ -21,17 +21,20 @@ User::User(QString username, QString name, int birthday, int birthmonth,
 }
 
 User::User(){
+    birthday = nullptr;
 }
 
-User::~User() { //Must correct this destructor
-    username.clear();
-    name.clear();
-    country.clear();
-    email.clear();
-    //friends.clear();
-    if (birthday != nullptr){
-        delete birthday;
-    }
+User::~User() {
+//    if (birthday != nullptr){
+//        delete birthday;
+//    }
+//    if (consumption != nullptr){
+//        delete consumption;
+//    }
+//    if (base_consumption != nullptr){
+//        //delete base_consumption;
+//    }
+
 };
 
 

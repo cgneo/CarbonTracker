@@ -12,7 +12,6 @@ public:
     Tests();
     bool start_test();
 
-
     //-----------------------Class testing--------------------
 
     //Date
@@ -32,7 +31,6 @@ public:
 
     bool test_does_file_exist(QString file);
     void test_createJsonUserObject(Json_DB &json, User &user);
-    void test_writeJsonUser(Json_DB &json);
     void test_is_path_correct(Json_DB &json);
 };
 

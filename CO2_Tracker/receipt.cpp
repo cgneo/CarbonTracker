@@ -63,8 +63,8 @@ void Receipt::set_duration(int duration) {
 }
 
 void Receipt::set_dates(Date *date1) {
-    date[0] = *date1;
-    date[1] = *(date1->add_duration(duration));
+    this->date[0].set_date(date1->get_day(), date1->get_month(), date1->get_year());
+    this->date[1] = *(date1->add_duration(duration));
 }
 
 void Receipt::set_number_of_people(double number_of_people) {

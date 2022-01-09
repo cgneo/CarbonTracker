@@ -23,7 +23,7 @@ Object::Object(Date *current_date, QString object_name, QString object_type, dou
 }
 
 Object::~Object(){
-    //delete date;
+    delete date;
     //Can crash the program if two objects with same date are generated together
 }
 

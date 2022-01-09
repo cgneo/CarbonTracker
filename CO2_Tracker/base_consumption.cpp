@@ -3,11 +3,14 @@
 
 Base_Consumption::Base_Consumption(){
     footprint = 0;
+    base_consumption;
 }
 
 Base_Consumption::~Base_Consumption(){
-    for (Object *obj: base_consumption)
-        delete obj;
+//    if (get_size() > 0){
+//        for (Object *obj: base_consumption)
+//            delete obj;
+//        }
 }
 
 int Base_Consumption::get_userId(){
@@ -21,6 +24,8 @@ int Base_Consumption::get_base_consumptionId(){
     return base_consumptionId;
 }
 int Base_Consumption::get_size(){
+    if (base_consumption.empty())
+        return 0;
     return base_consumption.size();
 }
 

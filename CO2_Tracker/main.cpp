@@ -1,9 +1,5 @@
 #include "transport_API.cpp"
 #include "tests.h"
-
-//#ifdef Test
-//#include "tests.h"
-//#endif
 #include "json_DB.hpp"
 #include "object.h"
 #include "transport.h"
@@ -36,10 +32,43 @@
 * Test to 0.
 */
 
+double Testing=1;
+
+
 int main(int argc, char *argv[])
 {
 
     QApplication a(argc, argv);
+
+    if( Testing != 1)
+        {Tests t;
+        t.start_test();}
+    else
+
+    {Tests t1;
+    Json_DB json_obj;
+    QString file = json_obj.get_path() + json_obj.get_FileName();
+    t1.test_does_file_exist(file);
+
+    bool new_user = !t1.test_does_file_exist(file);
+
+     if (new_user){ //If user is new, open profile set_up
+         Survey window;
+         window.show();
+         return a.exec();
+     }
+     else{ //Else open regular window
+         MainWindow window;
+         window.show();
+         return a.exec();
+      }
+
+
+}
+
+
+
+
   //  ------------------Try Amine's code--------------------
 //    string filepath = "/Users/alex_christlieb/Desktop/Carrefour_receipt.png";
 //    vector<vector<string>> receipt_info = get_receipt_info(filepath);
@@ -121,10 +150,7 @@ int main(int argc, char *argv[])
 
 
 //--------------------------Try Catalina's Testing---------
-#ifdef Test
-    Tests t;
-    //t.start_test();
-#endif
+
 
 
 //--------------------------Run the UI--------------------
@@ -158,27 +184,6 @@ int main(int argc, char *argv[])
     //qDebug() << temp->get_name();
     //qDebug() << temp->get_footprint();
 
-
-   Tests t1;
-   Json_DB json_obj;
-   QString file = json_obj.get_path() + json_obj.get_FileName();
-   t1.test_does_file_exist(file);
-//   User u;
-//   //json_obj.writeJsonUser(u);
-
-   bool new_user = !t1.test_does_file_exist(file);
-
-    //This code is actually USED
-    if (new_user){ //If user is new, open profile set_up
-        Survey window;
-        window.show();
-        return a.exec();
-    }
-    else{ //Else open regular window
-        MainWindow window;
-        window.show();
-        return a.exec();
-     }
 
 
 }

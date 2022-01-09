@@ -25,6 +25,10 @@ private slots:
     void on_buttonNextTransport3_clicked();
     void on_buttonAccount_clicked();
 
+    void on_kwh_valueChanged(int value);
+
+    void on_living_partners_valueChanged(int value);
+
 private:
     Ui::Survey *ui;
     MainWindow *mainwindow;

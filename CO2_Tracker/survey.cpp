@@ -156,3 +156,15 @@ void Survey::on_buttonAccount_clicked()
 
     }
 }
+
+void Survey::on_kwh_valueChanged(int value)
+{
+    ui->label_kwh->setNum(value);
+}
+
+
+void Survey::on_living_partners_valueChanged(int value)
+{
+    ui->label->setNum(value);
+}
+
