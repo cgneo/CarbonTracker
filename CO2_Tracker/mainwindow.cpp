@@ -38,14 +38,15 @@ MainWindow::MainWindow(QWidget *parent)
 //    CB_receiver->startClient();
 
     // Invoke the flush and call it manually.
-    std::cout.flush();
+    //std::cout.flush();
 
 
     ui->setupUi(this);
     Json_DB json_obj;
-    User *u = json_obj.readUser_from_Json();
+    User *u = json_obj.readUser_from_Json(); //Read json file and assign current user
     current_user = u;
-    //begining of graphs
+
+    //-------------------------begining of graphs----------------------------
     //LineChart
 
     QLineSeries *Lseries = new QLineSeries();
@@ -264,11 +265,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     QBarSet *set0 = new QBarSet("general footprint (food and transports)");
     //QBarSet *set1 = new QBarSet("Transports");
-    set0->append(c->get_daily_footprint("00012022"));
-    set0->append(208);
-    set0->append(2088);
 
-    *set0 << c->get_daily_footprint("01012022") << 2 << 3; //missing arguments
+
+    //*set0 << c->get_daily_footprint("01012022") << 2 << 3; //missing arguments
     //*set1 << c->get_transport_footprint() << 0 << 0;
 
     QStackedBarSeries *series = new QStackedBarSeries();
@@ -300,9 +299,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     QBarSet *set4 = new QBarSet("General footprint (food and transports");
     //QBarSet *set5 = new QBarSet("Transports");
-    set4->append(c->get_daily_footprint("00012022"));
-    set4->append(208);
-    set4->append(2088);
+//    set4->append(c->get_daily_footprint("00012022"));
+//    set4->append(208);
+//    set4->append(2088);
     //*set4 << c->get_monthly_footprint("00012022") << 20 << 30; //missing arguments
     //*set5 << 50 << 2 << 2;
 
@@ -335,9 +334,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     QBarSet *set7 = new QBarSet("General footprint");
     //QBarSet *set8 = new QBarSet("Transports");
-    set7->append(c->get_daily_footprint("00012022"));
-    set7->append(208);
-    set7->append(2088);
+//    set7->append(c->get_daily_footprint("00012022"));
+//    set7->append(208);
+//    set7->append(2088);
     //*set7 << c->get_yearly_footprint("00002022") << 200 << 300; // missing arguments
     //*set8 << 500 << 20 << 20;
 
@@ -562,8 +561,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->house_tip_2->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 2")));
     ui->house_tip_3->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 3")));
 
-    ui -> tree_button -> setEnabled(false);
-    connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
+    ui->tree_button->setEnabled(false);
+    connect(ui->tree_button, SIGNAL(QPushButton::clicked), this, SLOT(enableButton));
 
 
 }
@@ -574,71 +573,71 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_Refresh_clicked(){
-    User* u = current_user;
-    //Json_DB json_obj;
-    //User *u = json_obj.readUser_from_Json();
-    //current_user = u;
+//void MainWindow::on_Refresh_clicked(){
+//    User* u = current_user;
+//    //Json_DB json_obj;
+//    //User *u = json_obj.readUser_from_Json();
+//    //current_user = u;
 
-        QPieSeries *dseries = new QPieSeries();
-        dseries->setHoleSize(0.35);
-        Consumption *c = u->get_consumption();
+//    QPieSeries *dseries = new QPieSeries();
+//    dseries->setHoleSize(0.35);
+//    Consumption *c = u->get_consumption();
 
-        QPieSlice *slice;
+//    QPieSlice *slice;
 
-        //Code to do pie chart with food
-        vector<string> keys = c->get_keys(c->footprint_by_food_category);
-        int size = keys.size();
-        for (int i = 0; i < size; i++){
-            string label = keys.at(i);
-            slice =  dseries->append(QString::fromStdString(label), c->get_category_footprint(label));
-            slice->setLabelVisible();
-            QPieSlice::connect(slice, &QPieSlice::hovered,
-                               slice, &QPieSlice::setExploded);
-        }
-        //Code to do pie chart with transports
-        QPieSeries *dseries2 = new QPieSeries();
-        dseries2->setHoleSize(0.35);
-        vector<string> keys2 = c->get_keys(c->footprint_by_vehicle);
-        int size2 = keys2.size();
+//    //Code to do pie chart with food
+//    vector<string> keys = c->get_keys(c->footprint_by_food_category);
+//    int size = keys.size();
+//    for (int i = 0; i < size; i++){
+//        string label = keys.at(i);
+//        slice =  dseries->append(QString::fromStdString(label), c->get_category_footprint(label));
+//        slice->setLabelVisible();
+//        QPieSlice::connect(slice, &QPieSlice::hovered,
+//                           slice, &QPieSlice::setExploded);
+//    }
+//    //Code to do pie chart with transports
+//    QPieSeries *dseries2 = new QPieSeries();
+//    dseries2->setHoleSize(0.35);
+//    vector<string> keys2 = c->get_keys(c->footprint_by_vehicle);
+//    int size2 = keys2.size();
 
-        for (int i = 0; i < size2; i++){
-            string label2 = keys2.at(i);
-            slice =  dseries2->append(QString::fromStdString(label2), c->get_vehicle_footprint(label2));
-            slice->setLabelVisible();
-            QPieSlice::connect(slice, &QPieSlice::hovered,
-                               slice, &QPieSlice::setExploded);
-            }
+//    for (int i = 0; i < size2; i++){
+//        string label2 = keys2.at(i);
+//        slice =  dseries2->append(QString::fromStdString(label2), c->get_vehicle_footprint(label2));
+//        slice->setLabelVisible();
+//        QPieSlice::connect(slice, &QPieSlice::hovered,
+//                           slice, &QPieSlice::setExploded);
+//        }
 
-        QChart *dchart = new QChart();
-        dchart->addSeries(dseries);
-        dchart->setAnimationOptions(QChart::SeriesAnimations);
-        dchart->setTitle("My Food Footprint");
-        dchart->setTheme(QChart::ChartThemeBrownSand);
+//    QChart *dchart = new QChart();
+//    dchart->addSeries(dseries);
+//    dchart->setAnimationOptions(QChart::SeriesAnimations);
+//    dchart->setTitle("My Food Footprint");
+//    dchart->setTheme(QChart::ChartThemeBrownSand);
 
-        QChartView *dchartview = new QChartView(dchart);
-        dchartview->setRenderHint(QPainter::Antialiasing);
+//    QChartView *dchartview = new QChartView(dchart);
+//    dchartview->setRenderHint(QPainter::Antialiasing);
 
-        dchartview->setParent(ui->foodframe);
-        dchart->legend()->setVisible(true);
-        dchart->legend()->setAlignment(Qt::AlignLeft);
-        //second chart
+//    dchartview->setParent(ui->foodframe);
+//    dchart->legend()->setVisible(true);
+//    dchart->legend()->setAlignment(Qt::AlignLeft);
+//    //second chart
 
-        QChart *dchart2 = new QChart();
-        dchart2->addSeries(dseries);
-        dchart2->setAnimationOptions(QChart::SeriesAnimations);
-        dchart2->setTitle("My Transportation Footprint");
-        dchart2->setTheme(QChart::ChartThemeBrownSand);
+//    QChart *dchart2 = new QChart();
+//    dchart2->addSeries(dseries);
+//    dchart2->setAnimationOptions(QChart::SeriesAnimations);
+//    dchart2->setTitle("My Transportation Footprint");
+//    dchart2->setTheme(QChart::ChartThemeBrownSand);
 
-        QChartView *dchartview2 = new QChartView(dchart2);
-        dchartview2->setRenderHint(QPainter::Antialiasing);
+//    QChartView *dchartview2 = new QChartView(dchart2);
+//    dchartview2->setRenderHint(QPainter::Antialiasing);
 
-        dchartview2->setParent(ui->transportsframe);
-        //Commented to run
+//    dchartview2->setParent(ui->transportsframe);
+//    //Commented to run
 
-        dchart->legend()->setVisible(true);
-        dchart->legend()->setAlignment(Qt::AlignLeft);
-    }
+//    dchart->legend()->setVisible(true);
+//    dchart->legend()->setAlignment(Qt::AlignLeft);
+//}
 
 void MainWindow::on_Surveybutton_clicked()
 {
