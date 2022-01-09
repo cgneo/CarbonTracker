@@ -13,6 +13,7 @@ SOURCES += \
     base_consumption.cpp \
     consumption.cpp \
     date.cpp \
+    housing.cpp \
     json_DB.cpp \
     netclient.cpp \
     netserver.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     colormod.h \
     consumption.h \
     date.h \
+    housing.h \
     json_DB.hpp \
     netclient.h \
     netserver.h \
