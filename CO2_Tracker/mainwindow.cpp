@@ -202,7 +202,7 @@ MainWindow::MainWindow(QWidget *parent)
     QChartView *dchartview = new QChartView(dchart);
     dchartview->setRenderHint(QPainter::Antialiasing);
 
-    dchartview->setParent(ui->transportsframe);
+    dchartview->setParent(ui->foodframe);
     //Commented to run
 
     dchart->legend()->setVisible(true);
