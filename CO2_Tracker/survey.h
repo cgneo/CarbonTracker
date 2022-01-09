@@ -29,6 +29,8 @@ private slots:
 
     void on_living_partners_valueChanged(int value);
 
+    void on_buttonNextHousing2_clicked();
+
 private:
     Ui::Survey *ui;
     MainWindow *mainwindow;

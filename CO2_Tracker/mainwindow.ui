@@ -234,7 +234,7 @@ add color: rgb(0, 0, 0)</string>
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -2706,7 +2706,7 @@ transports)</string>
        <attribute name="title">
         <string>Challenges/info/tips</string>
        </attribute>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>510</x>
@@ -2858,7 +2858,7 @@ transports)</string>
          <pixmap>resources/pictures/food-pic.png</pixmap>
         </property>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>40</x>
@@ -2929,7 +2929,7 @@ transports)</string>
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>1010</x>
