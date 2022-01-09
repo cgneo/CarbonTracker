@@ -18,10 +18,11 @@ Food::Food(string barcode) {
 Food::Food(Date *current_date, QString object_name,
                int quantity, string barcode, double footprint)
                 :Object(current_date, object_name){
-    set_type("Food");
-    set_quantity(quantity);
+    set_type("food");
     set_barcode(barcode);
     set_footprint(footprint, quantity);
+    set_date(current_date);
+    set_name(name);
 }
 
 Food::~Food(){
@@ -44,8 +45,9 @@ void Food::set_quantity(double quantity) {
     this->quantity = quantity;
 }
 
-void Food::set_footprint(double barcode, double quantity) {
-    footprint = retrieve_carbon(barcode) * quantity/1000;
+void Food::set_footprint(double footprint, double quantity) {
+    footprint = footprint * quantity;
+    //footprint = footprint * quantity/1000;
 }
 
 void Food::set_barcode(string barcode) {
