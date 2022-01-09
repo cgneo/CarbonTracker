@@ -48,15 +48,11 @@ private slots:
     void on_daily_challenge_3_stateChanged(int arg1);
     void on_daily_challenge_4_stateChanged(int arg1);
 
-    void get_seed();
 
     void on_buttonTransport_clicked();
 
-    void on_tree_button_clicked();
 
-    void enableButton();
-
-
+    //void set_server_reply(QString reply){server_reply = reply;};
     void on_send_button_clicked();
 
 private:
@@ -74,7 +70,7 @@ private:
     QGraphicsOpacityEffect *opacity_effect_3;
     QGraphicsOpacityEffect *opacity_effect_4;
     QGraphicsOpacityEffect *opacity_effect_seed;
-
+    //QString server_reply;
 
 
 

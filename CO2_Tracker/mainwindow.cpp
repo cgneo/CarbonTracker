@@ -483,8 +483,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->house_tip_2->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 2")));
     ui->house_tip_3->setText(QString::fromStdString(Json_DB::get_htip_by_key("House Tip 3")));
 
-    ui -> tree_button -> setEnabled(false);
-    connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
+
 
 
 }
@@ -561,7 +560,6 @@ void MainWindow::on_daily_challenge_4_stateChanged(int)
     if (ui-> daily_challenge_4-> isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
         animation_4 -> start();
-        enableButton();
         QMovie *movie = new QMovie(":/challenges/tree_once.gif");
         ui -> seed ->setMovie(movie);
         QSize scaledSize(200, 300);
@@ -572,13 +570,7 @@ void MainWindow::on_daily_challenge_4_stateChanged(int)
     }
 }
 
-void MainWindow::get_seed()
-{
-    if (ui -> SeedsprogressBar -> value() == 100){
-        animation_seed -> start();
-        enableButton();
-    }
-}
+
 
 void MainWindow::on_buttonTransport_clicked()
 {
@@ -612,40 +604,7 @@ void MainWindow::on_buttonTransport_clicked()
     current_user->get_consumption()->add_object(t, true);
 }
 
-void MainWindow::enableButton()
-{
-    ui -> tree_button ->setEnabled(true);
-}
 
-
-
-
-void MainWindow::on_tree_button_clicked()
-{
-    QMovie *movie = new QMovie(":/challenges/tree_once.gif");
-    ui -> seed ->setMovie(movie);
-    QSize scaledSize(200, 300);
-    movie -> setScaledSize(scaledSize);
-    if (movie ->currentFrameNumber() < 3){
-    movie -> start();
-    }
-    if (movie -> currentFrameNumber() == 3){
-        movie -> stop();
-    }
-
-//    if(movie->currentFrameNumber() == (movie->frameCount() - 1))
-//            {
-//                movie->stop();
-//                //Explicity emit finished signal so that label **
-//                //can show the image instead of a frozen gif
-//                //Also, double check that movie stopped before emiting
-//                if (movie->state() == QMovie::NotRunning)
-//                {
-//                    emit movie->finished();
-//                }
-//            }
-
-}
 
 
 void MainWindow::on_send_button_clicked()
@@ -660,15 +619,10 @@ void MainWindow::on_send_button_clicked()
     ui -> chatbox_write->clear();
     ui -> chatbox_write ->setFocus();
 }
-void MainWindow::access_ui_message(QString message){
-    ui -> chatbox -> append(message);
-    std::cout<<"this is the second step"<< message.toStdString() << std::endl;
-}
+//void MainWindow::access_ui_message(QString message){
+//    ui -> chatbox -> append(server_reply);
+//    std::cout<<"this is the second step"<< message.toStdString() << std::endl;
+//}
 
-void message_received(QString message){
-    MainWindow main;
-    main.access_ui_message(message);
-    std::cout<<"this is the first step"<< message.toStdString() << std::endl;
-}
 
 
