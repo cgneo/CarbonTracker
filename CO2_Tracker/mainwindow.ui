@@ -232,7 +232,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <property name="iconSize">
        <size>
@@ -3362,6 +3362,73 @@ QListView::item:hover {
         <property name="text">
          <string>Select</string>
         </property>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>50</y>
+          <width>381</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QTextEdit" name="chatbox">
+           <property name="styleSheet">
+            <string notr="true">QTextEdit{
+	background-color: rgba(171, 197, 153, 131);
+border-radius: 5px;
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLineEdit" name="chatbox_write">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+    border-radius: 10px;
+    padding: 8px;
+    background: white;
+border: 2px solid rgba(239, 175, 108, 194);
+
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="send_button">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    border-radius: 6px;
+	background-color: rgba(239, 175, 108, 194);
+	padding: 8px;
+    min-width: 50px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}</string>
+             </property>
+             <property name="text">
+              <string>send</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
        </widget>
       </widget>
      </widget>
