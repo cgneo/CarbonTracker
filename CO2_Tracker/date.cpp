@@ -96,11 +96,18 @@ bool Date::is_valid(){
 
 
 void Date::get_current_date(){
-    time_t now = time(0);
+        int MAXLEN = 80;
+        char s[MAXLEN];
+        time_t t = time(0);
+        strftime(s, MAXLEN, "%m/%d/%Y", localtime(&t));
+        std::cout << s << '\n';
+//    time_t now = time(0);
 
-    char* date_time = ctime(&now);
+//    char* date_time_str = ctime(&now);
 
-    std::cout << date_time << std::endl;
+//    int day = (int)date_time_str[9];
+
+//    std::cout << day<< std::endl;
 
 }
 

@@ -413,7 +413,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
             <item>
              <widget class="QTabWidget" name="tabHousing">
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="tab_11">
                <attribute name="title">
@@ -475,6 +475,84 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                   </item>
                   <item>
                    <widget class="QPushButton" name="buttonNextHousing1">
+                    <property name="text">
+                     <string>Next</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="tab_4">
+               <attribute name="title">
+                <string>Question 2</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_5">
+                <item row="0" column="0">
+                 <layout class="QVBoxLayout" name="verticalLayout_4">
+                  <item>
+                   <widget class="QLabel" name="label_16">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>60</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>60</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>16</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;What is your montly electricity consumption in kWh?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_14">
+                    <item>
+                     <widget class="QSlider" name="kwh">
+                      <property name="minimum">
+                       <number>500</number>
+                      </property>
+                      <property name="maximum">
+                       <number>1500</number>
+                      </property>
+                      <property name="singleStep">
+                       <number>100</number>
+                      </property>
+                      <property name="pageStep">
+                       <number>100</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_kwh">
+                      <property name="minimumSize">
+                       <size>
+                        <width>24</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>500</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="buttonNextHousing2">
                     <property name="text">
                      <string>Next</string>
                     </property>
@@ -617,7 +695,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                 <item>
                  <widget class="QTabWidget" name="tabTransport">
                   <property name="currentIndex">
-                   <number>0</number>
+                   <number>1</number>
                   </property>
                   <widget class="QWidget" name="tab_14">
                    <attribute name="title">
@@ -712,42 +790,42 @@ QTabBar::tab:selected, QTabBar::tab:hover {
                          <widget class="QComboBox" name="vehicleT">
                           <item>
                            <property name="text">
-                            <string>electric car</string>
+                            <string>Electric car</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>petrol car</string>
+                            <string>Petrol car</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>diesel car</string>
+                            <string>Diesel car</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>petrol motorbike</string>
+                            <string>Petrol motorbike</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>bus</string>
+                            <string>Bus</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>metro</string>
+                            <string>Metro</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>ferry</string>
+                            <string>Ferry</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>national train</string>
+                            <string>National train</string>
                            </property>
                           </item>
                          </widget>

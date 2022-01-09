@@ -103,6 +103,10 @@ void Survey::on_buttonAccount_clicked()
         QMessageBox::warning(this, "Warning", "You have not submitted a password.");
     } else {
 
+        // Using information from 'housing' tab
+        int energy_consumption_monthly = ui->kwh->value();
+        int energy_consumption_daily = energy_consumption_monthly/30;
+
         // Using information from 'transport' tab
         bool yes = ui->radioButton_TransY->isChecked();
 
