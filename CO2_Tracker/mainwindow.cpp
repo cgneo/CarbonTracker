@@ -17,6 +17,8 @@
 
 #include <QListWidgetItem>
 #include <QListWidget>
+
+
 #include <QtCharts>
 #include <QChartView>
 #include <QBarSet>
@@ -364,24 +366,14 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix3(":/challenges/home-pic.png");
     ui -> home_label -> setPixmap(pix3.scaled(450,250, Qt::KeepAspectRatio));
 
-//    QPixmap pix4(":/challenges/tree_growing_once.png");
-//    ui -> tree_growing -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
+    QPixmap pix4(":/challenges/seed.png");
+    ui -> seed -> setPixmap(pix4.scaled(100,200, Qt::KeepAspectRatio));
 
     QPixmap pix5(":/survey/trasnport_icon.png");
     ui -> trans_picture -> setPixmap(pix5.scaled(500,300, Qt::KeepAspectRatio));
 
     QPixmap pix6(":/challenges/graph photo.png");
     ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
-
-    //Creating list of users
-    ui->setupUi(this);
-    QListWidgetItem *item = new QListWidgetItem(QIcon(":/challenges/user_icon.png"), "user_name1");
-    ui->userlist->addItem(item);
-    QListWidgetItem *item2 = new QListWidgetItem(QIcon(":/challenges/user_icon.png"), "user_name1");
-    ui->userlist->addItem(item2);
-    QListWidgetItem *item3 = new QListWidgetItem(QIcon(":/challenges/user_icon.png"), "user_name1");
-    ui->userlist->addItem(item3);
-
 
 
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
@@ -469,7 +461,28 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
 
 
+    //Creating list of users
+    //needs to make it automatic for each new user
+
+    ui->setupUi(this);
+    for(int i=0; i < 10; i++)
+    {
+        QListWidgetItem *item = new QListWidgetItem(QIcon(":/challenges/user_icon.png"), QString::number(i) + "user_name1");
+        ui->userlist->addItem(item);
+   }
+
+    connect(ui->userlist,SIGNAL(itemClicked(QListWidgetItem*)),this,SLOT(itemClicked(QListWidgetItem*)));
+
 }
+void MainWindow::on_userlist_itemClicked(QListWidgetItem *item)
+{
+    QComboBox* combo = new QComboBox;
+    ui->comboBox->addItem("Send a Challenge to your friend!");
+    ui->comboBox->addItem("Send a message!");
+    ui->comboBox->addItem("Gift: offer some seeds!");
+
+}
+
 
 
 MainWindow::~MainWindow()
@@ -527,11 +540,6 @@ void MainWindow::on_daily_challenge_4_stateChanged(int)
     if (ui-> daily_challenge_4-> isChecked()){
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() + 25);
         animation_4 -> start();
-        QMovie *movie = new QMovie(":/challenges/tree_growing_once.gif");
-        ui -> seed ->setMovie(movie);
-        QSize scaledSize(200, 300);
-        movie -> setScaledSize(scaledSize);
-        movie -> start();
         enableButton();
     }else{
         ui->SeedsprogressBar->setValue(ui->SeedsprogressBar->value() - 25);
@@ -616,20 +624,11 @@ void MainWindow::on_send_button_clicked()
 {
     netclient net;
     QString message = ui -> chatbox_write ->text().trimmed();
-    User u;
-    QString user_name = u.get_username();
     if(!message.isEmpty())
     {
-        net.on_pushButton_sendMessage_clicked(message);
-        net.readSocket();
-       ui -> chatbox -> append("<b>" + user_name + "</b>: " + message);
-//       qintptr whoSentIt = socket -> socketDescriptor();
-//       QString whatIsTheText = QString::fromStdString(buffer.toStdString());
-
-//       std::cout << std::to_string(whoSentIt);
-//       std::cout << " :: ";
-//       std::cout << whatIsTheText.toStdString() << std::endl;
-        //ui-> chatbox ->append(message);
+       net.on_pushButton_sendMessage_clicked(message);
+        User u;
+       ui-> chatbox ->append("<b>" + u.get_username() + "</b>: " + message);
     }
 
     ui -> chatbox_write->clear();
@@ -642,6 +641,4 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
 {
 
 }
-
-
 

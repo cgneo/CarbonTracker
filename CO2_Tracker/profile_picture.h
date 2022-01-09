@@ -16,6 +16,8 @@ public:
 private slots:
     void on_button_image_clicked();
 
+    void on_userlist_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::MainWindow *ui;
 };
