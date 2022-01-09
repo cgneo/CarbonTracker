@@ -218,11 +218,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     QStackedBarSeries *series = new QStackedBarSeries();
     series->append(set0);
-    series->append(set1);
+    //series->append(set1);
 
     QChart *chart = new QChart();
     chart->addSeries(series);
-    chart->setTitle("Your daily emission compared to public figures' (in CO2/kg)");
+    chart->setTitle("Your daily emission compared to public figures' (in kg.CO2)");
     chart->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories;
@@ -255,7 +255,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QChart *chart2 = new QChart();
     chart2->addSeries(series2);
-    chart2->setTitle("Your monthly emission compared to public figures' (in CO2/kg)");
+    chart2->setTitle("Your monthly emission compared to public figures' (in kg.CO2)");
     chart2->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories2;
@@ -288,7 +288,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QChart *chart3 = new QChart();
     chart3->addSeries(series3);
-    chart3->setTitle("Your yearly emission compared to public figures' (in CO2/kg)");
+    chart3->setTitle("Your yearly emission compared to public figures' (in kg.CO2)");
     chart3->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories3;
