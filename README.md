@@ -94,5 +94,5 @@ In order for the project to compile properly and all functionalities to run, it 
     Under "Build & Run" select "Build"
     In the window for "General" in "Build Settings", click "Choose" to select a directory path
     
-    
+# Run the project 
 
