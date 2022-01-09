@@ -25,14 +25,14 @@
 
     - Alexandra-Catalina Negoita - team leader
     - Alejandro Christlieb Picazo
-    - Zhihui Li
+    - Zhihui Li - git manager
     - (Amine Lamouchi)
 
 
 # How to run your project
 - Transport_API
 
-  - Requires an account at https://climatiq.io .As soon as you create an account you can get an API key for example ABCDEFGH which you have to write in a txt file as 
+  - Requires an account at https://climatiq.io. As soon as you create an account you can get an API key for example ABCDEFGH which you have to write in a txt file as 
 “Bearer ABCDEFGH” (without quotations of course). Then you have to copy the path of that file and modify the existing path in the constructor in transport_API.cpp  .
 
 
@@ -84,7 +84,7 @@ An interactive and friendly user interface gathers the data, displays it in grap
 After analyzing the user's input data, CarbonTracker provides a personalized feedback proposing specific improvements on their lifestyle.
 Another feature of the app is creating a network that connects the app users to generate a healthy competition among individuals.
 
-##Members
+## Members
 
 - Alejandro Christlieb Picazo, alexchristlieb, alejandrochristliebpicazo, project leader
 - Zhihui Li, cgneo, ZVapp, git leader
