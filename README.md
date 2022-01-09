@@ -43,6 +43,36 @@
   3. Go to CarbonTracker, open and run it inside Qt.
   4. Go to /Server/example-QTcpSocket/build*..., open the executable, and you will be able to send message to CarbonTracker (by looking at the console output).
 
+## OCR Dependencies
+
+The OCR module depends on two libraries: Tesseract and Leptonica. For Mac users, we first need to install a package manager (Homebrew) before downloading the libraries.
+
+To install Homebrew, run the following command in the terminal :
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Once Homebrew is installed, we download Tesseract by running the following command: 
+    
+    brew install tesseract
+    
+After Tesseract is installed we run this command to enable optical character recognition on different languages aside from English:
+
+    brew install tesseract-lang
+    
+Finally, we run this command to install Leptonica (for some users, this library may already be installed as a dependency of Tesseract):
+
+    brew install leptonica
+    
+Now that the libraries are downloaded, we need to specify their path. To do so:
+
+    Open the project on QtCreator
+    Right-click on the project folder
+    Select "Add libraries"
+    Select "External libraries"
+    Add include path and library path of Tesseract (/usr/local/Cellar/Tesseract)
+    Add include path and library path of Leptonica (/usr/local/Cellar/Leptonica)
+    
+This finishes setting the libraries and we can now execute the project.
 
 ## Introduction
 CarbonTracker is a desktop GUI app that quantifies and analyzes CO2 emissions, using databases, by retrieving and computing the environmental impact
