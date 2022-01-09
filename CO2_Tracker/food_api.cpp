@@ -87,7 +87,7 @@ void food_api::parse_reply(QNetworkReply* reply){
         }
 
         //store information in product_info
-        product_info = {code, eco_score, brand, category, co2_total};
+        product_info = {code, eco_score, brand, category, co2_total, quantity};
 
     }
 }

@@ -1,7 +1,7 @@
 #include "receipt.h"
 #include "date.h"
 #include <string>
-
+#include "food.h"
 Receipt::Receipt() {
 
 }
@@ -123,8 +123,8 @@ void Receipt::receipt_to_consumption(Consumption* c) {
            continue;
        }
        else {
-           double co2 = atof(product_info[-1].c_str());
-           Object* product_object = new Object(&date[1], category, "food", co2);
+           double co2 = atof(product_info[4].c_str());
+           Food* product_object = new Food(&date[1], category, stoi(product_info[5]), product_info[0], co2);
            c->add_object(product_object, true);
        }
    }
