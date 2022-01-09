@@ -210,19 +210,19 @@ MainWindow::MainWindow(QWidget *parent)
     //
     //Daily
 
-    QBarSet *set0 = new QBarSet("Food");
-    QBarSet *set1 = new QBarSet("Transports");
+    QBarSet *set0 = new QBarSet("General footrpint");
+    //QBarSet *set1 = new QBarSet("Transports");
 
-    *set0 << 1 << 2 << 3;
-    *set1 << 5 << 0 << 0;
+    *set0 << c->get_daily_footprint("01012022") << 7 << 70 ;
+    //*set1 << 5 << 0 << 0;
 
     QStackedBarSeries *series = new QStackedBarSeries();
     series->append(set0);
-    series->append(set1);
+    //series->append(set1);
 
     QChart *chart = new QChart();
     chart->addSeries(series);
-    chart->setTitle("Your daily emission compared to public figures' (in CO2/kg)");
+    chart->setTitle("Your daily emission compared to public figures' (in kg.CO2)");
     chart->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories;
@@ -243,19 +243,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Monthly
 
-    QBarSet *set4 = new QBarSet("Food");
-    QBarSet *set5 = new QBarSet("Transports");
+    QBarSet *set4 = new QBarSet("General footprint");
+    //QBarSet *set5 = new QBarSet("Transports");
 
-    *set4 << 10 << 20 << 30;
-    *set5 << 50 << 2 << 2;
+    *set4 << c->get_monthly_footprint("00012022") << 208 << 2087;
+    //*set5 << 50 << 2 << 2;
 
     QStackedBarSeries *series2 = new QStackedBarSeries();
     series2->append(set4);
-    series2->append(set5);
+    //series2->append(set5);
 
     QChart *chart2 = new QChart();
     chart2->addSeries(series2);
-    chart2->setTitle("Your monthly emission compared to public figures' (in CO2/kg)");
+    chart2->setTitle("Your monthly emission compared to public figures' (in kg.CO2)");
     chart2->setAnimationOptions(QChart::SeriesAnimations);
 
     QStringList categories2;
@@ -276,15 +276,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Yearly
 
-    QBarSet *set7 = new QBarSet("Food");
-    QBarSet *set8 = new QBarSet("Transports");
+    QBarSet *set7 = new QBarSet("General footprint");
+    //QBarSet *set8 = new QBarSet("Transports");
 
-    *set7 << 100 << 200 << 300;
-    *set8 << 500 << 20 << 20;
+    *set7 << c->get_yearly_footprint("00002022") << 2505 << 25052 ;
+    //*set8 << 500 << 20 << 20;
 
     QStackedBarSeries *series3 = new QStackedBarSeries();
     series3->append(set7);
-    series3->append(set8);
+    //series3->append(set8);
 
     QChart *chart3 = new QChart();
     chart3->addSeries(series3);
@@ -310,7 +310,7 @@ MainWindow::MainWindow(QWidget *parent)
     //Summary(Daily, Monthly, Yearly all in one page)
 
     //daily
-    QBarSet *set0sum = new QBarSet("Food");
+    /*QBarSet *set0sum = new QBarSet("Food");
     QBarSet *set1sum = new QBarSet("Transports");
 
     *set0sum << 1 << 2 << 3;
@@ -398,7 +398,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QChartView *chartView3sum = new QChartView(chart3sum);
     chartView3sum->setParent(ui->horizontalFrame3);
-
+*/
     //end of graphs
 
     QPixmap pix1(":/challenges/food-pic.png");

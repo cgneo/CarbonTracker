@@ -211,22 +211,37 @@ void Consumption::add_base_consumption(Base_Consumption base){
 }
 
 double Consumption::get_vehicle_footprint(string vehicle_name){
+    if(footprint_by_vehicle->find(vehicle_name) == footprint_by_vehicle->end()){
+        return 0;
+    }
     return footprint_by_vehicle->at(vehicle_name);
 }
 
 double Consumption::get_category_footprint(string food_category){
+    if(footprint_by_food_category->find(food_category) == footprint_by_food_category->end()){
+        return 0;
+    }
     return footprint_by_food_category->at(food_category);
 }
 
 double Consumption::get_yearly_footprint(string year){
+    if(footprint_by_date->find(year) == footprint_by_date->end()){
+        return 0;
+    }
     return footprint_by_date->at(year);
 }
 
 double Consumption::get_monthly_footprint(string month){
+    if(footprint_by_date->find(month) == footprint_by_date->end()){
+        return 0;
+    }
     return footprint_by_date->at(month);
 }
 
 double Consumption::get_daily_footprint(string day){
+    if(footprint_by_date->find(day) == footprint_by_date->end()){
+        return 0;
+    }
     return footprint_by_date->at(day);
 
 }
