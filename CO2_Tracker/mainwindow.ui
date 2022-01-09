@@ -1556,67 +1556,67 @@ p, li { white-space: pre-wrap; }
                        <widget class="QComboBox" name="vehicleTransport">
                         <item>
                          <property name="text">
-                          <string>electric car</string>
+                          <string>Electric car</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>petrol car</string>
+                          <string>Petrol car</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>diesel car</string>
+                          <string>Diesel car</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>petrol motorbike</string>
+                          <string>Petrol motorbike</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>bus</string>
+                          <string>Bus</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>metro</string>
+                          <string>Metro</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>ferry</string>
+                          <string>Ferry</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>national train</string>
+                          <string>National train</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>international train</string>
+                          <string>International train</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>domestic flight</string>
+                          <string>Domestic flight</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>first class international flight</string>
+                          <string>First class international flight</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>economy class internationl flight</string>
+                          <string>Economy class internationl flight</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>business class international flight</string>
+                          <string>Business class international flight</string>
                          </property>
                         </item>
                        </widget>
@@ -3372,7 +3372,7 @@ QListView::item:hover {
      <x>0</x>
      <y>0</y>
      <width>1536</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
