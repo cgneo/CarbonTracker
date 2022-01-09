@@ -17,11 +17,13 @@ bool Tests::start_test(){ //Main trigger function
     User *user;
     Json_DB json;
     QString file;
+    Receipt *receipt;
 
     test_JsonUser();//Tests all json functions
     test_add_duration();
     //test_user(user); //Commented so that it builds
     test_JsonUser();
+    //test_receipt(receipt);
 
 }
 
@@ -97,6 +99,23 @@ void test_user(User *user){ // need to change this test
     }
     cout << "Test: Set username passed" << endl;
 
+}
+
+//-----------------------Receipt-------------------------
+void Tests::test_receipt(Receipt *receipt){
+    try{
+        receipt->duration_is_valid();
+    }
+    catch(...){
+        throw invalid_argument("test_receipt - Error invalid duration");
+    }
+    try{
+        receipt->number_of_people_is_valid();
+    }
+    catch(...){
+        throw invalid_argument("test_receipt - Error invalid number of people");
+    }
+    qDebug() << "test_receipt - Success";
 }
 
 //---------------------Json------------------------------

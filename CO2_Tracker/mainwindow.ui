@@ -232,7 +232,7 @@ QTabBar::tab:selected, QTabBar::tab:hover {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1558,67 +1558,67 @@ p, li { white-space: pre-wrap; }
                        <widget class="QComboBox" name="vehicleTransport">
                         <item>
                          <property name="text">
-                          <string>electric car</string>
+                          <string>Electric car</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>petrol car</string>
+                          <string>Petrol car</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>diesel car</string>
+                          <string>Diesel car</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>petrol motorbike</string>
+                          <string>Petrol motorbike</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>bus</string>
+                          <string>Bus</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>metro</string>
+                          <string>Metro</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>ferry</string>
+                          <string>Ferry</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>national train</string>
+                          <string>National train</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>international train</string>
+                          <string>International train</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>domestic flight</string>
+                          <string>Domestic flight</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>first class international flight</string>
+                          <string>First class international flight</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>economy class internationl flight</string>
+                          <string>Economy class internationl flight</string>
                          </property>
                         </item>
                         <item>
                          <property name="text">
-                          <string>business class international flight</string>
+                          <string>Business class international flight</string>
                          </property>
                         </item>
                        </widget>
@@ -1807,7 +1807,7 @@ p, li { white-space: pre-wrap; }
        <attribute name="title">
         <string>Graph page</string>
        </attribute>
-       <widget class="QTabWidget" name="tabWidget_2">
+       <widget class="QTabWidget" name="Refresh">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1817,7 +1817,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
@@ -1826,9 +1826,9 @@ p, li { white-space: pre-wrap; }
          <widget class="QFrame" name="transportsframe">
           <property name="geometry">
            <rect>
-            <x>80</x>
-            <y>30</y>
-            <width>561</width>
+            <x>30</x>
+            <y>70</y>
+            <width>591</width>
             <height>471</height>
            </rect>
           </property>
@@ -2578,6 +2578,35 @@ and resolutions to improve your carbon footpring linked to
 transports)</string>
           </property>
          </widget>
+         <widget class="QPushButton" name="pushButton">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>20</y>
+            <width>100</width>
+            <height>32</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Refresh</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_8">
+         <attribute name="title">
+          <string>Food</string>
+         </attribute>
+         <widget class="QFrame" name="foodframe">
+          <property name="geometry">
+           <rect>
+            <x>570</x>
+            <y>140</y>
+            <width>561</width>
+            <height>471</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_17"/>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab_10">
          <attribute name="title">
@@ -2656,54 +2685,6 @@ transports)</string>
           <layout class="QHBoxLayout" name="horizontalLayout_13"/>
          </widget>
         </widget>
-        <widget class="QWidget" name="tab_8">
-         <attribute name="title">
-          <string>Summary</string>
-         </attribute>
-         <widget class="QFrame" name="horizontalFrame1sum">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>631</width>
-            <height>431</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_14"/>
-         </widget>
-         <widget class="QFrame" name="horizontalFrame2sum">
-          <property name="geometry">
-           <rect>
-            <x>600</x>
-            <y>0</y>
-            <width>781</width>
-            <height>431</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_15"/>
-         </widget>
-         <widget class="QFrame" name="horizontalFrame3sum">
-          <property name="geometry">
-           <rect>
-            <x>600</x>
-            <y>430</y>
-            <width>781</width>
-            <height>431</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_16"/>
-         </widget>
-         <widget class="QCalendarWidget" name="calendarWidget">
-          <property name="geometry">
-           <rect>
-            <x>7</x>
-            <y>432</y>
-            <width>591</width>
-            <height>431</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_3">
@@ -2713,10 +2694,10 @@ transports)</string>
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-          <x>40</x>
+          <x>20</x>
           <y>10</y>
-          <width>1251</width>
-          <height>691</height>
+          <width>2148</width>
+          <height>1149</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
@@ -2761,7 +2742,7 @@ transports)</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>build/tips photos/food-pic.png</pixmap>
+                <pixmap>resources/pictures/food-pic.png</pixmap>
                </property>
               </widget>
              </item>
@@ -2886,10 +2867,7 @@ transports)</string>
              <item>
               <widget class="QLabel" name="transport_label">
                <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>build/tips photos/new_plane_pic.png</pixmap>
+                <string>TextLabel</string>
                </property>
               </widget>
              </item>
@@ -3017,7 +2995,7 @@ transports)</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>build/tips photos/home-pic.png</pixmap>
+                <pixmap>resources/pictures/home-pic.png</pixmap>
                </property>
               </widget>
              </item>
@@ -3396,7 +3374,7 @@ QListView::item:hover {
      <x>0</x>
      <y>0</y>
      <width>1536</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

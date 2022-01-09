@@ -195,5 +195,8 @@ int main(int argc, char *argv[])
 
 
 
+    Date d;
+    d.get_current_date();
+
 
 }
