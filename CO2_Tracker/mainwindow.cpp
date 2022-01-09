@@ -561,6 +561,9 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_Refresh_clicked(){
+    Json_DB json_obj;
+    User *u = json_obj.readUser_from_Json();
+    current_user = u;
 
         QPieSeries *dseries = new QPieSeries();
         dseries->setHoleSize(0.35);
