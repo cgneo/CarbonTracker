@@ -259,7 +259,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QStackedBarSeries *series = new QStackedBarSeries();
     series->append(set0);
-    series->append(set1);
+    //series->append(set1);
 
     QChart *chart = new QChart();
     chart->addSeries(series);
