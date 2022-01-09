@@ -527,7 +527,7 @@ void MainWindow::on_Scanbutton_clicked()
 {
 //    QString file_name = QFileDialog::getOpenFileName(this,"Open a file", QDir::homePath());
 //    QMessageBox::information(this, "...", file_name);
-    string filepath = "/Users/aminelamouchi/Desktop/carrefour.png";
+    string filepath = "/Users/alex_christlieb/Desktop/carrefour.png";
     vector<vector<string>> receipt_vec = get_receipt_info(filepath);
     Receipt rec;
     rec.set_content(receipt_vec);

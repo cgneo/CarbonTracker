@@ -1,8 +1,9 @@
 #include "transport_API.cpp"
-
-#ifdef Test
 #include "tests.h"
-#endif
+
+//#ifdef Test
+//#include "tests.h"
+//#endif
 #include "json_DB.hpp"
 #include "object.h"
 #include "transport.h"
@@ -141,7 +142,7 @@ int main(int argc, char *argv[])
 
     //qDebug() << u->get_name();
     //qDebug() << u->get_consumption()->get_object_i(0)->get_name();
-    MainWindow window;
+
 
 //    Consumption c;
 
@@ -158,35 +159,27 @@ int main(int argc, char *argv[])
     //qDebug() << temp->get_name();
     //qDebug() << temp->get_footprint();
 
-    window.show();
-    return a.exec();
 
-
-
-
-//   Tests t1;
-//   QString file = json_obj.get_path() + json_obj.get_FileName();
-//   t1.test_does_file_exist(file);
+   Tests t1;
+   Json_DB json_obj;
+   QString file = json_obj.get_path() + json_obj.get_FileName();
+   t1.test_does_file_exist(file);
 //   User u;
 //   //json_obj.writeJsonUser(u);
 
-//   bool new_user = !t1.test_does_file_exist(file);
-
-
-
-
+   bool new_user = !t1.test_does_file_exist(file);
 
     //This code is actually USED
-//    if (new_user){ //If user is new, open profile set_up
-//        Survey window;
-//        window.show();
-//        return a.exec();
-//    }
-//    else{ //Else open regular window
-//        MainWindow window;
-//        window.show();
-//        return a.exec();
-//     }
+    if (new_user){ //If user is new, open profile set_up
+        Survey window;
+        window.show();
+        return a.exec();
+    }
+    else{ //Else open regular window
+        MainWindow window;
+        window.show();
+        return a.exec();
+     }
 
 
 }
