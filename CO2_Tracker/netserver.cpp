@@ -7,6 +7,7 @@
 #include <QTcpSocket>
 #include <QFile>
 #include <QDir>
+#include <QDataStream>
 
 netserver::netserver()
 {

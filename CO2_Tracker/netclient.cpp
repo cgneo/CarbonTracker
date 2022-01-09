@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <QDir>
+#include <QDataStream>
 
 netclient::netclient()
 {
