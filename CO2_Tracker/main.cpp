@@ -22,6 +22,8 @@
 #include <QBarSet>
 #include <QBarSeries>
 #include "food.h"
+#include "base_consumption.h"
+#include "consumption.h"
 
 
 /**
@@ -109,10 +111,20 @@ int main(int argc, char *argv[])
 //    Transport trans(fech2, "Nuevisimo", d);
 //    trans.set_footprint(69);
 
-//    Object obj(fecha, "Metro", "Transport",100);
+//    Object obj(fecha, "Metro", "Transport",10);
 //    Object obj2(fech2, "Avion", "Transport",100);
+
 //    obj.set_footprint(10390);
 //    obj2.set_footprint(1000000);
+
+//    Base_Consumption b;
+//    b.add_object(&obj);
+//    b.add_object(&obj2);
+
+//    Consumption c;
+//    c.add_base_consumption(b);
+//    double thing = c.get_object_i(0)->get_footprint();
+//    std::cout << thing;
 
 //    json_obj.writeJsonUser(u);
 //    json_obj.addObject_to_file(t1);
@@ -159,7 +171,7 @@ int main(int argc, char *argv[])
     //qDebug() << temp->get_name();
     //qDebug() << temp->get_footprint();
 
-
+/*
    Tests t1;
    Json_DB json_obj;
    QString file = json_obj.get_path() + json_obj.get_FileName();
@@ -179,7 +191,9 @@ int main(int argc, char *argv[])
         MainWindow window;
         window.show();
         return a.exec();
-     }
+     }*/
+
+
 
 
 }

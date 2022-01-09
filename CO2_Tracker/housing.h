@@ -6,7 +6,7 @@
 class Housing : public Object{
 public:
     Housing();
-    Housing(int light);
+    Housing(int l);
     ~Housing();
     virtual void set_footprint(double light_c);
 
