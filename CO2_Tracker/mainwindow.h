@@ -52,6 +52,13 @@ private slots:
 
     void enableButton();
 
+    void on_send_button_clicked();
+
+    void on_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_userlist_itemClicked();
+
+
 private:
     Ui::MainWindow *ui;
 

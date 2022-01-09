@@ -38,3 +38,8 @@ void profile_picture::on_button_image_clicked()
     }
 }
 
+
+
+
+
+

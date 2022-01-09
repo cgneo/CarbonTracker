@@ -15,6 +15,10 @@
 #include <QMessageBox>
 #include <QDir>
 
+#include <QListWidgetItem>
+#include <QListWidget>
+
+
 #include <QtCharts>
 #include <QChartView>
 #include <QBarSet>
@@ -372,8 +376,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui -> graph_pic -> setPixmap(pix6.scaled(500,300, Qt::KeepAspectRatio));
 
 
-
-
     opacity_effect_1 = new QGraphicsOpacityEffect(ui -> daily_challenge_1);
     ui -> daily_challenge_1 -> setGraphicsEffect(opacity_effect_1);
     opacity_effect_1 -> setOpacity(1);
@@ -459,7 +461,28 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui-> tree_button, SIGNAL(clicked), this, SLOT(enableButton));
 
 
+    //Creating list of users
+    //needs to make it automatic for each new user
+
+    ui->setupUi(this);
+    for(int i=0; i < 10; i++)
+    {
+        QListWidgetItem *item = new QListWidgetItem(QIcon(":/challenges/user_icon.png"), QString::number(i) + "user_name1");
+        ui->userlist->addItem(item);
+   }
+
+    connect(ui->userlist,SIGNAL(itemClicked(QListWidgetItem*)),this,SLOT(itemClicked(QListWidgetItem*)));
+
 }
+void MainWindow::on_userlist_itemClicked(QListWidgetItem *item)
+{
+    QComboBox* combo = new QComboBox;
+    ui->comboBox->addItem("Send a Challenge to your friend!");
+    ui->comboBox->addItem("Send a message!");
+    ui->comboBox->addItem("Gift: offer some seeds!");
+
+}
+
 
 
 MainWindow::~MainWindow()
@@ -595,4 +618,27 @@ void MainWindow::on_tree_button_clicked()
 
 }
 
+
+
+void MainWindow::on_send_button_clicked()
+{
+    netclient net;
+    QString message = ui -> chatbox_write ->text().trimmed();
+    if(!message.isEmpty())
+    {
+       net.on_pushButton_sendMessage_clicked(message);
+        User u;
+       ui-> chatbox ->append("<b>" + u.get_username() + "</b>: " + message);
+    }
+
+    ui -> chatbox_write->clear();
+    ui -> chatbox_write ->setFocus();
+
+}
+
+
+void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
+{
+
+}
 

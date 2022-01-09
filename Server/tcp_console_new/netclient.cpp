@@ -87,7 +87,9 @@ void netclient::readSocket()
 
     } else if(fileType=="message") {
         QString message = QString("%1 :: %2").arg(socket->socketDescriptor()).arg(QString::fromStdString(buffer.toStdString()));
+
         emit newMessage(message);
+
     }
 }
 
