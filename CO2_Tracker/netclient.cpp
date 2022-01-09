@@ -1,5 +1,5 @@
 #include "netclient.h"
-
+#include <QDataStream>
 #include <iostream>
 #include <QDir>
 

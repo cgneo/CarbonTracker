@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <colormod.h>
-
+#include <QDataStream>
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QFile>
