@@ -10,6 +10,8 @@
 #include "transport.h"
 #include "transport_api.h"
 
+#include "housing.h"
+
 Survey::Survey(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Survey)
@@ -110,7 +112,10 @@ void Survey::on_buttonAccount_clicked()
 
         // Using information from 'housing' tab
         int energy_consumption_monthly = ui->kwh->value();
-        int energy_consumption_daily = energy_consumption_monthly/30;
+        double energy_consumption_daily = energy_consumption_monthly/30;
+
+        Housing h;
+        h.set_footprint(energy_consumption_daily);
 
         // Using information from 'transport' tab
         bool yes = ui->radioButton_TransY->isChecked();
