@@ -53,6 +53,8 @@ Another feature of the app is creating a network that connects the app users to 
     - Zhihui Li
     - (Amine Lamouchi)
 
+
+# External Dependencies
 ## OCR Dependencies
 
 The OCR module depends on two libraries: Tesseract and Leptonica. For Mac users, we first need to install a package manager (Homebrew) before downloading the libraries.
@@ -83,3 +85,14 @@ Now that the libraries are downloaded, we need to specify their path. To do so:
     Add include path and library path of Leptonica (/usr/local/Cellar/Leptonica)
     
 This finishes setting the libraries and we can now execute the project.
+
+# Compiling the project
+In order for the project to compile properly and all functionalities to run, it is important to specify the "build directory". If the project is being built on QT Creator, then the following steps should be followed to do so:
+
+    Open "CO2_Tracker.pro" on QT Creator
+    On the left toolbar, click "Projects"
+    Under "Build & Run" select "Build"
+    In the window for "General" in "Build Settings", click "Choose" to select a directory path
+    
+    
+
