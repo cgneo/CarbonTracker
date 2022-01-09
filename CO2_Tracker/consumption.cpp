@@ -167,21 +167,24 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
     string key_year = "0000"+to_string(year); //Creating standarized hash keys for dates
 
     if (footprint_by_date->find(key_day) == footprint_by_date->end()){
-        footprint_by_date->insert({key_day, footprint});
+        std::pair<std::string,double> pair (key_day, footprint);
+        footprint_by_date->insert(pair);
     } //Check if key is in dictionary. Add key if not, update value if it is in dictionary
     else{
         footprint_by_date->at(key_day) += footprint;
     }
 
     if (footprint_by_date->find(key_month) == footprint_by_date->end()){
-        footprint_by_date->insert({key_month, footprint});
+        std::pair<std::string,double> pair (key_month, footprint);
+        footprint_by_date->insert(pair);
     } //Repeat process for month key
     else{
         footprint_by_date->at(key_month) += footprint;
     }
 
     if (footprint_by_date->find(key_year) == footprint_by_date->end()){
-        footprint_by_date->insert({key_year, footprint});
+        std::pair<std::string,double> pair (key_year, footprint);
+        footprint_by_date->insert(pair);
     } //Repeat process for year_key
     else{
         footprint_by_date->at(key_year) += footprint;
@@ -219,16 +222,24 @@ double Consumption::get_category_footprint(string food_category){
 }
 
 double Consumption::get_yearly_footprint(string year){
+    if (footprint_by_date->find(year) == footprint_by_date->end()){
+        return 0;
+    }
     return footprint_by_date->at(year);
 }
 
 double Consumption::get_monthly_footprint(string month){
+    if (footprint_by_date->find(month) == footprint_by_date->end()){
+        return 0;
+    }
     return footprint_by_date->at(month);
 }
 
 double Consumption::get_daily_footprint(string day){
+    if (footprint_by_date->find(day) == footprint_by_date->end()){
+        return 0;
+    }
     return footprint_by_date->at(day);
-
 }
 
 //void Consumption::add_receipt(Receipt receipt){

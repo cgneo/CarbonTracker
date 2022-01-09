@@ -264,6 +264,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     QBarSet *set0 = new QBarSet("general footprint (food and transports)");
     //QBarSet *set1 = new QBarSet("Transports");
+    set0->append(c->get_daily_footprint("00012022"));
+    set0->append(208);
+    set0->append(2088);
 
     *set0 << c->get_daily_footprint("01012022") << 2 << 3; //missing arguments
     //*set1 << c->get_transport_footprint() << 0 << 0;
@@ -297,8 +300,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     QBarSet *set4 = new QBarSet("General footprint (food and transports");
     //QBarSet *set5 = new QBarSet("Transports");
-
-    *set4 << c->get_monthly_footprint("00012022") << 20 << 30; //missing arguments
+    set4->append(c->get_daily_footprint("00012022"));
+    set4->append(208);
+    set4->append(2088);
+    //*set4 << c->get_monthly_footprint("00012022") << 20 << 30; //missing arguments
     //*set5 << 50 << 2 << 2;
 
     QStackedBarSeries *series2 = new QStackedBarSeries();
@@ -330,8 +335,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     QBarSet *set7 = new QBarSet("General footprint");
     //QBarSet *set8 = new QBarSet("Transports");
-
-    *set7 << c->get_yearly_footprint("00002022") << 200 << 300; // missing arguments
+    set7->append(c->get_daily_footprint("00012022"));
+    set7->append(208);
+    set7->append(2088);
+    //*set7 << c->get_yearly_footprint("00002022") << 200 << 300; // missing arguments
     //*set8 << 500 << 20 << 20;
 
     QStackedBarSeries *series3 = new QStackedBarSeries();
@@ -568,9 +575,10 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_Refresh_clicked(){
-    Json_DB json_obj;
-    User *u = json_obj.readUser_from_Json();
-    current_user = u;
+    User* u = current_user;
+    //Json_DB json_obj;
+    //User *u = json_obj.readUser_from_Json();
+    //current_user = u;
 
         QPieSeries *dseries = new QPieSeries();
         dseries->setHoleSize(0.35);
@@ -714,16 +722,21 @@ void MainWindow::on_buttonTransport_clicked()
     int m = distance.length();
     char char_array_distance[m+1];
     strcpy(char_array_distance, distance.c_str());
-    //Date* d;
-    //Transport t(d,vehicle,char_array_distance);
+    Date* d = new Date();
+    d->get_current_date();
+
+    Transport* t = new Transport(d,vehicle,char_array_distance);
+
     // calling the (transport) api
     transport_api api;
     api.get_reply(char_array_distance, char_array_vehicle);
 
     // outputting the emission for given vehicle and distance
     QString emission = QString::number(api.get_emission());
-    //t.set_footprint(api.get_emission());
+    t->set_footprint(api.get_emission());
     ui->outputTransport->setText(emission);
+
+    current_user->get_consumption()->add_object(t, true);
 }
 
 void MainWindow::enableButton()

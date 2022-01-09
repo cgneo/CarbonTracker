@@ -171,7 +171,7 @@ int main(int argc, char *argv[])
     //qDebug() << temp->get_name();
     //qDebug() << temp->get_footprint();
 
-/*
+
    Tests t1;
    Json_DB json_obj;
    QString file = json_obj.get_path() + json_obj.get_FileName();
@@ -191,13 +191,13 @@ int main(int argc, char *argv[])
         MainWindow window;
         window.show();
         return a.exec();
-     }*/
+     }
 
 
 
-    Date d;
-    d.get_current_date();
-    std::cout << d.to_String();
+//    Date d;
+//    d.get_current_date();
+//    std::cout << d.to_String();
 
 
 }
