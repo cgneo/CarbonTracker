@@ -29,14 +29,8 @@
     - (Amine Lamouchi)
 
 
-# How to run your project
-- Transport_API
-
-  - Requires an account at https://climatiq.io. As soon as you create an account you can get an API key for example ABCDEFGH which you have to write in a txt file as 
-“Bearer ABCDEFGH” (without quotations of course). Then you have to copy the path of that file and modify the existing path in the constructor in transport_API.cpp  .
-
-
-- OCR Dependencies
+# External Dependencies
+## OCR Dependencies
 
 The OCR module depends on two libraries: Tesseract and Leptonica. For Mac users, we first need to install a package manager (Homebrew) before downloading the libraries.
 
@@ -67,8 +61,24 @@ Now that the libraries are downloaded, we need to specify their path. To do so:
     
 This finishes setting the libraries and we can now execute the project.
 
+# Compiling the project
+In order for the project to compile properly and all functionalities to run, it is important to specify the "build directory". If the project is being built on QT Creator, then the following steps should be followed to do so:
 
-- Peer-to-Peer (netclient, netserver):
+    Open "CO2_Tracker.pro" on QT Creator
+    On the left toolbar, click "Projects"
+    Under "Build & Run" select "Build"
+    In the window for "General" in "Build Settings", click "Choose" to select a directory path
+    Enter the following relative path "../CarbonTracker/CO2_Tracker/resources/build/"
+    This will be the specified location where the building will happen (needed for the project to work properly) and where the executable will be 
+   
+
+# How to run your project
+## Transport_API
+
+  - Requires an account at https://climatiq.io. As soon as you create an account you can get an API key for example ABCDEFGH which you have to write in a txt file as 
+“Bearer ABCDEFGH” (without quotations of course). Then you have to copy the path of that file and modify the existing path in the constructor in transport_API.cpp  
+
+## Peer-to-Peer (netclient, netserver):
   - Requires at least Qt 5.15 above (preferably the latest Qt 6.2.2: you can update your Qt by opening MaintenanceTool)
   1. You can test peer-to-peer functionality by first going into /Server/example-QTcpSocket/QTCPClient, and build it;
   2. After building the testing client, you'll find a folder called "build-*", which we will use later;
