@@ -20,17 +20,19 @@ public:
     void startClient();
     explicit netclient();
     ~netclient();
+    void readSocket();
+    void on_pushButton_sendMessage_clicked(QString& str);
 
 signals:
     void newMessage(QString);
 
 private slots:
-    void readSocket();
+
     void discardSocket();
     void displayError(QAbstractSocket::SocketError socketError);
 
     void displayMessage(const QString& str);
-    void on_pushButton_sendMessage_clicked(QString& str);
+
     void on_pushButton_sendAttachment_clicked();
 
 private:

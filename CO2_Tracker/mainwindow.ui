@@ -226,7 +226,9 @@ QTabBar::tab {
 QTabBar::tab:selected, QTabBar::tab:hover {
     
 	background-color: rgb(234, 147, 96);
-}</string>
+}
+
+add color: rgb(0, 0, 0)</string>
       </property>
       <property name="tabShape">
        <enum>QTabWidget::Rounded</enum>
@@ -2704,30 +2706,32 @@ transports)</string>
        <attribute name="title">
         <string>Challenges/info/tips</string>
        </attribute>
-       <widget class="QWidget" name="layoutWidget">
+       <widget class="QWidget" name="">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>10</y>
-          <width>2148</width>
-          <height>1149</height>
+          <x>510</x>
+          <y>560</y>
+          <width>421</width>
+          <height>211</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_4">
-         <item row="0" column="0">
-          <layout class="QVBoxLayout" name="verticalLayout_16">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_15">
-             <item>
-              <widget class="QLabel" name="label_9">
-               <property name="maximumSize">
-                <size>
-                 <width>165777</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
+        <layout class="QVBoxLayout" name="verticalLayout_20">
+         <item>
+          <widget class="QLabel" name="label_16">
+           <property name="minimumSize">
+            <size>
+             <width>341</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
 
 
 	border: 2px solid rgb(37, 39, 48);
@@ -2737,371 +2741,414 @@ transports)</string>
 
 
 }</string>
-               </property>
-               <property name="text">
-                <string>Food</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="food_label">
-               <property name="maximumSize">
-                <size>
-                 <width>351</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>resources/pictures/food-pic.png</pixmap>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_11">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>233</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124,77);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Info</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_14">
-             <item>
-              <widget class="QLabel" name="label_10">
-               <property name="minimumSize">
-                <size>
-                 <width>341</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Food Tips</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_4">
-               <item>
-                <widget class="QCheckBox" name="food_tip_1">
-                 <property name="text">
-                  <string>Reduce dairy consumption</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="food_tip_2">
-                 <property name="text">
-                  <string>Consume local and seasonal products</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="food_tip_3">
-                 <property name="text">
-                  <string>Eat less red meat</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-          </layout>
+           </property>
+           <property name="text">
+            <string>Transport Tips</string>
+           </property>
+          </widget>
          </item>
-         <item row="0" column="1">
-          <layout class="QVBoxLayout" name="verticalLayout_18">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_21">
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_19">
-             <item>
-              <widget class="QLabel" name="label_14">
-               <property name="maximumSize">
-                <size>
-                 <width>165777</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Transport</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="transport_label">
-               <property name="text">
-                <string>TextLabel</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_15">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>233</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124,77);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Info</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+            <widget class="QCheckBox" name="transportation_tip_1">
+             <property name="text">
+              <string>Avoid driving at peak times</string>
+             </property>
+            </widget>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_20">
-             <item>
-              <widget class="QLabel" name="label_16">
-               <property name="minimumSize">
-                <size>
-                 <width>341</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Transport Tips</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_21">
-               <item>
-                <widget class="QCheckBox" name="transportation_tip_1">
-                 <property name="text">
-                  <string>Avoid driving at peak times</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="transportation_tip_2">
-                 <property name="text">
-                  <string>Sharing a car to go to work</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="transportation_tip_3">
-                 <property name="text">
-                  <string>Replace the car with public transports </string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-         <item row="0" column="2">
-          <layout class="QVBoxLayout" name="verticalLayout_22">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_23">
-             <item>
-              <widget class="QLabel" name="label_17">
-               <property name="maximumSize">
-                <size>
-                 <width>165777</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Home</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="home_label">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap>resources/pictures/home-pic.png</pixmap>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_18">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>233</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124,77);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Info</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+            <widget class="QCheckBox" name="transportation_tip_2">
+             <property name="text">
+              <string>Sharing a car to go to work</string>
+             </property>
+            </widget>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_24">
-             <item>
-              <widget class="QLabel" name="label_19">
-               <property name="minimumSize">
-                <size>
-                 <width>341</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel{
-
-
-	border: 2px solid rgb(37, 39, 48);
-	border-radius: 6px;
-	border-color: rgb(136, 159, 124);
-	background-color: rgb(136, 159, 124);
-
-
-}</string>
-               </property>
-               <property name="text">
-                <string>Transport Tips</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_25">
-               <item>
-                <widget class="QCheckBox" name="house_tip_1">
-                 <property name="text">
-                  <string>Turn off the lights</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="house_tip_2">
-                 <property name="text">
-                  <string>Unplug your charger when not in use</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="house_tip_3">
-                 <property name="text">
-                  <string>Use the dishwasher when full</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
+            <widget class="QCheckBox" name="transportation_tip_3">
+             <property name="text">
+              <string>Replace the car with public transports </string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
         </layout>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>23</x>
+          <y>13</y>
+          <width>451</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>165777</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Food</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="food_fact">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>290</y>
+          <width>351</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>3000000</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124,77);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="food_label">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>50</y>
+          <width>331</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>351</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>resources/pictures/food-pic.png</pixmap>
+        </property>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>560</y>
+          <width>431</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_14">
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="minimumSize">
+            <size>
+             <width>341</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+
+}</string>
+           </property>
+           <property name="text">
+            <string>Food Tips</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QCheckBox" name="food_tip_1">
+             <property name="styleSheet">
+              <string notr="true">add color: rgb(0, 0, 0)</string>
+             </property>
+             <property name="text">
+              <string>Reduce dairy consumption</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="food_tip_2">
+             <property name="text">
+              <string>Consume local and seasonal products</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="food_tip_3">
+             <property name="text">
+              <string>Eat less red meat</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>1010</x>
+          <y>560</y>
+          <width>371</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_24">
+         <item>
+          <widget class="QLabel" name="label_19">
+           <property name="minimumSize">
+            <size>
+             <width>341</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+
+}</string>
+           </property>
+           <property name="text">
+            <string>Transport Tips</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_25">
+           <item>
+            <widget class="QCheckBox" name="house_tip_1">
+             <property name="text">
+              <string>Turn off the lights</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="house_tip_2">
+             <property name="text">
+              <string>Unplug your charger when not in use</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="house_tip_3">
+             <property name="text">
+              <string>Use the dishwasher when full</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="label_17">
+        <property name="geometry">
+         <rect>
+          <x>971</x>
+          <y>11</y>
+          <width>411</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>165777</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Home</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="home_label">
+        <property name="geometry">
+         <rect>
+          <x>1000</x>
+          <y>40</y>
+          <width>381</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>resources/pictures/home-pic.png</pixmap>
+        </property>
+       </widget>
+       <widget class="QLabel" name="house_fact">
+        <property name="geometry">
+         <rect>
+          <x>1040</x>
+          <y>250</y>
+          <width>311</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30000</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124,77);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Info</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_14">
+        <property name="geometry">
+         <rect>
+          <x>502</x>
+          <y>12</y>
+          <width>431</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>165777</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Transport</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="transport_label">
+        <property name="geometry">
+         <rect>
+          <x>502</x>
+          <y>45</y>
+          <width>429</width>
+          <height>204</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="transport_fact">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>270</y>
+          <width>341</width>
+          <height>291</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>300000</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+
+
+	border: 2px solid rgb(37, 39, 48);
+	border-radius: 6px;
+	border-color: rgb(136, 159, 124);
+	background-color: rgb(136, 159, 124,77);
+
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Info</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_4">

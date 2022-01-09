@@ -2,11 +2,12 @@
 
 #include <iostream>
 #include <colormod.h>
-
+#include <mainwindow.h>
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QFile>
 #include <QDir>
+#include <QDataStream>
 
 netserver::netserver()
 {
@@ -108,8 +109,10 @@ void netserver::readSocket()
 
 
     }else if(fileType=="message"){
-        QString message = QString("%1 :: %2").arg(socket->socketDescriptor()).arg(QString::fromStdString(buffer.toStdString()));
+        QString message = QString("%1 :?: %2").arg(socket->socketDescriptor()).arg(QString::fromStdString(buffer.toStdString()));
         emit newMessage(message);
+        message_received(message);
+
     }
 }
 
