@@ -91,7 +91,7 @@ void Survey::on_buttonAccount_clicked()
     // Using information from 'housing' tab
     int living_partners = ui->living_partners->value();
 
-    // Using information from 'create account' tab
+    // Using information from 'create account' tabs
         // Warning messages
     if ((ui->Name->text().isEmpty())){
         QMessageBox::warning(this, "Warning", "You have not submitted a name.");

@@ -32,6 +32,14 @@ double Base_Consumption::get_footprint() {
     return footprint;
 }
 
+void Base_Consumption::set_last_added_date(Date d){
+    last_added_date = d;
+}
+
+Date Base_Consumption::get_last_added_date(){
+    return last_added_date;
+}
+
 //vector<Object> Base_Consumption::*calculate_base_consumption(double c_footprint, int roommates){
 //    //get base footprint and divide by number of roommates
 //}

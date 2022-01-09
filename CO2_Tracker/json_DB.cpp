@@ -203,9 +203,39 @@ User *Json_DB::readUser_from_Json(){
     int profile_pic = json_file["Profile picture"].toInt();
 
     User *u = new User (username, name, day, month, year, email, country, partners, profile_pic);
+
+
     read_consumption_from_Json(u,  *current_doc);
+    read_base_consumption_from_Json(u, *current_doc);
     //Should add base_consumption as well
     return u;
+}
+
+void Json_DB::read_base_consumption_from_Json(User *u, QJsonDocument &current_doc){
+    QJsonObject json_file = current_doc.object(); //Full json object
+
+    //Get the consumption array of json objects
+
+    QJsonObject base_consumption_json = json_file["Base Consumption"].toObject();
+
+    QJsonArray base_array = base_consumption_json["Base Objects"].toArray();
+    QJsonArray date_json = base_consumption_json["Last Date"].toArray();
+    int day = date_json.at(0).toInt();
+    int month = date_json.at(1).toInt();
+    int year = date_json.at(2).toInt();
+
+    Base_Consumption *base = new Base_Consumption();
+    base->set_last_added_date(Date(day, month, year));
+
+    int size = base_array.size();
+
+    for (int i = 0; i < size; i++){
+        QJsonObject json_object = base_array.at(i).toObject();
+        double footprint = json_object["Footprint"].toDouble();
+        QString type = json_object["Type"].toString();
+        QString name = json_object["Name"].toString();
+        //Object *new_obj = new Object(); Create object
+    }
 }
 
 void Json_DB::read_consumption_from_Json(User* u, QJsonDocument &current_doc){
@@ -217,7 +247,6 @@ void Json_DB::read_consumption_from_Json(User* u, QJsonDocument &current_doc){
     int size = consumption_json.size();
 
     Consumption *consumption = new Consumption();
-    consumption->set_userId(3);
 
     for (int i = size - 1; i >= 0; i--){ //Iterate through the json array backwards to get newer elements in front
         QJsonObject json_object = consumption_json.at(i).toObject();

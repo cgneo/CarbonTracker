@@ -18,6 +18,8 @@ public:
     void print();
     std::string print2();
     bool is_valid();
+    bool operator==(Date *d1);
+    std::string to_String();
 
 private:
     int day;

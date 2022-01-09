@@ -7,6 +7,7 @@
 class Base_Consumption
 {
 private:
+    Date last_added_date;
     int consumptionId;
     int base_consumptionId; // all the three id's can be the same
     vector<Object *> base_consumption;
@@ -16,6 +17,9 @@ public:
     int userId;
     Base_Consumption();
     ~Base_Consumption();
+    Date get_last_added_date(); //Not implemented
+    void set_last_added_date(Date d);
+
     int get_consumptionId();
     int get_userId();
     int get_base_consumptionId();
@@ -23,6 +27,7 @@ public:
     int get_size();
     Object *get_object_i(int i);
     double get_footprint();
+
 
 
     //Other methods

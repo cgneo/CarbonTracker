@@ -193,9 +193,20 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
 
 void Consumption::add_base_consumption(Base_Consumption base){
     int size = base.get_size();
+
     for(int i=0;i<size;i++){
+        Date last_date = base.get_last_added_date();
+        string last_date_str = base.get_last_added_date().to_String();
+
         Object *new_obj = base.get_object_i(i);
-        add_object(new_obj, true);
+
+        while (last_date_str != base.get_last_added_date().to_String()){ //until we get to today's date
+            Date *new_date = last_date.add_duration(1); //Create a date with one day more
+            new_obj->set_date(new_date);
+            add_object(new_obj, true); //Add object to date
+
+            last_date_str = new_date->to_String();
+        }
     }
 }
 
