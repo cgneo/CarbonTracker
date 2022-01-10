@@ -10,3 +10,10 @@ Server/build-tcp_console_new-Qt_6_1_3_for_macOS-Debug/moc_predefs.h
 Server/build-tcp_console_new-Qt_6_1_3_for_macOS-Debug/tcp_console_new
 Server/tcp_console_new/tcp_console_new.pro.user
 build-CO2_Tracker-Qt_6_2_2_for_macOS-Debug
+CO2_Tracker/resources/build/.qmake.stash
+CO2_Tracker/resources/build/moc_predefs.h
+build-CO2_Tracker-Desktop_Qt_5_12_5_clang_64bit-Debug
+build-CO2_Tracker-Desktop_Qt_5_12_5_clang_64bit-Debug-old
+build-CO2_Tracker-Desktop_Qt_5_12_11_MinGW_32_bit-Debug
+build-CO2_Tracker-Replacement_for_Desktop_Qt_5_12_5_clang_64bit-Debug
+build-CO2_Tracker-Qt_6_2_2_for_macOS-Debug
