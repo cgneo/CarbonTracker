@@ -133,11 +133,11 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
     double footprint = obj->get_footprint();
     Date *date = obj->get_date();
 
-    total_footprint += footprint; //update total footprint
 
     if(type == "food"){
 
-        food_footprint += footprint; //Update food footprint
+        food_footprint += footprint/5; //Update food footprint
+        total_footprint += footprint/5; //update total footprint
 
         if (name == "_"){
             name = "Non-categorized";
@@ -145,17 +145,18 @@ void Consumption::add_object(Object *obj, bool new_object){ //New object = True 
 
         //Update the food_by_category dictionary
         if (footprint_by_food_category->find(name) == footprint_by_food_category->end()){
-            std::pair<std::string,double> pair (name, footprint);
+            std::pair<std::string,double> pair (name, footprint/5);
             footprint_by_food_category->insert(pair);
         } //Check if key is in dictionary. Add key if not, update value if it is in dictionary
         else{
-            footprint_by_food_category->at(name) += footprint;
+            footprint_by_food_category->at(name) += footprint/5;
         }
 
     }
     else if(type == "transport"){
         footprint_by_vehicle->at(name) += footprint;
         transport_footprint += footprint; //Update transport footprint
+        total_footprint += footprint; //update total footprint
     }
 
     int day = date->get_day();
