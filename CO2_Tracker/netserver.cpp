@@ -9,6 +9,8 @@
 
 #include <QDataStream>
 
+#include <QMessageBox>
+
 netserver::netserver()
 {
     m_server = new QTcpServer();
@@ -111,9 +113,11 @@ void netserver::readSocket()
     }else if(fileType=="message"){
         QString message = QString("%1 :?: %2").arg(socket->socketDescriptor()).arg(QString::fromStdString(buffer.toStdString()));
         emit newMessage(message);
-        //message_received(message);
-        //ui -> chatbox ->
 
+        // ui message
+        QMessageBox msgBox;
+        msgBox.setText( QString::fromStdString(buffer.toStdString()) );
+        msgBox.exec();
     }
 }
 

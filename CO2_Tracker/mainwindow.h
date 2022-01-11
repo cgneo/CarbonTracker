@@ -51,8 +51,6 @@ private slots:
 
     void on_buttonTransport_clicked();
 
-
-    //void set_server_reply(QString reply){server_reply = reply;};
     void on_send_button_clicked();
 
     void on_pushButton_clicked();
