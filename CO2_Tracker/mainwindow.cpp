@@ -616,12 +616,12 @@ void MainWindow::on_buttonTransport_clicked()
 
 void MainWindow::on_send_button_clicked()
 {
-        QString message = current_user->get_username();
-    //std::cout<<"username :" << message.toStdString()<<std::endl;
-    message.append(": ");
-    message.append(ui -> chatbox_write ->text().trimmed());
-   ui-> chatbox ->append(message);
-   CB_receiver -> on_pushButton_sendMessage_clicked(message);
+	QString message = current_user->get_username();
+	//std::cout<<"username :" << message.toStdString()<<std::endl;
+	message.append(": ");
+	message.append(ui -> chatbox_write ->text().trimmed());
+	ui-> chatbox ->append(message);
+	CB_receiver -> on_pushButton_sendMessage_clicked(message);
 
     ui -> chatbox_write->clear();
     ui -> chatbox_write ->setFocus();

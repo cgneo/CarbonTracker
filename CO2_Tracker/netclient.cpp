@@ -3,6 +3,8 @@
 #include <QDir>
 #include <mainwindow.h>
 
+#include <QMessageBox>
+
 netclient::netclient()
 {
     socket = new QTcpSocket();
@@ -98,6 +100,10 @@ void netclient::readSocket()
         std::cout << std::to_string(whoSentIt);
         std::cout << " :!: ";
         std::cout << whatIsTheText.toStdString() << std::endl;
+
+        QMessageBox msgBox;
+        msgBox.setText( whatIsTheText );
+        msgBox.exec();
 
     }
 }
